@@ -596,7 +596,109 @@
 
     const-string v2, ""
 
+    invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "eighteen"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eighteen.png"
+
+    goto/16 :goto_4
+
+    :cond_3
+    invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "seventeen"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_seventeen.png"
+
+    goto/16 :goto_4
+
+    :cond_4
+    invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "sixteen"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_5
+
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_sixteen.png"
+
+    goto/16 :goto_4
+
+    :cond_5
+    invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "fifteen"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_6
+
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_fifteen.png"
+
+    goto/16 :goto_4
+
+    :cond_6
+    invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "fourteen"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_fourteen.png"
+
+    goto/16 :goto_4
+
+    :cond_7
+    invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "thirteen"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_8
+
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_thirteen.png"
+
+    goto/16 :goto_4
+
     .line 73
+    :cond_8
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
     move-result-object v3
@@ -605,14 +707,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_9
 
     const-string v2, ""
 
     goto/16 :goto_4
 
     .line 76
-    :cond_3
+    :cond_9
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
     move-result-object v3
@@ -623,14 +725,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_a
 
     const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_two.png"
 
     goto/16 :goto_4
 
     .line 79
-    :cond_4
+    :cond_a
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
     move-result-object v3
@@ -641,14 +743,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_b
 
     const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_three.png"
 
     goto/16 :goto_4
 
     .line 82
-    :cond_5
+    :cond_b
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
     move-result-object v3
@@ -659,14 +761,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_c
 
     const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_four.png"
 
     goto/16 :goto_4
 
     .line 85
-    :cond_6
+    :cond_c
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
     move-result-object v3
@@ -677,14 +779,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_d
 
     const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_five.png"
 
     goto/16 :goto_4
 
     .line 88
-    :cond_7
+    :cond_d
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
     move-result-object v3
@@ -695,14 +797,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_e
 
     const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_six.png"
 
     goto/16 :goto_4
 
     .line 91
-    :cond_8
+    :cond_e
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
     move-result-object v3
@@ -713,14 +815,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_f
 
     const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_seven.png"
 
     goto :goto_4
 
     .line 94
-    :cond_9
+    :cond_f
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
     move-result-object v3
@@ -731,14 +833,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_10
 
     const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eight.png"
 
     goto :goto_4
 
     .line 97
-    :cond_a
+    :cond_10
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
     move-result-object v3
@@ -749,14 +851,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_11
 
     const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_nine.png"
 
     goto :goto_4
 
     .line 100
-    :cond_b
+    :cond_11
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
     move-result-object v3
@@ -767,14 +869,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_12
 
     const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_ten.png"
 
     goto :goto_4
 
     .line 103
-    :cond_c
+    :cond_12
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
     move-result-object v3
@@ -785,7 +887,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_f
+    if-nez v3, :cond_15
 
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
@@ -797,12 +899,12 @@
 
     move-result v3
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_13
 
     goto :goto_3
 
     .line 106
-    :cond_d
+    :cond_13
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
     move-result-object v3
@@ -813,7 +915,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_e
+    if-nez v3, :cond_14
 
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/DormScoreBean$ListDTO;->getInch()Ljava/lang/String;
 
@@ -825,23 +927,23 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_16
 
-    :cond_e
+    :cond_14
     const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_twelve.png"
 
     goto :goto_4
 
-    :cond_f
+    :cond_15
     :goto_3
     const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eleven.png"
 
     .line 110
-    :cond_10
+    :cond_16
     :goto_4
     iget-object v0, p1, Lcom/hlkj/chinatelecom5/adapter/HomeDormScoreRvAdapter$NewsViewHolder;->itemView:Landroid/view/View;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_17
 
     iget-object v0, p1, Lcom/hlkj/chinatelecom5/adapter/HomeDormScoreRvAdapter$NewsViewHolder;->itemView:Landroid/view/View;
 
@@ -849,7 +951,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_17
 
     .line 111
     iget-object v0, p1, Lcom/hlkj/chinatelecom5/adapter/HomeDormScoreRvAdapter$NewsViewHolder;->itemView:Landroid/view/View;
@@ -904,7 +1006,7 @@
     invoke-virtual {v0, v2}, Lcom/hlkj/chinatelecom5/base/GlideRequest;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
 
     .line 119
-    :cond_11
+    :cond_17
     invoke-interface {p3, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -915,7 +1017,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_18
 
     invoke-interface {p3, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -931,7 +1033,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_12
+    if-lez v0, :cond_18
 
     .line 120
     invoke-static {p1}, Lcom/hlkj/chinatelecom5/adapter/HomeDormScoreRvAdapter$NewsViewHolder;->access$1000(Lcom/hlkj/chinatelecom5/adapter/HomeDormScoreRvAdapter$NewsViewHolder;)Landroidx/recyclerview/widget/RecyclerView;
@@ -971,7 +1073,7 @@
     goto :goto_5
 
     .line 124
-    :cond_12
+    :cond_18
     invoke-static {p1}, Lcom/hlkj/chinatelecom5/adapter/HomeDormScoreRvAdapter$NewsViewHolder;->access$1000(Lcom/hlkj/chinatelecom5/adapter/HomeDormScoreRvAdapter$NewsViewHolder;)Landroidx/recyclerview/widget/RecyclerView;
 
     move-result-object p1

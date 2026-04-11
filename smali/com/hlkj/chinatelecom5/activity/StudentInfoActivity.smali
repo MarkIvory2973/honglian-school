@@ -5290,7 +5290,7 @@
 
     const/16 v4, 0x8
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1f
 
     .line 941
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/ResponseModel;->getData()Ljava/lang/Object;
@@ -5333,7 +5333,157 @@
 
     check-cast p1, Ljava/lang/String;
 
+    iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
+
+    invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string v0, "eighteen"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p2
+
+    const/4 v0, 0x3
+
+    if-eqz p2, :cond_6
+
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eighteen.png"
+
+    const/16 v7, 0x11
+
+    iput v7, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->index:I
+
+    goto/16 :goto_4
+
+    :cond_6
+    iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
+
+    invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string v0, "seventeen"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p2
+
+    const/4 v0, 0x3
+
+    if-eqz p2, :cond_7
+
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_seventeen.png"
+
+    const/16 v7, 0x10
+
+    iput v7, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->index:I
+
+    goto/16 :goto_4
+
+    :cond_7
+    iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
+
+    invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string v0, "sixteen"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p2
+
+    const/4 v0, 0x3
+
+    if-eqz p2, :cond_8
+
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_sixteen.png"
+
+    const/16 v7, 0xf
+
+    iput v7, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->index:I
+
+    goto/16 :goto_4
+
+    :cond_8
+    iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
+
+    invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string v0, "fifteen"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p2
+
+    const/4 v0, 0x3
+
+    if-eqz p2, :cond_9
+
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_fifteen.png"
+
+    const/16 v7, 0xe
+
+    iput v7, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->index:I
+
+    goto/16 :goto_4
+
+    :cond_9
+    iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
+
+    invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string v0, "fourteen"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p2
+
+    const/4 v0, 0x3
+
+    if-eqz p2, :cond_a
+
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_fourteen.png"
+
+    const/16 v7, 0xd
+
+    iput v7, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->index:I
+
+    goto/16 :goto_4
+
+    :cond_a
+    iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
+
+    invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string v0, "thirteen"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p2
+
+    const/4 v0, 0x3
+
+    if-eqz p2, :cond_b
+
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_thirteen.png"
+
+    const/16 v7, 0xc
+
+    iput v7, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->index:I
+
+    goto/16 :goto_4
+
     .line 946
+    :cond_b
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
@@ -5348,7 +5498,7 @@
 
     const/4 v0, 0x3
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_c
 
     const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_two.png"
 
@@ -5358,7 +5508,7 @@
     goto/16 :goto_4
 
     .line 949
-    :cond_6
+    :cond_c
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
@@ -5371,7 +5521,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_d
 
     const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_three.png"
 
@@ -5383,7 +5533,7 @@
     goto/16 :goto_4
 
     .line 952
-    :cond_7
+    :cond_d
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
@@ -5396,7 +5546,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_8
+    if-eqz p2, :cond_e
 
     const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_four.png"
 
@@ -5406,7 +5556,7 @@
     goto/16 :goto_4
 
     .line 955
-    :cond_8
+    :cond_e
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
@@ -5419,7 +5569,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_f
 
     const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_five.png"
 
@@ -5431,7 +5581,7 @@
     goto/16 :goto_4
 
     .line 958
-    :cond_9
+    :cond_f
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
@@ -5444,7 +5594,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_10
 
     const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_six.png"
 
@@ -5456,7 +5606,7 @@
     goto/16 :goto_4
 
     .line 961
-    :cond_a
+    :cond_10
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
@@ -5469,7 +5619,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_11
 
     const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_seven.png"
 
@@ -5481,7 +5631,7 @@
     goto/16 :goto_4
 
     .line 964
-    :cond_b
+    :cond_11
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
@@ -5494,7 +5644,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_12
 
     const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eight.png"
 
@@ -5506,7 +5656,7 @@
     goto/16 :goto_4
 
     .line 967
-    :cond_c
+    :cond_12
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
@@ -5519,7 +5669,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_13
 
     const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_nine.png"
 
@@ -5529,7 +5679,7 @@
     goto/16 :goto_4
 
     .line 970
-    :cond_d
+    :cond_13
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
@@ -5542,7 +5692,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_14
 
     const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_ten.png"
 
@@ -5554,7 +5704,7 @@
     goto/16 :goto_4
 
     .line 973
-    :cond_e
+    :cond_14
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
@@ -5567,7 +5717,7 @@
 
     move-result p2
 
-    if-nez p2, :cond_13
+    if-nez p2, :cond_19
 
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
@@ -5581,12 +5731,12 @@
 
     move-result p2
 
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_15
 
     goto :goto_3
 
     .line 976
-    :cond_f
+    :cond_15
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
@@ -5599,7 +5749,7 @@
 
     move-result p2
 
-    if-nez p2, :cond_12
+    if-nez p2, :cond_18
 
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
@@ -5613,12 +5763,12 @@
 
     move-result p2
 
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_16
 
     goto :goto_2
 
     .line 980
-    :cond_10
+    :cond_16
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -5635,7 +5785,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_17
 
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
@@ -5645,7 +5795,7 @@
 
     goto :goto_1
 
-    :cond_11
+    :cond_17
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
     invoke-virtual {p1}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getHead_img()Ljava/lang/String;
@@ -5669,7 +5819,7 @@
 
     goto :goto_4
 
-    :cond_12
+    :cond_18
     :goto_2
     const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_twelve.png"
 
@@ -5680,7 +5830,7 @@
 
     goto :goto_4
 
-    :cond_13
+    :cond_19
     :goto_3
     const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eleven.png"
 
@@ -5775,13 +5925,13 @@
 
     move-result p2
 
-    if-eqz p2, :cond_14
+    if-eqz p2, :cond_1a
 
     const-string p2, ""
 
     goto :goto_5
 
-    :cond_14
+    :cond_1a
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->infoBean:Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;
 
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/StudentInfoBean;->getPost()Ljava/lang/String;
@@ -5807,7 +5957,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_1b
 
     .line 996
     invoke-static {}, Lcom/hlkj/chinatelecom5/manager/FlowManager;->getCurrenFlow()Lcom/hlkj/chinatelecom5/base/BaseControlFlow;
@@ -5828,10 +5978,10 @@
 
     move-result p1
 
-    if-nez p1, :cond_16
+    if-nez p1, :cond_1c
 
     .line 997
-    :cond_15
+    :cond_1b
     new-instance p1, Lcom/hlkj/chinatelecom5/flow/StudentInfoFlow;
 
     invoke-direct {p1}, Lcom/hlkj/chinatelecom5/flow/StudentInfoFlow;-><init>()V
@@ -5839,7 +5989,7 @@
     invoke-static {p1}, Lcom/hlkj/chinatelecom5/manager/FlowManager;->startPresenter(Lcom/hlkj/chinatelecom5/base/BaseControlFlow;)V
 
     .line 999
-    :cond_16
+    :cond_1c
     invoke-static {}, Lcom/hlkj/chinatelecom5/manager/FlowManager;->getCurrenFlow()Lcom/hlkj/chinatelecom5/base/BaseControlFlow;
 
     move-result-object p1
@@ -5883,11 +6033,11 @@
     .line 1004
     iget p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->into_type:I
 
-    if-ne p1, v0, :cond_17
+    if-ne p1, v0, :cond_1d
 
     iget-boolean p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->isFirstInto:Z
 
-    if-nez p1, :cond_17
+    if-nez p1, :cond_1d
 
     .line 1005
     iput-object v3, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->buyRvAdapter:Lcom/hlkj/chinatelecom5/adapter/StudentCheckBuyRvAdapter;
@@ -6042,10 +6192,10 @@
     goto :goto_6
 
     .line 1025
-    :cond_17
+    :cond_1d
     iget-boolean p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->isFirstInto:Z
 
-    if-nez p1, :cond_18
+    if-nez p1, :cond_1e
 
     .line 1026
     invoke-static {}, Lcom/hlkj/chinatelecom5/manager/FlowManager;->getCurrenFlow()Lcom/hlkj/chinatelecom5/base/BaseControlFlow;
@@ -6061,13 +6211,13 @@
     invoke-virtual {p1}, Lcom/hlkj/chinatelecom5/base/BaseControlFlow;->handlerFlow()V
 
     .line 1028
-    :cond_18
+    :cond_1e
     :goto_6
     iput-boolean v2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->isFirstInto:Z
 
     goto/16 :goto_f
 
-    :cond_19
+    :cond_1f
     const-string v0, "get_student_score"
 
     .line 1029
@@ -6075,7 +6225,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_21
 
     .line 1030
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/ResponseModel;->getData()Ljava/lang/Object;
@@ -6084,14 +6234,14 @@
 
     check-cast p1, Ljava/util/List;
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_20
 
     .line 1031
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p2
 
-    if-lez p2, :cond_1a
+    if-lez p2, :cond_20
 
     .line 1032
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rl_no_data:Landroid/widget/RelativeLayout;
@@ -6106,7 +6256,7 @@
     goto :goto_7
 
     .line 1035
-    :cond_1a
+    :cond_20
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rl_no_data:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p2, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
@@ -6142,7 +6292,7 @@
 
     goto/16 :goto_f
 
-    :cond_1b
+    :cond_21
     const-string v0, "get_student_buy"
 
     .line 1090
@@ -6150,7 +6300,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_2b
 
     .line 1091
     invoke-virtual {p0}, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->hideLoading()V
@@ -6167,18 +6317,18 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_2a
 
     .line 1094
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p2
 
-    if-nez p2, :cond_1c
+    if-nez p2, :cond_22
 
     goto/16 :goto_a
 
-    :cond_1c
+    :cond_22
     const/4 p2, 0x0
 
     .line 1100
@@ -6191,12 +6341,12 @@
 
     move-result-object v3
 
-    :cond_1d
+    :cond_23
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_1f
+    if-eqz v5, :cond_25
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -6233,7 +6383,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_23
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -6258,7 +6408,7 @@
 
     move-result v8
 
-    if-ne v8, v2, :cond_1e
+    if-ne v8, v2, :cond_24
 
     invoke-virtual {v6}, Lcom/hlkj/chinatelecom5/bean/ConsumeInfoBean;->getBack_time()Ljava/lang/String;
 
@@ -6266,7 +6416,7 @@
 
     goto :goto_9
 
-    :cond_1e
+    :cond_24
     invoke-virtual {v6}, Lcom/hlkj/chinatelecom5/bean/ConsumeInfoBean;->getReport_time()Ljava/lang/String;
 
     move-result-object v8
@@ -6294,7 +6444,7 @@
     goto :goto_8
 
     .line 1112
-    :cond_1f
+    :cond_25
     iget-object v3, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->tv_leave:Landroid/widget/TextView;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -6316,14 +6466,14 @@
     .line 1125
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->buyRvAdapter:Lcom/hlkj/chinatelecom5/adapter/StudentCheckBuyRvAdapter;
 
-    if-nez p2, :cond_22
+    if-nez p2, :cond_28
 
     .line 1126
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result p2
 
-    if-lez p2, :cond_20
+    if-lez p2, :cond_26
 
     .line 1127
     new-instance p1, Lcom/hlkj/chinatelecom5/adapter/StudentCheckBuyRvAdapter;
@@ -6351,8 +6501,8 @@
 
     goto/16 :goto_f
 
-    :cond_20
-    if-eqz p1, :cond_21
+    :cond_26
+    if-eqz p1, :cond_27
 
     .line 1133
     new-instance p1, Lcom/hlkj/chinatelecom5/adapter/StudentCheckBuyRvAdapter;
@@ -6371,7 +6521,7 @@
     return-void
 
     .line 1137
-    :cond_21
+    :cond_27
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rv_common:Lcom/jcodecraeer/xrecyclerview/XRecyclerView;
 
     invoke-virtual {p1, v4}, Lcom/jcodecraeer/xrecyclerview/XRecyclerView;->setVisibility(I)V
@@ -6384,18 +6534,18 @@
     goto/16 :goto_f
 
     .line 1143
-    :cond_22
+    :cond_28
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rv_common:Lcom/jcodecraeer/xrecyclerview/XRecyclerView;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
 
-    if-nez p1, :cond_23
+    if-nez p1, :cond_29
 
     const/4 v1, 0x1
 
-    :cond_23
+    :cond_29
     invoke-virtual {p2, v1}, Lcom/jcodecraeer/xrecyclerview/XRecyclerView;->setNoMore(Z)V
 
     .line 1144
@@ -6406,7 +6556,7 @@
     goto/16 :goto_f
 
     .line 1095
-    :cond_24
+    :cond_2a
     :goto_a
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rv_common:Lcom/jcodecraeer/xrecyclerview/XRecyclerView;
 
@@ -6419,7 +6569,7 @@
 
     return-void
 
-    :cond_25
+    :cond_2b
     const-string v0, "home_msg_content_p"
 
     .line 1147
@@ -6427,7 +6577,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_2f
 
     .line 1148
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/ResponseModel;->getData()Ljava/lang/Object;
@@ -6444,16 +6594,16 @@
     .line 1150
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->msgRvAdapter:Lcom/hlkj/chinatelecom5/adapter/HomeStuMsgRvAdapter;
 
-    if-nez p2, :cond_27
+    if-nez p2, :cond_2d
 
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_2c
 
     .line 1151
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p2
 
-    if-lez p2, :cond_26
+    if-lez p2, :cond_2c
 
     .line 1152
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rl_no_data:Landroid/widget/RelativeLayout;
@@ -6510,7 +6660,7 @@
     goto :goto_b
 
     .line 1159
-    :cond_26
+    :cond_2c
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rl_no_data:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p1, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
@@ -6523,18 +6673,18 @@
     goto :goto_b
 
     .line 1164
-    :cond_27
+    :cond_2d
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rv_common:Lcom/jcodecraeer/xrecyclerview/XRecyclerView;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_2e
 
     const/4 v1, 0x1
 
-    :cond_28
+    :cond_2e
     invoke-virtual {p2, v1}, Lcom/jcodecraeer/xrecyclerview/XRecyclerView;->setNoMore(Z)V
 
     .line 1165
@@ -6582,7 +6732,7 @@
     .line 1171
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->msgRvAdapter:Lcom/hlkj/chinatelecom5/adapter/HomeStuMsgRvAdapter;
 
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_49
 
     .line 1172
     new-instance p2, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity$5;
@@ -6593,7 +6743,7 @@
 
     goto/16 :goto_f
 
-    :cond_29
+    :cond_2f
     const-string v0, "reply_msg"
 
     .line 1207
@@ -6601,7 +6751,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_30
 
     .line 1208
     new-instance p1, Ljava/lang/StringBuilder;
@@ -6659,7 +6809,7 @@
 
     goto/16 :goto_f
 
-    :cond_2a
+    :cond_30
     const-string v0, "reply_txt"
 
     .line 1216
@@ -6667,7 +6817,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_31
 
     .line 1217
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/ResponseModel;->getData()Ljava/lang/Object;
@@ -6685,7 +6835,7 @@
 
     goto/16 :goto_f
 
-    :cond_2b
+    :cond_31
     const-string v0, "home_curriculum_week"
 
     .line 1219
@@ -6693,7 +6843,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_32
 
     .line 1220
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/ResponseModel;->getData()Ljava/lang/Object;
@@ -6734,7 +6884,7 @@
 
     goto/16 :goto_f
 
-    :cond_2c
+    :cond_32
     const-string v0, "attendance_record"
 
     .line 1227
@@ -6742,7 +6892,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_35
 
     .line 1228
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rv_common:Lcom/jcodecraeer/xrecyclerview/XRecyclerView;
@@ -6751,7 +6901,7 @@
 
     move-result p1
 
-    if-lez p1, :cond_2d
+    if-lez p1, :cond_33
 
     .line 1229
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rv_common:Lcom/jcodecraeer/xrecyclerview/XRecyclerView;
@@ -6759,7 +6909,7 @@
     invoke-virtual {p1}, Lcom/jcodecraeer/xrecyclerview/XRecyclerView;->removeAllViews()V
 
     .line 1231
-    :cond_2d
+    :cond_33
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/ResponseModel;->getData()Ljava/lang/Object;
 
     move-result-object p1
@@ -6863,7 +7013,7 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_2e
+    if-eqz p2, :cond_34
 
     invoke-virtual {p1}, Lcom/hlkj/chinatelecom5/bean/AttendanceRecordBean;->getList()Ljava/util/List;
 
@@ -6873,7 +7023,7 @@
 
     move-result p2
 
-    if-lez p2, :cond_2e
+    if-lez p2, :cond_34
 
     .line 1237
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rl_no_data:Landroid/widget/RelativeLayout;
@@ -6906,7 +7056,7 @@
     goto/16 :goto_f
 
     .line 1242
-    :cond_2e
+    :cond_34
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rl_no_data:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p1, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
@@ -6918,7 +7068,7 @@
 
     goto/16 :goto_f
 
-    :cond_2f
+    :cond_35
     const-string v0, "leave_status"
 
     .line 1245
@@ -6926,7 +7076,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_36
 
     .line 1246
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/ResponseModel;->getData()Ljava/lang/Object;
@@ -6944,7 +7094,7 @@
 
     goto/16 :goto_f
 
-    :cond_30
+    :cond_36
     const-string v0, "get_student_quality"
 
     .line 1248
@@ -6952,7 +7102,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_3b
 
     .line 1249
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/ResponseModel;->getData()Ljava/lang/Object;
@@ -6979,21 +7129,21 @@
     .line 1254
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->qualityRvAdapter:Lcom/hlkj/chinatelecom5/adapter/QualityScoreRvAdapter;
 
-    if-nez p2, :cond_33
+    if-nez p2, :cond_39
 
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_38
 
     .line 1255
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p2
 
-    if-gtz p2, :cond_31
+    if-gtz p2, :cond_37
 
     goto :goto_c
 
     .line 1260
-    :cond_31
+    :cond_37
     new-instance p2, Lcom/hlkj/chinatelecom5/adapter/QualityScoreRvAdapter;
 
     invoke-direct {p2, p1}, Lcom/hlkj/chinatelecom5/adapter/QualityScoreRvAdapter;-><init>(Ljava/util/List;)V
@@ -7010,7 +7160,7 @@
     goto/16 :goto_f
 
     .line 1256
-    :cond_32
+    :cond_38
     :goto_c
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rl_no_data:Landroid/widget/RelativeLayout;
 
@@ -7024,18 +7174,18 @@
     return-void
 
     .line 1263
-    :cond_33
+    :cond_39
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rv_common:Lcom/jcodecraeer/xrecyclerview/XRecyclerView;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_34
+    if-nez v0, :cond_3a
 
     const/4 v1, 0x1
 
-    :cond_34
+    :cond_3a
     invoke-virtual {p2, v1}, Lcom/jcodecraeer/xrecyclerview/XRecyclerView;->setNoMore(Z)V
 
     .line 1264
@@ -7045,7 +7195,7 @@
 
     goto/16 :goto_f
 
-    :cond_35
+    :cond_3b
     const-string v0, "all_class_name"
 
     .line 1266
@@ -7053,7 +7203,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_3e
 
     .line 1267
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/ResponseModel;->getData()Ljava/lang/Object;
@@ -7067,12 +7217,12 @@
 
     move-result p2
 
-    if-eqz p2, :cond_36
+    if-eqz p2, :cond_3c
 
     return-void
 
     .line 1269
-    :cond_36
+    :cond_3c
     iput-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->mClassNameBeans:Ljava/util/List;
 
     const-string p2, "StudentInfoActivity"
@@ -7113,7 +7263,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_3d
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -7153,7 +7303,7 @@
     goto :goto_d
 
     .line 1275
-    :cond_37
+    :cond_3d
     new-instance p1, Landroid/widget/ArrayAdapter;
 
     const v0, 0x1090009
@@ -7167,7 +7317,7 @@
 
     goto/16 :goto_f
 
-    :cond_38
+    :cond_3e
     const-string v0, "student_name"
 
     .line 1277
@@ -7175,7 +7325,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_40
 
     .line 1278
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/ResponseModel;->getData()Ljava/lang/Object;
@@ -7189,11 +7339,11 @@
 
     move-result p2
 
-    if-eqz p2, :cond_39
+    if-eqz p2, :cond_3f
 
     return-void
 
-    :cond_39
+    :cond_3f
     const-string p2, "StudentInfoActivity"
 
     .line 1280
@@ -7249,7 +7399,7 @@
 
     goto/16 :goto_f
 
-    :cond_3a
+    :cond_40
     const-string v0, "login"
 
     .line 1301
@@ -7257,7 +7407,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_41
 
     .line 1302
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->ll_ctl_quality:Landroid/widget/LinearLayout;
@@ -7271,7 +7421,7 @@
 
     goto/16 :goto_f
 
-    :cond_3b
+    :cond_41
     const-string v0, "feedback_info"
 
     .line 1304
@@ -7279,7 +7429,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_46
 
     .line 1305
     invoke-virtual {p2}, Lcom/hlkj/chinatelecom5/bean/ResponseModel;->getData()Ljava/lang/Object;
@@ -7325,7 +7475,7 @@
     .line 1308
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->mailRvAdapter:Lcom/hlkj/chinatelecom5/adapter/MailRvAdapter;
 
-    if-nez p2, :cond_3d
+    if-nez p2, :cond_43
 
     .line 1309
     invoke-virtual {p1}, Lcom/hlkj/chinatelecom5/bean/FeedbackMsgBean;->getList()Ljava/util/List;
@@ -7336,7 +7486,7 @@
 
     move-result p2
 
-    if-lez p2, :cond_3c
+    if-lez p2, :cond_42
 
     .line 1310
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rl_no_data:Landroid/widget/RelativeLayout;
@@ -7369,7 +7519,7 @@
     goto :goto_e
 
     .line 1315
-    :cond_3c
+    :cond_42
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rl_no_data:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p1, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
@@ -7382,7 +7532,7 @@
     goto :goto_e
 
     .line 1319
-    :cond_3d
+    :cond_43
     iget-object p2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->rv_common:Lcom/jcodecraeer/xrecyclerview/XRecyclerView;
 
     invoke-virtual {p1}, Lcom/hlkj/chinatelecom5/bean/FeedbackMsgBean;->getList()Ljava/util/List;
@@ -7393,11 +7543,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_44
 
     const/4 v1, 0x1
 
-    :cond_3e
+    :cond_44
     invoke-virtual {p2, v1}, Lcom/jcodecraeer/xrecyclerview/XRecyclerView;->setNoMore(Z)V
 
     .line 1320
@@ -7413,12 +7563,12 @@
     :goto_e
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->mailRvAdapter:Lcom/hlkj/chinatelecom5/adapter/MailRvAdapter;
 
-    if-nez p1, :cond_3f
+    if-nez p1, :cond_45
 
     return-void
 
     .line 1323
-    :cond_3f
+    :cond_45
     new-instance p2, Lcom/hlkj/chinatelecom5/activity/-$$Lambda$StudentInfoActivity$YyCX-dA61BEj1bW6pw9EmYKTbvQ;
 
     invoke-direct {p2, p0}, Lcom/hlkj/chinatelecom5/activity/-$$Lambda$StudentInfoActivity$YyCX-dA61BEj1bW6pw9EmYKTbvQ;-><init>(Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;)V
@@ -7427,7 +7577,7 @@
 
     goto :goto_f
 
-    :cond_40
+    :cond_46
     const-string p2, "feedback_msg"
 
     .line 1342
@@ -7435,24 +7585,24 @@
 
     move-result p2
 
-    if-eqz p2, :cond_42
+    if-eqz p2, :cond_48
 
     .line 1343
     invoke-virtual {p0}, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->isFinishing()Z
 
     move-result p1
 
-    if-nez p1, :cond_41
+    if-nez p1, :cond_47
 
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->feedbackDialog:Lcom/hlkj/chinatelecom5/dialog/FeedbackDialog;
 
-    if-eqz p1, :cond_41
+    if-eqz p1, :cond_47
 
     invoke-virtual {p1}, Lcom/hlkj/chinatelecom5/dialog/FeedbackDialog;->isShowing()Z
 
     move-result p1
 
-    if-eqz p1, :cond_41
+    if-eqz p1, :cond_47
 
     .line 1344
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->feedbackDialog:Lcom/hlkj/chinatelecom5/dialog/FeedbackDialog;
@@ -7460,7 +7610,7 @@
     invoke-virtual {p1}, Lcom/hlkj/chinatelecom5/dialog/FeedbackDialog;->dismiss()V
 
     .line 1345
-    :cond_41
+    :cond_47
     iput-object v3, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->mailRvAdapter:Lcom/hlkj/chinatelecom5/adapter/MailRvAdapter;
 
     .line 1346
@@ -7468,13 +7618,13 @@
 
     move-result p1
 
-    if-nez p1, :cond_43
+    if-nez p1, :cond_49
 
     invoke-static {}, Lcom/hlkj/chinatelecom5/manager/FlowManager;->getCurrenFlow()Lcom/hlkj/chinatelecom5/base/BaseControlFlow;
 
     move-result-object p1
 
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_49
 
     .line 1347
     invoke-static {}, Lcom/hlkj/chinatelecom5/manager/FlowManager;->getCurrenFlow()Lcom/hlkj/chinatelecom5/base/BaseControlFlow;
@@ -7491,7 +7641,7 @@
 
     goto :goto_f
 
-    :cond_42
+    :cond_48
     const-string p2, "del_feedback"
 
     .line 1348
@@ -7499,7 +7649,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_49
 
     .line 1349
     iput-object v3, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->mailRvAdapter:Lcom/hlkj/chinatelecom5/adapter/MailRvAdapter;
@@ -7509,13 +7659,13 @@
 
     move-result p1
 
-    if-nez p1, :cond_43
+    if-nez p1, :cond_49
 
     invoke-static {}, Lcom/hlkj/chinatelecom5/manager/FlowManager;->getCurrenFlow()Lcom/hlkj/chinatelecom5/base/BaseControlFlow;
 
     move-result-object p1
 
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_49
 
     .line 1351
     invoke-static {}, Lcom/hlkj/chinatelecom5/manager/FlowManager;->getCurrenFlow()Lcom/hlkj/chinatelecom5/base/BaseControlFlow;
@@ -7530,7 +7680,7 @@
 
     invoke-virtual {p1}, Lcom/hlkj/chinatelecom5/base/BaseControlFlow;->handlerFlow()V
 
-    :cond_43
+    :cond_49
     :goto_f
     return-void
 .end method

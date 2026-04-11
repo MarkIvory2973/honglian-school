@@ -121,7 +121,7 @@ Name: assets/img/ic_err_photo1.png
 SHA-256-Digest: UeKnndQ1u6E5W6rkdqyoAkLgIyc7dfODiIaIW+8xNcM=
 
 Name: classes.dex
-SHA-256-Digest: 353BsvyaP3sUQeemIE5esq3oie133/nvGeQmd+fkz30=
+SHA-256-Digest: V8M9YEQNY2/8T1GAY8mcojk10mQRn+r/ARZIj0eU/S0=
 
 Name: classes2.dex
 SHA-256-Digest: GwBmAF8IBsRseFbbCIU9zcEV9qP30jc+WE7ln2Tn3bg=

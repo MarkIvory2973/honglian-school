@@ -163,7 +163,109 @@
 
     const-string v1, ""
 
+    invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "eighteen"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eighteen.png"
+
+    goto/16 :goto_1
+
+    :cond_0
+    invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "seventeen"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_seventeen.png"
+
+    goto/16 :goto_1
+
+    :cond_1
+    invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "sixteen"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_sixteen.png"
+
+    goto/16 :goto_1
+
+    :cond_2
+    invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "fifteen"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_fifteen.png"
+
+    goto/16 :goto_1
+
+    :cond_3
+    invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "fourteen"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_fourteen.png"
+
+    goto/16 :goto_1
+
+    :cond_4
+    invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "thirteen"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_thirteen.png"
+
+    goto/16 :goto_1
+
     .line 49
+    :cond_5
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
     move-result-object v2
@@ -172,14 +274,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_6
 
     const-string v1, ""
 
     goto/16 :goto_1
 
     .line 51
-    :cond_0
+    :cond_6
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
     move-result-object v2
@@ -190,14 +292,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_7
 
     const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_two.png"
 
     goto/16 :goto_1
 
     .line 53
-    :cond_1
+    :cond_7
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
     move-result-object v2
@@ -208,14 +310,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_8
 
     const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_three.png"
 
     goto/16 :goto_1
 
     .line 55
-    :cond_2
+    :cond_8
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
     move-result-object v2
@@ -226,14 +328,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_9
 
     const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_four.png"
 
     goto/16 :goto_1
 
     .line 57
-    :cond_3
+    :cond_9
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
     move-result-object v2
@@ -244,14 +346,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_a
 
     const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_five.png"
 
     goto/16 :goto_1
 
     .line 59
-    :cond_4
+    :cond_a
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
     move-result-object v2
@@ -262,14 +364,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_b
 
     const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_six.png"
 
     goto/16 :goto_1
 
     .line 61
-    :cond_5
+    :cond_b
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
     move-result-object v2
@@ -280,14 +382,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_c
 
     const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_seven.png"
 
     goto :goto_1
 
     .line 63
-    :cond_6
+    :cond_c
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
     move-result-object v2
@@ -298,14 +400,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_d
 
     const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eight.png"
 
     goto :goto_1
 
     .line 65
-    :cond_7
+    :cond_d
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
     move-result-object v2
@@ -316,14 +418,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_e
 
     const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_nine.png"
 
     goto :goto_1
 
     .line 67
-    :cond_8
+    :cond_e
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
     move-result-object v2
@@ -334,14 +436,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_f
 
     const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_ten.png"
 
     goto :goto_1
 
     .line 69
-    :cond_9
+    :cond_f
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
     move-result-object v2
@@ -352,7 +454,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_12
 
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
@@ -364,12 +466,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_10
 
     goto :goto_0
 
     .line 71
-    :cond_a
+    :cond_10
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
     move-result-object v2
@@ -380,7 +482,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_11
 
     invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/bean/MsgBoardBean;->getInch()Ljava/lang/String;
 
@@ -392,19 +494,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_13
 
-    :cond_b
+    :cond_11
     const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_twelve.png"
 
     goto :goto_1
 
-    :cond_c
+    :cond_12
     :goto_0
     const-string v1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eleven.png"
 
     .line 74
-    :cond_d
+    :cond_13
     :goto_1
     iget-object v0, p1, Lcom/hlkj/chinatelecom5/adapter/MsgBoardRvAdapter$MsgViewHolder;->itemView:Landroid/view/View;
 
@@ -484,13 +586,13 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_14
 
     const-string v2, ""
 
     goto :goto_2
 
-    :cond_e
+    :cond_14
     invoke-interface {p3, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
