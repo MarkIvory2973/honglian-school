@@ -625,7 +625,7 @@
 
     if-eqz v3, :cond_4
 
-    const-string v2, "file:///android_asset/img/s_two.png"
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_two.png"
 
     goto/16 :goto_4
 
@@ -643,7 +643,7 @@
 
     if-eqz v3, :cond_5
 
-    const-string v2, "file:///android_asset/img/s_three.png"
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_three.png"
 
     goto/16 :goto_4
 
@@ -661,7 +661,7 @@
 
     if-eqz v3, :cond_6
 
-    const-string v2, "file:///android_asset/img/s_four.png"
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_four.png"
 
     goto/16 :goto_4
 
@@ -679,7 +679,7 @@
 
     if-eqz v3, :cond_7
 
-    const-string v2, "file:///android_asset/img/s_five.png"
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_five.png"
 
     goto/16 :goto_4
 
@@ -697,7 +697,7 @@
 
     if-eqz v3, :cond_8
 
-    const-string v2, "file:///android_asset/img/s_six.png"
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_six.png"
 
     goto/16 :goto_4
 
@@ -715,7 +715,7 @@
 
     if-eqz v3, :cond_9
 
-    const-string v2, "file:///android_asset/img/s_seven.png"
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_seven.png"
 
     goto :goto_4
 
@@ -733,7 +733,7 @@
 
     if-eqz v3, :cond_a
 
-    const-string v2, "file:///android_asset/img/s_eight.png"
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eight.png"
 
     goto :goto_4
 
@@ -751,7 +751,7 @@
 
     if-eqz v3, :cond_b
 
-    const-string v2, "file:///android_asset/img/s_nine.png"
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_nine.png"
 
     goto :goto_4
 
@@ -769,7 +769,7 @@
 
     if-eqz v3, :cond_c
 
-    const-string v2, "file:///android_asset/img/s_ten.png"
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_ten.png"
 
     goto :goto_4
 
@@ -828,13 +828,13 @@
     if-eqz v0, :cond_10
 
     :cond_e
-    const-string v2, "file:///android_asset/img/s_twelve.png"
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_twelve.png"
 
     goto :goto_4
 
     :cond_f
     :goto_3
-    const-string v2, "file:///android_asset/img/s_eleven.png"
+    const-string v2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eleven.png"
 
     .line 110
     :cond_10

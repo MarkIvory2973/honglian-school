@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 Created-By: Android Gradle 8.0.2
-SHA-256-Digest-Manifest: 9yw/dITcE7y1IIMViYMqPC7NnSYi20/wt9ZowGcYWPw=
+SHA-256-Digest-Manifest: CtBwJXv6Iw7G2oCIOG7il2m9hA+QVUAhYeFuibmZ7iU=
 X-Android-APK-Signed: 2,3
 
 Name: AndroidManifest.xml
@@ -121,41 +121,8 @@ SHA-256-Digest: ArcFvfAwdnRLOhYVsGIT4AphsRt433aXojOKyAGnmJw=
 Name: assets/img/ic_err_photo1.png
 SHA-256-Digest: 67554sPBIXPXpaReILwALkTiLyBIyTYxTVCtT2l7Bpw=
 
-Name: assets/img/s_eight.png
-SHA-256-Digest: B7NFSgmgh1P8pgy82mNy9mzVhEZJO1rRcuucAalu6ao=
-
-Name: assets/img/s_eleven.png
-SHA-256-Digest: MXnTTge9FI8u97jTEQqmudJYQlCvemXHB47M6SWtMoU=
-
-Name: assets/img/s_five.png
-SHA-256-Digest: 5bwNNMkWQ7KvByulOMX5p0T9P45JILPNVh2Ua+R2fI0=
-
-Name: assets/img/s_four.png
-SHA-256-Digest: qFpJpOs3aURjpheOZfeY9YQ3T0GDuKYNHcu+EN2xc9o=
-
-Name: assets/img/s_nine.png
-SHA-256-Digest: 7gXExgqljgeGMocbAKHohqx/OmwxdMCHRtFyywzUte8=
-
-Name: assets/img/s_seven.png
-SHA-256-Digest: 7U9VUhlxad2orBfoWFCpHrzxViYh/judo+FPxw7uus4=
-
-Name: assets/img/s_six.png
-SHA-256-Digest: FoiAZJoHsTINW1j8WwE0QCA9sHR9BhsBb6c0sSz1abE=
-
-Name: assets/img/s_ten.png
-SHA-256-Digest: uGLFShCn2JXqck63yK4JWF36iflYUZmmbj0L8VChK8k=
-
-Name: assets/img/s_three.png
-SHA-256-Digest: iQlJu5fx2sUF8oXZT+Z5pllJNuR1uEKuYAR1E6zRQBs=
-
-Name: assets/img/s_twelve.png
-SHA-256-Digest: JRcoc2wotCiZyNBne3gQG6JprcJhXKYEU9Wid2qLtSQ=
-
-Name: assets/img/s_two.png
-SHA-256-Digest: VmqLZ9pvucV2o46SmtpCrx2T+DJLcED17BNI/e/PnbU=
-
 Name: classes.dex
-SHA-256-Digest: 6nTHLLiwh8AuBI50VHgSx3eUXFAsbeyC63CBZb/lOlc=
+SHA-256-Digest: vAjVXHNsYFTxuGw7QSkpmFlxKUErzjbz+jjTZZt14yc=
 
 Name: classes2.dex
 SHA-256-Digest: X1A/+mXBvsRZAPN7aWRhd7v26DAIQUdYPX5/uJjnSRo=

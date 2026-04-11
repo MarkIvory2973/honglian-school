@@ -5350,7 +5350,7 @@
 
     if-eqz p2, :cond_6
 
-    const-string p1, "file:///android_asset/img/s_two.png"
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_two.png"
 
     .line 948
     iput v2, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->index:I
@@ -5373,7 +5373,7 @@
 
     if-eqz p2, :cond_7
 
-    const-string p1, "file:///android_asset/img/s_three.png"
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_three.png"
 
     const/4 p2, 0x2
 
@@ -5398,7 +5398,7 @@
 
     if-eqz p2, :cond_8
 
-    const-string p1, "file:///android_asset/img/s_four.png"
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_four.png"
 
     .line 954
     iput v0, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->index:I
@@ -5421,7 +5421,7 @@
 
     if-eqz p2, :cond_9
 
-    const-string p1, "file:///android_asset/img/s_five.png"
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_five.png"
 
     const/4 p2, 0x4
 
@@ -5446,7 +5446,7 @@
 
     if-eqz p2, :cond_a
 
-    const-string p1, "file:///android_asset/img/s_six.png"
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_six.png"
 
     const/4 p2, 0x5
 
@@ -5471,7 +5471,7 @@
 
     if-eqz p2, :cond_b
 
-    const-string p1, "file:///android_asset/img/s_seven.png"
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_seven.png"
 
     const/4 p2, 0x6
 
@@ -5496,7 +5496,7 @@
 
     if-eqz p2, :cond_c
 
-    const-string p1, "file:///android_asset/img/s_eight.png"
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eight.png"
 
     const/4 p2, 0x7
 
@@ -5521,7 +5521,7 @@
 
     if-eqz p2, :cond_d
 
-    const-string p1, "file:///android_asset/img/s_nine.png"
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_nine.png"
 
     .line 969
     iput v4, p0, Lcom/hlkj/chinatelecom5/activity/StudentInfoActivity;->index:I
@@ -5544,7 +5544,7 @@
 
     if-eqz p2, :cond_e
 
-    const-string p1, "file:///android_asset/img/s_ten.png"
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_ten.png"
 
     const/16 p2, 0x9
 
@@ -5671,7 +5671,7 @@
 
     :cond_12
     :goto_2
-    const-string p1, "file:///android_asset/img/s_twelve.png"
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_twelve.png"
 
     const/16 p2, 0xb
 
@@ -5682,7 +5682,7 @@
 
     :cond_13
     :goto_3
-    const-string p1, "file:///android_asset/img/s_eleven.png"
+    const-string p1, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eleven.png"
 
     const/16 p2, 0xa
 

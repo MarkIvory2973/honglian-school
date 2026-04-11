@@ -1734,7 +1734,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, " (v2.1 \u6309\u94ae\u6027\u80fd\u4f18\u5316) "
+    const-string v2, " (v3.0 \u81ea\u5b9a\u4e49\u5934\u50cf) "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

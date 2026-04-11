@@ -120,41 +120,8 @@ SHA-256-Digest: zRKn69VvlC9ArFipUTMPf3gY4zsYw0rROahRyk/wqOQ=
 Name: assets/img/ic_err_photo1.png
 SHA-256-Digest: UeKnndQ1u6E5W6rkdqyoAkLgIyc7dfODiIaIW+8xNcM=
 
-Name: assets/img/s_eight.png
-SHA-256-Digest: gBksGUSBYN+c0/kN9AaOedsca7I43IDhHFh1oaMqeqU=
-
-Name: assets/img/s_eleven.png
-SHA-256-Digest: wKWuVl4W4Zf1DF7cSgA54OgI0i+8rOaG8BtSbr/YMVo=
-
-Name: assets/img/s_five.png
-SHA-256-Digest: h5oABG5zNsRjmrWhD1AykIHALiNprVOMAkCKZsHqMFY=
-
-Name: assets/img/s_four.png
-SHA-256-Digest: 3J+3ASPNM73osnBO3fltH/Z87649kH3Id6RYV8gd2VE=
-
-Name: assets/img/s_nine.png
-SHA-256-Digest: URZpUpIL/sPDUrtgCAFHPvqTOnuxPCFKthmGPlYEO9Y=
-
-Name: assets/img/s_seven.png
-SHA-256-Digest: VAkzyLebQqFwx6kWc4jUV7NRBI2nIk3/YqyefoxQv8c=
-
-Name: assets/img/s_six.png
-SHA-256-Digest: v5mqbSoE+V8+LW2pj8Ik9sPD1ZOIlBh5UoE8A4WxuEc=
-
-Name: assets/img/s_ten.png
-SHA-256-Digest: oQ2i/1CoJRJ6ffYF7UsuWQLCJzVyYaGAAP8QVGAn8qU=
-
-Name: assets/img/s_three.png
-SHA-256-Digest: OqNKG7Uy5ud/ds7lTV39cclA5/yRchpAJV7Tzz54CsA=
-
-Name: assets/img/s_twelve.png
-SHA-256-Digest: /TRPsmvmhHvkZfRtFHLIz+paDu+bbCIRDSh0N9p4pL4=
-
-Name: assets/img/s_two.png
-SHA-256-Digest: I+FfznSqwGzK13YirAY34mxkHk0s3LVO68vnQFzvU6E=
-
 Name: classes.dex
-SHA-256-Digest: eRWrlbNbJpw0hCUcoGxuhUMqVqJU6GYZt9Gnnh76SeA=
+SHA-256-Digest: EqzhxxjPAwJse+Wec+Xdmg39c1/63T4g+3tauQGvw58=
 
 Name: classes2.dex
 SHA-256-Digest: GwBmAF8IBsRseFbbCIU9zcEV9qP30jc+WE7ln2Tn3bg=

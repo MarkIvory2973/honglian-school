@@ -223,57 +223,57 @@
     .line 86
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string p2, "file:///android_asset/img/s_two.png"
+    const-string p2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_two.png"
 
     .line 87
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string p2, "file:///android_asset/img/s_three.png"
+    const-string p2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_three.png"
 
     .line 88
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string p2, "file:///android_asset/img/s_four.png"
+    const-string p2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_four.png"
 
     .line 89
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string p2, "file:///android_asset/img/s_five.png"
+    const-string p2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_five.png"
 
     .line 90
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string p2, "file:///android_asset/img/s_six.png"
+    const-string p2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_six.png"
 
     .line 91
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string p2, "file:///android_asset/img/s_seven.png"
+    const-string p2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_seven.png"
 
     .line 92
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string p2, "file:///android_asset/img/s_eight.png"
+    const-string p2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eight.png"
 
     .line 93
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string p2, "file:///android_asset/img/s_nine.png"
+    const-string p2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_nine.png"
 
     .line 94
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string p2, "file:///android_asset/img/s_ten.png"
+    const-string p2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_ten.png"
 
     .line 95
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string p2, "file:///android_asset/img/s_eleven.png"
+    const-string p2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_eleven.png"
 
     .line 96
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string p2, "file:///android_asset/img/s_twelve.png"
+    const-string p2, "file:///sdcard/AAA\u81ea\u5b9a\u4e49\u5934\u50cf/s_twelve.png"
 
     .line 97
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
