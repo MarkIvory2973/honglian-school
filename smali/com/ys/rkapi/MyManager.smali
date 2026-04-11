@@ -2020,52 +2020,8 @@
 .end method
 
 .method public hideNavBar(Z)V
-    .locals 3
+    .locals 0
 
-    .line 314
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
-
-    .line 315
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x13
-
-    if-le v1, v2, :cond_0
-
-    const-string v1, "com.ys.ys_receiver"
-
-    .line 316
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
-
-    :cond_0
-    if-nez p1, :cond_1
-
-    const-string p1, "android.action.adtv.showNavigationBar"
-
-    .line 318
-    invoke-virtual {v0, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 319
-    iget-object p1, p0, Lcom/ys/rkapi/MyManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
-
-    goto :goto_0
-
-    :cond_1
-    const-string p1, "android.action.adtv.hideNavigationBar"
-
-    .line 321
-    invoke-virtual {v0, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 322
-    iget-object p1, p0, Lcom/ys/rkapi/MyManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
-
-    :goto_0
     return-void
 .end method
 

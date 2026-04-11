@@ -1,10 +1,10 @@
 Signature-Version: 1.0
-Created-By: 1.0 (Android)
-SHA-256-Digest-Manifest: FlwJQpz7zrABsqk6JGr9rWoMrk/Did6FHUm+zVJdzL0=
-X-Android-APK-Signed: 2
+Created-By: Android Gradle 8.0.2
+SHA-256-Digest-Manifest: /QxjMHF6SrvCpHNCl+GUlMY3mwo9vPO0X55e1eELrDI=
+X-Android-APK-Signed: 2,3
 
 Name: AndroidManifest.xml
-SHA-256-Digest: AQD4sO88PHjMZBRg9K2LvECovZnZFtnqeXJbFnLBoIo=
+SHA-256-Digest: uFpIXmW3pcRpTN099S31d4Gho4BkIZx2BWVEbteAR9w=
 
 Name: META-INF/androidx.activity_activity.version
 SHA-256-Digest: Yu1eiqd7wti3kPabgLC0lsO+1ns/UAhiPGUExHOxH/w=
@@ -155,7 +155,7 @@ Name: assets/img/s_two.png
 SHA-256-Digest: VmqLZ9pvucV2o46SmtpCrx2T+DJLcED17BNI/e/PnbU=
 
 Name: classes.dex
-SHA-256-Digest: zPLWuOFRfIk12+QDpUfUOgVyw+qBUVzs2YaJn9Gw7Co=
+SHA-256-Digest: azgnPvC3CDFSQ2V45H2t+Xl41vgVFYXqVYZaliBJtys=
 
 Name: classes2.dex
 SHA-256-Digest: X1A/+mXBvsRZAPN7aWRhd7v26DAIQUdYPX5/uJjnSRo=

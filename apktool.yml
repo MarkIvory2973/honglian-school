@@ -1,5 +1,5 @@
 version: 3.0.1
-apkFileName: HongLian-School_v1.0.apk
+apkFileName: HongLian-School.apk
 usesFramework:
   ids:
   - 1

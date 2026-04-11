@@ -344,24 +344,8 @@
 .end method
 
 .method public hideStatusBar()V
-    .locals 2
+    .locals 0
 
-    .line 434
-    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
-
-    const-string v1, "RunStatus::hideStatusBar"
-
-    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-
-    .line 435
-    iget-object v0, p0, Lcom/hlkj/chinatelecom5/base/BaseActivity;->mSystemHelper:Lcom/seewo/udsservice/client/plugins/system/UDSSystemHelper;
-
-    if-eqz v0, :cond_0
-
-    .line 436
-    invoke-virtual {v0}, Lcom/seewo/udsservice/client/plugins/system/UDSSystemHelper;->hideStatusBar()V
-
-    :cond_0
     return-void
 .end method
 
@@ -427,9 +411,6 @@
     .line 81
     iput-object p0, p0, Lcom/hlkj/chinatelecom5/base/BaseActivity;->context:Landroid/content/Context;
 
-    .line 82
-    invoke-static {p0}, Lcom/hlkj/chinatelecom5/utils/CommonUtil;->hideBottomUIMenu(Landroid/app/Activity;)V
-
     .line 83
     invoke-static {}, Lcom/hlkj/chinatelecom5/utils/SystemUtils;->isSW()Z
 
@@ -467,9 +448,6 @@
 
     iput-object p1, p0, Lcom/hlkj/chinatelecom5/base/BaseActivity;->mDeviceHelper:Lcom/seewo/udsservice/client/plugins/device/UDSDeviceHelper;
 
-    .line 86
-    invoke-virtual {p0}, Lcom/hlkj/chinatelecom5/base/BaseActivity;->hideStatusBar()V
-
     goto :goto_0
 
     .line 87
@@ -487,11 +465,6 @@
 
     move-result-object p1
 
-    invoke-virtual {p1, v0}, Lcom/ys/rkapi/MyManager;->hideNavBar(Z)V
-
-    .line 89
-    invoke-static {p0, v0}, Lcom/hlkj/chinatelecom5/utils/DevicesUtil;->NavigationBarStatusBar(Landroid/app/Activity;Z)V
-
     goto :goto_0
 
     .line 92
@@ -505,10 +478,6 @@
 
     .line 93
     iget-object p1, p0, Lcom/hlkj/chinatelecom5/base/BaseActivity;->smdtManager:Landroid/app/smdt/SmdtManager;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, p0, v1}, Landroid/app/smdt/SmdtManager;->smdtSetStatusBar(Landroid/content/Context;Z)I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -521,11 +490,6 @@
     invoke-static {p0}, Lcom/ys/rkapi/MyManager;->getInstance(Landroid/content/Context;)Lcom/ys/rkapi/MyManager;
 
     move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/ys/rkapi/MyManager;->hideNavBar(Z)V
-
-    .line 96
-    invoke-static {p0, v0}, Lcom/hlkj/chinatelecom5/utils/DevicesUtil;->NavigationBarStatusBar(Landroid/app/Activity;Z)V
 
     .line 97
     invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
@@ -870,128 +834,8 @@
 .end method
 
 .method public onWindowFocusChanged(Z)V
-    .locals 3
+    .locals 0
 
-    .line 115
-    invoke-super {p0, p1}, Landroidx/appcompat/app/AppCompatActivity;->onWindowFocusChanged(Z)V
-
-    const-string v0, "BaseActivity"
-
-    .line 117
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onWindowFocusChanged: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    if-eqz p1, :cond_0
-
-    .line 119
-    invoke-virtual {p0}, Lcom/hlkj/chinatelecom5/base/BaseActivity;->restartCountDown()V
-
-    .line 121
-    :cond_0
-    invoke-static {p0}, Lcom/hlkj/chinatelecom5/utils/CommonUtil;->hideBottomUIMenu(Landroid/app/Activity;)V
-
-    .line 122
-    invoke-static {}, Lcom/hlkj/chinatelecom5/utils/SystemUtils;->isSW()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 123
-    invoke-static {}, Lcom/hlkj/chinatelecom5/base/BaseApplication;->getIns()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/hlkj/chinatelecom5/manager/SwUDSSdkManager;->getInstance(Landroid/content/Context;)Lcom/hlkj/chinatelecom5/manager/SwUDSSdkManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/hlkj/chinatelecom5/manager/SwUDSSdkManager;->systemHelper()Lcom/seewo/udsservice/client/plugins/system/UDSSystemHelper;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/hlkj/chinatelecom5/base/BaseActivity;->mSystemHelper:Lcom/seewo/udsservice/client/plugins/system/UDSSystemHelper;
-
-    if-eqz p1, :cond_3
-
-    .line 125
-    invoke-virtual {p0}, Lcom/hlkj/chinatelecom5/base/BaseActivity;->hideStatusBar()V
-
-    goto :goto_0
-
-    .line 126
-    :cond_1
-    invoke-static {}, Lcom/hlkj/chinatelecom5/utils/SystemUtils;->is3288()Z
-
-    move-result p1
-
-    const/4 v0, 0x1
-
-    if-eqz p1, :cond_2
-
-    .line 127
-    invoke-static {p0}, Lcom/ys/rkapi/MyManager;->getInstance(Landroid/content/Context;)Lcom/ys/rkapi/MyManager;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v0}, Lcom/ys/rkapi/MyManager;->hideNavBar(Z)V
-
-    .line 128
-    invoke-static {p0, v0}, Lcom/hlkj/chinatelecom5/utils/DevicesUtil;->NavigationBarStatusBar(Landroid/app/Activity;Z)V
-
-    goto :goto_0
-
-    .line 131
-    :cond_2
-    :try_start_0
-    invoke-static {p0}, Landroid/app/smdt/SmdtManager;->create(Landroid/content/Context;)Landroid/app/smdt/SmdtManager;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/hlkj/chinatelecom5/base/BaseActivity;->smdtManager:Landroid/app/smdt/SmdtManager;
-
-    .line 132
-    iget-object p1, p0, Lcom/hlkj/chinatelecom5/base/BaseActivity;->smdtManager:Landroid/app/smdt/SmdtManager;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, p0, v1}, Landroid/app/smdt/SmdtManager;->smdtSetStatusBar(Landroid/content/Context;Z)I
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    .line 134
-    invoke-static {p0}, Lcom/ys/rkapi/MyManager;->getInstance(Landroid/content/Context;)Lcom/ys/rkapi/MyManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/ys/rkapi/MyManager;->hideNavBar(Z)V
-
-    .line 135
-    invoke-static {p0, v0}, Lcom/hlkj/chinatelecom5/utils/DevicesUtil;->NavigationBarStatusBar(Landroid/app/Activity;Z)V
-
-    .line 136
-    invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
-
-    :cond_3
-    :goto_0
     return-void
 .end method
 

@@ -32,32 +32,8 @@
 .end method
 
 .method public static NavigationBarStatusBar(Landroid/app/Activity;Z)V
-    .locals 1
+    .locals 0
 
-    if-eqz p1, :cond_0
-
-    .line 381
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v0, 0xe
-
-    if-lt p1, v0, :cond_0
-
-    .line 382
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object p0
-
-    const/16 p1, 0x1706
-
-    .line 383
-    invoke-virtual {p0, p1}, Landroid/view/View;->setSystemUiVisibility(I)V
-
-    :cond_0
     return-void
 .end method
 

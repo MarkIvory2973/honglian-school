@@ -280,59 +280,8 @@
 .end method
 
 .method public static hideBottomUIMenu(Landroid/app/Activity;)V
-    .locals 3
+    .locals 0
 
-    .line 64
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x13
-
-    const/16 v2, 0xb
-
-    if-le v0, v2, :cond_0
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-ge v0, v1, :cond_0
-
-    .line 65
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object p0
-
-    const/16 v0, 0x8
-
-    .line 66
-    invoke-virtual {p0, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
-
-    goto :goto_0
-
-    .line 67
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v1, :cond_1
-
-    .line 69
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object p0
-
-    const/16 v0, 0x1006
-
-    .line 72
-    invoke-virtual {p0, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 

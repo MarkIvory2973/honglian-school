@@ -147,40 +147,8 @@
 .end method
 
 .method public hideStatusBar()V
-    .locals 2
+    .locals 0
 
-    .line 1
-    iget-object v0, p0, Lcom/seewo/udsservice/client/plugins/system/UDSSystemHelper;->b:Lcom/seewo/udsservice/ISystem;
-
-    if-nez v0, :cond_0
-
-    .line 2
-    invoke-virtual {p0}, Lcom/seewo/udsservice/client/plugins/system/UDSSystemHelper;->init()V
-
-    .line 3
-    :cond_0
-    iget-object v0, p0, Lcom/seewo/udsservice/client/plugins/system/UDSSystemHelper;->b:Lcom/seewo/udsservice/ISystem;
-
-    if-eqz v0, :cond_1
-
-    .line 4
-    :try_start_0
-    invoke-interface {v0}, Lcom/seewo/udsservice/ISystem;->hideStatusBar()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    const-string v1, "UDSSystemHelper"
-
-    .line 5
-    invoke-static {v1, v0}, Lcom/seewo/udsservice/basic/utils/XLog;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 

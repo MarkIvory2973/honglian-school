@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
-Built-By: Generated-by-ADT
-Created-By: Android Gradle 3.3.2
+Built-By: Signflinger
+Created-By: Android Gradle 8.0.2
 
 Name: AndroidManifest.xml
-SHA-256-Digest: 2rFXoXNAwf5XSdU9TcxxCGlFVNvkj/dzGgUStfn7Ad4=
+SHA-256-Digest: qSB4OWdip8p/jScbNX/2MP8HM4MUef9xgzWKyn6V0p0=
 
 Name: META-INF/androidx.activity_activity.version
 SHA-256-Digest: WYVJhIUxBN9cNT4vaBoV/HkkdC+aLkaMKa8kjc5FzgM=
@@ -154,7 +154,7 @@ Name: assets/img/s_two.png
 SHA-256-Digest: I+FfznSqwGzK13YirAY34mxkHk0s3LVO68vnQFzvU6E=
 
 Name: classes.dex
-SHA-256-Digest: 3n44+GPxYTlEffBkC581zCulZcEnr2Mn3WWm1JcythQ=
+SHA-256-Digest: I/TyQiqpSsonoQb+V/Yi+5F68EzcZtIJFqzSZdID7cM=
 
 Name: classes2.dex
 SHA-256-Digest: GwBmAF8IBsRseFbbCIU9zcEV9qP30jc+WE7ln2Tn3bg=
