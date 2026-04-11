@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@color/colorWhite" android:paddingBottom="18.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18.0dp" android:layout_marginBottom="18.0dp" android:layout_marginStart="18.0dp" android:layout_marginEnd="18.0dp">
+        <TextView android:textSize="32.0sp" android:textColor="@color/colorWhite" android:gravity="center" android:background="@mipmap/header_bg" android:layout_width="match_parent" android:layout_height="100.0dp" android:text="我要反馈" />
+        <TextView android:textSize="25.0sp" android:textStyle="bold" android:textColor="#ff101d34" android:id="@id/tv_label_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dp" android:text="选择类型" android:layout_marginStart="28.0dp" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_label" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="28.0dp" />
+        <TextView android:textSize="25.0sp" android:textStyle="bold" android:textColor="#ff101d34" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="输入内容" android:layout_marginStart="28.0dp" />
+        <EditText android:textSize="22.0sp" android:textColor="#ff101d34" android:id="@id/edt_content" android:background="@drawable/shape_stroke_corn_white_rect" android:paddingLeft="14.0dp" android:paddingTop="8.0dp" android:paddingRight="14.0dp" android:paddingBottom="8.0dp" android:layout_width="match_parent" android:layout_height="100.0dp" android:layout_marginTop="16.0dp" android:hint="请输入反馈内容" android:layout_marginStart="28.0dp" android:layout_marginEnd="28.0dp" />
+        <TextView android:textSize="24.0sp" android:textColor="@color/colorWhite" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_online" android:background="@drawable/shape_circle_corn40_blue_rect" android:layout_width="338.0dp" android:layout_height="68.0dp" android:layout_marginTop="40.0dp" android:text="提交" />
+    </LinearLayout>
+    <ImageView android:layout_gravity="right|top" android:id="@id/ib_close" android:background="@null" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/ic_blue_circle_close" android:layout_alignParentRight="true" />
+</RelativeLayout>

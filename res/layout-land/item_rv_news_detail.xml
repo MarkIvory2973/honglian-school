@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="40.0dp" android:paddingTop="20.0dp" android:paddingRight="40.0dp" android:layout_width="match_parent" android:layout_height="186.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:textColor="@color/colorBlackD34" android:id="@id/tv_news_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="111111111111" android:maxLines="1" android:lineSpacingExtra="8.0dp" />
+    <TextView android:textSize="16.0sp" android:textColor="@color/colorBlack96D" android:ellipsize="end" android:id="@id/tv_news" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dp" android:layout_marginBottom="20.0dp" android:text="111111111111" android:maxLines="3" android:layout_above="@id/v_line" android:layout_below="@id/tv_news_title" android:lineSpacingExtra="8.0dp" />
+    <View android:id="@id/v_line" android:background="@color/colorddGray" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_alignParentBottom="true" />
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/shape_gradient_tran" android:paddingLeft="13.0dp" android:paddingRight="13.0dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="10.0dp" android:layout_marginRight="10.0dp" android:layout_centerInParent="true">
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <TextView android:textSize="24.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_exam_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20231227" />
+            <TextView android:textSize="24.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="貂蝉" android:layout_below="@id/tv_exam_num" android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

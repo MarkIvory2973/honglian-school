@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@mipmap/bg" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/ll_title" android:paddingLeft="40.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dp">
+        <RelativeLayout android:background="@drawable/shape_circle_corn40_white_rect" android:paddingLeft="30.0dp" android:paddingTop="8.0dp" android:paddingRight="23.0dp" android:paddingBottom="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+            <ImageView android:id="@id/iv_countdown" android:layout_width="27.0dp" android:layout_height="27.0dp" android:src="@mipmap/icon_daojishi" android:layout_centerVertical="true" />
+            <TextView android:textSize="26.0sp" android:textStyle="bold" android:textColor="@color/purple_200" android:id="@id/tv_countdown" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dp" android:text="120:00:00" android:layout_toRightOf="@id/iv_countdown" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <TextView android:textSize="36.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2021上学期期末考试" android:layout_centerInParent="true" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dp" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                <TextView android:textSize="32.0sp" android:textColor="@color/white" android:layout_gravity="right" android:id="@id/tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="13:50" />
+                <TextView android:textSize="24.0sp" android:textColor="@color/white" android:id="@id/tv_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dp" android:text="4月1日星期六" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_weather" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dp" android:layout_toRightOf="@id/ll_time">
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/iv_weather" android:layout_width="47.0dp" android:layout_height="47.0dp" android:src="@mipmap/yun" android:scaleType="centerInside" />
+                    <TextView android:textSize="26.0sp" android:textColor="@color/white" android:id="@id/tv_weather" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dp" android:text="晴" android:layout_toRightOf="@id/iv_weather" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <TextView android:textSize="24.0sp" android:textColor="@color/white" android:id="@id/tv_temper" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dp" android:text="11~17" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:background="@color/transparency_20" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="45.0dp" android:layout_marginTop="15.0dp" android:layout_marginRight="45.0dp" android:layout_marginBottom="26.0dp" android:layout_below="@id/ll_title">
+        <RelativeLayout android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="21.0dp" android:layout_marginBottom="21.0dp">
+            <TextView android:textSize="30.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/tv_exam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="第002 考场  共30人" />
+            <TextView android:textSize="30.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_exam_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="71.0dp" android:text="4月24日  09:00-10:30" android:layout_toRightOf="@id/tv_exam" />
+            <TextView android:textSize="27.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_subject" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dp" android:text="历史" android:layout_toRightOf="@id/tv_exam_time" />
+            <TextView android:textSize="30.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/teacher" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="66.0dp" android:text="李老师/邓老师" android:layout_toRightOf="@id/tv_subject" />
+        </RelativeLayout>
+        <com.hlkj.chinatelecom5.widget.ClassRoomPlanView android:id="@id/cv_seat" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_marginLeft="60.0dp" android:layout_marginRight="60.0dp" android:layout_marginBottom="25.0dp" android:layout_weight="1.0" />
+        <TextView android:textSize="26.0sp" android:textStyle="bold" android:textColor="@color/purple_200" android:gravity="center" android:layout_gravity="center_horizontal" android:background="@drawable/shape_circle_corn40_white_rect" android:paddingLeft="100.0dp" android:paddingRight="80.0dp" android:layout_width="320.0dp" android:layout_height="76.0dp" android:layout_marginBottom="13.0dp" android:text="讲 台" android:drawableLeft="@mipmap/icon_jiangtai" />
+    </LinearLayout>
+    <ImageView android:id="@id/iv_into" android:visibility="gone" android:layout_width="60.0dp" android:layout_height="60.0dp" android:layout_marginLeft="45.0dp" android:layout_marginBottom="35.0dp" android:src="@mipmap/ic_right_up" android:layout_alignParentBottom="true" />
+    <TextView android:textSize="30.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dp" android:layout_marginBottom="35.0dp" android:text="入口" android:layout_toRightOf="@id/iv_into" android:layout_alignParentBottom="true" />
+</RelativeLayout>

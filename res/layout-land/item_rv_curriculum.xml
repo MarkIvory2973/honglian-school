@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="65.0dp" android:weightSum="8.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:id="@id/tv_type" android:background="@color/colorBlue0C9" android:text="第一周课表" style="@style/class_tv" />
+    <TextView android:textSize="18.0sp" android:id="@id/tv_mon" android:text="周一MON" style="@style/schedule_tv_w" />
+    <TextView android:textSize="18.0sp" android:id="@id/tv_tur" android:text="周二TUR" style="@style/schedule_tv_w_s" />
+    <TextView android:textSize="18.0sp" android:id="@id/tv_wed" android:text="周三WED" style="@style/schedule_tv_w" />
+    <TextView android:textSize="18.0sp" android:id="@id/tv_thu" android:text="周四THU" style="@style/schedule_tv_w_s" />
+    <TextView android:textSize="18.0sp" android:id="@id/tv_fir" android:text="周五FIR" style="@style/schedule_tv_w" />
+    <TextView android:textSize="18.0sp" android:id="@id/tv_sat" android:text="周六SAT" style="@style/schedule_tv_w_s" />
+    <TextView android:textSize="18.0sp" android:id="@id/tv_sun" android:text="周日SUN" style="@style/schedule_tv_w" />
+</LinearLayout>

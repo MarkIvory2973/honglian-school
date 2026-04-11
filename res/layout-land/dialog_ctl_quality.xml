@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/colorWhite" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="32.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_title" android:background="@mipmap/header_bg" android:layout_width="match_parent" android:layout_height="100.0dp" android:text="素质评分" />
+    <LinearLayout android:paddingLeft="40.0dp" android:paddingRight="40.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="40.0dp">
+        <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/colorD34Gray" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="已选学生" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/colorBlueAF5" android:id="@id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dp" />
+    </LinearLayout>
+    <RadioGroup android:orientation="horizontal" android:id="@id/rg_type" android:paddingLeft="40.0dp" android:paddingRight="40.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dp">
+        <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/colorD34Gray" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="选择评分" />
+        <RadioButton android:textSize="18.0sp" android:textColor="@drawable/selector_rb_tv_color" android:id="@id/rb_add" android:background="@drawable/selector_rb_bg" android:paddingLeft="27.0dp" android:paddingTop="10.0dp" android:paddingRight="27.0dp" android:paddingBottom="10.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dp" android:checked="true" android:button="@null" android:text="加分" />
+        <RadioButton android:textSize="18.0sp" android:textColor="@drawable/selector_rb_tv_color" android:id="@id/rb_minus" android:background="@drawable/selector_rb_bg" android:paddingLeft="27.0dp" android:paddingTop="10.0dp" android:paddingRight="27.0dp" android:paddingBottom="10.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="17.0dp" android:button="@null" android:text="减分" />
+    </RadioGroup>
+    <LinearLayout android:orientation="horizontal" android:paddingLeft="40.0dp" android:paddingRight="40.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dp">
+        <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/colorD34Gray" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="评分项目" />
+        <RelativeLayout android:background="@drawable/shape_circle_corn40_white_rect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dp">
+            <Spinner android:id="@id/sp_event" android:layout_width="match_parent" android:layout_height="60.0dp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:paddingLeft="40.0dp" android:paddingRight="40.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dp">
+        <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/colorD34Gray" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="评分维度" />
+        <RelativeLayout android:background="@drawable/shape_circle_corn40_white_rect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dp">
+            <Spinner android:id="@id/sp_dimension" android:layout_width="match_parent" android:layout_height="60.0dp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:paddingLeft="40.0dp" android:paddingRight="40.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dp">
+        <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/colorD34Gray" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="评分原因" />
+        <RelativeLayout android:background="@drawable/shape_circle_corn40_white_rect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dp">
+            <Spinner android:id="@id/sp_reason" android:layout_width="match_parent" android:layout_height="60.0dp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RadioGroup android:orientation="horizontal" android:id="@id/rg_score" android:paddingLeft="40.0dp" android:paddingRight="40.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dp">
+        <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/colorD34Gray" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="选择评分" />
+        <RadioButton android:textSize="18.0sp" android:textColor="@drawable/selector_rb_tv_color" android:id="@id/rb0" android:background="@drawable/selector_rb_bg" android:paddingLeft="27.0dp" android:paddingTop="10.0dp" android:paddingRight="27.0dp" android:paddingBottom="10.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dp" android:checked="true" android:button="@null" android:text="0.5分" />
+        <RadioButton android:textSize="18.0sp" android:textColor="@drawable/selector_rb_tv_color" android:id="@id/rb1" android:background="@drawable/selector_rb_bg" android:paddingLeft="27.0dp" android:paddingTop="10.0dp" android:paddingRight="27.0dp" android:paddingBottom="10.0dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="17.0dp" android:button="@null" android:text="1分" />
+        <RadioButton android:textSize="18.0sp" android:textColor="@drawable/selector_rb_tv_color" android:id="@id/rb2" android:background="@drawable/selector_rb_bg" android:paddingLeft="27.0dp" android:paddingTop="10.0dp" android:paddingRight="27.0dp" android:paddingBottom="10.0dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="17.0dp" android:button="@null" android:text="1.5分" />
+        <RadioButton android:textSize="18.0sp" android:textColor="@drawable/selector_rb_tv_color" android:id="@id/rb3" android:background="@drawable/selector_rb_bg" android:paddingLeft="27.0dp" android:paddingTop="10.0dp" android:paddingRight="27.0dp" android:paddingBottom="10.0dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="17.0dp" android:button="@null" android:text="2分" />
+    </RadioGroup>
+    <TextView android:textSize="24.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/tv_ctrl" android:background="@drawable/shape_circle_corn40_blue_rect" android:layout_width="220.0dp" android:layout_height="60.0dp" android:layout_marginTop="48.0dp" android:text="提交" />
+</LinearLayout>

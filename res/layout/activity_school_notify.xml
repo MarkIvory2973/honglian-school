@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button android:id="@id/btn_home" android:layout_width="55.0dp" android:layout_height="55.0dp" android:layout_below="@id/rl_title" android:layout_alignParentRight="true" />
+    <Button android:id="@id/btn_back" android:layout_width="55.0dp" android:layout_height="55.0dp" android:layout_marginTop="8.0dp" android:layout_below="@id/btn_home" android:layout_alignParentRight="true" />
+    <RelativeLayout android:background="@color/colorFCGray" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="8.0dp" android:layout_below="@id/btn_back" />
+    <include android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="55.0dp" android:layout_marginTop="40.0dp" android:layout_marginRight="55.0dp" layout="@layout/layout_titile_common" />
+</RelativeLayout>

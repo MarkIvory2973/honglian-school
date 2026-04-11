@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="20.0dp" android:paddingTop="10.0dp" android:paddingRight="30.0dp" android:paddingBottom="10.0dp" android:layout_width="160.0dp" android:layout_height="118.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/iv_bg" android:background="@drawable/shape_circle_tran" android:layout_width="88.0dp" android:layout_height="88.0dp" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/iv_photo" android:layout_width="80.0dp" android:layout_height="80.0dp" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/iv_pen" android:layout_width="60.0dp" android:layout_height="60.0dp" android:src="@mipmap/icon_pen" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+</RelativeLayout>

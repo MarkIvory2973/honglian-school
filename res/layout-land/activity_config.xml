@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/colorWhite" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="70.0dp" android:layout_marginLeft="300.0dp" android:layout_marginTop="140.0dp" android:layout_marginRight="300.0dp">
+        <TextView android:textSize="40.0dp" android:id="@id/tv_config_url" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="服务器URL：" android:layout_alignParentBottom="true" />
+        <EditText android:textSize="40.0dp" android:id="@id/et_url" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="10.0dp" android:singleLine="true" android:layout_toRightOf="@id/tv_config_url" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <Button android:textSize="40.0dp" android:id="@id/btn_confirm" android:paddingTop="20.0dp" android:paddingBottom="20.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="300.0dp" android:layout_marginTop="70.0dp" android:layout_marginRight="300.0dp" android:text="提 交" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:paddingTop="20.0dp" android:paddingBottom="20.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="300.0dp" android:layout_marginTop="20.0dp" android:layout_marginRight="300.0dp">
+        <Button android:textSize="40.0dp" android:gravity="center" android:id="@id/btn_system" android:paddingTop="20.0dp" android:paddingBottom="20.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dp" android:layout_marginRight="30.0dp" android:text="系统设置" android:layout_weight="1.0" />
+        <Button android:textSize="40.0dp" android:gravity="center" android:id="@id/btn_system_close" android:paddingTop="20.0dp" android:paddingBottom="20.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dp" android:layout_marginRight="30.0dp" android:text="设备关机" android:layout_weight="1.0" />
+        <Button android:textSize="40.0dp" android:gravity="center" android:id="@id/btn_system_restart" android:paddingTop="20.0dp" android:paddingBottom="20.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dp" android:layout_marginRight="30.0dp" android:text="重启设备" android:layout_weight="1.0" />
+        <Button android:textSize="40.0dp" android:gravity="center" android:id="@id/btn_system_storage" android:paddingTop="20.0dp" android:paddingBottom="20.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dp" android:layout_marginRight="30.0dp" android:text="打开浏览器" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:paddingTop="20.0dp" android:paddingBottom="20.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="300.0dp" android:layout_marginTop="20.0dp" android:layout_marginRight="300.0dp">
+        <TextView android:textSize="20.0dp" android:id="@id/tv_show_datedefine" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="服务器URL：ddddddddddddddddddd" android:layout_alignParentBottom="true" />
+    </LinearLayout>
+</LinearLayout>

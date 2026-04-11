@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@color/colorWhite" android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout android:id="@id/rl_bg" android:background="@mipmap/blue_bg" android:layout_width="match_parent" android:layout_height="416.0dp">
+            <ImageView android:background="@drawable/shape_circle_tran_rect" android:layout_width="360.0dp" android:layout_height="360.0dp" android:layout_centerInParent="true" />
+            <ImageView android:background="@drawable/shape_circle_tran_rect" android:layout_width="310.0dp" android:layout_height="310.0dp" android:layout_centerInParent="true" />
+            <ImageView android:id="@id/iv_icon" android:background="@mipmap/card" android:layout_width="240.0dp" android:layout_height="240.0dp" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <TextView android:textSize="44.0sp" android:textStyle="bold" android:textColor="@color/colorBlackD34" android:gravity="center" android:id="@id/tv_content" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginTop="20.0dp" android:layout_marginBottom="40.0dp" android:text="请刷卡" android:layout_below="@id/rl_bg" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</RelativeLayout>

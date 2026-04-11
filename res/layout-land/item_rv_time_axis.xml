@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/colorWhite" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/tv_time" android:layout_marginRight="61.0dp" android:text="时间" android:layout_toLeftOf="@id/iv_state" style="@style/dialog_tv_no_center" />
+    <ImageView android:id="@id/iv_state" android:layout_width="32.0dp" android:layout_height="32.0dp" android:src="@mipmap/icon_check" android:layout_centerHorizontal="true" />
+    <View android:id="@id/v_line1" android:background="@color/colorebGray" android:layout_width="2.0dp" android:layout_height="20.0dp" android:layout_below="@id/iv_state" android:layout_centerHorizontal="true" />
+    <View android:id="@id/v_line2" android:background="@color/colorebGray" android:layout_width="2.0dp" android:layout_height="20.0dp" android:layout_below="@id/v_line1" android:layout_centerHorizontal="true" />
+    <TextView android:id="@id/tv_state" android:layout_marginLeft="61.0dp" android:text="审批状态" android:layout_toRightOf="@id/iv_state" style="@style/dialog_tv_no_center" />
+</RelativeLayout>
