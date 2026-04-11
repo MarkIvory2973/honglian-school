@@ -121,7 +121,7 @@ Name: assets/img/ic_err_photo1.png
 SHA-256-Digest: UeKnndQ1u6E5W6rkdqyoAkLgIyc7dfODiIaIW+8xNcM=
 
 Name: classes.dex
-SHA-256-Digest: V8M9YEQNY2/8T1GAY8mcojk10mQRn+r/ARZIj0eU/S0=
+SHA-256-Digest: LL9mJSA4PEZbPczZzmtETzDb4nEro1hipJz1mZhHKPw=
 
 Name: classes2.dex
 SHA-256-Digest: GwBmAF8IBsRseFbbCIU9zcEV9qP30jc+WE7ln2Tn3bg=
@@ -2928,7 +2928,7 @@ Name: res/layout-land/dialog_seat_table2.xml
 SHA-256-Digest: p5r0ZUg8lUWvSgXxaBroQVYjF0ohtPN4O43kd7xMa1g=
 
 Name: res/layout-land/dialog_select_head_img.xml
-SHA-256-Digest: wdocO1n2+k4iGqJCaU03ZubJ7jZQGgiijH1eMr8qpoE=
+SHA-256-Digest: rCqMqwacZ6cpJ9egmyNZOaGU8JBTzd8CFAOgSL8SW1g=
 
 Name: res/layout-land/dialog_servel_erro.xml
 SHA-256-Digest: VUicTJQpdpxnBlLkottrkWuJKpcufuXDpN8yIQpjJpQ=

@@ -784,7 +784,7 @@
 .end method
 
 .method public static getIpAddressString()Ljava/lang/String;
-    .locals 4
+    .locals 7
 
     .line 373
     :try_start_0
@@ -806,6 +806,18 @@
 
     check-cast v1, Ljava/net/NetworkInterface;
 
+    invoke-virtual {v1}, Ljava/net/NetworkInterface;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "eth"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
     .line 376
     invoke-virtual {v1}, Ljava/net/NetworkInterface;->getInetAddresses()Ljava/util/Enumeration;
 
@@ -814,30 +826,30 @@
     :cond_1
     invoke-interface {v1}, Ljava/util/Enumeration;->hasMoreElements()Z
 
-    move-result v2
+    move-result v5
 
-    if-eqz v2, :cond_0
+    if-eqz v5, :cond_0
 
     .line 377
     invoke-interface {v1}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v5
 
-    check-cast v2, Ljava/net/InetAddress;
+    check-cast v5, Ljava/net/InetAddress;
 
     .line 378
-    instance-of v3, v2, Ljava/net/Inet4Address;
+    instance-of v6, v5, Ljava/net/Inet4Address;
 
-    if-eqz v3, :cond_1
+    if-eqz v6, :cond_1
 
-    invoke-virtual {v2}, Ljava/net/InetAddress;->isLoopbackAddress()Z
+    invoke-virtual {v5}, Ljava/net/InetAddress;->isLoopbackAddress()Z
 
-    move-result v3
+    move-result v6
 
-    if-nez v3, :cond_1
+    if-nez v6, :cond_1
 
     .line 380
-    invoke-virtual {v2}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
 
     move-result-object v0
     :try_end_0

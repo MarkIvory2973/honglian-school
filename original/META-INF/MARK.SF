@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 Created-By: Android Gradle 8.0.2
-SHA-256-Digest-Manifest: IFkAtjpVip3suQOEy/E7Deuc+dagUwPboSlGBmmRUmo=
+SHA-256-Digest-Manifest: twbC1zu3YcO+VXqdC/gdCmPnqPVMyu7hr6KG/4/kMVI=
 X-Android-APK-Signed: 2,3
 
 Name: AndroidManifest.xml
@@ -122,7 +122,7 @@ Name: assets/img/ic_err_photo1.png
 SHA-256-Digest: 67554sPBIXPXpaReILwALkTiLyBIyTYxTVCtT2l7Bpw=
 
 Name: classes.dex
-SHA-256-Digest: NmIni5VIxuFJHDnIlaXYWv1WfDN/5D9oj97D5UGA1YM=
+SHA-256-Digest: nOBjwdu19KyOSnGQabPwJs2FpBTzAvKh7wayFbf1k34=
 
 Name: classes2.dex
 SHA-256-Digest: X1A/+mXBvsRZAPN7aWRhd7v26DAIQUdYPX5/uJjnSRo=
@@ -2929,7 +2929,7 @@ Name: res/layout-land/dialog_seat_table2.xml
 SHA-256-Digest: Yi6hhafZe71GvQWjtSTXmb8CPJctB6l4F+rHTfjqDDI=
 
 Name: res/layout-land/dialog_select_head_img.xml
-SHA-256-Digest: m83UoFjoh2xzid2RlxPRRp+945hfJcmew0zDCWzJyuA=
+SHA-256-Digest: vZx+lfFLsmLnR+5XIETSXshTSFO93WQsnmWaquyETfA=
 
 Name: res/layout-land/dialog_servel_erro.xml
 SHA-256-Digest: kk01dV0w7UKLxiBW7w8VAGoUqWug2VXQ+ixWo5SL/sw=
