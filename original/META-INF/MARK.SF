@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 Created-By: Android Gradle 8.0.2
-SHA-256-Digest-Manifest: CtBwJXv6Iw7G2oCIOG7il2m9hA+QVUAhYeFuibmZ7iU=
+SHA-256-Digest-Manifest: lBrmrE336h32qFMFhtaJrI7WhTKjisQC7CN593HpJbs=
 X-Android-APK-Signed: 2,3
 
 Name: AndroidManifest.xml
@@ -122,7 +122,7 @@ Name: assets/img/ic_err_photo1.png
 SHA-256-Digest: 67554sPBIXPXpaReILwALkTiLyBIyTYxTVCtT2l7Bpw=
 
 Name: classes.dex
-SHA-256-Digest: vAjVXHNsYFTxuGw7QSkpmFlxKUErzjbz+jjTZZt14yc=
+SHA-256-Digest: 6+9FNMZzsAjunVMp/n/ayOxYIQ8JA/GGCqNjmO8doyk=
 
 Name: classes2.dex
 SHA-256-Digest: X1A/+mXBvsRZAPN7aWRhd7v26DAIQUdYPX5/uJjnSRo=

@@ -22,32 +22,8 @@
 .end method
 
 .method public static NavigationBarStatusBar(Landroid/app/Activity;Z)V
-    .locals 1
+    .locals 0
 
-    if-eqz p1, :cond_0
-
-    .line 102
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v0, 0xe
-
-    if-lt p1, v0, :cond_0
-
-    .line 103
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object p0
-
-    const/16 p1, 0x1706
-
-    .line 104
-    invoke-virtual {p0, p1}, Landroid/view/View;->setSystemUiVisibility(I)V
-
-    :cond_0
     return-void
 .end method
 
@@ -426,63 +402,8 @@
 .end method
 
 .method public static offBottomUIMenu(Landroid/app/Activity;)V
-    .locals 3
+    .locals 0
 
-    .line 81
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x13
-
-    const/16 v2, 0xb
-
-    if-le v0, v2, :cond_0
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-ge v0, v1, :cond_0
-
-    .line 83
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object p0
-
-    const/16 v0, 0x8
-
-    .line 85
-    invoke-virtual {p0, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
-
-    goto :goto_0
-
-    .line 87
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v1, :cond_1
-
-    .line 89
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object p0
-
-    .line 91
-    invoke-virtual {p0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
-
-    move-result-object v0
-
-    const/16 v1, 0x802
-
-    .line 93
-    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->systemUiVisibility:I
-
-    .line 95
-    invoke-virtual {p0, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
