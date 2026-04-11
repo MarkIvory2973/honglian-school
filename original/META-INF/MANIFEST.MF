@@ -154,7 +154,7 @@ Name: assets/img/s_two.png
 SHA-256-Digest: I+FfznSqwGzK13YirAY34mxkHk0s3LVO68vnQFzvU6E=
 
 Name: classes.dex
-SHA-256-Digest: I/TyQiqpSsonoQb+V/Yi+5F68EzcZtIJFqzSZdID7cM=
+SHA-256-Digest: eRWrlbNbJpw0hCUcoGxuhUMqVqJU6GYZt9Gnnh76SeA=
 
 Name: classes2.dex
 SHA-256-Digest: GwBmAF8IBsRseFbbCIU9zcEV9qP30jc+WE7ln2Tn3bg=

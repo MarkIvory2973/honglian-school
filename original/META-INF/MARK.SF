@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 Created-By: Android Gradle 8.0.2
-SHA-256-Digest-Manifest: /QxjMHF6SrvCpHNCl+GUlMY3mwo9vPO0X55e1eELrDI=
+SHA-256-Digest-Manifest: 9yw/dITcE7y1IIMViYMqPC7NnSYi20/wt9ZowGcYWPw=
 X-Android-APK-Signed: 2,3
 
 Name: AndroidManifest.xml
@@ -155,7 +155,7 @@ Name: assets/img/s_two.png
 SHA-256-Digest: VmqLZ9pvucV2o46SmtpCrx2T+DJLcED17BNI/e/PnbU=
 
 Name: classes.dex
-SHA-256-Digest: azgnPvC3CDFSQ2V45H2t+Xl41vgVFYXqVYZaliBJtys=
+SHA-256-Digest: 6nTHLLiwh8AuBI50VHgSx3eUXFAsbeyC63CBZb/lOlc=
 
 Name: classes2.dex
 SHA-256-Digest: X1A/+mXBvsRZAPN7aWRhd7v26DAIQUdYPX5/uJjnSRo=
