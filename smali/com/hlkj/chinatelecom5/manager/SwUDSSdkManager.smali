@@ -14,7 +14,7 @@
 # static fields
 .field private static final TAG:Ljava/lang/String; = "SwUDSSdkManager"
 
-.field private static volatile isConnectCompleted:Z = false
+.field private static volatile isConnectCompleted:Z
 
 .field protected static volatile mBrightnessHelper:Lcom/seewo/udsservice/client/plugins/brightness/UDSBrightnessHelper;
 

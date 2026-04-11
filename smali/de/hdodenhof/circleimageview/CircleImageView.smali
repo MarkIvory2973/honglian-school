@@ -18,7 +18,7 @@
 
 .field private static final DEFAULT_BORDER_COLOR:I = -0x1000000
 
-.field private static final DEFAULT_BORDER_OVERLAY:Z = false
+.field private static final DEFAULT_BORDER_OVERLAY:Z
 
 .field private static final DEFAULT_BORDER_WIDTH:I
 

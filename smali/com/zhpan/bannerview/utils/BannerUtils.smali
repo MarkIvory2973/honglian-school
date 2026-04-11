@@ -6,7 +6,7 @@
 # static fields
 .field private static final TAG:Ljava/lang/String; = "BVP"
 
-.field private static debugMode:Z = false
+.field private static debugMode:Z
 
 
 # direct methods

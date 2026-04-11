@@ -19,7 +19,7 @@
 
 
 # static fields
-.field private static sAttachInfoClass:Ljava/lang/Class; = null
+.field private static sAttachInfoClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -28,11 +28,11 @@
     .end annotation
 .end field
 
-.field private static sAttachInfoField:Ljava/lang/reflect/Field; = null
+.field private static sAttachInfoField:Ljava/lang/reflect/Field;
 
-.field private static sGetViewRootImplMethod:Ljava/lang/reflect/Method; = null
+.field private static sGetViewRootImplMethod:Ljava/lang/reflect/Method;
 
-.field private static sViewRootImplClass:Ljava/lang/Class; = null
+.field private static sViewRootImplClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -41,9 +41,9 @@
     .end annotation
 .end field
 
-.field private static sVisibleInsetsField:Ljava/lang/reflect/Field; = null
+.field private static sVisibleInsetsField:Ljava/lang/reflect/Field;
 
-.field private static sVisibleRectReflectionFetched:Z = false
+.field private static sVisibleRectReflectionFetched:Z
 
 
 # instance fields
