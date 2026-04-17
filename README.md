@@ -2,7 +2,21 @@
 
 The reverse-engineered version of HongLian School.
 
-## Server APIs
+## Activities
+
+### Student Info
+
+```sh
+am start -n cn.com.school.zd5/com.hlkj.chinatelecom5.activity.StudentInfoActivity --es intent_student_id "<campusid>"
+```
+
+#### ⚙️ Parameters
+
+|Parameter|Type|Required|Description|
+|:-:|:-:|:-:|:-|
+|intent_student_id|string|✅|Campus ID, from API `Get Student List`|
+
+## APIs
 
 ### Get Student List
 
@@ -10,24 +24,9 @@ The reverse-engineered version of HongLian School.
 - **Method**: `GET`
 - **Description**: Get student list and basic infomations by `class_id`
 
-#### Query Parameters
+#### ⚙️ Query Parameters
 
 |Parameter|Type|Required|Description|
 |:-:|:-:|:-:|:-|
 |opt_type|string|✅|Operation type, fixed value: `getStudentList`|
-|class_id|int|✅|Class ID|
-
-### Get Student Messages
-
-- **URL**: `/ClassBrand/Message`
-- **Method**: `GET`
-- **Description**: Get student messages by `class_id` and `student_id`
-
-#### Query Parameters
-
-|Parameter|Type|Required|Description|
-|:-:|:-:|:-:|:-|
-|page|int|✅|Current page|
-|page_size|int|✅|Page size|
-|student_id|int|✅|Student ID from field `id` (Get Student List)|
 |class_id|int|✅|Class ID|
