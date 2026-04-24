@@ -28,13 +28,10 @@
     k = 0x2
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/jvm/JvmName;
-    name = "LocksKt"
+    xi = 0x30
 .end annotation
 
 
@@ -52,8 +49,13 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "action"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 35
     invoke-virtual {p0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->readLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;
@@ -85,10 +87,8 @@
     :catchall_0
     move-exception p1
 
-    .line 41
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    .line 40
     invoke-virtual {p0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
@@ -109,8 +109,13 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "action"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 20
     invoke-interface {p0}, Ljava/util/concurrent/locks/Lock;->lock()V
@@ -137,10 +142,8 @@
     :catchall_0
     move-exception p1
 
-    .line 25
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    .line 24
     invoke-interface {p0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
@@ -161,8 +164,13 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "action"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 60
     invoke-virtual {p0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->readLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;
@@ -242,13 +250,12 @@
     :catchall_0
     move-exception p1
 
-    .line 72
+    .line 70
     invoke-static {v3}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
     :goto_3
     if-ge v2, v1, :cond_3
 
-    .line 70
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->lock()V
 
     add-int/lit8 v2, v2, 0x1

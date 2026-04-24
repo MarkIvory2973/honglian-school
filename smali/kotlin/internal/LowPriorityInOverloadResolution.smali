@@ -13,7 +13,8 @@
 
 .annotation runtime Ljava/lang/annotation/Target;
     value = {
-        .enum Ljava/lang/annotation/ElementType;->METHOD:Ljava/lang/annotation/ElementType;
+        .enum Ljava/lang/annotation/ElementType;->METHOD:Ljava/lang/annotation/ElementType;,
+        .enum Ljava/lang/annotation/ElementType;->CONSTRUCTOR:Ljava/lang/annotation/ElementType;
     }
 .end annotation
 
@@ -29,9 +30,10 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 .annotation runtime Lkotlin/annotation/Retention;
@@ -41,6 +43,7 @@
 .annotation runtime Lkotlin/annotation/Target;
     allowedTargets = {
         .enum Lkotlin/annotation/AnnotationTarget;->FUNCTION:Lkotlin/annotation/AnnotationTarget;,
-        .enum Lkotlin/annotation/AnnotationTarget;->PROPERTY:Lkotlin/annotation/AnnotationTarget;
+        .enum Lkotlin/annotation/AnnotationTarget;->PROPERTY:Lkotlin/annotation/AnnotationTarget;,
+        .enum Lkotlin/annotation/AnnotationTarget;->CONSTRUCTOR:Lkotlin/annotation/AnnotationTarget;
     }
 .end annotation

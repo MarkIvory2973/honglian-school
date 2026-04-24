@@ -31,10 +31,6 @@
 # direct methods
 .method public constructor <init>(Landroidx/recyclerview/widget/ListUpdateCallback;)V
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/ListUpdateCallback;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -76,12 +72,22 @@
     return-void
 
     :cond_0
-    packed-switch v0, :pswitch_data_0
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_3
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_1
 
     goto :goto_0
 
     .line 67
-    :pswitch_0
+    :cond_1
     iget-object v0, p0, Landroidx/recyclerview/widget/BatchingListUpdateCallback;->mWrapped:Landroidx/recyclerview/widget/ListUpdateCallback;
 
     iget v1, p0, Landroidx/recyclerview/widget/BatchingListUpdateCallback;->mLastEventPosition:I
@@ -95,7 +101,7 @@
     goto :goto_0
 
     .line 64
-    :pswitch_1
+    :cond_2
     iget-object v0, p0, Landroidx/recyclerview/widget/BatchingListUpdateCallback;->mWrapped:Landroidx/recyclerview/widget/ListUpdateCallback;
 
     iget v1, p0, Landroidx/recyclerview/widget/BatchingListUpdateCallback;->mLastEventPosition:I
@@ -107,7 +113,7 @@
     goto :goto_0
 
     .line 61
-    :pswitch_2
+    :cond_3
     iget-object v0, p0, Landroidx/recyclerview/widget/BatchingListUpdateCallback;->mWrapped:Landroidx/recyclerview/widget/ListUpdateCallback;
 
     iget v1, p0, Landroidx/recyclerview/widget/BatchingListUpdateCallback;->mLastEventPosition:I
@@ -128,15 +134,6 @@
     iput v0, p0, Landroidx/recyclerview/widget/BatchingListUpdateCallback;->mLastEventType:I
 
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public onChanged(IILjava/lang/Object;)V

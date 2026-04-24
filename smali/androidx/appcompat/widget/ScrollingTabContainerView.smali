@@ -7,12 +7,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/appcompat/widget/ScrollingTabContainerView$VisibilityAnimListener;,
@@ -71,10 +65,6 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 83
     invoke-direct {p0, p1}, Landroid/widget/HorizontalScrollView;-><init>(Landroid/content/Context;)V
@@ -118,8 +108,6 @@
     iput-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabLayout:Landroidx/appcompat/widget/LinearLayoutCompat;
 
     .line 92
-    iget-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabLayout:Landroidx/appcompat/widget/LinearLayoutCompat;
-
     new-instance v0, Landroid/view/ViewGroup$LayoutParams;
 
     const/4 v1, -0x2
@@ -143,11 +131,11 @@
 
     move-result-object v1
 
-    sget v2, Landroidx/appcompat/R$attr;->actionDropDownStyle:I
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    sget v3, Landroidx/appcompat/R$attr;->actionDropDownStyle:I
 
-    invoke-direct {v0, v1, v3, v2}, Landroidx/appcompat/widget/AppCompatSpinner;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {v0, v1, v2, v3}, Landroidx/appcompat/widget/AppCompatSpinner;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 217
     new-instance v1, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
@@ -176,11 +164,11 @@
 
     move-result-object v1
 
-    sget v2, Landroidx/appcompat/R$attr;->actionBarTabBarStyle:I
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    sget v3, Landroidx/appcompat/R$attr;->actionBarTabBarStyle:I
 
-    invoke-direct {v0, v1, v3, v2}, Landroidx/appcompat/widget/LinearLayoutCompat;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {v0, v1, v2, v3}, Landroidx/appcompat/widget/LinearLayoutCompat;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     const/4 v1, 0x1
 
@@ -508,9 +496,7 @@
     iput-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSelector:Ljava/lang/Runnable;
 
     .line 273
-    iget-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSelector:Ljava/lang/Runnable;
-
-    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ScrollingTabContainerView;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, v0}, Landroidx/appcompat/widget/ScrollingTabContainerView;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method

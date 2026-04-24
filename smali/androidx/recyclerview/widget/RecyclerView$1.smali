@@ -93,8 +93,6 @@
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->consumePendingUpdateOperations()V
 
-    return-void
-
     :cond_3
     :goto_0
     return-void

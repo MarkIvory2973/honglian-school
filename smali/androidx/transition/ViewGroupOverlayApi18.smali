@@ -6,12 +6,6 @@
 .implements Landroidx/transition/ViewGroupOverlayImpl;
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x12
-.end annotation
-
-
 # instance fields
 .field private final mViewGroupOverlay:Landroid/view/ViewGroupOverlay;
 
@@ -19,10 +13,6 @@
 # direct methods
 .method constructor <init>(Landroid/view/ViewGroup;)V
     .locals 0
-    .param p1    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,10 +31,6 @@
 # virtual methods
 .method public add(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 38
     iget-object v0, p0, Landroidx/transition/ViewGroupOverlayApi18;->mViewGroupOverlay:Landroid/view/ViewGroupOverlay;
@@ -56,10 +42,6 @@
 
 .method public add(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 48
     iget-object v0, p0, Landroidx/transition/ViewGroupOverlayApi18;->mViewGroupOverlay:Landroid/view/ViewGroupOverlay;
@@ -71,10 +53,6 @@
 
 .method public remove(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 43
     iget-object v0, p0, Landroidx/transition/ViewGroupOverlayApi18;->mViewGroupOverlay:Landroid/view/ViewGroupOverlay;
@@ -86,10 +64,6 @@
 
 .method public remove(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 53
     iget-object v0, p0, Landroidx/transition/ViewGroupOverlayApi18;->mViewGroupOverlay:Landroid/view/ViewGroupOverlay;

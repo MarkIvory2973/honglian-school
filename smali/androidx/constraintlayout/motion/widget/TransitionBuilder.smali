@@ -19,6 +19,24 @@
 
 .method public static buildTransition(Landroidx/constraintlayout/motion/widget/MotionScene;IILandroidx/constraintlayout/widget/ConstraintSet;ILandroidx/constraintlayout/widget/ConstraintSet;)Landroidx/constraintlayout/motion/widget/MotionScene$Transition;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "scene",
+            "transitionId",
+            "startConstraintSetId",
+            "startConstraintSet",
+            "endConstraintSetId",
+            "endConstraintSet"
+        }
+    .end annotation
 
     .line 62
     new-instance v0, Landroidx/constraintlayout/motion/widget/MotionScene$Transition;
@@ -33,6 +51,20 @@
 
 .method private static updateConstraintSetInMotionScene(Landroidx/constraintlayout/motion/widget/MotionScene;Landroidx/constraintlayout/motion/widget/MotionScene$Transition;Landroidx/constraintlayout/widget/ConstraintSet;Landroidx/constraintlayout/widget/ConstraintSet;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "scene",
+            "transition",
+            "startConstraintSet",
+            "endConstraintSet"
+        }
+    .end annotation
 
     .line 80
     invoke-virtual {p1}, Landroidx/constraintlayout/motion/widget/MotionScene$Transition;->getStartConstraintSetId()I
@@ -55,6 +87,14 @@
 
 .method public static validate(Landroidx/constraintlayout/motion/widget/MotionLayout;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "layout"
+        }
+    .end annotation
 
     .line 35
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;

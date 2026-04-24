@@ -34,24 +34,24 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 86
+    .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/16 v0, 0x14
 
-    .line 87
     new-array v0, v0, [F
 
+    .line 90
     iput-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->m:[F
 
-    .line 88
+    .line 91
     new-instance v0, Landroid/graphics/ColorMatrix;
 
     invoke-direct {v0}, Landroid/graphics/ColorMatrix;-><init>()V
 
     iput-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mColorMatrix:Landroid/graphics/ColorMatrix;
 
-    .line 89
+    .line 92
     new-instance v0, Landroid/graphics/ColorMatrix;
 
     invoke-direct {v0}, Landroid/graphics/ColorMatrix;-><init>()V
@@ -60,16 +60,16 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 90
+    .line 93
     iput v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mBrightness:F
 
-    .line 91
+    .line 94
     iput v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mSaturation:F
 
-    .line 92
+    .line 95
     iput v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mContrast:F
 
-    .line 93
+    .line 96
     iput v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mWarmth:F
 
     return-void
@@ -77,118 +77,134 @@
 
 .method private brightness(F)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "brightness"
+        }
+    .end annotation
 
-    .line 225
+    .line 228
     iget-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->m:[F
 
     const/4 v1, 0x0
 
     aput p1, v0, v1
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
-
-    .line 226
-    aput v1, v0, v2
-
-    const/4 v2, 0x2
-
-    .line 227
-    aput v1, v0, v2
-
-    const/4 v2, 0x3
-
-    .line 228
-    aput v1, v0, v2
-
-    const/4 v2, 0x4
+    const/4 v2, 0x0
 
     .line 229
-    aput v1, v0, v2
+    aput v2, v0, v1
 
-    const/4 v2, 0x5
+    const/4 v1, 0x2
+
+    .line 230
+    aput v2, v0, v1
+
+    const/4 v1, 0x3
 
     .line 231
-    aput v1, v0, v2
+    aput v2, v0, v1
 
-    const/4 v2, 0x6
+    const/4 v1, 0x4
 
     .line 232
-    aput p1, v0, v2
+    aput v2, v0, v1
 
-    const/4 v2, 0x7
-
-    .line 233
-    aput v1, v0, v2
-
-    const/16 v2, 0x8
+    const/4 v1, 0x5
 
     .line 234
-    aput v1, v0, v2
+    aput v2, v0, v1
 
-    const/16 v2, 0x9
+    const/4 v1, 0x6
 
     .line 235
-    aput v1, v0, v2
+    aput p1, v0, v1
 
-    const/16 v2, 0xa
+    const/4 v1, 0x7
+
+    .line 236
+    aput v2, v0, v1
+
+    const/16 v1, 0x8
 
     .line 237
-    aput v1, v0, v2
+    aput v2, v0, v1
 
-    const/16 v2, 0xb
+    const/16 v1, 0x9
 
     .line 238
-    aput v1, v0, v2
+    aput v2, v0, v1
 
-    const/16 v2, 0xc
+    const/16 v1, 0xa
 
-    .line 239
-    aput p1, v0, v2
+    .line 240
+    aput v2, v0, v1
+
+    const/16 v1, 0xb
+
+    .line 241
+    aput v2, v0, v1
+
+    const/16 v1, 0xc
+
+    .line 242
+    aput p1, v0, v1
 
     const/16 p1, 0xd
 
-    .line 240
-    aput v1, v0, p1
+    .line 243
+    aput v2, v0, p1
 
     const/16 p1, 0xe
 
-    .line 241
-    aput v1, v0, p1
+    .line 244
+    aput v2, v0, p1
 
     const/16 p1, 0xf
-
-    .line 243
-    aput v1, v0, p1
-
-    const/16 p1, 0x10
-
-    .line 244
-    aput v1, v0, p1
-
-    const/16 p1, 0x11
-
-    .line 245
-    aput v1, v0, p1
-
-    const/16 p1, 0x12
-
-    const/high16 v2, 0x3f800000    # 1.0f
 
     .line 246
     aput v2, v0, p1
 
-    const/16 p1, 0x13
+    const/16 p1, 0x10
 
     .line 247
+    aput v2, v0, p1
+
+    const/16 p1, 0x11
+
+    .line 248
+    aput v2, v0, p1
+
+    const/16 p1, 0x12
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    .line 249
     aput v1, v0, p1
+
+    const/16 p1, 0x13
+
+    .line 250
+    aput v2, v0, p1
 
     return-void
 .end method
 
 .method private saturation(F)V
     .locals 8
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "saturationStrength"
+        }
+    .end annotation
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -206,121 +222,129 @@
 
     mul-float v1, v1, v4
 
-    .line 106
+    .line 109
     iget-object v4, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->m:[F
 
-    add-float v5, v2, p1
+    const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    add-float v6, v2, p1
 
-    aput v5, v4, v6
+    aput v6, v4, v5
 
     const/4 v5, 0x1
 
-    .line 107
+    .line 110
     aput v3, v4, v5
 
     const/4 v5, 0x2
 
-    .line 108
+    .line 111
     aput v1, v4, v5
 
-    const/4 v5, 0x0
+    const/4 v5, 0x3
 
-    const/4 v6, 0x3
-
-    .line 109
-    aput v5, v4, v6
-
-    const/4 v6, 0x4
-
-    .line 110
-    aput v5, v4, v6
-
-    const/4 v6, 0x5
+    const/4 v6, 0x0
 
     .line 112
-    aput v2, v4, v6
+    aput v6, v4, v5
 
-    add-float v6, v3, p1
-
-    const/4 v7, 0x6
+    const/4 v5, 0x4
 
     .line 113
-    aput v6, v4, v7
+    aput v6, v4, v5
 
-    const/4 v6, 0x7
-
-    .line 114
-    aput v1, v4, v6
-
-    const/16 v6, 0x8
+    const/4 v5, 0x5
 
     .line 115
-    aput v5, v4, v6
+    aput v2, v4, v5
 
-    const/16 v6, 0x9
+    const/4 v5, 0x6
+
+    add-float v7, v3, p1
 
     .line 116
-    aput v5, v4, v6
+    aput v7, v4, v5
 
-    const/16 v6, 0xa
+    const/4 v5, 0x7
+
+    .line 117
+    aput v1, v4, v5
+
+    const/16 v5, 0x8
 
     .line 118
-    aput v2, v4, v6
+    aput v6, v4, v5
+
+    const/16 v5, 0x9
+
+    .line 119
+    aput v6, v4, v5
+
+    const/16 v5, 0xa
+
+    .line 121
+    aput v2, v4, v5
 
     const/16 v2, 0xb
 
-    .line 119
+    .line 122
     aput v3, v4, v2
+
+    const/16 v2, 0xc
 
     add-float/2addr v1, p1
 
-    const/16 p1, 0xc
-
-    .line 120
-    aput v1, v4, p1
+    .line 123
+    aput v1, v4, v2
 
     const/16 p1, 0xd
 
-    .line 121
-    aput v5, v4, p1
+    .line 124
+    aput v6, v4, p1
 
     const/16 p1, 0xe
 
-    .line 122
-    aput v5, v4, p1
+    .line 125
+    aput v6, v4, p1
 
     const/16 p1, 0xf
 
-    .line 124
-    aput v5, v4, p1
+    .line 127
+    aput v6, v4, p1
 
     const/16 p1, 0x10
 
-    .line 125
-    aput v5, v4, p1
+    .line 128
+    aput v6, v4, p1
 
     const/16 p1, 0x11
 
-    .line 126
-    aput v5, v4, p1
+    .line 129
+    aput v6, v4, p1
 
     const/16 p1, 0x12
 
-    .line 127
+    .line 130
     aput v0, v4, p1
 
     const/16 p1, 0x13
 
-    .line 128
-    aput v5, v4, p1
+    .line 131
+    aput v6, v4, p1
 
     return-void
 .end method
 
 .method private warmth(F)V
     .locals 11
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "warmth"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -355,40 +379,40 @@
 
     sub-float v5, v1, v5
 
-    const v6, 0x43a4d970
+    float-to-double v5, v5
 
-    float-to-double v7, v5
+    const-wide v7, -0x403ef32580000000L    # -0.13320475816726685
 
-    const-wide v9, -0x403ef32580000000L    # -0.13320475816726685
-
-    .line 144
-    invoke-static {v7, v8, v9, v10}, Ljava/lang/Math;->pow(DD)D
-
-    move-result-wide v9
-
-    double-to-float v5, v9
-
-    mul-float v5, v5, v6
-
-    const v6, 0x43900fa3
-
-    const-wide v9, 0x3fb354f0e0000000L
-
-    .line 145
-    invoke-static {v7, v8, v9, v10}, Ljava/lang/Math;->pow(DD)D
+    .line 147
+    invoke-static {v5, v6, v7, v8}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v7
 
     double-to-float v7, v7
 
-    mul-float v7, v7, v6
+    const v8, 0x43a4d970
+
+    mul-float v7, v7, v8
+
+    const-wide v8, 0x3fb354f0e0000000L
+
+    .line 148
+    invoke-static {v5, v6, v8, v9}, Ljava/lang/Math;->pow(DD)D
+
+    move-result-wide v5
+
+    double-to-float v5, v5
+
+    const v6, 0x43900fa3
+
+    mul-float v5, v5, v6
 
     goto :goto_0
 
     :cond_1
     float-to-double v5, v1
 
-    .line 148
+    .line 151
     invoke-static {v5, v6}, Ljava/lang/Math;->log(D)D
 
     move-result-wide v5
@@ -397,9 +421,9 @@
 
     mul-float v5, v5, v2
 
-    sub-float v7, v5, p1
+    sub-float/2addr v5, p1
 
-    const/high16 v5, 0x437f0000    # 255.0f
+    const/high16 v7, 0x437f0000    # 255.0f
 
     :goto_0
     const v6, 0x439885bc
@@ -422,7 +446,7 @@
 
     float-to-double v9, v1
 
-    .line 153
+    .line 156
     invoke-static {v9, v10}, Ljava/lang/Math;->log(D)D
 
     move-result-wide v9
@@ -443,9 +467,9 @@
     :cond_3
     const/high16 v1, 0x437f0000    # 255.0f
 
-    .line 160
+    .line 163
     :goto_1
-    invoke-static {v5, v0}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v7, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result v3
 
@@ -453,8 +477,8 @@
 
     move-result v3
 
-    .line 161
-    invoke-static {v7, v0}, Ljava/lang/Math;->max(FF)F
+    .line 164
+    invoke-static {v5, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result v5
 
@@ -462,7 +486,7 @@
 
     move-result v5
 
-    .line 162
+    .line 165
     invoke-static {v1, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result v1
@@ -475,7 +499,7 @@
 
     float-to-double v9, v7
 
-    .line 178
+    .line 181
     invoke-static {v9, v10}, Ljava/lang/Math;->log(D)D
 
     move-result-wide v9
@@ -490,7 +514,7 @@
 
     float-to-double v9, p1
 
-    .line 183
+    .line 186
     invoke-static {v9, v10}, Ljava/lang/Math;->log(D)D
 
     move-result-wide v9
@@ -501,7 +525,7 @@
 
     sub-float/2addr p1, v6
 
-    .line 190
+    .line 193
     invoke-static {v4, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result v2
@@ -510,7 +534,7 @@
 
     move-result v2
 
-    .line 191
+    .line 194
     invoke-static {v7, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result v6
@@ -519,7 +543,7 @@
 
     move-result v6
 
-    .line 192
+    .line 195
     invoke-static {p1, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result p1
@@ -534,7 +558,7 @@
 
     div-float/2addr v1, p1
 
-    .line 198
+    .line 201
     iget-object p1, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->m:[F
 
     const/4 v2, 0x0
@@ -543,99 +567,99 @@
 
     const/4 v2, 0x1
 
-    .line 199
+    .line 202
     aput v0, p1, v2
 
     const/4 v2, 0x2
 
-    .line 200
+    .line 203
     aput v0, p1, v2
 
     const/4 v2, 0x3
 
-    .line 201
+    .line 204
     aput v0, p1, v2
 
     const/4 v2, 0x4
 
-    .line 202
+    .line 205
     aput v0, p1, v2
 
     const/4 v2, 0x5
 
-    .line 204
+    .line 207
     aput v0, p1, v2
 
     const/4 v2, 0x6
 
-    .line 205
+    .line 208
     aput v5, p1, v2
 
     const/4 v2, 0x7
 
-    .line 206
+    .line 209
     aput v0, p1, v2
 
     const/16 v2, 0x8
 
-    .line 207
+    .line 210
     aput v0, p1, v2
 
     const/16 v2, 0x9
 
-    .line 208
+    .line 211
     aput v0, p1, v2
 
     const/16 v2, 0xa
 
-    .line 210
+    .line 213
     aput v0, p1, v2
 
     const/16 v2, 0xb
 
-    .line 211
+    .line 214
     aput v0, p1, v2
 
     const/16 v2, 0xc
 
-    .line 212
+    .line 215
     aput v1, p1, v2
 
     const/16 v1, 0xd
 
-    .line 213
+    .line 216
     aput v0, p1, v1
 
     const/16 v1, 0xe
 
-    .line 214
+    .line 217
     aput v0, p1, v1
 
     const/16 v1, 0xf
 
-    .line 216
+    .line 219
     aput v0, p1, v1
 
     const/16 v1, 0x10
 
-    .line 217
+    .line 220
     aput v0, p1, v1
 
     const/16 v1, 0x11
 
-    .line 218
+    .line 221
     aput v0, p1, v1
 
     const/16 v1, 0x12
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 219
+    .line 222
     aput v2, p1, v1
 
     const/16 v1, 0x13
 
-    .line 220
+    .line 223
     aput v0, p1, v1
 
     return-void
@@ -645,13 +669,21 @@
 # virtual methods
 .method updateMatrix(Landroid/widget/ImageView;)V
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "view"
+        }
+    .end annotation
 
-    .line 251
+    .line 254
     iget-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mColorMatrix:Landroid/graphics/ColorMatrix;
 
     invoke-virtual {v0}, Landroid/graphics/ColorMatrix;->reset()V
 
-    .line 253
+    .line 256
     iget v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mSaturation:F
 
     const/4 v1, 0x1
@@ -662,10 +694,10 @@
 
     if-eqz v3, :cond_0
 
-    .line 254
+    .line 257
     invoke-direct {p0, v0}, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->saturation(F)V
 
-    .line 255
+    .line 258
     iget-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mColorMatrix:Landroid/graphics/ColorMatrix;
 
     iget-object v3, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->m:[F
@@ -679,7 +711,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 258
+    .line 261
     :goto_0
     iget v3, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mContrast:F
 
@@ -687,12 +719,12 @@
 
     if-eqz v4, :cond_1
 
-    .line 259
+    .line 262
     iget-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mTmpColorMatrix:Landroid/graphics/ColorMatrix;
 
     invoke-virtual {v0, v3, v3, v3, v2}, Landroid/graphics/ColorMatrix;->setScale(FFFF)V
 
-    .line 260
+    .line 263
     iget-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mColorMatrix:Landroid/graphics/ColorMatrix;
 
     iget-object v3, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mTmpColorMatrix:Landroid/graphics/ColorMatrix;
@@ -701,7 +733,7 @@
 
     const/4 v0, 0x1
 
-    .line 263
+    .line 266
     :cond_1
     iget v3, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mWarmth:F
 
@@ -709,17 +741,17 @@
 
     if-eqz v4, :cond_2
 
-    .line 264
+    .line 267
     invoke-direct {p0, v3}, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->warmth(F)V
 
-    .line 265
+    .line 268
     iget-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mTmpColorMatrix:Landroid/graphics/ColorMatrix;
 
     iget-object v3, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->m:[F
 
     invoke-virtual {v0, v3}, Landroid/graphics/ColorMatrix;->set([F)V
 
-    .line 266
+    .line 269
     iget-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mColorMatrix:Landroid/graphics/ColorMatrix;
 
     iget-object v3, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mTmpColorMatrix:Landroid/graphics/ColorMatrix;
@@ -728,7 +760,7 @@
 
     const/4 v0, 0x1
 
-    .line 269
+    .line 272
     :cond_2
     iget v3, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mBrightness:F
 
@@ -736,29 +768,32 @@
 
     if-eqz v2, :cond_3
 
-    .line 270
+    .line 273
     invoke-direct {p0, v3}, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->brightness(F)V
 
-    .line 271
+    .line 274
     iget-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mTmpColorMatrix:Landroid/graphics/ColorMatrix;
 
     iget-object v2, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->m:[F
 
     invoke-virtual {v0, v2}, Landroid/graphics/ColorMatrix;->set([F)V
 
-    .line 272
+    .line 275
     iget-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mColorMatrix:Landroid/graphics/ColorMatrix;
 
     iget-object v2, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mTmpColorMatrix:Landroid/graphics/ColorMatrix;
 
     invoke-virtual {v0, v2}, Landroid/graphics/ColorMatrix;->postConcat(Landroid/graphics/ColorMatrix;)V
 
-    const/4 v0, 0x1
+    goto :goto_1
 
     :cond_3
-    if-eqz v0, :cond_4
+    move v1, v0
 
-    .line 277
+    :goto_1
+    if-eqz v1, :cond_4
+
+    .line 280
     new-instance v0, Landroid/graphics/ColorMatrixColorFilter;
 
     iget-object v1, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mColorMatrix:Landroid/graphics/ColorMatrix;
@@ -767,12 +802,12 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 279
+    .line 282
     :cond_4
     invoke-virtual {p1}, Landroid/widget/ImageView;->clearColorFilter()V
 
-    :goto_1
+    :goto_2
     return-void
 .end method

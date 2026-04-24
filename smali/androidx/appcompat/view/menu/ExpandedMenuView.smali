@@ -8,14 +8,6 @@
 .implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
-# annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
-
 # static fields
 .field private static final TINT_ATTRS:[I
 
@@ -28,26 +20,20 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    const/4 v0, 0x2
+    const v0, 0x10100d4
+
+    const v1, 0x1010129
 
     .line 42
-    new-array v0, v0, [I
+    filled-new-array {v0, v1}, [I
 
-    fill-array-data v0, :array_0
+    move-result-object v0
 
     sput-object v0, Landroidx/appcompat/view/menu/ExpandedMenuView;->TINT_ATTRS:[I
 
     return-void
-
-    nop
-
-    :array_0
-    .array-data 4
-        0x10100d4
-        0x1010129
-    .end array-data
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V

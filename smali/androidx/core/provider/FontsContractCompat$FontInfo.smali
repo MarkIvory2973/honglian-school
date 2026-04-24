@@ -29,27 +29,6 @@
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;IIZI)V
     .locals 0
-    .param p1    # Landroid/net/Uri;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # I
-        .annotation build Landroidx/annotation/IntRange;
-            from = 0x0L
-        .end annotation
-    .end param
-    .param p3    # I
-        .annotation build Landroidx/annotation/IntRange;
-            from = 0x1L
-            to = 0x3e8L
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -82,21 +61,6 @@
 
 .method static create(Landroid/net/Uri;IIZI)Landroidx/core/provider/FontsContractCompat$FontInfo;
     .locals 7
-    .param p0    # Landroid/net/Uri;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # I
-        .annotation build Landroidx/annotation/IntRange;
-            from = 0x0L
-        .end annotation
-    .end param
-    .param p2    # I
-        .annotation build Landroidx/annotation/IntRange;
-            from = 0x1L
-            to = 0x3e8L
-        .end annotation
-    .end param
 
     .line 308
     new-instance v6, Landroidx/core/provider/FontsContractCompat$FontInfo;
@@ -131,9 +95,6 @@
 
 .method public getTtcIndex()I
     .locals 1
-    .annotation build Landroidx/annotation/IntRange;
-        from = 0x0L
-    .end annotation
 
     .line 322
     iget v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mTtcIndex:I
@@ -143,8 +104,6 @@
 
 .method public getUri()Landroid/net/Uri;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 315
     iget-object v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mUri:Landroid/net/Uri;
@@ -154,10 +113,6 @@
 
 .method public getWeight()I
     .locals 1
-    .annotation build Landroidx/annotation/IntRange;
-        from = 0x1L
-        to = 0x3e8L
-    .end annotation
 
     .line 329
     iget v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mWeight:I

@@ -3,12 +3,6 @@
 .source "ViewUtilsApi19.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x13
-.end annotation
-
-
 # static fields
 .field private static sTryHiddenTransitionAlpha:Z = true
 
@@ -33,25 +27,12 @@
 # virtual methods
 .method public clearNonTransitionAlpha(Landroid/view/View;)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method
 
 .method public getTransitionAlpha(Landroid/view/View;)F
     .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "NewApi"
-        }
-    .end annotation
 
     .line 52
     sget-boolean v0, Landroidx/transition/ViewUtilsApi19;->sTryHiddenTransitionAlpha:Z
@@ -60,7 +41,7 @@
 
     .line 56
     :try_start_0
-    invoke-virtual {p1}, Landroid/view/View;->getTransitionAlpha()F
+    invoke-static {p1}, Landroidx/print/PrintHelper$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/View;)F
 
     move-result p1
     :try_end_0
@@ -85,25 +66,12 @@
 
 .method public saveNonTransitionAlpha(Landroid/view/View;)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method
 
 .method public setTransitionAlpha(Landroid/view/View;F)V
     .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "NewApi"
-        }
-    .end annotation
 
     .line 36
     sget-boolean v0, Landroidx/transition/ViewUtilsApi19;->sTryHiddenTransitionAlpha:Z
@@ -112,7 +80,7 @@
 
     .line 40
     :try_start_0
-    invoke-virtual {p1, p2}, Landroid/view/View;->setTransitionAlpha(F)V
+    invoke-static {p1, p2}, Landroidx/print/PrintHelper$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/View;F)V
     :try_end_0
     .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
 

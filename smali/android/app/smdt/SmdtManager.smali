@@ -136,16 +136,16 @@
     .line 332
     sput-object v0, Landroid/app/smdt/SmdtManager;->MIPS_DISP:Ljava/lang/String;
 
-    const-string v0, "rk3288"
-
-    const-string v1, "ro.board.platform"
+    const-string v0, "ro.board.platform"
 
     .line 341
-    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v1, "rk3288"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -186,7 +186,7 @@
     .line 347
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string p1, "smdt"
+    const-string/jumbo p1, "smdt"
 
     .line 349
     invoke-static {p1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -208,7 +208,7 @@
     .line 365
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string p1, "smdt"
+    const-string/jumbo p1, "smdt"
 
     .line 367
     invoke-static {p1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -236,7 +236,7 @@
     .line 354
     iput-object p1, p0, Landroid/app/smdt/SmdtManager;->mContext:Landroid/content/Context;
 
-    const-string p1, "smdt"
+    const-string/jumbo p1, "smdt"
 
     .line 355
     invoke-static {p1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -371,28 +371,26 @@
 .end method
 
 .method public static create(Landroid/content/Context;)Landroid/app/smdt/SmdtManager;
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 359
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "SmdtManger create instance. Platform:"
 
-    const-string v2, "SmdtManger create instance. Platform:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v1, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
 
-    sget-object v2, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 360
     new-instance v0, Landroid/app/smdt/SmdtManager;
@@ -424,31 +422,27 @@
     .line 2230
     new-instance v0, Ljava/text/SimpleDateFormat;
 
-    const-string v1, "yyyyMMddHHmmss"
+    const-string/jumbo v1, "yyyyMMddHHmmss"
 
     invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
     .line 2232
     invoke-static {p0}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
-
-    const-string v1, "SmdtManager"
+    invoke-virtual {v0, v2}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
     .line 2233
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v3, "strTime:"
 
-    const-string v3, "strTime:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "timeZoneId:"
+    const-string/jumbo v3, "timeZoneId:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -458,7 +452,9 @@
 
     move-result-object p0
 
-    invoke-static {v1, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v2, "SmdtManager"
+
+    invoke-static {v2, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2234
     invoke-virtual {v0, p1}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
@@ -468,9 +464,7 @@
     .line 2236
     new-instance p1, Ljava/text/SimpleDateFormat;
 
-    const-string v0, "yyyyMMddHHmmss"
-
-    invoke-direct {p1, v0}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
     const-string v0, "UTC"
 
@@ -510,34 +504,30 @@
 
     move-result p0
 
-    const-string p1, "SmdtManager"
-
     .line 2246
-    new-instance p2, Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string p2, "diff="
 
-    const-string v2, "diff="
+    invoke-direct {p1, p2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    const-string p2, "\n"
 
-    const-string v0, "\n"
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object p2
-
-    invoke-static {p1, p2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     return p0
 .end method
 
 .method public static datetostring([I)Ljava/lang/String;
-    .locals 6
+    .locals 7
 
     const/4 v0, 0x1
 
@@ -581,18 +571,14 @@
     .line 2197
     aget v0, p0, v0
 
-    const/16 v5, 0xa
+    const-string v5, "0"
 
-    if-ge v0, v5, :cond_0
+    const/16 v6, 0xa
 
-    const-string v0, "0"
+    if-ge v0, v6, :cond_0
 
     .line 2198
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 2201
     :cond_0
@@ -605,16 +591,10 @@
     .line 2204
     aget p0, p0, v2
 
-    if-ge p0, v5, :cond_1
-
-    const-string p0, "0"
+    if-ge p0, v6, :cond_1
 
     .line 2205
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 2207
     :cond_1
@@ -627,10 +607,6 @@
     const-string p0, "00"
 
     .line 2208
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
     invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 2215
@@ -642,109 +618,107 @@
 .end method
 
 .method private executer(Ljava/lang/String;)Ljava/lang/String;
-    .locals 5
+    .locals 6
+
+    const-string v0, "\n"
 
     .line 661
-    new-instance v0, Ljava/lang/StringBuffer;
+    new-instance v1, Ljava/lang/StringBuffer;
 
-    invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 665
     :try_start_0
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, "su"
+    const-string/jumbo v4, "su"
 
-    invoke-virtual {v2, v3}, Ljava/lang/Runtime;->exec(Ljava/lang/String;)Ljava/lang/Process;
+    invoke-virtual {v3, v4}, Ljava/lang/Runtime;->exec(Ljava/lang/String;)Ljava/lang/Process;
 
-    move-result-object v2
+    move-result-object v3
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 666
     :try_start_1
-    new-instance v3, Ljava/io/DataOutputStream;
+    new-instance v4, Ljava/io/DataOutputStream;
 
-    invoke-virtual {v2}, Ljava/lang/Process;->getOutputStream()Ljava/io/OutputStream;
+    invoke-virtual {v3}, Ljava/lang/Process;->getOutputStream()Ljava/io/OutputStream;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-direct {v3, v4}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
+    invoke-direct {v4, v5}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     .line 667
     :try_start_2
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p1, "\n"
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v3, p1}, Ljava/io/DataOutputStream;->writeBytes(Ljava/lang/String;)V
+    invoke-virtual {v4, p1}, Ljava/io/DataOutputStream;->writeBytes(Ljava/lang/String;)V
 
     const-string p1, "exit\n"
 
     .line 668
-    invoke-virtual {v3, p1}, Ljava/io/DataOutputStream;->writeBytes(Ljava/lang/String;)V
+    invoke-virtual {v4, p1}, Ljava/io/DataOutputStream;->writeBytes(Ljava/lang/String;)V
 
     .line 669
-    invoke-virtual {v3}, Ljava/io/DataOutputStream;->flush()V
+    invoke-virtual {v4}, Ljava/io/DataOutputStream;->flush()V
 
     .line 670
-    invoke-virtual {v2}, Ljava/lang/Process;->waitFor()I
+    invoke-virtual {v3}, Ljava/lang/Process;->waitFor()I
 
     .line 671
     new-instance p1, Ljava/io/BufferedReader;
 
-    new-instance v1, Ljava/io/InputStreamReader;
+    new-instance v2, Ljava/io/InputStreamReader;
 
-    invoke-virtual {v2}, Ljava/lang/Process;->getInputStream()Ljava/io/InputStream;
+    invoke-virtual {v3}, Ljava/lang/Process;->getInputStream()Ljava/io/InputStream;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-direct {v1, v4}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+    invoke-direct {v2, v5}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
 
-    invoke-direct {p1, v1}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+    invoke-direct {p1, v2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
     .line 673
     :goto_0
     invoke-virtual {p1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
     .line 674
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "\n"
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -754,12 +728,12 @@
     .line 681
     :cond_0
     :try_start_3
-    invoke-virtual {v3}, Ljava/io/DataOutputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/DataOutputStream;->close()V
 
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_2
 
     .line 683
-    invoke-virtual {v2}, Ljava/lang/Process;->destroy()V
+    invoke-virtual {v3}, Ljava/lang/Process;->destroy()V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
 
@@ -768,12 +742,14 @@
     :catchall_0
     move-exception p1
 
+    move-object v2, v4
+
     goto :goto_5
 
     :catch_0
     move-exception p1
 
-    move-object v1, v3
+    move-object v2, v4
 
     goto :goto_1
 
@@ -785,8 +761,6 @@
     :catchall_1
     move-exception p1
 
-    move-object v2, v1
-
     move-object v3, v2
 
     goto :goto_5
@@ -794,7 +768,7 @@
     :catch_2
     move-exception p1
 
-    move-object v2, v1
+    move-object v3, v2
 
     .line 677
     :goto_1
@@ -803,11 +777,11 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
     .line 681
     :try_start_5
-    invoke-virtual {v1}, Ljava/io/DataOutputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/DataOutputStream;->close()V
 
     goto :goto_2
 
@@ -818,10 +792,10 @@
 
     :cond_1
     :goto_2
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_2
 
     .line 683
-    invoke-virtual {v2}, Ljava/lang/Process;->destroy()V
+    invoke-virtual {v3}, Ljava/lang/Process;->destroy()V
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
 
@@ -834,7 +808,7 @@
     .line 688
     :cond_2
     :goto_4
-    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -847,14 +821,12 @@
     :catchall_2
     move-exception p1
 
-    move-object v3, v1
-
     :goto_5
-    if-eqz v3, :cond_3
+    if-eqz v2, :cond_3
 
     .line 681
     :try_start_6
-    invoke-virtual {v3}, Ljava/io/DataOutputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/DataOutputStream;->close()V
 
     goto :goto_6
 
@@ -865,10 +837,10 @@
 
     :cond_3
     :goto_6
-    if-eqz v2, :cond_4
+    if-eqz v3, :cond_4
 
     .line 683
-    invoke-virtual {v2}, Ljava/lang/Process;->destroy()V
+    invoke-virtual {v3}, Ljava/lang/Process;->destroy()V
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_4
 
@@ -891,35 +863,38 @@
 .end method
 
 .method private getDegreesForRotation(I)F
-    .locals 0
+    .locals 1
 
-    packed-switch p1, :pswitch_data_0
+    const/4 v0, 0x1
+
+    if-eq p1, v0, :cond_2
+
+    const/4 v0, 0x2
+
+    if-eq p1, v0, :cond_1
+
+    const/4 v0, 0x3
+
+    if-eq p1, v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
-    :pswitch_0
+    :cond_0
     const/high16 p1, 0x42b40000    # 90.0f
 
     return p1
 
-    :pswitch_1
+    :cond_1
     const/high16 p1, 0x43340000    # 180.0f
 
     return p1
 
-    :pswitch_2
+    :cond_2
     const/high16 p1, 0x43870000    # 270.0f
 
     return p1
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public static native getDispParams([BI)[B
@@ -957,18 +932,18 @@
 .end method
 
 .method private getLCDPath(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     .line 412
     sget-object v0, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
 
     sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3288_7:Landroid/app/smdt/SmdtManager$Platform;
 
+    const-string v2, ""
+
     if-eq v0, v1, :cond_0
 
-    const-string p1, ""
-
-    return-object p1
+    return-object v2
 
     :cond_0
     const-string v0, "HDMI"
@@ -980,7 +955,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string p1, "/sys/devices/platform/display-subsystem/drm/card0/card0-HDMI-A-1/mode"
+    const-string v2, "/sys/devices/platform/display-subsystem/drm/card0/card0-HDMI-A-1/mode"
 
     goto :goto_0
 
@@ -994,7 +969,7 @@
 
     if-eqz v0, :cond_2
 
-    const-string p1, "/sys/devices/platform/display-subsystem/drm/card0/card0-LVDS-1/mode"
+    const-string v2, "/sys/devices/platform/display-subsystem/drm/card0/card0-LVDS-1/mode"
 
     goto :goto_0
 
@@ -1004,25 +979,23 @@
     .line 421
     invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_3
 
-    const-string p1, "/sys/devices/platform/display-subsystem/drm/card0/card0-eDP-1/mode"
+    const-string v2, "/sys/devices/platform/display-subsystem/drm/card0/card0-eDP-1/mode"
 
     goto :goto_0
 
     :cond_3
-    const-string v0, "DP"
+    const-string v1, "DP"
 
     .line 423
-    invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {p1, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_4
-
-    const-string v0, "eDP"
+    if-eqz v1, :cond_4
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
@@ -1030,15 +1003,11 @@
 
     if-nez p1, :cond_4
 
-    const-string p1, "/sys/devices/platform/display-subsystem/drm/card0/card0-DP-1/mode"
-
-    goto :goto_0
+    const-string v2, "/sys/devices/platform/display-subsystem/drm/card0/card0-DP-1/mode"
 
     :cond_4
-    const-string p1, ""
-
     :goto_0
-    return-object p1
+    return-object v2
 .end method
 
 .method public static native getLcdLight()I
@@ -1048,105 +1017,105 @@
 .end method
 
 .method private getUSBpath(Landroid/content/Context;I)Ljava/lang/String;
-    .locals 4
+    .locals 7
 
     .line 840
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p1
 
-    const-string v0, "smdt_usb_path"
+    const-string/jumbo v0, "smdt_usb_path"
 
     invoke-static {p1, v0}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    if-eqz p1, :cond_5
+    const-string v0, "null"
 
-    const-string v0, ""
+    if-eqz p1, :cond_4
 
-    if-ne p1, v0, :cond_0
+    const-string v1, ""
 
-    goto :goto_2
+    if-ne p1, v1, :cond_0
 
-    :cond_0
-    const-string v0, "smdtmanager"
+    goto :goto_1
 
     .line 844
-    new-instance v1, Ljava/lang/StringBuilder;
+    :cond_0
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v3, "xzj======old paths="
 
-    const-string v2, "xzj======old paths="
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v1
+    const-string/jumbo v3, "smdtmanager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v0, ";"
+    const-string v2, ";"
 
     .line 845
-    invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {p1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p1
 
     .line 846
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance v3, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v1, 0x0
+    const/4 v4, 0x0
 
     .line 847
     :goto_0
-    array-length v2, p1
+    array-length v5, p1
 
-    if-ge v1, v2, :cond_2
+    if-ge v4, v5, :cond_2
 
     .line 848
-    aget-object v2, p1, v1
+    aget-object v5, p1, v4
 
-    invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v3, v5}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v5
 
-    if-nez v2, :cond_1
+    if-nez v5, :cond_1
 
-    aget-object v2, p1, v1
+    aget-object v5, p1, v4
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v5
 
-    const/4 v3, 0x3
+    const/4 v6, 0x3
 
-    if-le v2, v3, :cond_1
+    if-le v5, v6, :cond_1
 
     .line 849
-    aget-object v2, p1, v1
+    aget-object v5, p1, v4
 
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v3, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_1
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     .line 852
     :cond_2
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result p1
 
     if-eqz p1, :cond_4
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result p1
 
@@ -1158,18 +1127,14 @@
 
     .line 855
     :cond_3
-    invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v3, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Ljava/lang/String;
 
-    const-string p2, ";"
-
-    const-string v0, ""
-
     .line 857
-    invoke-virtual {p1, p2, v0}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {p1, v2, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1177,15 +1142,7 @@
 
     :cond_4
     :goto_1
-    const-string p1, "null"
-
-    return-object p1
-
-    :cond_5
-    :goto_2
-    const-string p1, "null"
-
-    return-object p1
+    return-object v0
 .end method
 
 .method public static native getXrm117xGpioDirection(I)I
@@ -1238,7 +1195,6 @@
 
     const/16 p0, 0x400
 
-    .line 1628
     new-array p0, p0, [C
 
     .line 1631
@@ -1281,24 +1237,22 @@
 .method private maskStr2InetMask(Ljava/lang/String;)I
     .locals 7
 
-    const-string v0, "SmdtManager"
-
     .line 1022
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "maskStr2InetMask, maskStr:"
 
-    const-string v2, "maskStr2InetMask, maskStr:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     const-string v0, "(^((\\d|[01]?\\d\\d|2[0-4]\\d|25[0-5])\\.){3}(\\d|[01]?\\d\\d|2[0-4]\\d|25[0-5])$)|^(\\d|[1-2]\\d|3[0-2])$"
 
@@ -1316,18 +1270,16 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     if-nez v0, :cond_0
 
-    const-string p1, "SmdtManager"
-
-    const-string v0, "subMask is error"
+    const-string/jumbo p1, "subMask is error"
 
     .line 1032
-    invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    return v1
+    return v2
 
     :cond_0
     const-string v0, "\\."
@@ -1339,7 +1291,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 1037
     :goto_0
@@ -1405,14 +1357,14 @@
 
     :cond_2
     :goto_2
-    add-int/2addr v2, v5
+    add-int/2addr v1, v5
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_3
-    return v2
+    return v1
 .end method
 
 .method private static native mcusetcmd(CCI)I
@@ -1625,42 +1577,40 @@
 .end method
 
 .method public static writeDataToMmcBoot([BII)I
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2312
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "writeDataToMmcBoot, buf:"
 
-    const-string v2, "writeDataToMmcBoot, buf:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, ",len:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v2, ",offset:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ",len:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ",offset:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "SmdtManager"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2313
     sget-object v0, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
@@ -1689,36 +1639,38 @@
 .end method
 
 .method private writeFile(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+    .locals 5
 
-    const/4 v0, 0x0
+    const-string/jumbo v0, "wxl,writeFile ok!"
+
+    const-string/jumbo v1, "wxl,writeFile fail!"
+
+    const-string v2, "SmdtManager"
+
+    const/4 v3, 0x0
 
     .line 2611
     :try_start_0
-    new-instance v1, Ljava/io/FileWriter;
+    new-instance v4, Ljava/io/FileWriter;
 
-    invoke-direct {v1, p1}, Ljava/io/FileWriter;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, p1}, Ljava/io/FileWriter;-><init>(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 2613
     :try_start_1
-    invoke-virtual {v1, p2}, Ljava/io/FileWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v4, p2}, Ljava/io/FileWriter;->write(Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 2622
     :try_start_2
-    invoke-virtual {v1}, Ljava/io/FileWriter;->close()V
-
-    const-string p1, "SmdtManager"
-
-    const-string p2, "wxl,writeFile ok!"
+    invoke-virtual {v4}, Ljava/io/FileWriter;->close()V
 
     .line 2623
-    invoke-static {p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
@@ -1730,26 +1682,22 @@
     .line 2625
     invoke-virtual {p1}, Ljava/io/IOException;->printStackTrace()V
 
-    const-string p1, "SmdtManager"
-
-    const-string p2, "wxl,writeFile fail!"
-
     .line 2626
-    invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1
 
     :catchall_0
     move-exception p1
 
-    move-object v0, v1
+    move-object v3, v4
 
     goto :goto_2
 
     :catch_1
     move-exception p1
 
-    move-object v0, v1
+    move-object v3, v4
 
     goto :goto_0
 
@@ -1766,27 +1714,19 @@
     :try_start_3
     invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
 
-    const-string p1, "SmdtManager"
-
-    const-string p2, "wxl,writeFile fail!"
-
     .line 2618
-    invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    if-eqz v0, :cond_0
+    if-eqz v3, :cond_0
 
     .line 2622
     :try_start_4
-    invoke-virtual {v0}, Ljava/io/FileWriter;->close()V
-
-    const-string p1, "SmdtManager"
-
-    const-string p2, "wxl,writeFile ok!"
+    invoke-virtual {v3}, Ljava/io/FileWriter;->close()V
 
     .line 2623
-    invoke-static {p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
@@ -1795,18 +1735,14 @@
     return-void
 
     :goto_2
-    if-eqz v0, :cond_1
+    if-eqz v3, :cond_1
 
     .line 2622
     :try_start_5
-    invoke-virtual {v0}, Ljava/io/FileWriter;->close()V
-
-    const-string p2, "SmdtManager"
-
-    const-string v0, "wxl,writeFile ok!"
+    invoke-virtual {v3}, Ljava/io/FileWriter;->close()V
 
     .line 2623
-    invoke-static {p2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
@@ -1818,12 +1754,8 @@
     .line 2625
     invoke-virtual {p2}, Ljava/io/IOException;->printStackTrace()V
 
-    const-string p2, "SmdtManager"
-
-    const-string v0, "wxl,writeFile fail!"
-
     .line 2626
-    invoke-static {p2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2627
     :cond_1
@@ -1834,26 +1766,24 @@
 
 # virtual methods
 .method public addInstallWhiteList(Ljava/lang/String;)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2833
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "addInstallWhiteList, packageName:"
 
-    const-string v2, "addInstallWhiteList, packageName:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     if-eqz p1, :cond_1
 
@@ -1890,37 +1820,33 @@
 
     :cond_1
     :goto_1
-    const-string p1, "SmdtManager"
-
-    const-string v0, "addInstallWhiteList, packageName: can\'t be null "
+    const-string p1, "addInstallWhiteList, packageName: can\'t be null "
 
     .line 2835
-    invoke-static {p1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 .end method
 
 .method public execSuCmd(Ljava/lang/String;)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 1070
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "execSuCmd, cmd:"
 
-    const-string v2, "execSuCmd, cmd:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1072
     :try_start_0
@@ -1933,12 +1859,10 @@
     goto :goto_0
 
     :catch_0
-    const-string p1, "SmdtManager"
-
-    const-string v0, "[getValue] RemoteException"
+    const-string p1, "[getValue] RemoteException"
 
     .line 1076
-    invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
     return-void
@@ -2099,64 +2023,67 @@
 .end method
 
 .method public getExtendScreenHeight()I
-    .locals 5
+    .locals 7
 
-    const/4 v0, 0x0
+    const-string v0, "SmdtManager"
+
+    const-string v1, "cat "
+
+    const/4 v2, 0x0
 
     .line 467
     :try_start_0
-    sget-object v1, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v3, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
 
-    sget-object v2, Landroid/app/smdt/SmdtManager$Platform;->RK3288_7:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v4, Landroid/app/smdt/SmdtManager$Platform;->RK3288_7:Landroid/app/smdt/SmdtManager$Platform;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 v3, 0x1
+    const/4 v5, 0x1
 
-    if-ne v1, v2, :cond_1
+    const-string v6, "===================extend screen height:"
 
-    const-string v1, "sys.hwc.device.aux"
+    if-ne v3, v4, :cond_1
 
-    const-string v2, "noused"
+    :try_start_1
+    const-string/jumbo v3, "sys.hwc.device.aux"
+
+    const-string v4, "noused"
 
     .line 468
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-direct {p0, v1}, Landroid/app/smdt/SmdtManager;->getLCDPath(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, v3}, Landroid/app/smdt/SmdtManager;->getLCDPath(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    const-string v2, ""
+    const-string v4, ""
 
     .line 469
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v4
 
-    if-eqz v2, :cond_0
+    if-eqz v4, :cond_0
 
-    const-string v1, "SmdtManager"
-
-    const-string v2, "No insert secondary screen"
+    const-string v1, "No insert secondary screen"
 
     .line 470
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    return v0
+    return v2
 
     .line 473
     :cond_0
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v4, "cat "
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -2164,35 +2091,29 @@
 
     move-result-object v1
 
-    const-string v2, "x"
+    const-string/jumbo v3, "x"
 
     .line 474
-    invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v2
-
-    add-int/2addr v2, v3
-
-    const-string v3, "p"
-
     invoke-virtual {v1, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    add-int/2addr v3, v5
+
+    const-string v4, "p"
+
+    invoke-virtual {v1, v4}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+
+    move-result v4
+
+    invoke-virtual {v1, v3, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
-
-    const-string v2, "SmdtManager"
 
     .line 475
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "===================extend screen height:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2200,7 +2121,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 476
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -2211,11 +2132,9 @@
 
     .line 477
     :cond_1
-    sget-object v1, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3288_5:Landroid/app/smdt/SmdtManager$Platform;
 
-    sget-object v2, Landroid/app/smdt/SmdtManager$Platform;->RK3288_5:Landroid/app/smdt/SmdtManager$Platform;
-
-    if-ne v1, v2, :cond_2
+    if-ne v3, v1, :cond_2
 
     const-string v1, "cat sys/class/graphics/fb4/screen_info"
 
@@ -2224,35 +2143,29 @@
 
     move-result-object v1
 
-    const-string v2, "yres:"
+    const-string/jumbo v3, "yres:"
 
     .line 479
-    invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x5
-
-    const-string v3, "\nfps"
-
     invoke-virtual {v1, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    add-int/lit8 v3, v3, 0x5
+
+    const-string v4, "\nfps"
+
+    invoke-virtual {v1, v4}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+
+    move-result v4
+
+    invoke-virtual {v1, v3, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
-
-    const-string v2, "SmdtManager"
 
     .line 480
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "===================extend screen height:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2260,22 +2173,25 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 481
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    goto :goto_0
+    :goto_0
+    move v2, v0
+
+    goto :goto_1
 
     .line 484
     :cond_2
     iget-object v1, p0, Landroid/app/smdt/SmdtManager;->mContext:Landroid/content/Context;
 
-    const-string v2, "display"
+    const-string v3, "display"
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -2287,95 +2203,96 @@
     move-result-object v1
 
     .line 486
-    array-length v2, v1
+    array-length v3, v1
 
-    if-le v2, v3, :cond_3
+    if-le v3, v5, :cond_3
 
     .line 487
-    aget-object v1, v1, v3
+    aget-object v1, v1, v5
 
-    invoke-virtual {v1}, Landroid/view/Display;->getMode()Landroid/view/Display$Mode;
+    invoke-static {v1}, Landroid/app/smdt/SmdtManager$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/Display;)Landroid/view/Display$Mode;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/Display$Mode;->getPhysicalHeight()I
+    invoke-static {v1}, Landroid/app/smdt/SmdtManager$$ExternalSyntheticApiModelOutline0;->m$1(Landroid/view/Display$Mode;)I
 
-    move-result v0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    move-result v2
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     :cond_3
-    return v0
+    return v2
 
     :catch_0
-    const-string v1, "SmdtManager"
-
-    const-string v2, "[getExtendScreenHeight] Exception"
+    const-string v1, "[getExtendScreenHeight] Exception"
 
     .line 492
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_0
-    return v0
+    :goto_1
+    return v2
 .end method
 
 .method public getExtendScreenWidth()I
-    .locals 5
+    .locals 6
 
-    const/4 v0, 0x0
+    const-string v0, "SmdtManager"
+
+    const-string v1, "cat "
+
+    const/4 v2, 0x0
 
     .line 434
     :try_start_0
-    sget-object v1, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v3, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
 
-    sget-object v2, Landroid/app/smdt/SmdtManager$Platform;->RK3288_7:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v4, Landroid/app/smdt/SmdtManager$Platform;->RK3288_7:Landroid/app/smdt/SmdtManager$Platform;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-ne v1, v2, :cond_1
+    const-string v5, "===================extend screen width:"
 
-    const-string v1, "sys.hwc.device.aux"
+    if-ne v3, v4, :cond_1
 
-    const-string v2, "noused"
+    :try_start_1
+    const-string/jumbo v3, "sys.hwc.device.aux"
+
+    const-string v4, "noused"
 
     .line 435
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-direct {p0, v1}, Landroid/app/smdt/SmdtManager;->getLCDPath(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, v3}, Landroid/app/smdt/SmdtManager;->getLCDPath(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    const-string v2, ""
+    const-string v4, ""
 
     .line 436
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v4
 
-    if-eqz v2, :cond_0
+    if-eqz v4, :cond_0
 
-    const-string v1, "SmdtManager"
-
-    const-string v2, "No insert secondary screen"
+    const-string v1, "No insert secondary screen"
 
     .line 437
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    return v0
+    return v2
 
     .line 440
     :cond_0
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v3, "cat "
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -2383,27 +2300,21 @@
 
     move-result-object v1
 
-    const-string v2, "x"
+    const-string/jumbo v3, "x"
 
     .line 441
-    invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+    invoke-virtual {v1, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
-
-    const-string v2, "SmdtManager"
 
     .line 442
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "===================extend screen width:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v3, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2411,7 +2322,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 443
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -2422,11 +2333,9 @@
 
     .line 444
     :cond_1
-    sget-object v1, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3288_5:Landroid/app/smdt/SmdtManager$Platform;
 
-    sget-object v2, Landroid/app/smdt/SmdtManager$Platform;->RK3288_5:Landroid/app/smdt/SmdtManager$Platform;
-
-    if-ne v1, v2, :cond_2
+    if-ne v3, v1, :cond_2
 
     const-string v1, "cat sys/class/graphics/fb4/screen_info"
 
@@ -2435,35 +2344,29 @@
 
     move-result-object v1
 
-    const-string v2, "xres:"
+    const-string/jumbo v3, "xres:"
 
     .line 446
-    invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x5
-
-    const-string v3, "\nyres"
-
     invoke-virtual {v1, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    add-int/lit8 v3, v3, 0x5
+
+    const-string v4, "\nyres"
+
+    invoke-virtual {v1, v4}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+
+    move-result v4
+
+    invoke-virtual {v1, v3, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
-
-    const-string v2, "SmdtManager"
 
     .line 447
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "===================extend screen width:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v3, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2471,22 +2374,25 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 448
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    goto :goto_0
+    :goto_0
+    move v2, v0
+
+    goto :goto_1
 
     .line 451
     :cond_2
     iget-object v1, p0, Landroid/app/smdt/SmdtManager;->mContext:Landroid/content/Context;
 
-    const-string v2, "display"
+    const-string v3, "display"
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -2498,38 +2404,36 @@
     move-result-object v1
 
     .line 453
-    array-length v2, v1
+    array-length v3, v1
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    if-le v2, v3, :cond_3
+    if-le v3, v4, :cond_3
 
     .line 454
-    aget-object v1, v1, v3
+    aget-object v1, v1, v4
 
-    invoke-virtual {v1}, Landroid/view/Display;->getMode()Landroid/view/Display$Mode;
+    invoke-static {v1}, Landroid/app/smdt/SmdtManager$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/Display;)Landroid/view/Display$Mode;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/Display$Mode;->getPhysicalWidth()I
+    invoke-static {v1}, Landroid/app/smdt/SmdtManager$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/Display$Mode;)I
 
-    move-result v0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    move-result v2
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     :cond_3
-    return v0
+    return v2
 
     :catch_0
-    const-string v1, "SmdtManager"
-
-    const-string v2, "[getExtendScreenWidth] Exception"
+    const-string v1, "[getExtendScreenWidth] Exception"
 
     .line 459
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_0
-    return v0
+    :goto_1
+    return v2
 .end method
 
 .method public getFirmwareVersion()Ljava/lang/String;
@@ -2576,16 +2480,18 @@
 .end method
 
 .method public getGestureBar()Z
-    .locals 4
+    .locals 5
 
     .line 2715
     sget-object v0, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
 
     sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
 
-    const/4 v2, 0x1
+    const-string v2, "gestures_call_systemui"
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
 
     if-ne v0, v1, :cond_1
 
@@ -2596,18 +2502,16 @@
 
     move-result-object v0
 
-    const-string v1, "gestures_call_systemui"
-
-    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v0, v2, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
-    if-ne v0, v2, :cond_0
+    if-ne v0, v3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     goto :goto_0
 
@@ -2619,25 +2523,18 @@
 
     move-result-object v0
 
-    const-string v1, "gestures_call_systemui"
-
-    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v0, v2, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
-    if-ne v0, v2, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v2, 0x0
+    if-ne v0, v3, :cond_0
 
     :goto_0
-    return v2
+    return v3
 .end method
 
 .method public getHdmiinStatus()I
-    .locals 4
+    .locals 2
 
     .line 398
     sget-object v0, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
@@ -2646,31 +2543,15 @@
 
     if-eq v0, v1, :cond_0
 
-    const/4 v0, 0x0
-
     :try_start_0
-    const-string v1, "/sys/class/hdmiin_reg/hdmiin_status"
+    const-string v0, "cat /sys/class/hdmiin_reg/hdmiin_status"
 
     .line 402
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {p0, v0}, Landroid/app/smdt/SmdtManager;->executer(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v0
 
-    const-string v3, "cat "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Landroid/app/smdt/SmdtManager;->executer(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
     :try_end_0
@@ -2679,12 +2560,14 @@
     goto :goto_0
 
     :catch_0
-    const-string v1, "SmdtManager"
+    const-string v0, "SmdtManager"
 
-    const-string v2, "[getScreenNumber] Exception"
+    const-string v1, "[getScreenNumber] Exception"
 
     .line 404
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v0, 0x0
 
     :goto_0
     return v0
@@ -2883,9 +2766,9 @@
 .end method
 
 .method public getPreviewDegree(Landroid/content/Context;)I
-    .locals 1
+    .locals 2
 
-    const-string v0, "window"
+    const-string/jumbo v0, "window"
 
     .line 1762
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2904,36 +2787,40 @@
 
     move-result p1
 
-    const/4 v0, 0x0
+    if-eqz p1, :cond_2
 
-    packed-switch p1, :pswitch_data_0
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    if-eq p1, v0, :cond_3
+
+    const/4 v0, 0x2
+
+    if-eq p1, v0, :cond_1
+
+    const/4 v0, 0x3
+
+    if-eq p1, v0, :cond_0
 
     goto :goto_0
 
-    :pswitch_0
-    const/16 v0, 0xb4
+    :cond_0
+    const/16 v1, 0xb4
 
     goto :goto_0
 
-    :pswitch_1
-    const/16 v0, 0x10e
+    :cond_1
+    const/16 v1, 0x10e
 
     goto :goto_0
 
-    :pswitch_2
-    const/16 v0, 0x5a
+    :cond_2
+    const/16 v1, 0x5a
 
+    :cond_3
     :goto_0
-    :pswitch_3
-    return v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_3
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return v1
 .end method
 
 .method public getRunningMemory()Ljava/lang/String;
@@ -3178,23 +3065,9 @@
 
     :cond_0
     :try_start_1
-    const-string v0, "/sys/class/param/smdt_param/screen_number"
+    const-string v0, "cat /sys/class/param/smdt_param/screen_number"
 
     .line 389
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "cat "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
     invoke-direct {p0, v0}, Landroid/app/smdt/SmdtManager;->executer(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -3277,7 +3150,7 @@
 .method public getUSBpath(I)Ljava/lang/String;
     .locals 9
 
-    const-string v0, "null"
+    const-string v0, "aaa"
 
     const-string v1, "null"
 
@@ -3289,159 +3162,157 @@
 
     const-string v5, "null"
 
+    const-string v6, "null"
+
     .line 532
-    filled-new-array/range {v0 .. v5}, [Ljava/lang/String;
+    filled-new-array/range {v1 .. v6}, [Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     .line 534
     :try_start_0
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, "mount"
+    const-string v4, "mount"
 
     .line 535
-    invoke-virtual {v2, v3}, Ljava/lang/Runtime;->exec(Ljava/lang/String;)Ljava/lang/Process;
+    invoke-virtual {v3, v4}, Ljava/lang/Runtime;->exec(Ljava/lang/String;)Ljava/lang/Process;
 
-    move-result-object v2
+    move-result-object v3
 
     .line 536
-    invoke-virtual {v2}, Ljava/lang/Process;->getInputStream()Ljava/io/InputStream;
+    invoke-virtual {v3}, Ljava/lang/Process;->getInputStream()Ljava/io/InputStream;
 
-    move-result-object v2
+    move-result-object v3
 
     .line 537
-    new-instance v3, Ljava/io/InputStreamReader;
+    new-instance v4, Ljava/io/InputStreamReader;
 
-    invoke-direct {v3, v2}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+    invoke-direct {v4, v3}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
 
     .line 540
-    new-instance v2, Ljava/io/BufferedReader;
+    new-instance v3, Ljava/io/BufferedReader;
 
-    invoke-direct {v2, v3}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
-
-    const/4 v3, 0x0
+    invoke-direct {v3, v4}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
     const/4 v4, 0x0
+
+    const/4 v5, 0x0
 
     .line 541
     :cond_0
     :goto_0
-    invoke-virtual {v2}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    if-eqz v5, :cond_6
+    if-eqz v6, :cond_6
 
-    const-string v6, "secure"
+    const-string v7, "secure"
 
     .line 542
-    invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v6, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_1
+    if-eqz v7, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const-string v6, "asec"
+    const-string v7, "asec"
 
     .line 544
-    invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v6, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_2
+    if-eqz v7, :cond_2
 
     goto :goto_0
 
     :cond_2
-    const-string v6, "fat"
+    const-string v7, "fat"
 
     .line 546
-    invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v6, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v6
+    move-result v7
+
+    if-eqz v7, :cond_0
+
+    const-string v7, " "
+
+    .line 547
+    invoke-virtual {v6, v7}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v6
 
     if-eqz v6, :cond_0
 
-    const-string v6, " "
-
-    .line 547
-    invoke-virtual {v5, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_0
-
     .line 548
-    array-length v6, v5
+    array-length v7, v6
 
-    if-le v6, v1, :cond_0
+    if-le v7, v2, :cond_0
 
     .line 549
-    aget-object v5, v5, v1
-
-    const-string v6, "aaa"
+    aget-object v6, v6, v2
 
     .line 550
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "xzj===111name="
+    const-string/jumbo v8, "xzj===111name="
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v6, "usb"
+    const-string/jumbo v7, "usb"
 
     .line 551
-    invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v6, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v6
+    move-result v7
 
-    if-nez v6, :cond_3
+    if-nez v7, :cond_3
 
-    const-string v6, "USB"
+    const-string v7, "USB"
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v6, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_4
+    if-eqz v7, :cond_4
 
     .line 552
     :cond_3
-    aput-object v5, v0, v4
+    aput-object v6, v1, v5
 
-    add-int/lit8 v4, v4, 0x1
-
-    :cond_4
-    const-string v6, "aaa"
+    add-int/lit8 v5, v5, 0x1
 
     .line 555
+    :cond_4
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "xzj===name="
+    const-string/jumbo v8, "xzj===name="
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v8, " is usb? "
 
@@ -3449,50 +3320,50 @@
 
     const-string v8, "sd"
 
-    invoke-virtual {v5, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v6, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_5
+    if-nez v6, :cond_5
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
     goto :goto_1
 
     :cond_5
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
     :goto_1
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-static {v6, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :catch_0
-    move-exception v2
+    move-exception v0
 
     .line 565
-    invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_2
 
     :catch_1
-    move-exception v2
+    move-exception v0
 
     .line 562
-    invoke-virtual {v2}, Ljava/io/FileNotFoundException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/io/FileNotFoundException;->printStackTrace()V
 
     :cond_6
     :goto_2
-    if-ge p1, v1, :cond_7
+    if-ge p1, v2, :cond_7
 
     goto :goto_3
 
@@ -3501,7 +3372,7 @@
 
     .line 568
     :goto_3
-    aget-object p1, v0, p1
+    aget-object p1, v1, p1
 
     return-object p1
 .end method
@@ -3579,26 +3450,24 @@
 .end method
 
 .method public hideSoftKeyboard(Z)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2763
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "hideSoftKeyboard, reject:"
 
-    const-string v2, "hideSoftKeyboard, reject:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2765
     :try_start_0
@@ -3613,38 +3482,34 @@
     :catch_0
     move-exception p1
 
-    const-string v0, "SmdtManager"
-
-    const-string v1, "RemoteException in hideSoftKeyboard"
+    const-string v0, "RemoteException in hideSoftKeyboard"
 
     .line 2767
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :goto_0
     return-void
 .end method
 
 .method public installApp(Ljava/lang/String;Landroid/app/smdt/SmdtManager$InstallCallback;)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2772
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "installApp, apkPath:"
 
-    const-string v2, "installApp, apkPath:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2774
     :try_start_0
@@ -3671,24 +3536,22 @@
 .method public interMask2String(I)Ljava/lang/String;
     .locals 8
 
-    const-string v0, "SmdtManager"
-
     .line 991
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "interMask2String, prefixLength:"
 
-    const-string v2, "interMask2String, prefixLength:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 995
     div-int/lit8 v0, p1, 0x8
@@ -3700,31 +3563,29 @@
 
     const/4 v2, 0x0
 
-    const/16 v2, 0x8
-
-    const/4 v3, 0x0
+    const/16 v3, 0x8
 
     :goto_0
     rsub-int/lit8 v4, p1, 0x8
 
-    if-le v2, v4, :cond_0
+    if-le v3, v4, :cond_0
 
-    const-wide/high16 v4, 0x4000000000000000L    # 2.0
+    add-int/lit8 v4, v3, -0x1
 
-    add-int/lit8 v6, v2, -0x1
+    int-to-double v4, v4
 
-    int-to-double v6, v6
+    const-wide/high16 v6, 0x4000000000000000L    # 2.0
 
     .line 1000
-    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v6, v7, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v4
 
     double-to-int v4, v4
 
-    add-int/2addr v3, v4
+    add-int/2addr v2, v4
 
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v3, v3, -0x1
 
     goto :goto_0
 
@@ -3736,7 +3597,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v0, ".0.0.0"
 
@@ -3756,13 +3617,11 @@
     .line 1006
     new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v0, "255."
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v0, ".0.0"
 
@@ -3782,13 +3641,11 @@
     .line 1008
     new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v0, "255.255."
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v0, ".0"
 
@@ -3808,13 +3665,11 @@
     .line 1010
     new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v0, "255.255.255."
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -3968,26 +3823,24 @@
 .end method
 
 .method public setAllowUninstall(Z)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2813
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "setAllowUninstall, allowed:"
 
-    const-string v2, "setAllowUninstall, allowed:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2815
     :try_start_0
@@ -4010,26 +3863,24 @@
 .end method
 
 .method public setAllowinstall(Z)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2793
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "setAllowinstall, allowed:"
 
-    const-string v2, "setAllowinstall, allowed:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2795
     :try_start_0
@@ -4052,26 +3903,24 @@
 .end method
 
 .method public setBrightness(Landroid/content/ContentResolver;I)V
-    .locals 2
-
-    const-string p1, "SmdtManager"
+    .locals 1
 
     .line 1202
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "setBrightness, brightness:"
 
-    const-string v1, "setBrightness, brightness:"
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object v0
+    const-string v0, "SmdtManager"
 
-    invoke-static {p1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1204
     :try_start_0
@@ -4086,38 +3935,34 @@
     :catch_0
     move-exception p1
 
-    const-string p2, "SmdtManager"
-
-    const-string v0, "RemoteException in getSerialPorts"
+    const-string p2, "RemoteException in getSerialPorts"
 
     .line 1206
-    invoke-static {p2, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v0, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :goto_0
     return-void
 .end method
 
 .method public setGestureBar(Z)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2705
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "setGestureBar, enable:"
 
-    const-string v2, "setGestureBar, enable:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2707
     :try_start_0
@@ -4132,38 +3977,34 @@
     :catch_0
     move-exception p1
 
-    const-string v0, "SmdtManager"
-
-    const-string v1, "RemoteException in setGestureBar"
+    const-string v0, "RemoteException in setGestureBar"
 
     .line 2709
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :goto_0
     return-void
 .end method
 
 .method public setHdmiInAudioEnable(Landroid/content/Context;Z)Z
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 941
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "setHdmiInAudioEnable enable:"
 
-    const-string v2, "setHdmiInAudioEnable enable:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :try_start_0
     const-string v0, "audio"
@@ -4198,12 +4039,10 @@
     return p1
 
     :catch_0
-    const-string p1, "SmdtManager"
-
-    const-string p2, "[setHdmiInAudioEnable] Exception"
+    const-string p1, "[setHdmiInAudioEnable] Exception"
 
     .line 953
-    invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 p1, 0x0
 
@@ -4211,58 +4050,59 @@
 .end method
 
 .method public setHeadsetMicOnOff(I)I
-    .locals 8
+    .locals 11
 
-    const-string v0, "SmdtManager"
+    const-string v0, "\" > /sys/devices/ff660000.i2c/i2c-2/2-001c/mic_status"
+
+    const-string v1, "\" > /sys/devices/platform/rockchip_headset/mic_status"
 
     .line 589
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, "setHeadsetMicOnOff value:"
 
-    const-string v2, "setHeadsetMicOnOff value:"
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v1
+    const-string v3, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
-    const/4 v1, -0x1
+    const/4 v4, -0x1
 
     if-eqz p1, :cond_0
 
-    if-eq p1, v0, :cond_0
+    if-eq p1, v2, :cond_0
 
-    const-string p1, "SmdtManager"
-
-    const-string v0, "[getValue] value is not 0 ro 1"
+    const-string p1, "[getValue] value is not 0 ro 1"
 
     .line 592
-    invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    return v1
+    return v4
 
     .line 595
     :cond_0
-    sget-object v2, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v5, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
 
-    sget-object v3, Landroid/app/smdt/SmdtManager$Platform;->RK3288_7:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v6, Landroid/app/smdt/SmdtManager$Platform;->RK3288_7:Landroid/app/smdt/SmdtManager$Platform;
 
-    const/4 v4, 0x0
+    const/4 v7, 0x0
 
-    const/4 v5, 0x2
+    const-string v8, "[getValue] Exception"
 
-    if-ne v2, v3, :cond_2
+    const/4 v9, 0x2
 
-    :try_start_0
-    const-string v0, "/sys/devices/platform/rockchip_headset/mic_status"
+    const-string v10, "echo \""
+
+    if-ne v5, v6, :cond_2
 
     if-nez p1, :cond_1
 
@@ -4270,23 +4110,16 @@
 
     .line 600
     :cond_1
-    new-instance v2, Ljava/lang/StringBuilder;
+    :try_start_0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v3, "echo \""
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, "\" > "
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -4295,25 +4128,19 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    return v4
-
-    :catch_0
-    const-string p1, "SmdtManager"
-
-    const-string v0, "[getValue] Exception"
+    return v7
 
     .line 605
-    invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :catch_0
+    invoke-static {v3, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    return v1
+    return v4
 
     .line 608
     :cond_2
-    sget-object v2, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3288_5:Landroid/app/smdt/SmdtManager$Platform;
 
-    sget-object v3, Landroid/app/smdt/SmdtManager$Platform;->RK3288_5:Landroid/app/smdt/SmdtManager$Platform;
-
-    if-ne v2, v3, :cond_5
+    if-ne v5, v1, :cond_5
 
     if-nez p1, :cond_3
 
@@ -4321,55 +4148,33 @@
 
     :cond_3
     :try_start_1
-    const-string v2, "/sys/devices/ff660000.i2c/i2c-2/2-001c/mic_status"
+    const-string v1, "cat /sys/devices/ff660000.i2c/i2c-2/2-001c/mic_status"
 
     .line 615
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {p0, v1}, Landroid/app/smdt/SmdtManager;->executer(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v1
 
-    const-string v6, "cat "
+    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p0, v3}, Landroid/app/smdt/SmdtManager;->executer(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v3
+    move-result v1
 
     .line 616
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v7, "echo \""
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, "\" > "
-
-    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    if-eq v3, v0, :cond_4
+    if-eq v1, v2, :cond_4
 
-    if-ne v3, v5, :cond_5
+    if-ne v1, v9, :cond_5
 
     .line 619
     :cond_4
@@ -4377,48 +4182,40 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    return v4
-
-    :catch_1
-    const-string p1, "SmdtManager"
-
-    const-string v0, "[getValue] Exception"
+    return v7
 
     .line 623
-    invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :catch_1
+    invoke-static {v3, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_5
-    const-string p1, "SmdtManager"
-
-    const-string v0, "This API is nonsupported,please setting of u_disk(earpiece_mic 0 or 1)!!!"
+    const-string p1, "This API is nonsupported,please setting of u_disk(earpiece_mic 0 or 1)!!!"
 
     .line 626
-    invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    return v1
+    return v4
 .end method
 
 .method public setKeyReject(Z)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2745
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "setKeyReject, reject:"
 
-    const-string v2, "setKeyReject, reject:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2747
     :try_start_0
@@ -4433,38 +4230,34 @@
     :catch_0
     move-exception p1
 
-    const-string v0, "SmdtManager"
-
-    const-string v1, "RemoteException in setKeyReject"
+    const-string v0, "RemoteException in setKeyReject"
 
     .line 2749
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :goto_0
     return-void
 .end method
 
 .method public setNetworkDebug(Z)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2695
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "setNetworkDebug: "
 
-    const-string v2, "setNetworkDebug: "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2697
     :try_start_0
@@ -4479,38 +4272,34 @@
     :catch_0
     move-exception p1
 
-    const-string v0, "SmdtManager"
-
-    const-string v1, "RemoteException in setNetworkDebug"
+    const-string v0, "RemoteException in setNetworkDebug"
 
     .line 2699
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :goto_0
     return-void
 .end method
 
 .method public setNtpServer(Ljava/lang/String;)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2724
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "setNtpServer, server:"
 
-    const-string v2, "setNtpServer, server:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     if-eqz p1, :cond_1
 
@@ -4523,7 +4312,7 @@
 
     if-eqz v0, :cond_0
 
-    goto :goto_1
+    goto :goto_0
 
     .line 2729
     :cond_0
@@ -4539,18 +4328,13 @@
     :catch_0
     move-exception p1
 
-    const-string v0, "SmdtManager"
-
-    const-string v1, "RemoteException in setNtpServer"
+    const-string v0, "RemoteException in setNtpServer"
 
     .line 2731
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :goto_0
-    return-void
+    invoke-static {v1, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_1
-    :goto_1
+    :goto_0
     return-void
 .end method
 
@@ -4578,32 +4362,30 @@
 .end method
 
 .method public setPowerOffOnAlarm(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 963
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "setPowerOffOnAlarm, offTime:"
 
-    const-string v2, "setPowerOffOnAlarm, offTime:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", Ontime:"
 
-    const-string v2, ", Ontime:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 966
     :try_start_0
@@ -4616,38 +4398,34 @@
     goto :goto_0
 
     :catch_0
-    const-string p1, "SmdtManager"
-
-    const-string p2, "[getValue] RemoteException"
+    const-string p1, "[getValue] RemoteException"
 
     .line 970
-    invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
     return-void
 .end method
 
 .method public setRotation(Ljava/lang/String;)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 1091
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "setRotation, str:"
 
-    const-string v2, "setRotation, str:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1095
     :try_start_0
@@ -4660,12 +4438,10 @@
     goto :goto_0
 
     :catch_0
-    const-string p1, "SmdtManager"
-
-    const-string v0, "[getValue] RemoteException"
+    const-string p1, "[getValue] RemoteException"
 
     .line 1099
-    invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
     return-void
@@ -4674,48 +4450,46 @@
 .method public setTime(Landroid/content/Context;IIIII)I
     .locals 7
 
-    const-string p1, "SmdtManager"
-
     .line 1239
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v0, "setTime, year:"
 
-    const-string v1, "setTime, year:"
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v0, ",month:"
 
-    const-string v1, ",month:"
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v0, ",day:"
 
-    const-string v1, ",day:"
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v0, ",hourOfDay:"
 
-    const-string v1, ",hourOfDay:"
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v0, ",minute:"
 
-    const-string v1, ",minute:"
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object v0
+    const-string v0, "SmdtManager"
 
-    invoke-static {p1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1241
     :try_start_0
@@ -4742,12 +4516,10 @@
     :catch_0
     move-exception p1
 
-    const-string p2, "SmdtManager"
-
-    const-string p3, "RemoteException in setTime"
+    const-string p2, "RemoteException in setTime"
 
     .line 1243
-    invoke-static {p2, p3, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v0, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     const/4 p1, -0x1
 
@@ -4755,26 +4527,24 @@
 .end method
 
 .method public setTimeFromNetwork(ZLandroid/content/Context;)Z
-    .locals 2
-
-    const-string p2, "SmdtManager"
+    .locals 1
 
     .line 1191
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v0, "setTimeFromNetwork, autotiestatus:"
 
-    const-string v1, "setTimeFromNetwork, autotiestatus:"
+    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p2
 
-    move-result-object v0
+    const-string v0, "SmdtManager"
 
-    invoke-static {p2, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1193
     :try_start_0
@@ -4791,12 +4561,10 @@
     :catch_0
     move-exception p1
 
-    const-string p2, "SmdtManager"
-
-    const-string v0, "RemoteException in getSerialPorts"
+    const-string p2, "RemoteException in getSerialPorts"
 
     .line 1196
-    invoke-static {p2, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v0, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     const/4 p1, 0x0
 
@@ -4804,26 +4572,24 @@
 .end method
 
 .method public setTouchReject(Z)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2754
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "setTouchReject, reject:"
 
-    const-string v2, "setTouchReject, reject:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2756
     :try_start_0
@@ -4838,38 +4604,34 @@
     :catch_0
     move-exception p1
 
-    const-string v0, "SmdtManager"
-
-    const-string v1, "RemoteException in setTouchReject"
+    const-string v0, "RemoteException in setTouchReject"
 
     .line 2758
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :goto_0
     return-void
 .end method
 
 .method public setUSBDebug(Z)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2686
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "setUSBDebug: "
 
-    const-string v2, "setUSBDebug: "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2688
     :try_start_0
@@ -4884,62 +4646,56 @@
     :catch_0
     move-exception p1
 
-    const-string v0, "SmdtManager"
-
-    const-string v1, "RemoteException in setUSBDebuggable"
+    const-string v0, "RemoteException in setUSBDebuggable"
 
     .line 2690
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :goto_0
     return-void
 .end method
 
 .method public setUsbMode(II)I
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 4
 
     .line 912
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "setUsbMode usb: "
 
-    const-string v2, "setUsbMode usb: "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v1, ", mode:"
 
-    const-string v2, ", mode:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 913
     sget-object v0, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
 
-    sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3288_5:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v2, Landroid/app/smdt/SmdtManager$Platform;->RK3288_5:Landroid/app/smdt/SmdtManager$Platform;
 
-    const/4 v2, -0x1
+    const/4 v3, -0x1
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v2, :cond_0
 
-    const-string p1, "SmdtManager"
-
-    const-string p2, "setUsbMode failed\uff0c3288 5.1 do not support setUsbMode"
+    const-string/jumbo p1, "setUsbMode failed\uff0c3288 5.1 do not support setUsbMode"
 
     .line 914
-    invoke-static {p1, p2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    return v2
+    return v3
 
     .line 918
     :cond_0
@@ -4957,39 +4713,35 @@
     :catch_0
     move-exception p1
 
-    const-string p2, "SmdtManager"
-
     .line 920
     invoke-virtual {p1}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    return v2
+    return v3
 .end method
 
 .method public setVolumeStates(I)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 926
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "setVolumeStates flag:"
 
-    const-string v2, "setVolumeStates flag:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 930
     :try_start_0
@@ -5002,12 +4754,10 @@
     goto :goto_0
 
     :catch_0
-    const-string p1, "SmdtManager"
-
-    const-string v0, "[getValue] RemoteException"
+    const-string p1, "[getValue] RemoteException"
 
     .line 934
-    invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
     return-void
@@ -5016,9 +4766,11 @@
 .method public setmicvol(I)V
     .locals 3
 
-    const/16 v0, 0x7f
+    const-string v0, ""
 
-    if-le p1, v0, :cond_0
+    const/16 v1, 0x7f
+
+    if-le p1, v1, :cond_0
 
     const/16 p1, 0x7f
 
@@ -5029,43 +4781,35 @@
 
     :cond_1
     :try_start_0
-    const-string v0, "/sys/devices/ff660000.i2c/i2c-2/2-001c/mainmicvol"
+    const-string v1, "/sys/devices/ff660000.i2c/i2c-2/2-001c/mainmicvol"
 
     .line 2649
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, ""
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {p0, v1, v2}, Landroid/app/smdt/SmdtManager;->writeFile(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v1
-
-    invoke-direct {p0, v0, v1}, Landroid/app/smdt/SmdtManager;->writeFile(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v0, "persist.audio.micvol"
+    const-string v1, "persist.audio.micvol"
 
     .line 2650
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, ""
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {v0, p1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, p1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -5086,12 +4830,12 @@
 .method public shutDown()V
     .locals 2
 
-    const-string v0, "SmdtManager"
+    const-string/jumbo v0, "shutDown."
 
-    const-string v1, "shutDown."
+    const-string v1, "SmdtManager"
 
     .line 695
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 697
     :try_start_0
@@ -5104,12 +4848,10 @@
     goto :goto_0
 
     :catch_0
-    const-string v0, "SmdtManager"
-
-    const-string v1, "[getValue] RemoteException"
+    const-string v0, "[getValue] RemoteException"
 
     .line 701
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
     return-void
@@ -5191,21 +4933,24 @@
 
     return-object v2
 
+    :cond_1
+    move-object v2, p1
+
+    goto :goto_0
+
     :catch_0
     move-exception p1
 
     .line 1356
     invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
 
-    move-object p1, v2
-
     .line 1358
-    :cond_1
-    new-instance v0, Ljava/lang/String;
+    :goto_0
+    new-instance p1, Ljava/lang/String;
 
-    invoke-direct {v0, p1}, Ljava/lang/String;-><init>([B)V
+    invoke-direct {p1, v2}, Ljava/lang/String;-><init>([B)V
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public smdtGetEDPBackLight()I
@@ -5216,14 +4961,14 @@
 
     sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3288_5:Landroid/app/smdt/SmdtManager$Platform;
 
+    const-string v2, "SmdtManager"
+
     if-ne v0, v1, :cond_0
 
-    const-string v0, "SmdtManager"
-
-    const-string v1, "smdtGetEDPBackLight failed, do not support."
+    const-string/jumbo v0, "smdtGetEDPBackLight failed, do not support."
 
     .line 1922
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 v0, -0x1
 
@@ -5235,24 +4980,20 @@
 
     move-result v0
 
-    const-string v1, "SmdtManager"
-
     .line 1927
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v3, "smdt   smdtGetEDPBackLight ret="
 
-    const-string v3, "smdt   smdtGetEDPBackLight ret="
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v0
 .end method
@@ -5356,7 +5097,7 @@
 .end method
 
 .method public smdtGetGpioDirection(I)I
-    .locals 3
+    .locals 2
 
     .line 2001
     :try_start_0
@@ -5371,26 +5112,24 @@
     :catch_0
     move-exception p1
 
-    const-string v0, "SmdtManager"
-
     .line 2003
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "[getValue] Exception:"
 
-    const-string v2, "[getValue] Exception:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
+
+    const-string v0, "SmdtManager"
 
     invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -5400,7 +5139,7 @@
 .end method
 
 .method public smdtGetLcdLightStatus()I
-    .locals 5
+    .locals 4
 
     .line 1970
     sget-object v0, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
@@ -5434,7 +5173,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "smdt_lvds_bl/smdt_device_state"
+    const-string/jumbo v2, "smdt_lvds_bl/smdt_device_state"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5458,26 +5197,24 @@
     :catch_0
     move-exception v1
 
-    const-string v2, "SmdtManager"
-
     .line 1983
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, "[smdtGetLcdLightStatus] Exception "
 
-    const-string v4, "[smdtGetLcdLightStatus] Exception "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
+
+    const-string v2, "SmdtManager"
 
     invoke-static {v2, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -5559,8 +5296,6 @@
 
     .line 832
     :cond_0
-    sget-object p1, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
-
     sget-object v0, Landroid/app/smdt/SmdtManager$Platform;->RK3288_7:Landroid/app/smdt/SmdtManager$Platform;
 
     if-ne p1, v0, :cond_1
@@ -5581,7 +5316,7 @@
 .method public smdtGetScreenHeight(Landroid/content/Context;)I
     .locals 1
 
-    const-string v0, "window"
+    const-string/jumbo v0, "window"
 
     .line 1584
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -5593,8 +5328,6 @@
     iput-object p1, p0, Landroid/app/smdt/SmdtManager;->mWindowManager:Landroid/view/WindowManager;
 
     .line 1586
-    iget-object p1, p0, Landroid/app/smdt/SmdtManager;->mWindowManager:Landroid/view/WindowManager;
-
     invoke-interface {p1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object p1
@@ -5609,11 +5342,9 @@
     iput-object p1, p0, Landroid/app/smdt/SmdtManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
     .line 1590
-    iget-object p1, p0, Landroid/app/smdt/SmdtManager;->mDisplay:Landroid/view/Display;
+    iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mDisplay:Landroid/view/Display;
 
-    iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
-
-    invoke-virtual {p1, v0}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
+    invoke-virtual {v0, p1}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
 
     .line 1592
     iget-object p1, p0, Landroid/app/smdt/SmdtManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
@@ -5626,7 +5357,7 @@
 .method public smdtGetScreenWidth(Landroid/content/Context;)I
     .locals 1
 
-    const-string v0, "window"
+    const-string/jumbo v0, "window"
 
     .line 1567
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -5638,8 +5369,6 @@
     iput-object p1, p0, Landroid/app/smdt/SmdtManager;->mWindowManager:Landroid/view/WindowManager;
 
     .line 1569
-    iget-object p1, p0, Landroid/app/smdt/SmdtManager;->mWindowManager:Landroid/view/WindowManager;
-
     invoke-interface {p1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object p1
@@ -5654,11 +5383,9 @@
     iput-object p1, p0, Landroid/app/smdt/SmdtManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
     .line 1573
-    iget-object p1, p0, Landroid/app/smdt/SmdtManager;->mDisplay:Landroid/view/Display;
+    iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mDisplay:Landroid/view/Display;
 
-    iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
-
-    invoke-virtual {p1, v0}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
+    invoke-virtual {v0, p1}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
 
     .line 1575
     iget-object p1, p0, Landroid/app/smdt/SmdtManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
@@ -5728,7 +5455,7 @@
 
     move-result-object p1
 
-    const-string v0, "systembar_hide"
+    const-string/jumbo v0, "systembar_hide"
 
     invoke-static {p1, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;)I
 
@@ -5751,26 +5478,24 @@
 .end method
 
 .method public smdtGetSystemLogcat(Ljava/lang/String;)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 1800
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtGetSystemLogcat, path:"
 
-    const-string v2, "smdtGetSystemLogcat, path:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1801
     new-instance v0, Landroid/app/smdt/SystemLogcat;
@@ -5792,8 +5517,6 @@
     sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3288_7:Landroid/app/smdt/SmdtManager$Platform;
 
     if-eq v0, v1, :cond_1
-
-    sget-object v0, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
 
     sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
 
@@ -5846,25 +5569,23 @@
 .method public smdtGetXrm117xGpioDirection(I)I
     .locals 3
 
+    const-string/jumbo v0, "smdtSetXrm117xGpioDirection->>gpioNumber="
+
     :try_start_0
-    const-string v0, "ddd"
+    const-string v1, "ddd"
 
     .line 2042
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "smdtSetXrm117xGpioDirection->>gpioNumber="
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2043
     invoke-static {p1}, Landroid/app/smdt/SmdtManager;->getXrm117xGpioDirection(I)I
@@ -5878,26 +5599,24 @@
     :catch_0
     move-exception p1
 
-    const-string v0, "SmdtManager"
-
     .line 2045
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "[getValue] Exception:"
 
-    const-string v2, "[getValue] Exception:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
+
+    const-string v0, "SmdtManager"
 
     invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -5909,25 +5628,23 @@
 .method public smdtGetXrm117xGpioValue(I)I
     .locals 3
 
+    const-string/jumbo v0, "smdtGetXrm117xGpioValue->>gpioNumber="
+
     :try_start_0
-    const-string v0, "ddd"
+    const-string v1, "ddd"
 
     .line 2022
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "smdtGetXrm117xGpioValue->>gpioNumber="
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2023
     invoke-static {p1}, Landroid/app/smdt/SmdtManager;->getXrm117xGpioValue(I)I
@@ -5941,26 +5658,24 @@
     :catch_0
     move-exception p1
 
-    const-string v0, "SmdtManager"
-
     .line 2025
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "[getValue] Exception:"
 
-    const-string v2, "[getValue] Exception:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
+
+    const-string v0, "SmdtManager"
 
     invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -5981,31 +5696,29 @@
 .end method
 
 .method public smdtInstallPackage(Landroid/content/Context;Ljava/io/File;)V
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    const-string p1, "SmdtManager"
-
     .line 1520
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v0, "smdtInstallPackage, packageFile:"
 
-    const-string v1, "smdtInstallPackage, packageFile:"
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object v0
+    const-string v0, "SmdtManager"
 
-    invoke-static {p1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1522
     :try_start_0
@@ -6025,12 +5738,10 @@
     :catch_0
     move-exception p1
 
-    const-string p2, "SmdtManager"
-
-    const-string v0, "RemoteException in smdtInstallPackage"
+    const-string p2, "RemoteException in smdtInstallPackage"
 
     .line 1525
-    invoke-static {p2, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v0, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :goto_0
     return-void
@@ -6110,16 +5821,14 @@
         }
     .end annotation
 
-    const-string v0, "SmdtManager"
+    const-string v0, "Could not open serial port "
 
     .line 1133
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v2, "smdtOpenSerialPort, name:"
 
-    const-string v2, "smdtOpenSerialPort, name:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6133,43 +5842,41 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v2, "SmdtManager"
+
+    invoke-static {v2, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1136
     :try_start_0
-    iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mService:Landroid/app/smdt/ISmdtManager;
+    iget-object v1, p0, Landroid/app/smdt/SmdtManager;->mService:Landroid/app/smdt/ISmdtManager;
 
-    invoke-interface {v0, p1}, Landroid/app/smdt/ISmdtManager;->openSerialPort(Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
+    invoke-interface {v1, p1}, Landroid/app/smdt/ISmdtManager;->openSerialPort(Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     .line 1140
-    new-instance v1, Landroid/app/smdt/SmdtSerialPort;
+    new-instance v0, Landroid/app/smdt/SmdtSerialPort;
 
-    invoke-direct {v1, p1}, Landroid/app/smdt/SmdtSerialPort;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Landroid/app/smdt/SmdtSerialPort;-><init>(Ljava/lang/String;)V
 
     .line 1142
-    invoke-virtual {v1, v0, p2}, Landroid/app/smdt/SmdtSerialPort;->open(Landroid/os/ParcelFileDescriptor;I)V
+    invoke-virtual {v0, v1, p2}, Landroid/app/smdt/SmdtSerialPort;->open(Landroid/os/ParcelFileDescriptor;I)V
 
-    return-object v1
+    return-object v0
 
     .line 1148
     :cond_0
     new-instance p2, Ljava/io/IOException;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "Could not open serial port "
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -6182,12 +5889,10 @@
     :catch_0
     move-exception p1
 
-    const-string p2, "SmdtManager"
-
-    const-string v0, "exception in UsbManager.openDevice"
+    const-string p2, "exception in UsbManager.openDevice"
 
     .line 1154
-    invoke-static {p2, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v2, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     const/4 p1, 0x0
 
@@ -6238,46 +5943,47 @@
 
     return-object v0
 
+    :cond_1
+    move-object v0, p1
+
+    goto :goto_1
+
     :catch_0
     move-exception p1
 
     .line 1297
     invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
 
-    move-object p1, v0
-
-    :cond_1
-    return-object p1
+    :goto_1
+    return-object v0
 .end method
 
 .method public smdtReadExtrnalGpioValue(I)I
     .locals 4
 
-    const-string v0, "SmdtManager"
-
     .line 716
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtReadExtrnalGpioValue gpioNumber:"
 
-    const-string v2, "smdtReadExtrnalGpioValue gpioNumber:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 717
     sget-object v0, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
 
-    sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v2, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v2, :cond_0
 
     .line 718
     invoke-virtual {p0, p1}, Landroid/app/smdt/SmdtManager;->smdtReadGpioValue(I)I
@@ -6292,31 +5998,31 @@
 
     move-result v0
 
-    const/4 v1, -0x1
+    const/4 v2, -0x1
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v2, :cond_1
 
     .line 723
     :try_start_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Landroid/app/smdt/SmdtManager;->smdtGlobalClass:Ljava/lang/String;
+    sget-object v3, Landroid/app/smdt/SmdtManager;->smdtGlobalClass:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "xr1172_gpio"
+    const-string/jumbo v3, "xr1172_gpio"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string p1, "/pin_data"
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -6336,16 +6042,12 @@
     :catch_0
     move-exception p1
 
-    const-string v1, "SmdtManager"
-
     .line 727
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "[smdtReadExtrnalGpioValue] Exception "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
@@ -6364,7 +6066,7 @@
 .end method
 
 .method public smdtReadGpioValue(I)I
-    .locals 3
+    .locals 2
 
     .line 2067
     :try_start_0
@@ -6394,26 +6096,24 @@
     :catch_0
     move-exception p1
 
-    const-string v0, "SmdtManager"
-
     .line 2073
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "[getValue] Exception:"
 
-    const-string v2, "[getValue] Exception:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
+
+    const-string v0, "SmdtManager"
 
     invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -6427,7 +6127,7 @@
 
     const-string v0, "SmdtManager"
 
-    const-string v1, "smdtReboot"
+    const-string/jumbo v1, "smdtReboot"
 
     .line 1164
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -6460,26 +6160,24 @@
 .end method
 
 .method public smdtReboot(Ljava/lang/String;)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 882
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtReboot reason:"
 
-    const-string v2, "smdtReboot reason:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 884
     :try_start_0
@@ -6492,12 +6190,10 @@
     goto :goto_0
 
     :catch_0
-    const-string p1, "SmdtManager"
-
-    const-string v0, "[getValue] RemoteException"
+    const-string p1, "[getValue] RemoteException"
 
     .line 888
-    invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
     return-void
@@ -6506,12 +6202,12 @@
 .method public smdtRebootRecovery()V
     .locals 3
 
-    const-string v0, "SmdtManager"
+    const-string/jumbo v0, "smdtRebootRecovery."
 
-    const-string v1, "smdtRebootRecovery."
+    const-string v1, "SmdtManager"
 
     .line 1554
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1556
     :try_start_0
@@ -6525,8 +6221,6 @@
 
     :catch_0
     move-exception v0
-
-    const-string v1, "SmdtManager"
 
     const-string v2, "RemoteException in smdtRebootRecovery"
 
@@ -6542,7 +6236,7 @@
 
     const-string v0, "SmdtManager"
 
-    const-string v1, "smdtScreenShot"
+    const-string/jumbo v1, "smdtScreenShot"
 
     .line 1657
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -6552,11 +6246,13 @@
 
     sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
 
-    const/4 v2, 0x2
+    const-string/jumbo v2, "window"
 
-    const/4 v3, 0x1
+    const/4 v3, 0x2
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
 
     if-ne v0, v1, :cond_2
 
@@ -6565,10 +6261,8 @@
     .line 1659
     iput-object v0, p0, Landroid/app/smdt/SmdtManager;->mScreenBitmap:Landroid/graphics/Bitmap;
 
-    const-string v1, "window"
-
     .line 1665
-    invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -6587,20 +6281,20 @@
     .line 1668
     invoke-virtual {p1, v1}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
 
+    new-array p1, v3, [F
+
     .line 1670
-    new-array p1, v2, [F
+    iget v2, v1, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    iget v5, v1, Landroid/util/DisplayMetrics;->widthPixels:I
+    int-to-float v2, v2
 
-    int-to-float v5, v5
-
-    aput v5, p1, v4
+    aput v2, p1, v5
 
     iget v1, v1, Landroid/util/DisplayMetrics;->heightPixels:I
 
     int-to-float v1, v1
 
-    aput v1, p1, v3
+    aput v1, p1, v4
 
     :try_start_0
     const-string v1, "android.view.SurfaceControl"
@@ -6613,13 +6307,13 @@
     .line 1674
     invoke-virtual {v1}, Ljava/lang/Class;->getMethods()[Ljava/lang/reflect/Method;
 
-    move-result-object v5
+    move-result-object v2
 
     const/4 v6, 0x0
 
     .line 1675
     :goto_0
-    array-length v7, v5
+    array-length v7, v2
 
     if-ge v6, v7, :cond_0
 
@@ -6634,7 +6328,7 @@
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aget-object v9, v5, v6
+    aget-object v9, v2, v6
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -6649,38 +6343,37 @@
     goto :goto_0
 
     :cond_0
-    const-string v5, "screenshot"
+    const-string v2, "screenshot"
+
+    new-array v6, v3, [Ljava/lang/Class;
 
     .line 1678
-    new-array v6, v2, [Ljava/lang/Class;
+    sget-object v7, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    aput-object v7, v6, v5
 
     sget-object v7, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     aput-object v7, v6, v4
 
-    sget-object v7, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v7, v6, v3
-
-    invoke-virtual {v1, v5, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v2, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v1
 
-    .line 1681
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v2, v3, [Ljava/lang/Object;
 
-    aget v5, p1, v4
+    aget v3, p1, v5
 
-    float-to-int v5, v5
+    float-to-int v3, v3
 
     .line 1682
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v3
 
-    aput-object v5, v2, v4
+    aput-object v3, v2, v5
 
-    aget p1, p1, v3
+    aget p1, p1, v4
 
     float-to-int p1, p1
 
@@ -6688,7 +6381,7 @@
 
     move-result-object p1
 
-    aput-object p1, v2, v3
+    aput-object p1, v2, v4
 
     .line 1681
     invoke-virtual {v1, v0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -6755,7 +6448,7 @@
 
     .line 1702
     :cond_1
-    invoke-virtual {p1, v4}, Landroid/graphics/Bitmap;->setHasAlpha(Z)V
+    invoke-virtual {p1, v5}, Landroid/graphics/Bitmap;->setHasAlpha(Z)V
 
     .line 1704
     iget-object p1, p0, Landroid/app/smdt/SmdtManager;->mScreenBitmap:Landroid/graphics/Bitmap;
@@ -6775,10 +6468,8 @@
 
     iput-object v0, p0, Landroid/app/smdt/SmdtManager;->mDisplayMatrix:Landroid/graphics/Matrix;
 
-    const-string v0, "window"
-
     .line 1709
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -6787,8 +6478,6 @@
     iput-object p1, p0, Landroid/app/smdt/SmdtManager;->mWindowManager:Landroid/view/WindowManager;
 
     .line 1710
-    iget-object p1, p0, Landroid/app/smdt/SmdtManager;->mWindowManager:Landroid/view/WindowManager;
-
     invoke-interface {p1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object p1
@@ -6803,22 +6492,20 @@
     iput-object p1, p0, Landroid/app/smdt/SmdtManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
     .line 1712
-    iget-object p1, p0, Landroid/app/smdt/SmdtManager;->mDisplay:Landroid/view/Display;
+    iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mDisplay:Landroid/view/Display;
 
-    iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
+    invoke-virtual {v0, p1}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
 
-    invoke-virtual {p1, v0}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
+    new-array p1, v3, [F
 
     .line 1713
-    new-array p1, v2, [F
-
     iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
     iget v0, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
     int-to-float v0, v0
 
-    aput v0, p1, v4
+    aput v0, p1, v5
 
     iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
@@ -6826,7 +6513,7 @@
 
     int-to-float v0, v0
 
-    aput v0, p1, v3
+    aput v0, p1, v4
 
     .line 1714
     iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mDisplay:Landroid/view/Display;
@@ -6906,73 +6593,68 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/Matrix;->mapPoints([F)V
 
+    aget v0, p1, v5
+
     .line 1725
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    aput v0, p1, v5
+
     aget v0, p1, v4
 
+    .line 1726
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
 
     aput v0, p1, v4
 
-    .line 1726
-    aget v0, p1, v3
-
-    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
-
-    move-result v0
-
-    aput v0, p1, v3
-
-    .line 1728
     :cond_6
-    aget v0, p1, v4
+    aget v0, p1, v5
 
     float-to-int v0, v0
 
-    aget p1, p1, v3
+    aget p1, p1, v4
 
     float-to-int p1, p1
 
+    .line 1728
     invoke-static {v0, p1}, Landroid/view/SurfaceControl;->screenshot(II)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
     iput-object p1, p0, Landroid/app/smdt/SmdtManager;->mScreenBitmap:Landroid/graphics/Bitmap;
 
-    .line 1729
-    iget-object p1, p0, Landroid/app/smdt/SmdtManager;->mScreenBitmap:Landroid/graphics/Bitmap;
-
     return-object p1
 .end method
 
 .method public smdtSetControl(II)I
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 1816
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtSetControl, type:"
 
-    const-string v2, "smdtSetControl, type:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v1, ", values:"
 
-    const-string v2, ", values:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 v0, 0x3
 
@@ -7144,7 +6826,7 @@
 
     const-string v0, "SmdtManager"
 
-    const-string v1, "smdtSetDispParams"
+    const-string/jumbo v1, "smdtSetDispParams"
 
     .line 1362
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -7201,7 +6883,7 @@
 
     const-string p1, "SmdtManager"
 
-    const-string v0, "smdtSetEDPBackLight failed, do not support."
+    const-string/jumbo v0, "smdtSetEDPBackLight failed, do not support."
 
     .line 1902
     invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
@@ -7235,44 +6917,42 @@
 .end method
 
 .method public smdtSetEthIPAddress(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 1061
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtSetEthIPAddress, mIpaddr:"
 
-    const-string v2, "smdtSetEthIPAddress, mIpaddr:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", mMask:"
 
-    const-string v2, ", mMask:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", mGw:"
 
-    const-string v2, ", mGw:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ",mDns:"
 
-    const-string v2, ",mDns:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1063
     :try_start_0
@@ -7285,12 +6965,10 @@
     goto :goto_0
 
     :catch_0
-    const-string p1, "SmdtManager"
-
-    const-string p2, "[getValue] RemoteException"
+    const-string p1, "[getValue] RemoteException"
 
     .line 1065
-    invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
     return-void
@@ -7299,36 +6977,34 @@
 .method public smdtSetEthernetState(Z)V
     .locals 3
 
-    const-string v0, "SmdtManager"
-
     .line 1861
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtSetEthernetState, enable:"
 
-    const-string v2, "smdtSetEthernetState, enable:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1862
     sget-object v0, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
 
     sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3288_5:Landroid/app/smdt/SmdtManager$Platform;
 
+    const-string v2, "ethernet"
+
     if-ne v0, v1, :cond_3
 
-    const-string v0, "ethernet"
-
     .line 1863
-    invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
@@ -7367,7 +7043,7 @@
 
     if-nez v0, :cond_2
 
-    const-string p1, "smdtSetEthernetState=="
+    const-string/jumbo p1, "smdtSetEthernetState=="
 
     const-string v0, "null"
 
@@ -7386,9 +7062,7 @@
     :cond_3
     iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mContext:Landroid/content/Context;
 
-    const-string v1, "ethernet"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -7396,42 +7070,34 @@
 
     iput-object v0, p0, Landroid/app/smdt/SmdtManager;->mEthManager:Landroid/net/EthernetManager;
 
+    const-string v1, "eth0"
+
     if-eqz p1, :cond_4
 
     .line 1876
-    iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mEthManager:Landroid/net/EthernetManager;
-
-    const-string v1, "eth0"
-
     invoke-virtual {v0, v1}, Landroid/net/EthernetManager;->reconnect(Ljava/lang/String;)V
 
     goto :goto_0
 
     .line 1878
     :cond_4
-    iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mEthManager:Landroid/net/EthernetManager;
-
-    const-string v1, "eth0"
-
     invoke-virtual {v0, v1}, Landroid/net/EthernetManager;->disconnect(Ljava/lang/String;)V
 
-    :goto_0
-    const-string v0, "persist.sys.eth0switch"
-
     .line 1880
-    new-instance v1, Ljava/lang/StringBuilder;
+    :goto_0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, ""
 
-    const-string v2, ""
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
+
+    const-string v0, "persist.sys.eth0switch"
 
     invoke-static {v0, p1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -7440,39 +7106,43 @@
 .end method
 
 .method public smdtSetExtrnalGpioValue(IZ)I
-    .locals 4
+    .locals 8
 
-    const-string v0, "SmdtManager"
+    const-string/jumbo v0, "xr1172_gpio"
+
+    const-string v1, "busybox echo 1 >"
+
+    const-string v2, "busybox echo 0 >"
 
     .line 744
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v4, "smdtSetExtrnalGpioValue gpioNumber:"
 
-    const-string v2, "smdtSetExtrnalGpioValue gpioNumber:"
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v4, ", isTrue"
 
-    const-string v2, ", isTrue"
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v1
+    const-string v4, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 745
-    sget-object v0, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v3, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
 
-    sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v5, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
 
-    if-eq v0, v1, :cond_0
+    if-eq v3, v5, :cond_0
 
     .line 746
     invoke-virtual {p0, p1, p2}, Landroid/app/smdt/SmdtManager;->smdtSetGpioValue(IZ)I
@@ -7485,79 +7155,73 @@
     :cond_0
     invoke-virtual {p0, p1, p2}, Landroid/app/smdt/SmdtManager;->smdtSetGpioValue(IZ)I
 
-    move-result v0
+    move-result v3
 
-    const/4 v1, -0x1
+    const/4 v5, -0x1
 
-    if-ne v0, v1, :cond_3
+    if-ne v3, v5, :cond_3
 
     .line 753
     :try_start_0
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v3, Landroid/app/smdt/SmdtManager;->smdtGlobalClass:Ljava/lang/String;
+    sget-object v7, Landroid/app/smdt/SmdtManager;->smdtGlobalClass:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "xr1172_gpio"
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v7, "/pin_direction"
 
-    const-string v3, "/pin_direction"
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
+    move-result-object v6
 
     .line 754
-    invoke-static {v2}, Landroid/app/smdt/SmdtManager;->readLine(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v6}, Landroid/app/smdt/SmdtManager;->readLine(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
-    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v6
 
-    const/4 v3, 0x1
+    const/4 v7, 0x1
 
-    if-eq v3, v2, :cond_1
+    if-eq v7, v6, :cond_1
 
-    const-string p1, "SmdtManager"
-
-    const-string p2, "===gpio is input======"
+    const-string p1, "===gpio is input======"
 
     .line 755
-    invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    return v1
+    return v5
 
     .line 759
     :cond_1
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Landroid/app/smdt/SmdtManager;->smdtGlobalClass:Ljava/lang/String;
+    sget-object v6, Landroid/app/smdt/SmdtManager;->smdtGlobalClass:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "xr1172_gpio"
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string p1, "/pin_data"
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -7566,11 +7230,7 @@
     .line 761
     new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "busybox echo 1 >"
-
-    invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p2, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7584,11 +7244,7 @@
     :cond_2
     new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "busybox echo 0 >"
-
-    invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p2, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7602,71 +7258,65 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    return v3
+    return v7
 
     :catch_0
     move-exception p1
 
-    const-string p2, "SmdtManager"
-
     .line 770
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "[smdtSetExtrnalGpioValue] Exception "
 
-    const-string v2, "[smdtSetExtrnalGpioValue] Exception "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_3
-    return v0
+    return v3
 .end method
 
 .method public smdtSetGpioDirection(III)I
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 1990
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtSetGpioDirection, gpioNumber:"
 
-    const-string v2, "smdtSetGpioDirection, gpioNumber:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v1, ",direction:"
 
-    const-string v2, ",direction:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v1, ", value:"
 
-    const-string v2, ", value:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1992
     :try_start_0
@@ -7681,28 +7331,24 @@
     :catch_0
     move-exception p1
 
-    const-string p2, "SmdtManager"
-
     .line 1994
-    new-instance p3, Ljava/lang/StringBuilder;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string p3, "[setValue] Exception:"
 
-    const-string v0, "[setValue] Exception:"
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 p1, -0x1
 
@@ -7712,28 +7358,26 @@
 .method public smdtSetGpioValue(IZ)I
     .locals 3
 
-    const-string v0, "SmdtManager"
-
     .line 2079
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtSetGpioValue, gpioNumber:"
 
-    const-string v2, "smdtSetGpioValue, gpioNumber:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    const-string v1, ",isTrue"
 
-    const-string v2, ",isTrue"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     if-eqz p2, :cond_0
 
@@ -7749,9 +7393,9 @@
     :try_start_0
     sget-object v0, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
 
-    sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v2, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v2, :cond_1
 
     .line 2085
     invoke-static {p1, p2}, Landroid/app/smdt/SmdtManager;->setGpioValue_3399(II)I
@@ -7773,28 +7417,24 @@
     :catch_0
     move-exception p1
 
-    const-string p2, "SmdtManager"
-
     .line 2090
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "[setValue] Exception:"
 
-    const-string v1, "[setValue] Exception:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 p1, -0x1
 
@@ -7845,7 +7485,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "smdt_lvds_bl/smdt_device_state"
+    const-string/jumbo v1, "smdt_lvds_bl/smdt_device_state"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7865,11 +7505,9 @@
     .line 1951
     new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "busybox echo 1 >"
 
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p1, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7879,8 +7517,6 @@
 
     .line 1952
     invoke-direct {p0, p1}, Landroid/app/smdt/SmdtManager;->executer(Ljava/lang/String;)Ljava/lang/String;
-
-    return v4
 
     :cond_3
     return v4
@@ -7898,11 +7534,9 @@
     .line 1960
     new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "busybox echo 0 >"
 
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p1, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7923,32 +7557,30 @@
 .end method
 
 .method public smdtSetMicArrayLedLevel(II)I
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 1394
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtSetMicArrayLedLevel, led:"
 
-    const-string v2, "smdtSetMicArrayLedLevel, led:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v1, ",level:"
 
-    const-string v2, ",level:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1395
     sget-object v0, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
@@ -7973,16 +7605,14 @@
 .method public smdtSetMobileDataEnabled(Landroid/content/Context;Z)Z
     .locals 6
 
-    const-string v0, "SmdtManager"
+    const-string v0, "setMobileDataEnabled"
 
     .line 1485
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v2, "smdtSetMobileDataEnabled, enabled:"
 
-    const-string v2, "smdtSetMobileDataEnabled, enabled:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -7990,89 +7620,89 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v2, "SmdtManager"
 
-    const-string v0, "connectivity"
+    invoke-static {v2, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v1, "connectivity"
 
     .line 1487
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Landroid/net/ConnectivityManager;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     .line 1490
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "mService"
+    const-string v3, "mService"
 
     .line 1491
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-virtual {v2, v3}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
     .line 1492
-    invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {v2, v3}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     .line 1493
-    invoke-virtual {v1, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     .line 1494
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v3, "setMobileDataEnabled"
+    new-array v4, v3, [Ljava/lang/Class;
 
     .line 1495
-    new-array v4, v2, [Ljava/lang/Class;
-
     sget-object v5, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    aput-object v5, v4, v0
+    aput-object v5, v4, v1
 
-    invoke-virtual {v1, v3, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v2, v0, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 1496
-    invoke-virtual {v1, v2}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    invoke-virtual {v2, v3}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+
+    new-array v3, v3, [Ljava/lang/Object;
 
     .line 1498
-    new-array v2, v2, [Ljava/lang/Object;
-
     invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p2
 
-    aput-object p2, v2, v0
+    aput-object p2, v3, v1
 
-    invoke-virtual {v1, p1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p1, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_5
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_4
@@ -8087,75 +7717,57 @@
     :catchall_0
     move-exception p1
 
-    goto :goto_1
+    .line 1511
+    throw p1
 
     :catch_0
-    :try_start_1
-    const-string p1, "setMobileDataEnabled"
-
-    const-string p2, "InvocationTargetException"
+    const-string p1, "InvocationTargetException"
 
     .line 1510
-    invoke-static {p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
     :catch_1
-    const-string p1, "setMobileDataEnabled"
-
-    const-string p2, "NoSuchMethodException"
+    const-string p1, "NoSuchMethodException"
 
     .line 1508
-    invoke-static {p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
     :catch_2
-    const-string p1, "setMobileDataEnabled"
-
-    const-string p2, "IllegalAccessException"
+    const-string p1, "IllegalAccessException"
 
     .line 1506
-    invoke-static {p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
     :catch_3
-    const-string p1, "setMobileDataEnabled"
-
-    const-string p2, "IllegalArgumentException"
+    const-string p1, "IllegalArgumentException"
 
     .line 1504
-    invoke-static {p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
     :catch_4
-    const-string p1, "setMobileDataEnabled"
-
-    const-string p2, "NoSuchFieldException"
+    const-string p1, "NoSuchFieldException"
 
     .line 1502
-    invoke-static {p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
     :catch_5
-    const-string p1, "setMobileDataEnabled"
-
-    const-string p2, "ClassNotFoundException"
+    const-string p1, "ClassNotFoundException"
 
     .line 1500
-    invoke-static {p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
-    return v0
-
-    .line 1511
-    :goto_1
-    throw p1
+    return v1
 .end method
 
 .method public smdtSetPowerOff(III)V
@@ -8163,12 +7775,14 @@
 
     const/4 v0, 0x1
 
+    const-string/jumbo v1, "smdt_power_off_time"
+
     if-ne p3, v0, :cond_0
 
     .line 2673
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v2
 
     mul-int/lit16 p1, p1, 0xe10
 
@@ -8180,32 +7794,30 @@
 
     int-to-long p1, p1
 
-    add-long/2addr p1, v0
-
-    const-string p3, "smdtservice"
+    add-long/2addr p1, v2
 
     .line 2675
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance p3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v0, "xzj===1=getTimeOffNow="
 
-    const-string v3, "xzj===1=getTimeOffNow="
+    invoke-direct {p3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p3, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    const-string v0, ","
 
-    const-string v3, ","
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p3, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p3
 
-    move-result-object v0
+    const-string/jumbo v0, "smdtservice"
 
-    invoke-static {p3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2676
     iget-object p3, p0, Landroid/app/smdt/SmdtManager;->mContext:Landroid/content/Context;
@@ -8214,30 +7826,28 @@
 
     move-result-object p3
 
-    const-string v0, "smdt_power_off_time"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string p1, ""
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p3, v0, p1}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p3, v1, p1}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
     .line 2677
     iget-object p1, p0, Landroid/app/smdt/SmdtManager;->mContext:Landroid/content/Context;
 
     new-instance p2, Landroid/content/Intent;
 
-    const-string p3, "smdt_power_off_update"
+    const-string/jumbo p3, "smdt_power_off_update"
 
     invoke-direct {p2, p3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
@@ -8253,11 +7863,9 @@
 
     move-result-object p1
 
-    const-string p2, "smdt_power_off_time"
+    const-string p2, "0"
 
-    const-string p3, "0"
-
-    invoke-static {p1, p2, p3}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v1, p2}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
     :goto_0
     return-void
@@ -8281,50 +7889,48 @@
 .end method
 
 .method public smdtSetPowerOnOff(CCCCC)I
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2098
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtSetPowerOnOff, off_h:"
 
-    const-string v2, "smdtSetPowerOnOff, off_h:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const-string v1, ",off_m:"
 
-    const-string v2, ",off_m:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const-string v1, ", on_h:"
 
-    const-string v2, ", on_h:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const-string v1, ", on_m:"
 
-    const-string v2, ", on_m:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const-string v1, ", enable:"
 
-    const-string v2, ", enable:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2099
     invoke-static {p1, p2, p3, p4, p5}, Landroid/app/smdt/SmdtManager;->poweronoff(CCCCC)I
@@ -8335,32 +7941,30 @@
 .end method
 
 .method public smdtSetPwmReg(IC)I
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2254
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtSetPwmReg, frequency:"
 
-    const-string v2, "smdtSetPwmReg, frequency:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v1, ",ratio:"
 
-    const-string v2, ",ratio:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2255
     invoke-static {p1, p2}, Landroid/app/smdt/SmdtManager;->setpwmreg(IC)I
@@ -8371,46 +7975,81 @@
 .end method
 
 .method public smdtSetStatusBar(Landroid/content/Context;Z)I
-    .locals 0
+    .locals 1
 
-    const/4 p0, 0x0
+    .line 1250
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    return p0
-.end method
+    const-string/jumbo v0, "smdtSetStatusBar, enable:"
 
-.method public smdtSetTimingSwitchMachine(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 3
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
 
     const-string v0, "SmdtManager"
 
+    invoke-static {v0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1252
+    :try_start_0
+    iget-object p1, p0, Landroid/app/smdt/SmdtManager;->mService:Landroid/app/smdt/ISmdtManager;
+
+    invoke-interface {p1, p2}, Landroid/app/smdt/ISmdtManager;->smdtSetStatusBar(Z)I
+
+    move-result p1
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p1
+
+    :catch_0
+    move-exception p1
+
+    const-string p2, "RemoteException in smdtSetStatusBar"
+
+    .line 1254
+    invoke-static {v0, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    const/4 p1, -0x1
+
+    return p1
+.end method
+
+.method public smdtSetTimingSwitchMachine(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+
     .line 977
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtSetTimingSwitchMachine, offTime:"
 
-    const-string v2, "smdtSetTimingSwitchMachine, offTime:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", OnTime:"
 
-    const-string v2, ", OnTime:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ",enable:"
 
-    const-string v2, ",enable:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 980
     :try_start_0
@@ -8425,54 +8064,48 @@
     :catch_0
     move-exception p1
 
-    const-string p2, "SmdtManager"
-
     .line 984
-    new-instance p3, Ljava/lang/StringBuilder;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string p3, "[smdtSetTimingSwitchMachine] RemoteException  "
 
-    const-string v0, "[smdtSetTimingSwitchMachine] RemoteException  "
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
     return-void
 .end method
 
 .method public smdtSetUSBEnable(I)I
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 895
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtSetUSBEnable values:"
 
-    const-string v2, "smdtSetUSBEnable values:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 897
     :try_start_0
@@ -8487,12 +8120,10 @@
     return p1
 
     :catch_0
-    const-string p1, "SmdtManager"
-
-    const-string v0, "[getValue] RemoteException"
+    const-string p1, "[getValue] RemoteException"
 
     .line 899
-    invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 p1, -0x1
 
@@ -8500,38 +8131,36 @@
 .end method
 
 .method public smdtSetUsbPower(III)I
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 1855
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtSetUsbPower, type:"
 
-    const-string v2, "smdtSetUsbPower, type:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v1, ", num:"
 
-    const-string v2, ", num:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v1, ", values:"
 
-    const-string v2, ", values:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1856
     invoke-static {p1, p2, p3}, Landroid/app/smdt/SmdtManager;->setUSBPower(III)I
@@ -8542,26 +8171,24 @@
 .end method
 
 .method public smdtSetVolume(Landroid/content/Context;I)Z
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 1457
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtSetVolume, volume:"
 
-    const-string v2, "smdtSetVolume, volume:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     const-string v0, "audio"
 
@@ -8596,37 +8223,35 @@
 .method public smdtSetXrm117xGpioDirection(III)I
     .locals 3
 
+    const-string/jumbo v0, "smdtSetXrm117xGpioDirection->>gpioNumber="
+
     :try_start_0
-    const-string v0, "ddd"
+    const-string v1, "ddd"
 
     .line 2032
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "smdtSetXrm117xGpioDirection->>gpioNumber="
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, "  direction="
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "  direction="
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, "  value="
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "  value="
+    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2033
     invoke-static {p1, p2, p3}, Landroid/app/smdt/SmdtManager;->setXrm117xGpioDirection(III)I
@@ -8640,26 +8265,24 @@
     :catch_0
     move-exception p1
 
-    const-string p2, "SmdtManager"
-
     .line 2035
-    new-instance p3, Ljava/lang/StringBuilder;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string p3, "[setValue] Exception:"
 
-    const-string v0, "[setValue] Exception:"
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
+
+    const-string p2, "SmdtManager"
 
     invoke-static {p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -8669,18 +8292,16 @@
 .end method
 
 .method public smdtSetXrm117xGpioValue(II)I
-    .locals 3
+    .locals 4
 
-    const-string v0, "SmdtManager"
+    const-string/jumbo v0, "smdtSetXrm117xGpioValue->>gpioNumber="
 
     .line 2010
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v2, "smdtSetXrm117xGpioValue, gpioNumber:"
 
-    const-string v2, "smdtSetXrm117xGpioValue, gpioNumber:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -8694,33 +8315,31 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v2, "SmdtManager"
+
+    invoke-static {v2, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :try_start_0
-    const-string v0, "ddd"
+    const-string v1, "ddd"
 
     .line 2012
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "smdtSetXrm117xGpioValue->>gpioNumber="
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, "  value="
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "  value="
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2013
     invoke-static {p1, p2}, Landroid/app/smdt/SmdtManager;->setXrm117xGpioValue(II)I
@@ -8734,28 +8353,24 @@
     :catch_0
     move-exception p1
 
-    const-string p2, "SmdtManager"
-
     .line 2015
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "[setValue] Exception:"
 
-    const-string v1, "[setValue] Exception:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 p1, -0x1
 
@@ -8763,153 +8378,139 @@
 .end method
 
 .method public smdtSetutcPowerOnOff(IIIIIIIIIII)I
-    .locals 21
-
-    move/from16 v0, p1
-
-    move/from16 v1, p2
-
-    move/from16 v2, p3
-
-    move/from16 v3, p4
-
-    move/from16 v4, p5
-
-    move/from16 v5, p6
-
-    move/from16 v6, p7
-
-    move/from16 v7, p8
-
-    move/from16 v8, p9
-
-    move/from16 v9, p10
-
-    const-string v10, "SmdtManager"
+    .locals 19
 
     .line 2111
-    new-instance v11, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtSetutcPowerOnOff:"
 
-    const-string v12, "smdtSetutcPowerOnOff:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move/from16 v1, p1
 
-    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v12, "-"
+    const-string v2, "-"
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move/from16 v3, p2
 
-    const-string v12, "-"
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move/from16 v4, p3
 
-    const-string v12, " "
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v5, " "
 
-    invoke-virtual {v11, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v12, ":"
+    move/from16 v6, p4
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v7, ":"
 
-    const-string v12, ":00\nlocal_on_date :"
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move/from16 v8, p5
 
-    invoke-virtual {v11, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v12, "-"
+    const-string v9, ":00\nlocal_on_date :"
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move/from16 v9, p6
 
-    const-string v12, "-"
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move/from16 v10, p7
 
-    const-string v12, " "
+    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move/from16 v2, p8
 
-    const-string v12, ":"
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move/from16 v5, p9
 
-    const-string v12, ":00\nenable"
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move/from16 v12, p11
+    move/from16 v7, p10
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v13, "\n"
+    const-string v11, ":00\nenable"
 
-    invoke-virtual {v11, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move/from16 v11, p11
 
-    move-result-object v11
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-static {v10, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v12, "\n"
+
+    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v12, "SmdtManager"
+
+    invoke-static {v12, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2115
-    sget-object v10, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v0, Landroid/app/smdt/SmdtManager;->PLATFORM:Landroid/app/smdt/SmdtManager$Platform;
 
-    sget-object v11, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
+    sget-object v13, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
 
-    if-eq v10, v11, :cond_0
+    if-eq v0, v13, :cond_0
 
     const/4 v0, -0x1
 
     return v0
 
     :cond_0
-    const/4 v10, 0x5
+    const/4 v0, 0x3
 
-    .line 2119
-    new-array v11, v10, [I
-
-    fill-array-data v11, :array_0
-
-    .line 2120
-    new-array v11, v10, [I
-
-    fill-array-data v11, :array_1
-
-    const/4 v11, 0x3
+    const/4 v13, 0x0
 
     .line 2121
-    new-array v13, v11, [I
+    filled-new-array {v13, v13, v0}, [I
 
-    fill-array-data v13, :array_2
+    move-result-object v14
+
+    const/4 v0, 0x6
 
     .line 2122
-    new-array v14, v11, [I
+    filled-new-array {v13, v13, v0}, [I
 
-    fill-array-data v14, :array_3
+    move-result-object v15
+
+    const/16 v0, 0x7b3
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x1
 
     .line 2123
-    new-array v15, v10, [I
+    filled-new-array {v0, v1, v2, v13, v13}, [I
 
-    fill-array-data v15, :array_4
+    move-result-object v0
 
     .line 2128
     new-instance v16, Ljava/util/GregorianCalendar;
@@ -8919,279 +8520,220 @@
     .line 2129
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
-    move-result-object v11
-
-    const/4 v10, 0x1
+    move-result-object v13
 
     .line 2130
-    invoke-virtual {v11, v10}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {v13, v2}, Ljava/util/Calendar;->get(I)I
 
     move-result v18
 
-    const/4 v12, 0x2
-
     .line 2131
-    invoke-virtual {v11, v12}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {v13, v1}, Ljava/util/Calendar;->get(I)I
 
-    move-result v11
+    move-result v13
 
-    add-int/2addr v11, v10
+    add-int/2addr v13, v2
 
-    sub-int/2addr v11, v10
+    sub-int/2addr v13, v2
 
-    if-ge v11, v10, :cond_1
-
-    const/16 v11, 0xc
+    if-ge v13, v2, :cond_1
 
     add-int/lit8 v18, v18, -0x1
 
-    move/from16 v11, v18
-
-    const/16 v18, 0xc
-
-    goto :goto_0
+    const/16 v13, 0xc
 
     :cond_1
-    move/from16 v20, v18
+    move/from16 v1, v18
 
-    move/from16 v18, v11
+    const/16 v17, 0x0
 
-    move/from16 v11, v20
+    .line 2140
+    aput v1, v0, v17
 
-    :goto_0
-    const/16 v19, 0x0
-
-    aput v11, v15, v19
-
-    aput v18, v15, v10
+    .line 2141
+    aput v13, v0, v2
 
     .line 2142
-    invoke-static {v15}, Landroid/app/smdt/SmdtManager;->datetostring([I)Ljava/lang/String;
+    invoke-static {v0}, Landroid/app/smdt/SmdtManager;->datetostring([I)Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v2
 
     .line 2145
     invoke-virtual/range {v16 .. v16}, Ljava/util/Calendar;->getTimeZone()Ljava/util/TimeZone;
 
-    move-result-object v16
+    move-result-object v0
 
-    invoke-virtual/range {v16 .. v16}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
 
-    move-result-object v12
-
-    move/from16 v17, v11
-
-    const/4 v10, 0x5
+    move-result-object v3
 
     .line 2147
-    new-array v11, v10, [I
+    filled-new-array/range {p1 .. p5}, [I
 
-    aput v0, v11, v19
-
-    const/16 v16, 0x1
-
-    aput v1, v11, v16
-
-    const/4 v1, 0x2
-
-    aput v2, v11, v1
-
-    const/4 v0, 0x3
-
-    aput v3, v11, v0
-
-    const/4 v2, 0x4
-
-    aput v4, v11, v2
+    move-result-object v0
 
     .line 2148
-    new-array v3, v10, [I
+    filled-new-array/range {p6 .. p10}, [I
 
-    aput v5, v3, v19
-
-    aput v6, v3, v16
-
-    aput v7, v3, v1
-
-    aput v8, v3, v0
-
-    aput v9, v3, v2
+    move-result-object v4
 
     .line 2150
-    invoke-static {v11}, Landroid/app/smdt/SmdtManager;->datetostring([I)Ljava/lang/String;
+    invoke-static {v0}, Landroid/app/smdt/SmdtManager;->datetostring([I)Ljava/lang/String;
 
     move-result-object v0
 
     .line 2151
-    invoke-static {v3}, Landroid/app/smdt/SmdtManager;->datetostring([I)Ljava/lang/String;
+    invoke-static {v4}, Landroid/app/smdt/SmdtManager;->datetostring([I)Ljava/lang/String;
 
-    move-result-object v1
-
-    const-string v2, "SmdtManager"
+    move-result-object v4
 
     .line 2154
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v6, "baseutc:"
 
-    const-string v4, "baseutc:"
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v5
 
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v12, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2158
     :try_start_0
-    invoke-static {v12, v0, v15}, Landroid/app/smdt/SmdtManager;->dateParseUtc(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v0, v2}, Landroid/app/smdt/SmdtManager;->dateParseUtc(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move v2, v0
+    move v5, v0
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_0
     move-exception v0
 
-    move-object v2, v0
+    move-object v5, v0
 
     .line 2161
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v5}, Ljava/lang/Exception;->printStackTrace()V
 
-    const/4 v2, 0x0
+    const/4 v5, 0x0
 
     .line 2166
-    :goto_1
+    :goto_0
     :try_start_1
-    invoke-static {v12, v1, v15}, Landroid/app/smdt/SmdtManager;->dateParseUtc(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4, v2}, Landroid/app/smdt/SmdtManager;->dateParseUtc(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_2
+    goto :goto_1
 
     :catch_1
     move-exception v0
 
-    move-object v1, v0
+    move-object v2, v0
 
     .line 2169
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
     const/4 v0, 0x0
 
     .line 2172
-    :goto_2
-    div-int/lit16 v1, v2, 0x2710
+    :goto_1
+    div-int/lit16 v2, v5, 0x2710
 
-    aput v1, v13, v19
+    const/4 v3, 0x0
+
+    aput v2, v14, v3
 
     .line 2173
-    div-int/lit8 v1, v2, 0x64
+    div-int/lit8 v3, v5, 0x64
 
-    aget v3, v13, v19
+    mul-int/lit8 v4, v2, 0x64
+
+    sub-int/2addr v3, v4
+
+    const/4 v4, 0x1
+
+    aput v3, v14, v4
+
+    mul-int/lit16 v2, v2, 0x2710
+
+    sub-int/2addr v5, v2
 
     mul-int/lit8 v3, v3, 0x64
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v5, v3
 
-    const/4 v3, 0x1
-
-    aput v1, v13, v3
+    const/4 v2, 0x2
 
     .line 2174
-    aget v1, v13, v19
-
-    mul-int/lit16 v1, v1, 0x2710
-
-    sub-int/2addr v2, v1
-
-    aget v1, v13, v3
-
-    mul-int/lit8 v1, v1, 0x64
-
-    sub-int/2addr v2, v1
-
-    const/4 v1, 0x2
-
-    aput v2, v13, v1
+    aput v5, v14, v2
 
     .line 2176
-    div-int/lit16 v1, v0, 0x2710
+    div-int/lit16 v2, v0, 0x2710
 
-    aput v1, v14, v19
+    const/4 v3, 0x0
+
+    aput v2, v15, v3
 
     .line 2177
-    div-int/lit8 v1, v0, 0x64
+    div-int/lit8 v3, v0, 0x64
 
-    aget v2, v14, v19
+    mul-int/lit8 v4, v2, 0x64
 
-    mul-int/lit8 v2, v2, 0x64
+    sub-int/2addr v3, v4
 
-    sub-int/2addr v1, v2
+    const/4 v4, 0x1
 
-    const/4 v2, 0x1
+    aput v3, v15, v4
 
-    aput v1, v14, v2
+    mul-int/lit16 v5, v2, 0x2710
+
+    sub-int/2addr v0, v5
+
+    mul-int/lit8 v5, v3, 0x64
+
+    sub-int/2addr v0, v5
+
+    const/4 v5, 0x2
 
     .line 2178
-    aget v1, v14, v19
+    aput v0, v15, v5
 
-    mul-int/lit16 v1, v1, 0x2710
+    add-int/lit16 v1, v1, -0x7b2
 
-    sub-int/2addr v0, v1
-
-    aget v1, v14, v2
-
-    mul-int/lit8 v1, v1, 0x64
-
-    sub-int/2addr v0, v1
-
-    const/4 v1, 0x2
-
-    aput v0, v14, v1
-
-    move/from16 v3, v17
-
-    add-int/lit16 v0, v3, -0x7b2
+    const/4 v6, 0x0
 
     .line 2185
-    aget v3, v13, v19
+    aget v6, v14, v6
 
-    aget v4, v13, v2
+    aget v4, v14, v4
 
-    aget v5, v13, v1
+    aget v5, v14, v5
 
-    aget v6, v14, v19
+    move/from16 p1, v1
 
-    aget v2, v14, v2
+    move/from16 p2, v13
 
-    aget v1, v14, v1
-
-    move/from16 p1, v0
-
-    move/from16 p2, v18
-
-    move/from16 p3, v3
+    move/from16 p3, v6
 
     move/from16 p4, v4
 
     move/from16 p5, v5
 
-    move/from16 p6, v6
+    move/from16 p6, v2
 
-    move/from16 p7, v2
+    move/from16 p7, v3
 
-    move/from16 p8, v1
+    move/from16 p8, v0
 
     move/from16 p9, p11
 
@@ -9200,70 +8742,27 @@
     move-result v0
 
     return v0
-
-    :array_0
-    .array-data 4
-        0x7e2
-        0x1
-        0x1
-        0x1
-        0x1
-    .end array-data
-
-    :array_1
-    .array-data 4
-        0x7e2
-        0x1
-        0x1
-        0x1
-        0x1
-    .end array-data
-
-    :array_2
-    .array-data 4
-        0x0
-        0x0
-        0x3
-    .end array-data
-
-    :array_3
-    .array-data 4
-        0x0
-        0x0
-        0x6
-    .end array-data
-
-    :array_4
-    .array-data 4
-        0x7b3
-        0x2
-        0x1
-        0x0
-        0x0
-    .end array-data
 .end method
 
 .method public smdtSilentInstall(Ljava/lang/String;Landroid/content/Context;)V
-    .locals 2
-
-    const-string p2, "SmdtManager"
+    .locals 1
 
     .line 777
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v0, "smdtSilentInstall path:"
 
-    const-string v1, "smdtSilentInstall path:"
+    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p2
 
-    move-result-object v0
+    const-string v0, "SmdtManager"
 
-    invoke-static {p2, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 779
     :try_start_0
@@ -9276,12 +8775,10 @@
     goto :goto_0
 
     :catch_0
-    const-string p1, "SmdtManager"
-
-    const-string p2, "[getValue] RemoteException"
+    const-string p1, "[getValue] RemoteException"
 
     .line 781
-    invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
     return-void
@@ -9292,7 +8789,7 @@
 
     const-string p3, "SmdtManager"
 
-    const-string v0, "smdtTakeScreenshot."
+    const-string/jumbo v0, "smdtTakeScreenshot."
 
     .line 1735
     invoke-static {p3, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -9300,11 +8797,9 @@
     .line 1736
     new-instance p3, Ljava/lang/StringBuilder;
 
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v0, "screencap -p "
 
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -9331,26 +8826,24 @@
 .end method
 
 .method public smdtWatchDogEnable(C)I
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 1650
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtWatchDogEnable, enable:"
 
-    const-string v2, "smdtWatchDogEnable, enable:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1651
     invoke-static {p1}, Landroid/app/smdt/SmdtManager;->watchDogEnable(C)I
@@ -9365,7 +8858,7 @@
 
     const-string v0, "SmdtManager"
 
-    const-string v1, "smdtWatchDogFeed"
+    const-string/jumbo v1, "smdtWatchDogFeed"
 
     .line 1644
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -9390,44 +8883,42 @@
 .end method
 
 .method public smdtWriteExtROM(IIII[B)I
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 1316
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "smdtWriteExtROM, deviceId:"
 
-    const-string v2, "smdtWriteExtROM, deviceId:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v1, ",areaId:"
 
-    const-string v2, ",areaId:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v1, ",start_addr:"
 
-    const-string v2, ",start_addr:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v1, ",size:"
 
-    const-string v2, ",size:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1320
     :try_start_0
@@ -9476,26 +8967,24 @@
 .end method
 
 .method public uninstallApp(Ljava/lang/String;Landroid/app/smdt/SmdtManager$DeleteCallback;)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 2783
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "uninstallApp, packageName:"
 
-    const-string v2, "uninstallApp, packageName:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2785
     :try_start_0
@@ -9518,38 +9007,36 @@
 .end method
 
 .method public unmountVolume(Ljava/lang/String;ZZ)V
-    .locals 3
-
-    const-string v0, "SmdtManager"
+    .locals 2
 
     .line 572
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "unmountVolume path:"
 
-    const-string v2, "unmountVolume path:"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", force:"
 
-    const-string v2, ", force:"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    const-string v1, ", removeEncryption"
 
-    const-string v2, ", removeEncryption"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "SmdtManager"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 574
     :try_start_0
@@ -9564,12 +9051,10 @@
     :catch_0
     move-exception p1
 
-    const-string p2, "SmdtManager"
-
-    const-string p3, "RemoteException in unmountVolume"
+    const-string p2, "RemoteException in unmountVolume"
 
     .line 577
-    invoke-static {p2, p3, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :goto_0
     return-void

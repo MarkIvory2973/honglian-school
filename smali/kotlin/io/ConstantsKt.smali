@@ -18,13 +18,10 @@
     k = 0x2
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/jvm/JvmName;
-    name = "ConstantsKt"
+    xi = 0x30
 .end annotation
 
 

@@ -37,10 +37,6 @@
 # virtual methods
 .method public onChildViewAttachedToWindow(Landroid/view/View;)V
     .locals 2
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 267
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -75,10 +71,6 @@
 
 .method public onChildViewDetachedFromWindow(Landroid/view/View;)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method

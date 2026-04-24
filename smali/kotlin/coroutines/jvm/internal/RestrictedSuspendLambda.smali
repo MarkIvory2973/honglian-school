@@ -43,13 +43,10 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/SinceKotlin;
-    version = "1.3"
+    xi = 0x30
 .end annotation
 
 
@@ -71,10 +68,6 @@
 
 .method public constructor <init>(ILkotlin/coroutines/Continuation;)V
     .locals 0
-    .param p2    # Lkotlin/coroutines/Continuation;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -87,6 +80,7 @@
     .line 144
     invoke-direct {p0, p2}, Lkotlin/coroutines/jvm/internal/RestrictedContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;)V
 
+    .line 142
     iput p1, p0, Lkotlin/coroutines/jvm/internal/RestrictedSuspendLambda;->arity:I
 
     return-void
@@ -105,8 +99,6 @@
 
 .method public toString()Ljava/lang/String;
     .locals 2
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 148
     invoke-virtual {p0}, Lkotlin/coroutines/jvm/internal/RestrictedSuspendLambda;->getCompletion()Lkotlin/coroutines/Continuation;
@@ -124,7 +116,7 @@
 
     move-result-object v0
 
-    const-string v1, "Reflection.renderLambdaToString(this)"
+    const-string v1, "renderLambdaToString(...)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

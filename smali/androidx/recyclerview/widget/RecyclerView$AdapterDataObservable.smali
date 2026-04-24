@@ -132,10 +132,6 @@
 
 .method public notifyItemRangeChanged(IILjava/lang/Object;)V
     .locals 2
-    .param p3    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 12267
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;

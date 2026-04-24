@@ -45,14 +45,6 @@
 # virtual methods
 .method public onCurrentListChanged(Ljava/util/List;Ljava/util/List;)V
     .locals 1
-    .param p1    # Ljava/util/List;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/List;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -3,22 +3,8 @@
 .source "TimeUtils.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
-
 # static fields
 .field public static final HUNDRED_DAY_FIELD_LEN:I = 0x13
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-.end field
 
 .field private static final SECONDS_PER_DAY:I = 0x15180
 
@@ -44,9 +30,9 @@
 
     const/16 v0, 0x18
 
-    .line 41
     new-array v0, v0, [C
 
+    .line 41
     sput-object v0, Landroidx/core/util/TimeUtils;->sFormatStr:[C
 
     return-void
@@ -64,15 +50,15 @@
 .method private static accumField(IIZI)I
     .locals 2
 
-    const/4 v0, 0x3
+    const/16 v0, 0x63
 
-    const/16 v1, 0x63
+    const/4 v1, 0x3
 
-    if-gt p0, v1, :cond_5
+    if-gt p0, v0, :cond_5
 
     if-eqz p2, :cond_0
 
-    if-lt p3, v0, :cond_0
+    if-lt p3, v1, :cond_0
 
     goto :goto_2
 
@@ -115,18 +101,13 @@
 
     :cond_5
     :goto_2
-    add-int/2addr p1, v0
+    add-int/2addr p1, v1
 
     return p1
 .end method
 
 .method public static formatDuration(JJLjava/io/PrintWriter;)V
     .locals 3
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
 
     const-wide/16 v0, 0x0
 
@@ -154,11 +135,6 @@
 
 .method public static formatDuration(JLjava/io/PrintWriter;)V
     .locals 1
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
 
     const/4 v0, 0x0
 
@@ -170,11 +146,6 @@
 
 .method public static formatDuration(JLjava/io/PrintWriter;I)V
     .locals 2
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
 
     .line 163
     sget-object v0, Landroidx/core/util/TimeUtils;->sFormatSync:Ljava/lang/Object;
@@ -215,11 +186,6 @@
 
 .method public static formatDuration(JLjava/lang/StringBuilder;)V
     .locals 2
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
 
     .line 154
     sget-object v0, Landroidx/core/util/TimeUtils;->sFormatSync:Ljava/lang/Object;
@@ -315,9 +281,9 @@
     goto :goto_1
 
     :cond_3
-    const/16 v4, 0x2d
-
     neg-long v0, v0
+
+    const/16 v4, 0x2d
 
     :goto_1
     const-wide/16 v7, 0x3e8

@@ -28,14 +28,6 @@
 # virtual methods
 .method public getItemOffsets(Landroid/graphics/Rect;ILandroidx/recyclerview/widget/RecyclerView;)V
     .locals 0
-    .param p1    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -49,22 +41,6 @@
 
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 0
-    .param p1    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p4    # Landroidx/recyclerview/widget/RecyclerView$State;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 10782
     invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -84,14 +60,6 @@
 
 .method public onDraw(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 0
-    .param p1    # Landroid/graphics/Canvas;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -100,18 +68,6 @@
 
 .method public onDraw(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 0
-    .param p1    # Landroid/graphics/Canvas;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroidx/recyclerview/widget/RecyclerView$State;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 10716
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;->onDraw(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;)V
@@ -121,14 +77,6 @@
 
 .method public onDrawOver(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 0
-    .param p1    # Landroid/graphics/Canvas;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -137,18 +85,6 @@
 
 .method public onDrawOver(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 0
-    .param p1    # Landroid/graphics/Canvas;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroidx/recyclerview/widget/RecyclerView$State;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 10738
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;->onDrawOver(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;)V

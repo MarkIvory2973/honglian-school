@@ -22,37 +22,23 @@
 
 # direct methods
 .method constructor <init>(II)V
-    .locals 3
-    .param p1    # I
-        .annotation build Landroidx/annotation/ColorInt;
-        .end annotation
-    .end param
-    .param p2    # I
-        .annotation build Landroidx/annotation/ColorInt;
-        .end annotation
-    .end param
+    .locals 0
 
     .line 227
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x2
-
     .line 228
-    new-array v1, v0, [I
+    filled-new-array {p1, p2}, [I
 
-    const/4 v2, 0x0
+    move-result-object p1
 
-    aput p1, v1, v2
+    iput-object p1, p0, Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;->mColors:[I
 
-    const/4 p1, 0x1
+    const/4 p1, 0x2
 
-    aput p2, v1, p1
-
-    iput-object v1, p0, Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;->mColors:[I
+    new-array p1, p1, [F
 
     .line 229
-    new-array p1, v0, [F
-
     fill-array-data p1, :array_0
 
     iput-object p1, p0, Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;->mOffsets:[F
@@ -67,52 +53,28 @@
 .end method
 
 .method constructor <init>(III)V
-    .locals 3
-    .param p1    # I
-        .annotation build Landroidx/annotation/ColorInt;
-        .end annotation
-    .end param
-    .param p2    # I
-        .annotation build Landroidx/annotation/ColorInt;
-        .end annotation
-    .end param
-    .param p3    # I
-        .annotation build Landroidx/annotation/ColorInt;
-        .end annotation
-    .end param
+    .locals 0
 
     .line 232
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x3
-
     .line 233
-    new-array v1, v0, [I
+    filled-new-array {p1, p2, p3}, [I
 
-    const/4 v2, 0x0
+    move-result-object p1
 
-    aput p1, v1, v2
+    iput-object p1, p0, Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;->mColors:[I
 
-    const/4 p1, 0x1
+    const/4 p1, 0x3
 
-    aput p2, v1, p1
-
-    const/4 p1, 0x2
-
-    aput p3, v1, p1
-
-    iput-object v1, p0, Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;->mColors:[I
+    new-array p1, p1, [F
 
     .line 234
-    new-array p1, v0, [F
-
     fill-array-data p1, :array_0
 
     iput-object p1, p0, Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;->mOffsets:[F
 
     return-void
-
-    nop
 
     :array_0
     .array-data 4
@@ -124,14 +86,6 @@
 
 .method constructor <init>(Ljava/util/List;Ljava/util/List;)V
     .locals 4
-    .param p1    # Ljava/util/List;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/List;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

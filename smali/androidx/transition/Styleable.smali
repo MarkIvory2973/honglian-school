@@ -4,12 +4,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/SuppressLint;
-    value = {
-        "InlinedApi"
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/transition/Styleable$PatternPathMotion;,
@@ -29,167 +23,150 @@
 
 # static fields
 .field static final ARC_MOTION:[I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field static final CHANGE_BOUNDS:[I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field static final CHANGE_TRANSFORM:[I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field static final FADE:[I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field static final PATTERN_PATH_MOTION:[I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field static final SLIDE:[I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field static final TRANSITION:[I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field static final TRANSITION_MANAGER:[I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field static final TRANSITION_SET:[I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field static final TRANSITION_TARGET:[I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field static final VISIBILITY_TRANSITION:[I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 4
 
     const/4 v0, 0x6
 
-    .line 30
     new-array v0, v0, [I
 
+    .line 30
     fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/transition/Styleable;->TRANSITION_TARGET:[I
 
-    const/4 v0, 0x3
+    const v0, 0x10103de
+
+    const v1, 0x10103df
+
+    const v2, 0x10103dd
 
     .line 55
-    new-array v1, v0, [I
+    filled-new-array {v2, v0, v1}, [I
 
-    fill-array-data v1, :array_1
+    move-result-object v0
 
-    sput-object v1, Landroidx/transition/Styleable;->TRANSITION_MANAGER:[I
+    sput-object v0, Landroidx/transition/Styleable;->TRANSITION_MANAGER:[I
 
-    const/4 v1, 0x4
+    const v0, 0x10103e2
+
+    const v1, 0x101044f
+
+    const v2, 0x1010141
+
+    const v3, 0x1010198
 
     .line 71
-    new-array v1, v1, [I
+    filled-new-array {v2, v3, v0, v1}, [I
 
-    fill-array-data v1, :array_2
+    move-result-object v0
 
-    sput-object v1, Landroidx/transition/Styleable;->TRANSITION:[I
+    sput-object v0, Landroidx/transition/Styleable;->TRANSITION:[I
 
-    const/4 v1, 0x1
+    const v0, 0x10104cf
 
     .line 90
-    new-array v2, v1, [I
+    filled-new-array {v0}, [I
 
-    const/4 v3, 0x0
+    move-result-object v0
 
-    const v4, 0x10104cf
+    sput-object v0, Landroidx/transition/Styleable;->CHANGE_BOUNDS:[I
 
-    aput v4, v2, v3
-
-    sput-object v2, Landroidx/transition/Styleable;->CHANGE_BOUNDS:[I
+    const v0, 0x101047c
 
     .line 100
-    new-array v2, v1, [I
+    filled-new-array {v0}, [I
 
-    const v4, 0x101047c
+    move-result-object v0
 
-    aput v4, v2, v3
+    sput-object v0, Landroidx/transition/Styleable;->VISIBILITY_TRANSITION:[I
 
-    sput-object v2, Landroidx/transition/Styleable;->VISIBILITY_TRANSITION:[I
+    const v0, 0x10103e1
 
     .line 110
-    new-array v2, v1, [I
+    filled-new-array {v0}, [I
 
-    const v4, 0x10103e1
+    move-result-object v0
 
-    aput v4, v2, v3
+    sput-object v0, Landroidx/transition/Styleable;->FADE:[I
 
-    sput-object v2, Landroidx/transition/Styleable;->FADE:[I
+    const v0, 0x10104bc
 
-    const/4 v2, 0x2
+    const v1, 0x10104bd
 
     .line 120
-    new-array v2, v2, [I
+    filled-new-array {v0, v1}, [I
 
-    fill-array-data v2, :array_3
+    move-result-object v0
 
-    sput-object v2, Landroidx/transition/Styleable;->CHANGE_TRANSFORM:[I
+    sput-object v0, Landroidx/transition/Styleable;->CHANGE_TRANSFORM:[I
+
+    const v0, 0x1010430
 
     .line 133
-    new-array v2, v1, [I
+    filled-new-array {v0}, [I
 
-    const v4, 0x1010430
+    move-result-object v0
 
-    aput v4, v2, v3
+    sput-object v0, Landroidx/transition/Styleable;->SLIDE:[I
 
-    sput-object v2, Landroidx/transition/Styleable;->SLIDE:[I
+    const v0, 0x10103e0
 
     .line 143
-    new-array v2, v1, [I
+    filled-new-array {v0}, [I
 
-    const v4, 0x10103e0
+    move-result-object v0
 
-    aput v4, v2, v3
+    sput-object v0, Landroidx/transition/Styleable;->TRANSITION_SET:[I
 
-    sput-object v2, Landroidx/transition/Styleable;->TRANSITION_SET:[I
+    const v0, 0x101047e
+
+    const v1, 0x101047f
+
+    const v2, 0x101047d
 
     .line 153
-    new-array v0, v0, [I
+    filled-new-array {v2, v0, v1}, [I
 
-    fill-array-data v0, :array_4
+    move-result-object v0
 
     sput-object v0, Landroidx/transition/Styleable;->ARC_MOTION:[I
 
+    const v0, 0x10104ca
+
     .line 169
-    new-array v0, v1, [I
+    filled-new-array {v0}, [I
 
-    const v1, 0x10104ca
-
-    aput v1, v0, v3
+    move-result-object v0
 
     sput-object v0, Landroidx/transition/Styleable;->PATTERN_PATH_MOTION:[I
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -199,34 +176,6 @@
         0x1010442
         0x101044d
         0x101044e
-    .end array-data
-
-    :array_1
-    .array-data 4
-        0x10103dd
-        0x10103de
-        0x10103df
-    .end array-data
-
-    :array_2
-    .array-data 4
-        0x1010141
-        0x1010198
-        0x10103e2
-        0x101044f
-    .end array-data
-
-    :array_3
-    .array-data 4
-        0x10104bc
-        0x10104bd
-    .end array-data
-
-    :array_4
-    .array-data 4
-        0x101047d
-        0x101047e
-        0x101047f
     .end array-data
 .end method
 

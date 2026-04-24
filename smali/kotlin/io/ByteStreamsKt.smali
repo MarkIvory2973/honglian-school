@@ -45,21 +45,20 @@
     k = 0x2
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/jvm/JvmName;
-    name = "ByteStreamsKt"
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method private static final buffered(Ljava/io/InputStream;I)Ljava/io/BufferedInputStream;
     .locals 1
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 72
     instance-of v0, p0, Ljava/io/BufferedInputStream;
@@ -83,8 +82,10 @@
 
 .method private static final buffered(Ljava/io/OutputStream;I)Ljava/io/BufferedOutputStream;
     .locals 1
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 88
     instance-of v0, p0, Ljava/io/BufferedOutputStream;
@@ -115,8 +116,13 @@
 
     const/16 p1, 0x2000
 
-    .line 72
     :cond_0
+    const-string p2, "<this>"
+
+    .line 71
+    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 72
     instance-of p2, p0, Ljava/io/BufferedInputStream;
 
     if-eqz p2, :cond_1
@@ -145,8 +151,13 @@
 
     const/16 p1, 0x2000
 
-    .line 88
     :cond_0
+    const-string p2, "<this>"
+
+    .line 87
+    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 88
     instance-of p2, p0, Ljava/io/BufferedOutputStream;
 
     if-eqz p2, :cond_1
@@ -168,12 +179,18 @@
 
 .method private static final bufferedReader(Ljava/io/InputStream;Ljava/nio/charset/Charset;)Ljava/io/BufferedReader;
     .locals 1
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
-    .line 80
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "charset"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     new-instance v0, Ljava/io/InputStreamReader;
 
+    .line 80
     invoke-direct {v0, p0, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
     check-cast v0, Ljava/io/Reader;
@@ -184,8 +201,6 @@
 
     check-cast v0, Ljava/io/BufferedReader;
 
-    move-object p0, v0
-
     goto :goto_0
 
     :cond_0
@@ -195,8 +210,10 @@
 
     invoke-direct {p0, v0, p1}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
 
+    move-object v0, p0
+
     :goto_0
-    return-object p0
+    return-object v0
 .end method
 
 .method static synthetic bufferedReader$default(Ljava/io/InputStream;Ljava/nio/charset/Charset;ILjava/lang/Object;)Ljava/io/BufferedReader;
@@ -210,41 +227,55 @@
     sget-object p1, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     :cond_0
+    const-string p2, "<this>"
+
+    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p2, "charset"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     new-instance p2, Ljava/io/InputStreamReader;
 
     invoke-direct {p2, p0, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
     check-cast p2, Ljava/io/Reader;
 
-    const/16 p0, 0x2000
+    instance-of p0, p2, Ljava/io/BufferedReader;
 
-    instance-of p1, p2, Ljava/io/BufferedReader;
-
-    if-eqz p1, :cond_1
+    if-eqz p0, :cond_1
 
     check-cast p2, Ljava/io/BufferedReader;
-
-    move-object p1, p2
 
     goto :goto_0
 
     :cond_1
-    new-instance p1, Ljava/io/BufferedReader;
+    new-instance p0, Ljava/io/BufferedReader;
 
-    invoke-direct {p1, p2, p0}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
+    const/16 p1, 0x2000
+
+    invoke-direct {p0, p2, p1}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
+
+    move-object p2, p0
 
     :goto_0
-    return-object p1
+    return-object p2
 .end method
 
 .method private static final bufferedWriter(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)Ljava/io/BufferedWriter;
     .locals 1
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
-    .line 96
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "charset"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     new-instance v0, Ljava/io/OutputStreamWriter;
 
+    .line 96
     invoke-direct {v0, p0, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
 
     check-cast v0, Ljava/io/Writer;
@@ -255,8 +286,6 @@
 
     check-cast v0, Ljava/io/BufferedWriter;
 
-    move-object p0, v0
-
     goto :goto_0
 
     :cond_0
@@ -266,8 +295,10 @@
 
     invoke-direct {p0, v0, p1}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
 
+    move-object v0, p0
+
     :goto_0
-    return-object p0
+    return-object v0
 .end method
 
 .method static synthetic bufferedWriter$default(Ljava/io/OutputStream;Ljava/nio/charset/Charset;ILjava/lang/Object;)Ljava/io/BufferedWriter;
@@ -281,63 +312,66 @@
     sget-object p1, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     :cond_0
+    const-string p2, "<this>"
+
+    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p2, "charset"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     new-instance p2, Ljava/io/OutputStreamWriter;
 
     invoke-direct {p2, p0, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
 
     check-cast p2, Ljava/io/Writer;
 
-    const/16 p0, 0x2000
+    instance-of p0, p2, Ljava/io/BufferedWriter;
 
-    instance-of p1, p2, Ljava/io/BufferedWriter;
-
-    if-eqz p1, :cond_1
+    if-eqz p0, :cond_1
 
     check-cast p2, Ljava/io/BufferedWriter;
-
-    move-object p1, p2
 
     goto :goto_0
 
     :cond_1
-    new-instance p1, Ljava/io/BufferedWriter;
+    new-instance p0, Ljava/io/BufferedWriter;
 
-    invoke-direct {p1, p2, p0}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
+    const/16 p1, 0x2000
+
+    invoke-direct {p0, p2, p1}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
+
+    move-object p2, p0
 
     :goto_0
-    return-object p1
+    return-object p2
 .end method
 
 .method private static final byteInputStream(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/io/ByteArrayInputStream;
     .locals 1
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "charset"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 50
     new-instance v0, Ljava/io/ByteArrayInputStream;
-
-    if-eqz p0, :cond_0
 
     invoke-virtual {p0, p1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object p0
 
-    const-string p1, "(this as java.lang.String).getBytes(charset)"
+    const-string p1, "getBytes(...)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {v0, p0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
     return-object v0
-
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "null cannot be cast to non-null type java.lang.String"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 .method static synthetic byteInputStream$default(Ljava/lang/String;Ljava/nio/charset/Charset;ILjava/lang/Object;)Ljava/io/ByteArrayInputStream;
@@ -351,44 +385,33 @@
     sget-object p1, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     :cond_0
-    new-instance p2, Ljava/io/ByteArrayInputStream;
+    const-string p2, "<this>"
 
-    if-eqz p0, :cond_1
+    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p2, "charset"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance p2, Ljava/io/ByteArrayInputStream;
 
     invoke-virtual {p0, p1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object p0
 
-    const-string p1, "(this as java.lang.String).getBytes(charset)"
+    const-string p1, "getBytes(...)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p2, p0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
     return-object p2
-
-    :cond_1
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "null cannot be cast to non-null type java.lang.String"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 .method public static final copyTo(Ljava/io/InputStream;Ljava/io/OutputStream;I)J
     .locals 5
-    .param p0    # Ljava/io/InputStream;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/io/OutputStream;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$copyTo"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -449,8 +472,10 @@
 
 .method private static final inputStream([B)Ljava/io/ByteArrayInputStream;
     .locals 1
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 56
     new-instance v0, Ljava/io/ByteArrayInputStream;
@@ -462,8 +487,10 @@
 
 .method private static final inputStream([BII)Ljava/io/ByteArrayInputStream;
     .locals 1
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 64
     new-instance v0, Ljava/io/ByteArrayInputStream;
@@ -475,14 +502,8 @@
 
 .method public static final iterator(Ljava/io/BufferedInputStream;)Lkotlin/collections/ByteIterator;
     .locals 1
-    .param p0    # Ljava/io/BufferedInputStream;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
-    const-string v0, "$this$iterator"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -498,31 +519,21 @@
 
 .method public static final readBytes(Ljava/io/InputStream;)[B
     .locals 5
-    .param p0    # Ljava/io/InputStream;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.3"
-    .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
-    const-string v0, "$this$readBytes"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 135
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
+    const/16 v1, 0x2000
+
     invoke-virtual {p0}, Ljava/io/InputStream;->available()I
 
-    move-result v1
+    move-result v2
 
-    const/16 v2, 0x2000
-
-    invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
@@ -533,20 +544,20 @@
 
     check-cast v1, Ljava/io/OutputStream;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    invoke-static {p0, v1, v2, v3, v4}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;IILjava/lang/Object;)J
+    invoke-static {p0, v1, v4, v2, v3}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;IILjava/lang/Object;)J
 
     .line 137
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object p0
 
-    const-string v0, "buffer.toByteArray()"
+    const-string/jumbo v0, "toByteArray(...)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -555,10 +566,6 @@
 
 .method public static final readBytes(Ljava/io/InputStream;I)[B
     .locals 4
-    .param p0    # Ljava/io/InputStream;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation runtime Lkotlin/Deprecated;
         message = "Use readBytes() overload without estimatedSize parameter"
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -572,10 +579,7 @@
         warningSince = "1.3"
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
-    const-string v0, "$this$readBytes"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -597,20 +601,20 @@
 
     check-cast p1, Ljava/io/OutputStream;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    invoke-static {p0, p1, v1, v2, v3}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;IILjava/lang/Object;)J
+    invoke-static {p0, p1, v3, v1, v2}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;IILjava/lang/Object;)J
 
     .line 125
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object p0
 
-    const-string p1, "buffer.toByteArray()"
+    const-string/jumbo p1, "toByteArray(...)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -637,8 +641,14 @@
 
 .method private static final reader(Ljava/io/InputStream;Ljava/nio/charset/Charset;)Ljava/io/InputStreamReader;
     .locals 1
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "charset"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 76
     new-instance v0, Ljava/io/InputStreamReader;
@@ -659,6 +669,14 @@
     sget-object p1, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     :cond_0
+    const-string p2, "<this>"
+
+    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p2, "charset"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     new-instance p2, Ljava/io/InputStreamReader;
 
     invoke-direct {p2, p0, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
@@ -668,8 +686,14 @@
 
 .method private static final writer(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)Ljava/io/OutputStreamWriter;
     .locals 1
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "charset"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 92
     new-instance v0, Ljava/io/OutputStreamWriter;
@@ -690,6 +714,14 @@
     sget-object p1, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     :cond_0
+    const-string p2, "<this>"
+
+    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p2, "charset"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     new-instance p2, Ljava/io/OutputStreamWriter;
 
     invoke-direct {p2, p0, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V

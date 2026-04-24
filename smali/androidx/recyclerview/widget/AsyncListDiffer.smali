@@ -36,9 +36,6 @@
 .end field
 
 .field private mList:Ljava/util/List;
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -62,9 +59,6 @@
 .field mMaxScheduledGeneration:I
 
 .field private mReadOnlyList:Ljava/util/List;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -92,14 +86,6 @@
 
 .method public constructor <init>(Landroidx/recyclerview/widget/ListUpdateCallback;Landroidx/recyclerview/widget/AsyncDifferConfig;)V
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/ListUpdateCallback;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/AsyncDifferConfig;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -160,14 +146,6 @@
 
 .method public constructor <init>(Landroidx/recyclerview/widget/RecyclerView$Adapter;Landroidx/recyclerview/widget/DiffUtil$ItemCallback;)V
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$Adapter;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/DiffUtil$ItemCallback;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -199,14 +177,6 @@
 
 .method private onCurrentListChanged(Ljava/util/List;Ljava/lang/Runnable;)V
     .locals 3
-    .param p1    # Ljava/util/List;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/Runnable;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -258,10 +228,6 @@
 # virtual methods
 .method public addListListener(Landroidx/recyclerview/widget/AsyncListDiffer$ListListener;)V
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/AsyncListDiffer$ListListener;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -280,9 +246,6 @@
 
 .method public getCurrentList()Ljava/util/List;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -299,18 +262,6 @@
 
 .method latchList(Ljava/util/List;Landroidx/recyclerview/widget/DiffUtil$DiffResult;Ljava/lang/Runnable;)V
     .locals 1
-    .param p1    # Ljava/util/List;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/DiffUtil$DiffResult;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Ljava/lang/Runnable;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -348,10 +299,6 @@
 
 .method public removeListListener(Landroidx/recyclerview/widget/AsyncListDiffer$ListListener;)V
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/AsyncListDiffer$ListListener;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -370,10 +317,6 @@
 
 .method public submitList(Ljava/util/List;)V
     .locals 1
-    .param p1    # Ljava/util/List;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -392,14 +335,6 @@
 
 .method public submitList(Ljava/util/List;Ljava/lang/Runnable;)V
     .locals 8
-    .param p1    # Ljava/util/List;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/Runnable;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

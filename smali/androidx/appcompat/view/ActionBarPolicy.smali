@@ -3,14 +3,6 @@
 .source "ActionBarPolicy.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
-
 # instance fields
 .field private mContext:Landroid/content/Context;
 
@@ -213,14 +205,14 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v0, v4, v1, v2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {v0, v3, v1, v2, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     .line 96
     sget v1, Landroidx/appcompat/R$styleable;->ActionBar_height:I
 
-    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
+    invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 
     move-result v1
 
@@ -278,32 +270,9 @@
 .end method
 
 .method public showsOverflowMenuButton()Z
-    .locals 3
+    .locals 1
 
-    .line 78
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/4 v1, 0x1
-
-    const/16 v2, 0x13
-
-    if-lt v0, v2, :cond_0
-
-    return v1
-
-    .line 81
-    :cond_0
-    iget-object v0, p0, Landroidx/appcompat/view/ActionBarPolicy;->mContext:Landroid/content/Context;
-
-    invoke-static {v0}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewConfiguration;->hasPermanentMenuKey()Z
-
-    move-result v0
-
-    xor-int/2addr v0, v1
+    const/4 v0, 0x1
 
     return v0
 .end method

@@ -4,6 +4,13 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/core/os/TraceCompat$Api29Impl;,
+        Landroidx/core/os/TraceCompat$Api18Impl;
+    }
+.end annotation
+
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
@@ -26,20 +33,14 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    .line 50
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_0
-
+    .line 53
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
     if-ge v0, v1, :cond_0
 
-    .line 52
+    .line 55
     :try_start_0
     const-class v0, Landroid/os/Trace;
 
@@ -51,14 +52,14 @@
 
     const/4 v1, 0x0
 
-    .line 53
+    .line 56
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->getLong(Ljava/lang/Object;)J
 
     move-result-wide v0
 
     sput-wide v0, Landroidx/core/os/TraceCompat;->sTraceTagApp:J
 
-    .line 55
+    .line 58
     const-class v0, Landroid/os/Trace;
 
     const-string v1, "isTagEnabled"
@@ -79,7 +80,7 @@
 
     sput-object v0, Landroidx/core/os/TraceCompat;->sIsTagEnabledMethod:Ljava/lang/reflect/Method;
 
-    .line 56
+    .line 59
     const-class v0, Landroid/os/Trace;
 
     const-string v1, "asyncTraceBegin"
@@ -108,7 +109,7 @@
 
     sput-object v0, Landroidx/core/os/TraceCompat;->sAsyncTraceBeginMethod:Ljava/lang/reflect/Method;
 
-    .line 58
+    .line 61
     const-class v0, Landroid/os/Trace;
 
     const-string v1, "asyncTraceEnd"
@@ -133,10 +134,10 @@
 
     sput-object v0, Landroidx/core/os/TraceCompat;->sAsyncTraceEndMethod:Ljava/lang/reflect/Method;
 
-    .line 60
+    .line 63
     const-class v0, Landroid/os/Trace;
 
-    const-string v1, "traceCounter"
+    const-string/jumbo v1, "traceCounter"
 
     new-array v3, v3, [Ljava/lang/Class;
 
@@ -169,7 +170,7 @@
 
     const-string v2, "Unable to initialize via reflection."
 
-    .line 63
+    .line 66
     invoke-static {v1, v2, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_0
@@ -180,72 +181,61 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 183
+    .line 187
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method public static beginAsyncSection(Ljava/lang/String;I)V
-    .locals 6
-    .param p0    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
+    .locals 4
 
-    .line 133
+    .line 137
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
     if-lt v0, v1, :cond_0
 
-    .line 134
-    invoke-static {p0, p1}, Landroid/os/Trace;->beginAsyncSection(Ljava/lang/String;I)V
+    .line 138
+    invoke-static {p0, p1}, Landroidx/core/os/TraceCompat$Api29Impl;->beginAsyncSection(Ljava/lang/String;I)V
 
     goto :goto_0
 
-    .line 135
+    .line 141
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_1
-
-    .line 137
     :try_start_0
     sget-object v0, Landroidx/core/os/TraceCompat;->sAsyncTraceBeginMethod:Ljava/lang/reflect/Method;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x3
 
-    const/4 v2, 0x3
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    sget-wide v2, Landroidx/core/os/TraceCompat;->sTraceTagApp:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
 
     const/4 v3, 0x0
 
-    sget-wide v4, Landroidx/core/os/TraceCompat;->sTraceTagApp:J
+    aput-object v2, v1, v3
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    const/4 v2, 0x1
 
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x1
-
-    aput-object p0, v2, v3
-
-    const/4 p0, 0x2
+    aput-object p0, v1, v2
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p1
+    move-result-object p0
 
-    aput-object p1, v2, p0
+    const/4 p1, 0x2
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    aput-object p0, v1, p1
+
+    const/4 p0, 0x0
+
+    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -256,95 +246,71 @@
 
     const-string p1, "Unable to invoke asyncTraceBegin() via reflection."
 
-    .line 139
+    .line 143
     invoke-static {p0, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1
     :goto_0
     return-void
 .end method
 
 .method public static beginSection(Ljava/lang/String;)V
-    .locals 2
-    .param p0    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
+    .locals 0
 
-    .line 104
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 109
+    invoke-static {p0}, Landroidx/core/os/TraceCompat$Api18Impl;->beginSection(Ljava/lang/String;)V
 
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_0
-
-    .line 105
-    invoke-static {p0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
-
-    :cond_0
     return-void
 .end method
 
 .method public static endAsyncSection(Ljava/lang/String;I)V
-    .locals 6
-    .param p0    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
+    .locals 4
 
-    .line 153
+    .line 157
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
     if-lt v0, v1, :cond_0
 
-    .line 154
-    invoke-static {p0, p1}, Landroid/os/Trace;->endAsyncSection(Ljava/lang/String;I)V
+    .line 158
+    invoke-static {p0, p1}, Landroidx/core/os/TraceCompat$Api29Impl;->endAsyncSection(Ljava/lang/String;I)V
 
     goto :goto_0
 
-    .line 155
+    .line 161
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_1
-
-    .line 157
     :try_start_0
     sget-object v0, Landroidx/core/os/TraceCompat;->sAsyncTraceEndMethod:Ljava/lang/reflect/Method;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x3
 
-    const/4 v2, 0x3
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    sget-wide v2, Landroidx/core/os/TraceCompat;->sTraceTagApp:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
 
     const/4 v3, 0x0
 
-    sget-wide v4, Landroidx/core/os/TraceCompat;->sTraceTagApp:J
+    aput-object v2, v1, v3
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    const/4 v2, 0x1
 
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x1
-
-    aput-object p0, v2, v3
-
-    const/4 p0, 0x2
+    aput-object p0, v1, v2
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p1
+    move-result-object p0
 
-    aput-object p1, v2, p0
+    const/4 p1, 0x2
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    aput-object p0, v1, p1
+
+    const/4 p0, 0x0
+
+    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -355,83 +321,67 @@
 
     const-string p1, "Unable to invoke endAsyncSection() via reflection."
 
-    .line 159
+    .line 163
     invoke-static {p0, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1
     :goto_0
     return-void
 .end method
 
 .method public static endSection()V
-    .locals 2
+    .locals 0
 
-    .line 117
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 122
+    invoke-static {}, Landroidx/core/os/TraceCompat$Api18Impl;->endSection()V
 
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_0
-
-    .line 118
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    :cond_0
     return-void
 .end method
 
 .method public static isEnabled()Z
-    .locals 6
+    .locals 5
 
-    .line 78
+    .line 82
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
     if-lt v0, v1, :cond_0
 
-    .line 79
-    invoke-static {}, Landroid/os/Trace;->isEnabled()Z
+    .line 83
+    invoke-static {}, Landroidx/core/os/TraceCompat$Api29Impl;->isEnabled()Z
 
     move-result v0
 
     return v0
 
-    .line 80
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/4 v0, 0x0
 
-    const/16 v1, 0x12
-
-    const/4 v2, 0x0
-
-    if-lt v0, v1, :cond_1
-
-    .line 82
+    .line 86
     :try_start_0
-    sget-object v0, Landroidx/core/os/TraceCompat;->sIsTagEnabledMethod:Ljava/lang/reflect/Method;
+    sget-object v1, Landroidx/core/os/TraceCompat;->sIsTagEnabledMethod:Ljava/lang/reflect/Method;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    new-array v2, v2, [Ljava/lang/Object;
 
-    new-array v3, v3, [Ljava/lang/Object;
+    sget-wide v3, Landroidx/core/os/TraceCompat;->sTraceTagApp:J
 
-    sget-wide v4, Landroidx/core/os/TraceCompat;->sTraceTagApp:J
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v3
 
-    move-result-object v4
+    aput-object v3, v2, v0
 
-    aput-object v4, v3, v2
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v1, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/lang/Boolean;
+    check-cast v1, Ljava/lang/Boolean;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
     :try_end_0
@@ -440,25 +390,20 @@
     return v0
 
     :catch_0
-    const-string v0, "TraceCompat"
+    const-string v1, "TraceCompat"
 
-    const-string v1, "Unable to invoke isTagEnabled() via reflection."
+    const-string v2, "Unable to invoke isTagEnabled() via reflection."
 
-    .line 84
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    .line 88
+    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1
-    return v2
+    return v0
 .end method
 
 .method public static setCounter(Ljava/lang/String;I)V
-    .locals 6
-    .param p0    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
+    .locals 4
 
-    .line 172
+    .line 176
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
@@ -467,52 +412,45 @@
 
     int-to-long v0, p1
 
-    .line 173
-    invoke-static {p0, v0, v1}, Landroid/os/Trace;->setCounter(Ljava/lang/String;J)V
+    .line 177
+    invoke-static {p0, v0, v1}, Landroidx/core/os/TraceCompat$Api29Impl;->setCounter(Ljava/lang/String;J)V
 
     goto :goto_0
 
-    .line 174
+    .line 180
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_1
-
-    .line 176
     :try_start_0
     sget-object v0, Landroidx/core/os/TraceCompat;->sTraceCounterMethod:Ljava/lang/reflect/Method;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x3
 
-    const/4 v2, 0x3
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    sget-wide v2, Landroidx/core/os/TraceCompat;->sTraceTagApp:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
 
     const/4 v3, 0x0
 
-    sget-wide v4, Landroidx/core/os/TraceCompat;->sTraceTagApp:J
+    aput-object v2, v1, v3
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    const/4 v2, 0x1
 
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x1
-
-    aput-object p0, v2, v3
-
-    const/4 p0, 0x2
+    aput-object p0, v1, v2
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p1
+    move-result-object p0
 
-    aput-object p1, v2, p0
+    const/4 p1, 0x2
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    aput-object p0, v1, p1
+
+    const/4 p0, 0x0
+
+    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -523,10 +461,9 @@
 
     const-string p1, "Unable to invoke traceCounter() via reflection."
 
-    .line 178
+    .line 182
     invoke-static {p0, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1
     :goto_0
     return-void
 .end method

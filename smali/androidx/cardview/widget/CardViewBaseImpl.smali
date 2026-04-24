@@ -234,10 +234,6 @@
 
 .method public setBackgroundColor(Landroidx/cardview/widget/CardViewDelegate;Landroid/content/res/ColorStateList;)V
     .locals 0
-    .param p2    # Landroid/content/res/ColorStateList;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 120
     invoke-direct {p0, p1}, Landroidx/cardview/widget/CardViewBaseImpl;->getShadowBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawableWithShadow;

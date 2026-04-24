@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x1e
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/core/view/WindowInsetsCompat;
 .end annotation
@@ -20,17 +16,16 @@
 
 # static fields
 .field static final CONSUMED:Landroidx/core/view/WindowInsetsCompat;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1347
-    sget-object v0, Landroid/view/WindowInsets;->CONSUMED:Landroid/view/WindowInsets;
+    .line 1350
+    invoke-static {}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m()Landroid/view/WindowInsets;
+
+    move-result-object v0
 
     invoke-static {v0}, Landroidx/core/view/WindowInsetsCompat;->toWindowInsetsCompat(Landroid/view/WindowInsets;)Landroidx/core/view/WindowInsetsCompat;
 
@@ -43,16 +38,8 @@
 
 .method constructor <init>(Landroidx/core/view/WindowInsetsCompat;Landroid/view/WindowInsets;)V
     .locals 0
-    .param p1    # Landroidx/core/view/WindowInsetsCompat;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/WindowInsets;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 1350
+    .line 1353
     invoke-direct {p0, p1, p2}, Landroidx/core/view/WindowInsetsCompat$Impl29;-><init>(Landroidx/core/view/WindowInsetsCompat;Landroid/view/WindowInsets;)V
 
     return-void
@@ -60,16 +47,8 @@
 
 .method constructor <init>(Landroidx/core/view/WindowInsetsCompat;Landroidx/core/view/WindowInsetsCompat$Impl30;)V
     .locals 0
-    .param p1    # Landroidx/core/view/WindowInsetsCompat;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/core/view/WindowInsetsCompat$Impl30;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 1354
+    .line 1357
     invoke-direct {p0, p1, p2}, Landroidx/core/view/WindowInsetsCompat$Impl29;-><init>(Landroidx/core/view/WindowInsetsCompat;Landroidx/core/view/WindowInsetsCompat$Impl29;)V
 
     return-void
@@ -79,32 +58,26 @@
 # virtual methods
 .method final copyRootViewBounds(Landroid/view/View;)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method
 
 .method public getInsets(I)Landroidx/core/graphics/Insets;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 1360
+    .line 1363
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl30;->mPlatformInsets:Landroid/view/WindowInsets;
 
-    .line 1361
+    .line 1364
     invoke-static {p1}, Landroidx/core/view/WindowInsetsCompat$TypeImpl30;->toPlatformType(I)I
 
     move-result p1
 
-    invoke-virtual {v0, p1}, Landroid/view/WindowInsets;->getInsets(I)Landroid/graphics/Insets;
+    invoke-static {v0, p1}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$1(Landroid/view/WindowInsets;I)Landroid/graphics/Insets;
 
     move-result-object p1
 
-    .line 1360
+    .line 1363
     invoke-static {p1}, Landroidx/core/graphics/Insets;->toCompatInsets(Landroid/graphics/Insets;)Landroidx/core/graphics/Insets;
 
     move-result-object p1
@@ -114,22 +87,20 @@
 
 .method public getInsetsIgnoringVisibility(I)Landroidx/core/graphics/Insets;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 1368
+    .line 1371
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl30;->mPlatformInsets:Landroid/view/WindowInsets;
 
-    .line 1369
+    .line 1372
     invoke-static {p1}, Landroidx/core/view/WindowInsetsCompat$TypeImpl30;->toPlatformType(I)I
 
     move-result p1
 
-    invoke-virtual {v0, p1}, Landroid/view/WindowInsets;->getInsetsIgnoringVisibility(I)Landroid/graphics/Insets;
+    invoke-static {v0, p1}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/WindowInsets;I)Landroid/graphics/Insets;
 
     move-result-object p1
 
-    .line 1368
+    .line 1371
     invoke-static {p1}, Landroidx/core/graphics/Insets;->toCompatInsets(Landroid/graphics/Insets;)Landroidx/core/graphics/Insets;
 
     move-result-object p1
@@ -140,14 +111,14 @@
 .method public isVisible(I)Z
     .locals 1
 
-    .line 1375
+    .line 1378
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl30;->mPlatformInsets:Landroid/view/WindowInsets;
 
     invoke-static {p1}, Landroidx/core/view/WindowInsetsCompat$TypeImpl30;->toPlatformType(I)I
 
     move-result p1
 
-    invoke-virtual {v0, p1}, Landroid/view/WindowInsets;->isVisible(I)Z
+    invoke-static {v0, p1}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/WindowInsets;I)Z
 
     move-result p1
 

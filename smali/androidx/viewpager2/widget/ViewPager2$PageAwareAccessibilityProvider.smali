@@ -88,8 +88,6 @@
 
     move-result v0
 
-    const/4 v2, 0x0
-
     goto :goto_0
 
     .line 1543
@@ -108,15 +106,16 @@
 
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     const/4 v0, 0x0
 
+    :goto_0
     const/4 v2, 0x0
 
     .line 1546
-    :goto_0
+    :goto_1
     invoke-static {p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->wrap(Landroid/view/accessibility/AccessibilityNodeInfo;)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
 
     move-result-object p1
@@ -199,8 +198,6 @@
     :cond_3
     invoke-virtual {p1, v2}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScrollable(Z)V
 
-    return-void
-
     :cond_4
     :goto_0
     return-void
@@ -244,10 +241,6 @@
 
 .method public onAttachAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$Adapter;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -272,10 +265,6 @@
 
 .method public onDetachAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$Adapter;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -320,14 +309,6 @@
 
 .method public onInitialize(Landroidx/viewpager2/widget/CompositeOnPageChangeCallback;Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 0
-    .param p1    # Landroidx/viewpager2/widget/CompositeOnPageChangeCallback;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/4 p1, 0x2
 
@@ -362,22 +343,14 @@
 .end method
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
-    .locals 2
+    .locals 0
 
     .line 1431
     invoke-direct {p0, p1}, Landroidx/viewpager2/widget/ViewPager2$PageAwareAccessibilityProvider;->addCollectionInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 1432
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_0
-
     .line 1433
     invoke-direct {p0, p1}, Landroidx/viewpager2/widget/ViewPager2$PageAwareAccessibilityProvider;->addScrollActions(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    :cond_0
     return-void
 .end method
 
@@ -445,10 +418,6 @@
 
 .method public onRvInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
-    .param p1    # Landroid/view/accessibility/AccessibilityEvent;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 1458
     iget-object v0, p0, Landroidx/viewpager2/widget/ViewPager2$PageAwareAccessibilityProvider;->this$0:Landroidx/viewpager2/widget/ViewPager2;
@@ -493,26 +462,11 @@
 .end method
 
 .method public onSetUserInputEnabled()V
-    .locals 2
+    .locals 0
 
     .line 1418
     invoke-virtual {p0}, Landroidx/viewpager2/widget/ViewPager2$PageAwareAccessibilityProvider;->updatePageAccessibilityActions()V
 
-    .line 1419
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-ge v0, v1, :cond_0
-
-    .line 1420
-    iget-object v0, p0, Landroidx/viewpager2/widget/ViewPager2$PageAwareAccessibilityProvider;->this$0:Landroidx/viewpager2/widget/ViewPager2;
-
-    const/16 v1, 0x800
-
-    invoke-virtual {v0, v1}, Landroidx/viewpager2/widget/ViewPager2;->sendAccessibilityEvent(I)V
-
-    :cond_0
     return-void
 .end method
 

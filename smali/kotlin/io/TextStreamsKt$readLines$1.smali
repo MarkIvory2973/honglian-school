@@ -40,19 +40,36 @@
     k = 0x3
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
 .field final synthetic $result:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method constructor <init>(Ljava/util/ArrayList;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lkotlin/io/TextStreamsKt$readLines$1;->$result:Ljava/util/ArrayList;
 
@@ -68,6 +85,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
+    .line 42
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lkotlin/io/TextStreamsKt$readLines$1;->invoke(Ljava/lang/String;)V
@@ -79,10 +97,6 @@
 
 .method public final invoke(Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
     const-string v0, "it"
 

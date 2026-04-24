@@ -44,9 +44,10 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -64,9 +65,9 @@
 .method constructor <init>(Ljava/io/BufferedInputStream;)V
     .locals 0
 
-    .line 16
     iput-object p1, p0, Lkotlin/io/ByteStreamsKt$iterator$1;->$this_iterator:Ljava/io/BufferedInputStream;
 
+    .line 16
     invoke-direct {p0}, Lkotlin/collections/ByteIterator;-><init>()V
 
     const/4 p1, -0x1
@@ -98,25 +99,23 @@
 
     iput v0, p0, Lkotlin/io/ByteStreamsKt$iterator$1;->nextByte:I
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     .line 27
-    iput-boolean v0, p0, Lkotlin/io/ByteStreamsKt$iterator$1;->nextPrepared:Z
-
-    .line 28
-    iget v1, p0, Lkotlin/io/ByteStreamsKt$iterator$1;->nextByte:I
+    iput-boolean v1, p0, Lkotlin/io/ByteStreamsKt$iterator$1;->nextPrepared:Z
 
     const/4 v2, -0x1
 
-    if-ne v1, v2, :cond_0
+    if-ne v0, v2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
+    .line 28
     :goto_0
-    iput-boolean v0, p0, Lkotlin/io/ByteStreamsKt$iterator$1;->finished:Z
+    iput-boolean v1, p0, Lkotlin/io/ByteStreamsKt$iterator$1;->finished:Z
 
     :cond_1
     return-void
@@ -195,8 +194,6 @@
     const-string v1, "Input stream is over."
 
     invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
-
-    check-cast v0, Ljava/lang/Throwable;
 
     throw v0
 .end method

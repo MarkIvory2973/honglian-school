@@ -4,12 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;
@@ -37,22 +31,6 @@
 
 .method private static checkColors(Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;IIZI)Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;
     .locals 0
-    .param p0    # Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p1    # I
-        .annotation build Landroidx/annotation/ColorInt;
-        .end annotation
-    .end param
-    .param p2    # I
-        .annotation build Landroidx/annotation/ColorInt;
-        .end annotation
-    .end param
-    .param p4    # I
-        .annotation build Landroidx/annotation/ColorInt;
-        .end annotation
-    .end param
 
     if-eqz p0, :cond_0
 
@@ -79,18 +57,6 @@
 
 .method static createFromXml(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;)Landroid/graphics/Shader;
     .locals 4
-    .param p0    # Landroid/content/res/Resources;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Lorg/xmlpull/v1/XmlPullParser;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/content/res/Resources$Theme;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -142,22 +108,6 @@
 
 .method static createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/graphics/Shader;
     .locals 20
-    .param p0    # Landroid/content/res/Resources;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Lorg/xmlpull/v1/XmlPullParser;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/util/AttributeSet;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroid/content/res/Resources$Theme;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -179,7 +129,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_3
 
     .line 96
     sget-object v1, Landroidx/core/R$styleable;->GradientColor:[I
@@ -194,7 +144,7 @@
 
     move-result-object v1
 
-    const-string v5, "startX"
+    const-string/jumbo v5, "startX"
 
     .line 98
     sget v6, Landroidx/core/R$styleable;->GradientColor_android_startX:I
@@ -205,7 +155,7 @@
 
     move-result v9
 
-    const-string v5, "startY"
+    const-string/jumbo v5, "startY"
 
     .line 100
     sget v6, Landroidx/core/R$styleable;->GradientColor_android_startY:I
@@ -250,7 +200,7 @@
 
     move-result v15
 
-    const-string v5, "type"
+    const-string/jumbo v5, "type"
 
     .line 110
     sget v6, Landroidx/core/R$styleable;->GradientColor_android_type:I
@@ -261,7 +211,7 @@
 
     move-result v5
 
-    const-string v6, "startColor"
+    const-string/jumbo v6, "startColor"
 
     .line 112
     sget v13, Landroidx/core/R$styleable;->GradientColor_android_startColor:I
@@ -275,47 +225,45 @@
     .line 114
     invoke-static {v0, v13}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
-    move-result v13
-
-    const-string v7, "centerColor"
+    move-result v7
 
     .line 115
     sget v2, Landroidx/core/R$styleable;->GradientColor_android_centerColor:I
 
-    invoke-static {v1, v0, v7, v2, v8}, Landroidx/core/content/res/TypedArrayUtils;->getNamedColor(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
+    invoke-static {v1, v0, v13, v2, v8}, Landroidx/core/content/res/TypedArrayUtils;->getNamedColor(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
 
     move-result v2
 
-    const-string v7, "endColor"
+    const-string v13, "endColor"
 
     .line 117
     sget v3, Landroidx/core/R$styleable;->GradientColor_android_endColor:I
 
-    invoke-static {v1, v0, v7, v3, v8}, Landroidx/core/content/res/TypedArrayUtils;->getNamedColor(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
+    invoke-static {v1, v0, v13, v3, v8}, Landroidx/core/content/res/TypedArrayUtils;->getNamedColor(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
 
     move-result v3
 
-    const-string v7, "tileMode"
+    const-string/jumbo v13, "tileMode"
 
     .line 119
     sget v4, Landroidx/core/R$styleable;->GradientColor_android_tileMode:I
 
-    invoke-static {v1, v0, v7, v4, v8}, Landroidx/core/content/res/TypedArrayUtils;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
+    invoke-static {v1, v0, v13, v4, v8}, Landroidx/core/content/res/TypedArrayUtils;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
 
     move-result v4
 
-    const-string v7, "gradientRadius"
+    const-string v8, "gradientRadius"
 
     .line 121
-    sget v8, Landroidx/core/R$styleable;->GradientColor_android_gradientRadius:I
+    sget v13, Landroidx/core/R$styleable;->GradientColor_android_gradientRadius:I
 
-    move/from16 v17, v12
+    move/from16 v17, v14
 
-    const/4 v12, 0x0
+    const/4 v14, 0x0
 
-    invoke-static {v1, v0, v7, v8, v12}, Landroidx/core/content/res/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v1, v0, v8, v13, v14}, Landroidx/core/content/res/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
-    move-result v16
+    move-result v8
 
     .line 123
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
@@ -326,11 +274,17 @@
     move-result-object v0
 
     .line 126
-    invoke-static {v0, v6, v3, v13, v2}, Landroidx/core/content/res/GradientColorInflaterCompat;->checkColors(Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;IIZI)Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;
+    invoke-static {v0, v6, v3, v7, v2}, Landroidx/core/content/res/GradientColorInflaterCompat;->checkColors(Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;IIZI)Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;
 
     move-result-object v0
 
-    packed-switch v5, :pswitch_data_0
+    const/4 v1, 0x1
+
+    if-eq v5, v1, :cond_1
+
+    const/4 v1, 0x2
+
+    if-eq v5, v1, :cond_0
 
     .line 141
     new-instance v1, Landroid/graphics/LinearGradient;
@@ -346,28 +300,32 @@
 
     move-object v8, v1
 
-    move/from16 v12, v17
-
     invoke-direct/range {v8 .. v15}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
     return-object v1
 
     .line 137
-    :pswitch_0
+    :cond_0
     new-instance v1, Landroid/graphics/SweepGradient;
 
     iget-object v2, v0, Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;->mColors:[I
 
     iget-object v0, v0, Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;->mOffsets:[F
 
-    invoke-direct {v1, v14, v15, v2, v0}, Landroid/graphics/SweepGradient;-><init>(FF[I[F)V
+    move/from16 v3, v17
+
+    invoke-direct {v1, v3, v15, v2, v0}, Landroid/graphics/SweepGradient;-><init>(FF[I[F)V
 
     return-object v1
 
-    :pswitch_1
-    cmpg-float v1, v16, v12
+    :cond_1
+    move/from16 v3, v17
 
-    if-lez v1, :cond_0
+    const/4 v1, 0x0
+
+    cmpg-float v1, v8, v1
+
+    if-lez v1, :cond_2
 
     .line 134
     new-instance v1, Landroid/graphics/RadialGradient;
@@ -383,6 +341,10 @@
 
     move-object v13, v1
 
+    move v14, v3
+
+    move/from16 v16, v8
+
     move-object/from16 v17, v2
 
     move-object/from16 v18, v0
@@ -392,7 +354,7 @@
     return-object v1
 
     .line 131
-    :cond_0
+    :cond_2
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string v1, "<gradient> tag requires \'gradientRadius\' attribute with radial type"
@@ -402,7 +364,7 @@
     throw v0
 
     .line 92
-    :cond_1
+    :cond_3
     new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -429,34 +391,10 @@
     invoke-direct {v2, v0}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
 
     throw v2
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method private static inflateChildElements(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroidx/core/content/res/GradientColorInflaterCompat$ColorStops;
     .locals 8
-    .param p0    # Landroid/content/res/Resources;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Lorg/xmlpull/v1/XmlPullParser;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/util/AttributeSet;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroid/content/res/Resources$Theme;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -641,9 +579,15 @@
 .end method
 
 .method private static parseTileMode(I)Landroid/graphics/Shader$TileMode;
-    .locals 0
+    .locals 1
 
-    packed-switch p0, :pswitch_data_0
+    const/4 v0, 0x1
+
+    if-eq p0, v0, :cond_1
+
+    const/4 v0, 0x2
+
+    if-eq p0, v0, :cond_0
 
     .line 209
     sget-object p0, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
@@ -651,20 +595,14 @@
     return-object p0
 
     .line 206
-    :pswitch_0
+    :cond_0
     sget-object p0, Landroid/graphics/Shader$TileMode;->MIRROR:Landroid/graphics/Shader$TileMode;
 
     return-object p0
 
     .line 204
-    :pswitch_1
+    :cond_1
     sget-object p0, Landroid/graphics/Shader$TileMode;->REPEAT:Landroid/graphics/Shader$TileMode;
 
     return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -20,10 +20,6 @@
 # direct methods
 .method public constructor <init>(Landroid/view/ViewGroup;)V
     .locals 1
-    .param p1    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,15 +36,10 @@
 .end method
 
 .method private constructor <init>(Landroid/view/ViewGroup;ILandroid/content/Context;)V
-    .locals 1
+    .locals 0
 
     .line 108
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, -0x1
-
-    .line 39
-    iput v0, p0, Landroidx/transition/Scene;->mLayoutId:I
 
     .line 109
     iput-object p3, p0, Landroidx/transition/Scene;->mContext:Landroid/content/Context;
@@ -64,14 +55,6 @@
 
 .method public constructor <init>(Landroid/view/ViewGroup;Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 124
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -92,12 +75,6 @@
 
 .method public static getCurrentScene(Landroid/view/ViewGroup;)Landroidx/transition/Scene;
     .locals 1
-    .param p0    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 209
     sget v0, Landroidx/transition/R$id;->transition_current_scene:I
@@ -113,20 +90,6 @@
 
 .method public static getSceneForLayout(Landroid/view/ViewGroup;ILandroid/content/Context;)Landroidx/transition/Scene;
     .locals 2
-    .param p0    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # I
-        .annotation build Landroidx/annotation/LayoutRes;
-        .end annotation
-    .end param
-    .param p2    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 63
     sget v0, Landroidx/transition/R$id;->transition_scene_layoutid_cache:I
@@ -176,14 +139,6 @@
 
 .method static setCurrentScene(Landroid/view/ViewGroup;Landroidx/transition/Scene;)V
     .locals 1
-    .param p0    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Landroidx/transition/Scene;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 196
     sget v0, Landroidx/transition/R$id;->transition_current_scene:I
@@ -288,8 +243,6 @@
 
 .method public getSceneRoot()Landroid/view/ViewGroup;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 138
     iget-object v0, p0, Landroidx/transition/Scene;->mSceneRoot:Landroid/view/ViewGroup;
@@ -318,10 +271,6 @@
 
 .method public setEnterAction(Ljava/lang/Runnable;)V
     .locals 0
-    .param p1    # Ljava/lang/Runnable;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 230
     iput-object p1, p0, Landroidx/transition/Scene;->mEnterAction:Ljava/lang/Runnable;
@@ -331,10 +280,6 @@
 
 .method public setExitAction(Ljava/lang/Runnable;)V
     .locals 0
-    .param p1    # Ljava/lang/Runnable;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 250
     iput-object p1, p0, Landroidx/transition/Scene;->mExitAction:Ljava/lang/Runnable;

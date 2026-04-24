@@ -5,23 +5,25 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 View.kt\nandroidx/core/view/ViewKt\n+ 2 Bitmap.kt\nandroidx/core/graphics/BitmapKt\n*L\n1#1,384:1\n37#1:385\n53#1:386\n144#1,2:387\n159#1,2:389\n318#1,4:394\n42#2,3:391\n*E\n*S KotlinDebug\n*F\n+ 1 View.kt\nandroidx/core/view/ViewKt\n*L\n68#1:385\n68#1:386\n306#1,4:394\n229#1,3:391\n*E\n"
+    value = "SMAP\nView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 View.kt\nandroidx/core/view/ViewKt\n+ 2 Bitmap.kt\nandroidx/core/graphics/BitmapKt\n*L\n1#1,432:1\n40#1:433\n56#1:434\n329#1,4:438\n43#2,3:435\n*S KotlinDebug\n*F\n+ 1 View.kt\nandroidx/core/view/ViewKt\n*L\n71#1:433\n71#1:434\n315#1:438,4\n238#1:435,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
     d1 = {
-        "\u0000\\\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0008\n\u0002\u0010\u0008\n\u0002\u0008\r\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\n\u001a2\u0010\u0019\u001a\u00020\u001a*\u00020\u00032#\u0008\u0004\u0010\u001b\u001a\u001d\u0012\u0013\u0012\u00110\u0003\u00a2\u0006\u000c\u0008\u001d\u0012\u0008\u0008\u001e\u0012\u0004\u0008\u0008(\u001f\u0012\u0004\u0012\u00020\u001a0\u001cH\u0086\u0008\u001a2\u0010 \u001a\u00020\u001a*\u00020\u00032#\u0008\u0004\u0010\u001b\u001a\u001d\u0012\u0013\u0012\u00110\u0003\u00a2\u0006\u000c\u0008\u001d\u0012\u0008\u0008\u001e\u0012\u0004\u0008\u0008(\u001f\u0012\u0004\u0012\u00020\u001a0\u001cH\u0086\u0008\u001a2\u0010!\u001a\u00020\u001a*\u00020\u00032#\u0008\u0004\u0010\u001b\u001a\u001d\u0012\u0013\u0012\u00110\u0003\u00a2\u0006\u000c\u0008\u001d\u0012\u0008\u0008\u001e\u0012\u0004\u0008\u0008(\u001f\u0012\u0004\u0012\u00020\u001a0\u001cH\u0086\u0008\u001a2\u0010\"\u001a\u00020\u001a*\u00020\u00032#\u0008\u0004\u0010\u001b\u001a\u001d\u0012\u0013\u0012\u00110\u0003\u00a2\u0006\u000c\u0008\u001d\u0012\u0008\u0008\u001e\u0012\u0004\u0008\u0008(\u001f\u0012\u0004\u0012\u00020\u001a0\u001cH\u0086\u0008\u001a2\u0010#\u001a\u00020$*\u00020\u00032#\u0008\u0004\u0010\u001b\u001a\u001d\u0012\u0013\u0012\u00110\u0003\u00a2\u0006\u000c\u0008\u001d\u0012\u0008\u0008\u001e\u0012\u0004\u0008\u0008(\u001f\u0012\u0004\u0012\u00020\u001a0\u001cH\u0086\u0008\u001a\u0014\u0010%\u001a\u00020&*\u00020\u00032\u0008\u0008\u0002\u0010\'\u001a\u00020(\u001a%\u0010)\u001a\u00020**\u00020\u00032\u0006\u0010+\u001a\u00020,2\u000e\u0008\u0004\u0010\u001b\u001a\u0008\u0012\u0004\u0012\u00020\u001a0-H\u0086\u0008\u001a%\u0010.\u001a\u00020**\u00020\u00032\u0006\u0010+\u001a\u00020,2\u000e\u0008\u0004\u0010\u001b\u001a\u0008\u0012\u0004\u0012\u00020\u001a0-H\u0087\u0008\u001a\u0017\u0010/\u001a\u00020\u001a*\u00020\u00032\u0008\u0008\u0001\u00100\u001a\u00020\u000cH\u0086\u0008\u001a7\u00101\u001a\u00020\u001a\"\n\u0008\u0000\u00102\u0018\u0001*\u000203*\u00020\u00032\u0017\u00104\u001a\u0013\u0012\u0004\u0012\u0002H2\u0012\u0004\u0012\u00020\u001a0\u001c\u00a2\u0006\u0002\u00085H\u0087\u0008\u00a2\u0006\u0002\u00086\u001a&\u00101\u001a\u00020\u001a*\u00020\u00032\u0017\u00104\u001a\u0013\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020\u001a0\u001c\u00a2\u0006\u0002\u00085H\u0086\u0008\u001a5\u00107\u001a\u00020\u001a*\u00020\u00032\u0008\u0008\u0003\u00108\u001a\u00020\u000c2\u0008\u0008\u0003\u00109\u001a\u00020\u000c2\u0008\u0008\u0003\u0010:\u001a\u00020\u000c2\u0008\u0008\u0003\u0010;\u001a\u00020\u000cH\u0086\u0008\u001a5\u0010<\u001a\u00020\u001a*\u00020\u00032\u0008\u0008\u0003\u0010=\u001a\u00020\u000c2\u0008\u0008\u0003\u00109\u001a\u00020\u000c2\u0008\u0008\u0003\u0010>\u001a\u00020\u000c2\u0008\u0008\u0003\u0010;\u001a\u00020\u000cH\u0087\u0008\"*\u0010\u0002\u001a\u00020\u0001*\u00020\u00032\u0006\u0010\u0000\u001a\u00020\u00018\u00c6\u0002@\u00c6\u0002X\u0086\u000e\u00a2\u0006\u000c\u001a\u0004\u0008\u0002\u0010\u0004\"\u0004\u0008\u0005\u0010\u0006\"*\u0010\u0007\u001a\u00020\u0001*\u00020\u00032\u0006\u0010\u0000\u001a\u00020\u00018\u00c6\u0002@\u00c6\u0002X\u0086\u000e\u00a2\u0006\u000c\u001a\u0004\u0008\u0007\u0010\u0004\"\u0004\u0008\u0008\u0010\u0006\"*\u0010\t\u001a\u00020\u0001*\u00020\u00032\u0006\u0010\u0000\u001a\u00020\u00018\u00c6\u0002@\u00c6\u0002X\u0086\u000e\u00a2\u0006\u000c\u001a\u0004\u0008\t\u0010\u0004\"\u0004\u0008\n\u0010\u0006\"\u0016\u0010\u000b\u001a\u00020\u000c*\u00020\u00038\u00c6\u0002\u00a2\u0006\u0006\u001a\u0004\u0008\r\u0010\u000e\"\u0016\u0010\u000f\u001a\u00020\u000c*\u00020\u00038\u00c6\u0002\u00a2\u0006\u0006\u001a\u0004\u0008\u0010\u0010\u000e\"\u0016\u0010\u0011\u001a\u00020\u000c*\u00020\u00038\u00c6\u0002\u00a2\u0006\u0006\u001a\u0004\u0008\u0012\u0010\u000e\"\u0016\u0010\u0013\u001a\u00020\u000c*\u00020\u00038\u00c6\u0002\u00a2\u0006\u0006\u001a\u0004\u0008\u0014\u0010\u000e\"\u0016\u0010\u0015\u001a\u00020\u000c*\u00020\u00038\u00c6\u0002\u00a2\u0006\u0006\u001a\u0004\u0008\u0016\u0010\u000e\"\u0016\u0010\u0017\u001a\u00020\u000c*\u00020\u00038\u00c6\u0002\u00a2\u0006\u0006\u001a\u0004\u0008\u0018\u0010\u000e\u00a8\u0006?"
+        "\u0000j\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u000b\n\u0002\u0008\t\n\u0002\u0010\u0008\n\u0002\u0008\r\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\n\u001a5\u0010 \u001a\u00020!*\u00020\u00022#\u0008\u0004\u0010\"\u001a\u001d\u0012\u0013\u0012\u00110\u0002\u00a2\u0006\u000c\u0008$\u0012\u0008\u0008%\u0012\u0004\u0008\u0008(&\u0012\u0004\u0012\u00020!0#H\u0086\u0008\u00f8\u0001\u0000\u001a5\u0010\'\u001a\u00020!*\u00020\u00022#\u0008\u0004\u0010\"\u001a\u001d\u0012\u0013\u0012\u00110\u0002\u00a2\u0006\u000c\u0008$\u0012\u0008\u0008%\u0012\u0004\u0008\u0008(&\u0012\u0004\u0012\u00020!0#H\u0086\u0008\u00f8\u0001\u0000\u001a5\u0010(\u001a\u00020!*\u00020\u00022#\u0008\u0004\u0010\"\u001a\u001d\u0012\u0013\u0012\u00110\u0002\u00a2\u0006\u000c\u0008$\u0012\u0008\u0008%\u0012\u0004\u0008\u0008(&\u0012\u0004\u0012\u00020!0#H\u0086\u0008\u00f8\u0001\u0000\u001a5\u0010)\u001a\u00020!*\u00020\u00022#\u0008\u0004\u0010\"\u001a\u001d\u0012\u0013\u0012\u00110\u0002\u00a2\u0006\u000c\u0008$\u0012\u0008\u0008%\u0012\u0004\u0008\u0008(&\u0012\u0004\u0012\u00020!0#H\u0086\u0008\u00f8\u0001\u0000\u001a5\u0010*\u001a\u00020+*\u00020\u00022#\u0008\u0004\u0010\"\u001a\u001d\u0012\u0013\u0012\u00110\u0002\u00a2\u0006\u000c\u0008$\u0012\u0008\u0008%\u0012\u0004\u0008\u0008(&\u0012\u0004\u0012\u00020!0#H\u0086\u0008\u00f8\u0001\u0000\u001a\u0014\u0010,\u001a\u00020-*\u00020\u00022\u0008\u0008\u0002\u0010.\u001a\u00020/\u001a(\u00100\u001a\u000201*\u00020\u00022\u0006\u00102\u001a\u0002032\u000e\u0008\u0004\u0010\"\u001a\u0008\u0012\u0004\u0012\u00020!04H\u0086\u0008\u00f8\u0001\u0000\u001a\"\u00105\u001a\u000201*\u00020\u00022\u0006\u00102\u001a\u0002032\u000c\u0010\"\u001a\u0008\u0012\u0004\u0012\u00020!04H\u0007\u001a\u0017\u00106\u001a\u00020!*\u00020\u00022\u0008\u0008\u0001\u00107\u001a\u00020\u0013H\u0086\u0008\u001a:\u00108\u001a\u00020!\"\n\u0008\u0000\u00109\u0018\u0001*\u00020:*\u00020\u00022\u0017\u0010;\u001a\u0013\u0012\u0004\u0012\u0002H9\u0012\u0004\u0012\u00020!0#\u00a2\u0006\u0002\u0008<H\u0087\u0008\u00f8\u0001\u0000\u00a2\u0006\u0002\u0008=\u001a)\u00108\u001a\u00020!*\u00020\u00022\u0017\u0010;\u001a\u0013\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020!0#\u00a2\u0006\u0002\u0008<H\u0086\u0008\u00f8\u0001\u0000\u001a5\u0010>\u001a\u00020!*\u00020\u00022\u0008\u0008\u0003\u0010?\u001a\u00020\u00132\u0008\u0008\u0003\u0010@\u001a\u00020\u00132\u0008\u0008\u0003\u0010A\u001a\u00020\u00132\u0008\u0008\u0003\u0010B\u001a\u00020\u0013H\u0086\u0008\u001a5\u0010C\u001a\u00020!*\u00020\u00022\u0008\u0008\u0003\u0010D\u001a\u00020\u00132\u0008\u0008\u0003\u0010@\u001a\u00020\u00132\u0008\u0008\u0003\u0010E\u001a\u00020\u00132\u0008\u0008\u0003\u0010B\u001a\u00020\u0013H\u0087\u0008\"\u001b\u0010\u0000\u001a\u0008\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u00028F\u00a2\u0006\u0006\u001a\u0004\u0008\u0003\u0010\u0004\"\u001b\u0010\u0005\u001a\u0008\u0012\u0004\u0012\u00020\u00060\u0001*\u00020\u00028F\u00a2\u0006\u0006\u001a\u0004\u0008\u0007\u0010\u0004\"*\u0010\n\u001a\u00020\t*\u00020\u00022\u0006\u0010\u0008\u001a\u00020\t8\u00c6\u0002@\u00c6\u0002X\u0086\u000e\u00a2\u0006\u000c\u001a\u0004\u0008\n\u0010\u000b\"\u0004\u0008\u000c\u0010\r\"*\u0010\u000e\u001a\u00020\t*\u00020\u00022\u0006\u0010\u0008\u001a\u00020\t8\u00c6\u0002@\u00c6\u0002X\u0086\u000e\u00a2\u0006\u000c\u001a\u0004\u0008\u000e\u0010\u000b\"\u0004\u0008\u000f\u0010\r\"*\u0010\u0010\u001a\u00020\t*\u00020\u00022\u0006\u0010\u0008\u001a\u00020\t8\u00c6\u0002@\u00c6\u0002X\u0086\u000e\u00a2\u0006\u000c\u001a\u0004\u0008\u0010\u0010\u000b\"\u0004\u0008\u0011\u0010\r\"\u0016\u0010\u0012\u001a\u00020\u0013*\u00020\u00028\u00c6\u0002\u00a2\u0006\u0006\u001a\u0004\u0008\u0014\u0010\u0015\"\u0016\u0010\u0016\u001a\u00020\u0013*\u00020\u00028\u00c6\u0002\u00a2\u0006\u0006\u001a\u0004\u0008\u0017\u0010\u0015\"\u0016\u0010\u0018\u001a\u00020\u0013*\u00020\u00028\u00c6\u0002\u00a2\u0006\u0006\u001a\u0004\u0008\u0019\u0010\u0015\"\u0016\u0010\u001a\u001a\u00020\u0013*\u00020\u00028\u00c6\u0002\u00a2\u0006\u0006\u001a\u0004\u0008\u001b\u0010\u0015\"\u0016\u0010\u001c\u001a\u00020\u0013*\u00020\u00028\u00c6\u0002\u00a2\u0006\u0006\u001a\u0004\u0008\u001d\u0010\u0015\"\u0016\u0010\u001e\u001a\u00020\u0013*\u00020\u00028\u00c6\u0002\u00a2\u0006\u0006\u001a\u0004\u0008\u001f\u0010\u0015\u0082\u0002\u0007\n\u0005\u0008\u009920\u0001\u00a8\u0006F"
     }
     d2 = {
+        "allViews",
+        "Lkotlin/sequences/Sequence;",
+        "Landroid/view/View;",
+        "getAllViews",
+        "(Landroid/view/View;)Lkotlin/sequences/Sequence;",
+        "ancestors",
+        "Landroid/view/ViewParent;",
+        "getAncestors",
         "value",
         "",
         "isGone",
-        "Landroid/view/View;",
         "(Landroid/view/View;)Z",
         "setGone",
         "(Landroid/view/View;Z)V",
@@ -86,23 +88,24 @@
     k = 0x2
     mv = {
         0x1,
-        0x1,
-        0x10
+        0x8,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
+.method public static synthetic $r8$lambda$3IvyLuEauArsUXsbd_efkmajCrs(Lkotlin/jvm/functions/Function0;)V
+    .locals 0
+
+    invoke-static {p0}, Landroidx/core/view/ViewKt;->postOnAnimationDelayed$lambda$1(Lkotlin/jvm/functions/Function0;)V
+
+    return-void
+.end method
+
 .method public static final doOnAttach(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/jvm/functions/Function1;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -115,27 +118,27 @@
         }
     .end annotation
 
-    const-string v0, "$this$doOnAttach"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "action"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 93
+    .line 96
     invoke-static {p0}, Landroidx/core/view/ViewCompat;->isAttachedToWindow(Landroid/view/View;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 94
+    .line 97
     invoke-interface {p1, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 96
+    .line 99
     :cond_0
     new-instance v0, Landroidx/core/view/ViewKt$doOnAttach$1;
 
@@ -151,14 +154,6 @@
 
 .method public static final doOnDetach(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/jvm/functions/Function1;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -171,27 +166,27 @@
         }
     .end annotation
 
-    const-string v0, "$this$doOnDetach"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "action"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 117
+    .line 120
     invoke-static {p0}, Landroidx/core/view/ViewCompat;->isAttachedToWindow(Landroid/view/View;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 118
+    .line 121
     invoke-interface {p1, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 120
+    .line 123
     :cond_0
     new-instance v0, Landroidx/core/view/ViewKt$doOnDetach$1;
 
@@ -207,14 +202,6 @@
 
 .method public static final doOnLayout(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/jvm/functions/Function1;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -227,15 +214,15 @@
         }
     .end annotation
 
-    const-string v0, "$this$doOnLayout"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "action"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 65
+    .line 68
     invoke-static {p0}, Landroidx/core/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
 
     move-result v0
@@ -248,12 +235,12 @@
 
     if-nez v0, :cond_0
 
-    .line 66
+    .line 69
     invoke-interface {p1, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 385
+    .line 433
     :cond_0
     new-instance v0, Landroidx/core/view/ViewKt$doOnLayout$$inlined$doOnNextLayout$1;
 
@@ -269,14 +256,6 @@
 
 .method public static final doOnNextLayout(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/jvm/functions/Function1;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -289,15 +268,15 @@
         }
     .end annotation
 
-    const-string v0, "$this$doOnNextLayout"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "action"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 37
+    .line 40
     new-instance v0, Landroidx/core/view/ViewKt$doOnNextLayout$1;
 
     invoke-direct {v0, p1}, Landroidx/core/view/ViewKt$doOnNextLayout$1;-><init>(Lkotlin/jvm/functions/Function1;)V
@@ -311,14 +290,6 @@
 
 .method public static final doOnPreDraw(Landroid/view/View;Lkotlin/jvm/functions/Function1;)Landroidx/core/view/OneShotPreDrawListener;
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/jvm/functions/Function1;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -332,21 +303,18 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
+    const-string v0, "<this>"
 
-    const-string v0, "$this$doOnPreDraw"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "action"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 80
+    .line 84
     new-instance v0, Landroidx/core/view/ViewKt$doOnPreDraw$1;
 
-    invoke-direct {v0, p0, p1}, Landroidx/core/view/ViewKt$doOnPreDraw$1;-><init>(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v0, p1, p0}, Landroidx/core/view/ViewKt$doOnPreDraw$1;-><init>(Lkotlin/jvm/functions/Function1;Landroid/view/View;)V
 
     check-cast v0, Ljava/lang/Runnable;
 
@@ -354,42 +322,32 @@
 
     move-result-object p0
 
-    const-string p1, "OneShotPreDrawListener.add(this) { action(this) }"
+    const-string p1, "View.doOnPreDraw(\n    cr\u2026dd(this) { action(this) }"
 
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 .end method
 
 .method public static final drawToBitmap(Landroid/view/View;Landroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
     .locals 3
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Landroid/graphics/Bitmap$Config;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
-    const-string v0, "$this$drawToBitmap"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "config"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 226
+    .line 235
     invoke-static {p0}, Landroidx/core/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 229
+    .line 238
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -402,16 +360,16 @@
 
     move-result-object p1
 
-    const-string v0, "Bitmap.createBitmap(width, height, config)"
+    const-string v0, "createBitmap(width, height, config)"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 391
+    .line 435
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 230
+    .line 239
     invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
 
     move-result v1
@@ -430,20 +388,18 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 231
+    .line 240
     invoke-virtual {p0, v0}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
     return-object p1
 
-    .line 227
+    .line 236
     :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const-string p1, "View needs to be laid out before calling drawToBitmap()"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    check-cast p0, Ljava/lang/Throwable;
 
     throw p0
 .end method
@@ -455,7 +411,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 225
+    .line 234
     sget-object p1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     :cond_0
@@ -466,61 +422,122 @@
     return-object p0
 .end method
 
+.method public static final getAllViews(Landroid/view/View;)Lkotlin/sequences/Sequence;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/view/View;",
+            ")",
+            "Lkotlin/sequences/Sequence<",
+            "Landroid/view/View;",
+            ">;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 413
+    new-instance v0, Landroidx/core/view/ViewKt$allViews$1;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Landroidx/core/view/ViewKt$allViews$1;-><init>(Landroid/view/View;Lkotlin/coroutines/Continuation;)V
+
+    check-cast v0, Lkotlin/jvm/functions/Function2;
+
+    invoke-static {v0}, Lkotlin/sequences/SequencesKt;->sequence(Lkotlin/jvm/functions/Function2;)Lkotlin/sequences/Sequence;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final getAncestors(Landroid/view/View;)Lkotlin/sequences/Sequence;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/view/View;",
+            ")",
+            "Lkotlin/sequences/Sequence<",
+            "Landroid/view/ViewParent;",
+            ">;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 403
+    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p0
+
+    sget-object v0, Landroidx/core/view/ViewKt$ancestors$1;->INSTANCE:Landroidx/core/view/ViewKt$ancestors$1;
+
+    check-cast v0, Lkotlin/jvm/functions/Function1;
+
+    invoke-static {p0, v0}, Lkotlin/sequences/SequencesKt;->generateSequence(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static final getMarginBottom(Landroid/view/View;)I
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$marginBottom"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 357
+    .line 368
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p0
 
     instance-of v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 p0, 0x0
-
-    :cond_0
     check-cast p0, Landroid/view/ViewGroup$MarginLayoutParams;
 
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
     if-eqz p0, :cond_1
 
     iget p0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     const/4 p0, 0x0
 
-    :goto_0
+    :goto_1
     return p0
 .end method
 
 .method public static final getMarginEnd(Landroid/view/View;)I
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$marginEnd"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 381
+    .line 392
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p0
 
-    .line 382
+    .line 393
     instance-of v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;
 
     if-eqz v0, :cond_0
@@ -542,97 +559,91 @@
 
 .method public static final getMarginLeft(Landroid/view/View;)I
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$marginLeft"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 330
+    .line 341
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p0
 
     instance-of v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 p0, 0x0
-
-    :cond_0
     check-cast p0, Landroid/view/ViewGroup$MarginLayoutParams;
 
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
     if-eqz p0, :cond_1
 
     iget p0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     const/4 p0, 0x0
 
-    :goto_0
+    :goto_1
     return p0
 .end method
 
 .method public static final getMarginRight(Landroid/view/View;)I
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$marginRight"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 348
+    .line 359
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p0
 
     instance-of v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 p0, 0x0
-
-    :cond_0
     check-cast p0, Landroid/view/ViewGroup$MarginLayoutParams;
 
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
     if-eqz p0, :cond_1
 
     iget p0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     const/4 p0, 0x0
 
-    :goto_0
+    :goto_1
     return p0
 .end method
 
 .method public static final getMarginStart(Landroid/view/View;)I
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$marginStart"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 368
+    .line 379
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p0
 
-    .line 369
+    .line 380
     instance-of v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;
 
     if-eqz v0, :cond_0
@@ -654,54 +665,49 @@
 
 .method public static final getMarginTop(Landroid/view/View;)I
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$marginTop"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 339
+    .line 350
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p0
 
     instance-of v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 p0, 0x0
-
-    :cond_0
     check-cast p0, Landroid/view/ViewGroup$MarginLayoutParams;
 
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
     if-eqz p0, :cond_1
 
     iget p0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     const/4 p0, 0x0
 
-    :goto_0
+    :goto_1
     return p0
 .end method
 
 .method public static final isGone(Landroid/view/View;)Z
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$isGone"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 293
+    .line 302
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result p0
@@ -723,16 +729,12 @@
 
 .method public static final isInvisible(Landroid/view/View;)Z
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$isInvisible"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 272
+    .line 281
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result p0
@@ -754,16 +756,12 @@
 
 .method public static final isVisible(Landroid/view/View;)Z
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$isVisible"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 251
+    .line 260
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result p0
@@ -783,14 +781,6 @@
 
 .method public static final postDelayed(Landroid/view/View;JLkotlin/jvm/functions/Function0;)Ljava/lang/Runnable;
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p3    # Lkotlin/jvm/functions/Function0;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -803,25 +793,22 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
+    const-string v0, "<this>"
 
-    const-string v0, "$this$postDelayed"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "action"
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 184
+    .line 193
     new-instance v0, Landroidx/core/view/ViewKt$postDelayed$runnable$1;
 
     invoke-direct {v0, p3}, Landroidx/core/view/ViewKt$postDelayed$runnable$1;-><init>(Lkotlin/jvm/functions/Function0;)V
 
     check-cast v0, Ljava/lang/Runnable;
 
-    .line 185
+    .line 194
     invoke-virtual {p0, v0, p1, p2}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-object v0
@@ -829,18 +816,6 @@
 
 .method public static final postOnAnimationDelayed(Landroid/view/View;JLkotlin/jvm/functions/Function0;)Ljava/lang/Runnable;
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p3    # Lkotlin/jvm/functions/Function0;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x10
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -853,40 +828,44 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
+    const-string v0, "<this>"
 
-    const-string v0, "$this$postOnAnimationDelayed"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "action"
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 206
-    new-instance v0, Landroidx/core/view/ViewKt$postOnAnimationDelayed$runnable$1;
+    .line 215
+    new-instance v0, Landroidx/core/view/ViewKt$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p3}, Landroidx/core/view/ViewKt$postOnAnimationDelayed$runnable$1;-><init>(Lkotlin/jvm/functions/Function0;)V
+    invoke-direct {v0, p3}, Landroidx/core/view/ViewKt$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function0;)V
 
-    check-cast v0, Ljava/lang/Runnable;
-
-    .line 207
-    invoke-virtual {p0, v0, p1, p2}, Landroid/view/View;->postOnAnimationDelayed(Ljava/lang/Runnable;J)V
+    .line 216
+    invoke-static {p0, v0, p1, p2}, Landroidx/core/view/Api16Impl;->postOnAnimationDelayed(Landroid/view/View;Ljava/lang/Runnable;J)V
 
     return-object v0
 .end method
 
+.method private static final postOnAnimationDelayed$lambda$1(Lkotlin/jvm/functions/Function0;)V
+    .locals 1
+
+    const-string v0, "$action"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 215
+    invoke-interface {p0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
+
+    return-void
+.end method
+
 .method public static final setGone(Landroid/view/View;Z)V
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$isGone"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz p1, :cond_0
 
@@ -897,7 +876,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 295
+    .line 304
     :goto_0
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
@@ -906,14 +885,10 @@
 
 .method public static final setInvisible(Landroid/view/View;Z)V
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$isInvisible"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz p1, :cond_0
 
@@ -924,7 +899,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 274
+    .line 283
     :goto_0
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
@@ -933,20 +908,12 @@
 
 .method public static final setPadding(Landroid/view/View;I)V
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$setPadding"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 168
+    .line 177
     invoke-virtual {p0, p1, p1, p1, p1}, Landroid/view/View;->setPadding(IIII)V
 
     return-void
@@ -954,14 +921,10 @@
 
 .method public static final setVisible(Landroid/view/View;Z)V
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$isVisible"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz p1, :cond_0
 
@@ -972,7 +935,7 @@
     :cond_0
     const/16 p1, 0x8
 
-    .line 253
+    .line 262
     :goto_0
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
@@ -981,14 +944,6 @@
 
 .method public static final updateLayoutParams(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/jvm/functions/Function1;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1001,50 +956,42 @@
         }
     .end annotation
 
-    const-string v0, "$this$updateLayoutParams"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "block"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 394
+    .line 438
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 395
+    .line 439
     invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 396
+    .line 440
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 
-    .line 394
+    .line 438
     :cond_0
-    new-instance p0, Lkotlin/TypeCastException;
+    new-instance p0, Ljava/lang/NullPointerException;
 
     const-string p1, "null cannot be cast to non-null type android.view.ViewGroup.LayoutParams"
 
-    invoke-direct {p0, p1}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
 
 .method public static final synthetic updateLayoutParamsTyped(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
     .locals 3
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/jvm/functions/Function1;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1058,35 +1005,33 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/jvm/JvmName;
-        name = "updateLayoutParamsTyped"
-    .end annotation
+    const-string v0, "<this>"
 
-    const-string v0, "$this$updateLayoutParams"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "block"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 318
+    .line 329
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    const-string v1, "T"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const-string v2, "T"
 
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->reifiedOperationMarker(ILjava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->reifiedOperationMarker(ILjava/lang/String;)V
 
-    check-cast v0, Landroid/view/ViewGroup$LayoutParams;
+    move-object v1, v0
 
-    .line 319
+    check-cast v1, Landroid/view/ViewGroup$LayoutParams;
+
+    .line 330
     invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 320
+    .line 331
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
@@ -1094,32 +1039,12 @@
 
 .method public static final updatePadding(Landroid/view/View;IIII)V
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
-    .param p2    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
-    .param p3    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
-    .param p4    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$updatePadding"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 159
+    .line 168
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/View;->setPadding(IIII)V
 
     return-void
@@ -1132,7 +1057,7 @@
 
     if-eqz p6, :cond_0
 
-    .line 154
+    .line 163
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result p1
@@ -1142,7 +1067,7 @@
 
     if-eqz p6, :cond_1
 
-    .line 155
+    .line 164
     invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
 
     move-result p2
@@ -1152,7 +1077,7 @@
 
     if-eqz p6, :cond_2
 
-    .line 156
+    .line 165
     invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
 
     move-result p3
@@ -1162,17 +1087,18 @@
 
     if-eqz p5, :cond_3
 
-    .line 157
+    .line 166
     invoke-virtual {p0}, Landroid/view/View;->getPaddingBottom()I
 
     move-result p4
 
     :cond_3
-    const-string p5, "$this$updatePadding"
+    const-string p5, "<this>"
 
-    invoke-static {p0, p5}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    .line 162
+    invoke-static {p0, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 389
+    .line 168
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/View;->setPadding(IIII)V
 
     return-void
@@ -1180,35 +1106,12 @@
 
 .method public static final updatePaddingRelative(Landroid/view/View;IIII)V
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
-    .param p2    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
-    .param p3    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
-    .param p4    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x11
-    .end annotation
 
-    const-string v0, "$this$updatePaddingRelative"
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 144
+    .line 153
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/View;->setPaddingRelative(IIII)V
 
     return-void
@@ -1221,7 +1124,7 @@
 
     if-eqz p6, :cond_0
 
-    .line 139
+    .line 148
     invoke-virtual {p0}, Landroid/view/View;->getPaddingStart()I
 
     move-result p1
@@ -1231,7 +1134,7 @@
 
     if-eqz p6, :cond_1
 
-    .line 140
+    .line 149
     invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
 
     move-result p2
@@ -1241,7 +1144,7 @@
 
     if-eqz p6, :cond_2
 
-    .line 141
+    .line 150
     invoke-virtual {p0}, Landroid/view/View;->getPaddingEnd()I
 
     move-result p3
@@ -1251,17 +1154,18 @@
 
     if-eqz p5, :cond_3
 
-    .line 142
+    .line 151
     invoke-virtual {p0}, Landroid/view/View;->getPaddingBottom()I
 
     move-result p4
 
     :cond_3
-    const-string p5, "$this$updatePaddingRelative"
+    const-string p5, "<this>"
 
-    invoke-static {p0, p5}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    .line 147
+    invoke-static {p0, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 387
+    .line 153
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/View;->setPaddingRelative(IIII)V
 
     return-void

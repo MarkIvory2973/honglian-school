@@ -16,6 +16,3 @@
 
 # static fields
 .field public static final RESIZE_CLIP:I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field

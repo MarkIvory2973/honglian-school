@@ -31,23 +31,43 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0xb0
 .end annotation
 
 
 # instance fields
 .field final synthetic $action:Lkotlin/jvm/functions/Function1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function1<",
+            "Ljava/util/TimerTask;",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
+            "Ljava/util/TimerTask;",
+            "Lkotlin/Unit;",
+            ">;)V"
+        }
+    .end annotation
 
-    .line 146
     iput-object p1, p0, Lkotlin/concurrent/TimersKt$timerTask$1;->$action:Lkotlin/jvm/functions/Function1;
 
+    .line 146
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
 
     return-void

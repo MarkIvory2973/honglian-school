@@ -13,14 +13,11 @@
 
 
 # static fields
-.field private static final DEBUG:Z
+.field private static final DEBUG:Z = false
 
 
 # instance fields
 .field final mLayoutHolderMap:Landroidx/collection/SimpleArrayMap;
-    .annotation build Landroidx/annotation/VisibleForTesting;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroidx/collection/SimpleArrayMap<",
@@ -32,9 +29,6 @@
 .end field
 
 .field final mOldChangedHolders:Landroidx/collection/LongSparseArray;
-    .annotation build Landroidx/annotation/VisibleForTesting;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroidx/collection/LongSparseArray<",
@@ -368,12 +362,12 @@
 
     check-cast p1, Landroidx/recyclerview/widget/ViewInfoStore$InfoRecord;
 
-    const/4 v0, 0x1
-
     if-eqz p1, :cond_0
 
     .line 75
     iget p1, p1, Landroidx/recyclerview/widget/ViewInfoStore$InfoRecord;->flags:I
+
+    const/4 v0, 0x1
 
     and-int/2addr p1, v0
 
@@ -440,8 +434,6 @@
 
 .method popFromPostLayout(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     const/16 v0, 0x8
 
@@ -455,8 +447,6 @@
 
 .method popFromPreLayout(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     const/4 v0, 0x4
 

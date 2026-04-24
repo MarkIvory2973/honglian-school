@@ -33,8 +33,6 @@
     .line 96
     invoke-static {v0, p1}, Landroidx/core/graphics/drawable/DrawableCompat;->applyTheme(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources$Theme;)V
 
-    return-void
-
     :cond_0
     return-void
 .end method
@@ -214,8 +212,6 @@
     .line 87
     invoke-static {v0}, Landroidx/core/graphics/drawable/DrawableCompat;->jumpToCurrentState(Landroid/graphics/drawable/Drawable;)V
 
-    return-void
-
     :cond_0
     return-void
 .end method
@@ -315,8 +311,6 @@
     .line 79
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setFilterBitmap(Z)V
 
-    return-void
-
     :cond_0
     return-void
 .end method
@@ -346,8 +340,6 @@
 
     .line 71
     invoke-static {v0, p1, p2, p3, p4}, Landroidx/core/graphics/drawable/DrawableCompat;->setHotspotBounds(Landroid/graphics/drawable/Drawable;IIII)V
-
-    return-void
 
     :cond_0
     return-void

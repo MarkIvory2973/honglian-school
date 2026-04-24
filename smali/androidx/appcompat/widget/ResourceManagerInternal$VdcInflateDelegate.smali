@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 503
+    .line 520
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,24 +31,8 @@
 # virtual methods
 .method public createFromXmlInner(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
     .locals 0
-    .param p1    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Lorg/xmlpull/v1/XmlPullParser;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroid/util/AttributeSet;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p4    # Landroid/content/res/Resources$Theme;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
-    .line 511
+    .line 528
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -69,7 +53,7 @@
 
     const-string p3, "Exception while inflating <vector>"
 
-    .line 513
+    .line 530
     invoke-static {p2, p3, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     const/4 p1, 0x0

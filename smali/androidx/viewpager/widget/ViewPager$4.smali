@@ -93,23 +93,23 @@
 
     iput v0, p2, Landroid/graphics/Rect;->bottom:I
 
-    const/4 v0, 0x0
-
     .line 455
-    iget-object v1, p0, Landroidx/viewpager/widget/ViewPager$4;->this$0:Landroidx/viewpager/widget/ViewPager;
+    iget-object v0, p0, Landroidx/viewpager/widget/ViewPager$4;->this$0:Landroidx/viewpager/widget/ViewPager;
 
-    invoke-virtual {v1}, Landroidx/viewpager/widget/ViewPager;->getChildCount()I
+    invoke-virtual {v0}, Landroidx/viewpager/widget/ViewPager;->getChildCount()I
 
-    move-result v1
+    move-result v0
+
+    const/4 v1, 0x0
 
     :goto_0
-    if-ge v0, v1, :cond_1
+    if-ge v1, v0, :cond_1
 
     .line 456
     iget-object v2, p0, Landroidx/viewpager/widget/ViewPager$4;->this$0:Landroidx/viewpager/widget/ViewPager;
 
     .line 457
-    invoke-virtual {v2, v0}, Landroidx/viewpager/widget/ViewPager;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v2, v1}, Landroidx/viewpager/widget/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -169,7 +169,7 @@
 
     iput v2, p2, Landroid/graphics/Rect;->bottom:I
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 

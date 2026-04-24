@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 98
+    .line 99
     invoke-direct {p0}, Landroidx/transition/Visibility;-><init>()V
 
     return-void
@@ -34,10 +34,10 @@
 .method public constructor <init>(I)V
     .locals 0
 
-    .line 91
+    .line 92
     invoke-direct {p0}, Landroidx/transition/Visibility;-><init>()V
 
-    .line 92
+    .line 93
     invoke-virtual {p0, p1}, Landroidx/transition/Fade;->setMode(I)V
 
     return-void
@@ -45,43 +45,38 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 3
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "RestrictedApi"
-        }
-    .end annotation
-
-    .line 104
-    invoke-direct {p0, p1, p2}, Landroidx/transition/Visibility;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 105
+    invoke-direct {p0, p1, p2}, Landroidx/transition/Visibility;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    .line 106
     sget-object v0, Landroidx/transition/Styleable;->FADE:[I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    .line 107
+    .line 108
     check-cast p2, Landroid/content/res/XmlResourceParser;
 
-    const-string v0, "fadingMode"
+    const/4 v0, 0x0
 
-    .line 108
+    .line 109
     invoke-virtual {p0}, Landroidx/transition/Fade;->getMode()I
 
     move-result v1
 
-    const/4 v2, 0x0
+    const-string v2, "fadingMode"
 
-    .line 107
-    invoke-static {p1, p2, v0, v2, v1}, Landroidx/core/content/res/TypedArrayUtils;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
+    .line 108
+    invoke-static {p1, p2, v2, v0, v1}, Landroidx/core/content/res/TypedArrayUtils;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
 
     move-result p2
 
-    .line 109
+    .line 110
     invoke-virtual {p0, p2}, Landroidx/transition/Fade;->setMode(I)V
 
-    .line 110
+    .line 111
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
@@ -98,11 +93,11 @@
 
     return-object p1
 
-    .line 127
+    .line 128
     :cond_0
     invoke-static {p1, p2}, Landroidx/transition/ViewUtils;->setTransitionAlpha(Landroid/view/View;F)V
 
-    .line 128
+    .line 129
     sget-object p2, Landroidx/transition/ViewUtils;->TRANSITION_ALPHA:Landroid/util/Property;
 
     const/4 v0, 0x1
@@ -117,15 +112,15 @@
 
     move-result-object p2
 
-    .line 133
+    .line 134
     new-instance p3, Landroidx/transition/Fade$FadeAnimatorListener;
 
     invoke-direct {p3, p1}, Landroidx/transition/Fade$FadeAnimatorListener;-><init>(Landroid/view/View;)V
 
-    .line 134
+    .line 135
     invoke-virtual {p2, p3}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 135
+    .line 136
     new-instance p3, Landroidx/transition/Fade$1;
 
     invoke-direct {p3, p0, p1}, Landroidx/transition/Fade$1;-><init>(Landroidx/transition/Fade;Landroid/view/View;)V
@@ -140,7 +135,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 173
+    .line 176
     iget-object p0, p0, Landroidx/transition/TransitionValues;->values:Ljava/util/Map;
 
     const-string v0, "android:fade:transitionAlpha"
@@ -153,7 +148,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 175
+    .line 178
     invoke-virtual {p0}, Ljava/lang/Float;->floatValue()F
 
     move-result p1
@@ -166,22 +161,16 @@
 # virtual methods
 .method public captureStartValues(Landroidx/transition/TransitionValues;)V
     .locals 2
-    .param p1    # Landroidx/transition/TransitionValues;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-
-    .line 115
-    invoke-super {p0, p1}, Landroidx/transition/Visibility;->captureStartValues(Landroidx/transition/TransitionValues;)V
 
     .line 116
-    iget-object v0, p1, Landroidx/transition/TransitionValues;->values:Ljava/util/Map;
+    invoke-super {p0, p1}, Landroidx/transition/Visibility;->captureStartValues(Landroidx/transition/TransitionValues;)V
 
-    const-string v1, "android:fade:transitionAlpha"
+    .line 117
+    iget-object v0, p1, Landroidx/transition/TransitionValues;->values:Ljava/util/Map;
 
     iget-object p1, p1, Landroidx/transition/TransitionValues;->view:Landroid/view/View;
 
-    .line 117
+    .line 118
     invoke-static {p1}, Landroidx/transition/ViewUtils;->getTransitionAlpha(Landroid/view/View;)F
 
     move-result p1
@@ -190,7 +179,9 @@
 
     move-result-object p1
 
-    .line 116
+    const-string v1, "android:fade:transitionAlpha"
+
+    .line 117
     invoke-interface {v0, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -201,7 +192,7 @@
 
     const/4 p1, 0x0
 
-    .line 155
+    .line 157
     invoke-static {p3, p1}, Landroidx/transition/Fade;->getStartAlpha(Landroidx/transition/TransitionValues;F)F
 
     move-result p3
@@ -217,7 +208,7 @@
     :cond_0
     move p1, p3
 
-    .line 159
+    .line 161
     :goto_0
     invoke-direct {p0, p2, p1, p4}, Landroidx/transition/Fade;->createAnimation(Landroid/view/View;FF)Landroid/animation/Animator;
 
@@ -229,19 +220,19 @@
 .method public onDisappear(Landroid/view/ViewGroup;Landroid/view/View;Landroidx/transition/TransitionValues;Landroidx/transition/TransitionValues;)Landroid/animation/Animator;
     .locals 0
 
-    .line 165
+    .line 168
     invoke-static {p2}, Landroidx/transition/ViewUtils;->saveNonTransitionAlpha(Landroid/view/View;)V
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 166
+    .line 169
     invoke-static {p3, p1}, Landroidx/transition/Fade;->getStartAlpha(Landroidx/transition/TransitionValues;F)F
 
     move-result p1
 
     const/4 p3, 0x0
 
-    .line 167
+    .line 170
     invoke-direct {p0, p2, p1, p3}, Landroidx/transition/Fade;->createAnimation(Landroid/view/View;FF)Landroid/animation/Animator;
 
     move-result-object p1

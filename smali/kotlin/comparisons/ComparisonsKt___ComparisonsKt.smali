@@ -28,10 +28,10 @@
     k = 0x5
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-    xi = 0x1
+    xi = 0x31
     xs = "kotlin/comparisons/ComparisonsKt"
 .end annotation
 
@@ -47,10 +47,6 @@
 
 .method public static final maxOf(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Ljava/lang/Object;
     .locals 1
-    .param p3    # Ljava/util/Comparator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -61,15 +57,11 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
     const-string v0, "comparator"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 133
+    .line 127
     invoke-static {p1, p2, p3}, Lkotlin/comparisons/ComparisonsKt;->maxOf(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Ljava/lang/Object;
 
     move-result-object p1
@@ -83,10 +75,6 @@
 
 .method public static final maxOf(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Ljava/lang/Object;
     .locals 1
-    .param p2    # Ljava/util/Comparator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -97,15 +85,11 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
     const-string v0, "comparator"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 143
+    .line 137
     invoke-interface {p2, p0, p1}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result p2
@@ -123,14 +107,6 @@
 
 .method public static final maxOf(Ljava/lang/Object;[Ljava/lang/Object;Ljava/util/Comparator;)Ljava/lang/Object;
     .locals 4
-    .param p1    # [Ljava/lang/Object;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/Comparator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -141,10 +117,6 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
-
     const-string v0, "other"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -153,7 +125,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 202
+    .line 196
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -182,10 +154,6 @@
 
 .method public static final minOf(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Ljava/lang/Object;
     .locals 1
-    .param p3    # Ljava/util/Comparator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -196,15 +164,11 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
     const-string v0, "comparator"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 321
+    .line 309
     invoke-static {p1, p2, p3}, Lkotlin/comparisons/ComparisonsKt;->minOf(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Ljava/lang/Object;
 
     move-result-object p1
@@ -218,10 +182,6 @@
 
 .method public static final minOf(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Ljava/lang/Object;
     .locals 1
-    .param p2    # Ljava/util/Comparator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -232,15 +192,11 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
     const-string v0, "comparator"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 331
+    .line 319
     invoke-interface {p2, p0, p1}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result p2
@@ -258,14 +214,6 @@
 
 .method public static final minOf(Ljava/lang/Object;[Ljava/lang/Object;Ljava/util/Comparator;)Ljava/lang/Object;
     .locals 4
-    .param p1    # [Ljava/lang/Object;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/Comparator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -276,10 +224,6 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
-
     const-string v0, "other"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -288,7 +232,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 390
+    .line 378
     array-length v0, p1
 
     const/4 v1, 0x0

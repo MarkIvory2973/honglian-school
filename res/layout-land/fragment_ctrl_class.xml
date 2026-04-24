@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout-land/fragment_ctrl_class_0" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/relativeLayout7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="35.0dp" android:layout_marginStart="50.0dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <TextView android:textSize="20.0sp" android:textColor="@color/colorD34Gray" android:id="@id/tv_grade" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="选择年级：" android:layout_centerVertical="true" />
+        <RelativeLayout android:background="@drawable/shape_circle_grayf1f7" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/tv_grade">
+            <Spinner android:id="@id/sp_select_class" android:layout_width="280.0dp" android:layout_height="60.0dp" android:layout_marginLeft="28.0dp" android:textAlignment="center" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <TextView android:textSize="24.0sp" android:textColor="#ff101d34" android:id="@id/tv_select_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_40" android:text="选择班级评分" app:layout_constraintStart_toStartOf="@id/relativeLayout7" app:layout_constraintTop_toBottomOf="@id/relativeLayout7" />
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_recycleview" android:layout_width="match_parent" android:layout_height="480.0dp" android:layout_marginTop="@dimen/dp_40" android:layout_marginStart="50.0dp" android:layout_marginEnd="50.0dp" app:layout_constraintTop_toBottomOf="@id/tv_select_tip">
+        <com.yanzhenjie.recyclerview.SwipeRecyclerView android:id="@id/recyclerView" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </LinearLayout>
+    <TextView android:textSize="24.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/tv_ctrl" android:tag="binding_1" android:background="@drawable/shape_circle_corn40_blue_rect" android:layout_width="220.0dp" android:layout_height="60.0dp" android:layout_marginBottom="@dimen/dp_40" android:text="确认选择" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

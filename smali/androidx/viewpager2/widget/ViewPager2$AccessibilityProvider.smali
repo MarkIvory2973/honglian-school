@@ -75,10 +75,6 @@
 
 .method onAttachAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$Adapter;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,10 +88,6 @@
 
 .method onDetachAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$Adapter;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -122,14 +114,6 @@
 
 .method onInitialize(Landroidx/viewpager2/widget/CompositeOnPageChangeCallback;Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 0
-    .param p1    # Landroidx/viewpager2/widget/CompositeOnPageChangeCallback;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method
@@ -142,10 +126,6 @@
 
 .method onLmInitializeAccessibilityNodeInfo(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
     .locals 0
-    .param p1    # Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method
@@ -197,10 +177,6 @@
 
 .method onRvInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 0
-    .param p1    # Landroid/view/accessibility/AccessibilityEvent;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method

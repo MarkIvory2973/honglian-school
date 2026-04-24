@@ -39,10 +39,6 @@
 # virtual methods
 .method public addTransformer(Landroidx/viewpager2/widget/ViewPager2$PageTransformer;)V
     .locals 1
-    .param p1    # Landroidx/viewpager2/widget/ViewPager2$PageTransformer;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 42
     iget-object v0, p0, Landroidx/viewpager2/widget/CompositePageTransformer;->mTransformers:Ljava/util/List;
@@ -54,10 +50,6 @@
 
 .method public removeTransformer(Landroidx/viewpager2/widget/ViewPager2$PageTransformer;)V
     .locals 1
-    .param p1    # Landroidx/viewpager2/widget/ViewPager2$PageTransformer;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 47
     iget-object v0, p0, Landroidx/viewpager2/widget/CompositePageTransformer;->mTransformers:Ljava/util/List;
@@ -69,10 +61,6 @@
 
 .method public transformPage(Landroid/view/View;F)V
     .locals 2
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 52
     iget-object v0, p0, Landroidx/viewpager2/widget/CompositePageTransformer;->mTransformers:Ljava/util/List;

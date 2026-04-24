@@ -43,12 +43,14 @@
 
     const/4 v1, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    if-eqz v0, :cond_1
+
+    if-eq v0, v1, :cond_0
 
     return v1
 
     .line 67
-    :pswitch_0
+    :cond_0
     iget-object v0, p0, Landroidx/core/provider/SelfDestructiveThread$1;->this$0:Landroidx/core/provider/SelfDestructiveThread;
 
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -60,18 +62,10 @@
     return v1
 
     .line 70
-    :pswitch_1
+    :cond_1
     iget-object p1, p0, Landroidx/core/provider/SelfDestructiveThread$1;->this$0:Landroidx/core/provider/SelfDestructiveThread;
 
     invoke-virtual {p1}, Landroidx/core/provider/SelfDestructiveThread;->onDestruction()V
 
     return v1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

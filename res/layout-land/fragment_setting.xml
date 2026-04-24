@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout-land/fragment_setting_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/dp_40" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="78.0dp" android:text="设置维护" />
+    <RelativeLayout android:background="@drawable/shape_react_circle_white_ff" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginTop="10.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+        <TextView android:textSize="40.0dp" android:id="@id/tv_config_url" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="服务器URL：" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+        <EditText android:textSize="40.0sp" android:id="@id/et_url" android:tag="binding_1" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="match_parent" android:layout_height="match_parent" android:singleLine="true" android:layout_alignParentBottom="true" android:layout_marginStart="10.0dp" android:layout_marginEnd="13.0dp" android:layout_toEndOf="@id/tv_config_url" />
+    </RelativeLayout>
+    <ScrollView android:layout_width="match_parent" android:layout_height="780.0dp" android:layout_marginTop="20.0dp">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+            <RelativeLayout android:background="@drawable/shape_react_circle_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ip地址：" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <TextView android:textSize="40.0sp" android:gravity="center" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" android:layout_marginEnd="13.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:tag="binding_3" android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="激活码：" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <TextView android:textSize="40.0sp" android:gravity="center" android:tag="binding_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" android:layout_marginEnd="13.0dp" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout android:tag="binding_5" android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="硬件指纹：" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <TextView android:textSize="40.0sp" android:gravity="center" android:tag="binding_6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" android:layout_marginEnd="13.0dp" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_circle_rect_circle_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="mac地址：" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <TextView android:textSize="40.0sp" android:gravity="center" android:tag="binding_7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" android:layout_marginEnd="13.0dp" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_react_circle_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginTop="20.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="人脸识别开关" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <Switch android:tag="binding_8" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="刷卡开关" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <Switch android:tag="binding_9" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="考勤开关" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <Switch android:tag="binding_10" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="门禁开关" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <Switch android:tag="binding_11" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="卡操作开关" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <Switch android:tag="binding_12" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="自由留言回复" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <Switch android:tag="binding_13" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="校长信箱" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <Switch android:tag="binding_14" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="心理室预约" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <Switch android:tag="binding_15" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:id="@id/tv_aisport" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="先知体育" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <TextView android:textSize="20.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(仅限松山湖中学使用)" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" android:layout_toEndOf="@id/tv_aisport" />
+                <Switch android:tag="binding_16" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:id="@id/tv_sport" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="运动榜单" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <TextView android:textSize="20.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(仅限松湖未来使用)" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" android:layout_toEndOf="@id/tv_sport" />
+                <Switch android:tag="binding_17" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:id="@id/tv_slk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="三立卡" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <TextView android:textSize="20.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(仅限松湖三小使用)" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" android:layout_toEndOf="@id/tv_slk" />
+                <Switch android:tag="binding_18" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:id="@id/tv_order" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="预订餐" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <TextView android:textSize="20.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" android:layout_toEndOf="@id/tv_order" />
+                <Switch android:tag="binding_19" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:id="@id/tv_coin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="学校币" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <TextView android:textSize="20.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(仅限松湖未来使用)" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" android:layout_toEndOf="@id/tv_coin" />
+                <Switch android:tag="binding_20" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:id="@id/tv_new_home" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="新首页" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <TextView android:textSize="20.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(首页有素质评价排行榜)" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" android:layout_toEndOf="@id/tv_new_home" />
+                <Switch android:tag="binding_21" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="班级评分" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <Switch android:tag="binding_22" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/shape_circle_rect_circle_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="素质评分开关" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+                <Switch android:tag="binding_23" android:layout_width="80.0dp" android:layout_height="40.0dp" android:thumb="@drawable/selector_thumb" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:track="@drawable/selector_track" android:layout_marginEnd="20.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:tag="binding_24" android:background="@drawable/shape_react_circle_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginTop="20.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="打开浏览器" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:tag="binding_25" android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="系统设置" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:tag="binding_26" android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="开门测试" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:tag="binding_27" android:background="@drawable/shape_rect_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="重启设备" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+            </RelativeLayout>
+            <RelativeLayout android:tag="binding_28" android:background="@drawable/shape_circle_rect_circle_white" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+                <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="设备关机" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    <RelativeLayout android:tag="binding_29" android:background="@drawable/shape_react_circle_white_ff" android:layout_width="match_parent" android:layout_height="78.0dp" android:layout_marginTop="20.0dp" android:layout_marginBottom="80.0dp" android:layout_marginStart="60.0dp" android:layout_marginEnd="60.0dp">
+        <TextView android:textSize="40.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保存设置" android:layout_centerVertical="true" android:layout_marginStart="13.0dp" />
+    </RelativeLayout>
+</LinearLayout>

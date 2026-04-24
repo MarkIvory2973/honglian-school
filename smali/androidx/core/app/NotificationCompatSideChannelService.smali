@@ -70,11 +70,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "NotificationSideChannelService: Uid "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -97,7 +95,7 @@
 .end method
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .locals 2
+    .locals 1
 
     .line 48
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -108,29 +106,7 @@
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result p1
-
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_1
-
-    .line 51
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x13
-
-    if-le p1, v1, :cond_0
-
-    return-object v0
-
-    .line 54
-    :cond_0
-    new-instance p1, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;
-
-    invoke-direct {p1, p0}, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;-><init>(Landroidx/core/app/NotificationCompatSideChannelService;)V
+    const/4 p1, 0x0
 
     return-object p1
-
-    :cond_1
-    return-object v0
 .end method

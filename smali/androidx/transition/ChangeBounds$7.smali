@@ -34,9 +34,7 @@
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 329
-    iget-object p1, p0, Landroidx/transition/ChangeBounds$7;->val$viewBounds:Landroidx/transition/ChangeBounds$ViewBounds;
-
-    iput-object p1, p0, Landroidx/transition/ChangeBounds$7;->mViewBounds:Landroidx/transition/ChangeBounds$ViewBounds;
+    iput-object p2, p0, Landroidx/transition/ChangeBounds$7;->mViewBounds:Landroidx/transition/ChangeBounds$ViewBounds;
 
     return-void
 .end method

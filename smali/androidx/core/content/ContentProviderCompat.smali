@@ -15,12 +15,6 @@
 
 .method public static requireContext(Landroid/content/ContentProvider;)Landroid/content/Context;
     .locals 1
-    .param p0    # Landroid/content/ContentProvider;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 45
     invoke-virtual {p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;

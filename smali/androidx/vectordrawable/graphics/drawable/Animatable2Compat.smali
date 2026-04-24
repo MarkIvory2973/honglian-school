@@ -19,15 +19,7 @@
 .end method
 
 .method public abstract registerAnimationCallback(Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;)V
-    .param p1    # Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 .end method
 
 .method public abstract unregisterAnimationCallback(Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;)Z
-    .param p1    # Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 .end method

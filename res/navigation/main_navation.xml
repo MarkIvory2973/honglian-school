@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/main_navation" app:startDestination="@id/mainfragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="MainFragment" android:name="com.hl.classtabletapp.ui.fragment.MainFragment" android:id="@id/mainfragment">
+        <action android:id="@id/action_mainFragment_to_classFragment" app:destination="@id/classfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_pswFragment" app:destination="@id/pswfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_webFragment" app:destination="@id/webfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_noticeFragment" app:destination="@id/noticefragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_trendFragment" app:destination="@id/trendfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_photoFragment" app:destination="@id/photofragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_msgBoardFragment" app:destination="@id/messagefragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_dormScoreFragment" app:destination="@id/dormscorefragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_lostFoundFragment" app:destination="@id/lostfoundfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_studentCenterFragment" app:destination="@id/studentCenterFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_examTableFragment" app:destination="@id/examTableFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_fullScreenFragment" app:destination="@id/fullScreenFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_attendanceFragment" app:destination="@id/attendanceFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_sportFragment" app:destination="@id/sportFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_aiSportFragment" app:destination="@id/aiSportFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_mainFragment_to_reserveFragment" app:destination="@id/reserveFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+    </fragment>
+    <fragment android:label="HomeFragment" android:name="com.hl.classtabletapp.ui.fragment.HomeFragment" android:id="@id/homefragment">
+        <action android:id="@id/action_homeFragment_to_classFragment" app:destination="@id/classfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_pswFragment" app:destination="@id/pswfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_webFragment" app:destination="@id/webfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_noticeFragment" app:destination="@id/noticefragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_trendFragment" app:destination="@id/trendfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_photoFragment" app:destination="@id/photofragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_msgBoardFragment" app:destination="@id/messagefragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_dormScoreFragment" app:destination="@id/dormscorefragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_lostFoundFragment" app:destination="@id/lostfoundfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_studentCenterFragment" app:destination="@id/studentCenterFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_examTableFragment" app:destination="@id/examTableFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_fullScreenFragment" app:destination="@id/fullScreenFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_attendanceFragment" app:destination="@id/attendanceFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_sportFragment" app:destination="@id/sportFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_homeFragment_to_aiSportFragment" app:destination="@id/aiSportFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+    </fragment>
+    <fragment android:label="ClassFragment" android:name="com.hl.classtabletapp.ui.fragment.ClassFragment" android:id="@id/classfragment">
+        <action android:id="@id/action_classFragment_to_webFragment" app:destination="@id/webfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+    </fragment>
+    <fragment android:label="WebFragment" android:name="com.hl.classtabletapp.ui.fragment.WebFragment" android:id="@id/webfragment">
+        <action android:id="@id/action_web_back_noticeFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" app:popUpTo="@id/noticefragment" />
+        <action android:id="@id/action_web_back_mianFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" app:popUpTo="@id/mainfragment" />
+    </fragment>
+    <fragment android:label="PswFragment" android:name="com.hl.classtabletapp.ui.fragment.PswFragment" android:id="@id/pswfragment" />
+    <fragment android:label="NoticeFragment" android:name="com.hl.classtabletapp.ui.fragment.NoticeFragment" android:id="@id/noticefragment">
+        <action android:id="@id/action_noticeFragment_to_webFragment" app:destination="@id/webfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+    </fragment>
+    <fragment android:label="TrendFragment" android:name="com.hl.classtabletapp.ui.fragment.TrendFragment" android:id="@id/trendfragment">
+        <action android:id="@id/action_trendFragment_to_webFragment" app:destination="@id/webfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+    </fragment>
+    <fragment android:label="PhotoFragment" android:name="com.hl.classtabletapp.ui.fragment.PhotoFragment" android:id="@id/photofragment" />
+    <action android:id="@id/action_to_photoListFragment" app:destination="@id/photolistfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+    <fragment android:label="PhotoListFragment" android:name="com.hl.classtabletapp.ui.fragment.PhotoListFragment" android:id="@id/photolistfragment">
+        <action android:id="@id/action_photo_back_mianFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" app:popUpTo="@id/mainfragment" />
+    </fragment>
+    <fragment android:label="MessageBoardFragment" android:name="com.hl.classtabletapp.ui.fragment.MessageBoardFragment" android:id="@id/messagefragment">
+        <action android:id="@id/action_messageFragment_to_studentCenterFragment" app:destination="@id/studentCenterFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+    </fragment>
+    <fragment android:label="DormScoreFragment" android:name="com.hl.classtabletapp.ui.fragment.DormScoreFragment" android:id="@id/dormscorefragment" />
+    <fragment android:label="LostFoundFragment" android:name="com.hl.classtabletapp.ui.fragment.LostFoundFragment" android:id="@id/lostfoundfragment" />
+    <fragment android:label="StudentCenterFragment" android:name="com.hl.classtabletapp.ui.fragment.StudentCenterFragment" android:id="@id/studentCenterFragment">
+        <action android:id="@id/action_center_back_mainFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" app:popUpTo="@id/mainfragment" />
+        <action android:id="@id/action_center_back_msgBoardFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" app:popUpTo="@id/messagefragment" />
+    </fragment>
+    <fragment android:label="ExamTableFragment" android:name="com.hl.classtabletapp.ui.fragment.ExamTableFragment" android:id="@id/examTableFragment" />
+    <fragment android:label="ScreensaverFragment" android:name="com.hl.classtabletapp.ui.fragment.ScreensaverFragment" android:id="@id/screenFragment">
+        <action android:id="@id/action_screen_back_mainFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" app:popUpTo="@id/mainfragment" />
+        <action android:id="@id/action_screen_back_oldMainFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" app:popUpTo="@id/homefragmentOld" />
+    </fragment>
+    <action android:id="@id/action_to_screensaver" app:destination="@id/screenFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+    <fragment android:label="SettingFragment" android:name="com.hl.classtabletapp.ui.fragment.SettingFragment" android:id="@id/settingFragment">
+        <action android:id="@id/action_setting_back_mainFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" app:popUpTo="@id/mainfragment" />
+    </fragment>
+    <action android:id="@id/action_to_setting" app:destination="@id/settingFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+    <fragment android:label="FullScreenFragment" android:name="com.hl.classtabletapp.ui.fragment.FullScreenFragment" android:id="@id/fullScreenFragment" />
+    <action android:id="@id/action_to_errolFragment" app:destination="@id/errolFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+    <fragment android:label="ErrolFragment" android:name="com.hl.classtabletapp.ui.fragment.ErrolFragment" android:id="@id/errolFragment">
+        <action android:id="@id/action_errolFragment_to_pswFragment" app:destination="@id/pswfragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+    </fragment>
+    <fragment android:label="AttendanceFragment" android:name="com.hl.classtabletapp.ui.fragment.attendance.AttendanceFragment" android:id="@id/attendanceFragment" />
+    <fragment android:label="VerifyFragment" android:name="com.hl.classtabletapp.ui.fragment.center.VerifyFragment" android:id="@id/verifyFragment">
+        <action android:id="@id/action_verifyFragment_to_studentCenterFragment" app:destination="@id/studentCenterFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+        <action android:id="@id/action_verify_back_mainFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" app:popUpTo="@id/mainfragment" />
+    </fragment>
+    <action android:id="@id/action_to_verifyFragment" app:destination="@id/verifyFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" />
+    <action android:id="@id/action_web_backto_mianFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" app:popUpTo="@id/mainfragment" />
+    <action android:id="@id/action_back_mianFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" app:popUpTo="@id/mainfragment" />
+    <action android:id="@id/action_back_oldMainFragment" app:enterAnim="@anim/scale_in" app:exitAnim="@anim/push_bottom_out" app:popEnterAnim="@anim/scale_in" app:popExitAnim="@anim/push_bottom_out" app:popUpTo="@id/mainfragment" />
+    <fragment android:label="SportFragment" android:name="com.hl.classtabletapp.ui.fragment.SportFragment" android:id="@id/sportFragment" />
+    <fragment android:label="AiSportFragment" android:name="com.hl.classtabletapp.ui.fragment.aisport.AiSportFragment" android:id="@id/aiSportFragment" />
+    <fragment android:label="ReserveFragment" android:name="com.hl.classtabletapp.ui.fragment.reserve.ReserveFragment" android:id="@id/reserveFragment" />
+</navigation>

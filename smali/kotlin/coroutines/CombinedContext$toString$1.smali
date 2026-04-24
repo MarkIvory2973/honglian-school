@@ -42,9 +42,10 @@
     k = 0x3
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -80,7 +81,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 112
+    .line 174
     check-cast p1, Ljava/lang/String;
 
     check-cast p2, Lkotlin/coroutines/CoroutineContext$Element;
@@ -94,16 +95,6 @@
 
 .method public final invoke(Ljava/lang/String;Lkotlin/coroutines/CoroutineContext$Element;)Ljava/lang/String;
     .locals 1
-    .param p1    # Ljava/lang/String;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Lkotlin/coroutines/CoroutineContext$Element;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     const-string v0, "acc"
 

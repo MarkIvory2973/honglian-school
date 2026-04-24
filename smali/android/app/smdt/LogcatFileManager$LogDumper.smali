@@ -34,26 +34,28 @@
 .method public constructor <init>(Landroid/app/smdt/LogcatFileManager;Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
 
+    const-string v0, "logcat-"
+
     .line 93
     iput-object p1, p0, Landroid/app/smdt/LogcatFileManager$LogDumper;->this$0:Landroid/app/smdt/LogcatFileManager;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     .line 86
-    iput-object v0, p0, Landroid/app/smdt/LogcatFileManager$LogDumper;->mReader:Ljava/io/BufferedReader;
+    iput-object v1, p0, Landroid/app/smdt/LogcatFileManager$LogDumper;->mReader:Ljava/io/BufferedReader;
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     .line 87
-    iput-boolean v1, p0, Landroid/app/smdt/LogcatFileManager$LogDumper;->mRunning:Z
+    iput-boolean v2, p0, Landroid/app/smdt/LogcatFileManager$LogDumper;->mRunning:Z
 
     .line 88
-    iput-object v0, p0, Landroid/app/smdt/LogcatFileManager$LogDumper;->cmds:Ljava/lang/String;
+    iput-object v1, p0, Landroid/app/smdt/LogcatFileManager$LogDumper;->cmds:Ljava/lang/String;
 
     .line 90
-    iput-object v0, p0, Landroid/app/smdt/LogcatFileManager$LogDumper;->out:Ljava/io/FileOutputStream;
+    iput-object v1, p0, Landroid/app/smdt/LogcatFileManager$LogDumper;->out:Ljava/io/FileOutputStream;
 
     .line 94
     iput-object p2, p0, Landroid/app/smdt/LogcatFileManager$LogDumper;->mPID:Ljava/lang/String;
@@ -62,41 +64,37 @@
     :try_start_0
     new-instance p2, Ljava/io/FileOutputStream;
 
-    new-instance v0, Ljava/io/File;
+    new-instance v1, Ljava/io/File;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "logcat-"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-static {p1}, Landroid/app/smdt/LogcatFileManager;->access$000(Landroid/app/smdt/LogcatFileManager;)Ljava/text/SimpleDateFormat;
 
     move-result-object p1
 
-    new-instance v3, Ljava/util/Date;
+    new-instance v0, Ljava/util/Date;
 
-    invoke-direct {v3}, Ljava/util/Date;-><init>()V
+    invoke-direct {v0}, Ljava/util/Date;-><init>()V
 
-    invoke-virtual {p1, v3}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string p1, ".log"
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {v0, p3, p1}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, p3, p1}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-direct {p2, v0, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
+    invoke-direct {p2, v1, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
 
     iput-object p2, p0, Landroid/app/smdt/LogcatFileManager$LogDumper;->out:Ljava/io/FileOutputStream;
     :try_end_0
@@ -114,11 +112,9 @@
     :goto_0
     new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string p2, "logcat *:e *:w | grep \"("
 
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p1, p2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object p2, p0, Landroid/app/smdt/LogcatFileManager$LogDumper;->mPID:Ljava/lang/String;
 

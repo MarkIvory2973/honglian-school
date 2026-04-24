@@ -22,23 +22,16 @@
     k = 0x2
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method public static final getPolymorphicElement(Lkotlin/coroutines/CoroutineContext$Element;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
     .locals 2
-    .param p0    # Lkotlin/coroutines/CoroutineContext$Element;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/coroutines/CoroutineContext$Key;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E::",
@@ -50,17 +43,7 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/ExperimentalStdlibApi;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.3"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/Nullable;
-    .end annotation
-
-    const-string v0, "$this$getPolymorphicElement"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -73,7 +56,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     .line 69
     check-cast p1, Lkotlin/coroutines/AbstractCoroutineContextKey;
@@ -86,7 +69,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-virtual {p1, p0}, Lkotlin/coroutines/AbstractCoroutineContextKey;->tryCast$kotlin_stdlib(Lkotlin/coroutines/CoroutineContext$Element;)Lkotlin/coroutines/CoroutineContext$Element;
 
@@ -94,44 +77,32 @@
 
     instance-of p1, p0, Lkotlin/coroutines/CoroutineContext$Element;
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     move-object v1, p0
 
-    :cond_1
-    :goto_0
+    :cond_0
     return-object v1
 
     .line 72
-    :cond_2
+    :cond_1
     invoke-interface {p0}, Lkotlin/coroutines/CoroutineContext$Element;->getKey()Lkotlin/coroutines/CoroutineContext$Key;
 
     move-result-object v0
 
-    if-ne v0, p1, :cond_3
+    if-ne v0, p1, :cond_2
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_3
+    :cond_2
     move-object p0, v1
 
-    :goto_1
+    :goto_0
     return-object p0
 .end method
 
 .method public static final minusPolymorphicKey(Lkotlin/coroutines/CoroutineContext$Element;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
     .locals 1
-    .param p0    # Lkotlin/coroutines/CoroutineContext$Element;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/coroutines/CoroutineContext$Key;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -142,17 +113,7 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/ExperimentalStdlibApi;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.3"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
-    const-string v0, "$this$minusPolymorphicKey"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

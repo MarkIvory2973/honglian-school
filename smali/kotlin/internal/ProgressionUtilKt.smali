@@ -25,9 +25,10 @@
     k = 0x2
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -76,8 +77,6 @@
 
 .method public static final getProgressionLastElement(III)I
     .locals 0
-    .annotation build Lkotlin/PublishedApi;
-    .end annotation
 
     if-lez p2, :cond_1
 
@@ -123,15 +122,11 @@
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    check-cast p0, Ljava/lang/Throwable;
-
     throw p0
 .end method
 
 .method public static final getProgressionLastElement(JJJ)J
     .locals 7
-    .annotation build Lkotlin/PublishedApi;
-    .end annotation
 
     const-wide/16 v0, 0x0
 
@@ -194,8 +189,6 @@
     const-string p1, "Step is zero."
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    check-cast p0, Ljava/lang/Throwable;
 
     throw p0
 .end method

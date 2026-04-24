@@ -41,14 +41,14 @@
 
     const/4 v0, 0x1
 
-    .line 242
     new-array v0, v0, [Ljava/lang/Class;
 
-    const-class v1, Landroid/view/MenuItem;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    .line 242
+    const-class v2, Landroid/view/MenuItem;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
     sput-object v0, Landroidx/appcompat/view/SupportMenuInflater$InflatedOnMenuItemClickListener;->PARAM_TYPES:[Ljava/lang/Class;
 
@@ -91,11 +91,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Couldn\'t resolve menu item onClick handler "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

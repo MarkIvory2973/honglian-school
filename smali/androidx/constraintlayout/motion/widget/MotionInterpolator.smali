@@ -19,6 +19,14 @@
 
 # virtual methods
 .method public abstract getInterpolation(F)F
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "v"
+        }
+    .end annotation
 .end method
 
 .method public abstract getVelocity()F

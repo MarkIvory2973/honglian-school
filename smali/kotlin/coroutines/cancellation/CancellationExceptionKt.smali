@@ -28,21 +28,16 @@
     k = 0x2
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method private static final CancellationException(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/util/concurrent/CancellationException;
     .locals 1
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 16
     new-instance v0, Ljava/util/concurrent/CancellationException;
@@ -56,12 +51,6 @@
 
 .method private static final CancellationException(Ljava/lang/Throwable;)Ljava/util/concurrent/CancellationException;
     .locals 2
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 21
     new-instance v0, Ljava/util/concurrent/CancellationException;
@@ -87,9 +76,6 @@
 
 .method public static synthetic CancellationException$annotations()V
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     return-void
 .end method

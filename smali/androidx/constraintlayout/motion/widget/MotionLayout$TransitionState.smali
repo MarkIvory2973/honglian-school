@@ -35,10 +35,45 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method private static synthetic $values()[Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
+    .locals 3
 
-    .line 953
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
+
+    const/4 v1, 0x0
+
+    .line 1107
+    sget-object v2, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->UNDEFINED:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    sget-object v2, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->SETUP:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    sget-object v2, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->MOVING:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    sget-object v2, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->FINISHED:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
+
+    aput-object v2, v0, v1
+
+    return-object v0
+.end method
+
+.method static constructor <clinit>()V
+    .locals 3
+
+    .line 1108
     new-instance v0, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
 
     const-string v1, "UNDEFINED"
@@ -49,59 +84,43 @@
 
     sput-object v0, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->UNDEFINED:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
 
-    .line 954
+    .line 1109
     new-instance v0, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
 
     const-string v1, "SETUP"
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    invoke-direct {v0, v1, v3}, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->SETUP:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
 
-    .line 955
+    .line 1110
     new-instance v0, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
 
     const-string v1, "MOVING"
 
-    const/4 v4, 0x2
+    const/4 v2, 0x2
 
-    invoke-direct {v0, v1, v4}, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->MOVING:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
 
-    .line 956
+    .line 1111
     new-instance v0, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
 
     const-string v1, "FINISHED"
 
-    const/4 v5, 0x3
+    const/4 v2, 0x3
 
-    invoke-direct {v0, v1, v5}, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->FINISHED:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
 
-    const/4 v0, 0x4
+    .line 1107
+    invoke-static {}, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->$values()[Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
 
-    .line 952
-    new-array v0, v0, [Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
-
-    sget-object v1, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->UNDEFINED:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->SETUP:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->MOVING:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->FINISHED:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
-
-    aput-object v1, v0, v5
+    move-result-object v0
 
     sput-object v0, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->$VALUES:[Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
 
@@ -110,13 +129,24 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000,
+            0x1000
+        }
+        names = {
+            "$enum$name",
+            "$enum$ordinal"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
-    .line 952
+    .line 1107
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -124,8 +154,16 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8000
+        }
+        names = {
+            "name"
+        }
+    .end annotation
 
-    .line 952
+    .line 1107
     const-class v0, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -140,7 +178,7 @@
 .method public static values()[Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
     .locals 1
 
-    .line 952
+    .line 1107
     sget-object v0, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->$VALUES:[Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
 
     invoke-virtual {v0}, [Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->clone()Ljava/lang/Object;

@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x1c
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/core/view/WindowInsetsCompat;
 .end annotation
@@ -21,16 +17,8 @@
 # direct methods
 .method constructor <init>(Landroidx/core/view/WindowInsetsCompat;Landroid/view/WindowInsets;)V
     .locals 0
-    .param p1    # Landroidx/core/view/WindowInsetsCompat;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/WindowInsets;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 1243
+    .line 1246
     invoke-direct {p0, p1, p2}, Landroidx/core/view/WindowInsetsCompat$Impl21;-><init>(Landroidx/core/view/WindowInsetsCompat;Landroid/view/WindowInsets;)V
 
     return-void
@@ -38,16 +26,8 @@
 
 .method constructor <init>(Landroidx/core/view/WindowInsetsCompat;Landroidx/core/view/WindowInsetsCompat$Impl28;)V
     .locals 0
-    .param p1    # Landroidx/core/view/WindowInsetsCompat;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/core/view/WindowInsetsCompat$Impl28;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 1247
+    .line 1250
     invoke-direct {p0, p1, p2}, Landroidx/core/view/WindowInsetsCompat$Impl21;-><init>(Landroidx/core/view/WindowInsetsCompat;Landroidx/core/view/WindowInsetsCompat$Impl21;)V
 
     return-void
@@ -57,13 +37,11 @@
 # virtual methods
 .method consumeDisplayCutout()Landroidx/core/view/WindowInsetsCompat;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 1259
+    .line 1262
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl28;->mPlatformInsets:Landroid/view/WindowInsets;
 
-    invoke-virtual {v0}, Landroid/view/WindowInsets;->consumeDisplayCutout()Landroid/view/WindowInsets;
+    invoke-static {v0}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
 
     move-result-object v0
 
@@ -83,7 +61,7 @@
 
     return v0
 
-    .line 1265
+    .line 1268
     :cond_0
     instance-of v1, p1, Landroidx/core/view/WindowInsetsCompat$Impl28;
 
@@ -93,11 +71,11 @@
 
     return v2
 
-    .line 1266
+    .line 1269
     :cond_1
     check-cast p1, Landroidx/core/view/WindowInsetsCompat$Impl28;
 
-    .line 1268
+    .line 1271
     iget-object v1, p0, Landroidx/core/view/WindowInsetsCompat$Impl28;->mPlatformInsets:Landroid/view/WindowInsets;
 
     iget-object v3, p1, Landroidx/core/view/WindowInsetsCompat$Impl28;->mPlatformInsets:Landroid/view/WindowInsets;
@@ -112,7 +90,7 @@
 
     iget-object p1, p1, Landroidx/core/view/WindowInsetsCompat$Impl28;->mRootViewVisibleInsets:Landroidx/core/graphics/Insets;
 
-    .line 1269
+    .line 1272
     invoke-static {v1, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
@@ -130,17 +108,15 @@
 
 .method getDisplayCutout()Landroidx/core/view/DisplayCutoutCompat;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
-    .line 1253
+    .line 1256
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl28;->mPlatformInsets:Landroid/view/WindowInsets;
 
-    invoke-virtual {v0}, Landroid/view/WindowInsets;->getDisplayCutout()Landroid/view/DisplayCutout;
+    invoke-static {v0}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/WindowInsets;)Landroid/view/DisplayCutout;
 
     move-result-object v0
 
-    invoke-static {v0}, Landroidx/core/view/DisplayCutoutCompat;->wrap(Ljava/lang/Object;)Landroidx/core/view/DisplayCutoutCompat;
+    invoke-static {v0}, Landroidx/core/view/DisplayCutoutCompat;->wrap(Landroid/view/DisplayCutout;)Landroidx/core/view/DisplayCutoutCompat;
 
     move-result-object v0
 
@@ -150,7 +126,7 @@
 .method public hashCode()I
     .locals 1
 
-    .line 1274
+    .line 1277
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl28;->mPlatformInsets:Landroid/view/WindowInsets;
 
     invoke-virtual {v0}, Landroid/view/WindowInsets;->hashCode()I

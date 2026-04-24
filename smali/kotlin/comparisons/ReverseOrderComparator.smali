@@ -39,24 +39,21 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # static fields
 .field public static final INSTANCE:Lkotlin/comparisons/ReverseOrderComparator;
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-.end field
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 315
     new-instance v0, Lkotlin/comparisons/ReverseOrderComparator;
 
     invoke-direct {v0}, Lkotlin/comparisons/ReverseOrderComparator;-><init>()V
@@ -69,7 +66,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 315
+    .line 323
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -79,14 +76,6 @@
 # virtual methods
 .method public compare(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
     .locals 1
-    .param p1    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -107,7 +96,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 316
+    .line 324
     invoke-interface {p2, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     move-result p1
@@ -118,7 +107,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 315
+    .line 323
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p2, Ljava/lang/Comparable;
@@ -142,10 +131,7 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
-    .line 318
+    .line 326
     sget-object v0, Lkotlin/comparisons/NaturalOrderComparator;->INSTANCE:Lkotlin/comparisons/NaturalOrderComparator;
 
     check-cast v0, Ljava/util/Comparator;

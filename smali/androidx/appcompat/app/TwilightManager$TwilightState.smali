@@ -19,20 +19,12 @@
 
 .field nextUpdate:J
 
-.field todaySunrise:J
-
-.field todaySunset:J
-
-.field tomorrowSunrise:J
-
-.field yesterdaySunset:J
-
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
-    .line 205
+    .line 196
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

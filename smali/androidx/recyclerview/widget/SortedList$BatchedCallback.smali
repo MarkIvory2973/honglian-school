@@ -55,13 +55,11 @@
     iput-object p1, p0, Landroidx/recyclerview/widget/SortedList$BatchedCallback;->mWrappedCallback:Landroidx/recyclerview/widget/SortedList$Callback;
 
     .line 953
-    new-instance p1, Landroidx/recyclerview/widget/BatchingListUpdateCallback;
+    new-instance v0, Landroidx/recyclerview/widget/BatchingListUpdateCallback;
 
-    iget-object v0, p0, Landroidx/recyclerview/widget/SortedList$BatchedCallback;->mWrappedCallback:Landroidx/recyclerview/widget/SortedList$Callback;
+    invoke-direct {v0, p1}, Landroidx/recyclerview/widget/BatchingListUpdateCallback;-><init>(Landroidx/recyclerview/widget/ListUpdateCallback;)V
 
-    invoke-direct {p1, v0}, Landroidx/recyclerview/widget/BatchingListUpdateCallback;-><init>(Landroidx/recyclerview/widget/ListUpdateCallback;)V
-
-    iput-object p1, p0, Landroidx/recyclerview/widget/SortedList$BatchedCallback;->mBatchingListUpdateCallback:Landroidx/recyclerview/widget/BatchingListUpdateCallback;
+    iput-object v0, p0, Landroidx/recyclerview/widget/SortedList$BatchedCallback;->mBatchingListUpdateCallback:Landroidx/recyclerview/widget/BatchingListUpdateCallback;
 
     return-void
 .end method
@@ -135,9 +133,6 @@
 
 .method public getChangePayload(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT2;TT2;)",

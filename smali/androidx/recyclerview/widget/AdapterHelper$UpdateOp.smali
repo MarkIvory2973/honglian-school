@@ -66,6 +66,14 @@
     .line 659
     iget v0, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->cmd:I
 
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_3
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_2
+
     const/4 v1, 0x4
 
     if-eq v0, v1, :cond_1
@@ -74,19 +82,7 @@
 
     if-eq v0, v1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
-
     const-string v0, "??"
-
-    return-object v0
-
-    :pswitch_0
-    const-string v0, "rm"
-
-    return-object v0
-
-    :pswitch_1
-    const-string v0, "add"
 
     return-object v0
 
@@ -96,17 +92,19 @@
     return-object v0
 
     :cond_1
-    const-string v0, "up"
+    const-string/jumbo v0, "up"
 
     return-object v0
 
-    nop
+    :cond_2
+    const-string v0, "rm"
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v0
+
+    :cond_3
+    const-string v0, "add"
+
+    return-object v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z

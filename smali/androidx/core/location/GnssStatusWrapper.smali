@@ -4,13 +4,10 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x18
-.end annotation
-
-.annotation build Landroidx/annotation/RestrictTo;
+.annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
+        Landroidx/core/location/GnssStatusWrapper$Api26Impl;,
+        Landroidx/core/location/GnssStatusWrapper$Api30Impl;
     }
 .end annotation
 
@@ -20,18 +17,24 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/location/GnssStatus;)V
+.method constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
     .line 37
     invoke-direct {p0}, Landroidx/core/location/GnssStatusCompat;-><init>()V
 
     .line 38
+    invoke-static {p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m(Ljava/lang/Object;)Landroid/location/GnssStatus;
+
+    move-result-object p1
+
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Landroid/location/GnssStatus;
+    invoke-static {p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m(Ljava/lang/Object;)Landroid/location/GnssStatus;
+
+    move-result-object p1
 
     iput-object p1, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
@@ -68,7 +71,7 @@
 
     iget-object p1, p1, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0, p1}, Landroid/location/GnssStatus;->equals(Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/location/GnssStatus;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -81,7 +84,7 @@
     .line 68
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0, p1}, Landroid/location/GnssStatus;->getAzimuthDegrees(I)F
+    invoke-static {v0, p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/location/GnssStatus;I)F
 
     move-result p1
 
@@ -101,7 +104,7 @@
     .line 116
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0, p1}, Landroid/location/GnssStatus;->getBasebandCn0DbHz(I)F
+    invoke-static {v0, p1}, Landroidx/core/location/GnssStatusWrapper$Api30Impl;->getBasebandCn0DbHz(Landroid/location/GnssStatus;I)F
 
     move-result p1
 
@@ -129,7 +132,7 @@
     .line 98
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0, p1}, Landroid/location/GnssStatus;->getCarrierFrequencyHz(I)F
+    invoke-static {v0, p1}, Landroidx/core/location/GnssStatusWrapper$Api26Impl;->getCarrierFrequencyHz(Landroid/location/GnssStatus;I)F
 
     move-result p1
 
@@ -150,7 +153,7 @@
     .line 58
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0, p1}, Landroid/location/GnssStatus;->getCn0DbHz(I)F
+    invoke-static {v0, p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m$2(Landroid/location/GnssStatus;I)F
 
     move-result p1
 
@@ -163,7 +166,7 @@
     .line 48
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0, p1}, Landroid/location/GnssStatus;->getConstellationType(I)I
+    invoke-static {v0, p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m$1(Landroid/location/GnssStatus;I)I
 
     move-result p1
 
@@ -176,7 +179,7 @@
     .line 63
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0, p1}, Landroid/location/GnssStatus;->getElevationDegrees(I)F
+    invoke-static {v0, p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m$1(Landroid/location/GnssStatus;I)F
 
     move-result p1
 
@@ -189,7 +192,7 @@
     .line 43
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0}, Landroid/location/GnssStatus;->getSatelliteCount()I
+    invoke-static {v0}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m$1(Landroid/location/GnssStatus;)I
 
     move-result v0
 
@@ -202,7 +205,7 @@
     .line 53
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0, p1}, Landroid/location/GnssStatus;->getSvid(I)I
+    invoke-static {v0, p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/location/GnssStatus;I)I
 
     move-result p1
 
@@ -215,7 +218,7 @@
     .line 78
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0, p1}, Landroid/location/GnssStatus;->hasAlmanacData(I)Z
+    invoke-static {v0, p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m$1(Landroid/location/GnssStatus;I)Z
 
     move-result p1
 
@@ -235,7 +238,7 @@
     .line 107
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0, p1}, Landroid/location/GnssStatus;->hasBasebandCn0DbHz(I)Z
+    invoke-static {v0, p1}, Landroidx/core/location/GnssStatusWrapper$Api30Impl;->hasBasebandCn0DbHz(Landroid/location/GnssStatus;I)Z
 
     move-result p1
 
@@ -260,7 +263,7 @@
     .line 89
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0, p1}, Landroid/location/GnssStatus;->hasCarrierFrequencyHz(I)Z
+    invoke-static {v0, p1}, Landroidx/core/location/GnssStatusWrapper$Api26Impl;->hasCarrierFrequencyHz(Landroid/location/GnssStatus;I)Z
 
     move-result p1
 
@@ -278,7 +281,7 @@
     .line 73
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0, p1}, Landroid/location/GnssStatus;->hasEphemerisData(I)Z
+    invoke-static {v0, p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/location/GnssStatus;I)Z
 
     move-result p1
 
@@ -291,7 +294,7 @@
     .line 136
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0}, Landroid/location/GnssStatus;->hashCode()I
+    invoke-static {v0}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/location/GnssStatus;)I
 
     move-result v0
 
@@ -304,7 +307,7 @@
     .line 83
     iget-object v0, p0, Landroidx/core/location/GnssStatusWrapper;->mWrapped:Landroid/location/GnssStatus;
 
-    invoke-virtual {v0, p1}, Landroid/location/GnssStatus;->usedInFix(I)Z
+    invoke-static {v0, p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m$2(Landroid/location/GnssStatus;I)Z
 
     move-result p1
 

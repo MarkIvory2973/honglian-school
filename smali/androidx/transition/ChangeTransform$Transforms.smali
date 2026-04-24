@@ -36,59 +36,59 @@
 .method constructor <init>(Landroid/view/View;)V
     .locals 1
 
-    .line 469
+    .line 473
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 470
+    .line 474
     invoke-virtual {p1}, Landroid/view/View;->getTranslationX()F
 
     move-result v0
 
     iput v0, p0, Landroidx/transition/ChangeTransform$Transforms;->mTranslationX:F
 
-    .line 471
+    .line 475
     invoke-virtual {p1}, Landroid/view/View;->getTranslationY()F
 
     move-result v0
 
     iput v0, p0, Landroidx/transition/ChangeTransform$Transforms;->mTranslationY:F
 
-    .line 472
+    .line 476
     invoke-static {p1}, Landroidx/core/view/ViewCompat;->getTranslationZ(Landroid/view/View;)F
 
     move-result v0
 
     iput v0, p0, Landroidx/transition/ChangeTransform$Transforms;->mTranslationZ:F
 
-    .line 473
+    .line 477
     invoke-virtual {p1}, Landroid/view/View;->getScaleX()F
 
     move-result v0
 
     iput v0, p0, Landroidx/transition/ChangeTransform$Transforms;->mScaleX:F
 
-    .line 474
+    .line 478
     invoke-virtual {p1}, Landroid/view/View;->getScaleY()F
 
     move-result v0
 
     iput v0, p0, Landroidx/transition/ChangeTransform$Transforms;->mScaleY:F
 
-    .line 475
+    .line 479
     invoke-virtual {p1}, Landroid/view/View;->getRotationX()F
 
     move-result v0
 
     iput v0, p0, Landroidx/transition/ChangeTransform$Transforms;->mRotationX:F
 
-    .line 476
+    .line 480
     invoke-virtual {p1}, Landroid/view/View;->getRotationY()F
 
     move-result v0
 
     iput v0, p0, Landroidx/transition/ChangeTransform$Transforms;->mRotationY:F
 
-    .line 477
+    .line 481
     invoke-virtual {p1}, Landroid/view/View;->getRotation()F
 
     move-result p1
@@ -103,7 +103,7 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
 
-    .line 487
+    .line 491
     instance-of v0, p1, Landroidx/transition/ChangeTransform$Transforms;
 
     const/4 v1, 0x0
@@ -112,11 +112,11 @@
 
     return v1
 
-    .line 490
+    .line 494
     :cond_0
     check-cast p1, Landroidx/transition/ChangeTransform$Transforms;
 
-    .line 491
+    .line 495
     iget v0, p1, Landroidx/transition/ChangeTransform$Transforms;->mTranslationX:F
 
     iget v2, p0, Landroidx/transition/ChangeTransform$Transforms;->mTranslationX:F
@@ -190,7 +190,7 @@
 .method public hashCode()I
     .locals 5
 
-    .line 503
+    .line 507
     iget v0, p0, Landroidx/transition/ChangeTransform$Transforms;->mTranslationX:F
 
     const/4 v1, 0x0
@@ -213,7 +213,7 @@
     :goto_0
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 504
+    .line 508
     iget v3, p0, Landroidx/transition/ChangeTransform$Transforms;->mTranslationY:F
 
     cmpl-float v4, v3, v2
@@ -234,7 +234,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 505
+    .line 509
     iget v3, p0, Landroidx/transition/ChangeTransform$Transforms;->mTranslationZ:F
 
     cmpl-float v4, v3, v2
@@ -255,7 +255,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 506
+    .line 510
     iget v3, p0, Landroidx/transition/ChangeTransform$Transforms;->mScaleX:F
 
     cmpl-float v4, v3, v2
@@ -276,7 +276,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 507
+    .line 511
     iget v3, p0, Landroidx/transition/ChangeTransform$Transforms;->mScaleY:F
 
     cmpl-float v4, v3, v2
@@ -297,7 +297,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 508
+    .line 512
     iget v3, p0, Landroidx/transition/ChangeTransform$Transforms;->mRotationX:F
 
     cmpl-float v4, v3, v2
@@ -318,7 +318,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 509
+    .line 513
     iget v3, p0, Landroidx/transition/ChangeTransform$Transforms;->mRotationY:F
 
     cmpl-float v4, v3, v2
@@ -339,7 +339,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 510
+    .line 514
     iget v3, p0, Landroidx/transition/ChangeTransform$Transforms;->mRotationZ:F
 
     cmpl-float v2, v3, v2
@@ -359,7 +359,7 @@
 .method public restore(Landroid/view/View;)V
     .locals 9
 
-    .line 481
+    .line 485
     iget v1, p0, Landroidx/transition/ChangeTransform$Transforms;->mTranslationX:F
 
     iget v2, p0, Landroidx/transition/ChangeTransform$Transforms;->mTranslationY:F

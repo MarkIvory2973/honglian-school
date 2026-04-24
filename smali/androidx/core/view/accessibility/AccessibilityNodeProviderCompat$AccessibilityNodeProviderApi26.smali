@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x1a
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;
 .end annotation

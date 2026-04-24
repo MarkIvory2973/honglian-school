@@ -66,9 +66,9 @@
 
     const/4 v0, 0x2
 
-    .line 40
     new-array v0, v0, [F
 
+    .line 40
     iput-object v0, p0, Landroidx/transition/PathProperty;->mPosition:[F
 
     .line 41
@@ -91,8 +91,6 @@
     iput-object p1, p0, Landroidx/transition/PathProperty;->mPathMeasure:Landroid/graphics/PathMeasure;
 
     .line 48
-    iget-object p1, p0, Landroidx/transition/PathProperty;->mPathMeasure:Landroid/graphics/PathMeasure;
-
     invoke-virtual {p1}, Landroid/graphics/PathMeasure;->getLength()F
 
     move-result p1
@@ -175,21 +173,27 @@
 
     const/4 v1, 0x0
 
-    aget v1, v0, v1
+    aget v0, v0, v1
 
-    iput v1, p2, Landroid/graphics/PointF;->x:F
+    iput v0, p2, Landroid/graphics/PointF;->x:F
+
+    .line 61
+    iget-object p2, p0, Landroidx/transition/PathProperty;->mPointF:Landroid/graphics/PointF;
+
+    iget-object v0, p0, Landroidx/transition/PathProperty;->mPosition:[F
 
     const/4 v1, 0x1
 
-    .line 61
     aget v0, v0, v1
 
     iput v0, p2, Landroid/graphics/PointF;->y:F
 
     .line 62
-    iget-object v0, p0, Landroidx/transition/PathProperty;->mProperty:Landroid/util/Property;
+    iget-object p2, p0, Landroidx/transition/PathProperty;->mProperty:Landroid/util/Property;
 
-    invoke-virtual {v0, p1, p2}, Landroid/util/Property;->set(Ljava/lang/Object;Ljava/lang/Object;)V
+    iget-object v0, p0, Landroidx/transition/PathProperty;->mPointF:Landroid/graphics/PointF;
+
+    invoke-virtual {p2, p1, v0}, Landroid/util/Property;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method

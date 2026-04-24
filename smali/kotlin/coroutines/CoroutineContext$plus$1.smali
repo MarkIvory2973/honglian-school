@@ -42,9 +42,10 @@
     k = 0x3
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -80,7 +81,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 14
+    .line 32
     check-cast p1, Lkotlin/coroutines/CoroutineContext;
 
     check-cast p2, Lkotlin/coroutines/CoroutineContext$Element;
@@ -94,16 +95,6 @@
 
 .method public final invoke(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext$Element;)Lkotlin/coroutines/CoroutineContext;
     .locals 3
-    .param p1    # Lkotlin/coroutines/CoroutineContext;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Lkotlin/coroutines/CoroutineContext$Element;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     const-string v0, "acc"
 
@@ -150,8 +141,6 @@
 
     invoke-direct {v0, p1, p2}, Lkotlin/coroutines/CombinedContext;-><init>(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext$Element;)V
 
-    move-object p1, v0
-
     goto :goto_0
 
     .line 38
@@ -177,6 +166,8 @@
 
     invoke-direct {p1, p2, v0}, Lkotlin/coroutines/CombinedContext;-><init>(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext$Element;)V
 
+    move-object v0, p1
+
     goto :goto_0
 
     .line 40
@@ -193,11 +184,10 @@
 
     invoke-direct {v1, v2, v0}, Lkotlin/coroutines/CombinedContext;-><init>(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext$Element;)V
 
-    move-object p1, v1
+    move-object v0, v1
 
-    .line 37
     :goto_0
-    move-object p2, p1
+    move-object p2, v0
 
     check-cast p2, Lkotlin/coroutines/CoroutineContext;
 

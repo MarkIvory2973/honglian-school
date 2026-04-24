@@ -17,14 +17,8 @@
 .field static final STYLEABLE_ANIMATED_VECTOR_DRAWABLE_TARGET:[I
 
 .field static final STYLEABLE_ANIMATED_VECTOR_DRAWABLE_TARGET_ANIMATION:I = 0x1
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field static final STYLEABLE_ANIMATED_VECTOR_DRAWABLE_TARGET_NAME:I = 0x0
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field public static final STYLEABLE_ANIMATOR:[I
 
@@ -169,117 +163,137 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 6
 
     const/16 v0, 0x9
 
-    .line 22
     new-array v0, v0, [I
 
+    .line 22
     fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_VECTOR_DRAWABLE_TYPE_ARRAY:[I
 
     const/16 v0, 0x8
 
-    .line 36
     new-array v1, v0, [I
 
+    .line 36
     fill-array-data v1, :array_1
 
     sput-object v1, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_VECTOR_DRAWABLE_GROUP:[I
 
     const/16 v1, 0xe
 
-    .line 49
     new-array v1, v1, [I
 
+    .line 49
     fill-array-data v1, :array_2
 
     sput-object v1, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_VECTOR_DRAWABLE_PATH:[I
 
-    const/4 v1, 0x3
+    const v1, 0x101051e
+
+    const v2, 0x1010003
+
+    const v3, 0x1010405
 
     .line 70
-    new-array v1, v1, [I
+    filled-new-array {v2, v3, v1}, [I
 
-    fill-array-data v1, :array_3
+    move-result-object v1
 
     sput-object v1, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH:[I
 
-    const/4 v1, 0x1
+    const v1, 0x1010199
 
     .line 77
-    new-array v2, v1, [I
+    filled-new-array {v1}, [I
 
-    const/4 v3, 0x0
+    move-result-object v1
 
-    const v4, 0x1010199
+    sput-object v1, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_ANIMATED_VECTOR_DRAWABLE:[I
 
-    aput v4, v2, v3
-
-    sput-object v2, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_ANIMATED_VECTOR_DRAWABLE:[I
-
-    const/4 v2, 0x2
+    const v1, 0x10101cd
 
     .line 81
-    new-array v2, v2, [I
+    filled-new-array {v2, v1}, [I
 
-    fill-array-data v2, :array_4
+    move-result-object v1
 
-    sput-object v2, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_ANIMATED_VECTOR_DRAWABLE_TARGET:[I
+    sput-object v1, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_ANIMATED_VECTOR_DRAWABLE_TARGET:[I
 
-    .line 91
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5
+    .line 91
+    fill-array-data v0, :array_3
 
     sput-object v0, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_ANIMATOR:[I
 
+    const v0, 0x10102e2
+
     .line 104
-    new-array v0, v1, [I
+    filled-new-array {v0}, [I
 
-    const v1, 0x10102e2
-
-    aput v1, v0, v3
+    move-result-object v0
 
     sput-object v0, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_ANIMATOR_SET:[I
 
-    const/4 v0, 0x4
+    const v0, 0x10102de
+
+    const v1, 0x10102df
+
+    const v2, 0x10102e0
+
+    const v4, 0x10102e1
 
     .line 109
-    new-array v1, v0, [I
+    filled-new-array {v0, v1, v2, v4}, [I
 
-    fill-array-data v1, :array_6
+    move-result-object v0
 
-    sput-object v1, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_PROPERTY_VALUES_HOLDER:[I
+    sput-object v0, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_PROPERTY_VALUES_HOLDER:[I
+
+    const v0, 0x1010141
+
+    const v1, 0x10104d8
+
+    const v5, 0x1010024
 
     .line 117
-    new-array v1, v0, [I
+    filled-new-array {v5, v0, v2, v1}, [I
 
-    fill-array-data v1, :array_7
+    move-result-object v0
 
-    sput-object v1, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_KEYFRAME:[I
+    sput-object v0, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_KEYFRAME:[I
+
+    const v0, 0x1010474
+
+    const v1, 0x1010475
 
     .line 125
-    new-array v0, v0, [I
+    filled-new-array {v4, v3, v0, v1}, [I
 
-    fill-array-data v0, :array_8
+    move-result-object v0
 
     sput-object v0, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_PROPERTY_ANIMATOR:[I
 
-    const/4 v0, 0x5
+    const v0, 0x10103fe
+
+    const v1, 0x10103ff
+
+    const v2, 0x10103fc
+
+    const v4, 0x10103fd
 
     .line 134
-    new-array v0, v0, [I
+    filled-new-array {v2, v4, v0, v1, v3}, [I
 
-    fill-array-data v0, :array_9
+    move-result-object v0
 
     sput-object v0, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_PATH_INTERPOLATOR:[I
 
     return-void
-
-    nop
 
     :array_0
     .array-data 4
@@ -326,19 +340,6 @@
 
     :array_3
     .array-data 4
-        0x1010003
-        0x1010405
-        0x101051e
-    .end array-data
-
-    :array_4
-    .array-data 4
-        0x1010003
-        0x10101cd
-    .end array-data
-
-    :array_5
-    .array-data 4
         0x1010141
         0x1010198
         0x10101be
@@ -347,39 +348,6 @@
         0x10102de
         0x10102df
         0x10102e0
-    .end array-data
-
-    :array_6
-    .array-data 4
-        0x10102de
-        0x10102df
-        0x10102e0
-        0x10102e1
-    .end array-data
-
-    :array_7
-    .array-data 4
-        0x1010024
-        0x1010141
-        0x10102e0
-        0x10104d8
-    .end array-data
-
-    :array_8
-    .array-data 4
-        0x10102e1
-        0x1010405
-        0x1010474
-        0x1010475
-    .end array-data
-
-    :array_9
-    .array-data 4
-        0x10103fc
-        0x10103fd
-        0x10103fe
-        0x10103ff
-        0x1010405
     .end array-data
 .end method
 

@@ -6,12 +6,6 @@
 .implements Landroidx/transition/WindowIdImpl;
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x12
-.end annotation
-
-
 # instance fields
 .field private final mWindowId:Landroid/view/WindowId;
 
@@ -19,10 +13,6 @@
 # direct methods
 .method constructor <init>(Landroid/view/View;)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

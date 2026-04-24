@@ -65,47 +65,37 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 4
 
-    const/4 v0, 0x4
+    const v0, 0x1010098
+
+    const v1, 0x10100af
+
+    const v2, 0x1010034
+
+    const v3, 0x1010095
 
     .line 73
-    new-array v0, v0, [I
+    filled-new-array {v2, v3, v0, v1}, [I
 
-    fill-array-data v0, :array_0
+    move-result-object v0
 
     sput-object v0, Landroidx/viewpager/widget/PagerTitleStrip;->ATTRS:[I
 
-    const/4 v0, 0x1
+    const v0, 0x101038c
 
     .line 80
-    new-array v0, v0, [I
+    filled-new-array {v0}, [I
 
-    const/4 v1, 0x0
-
-    const v2, 0x101038c
-
-    aput v2, v0, v1
+    move-result-object v0
 
     sput-object v0, Landroidx/viewpager/widget/PagerTitleStrip;->TEXT_ATTRS:[I
 
     return-void
-
-    :array_0
-    .array-data 4
-        0x1010034
-        0x1010095
-        0x1010098
-        0x10100af
-    .end array-data
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/4 v0, 0x0
 
@@ -117,14 +107,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 4
-    .param p1    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/util/AttributeSet;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 113
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -731,12 +713,6 @@
 
 .method public setNonPrimaryAlpha(F)V
     .locals 2
-    .param p1    # F
-        .annotation build Landroidx/annotation/FloatRange;
-            from = 0.0
-            to = 1.0
-        .end annotation
-    .end param
 
     const/high16 v0, 0x437f0000    # 255.0f
 
@@ -749,11 +725,9 @@
     .line 190
     iput p1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNonPrimaryAlpha:I
 
-    .line 191
-    iget p1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNonPrimaryAlpha:I
-
     shl-int/lit8 p1, p1, 0x18
 
+    .line 191
     iget v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mTextColor:I
 
     const v1, 0xffffff
@@ -777,10 +751,6 @@
 
 .method public setTextColor(I)V
     .locals 2
-    .param p1    # I
-        .annotation build Landroidx/annotation/ColorInt;
-        .end annotation
-    .end param
 
     .line 203
     iput p1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mTextColor:I
@@ -1319,18 +1289,12 @@
 
     add-int/2addr v10, v15
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_3
     sub-int/2addr v7, v11
 
     sub-int/2addr v7, v2
-
-    add-int/2addr v5, v7
-
-    add-int/2addr v12, v7
-
-    add-int v10, v7, v15
 
     goto :goto_1
 
@@ -1344,6 +1308,7 @@
     .line 389
     div-int/lit8 v7, v7, 0x2
 
+    :goto_1
     add-int/2addr v5, v7
 
     add-int/2addr v12, v7
@@ -1351,7 +1316,7 @@
     add-int v10, v7, v15
 
     .line 402
-    :goto_1
+    :goto_2
     iget-object v2, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;
 
     .line 403

@@ -4,12 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/versionedparcelable/VersionedParcelStream$FieldBuffer;
@@ -184,14 +178,10 @@
     iput-object p3, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mMasterOutput:Ljava/io/DataOutputStream;
 
     .line 121
-    iget-object p1, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mMasterInput:Ljava/io/DataInputStream;
-
-    iput-object p1, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mCurrentInput:Ljava/io/DataInputStream;
+    iput-object p4, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mCurrentInput:Ljava/io/DataInputStream;
 
     .line 122
-    iget-object p1, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mMasterOutput:Ljava/io/DataOutputStream;
-
-    iput-object p1, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mCurrentOutput:Ljava/io/DataOutputStream;
+    iput-object p3, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mCurrentOutput:Ljava/io/DataOutputStream;
 
     return-void
 .end method
@@ -206,11 +196,9 @@
 
     new-instance p3, Ljava/lang/StringBuilder;
 
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v0, "Unknown type "
 
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -325,9 +313,9 @@
     :pswitch_a
     const/4 p1, 0x0
 
-    .line 503
     new-array p1, p1, [Ljava/lang/String;
 
+    .line 503
     invoke-virtual {p0, p1}, Landroidx/versionedparcelable/VersionedParcelStream;->readArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p1
@@ -376,6 +364,8 @@
 
     :goto_0
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -459,6 +449,8 @@
     .line 452
     check-cast p1, [Ljava/lang/String;
 
+    check-cast p1, [Ljava/lang/String;
+
     invoke-virtual {p0, p1}, Landroidx/versionedparcelable/VersionedParcelStream;->writeArray([Ljava/lang/Object;)V
 
     goto/16 :goto_0
@@ -497,6 +489,8 @@
     invoke-virtual {p0, v0}, Landroidx/versionedparcelable/VersionedParcelStream;->writeInt(I)V
 
     .line 458
+    check-cast p1, [Z
+
     check-cast p1, [Z
 
     invoke-virtual {p0, p1}, Landroidx/versionedparcelable/VersionedParcelStream;->writeBooleanArray([Z)V
@@ -539,6 +533,8 @@
     .line 464
     check-cast p1, [D
 
+    check-cast p1, [D
+
     invoke-virtual {p0, p1}, Landroidx/versionedparcelable/VersionedParcelStream;->writeDoubleArray([D)V
 
     goto :goto_0
@@ -577,6 +573,8 @@
     invoke-virtual {p0, v0}, Landroidx/versionedparcelable/VersionedParcelStream;->writeInt(I)V
 
     .line 470
+    check-cast p1, [I
+
     check-cast p1, [I
 
     invoke-virtual {p0, p1}, Landroidx/versionedparcelable/VersionedParcelStream;->writeIntArray([I)V
@@ -619,6 +617,8 @@
     .line 476
     check-cast p1, [J
 
+    check-cast p1, [J
+
     invoke-virtual {p0, p1}, Landroidx/versionedparcelable/VersionedParcelStream;->writeLongArray([J)V
 
     goto :goto_0
@@ -659,6 +659,8 @@
     .line 482
     check-cast p1, [F
 
+    check-cast p1, [F
+
     invoke-virtual {p0, p1}, Landroidx/versionedparcelable/VersionedParcelStream;->writeFloatArray([F)V
 
     :goto_0
@@ -670,11 +672,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Unsupported type "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -936,8 +936,6 @@
 
     .line 167
     :cond_0
-    iget v1, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mFieldId:I
-
     invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v1
@@ -963,17 +961,13 @@
     if-ge v1, v2, :cond_2
 
     .line 171
-    iget-object v1, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mMasterInput:Ljava/io/DataInputStream;
+    iget-object v3, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mMasterInput:Ljava/io/DataInputStream;
 
-    iget v2, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mFieldSize:I
+    sub-int/2addr v2, v1
 
-    iget v3, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mCount:I
+    int-to-long v1, v2
 
-    sub-int/2addr v2, v3
-
-    int-to-long v2, v2
-
-    invoke-virtual {v1, v2, v3}, Ljava/io/DataInputStream;->skip(J)J
+    invoke-virtual {v3, v1, v2}, Ljava/io/DataInputStream;->skip(J)J
 
     :cond_2
     const/4 v1, -0x1
@@ -1188,9 +1182,7 @@
     iput-object v0, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mFieldBuffer:Landroidx/versionedparcelable/VersionedParcelStream$FieldBuffer;
 
     .line 193
-    iget-object p1, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mFieldBuffer:Landroidx/versionedparcelable/VersionedParcelStream$FieldBuffer;
-
-    iget-object p1, p1, Landroidx/versionedparcelable/VersionedParcelStream$FieldBuffer;->mDataStream:Ljava/io/DataOutputStream;
+    iget-object p1, v0, Landroidx/versionedparcelable/VersionedParcelStream$FieldBuffer;->mDataStream:Ljava/io/DataOutputStream;
 
     iput-object p1, p0, Landroidx/versionedparcelable/VersionedParcelStream;->mCurrentOutput:Ljava/io/DataOutputStream;
 

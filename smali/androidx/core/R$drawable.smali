@@ -1,6 +1,5 @@
 .class public final Landroidx/core/R$drawable;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -15,36 +14,47 @@
 
 
 # static fields
-.field public static final notification_action_background:I = 0x7f080094
+.field public static final ic_call_answer:I = 0x7f07008e
 
-.field public static final notification_bg:I = 0x7f080095
+.field public static final ic_call_answer_low:I = 0x7f07008f
 
-.field public static final notification_bg_low:I = 0x7f080096
+.field public static final ic_call_answer_video:I = 0x7f070090
 
-.field public static final notification_bg_low_normal:I = 0x7f080097
+.field public static final ic_call_answer_video_low:I = 0x7f070091
 
-.field public static final notification_bg_low_pressed:I = 0x7f080098
+.field public static final ic_call_decline:I = 0x7f070092
 
-.field public static final notification_bg_normal:I = 0x7f080099
+.field public static final ic_call_decline_low:I = 0x7f070093
 
-.field public static final notification_bg_normal_pressed:I = 0x7f08009a
+.field public static final notification_action_background:I = 0x7f0700f6
 
-.field public static final notification_icon_background:I = 0x7f08009b
+.field public static final notification_bg:I = 0x7f0700f7
 
-.field public static final notification_template_icon_bg:I = 0x7f08009c
+.field public static final notification_bg_low:I = 0x7f0700f8
 
-.field public static final notification_template_icon_low_bg:I = 0x7f08009d
+.field public static final notification_bg_low_normal:I = 0x7f0700f9
 
-.field public static final notification_tile_bg:I = 0x7f08009e
+.field public static final notification_bg_low_pressed:I = 0x7f0700fa
 
-.field public static final notify_panel_notification_icon_bg:I = 0x7f08009f
+.field public static final notification_bg_normal:I = 0x7f0700fb
+
+.field public static final notification_bg_normal_pressed:I = 0x7f0700fc
+
+.field public static final notification_icon_background:I = 0x7f0700fd
+
+.field public static final notification_template_icon_bg:I = 0x7f0700fe
+
+.field public static final notification_template_icon_low_bg:I = 0x7f0700ff
+
+.field public static final notification_tile_bg:I = 0x7f070100
+
+.field public static final notify_panel_notification_icon_bg:I = 0x7f070101
 
 
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
-    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

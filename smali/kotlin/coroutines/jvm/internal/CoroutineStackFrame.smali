@@ -21,23 +21,16 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/SinceKotlin;
-    version = "1.3"
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
 .method public abstract getCallerFrame()Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
-    .annotation build Lorg/jetbrains/annotations/Nullable;
-    .end annotation
 .end method
 
 .method public abstract getStackTraceElement()Ljava/lang/StackTraceElement;
-    .annotation build Lorg/jetbrains/annotations/Nullable;
-    .end annotation
 .end method

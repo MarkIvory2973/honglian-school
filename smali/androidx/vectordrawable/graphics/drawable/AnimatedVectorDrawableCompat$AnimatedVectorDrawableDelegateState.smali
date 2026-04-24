@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x18
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;
 .end annotation

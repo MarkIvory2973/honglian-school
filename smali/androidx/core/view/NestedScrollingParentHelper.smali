@@ -12,10 +12,6 @@
 # direct methods
 .method public constructor <init>(Landroid/view/ViewGroup;)V
     .locals 0
-    .param p1    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,14 +36,6 @@
 
 .method public onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;I)V
     .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/4 v0, 0x0
 
@@ -59,14 +47,6 @@
 
 .method public onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;II)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/4 p1, 0x1
 
@@ -87,10 +67,6 @@
 
 .method public onStopNestedScroll(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/4 v0, 0x0
 
@@ -102,25 +78,21 @@
 
 .method public onStopNestedScroll(Landroid/view/View;I)V
     .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    const/4 p1, 0x0
+    const/4 p1, 0x1
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    if-ne p2, v0, :cond_0
+    if-ne p2, p1, :cond_0
 
     .line 115
-    iput p1, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxesNonTouch:I
+    iput v0, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxesNonTouch:I
 
     goto :goto_0
 
     .line 117
     :cond_0
-    iput p1, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxesTouch:I
+    iput v0, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxesTouch:I
 
     :goto_0
     return-void

@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x1e
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/core/view/WindowInsetsAnimationControllerCompat;
 .end annotation
@@ -25,15 +21,11 @@
 # direct methods
 .method constructor <init>(Landroid/view/WindowInsetsAnimationController;)V
     .locals 0
-    .param p1    # Landroid/view/WindowInsetsAnimationController;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 298
+    .line 284
     invoke-direct {p0}, Landroidx/core/view/WindowInsetsAnimationControllerCompat$Impl;-><init>()V
 
-    .line 299
+    .line 285
     iput-object p1, p0, Landroidx/core/view/WindowInsetsAnimationControllerCompat$Impl30;->mController:Landroid/view/WindowInsetsAnimationController;
 
     return-void
@@ -44,10 +36,10 @@
 .method finish(Z)V
     .locals 1
 
-    .line 345
+    .line 332
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationControllerCompat$Impl30;->mController:Landroid/view/WindowInsetsAnimationController;
 
-    invoke-interface {v0, p1}, Landroid/view/WindowInsetsAnimationController;->finish(Z)V
+    invoke-static {v0, p1}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/WindowInsetsAnimationController;Z)V
 
     return-void
 .end method
@@ -55,10 +47,10 @@
 .method public getCurrentAlpha()F
     .locals 1
 
-    .line 327
+    .line 313
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationControllerCompat$Impl30;->mController:Landroid/view/WindowInsetsAnimationController;
 
-    invoke-interface {v0}, Landroid/view/WindowInsetsAnimationController;->getCurrentAlpha()F
+    invoke-static {v0}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$1(Landroid/view/WindowInsetsAnimationController;)F
 
     move-result v0
 
@@ -68,10 +60,10 @@
 .method public getCurrentFraction()F
     .locals 1
 
-    .line 322
+    .line 308
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationControllerCompat$Impl30;->mController:Landroid/view/WindowInsetsAnimationController;
 
-    invoke-interface {v0}, Landroid/view/WindowInsetsAnimationController;->getCurrentFraction()F
+    invoke-static {v0}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/WindowInsetsAnimationController;)F
 
     move-result v0
 
@@ -80,13 +72,11 @@
 
 .method public getCurrentInsets()Landroidx/core/graphics/Insets;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 317
+    .line 303
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationControllerCompat$Impl30;->mController:Landroid/view/WindowInsetsAnimationController;
 
-    invoke-interface {v0}, Landroid/view/WindowInsetsAnimationController;->getCurrentInsets()Landroid/graphics/Insets;
+    invoke-static {v0}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/WindowInsetsAnimationController;)Landroid/graphics/Insets;
 
     move-result-object v0
 
@@ -99,13 +89,11 @@
 
 .method public getHiddenStateInsets()Landroidx/core/graphics/Insets;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 305
+    .line 291
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationControllerCompat$Impl30;->mController:Landroid/view/WindowInsetsAnimationController;
 
-    invoke-interface {v0}, Landroid/view/WindowInsetsAnimationController;->getHiddenStateInsets()Landroid/graphics/Insets;
+    invoke-static {v0}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$1(Landroid/view/WindowInsetsAnimationController;)Landroid/graphics/Insets;
 
     move-result-object v0
 
@@ -118,13 +106,11 @@
 
 .method public getShownStateInsets()Landroidx/core/graphics/Insets;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 311
+    .line 297
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationControllerCompat$Impl30;->mController:Landroid/view/WindowInsetsAnimationController;
 
-    invoke-interface {v0}, Landroid/view/WindowInsetsAnimationController;->getShownStateInsets()Landroid/graphics/Insets;
+    invoke-static {v0}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$2(Landroid/view/WindowInsetsAnimationController;)Landroid/graphics/Insets;
 
     move-result-object v0
 
@@ -138,10 +124,10 @@
 .method public getTypes()I
     .locals 1
 
-    .line 332
+    .line 319
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationControllerCompat$Impl30;->mController:Landroid/view/WindowInsetsAnimationController;
 
-    invoke-interface {v0}, Landroid/view/WindowInsetsAnimationController;->getTypes()I
+    invoke-static {v0}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/WindowInsetsAnimationController;)I
 
     move-result v0
 
@@ -151,10 +137,10 @@
 .method isCancelled()Z
     .locals 1
 
-    .line 360
+    .line 342
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationControllerCompat$Impl30;->mController:Landroid/view/WindowInsetsAnimationController;
 
-    invoke-interface {v0}, Landroid/view/WindowInsetsAnimationController;->isCancelled()Z
+    invoke-static {v0}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$1(Landroid/view/WindowInsetsAnimationController;)Z
 
     move-result v0
 
@@ -164,23 +150,10 @@
 .method isFinished()Z
     .locals 1
 
-    .line 355
+    .line 337
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationControllerCompat$Impl30;->mController:Landroid/view/WindowInsetsAnimationController;
 
-    invoke-interface {v0}, Landroid/view/WindowInsetsAnimationController;->isFinished()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isReady()Z
-    .locals 1
-
-    .line 350
-    iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationControllerCompat$Impl30;->mController:Landroid/view/WindowInsetsAnimationController;
-
-    invoke-interface {v0}, Landroid/view/WindowInsetsAnimationController;->isReady()Z
+    invoke-static {v0}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/WindowInsetsAnimationController;)Z
 
     move-result v0
 
@@ -189,12 +162,8 @@
 
 .method public setInsetsAndAlpha(Landroidx/core/graphics/Insets;FF)V
     .locals 1
-    .param p1    # Landroidx/core/graphics/Insets;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
-    .line 337
+    .line 324
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationControllerCompat$Impl30;->mController:Landroid/view/WindowInsetsAnimationController;
 
     if-nez p1, :cond_0
@@ -209,7 +178,7 @@
     move-result-object p1
 
     :goto_0
-    invoke-interface {v0, p1, p2, p3}, Landroid/view/WindowInsetsAnimationController;->setInsetsAndAlpha(Landroid/graphics/Insets;FF)V
+    invoke-static {v0, p1, p2, p3}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/WindowInsetsAnimationController;Landroid/graphics/Insets;FF)V
 
     return-void
 .end method

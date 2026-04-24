@@ -6,24 +6,22 @@
 .implements Landroidx/core/os/LocaleListInterface;
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x18
-.end annotation
-
-
 # instance fields
 .field private final mLocaleList:Landroid/os/LocaleList;
 
 
 # direct methods
-.method constructor <init>(Landroid/os/LocaleList;)V
+.method constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 32
+    invoke-static {p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m(Ljava/lang/Object;)Landroid/os/LocaleList;
+
+    move-result-object p1
+
     iput-object p1, p0, Landroidx/core/os/LocaleListPlatformWrapper;->mLocaleList:Landroid/os/LocaleList;
 
     return-void
@@ -43,7 +41,7 @@
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Landroid/os/LocaleList;->equals(Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Landroid/app/smdt/SmdtManager$$ExternalSyntheticApiModelOutline0;->m(Landroid/os/LocaleList;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -56,7 +54,7 @@
     .line 42
     iget-object v0, p0, Landroidx/core/os/LocaleListPlatformWrapper;->mLocaleList:Landroid/os/LocaleList;
 
-    invoke-virtual {v0, p1}, Landroid/os/LocaleList;->get(I)Ljava/util/Locale;
+    invoke-static {v0, p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/os/LocaleList;I)Ljava/util/Locale;
 
     move-result-object p1
 
@@ -65,17 +63,11 @@
 
 .method public getFirstMatch([Ljava/lang/String;)Ljava/util/Locale;
     .locals 1
-    .param p1    # [Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 83
     iget-object v0, p0, Landroidx/core/os/LocaleListPlatformWrapper;->mLocaleList:Landroid/os/LocaleList;
 
-    invoke-virtual {v0, p1}, Landroid/os/LocaleList;->getFirstMatch([Ljava/lang/String;)Ljava/util/Locale;
+    invoke-static {v0, p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/os/LocaleList;[Ljava/lang/String;)Ljava/util/Locale;
 
     move-result-object p1
 
@@ -97,7 +89,7 @@
     .line 67
     iget-object v0, p0, Landroidx/core/os/LocaleListPlatformWrapper;->mLocaleList:Landroid/os/LocaleList;
 
-    invoke-virtual {v0}, Landroid/os/LocaleList;->hashCode()I
+    invoke-static {v0}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m$1(Landroid/os/LocaleList;)I
 
     move-result v0
 
@@ -110,7 +102,7 @@
     .line 57
     iget-object v0, p0, Landroidx/core/os/LocaleListPlatformWrapper;->mLocaleList:Landroid/os/LocaleList;
 
-    invoke-virtual {v0, p1}, Landroid/os/LocaleList;->indexOf(Ljava/util/Locale;)I
+    invoke-static {v0, p1}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/os/LocaleList;Ljava/util/Locale;)I
 
     move-result p1
 
@@ -123,7 +115,7 @@
     .line 47
     iget-object v0, p0, Landroidx/core/os/LocaleListPlatformWrapper;->mLocaleList:Landroid/os/LocaleList;
 
-    invoke-virtual {v0}, Landroid/os/LocaleList;->isEmpty()Z
+    invoke-static {v0}, Landroid/app/smdt/SmdtManager$$ExternalSyntheticApiModelOutline0;->m(Landroid/os/LocaleList;)Z
 
     move-result v0
 
@@ -136,7 +128,7 @@
     .line 52
     iget-object v0, p0, Landroidx/core/os/LocaleListPlatformWrapper;->mLocaleList:Landroid/os/LocaleList;
 
-    invoke-virtual {v0}, Landroid/os/LocaleList;->size()I
+    invoke-static {v0}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/os/LocaleList;)I
 
     move-result v0
 
@@ -149,7 +141,7 @@
     .line 77
     iget-object v0, p0, Landroidx/core/os/LocaleListPlatformWrapper;->mLocaleList:Landroid/os/LocaleList;
 
-    invoke-virtual {v0}, Landroid/os/LocaleList;->toLanguageTags()Ljava/lang/String;
+    invoke-static {v0}, Landroid/app/smdt/SmdtManager$$ExternalSyntheticApiModelOutline0;->m(Landroid/os/LocaleList;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -162,7 +154,7 @@
     .line 72
     iget-object v0, p0, Landroidx/core/os/LocaleListPlatformWrapper;->mLocaleList:Landroid/os/LocaleList;
 
-    invoke-virtual {v0}, Landroid/os/LocaleList;->toString()Ljava/lang/String;
+    invoke-static {v0}, Landroidx/core/graphics/ColorKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/os/LocaleList;)Ljava/lang/String;
 
     move-result-object v0
 

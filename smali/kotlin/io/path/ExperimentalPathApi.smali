@@ -38,17 +38,10 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/RequiresOptIn;
-    level = .enum Lkotlin/RequiresOptIn$Level;->ERROR:Lkotlin/RequiresOptIn$Level;
-.end annotation
-
-.annotation build Lkotlin/SinceKotlin;
-    version = "1.4"
+    xi = 0x30
 .end annotation
 
 .annotation runtime Lkotlin/annotation/MustBeDocumented;

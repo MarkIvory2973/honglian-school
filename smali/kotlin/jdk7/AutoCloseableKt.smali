@@ -1,6 +1,6 @@
 .class public final Lkotlin/jdk7/AutoCloseableKt;
 .super Ljava/lang/Object;
-.source "AutoCloseable.kt"
+.source "AutoCloseableJVM.kt"
 
 
 # annotations
@@ -25,62 +25,43 @@
     k = 0x2
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
     pn = "kotlin"
-.end annotation
-
-.annotation build Lkotlin/jvm/JvmName;
-    name = "AutoCloseableKt"
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method public static final closeFinally(Ljava/lang/AutoCloseable;Ljava/lang/Throwable;)V
     .locals 0
-    .param p0    # Ljava/lang/AutoCloseable;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/Throwable;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/PublishedApi;
-    .end annotation
 
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.2"
-    .end annotation
+    if-eqz p0, :cond_1
 
-    if-nez p0, :cond_0
+    if-nez p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
-    if-nez p1, :cond_1
-
-    .line 61
+    .line 46
     invoke-interface {p0}, Ljava/lang/AutoCloseable;->close()V
 
     goto :goto_0
 
-    .line 64
-    :cond_1
+    .line 49
+    :cond_0
     :try_start_0
     invoke-interface {p0}, Ljava/lang/AutoCloseable;->close()V
     :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    :catch_0
+    :catchall_0
     move-exception p0
 
-    .line 66
+    .line 51
     invoke-static {p1, p0}, Lkotlin/ExceptionsKt;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
+    :cond_1
     :goto_0
     return-void
 .end method
@@ -99,60 +80,49 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.2"
-    .end annotation
+    const-string v0, "block"
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    .line 40
-    check-cast v0, Ljava/lang/Throwable;
-
-    const/4 v1, 0x1
-
-    .line 42
+    .line 33
     :try_start_0
     invoke-interface {p1, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
     :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
+    invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    .line 47
-    invoke-static {p0, v0}, Lkotlin/jdk7/AutoCloseableKt;->closeFinally(Ljava/lang/AutoCloseable;Ljava/lang/Throwable;)V
+    const/4 v1, 0x0
 
-    invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
+    .line 38
+    invoke-static {p0, v1}, Lkotlin/jdk7/AutoCloseableKt;->closeFinally(Ljava/lang/AutoCloseable;Ljava/lang/Throwable;)V
+
+    invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
 
     return-object p1
 
     :catchall_0
     move-exception p1
 
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    .line 45
+    .line 36
     :try_start_1
-    throw v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 48
-    :goto_0
-    invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
-
-    .line 47
-    invoke-static {p0, v0}, Lkotlin/jdk7/AutoCloseableKt;->closeFinally(Ljava/lang/AutoCloseable;Ljava/lang/Throwable;)V
-
-    invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
-
     throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :catchall_1
+    move-exception v1
+
+    .line 38
+    invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
+
+    invoke-static {p0, p1}, Lkotlin/jdk7/AutoCloseableKt;->closeFinally(Ljava/lang/AutoCloseable;Ljava/lang/Throwable;)V
+
+    invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
+
+    throw v1
 .end method

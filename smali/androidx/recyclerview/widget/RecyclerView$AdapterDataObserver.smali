@@ -40,10 +40,6 @@
 
 .method public onItemRangeChanged(IILjava/lang/Object;)V
     .locals 0
-    .param p3    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 11733
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$AdapterDataObserver;->onItemRangeChanged(II)V

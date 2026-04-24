@@ -20,9 +20,6 @@
 .field private mHyphenationFrequency:I
 
 .field private final mPaint:Landroid/text/TextPaint;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 .field private mTextDir:Landroid/text/TextDirectionHeuristic;
 
@@ -30,10 +27,6 @@
 # direct methods
 .method public constructor <init>(Landroid/text/TextPaint;)V
     .locals 1
-    .param p1    # Landroid/text/TextPaint;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 116
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,28 +59,12 @@
 
     iput p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mBreakStrategy:I
 
-    .line 124
-    :goto_0
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v0, 0x12
-
-    if-lt p1, v0, :cond_1
-
     .line 125
+    :goto_0
     sget-object p1, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
 
     iput-object p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mTextDir:Landroid/text/TextDirectionHeuristic;
 
-    goto :goto_1
-
-    :cond_1
-    const/4 p1, 0x0
-
-    .line 127
-    iput-object p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mTextDir:Landroid/text/TextDirectionHeuristic;
-
-    :goto_1
     return-void
 .end method
 
@@ -95,8 +72,6 @@
 # virtual methods
 .method public build()Landroidx/core/text/PrecomputedTextCompat$Params;
     .locals 5
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 191
     new-instance v0, Landroidx/core/text/PrecomputedTextCompat$Params;
@@ -116,9 +91,6 @@
 
 .method public setBreakStrategy(I)Landroidx/core/text/PrecomputedTextCompat$Params$Builder;
     .locals 0
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x17
-    .end annotation
 
     .line 145
     iput p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mBreakStrategy:I
@@ -128,9 +100,6 @@
 
 .method public setHyphenationFrequency(I)Landroidx/core/text/PrecomputedTextCompat$Params$Builder;
     .locals 0
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x17
-    .end annotation
 
     .line 163
     iput p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mHyphenationFrequency:I
@@ -140,13 +109,6 @@
 
 .method public setTextDirection(Landroid/text/TextDirectionHeuristic;)Landroidx/core/text/PrecomputedTextCompat$Params$Builder;
     .locals 0
-    .param p1    # Landroid/text/TextDirectionHeuristic;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x12
-    .end annotation
 
     .line 181
     iput-object p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mTextDir:Landroid/text/TextDirectionHeuristic;

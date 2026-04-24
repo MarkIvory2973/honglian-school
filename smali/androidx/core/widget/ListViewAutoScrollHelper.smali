@@ -10,10 +10,6 @@
 # direct methods
 .method public constructor <init>(Landroid/widget/ListView;)V
     .locals 0
-    .param p1    # Landroid/widget/ListView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 33
     invoke-direct {p0, p1}, Landroidx/core/widget/AutoScrollHelper;-><init>(Landroid/view/View;)V

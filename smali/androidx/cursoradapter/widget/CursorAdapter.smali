@@ -27,76 +27,22 @@
 
 # instance fields
 .field protected mAutoRequery:Z
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-.end field
 
 .field protected mChangeObserver:Landroidx/cursoradapter/widget/CursorAdapter$ChangeObserver;
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-.end field
 
 .field protected mContext:Landroid/content/Context;
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-.end field
 
 .field protected mCursor:Landroid/database/Cursor;
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-.end field
 
 .field protected mCursorFilter:Landroidx/cursoradapter/widget/CursorFilter;
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-.end field
 
 .field protected mDataSetObserver:Landroid/database/DataSetObserver;
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-.end field
 
 .field protected mDataValid:Z
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-.end field
 
 .field protected mFilterQueryProvider:Landroid/widget/FilterQueryProvider;
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-.end field
 
 .field protected mRowIDColumn:I
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-.end field
 
 
 # direct methods
@@ -330,11 +276,11 @@
 
     const-wide/16 v1, 0x0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/cursoradapter/widget/CursorAdapter;->mCursor:Landroid/database/Cursor;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     .line 242
     invoke-interface {v0, p1}, Landroid/database/Cursor;->moveToPosition(I)Z
@@ -355,9 +301,6 @@
     return-wide v0
 
     :cond_0
-    return-wide v1
-
-    :cond_1
     return-wide v1
 .end method
 
@@ -405,11 +348,9 @@
 
     new-instance p3, Ljava/lang/StringBuilder;
 
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v0, "couldn\'t move cursor to position "
 
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -425,7 +366,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string p2, "this should only be called when the cursor is valid"
+    const-string/jumbo p2, "this should only be called when the cursor is valid"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

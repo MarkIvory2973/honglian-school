@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .line 336
     new-instance v0, Landroid/app/smdt/SmdtManager$Platform;
@@ -48,45 +48,39 @@
     sput-object v0, Landroid/app/smdt/SmdtManager$Platform;->RK3288_5:Landroid/app/smdt/SmdtManager$Platform;
 
     .line 337
-    new-instance v0, Landroid/app/smdt/SmdtManager$Platform;
+    new-instance v1, Landroid/app/smdt/SmdtManager$Platform;
 
-    const-string v1, "RK3288_7"
+    const-string v3, "RK3288_7"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3}, Landroid/app/smdt/SmdtManager$Platform;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Landroid/app/smdt/SmdtManager$Platform;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Landroid/app/smdt/SmdtManager$Platform;->RK3288_7:Landroid/app/smdt/SmdtManager$Platform;
+    sput-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3288_7:Landroid/app/smdt/SmdtManager$Platform;
 
     .line 338
-    new-instance v0, Landroid/app/smdt/SmdtManager$Platform;
+    new-instance v3, Landroid/app/smdt/SmdtManager$Platform;
 
-    const-string v1, "RK3399"
+    const-string v5, "RK3399"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4}, Landroid/app/smdt/SmdtManager$Platform;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Landroid/app/smdt/SmdtManager$Platform;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
+    sput-object v3, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
 
-    const/4 v0, 0x3
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Landroid/app/smdt/SmdtManager$Platform;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
 
     .line 335
-    new-array v0, v0, [Landroid/app/smdt/SmdtManager$Platform;
-
-    sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3288_5:Landroid/app/smdt/SmdtManager$Platform;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3288_7:Landroid/app/smdt/SmdtManager$Platform;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Landroid/app/smdt/SmdtManager$Platform;->RK3399:Landroid/app/smdt/SmdtManager$Platform;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Landroid/app/smdt/SmdtManager$Platform;->$VALUES:[Landroid/app/smdt/SmdtManager$Platform;
+    sput-object v5, Landroid/app/smdt/SmdtManager$Platform;->$VALUES:[Landroid/app/smdt/SmdtManager$Platform;
 
     return-void
 .end method

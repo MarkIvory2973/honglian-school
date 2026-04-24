@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout-land/fragment_ctrl_quality_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="8.0dp" android:paddingEnd="8.0dp" app:layout_constraintTop_toTopOf="parent">
+        <RelativeLayout android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="40.0dp" android:layout_marginStart="52.0dp">
+            <TextView android:textSize="16.0sp" android:textColor="@color/colorD34Gray" android:id="@id/tv_grade" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="选择年级：" android:layout_centerVertical="true" />
+            <RelativeLayout android:background="@drawable/shape_circle_grayf1f7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/tv_grade">
+                <Spinner android:id="@id/sp_select_class" android:layout_width="280.0dp" android:layout_height="60.0dp" android:layout_marginLeft="28.0dp" android:textAlignment="center" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <TextView android:textSize="16.0sp" android:textColor="#ff101d34" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="54.0dp" android:layout_marginBottom="34.0dp" android:text="选择学生评分" android:layout_marginStart="52.0dp" />
+        <LinearLayout android:id="@id/ll_recycleview" android:layout_width="match_parent" android:layout_height="654.0dp">
+            <com.yanzhenjie.recyclerview.SwipeRecyclerView android:id="@id/recyclerView" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </LinearLayout>
+        <TextView android:textSize="24.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/tv_ctrl" android:tag="binding_1" android:background="@drawable/shape_circle_corn40_blue_rect" android:layout_width="220.0dp" android:layout_height="60.0dp" android:layout_marginTop="48.0dp" android:text="确认选择" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

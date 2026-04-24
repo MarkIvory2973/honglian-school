@@ -1,0 +1,102 @@
+.class public final Lcom/hjq/permissions/Permission$Group;
+.super Ljava/lang/Object;
+.source "Permission.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/hjq/permissions/Permission;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Group"
+.end annotation
+
+
+# static fields
+.field public static final CALENDAR:[Ljava/lang/String;
+
+.field public static final CONTACTS:[Ljava/lang/String;
+
+.field public static final LOCATION:[Ljava/lang/String;
+
+.field public static final SENSORS:[Ljava/lang/String;
+
+.field public static final STORAGE:[Ljava/lang/String;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
+
+    const-string v0, "android.permission.READ_EXTERNAL_STORAGE"
+
+    const-string v1, "android.permission.WRITE_EXTERNAL_STORAGE"
+
+    .line 122
+    filled-new-array {v0, v1}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/hjq/permissions/Permission$Group;->STORAGE:[Ljava/lang/String;
+
+    const-string v0, "android.permission.ACCESS_COARSE_LOCATION"
+
+    const-string v1, "android.permission.ACCESS_BACKGROUND_LOCATION"
+
+    const-string v2, "android.permission.ACCESS_FINE_LOCATION"
+
+    .line 127
+    filled-new-array {v2, v0, v1}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/hjq/permissions/Permission$Group;->LOCATION:[Ljava/lang/String;
+
+    const-string v0, "android.permission.READ_CALENDAR"
+
+    const-string v1, "android.permission.WRITE_CALENDAR"
+
+    .line 133
+    filled-new-array {v0, v1}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/hjq/permissions/Permission$Group;->CALENDAR:[Ljava/lang/String;
+
+    const-string v0, "android.permission.WRITE_CONTACTS"
+
+    const-string v1, "android.permission.GET_ACCOUNTS"
+
+    const-string v2, "android.permission.READ_CONTACTS"
+
+    .line 138
+    filled-new-array {v2, v0, v1}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/hjq/permissions/Permission$Group;->CONTACTS:[Ljava/lang/String;
+
+    const-string v0, "android.permission.BODY_SENSORS"
+
+    const-string v1, "android.permission.ACTIVITY_RECOGNITION"
+
+    .line 144
+    filled-new-array {v0, v1}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/hjq/permissions/Permission$Group;->SENSORS:[Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    .line 117
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

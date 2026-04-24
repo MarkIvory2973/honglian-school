@@ -49,14 +49,6 @@
 
 .method public static canMorph([Landroidx/core/graphics/PathParser$PathDataNode;[Landroidx/core/graphics/PathParser$PathDataNode;)Z
     .locals 4
-    .param p0    # [Landroidx/core/graphics/PathParser$PathDataNode;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p1    # [Landroidx/core/graphics/PathParser$PathDataNode;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     const/4 v0, 0x0
 
@@ -323,11 +315,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Error in parsing "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -439,15 +429,11 @@
 
     const/4 v3, 0x1
 
-    goto :goto_2
+    goto :goto_3
 
     .line 285
     :cond_0
     iput-boolean v7, p2, Landroidx/core/graphics/PathParser$ExtractFloatResult;->mEndWithNegOrDot:Z
-
-    const/4 v2, 0x0
-
-    const/4 v4, 0x1
 
     goto :goto_2
 
@@ -459,33 +445,30 @@
     .line 276
     iput-boolean v7, p2, Landroidx/core/graphics/PathParser$ExtractFloatResult;->mEndWithNegOrDot:Z
 
-    const/4 v2, 0x0
-
-    const/4 v4, 0x1
-
     goto :goto_2
 
     :cond_1
     :goto_1
     const/4 v2, 0x0
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_2
     const/4 v2, 0x1
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_3
+    :goto_2
     :pswitch_2
     const/4 v2, 0x0
 
     const/4 v4, 0x1
 
-    :goto_2
+    :goto_3
     if-eqz v4, :cond_4
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_4
     add-int/lit8 v1, v1, 0x1
@@ -494,7 +477,7 @@
 
     .line 299
     :cond_5
-    :goto_3
+    :goto_4
     iput v1, p2, Landroidx/core/graphics/PathParser$ExtractFloatResult;->mEndPosition:I
 
     return-void
@@ -614,11 +597,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "error in parsing \""
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -634,7 +615,6 @@
 
     throw v1
 
-    .line 212
     :cond_4
     :goto_1
     new-array p0, v0, [F

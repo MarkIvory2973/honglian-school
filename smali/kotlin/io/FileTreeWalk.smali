@@ -9,9 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lkotlin/io/FileTreeWalk$WalkState;,
         Lkotlin/io/FileTreeWalk$DirectoryState;,
-        Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;
+        Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;,
+        Lkotlin/io/FileTreeWalk$WalkState;
     }
 .end annotation
 
@@ -63,9 +63,10 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -114,16 +115,8 @@
 # direct methods
 .method public constructor <init>(Ljava/io/File;Lkotlin/io/FileWalkDirection;)V
     .locals 10
-    .param p1    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Lkotlin/io/FileWalkDirection;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "start"
+    const-string/jumbo v0, "start"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -201,16 +194,22 @@
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 38
     iput-object p1, p0, Lkotlin/io/FileTreeWalk;->start:Ljava/io/File;
 
+    .line 39
     iput-object p2, p0, Lkotlin/io/FileTreeWalk;->direction:Lkotlin/io/FileWalkDirection;
 
+    .line 40
     iput-object p3, p0, Lkotlin/io/FileTreeWalk;->onEnter:Lkotlin/jvm/functions/Function1;
 
+    .line 41
     iput-object p4, p0, Lkotlin/io/FileTreeWalk;->onLeave:Lkotlin/jvm/functions/Function1;
 
+    .line 42
     iput-object p5, p0, Lkotlin/io/FileTreeWalk;->onFail:Lkotlin/jvm/functions/Function2;
 
+    .line 43
     iput p6, p0, Lkotlin/io/FileTreeWalk;->maxDepth:I
 
     return-void
@@ -226,14 +225,9 @@
     .line 39
     sget-object p2, Lkotlin/io/FileWalkDirection;->TOP_DOWN:Lkotlin/io/FileWalkDirection;
 
-    move-object v2, p2
-
-    goto :goto_0
-
     :cond_0
     move-object v2, p2
 
-    :goto_0
     and-int/lit8 p2, p7, 0x20
 
     if-eqz p2, :cond_1
@@ -242,12 +236,12 @@
 
     const v6, 0x7fffffff
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
     move v6, p6
 
-    :goto_1
+    :goto_0
     move-object v0, p0
 
     move-object v1, p1
@@ -258,7 +252,7 @@
 
     move-object v5, p5
 
-    .line 43
+    .line 37
     invoke-direct/range {v0 .. v6}, Lkotlin/io/FileTreeWalk;-><init>(Ljava/io/File;Lkotlin/io/FileWalkDirection;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;I)V
 
     return-void
@@ -331,9 +325,6 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
     .line 50
     new-instance v0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;
 
@@ -346,8 +337,6 @@
 
 .method public final maxDepth(I)Lkotlin/io/FileTreeWalk;
     .locals 8
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     if-lez p1, :cond_0
 
@@ -378,11 +367,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "depth must be positive, but was "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -396,17 +383,11 @@
 
     invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    check-cast v0, Ljava/lang/Throwable;
-
     throw v0
 .end method
 
 .method public final onEnter(Lkotlin/jvm/functions/Function1;)Lkotlin/io/FileTreeWalk;
     .locals 8
-    .param p1    # Lkotlin/jvm/functions/Function1;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -417,9 +398,6 @@
             ">;)",
             "Lkotlin/io/FileTreeWalk;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "function"
@@ -450,10 +428,6 @@
 
 .method public final onFail(Lkotlin/jvm/functions/Function2;)Lkotlin/io/FileTreeWalk;
     .locals 8
-    .param p1    # Lkotlin/jvm/functions/Function2;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -466,9 +440,6 @@
             ">;)",
             "Lkotlin/io/FileTreeWalk;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "function"
@@ -499,10 +470,6 @@
 
 .method public final onLeave(Lkotlin/jvm/functions/Function1;)Lkotlin/io/FileTreeWalk;
     .locals 8
-    .param p1    # Lkotlin/jvm/functions/Function1;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -513,9 +480,6 @@
             ">;)",
             "Lkotlin/io/FileTreeWalk;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "function"

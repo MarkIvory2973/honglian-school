@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 791
+    .line 793
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,20 +31,12 @@
 # virtual methods
 .method public onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V
     .locals 0
-    .param p1    # Landroidx/appcompat/view/menu/MenuBuilder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method
 
 .method public onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
     .locals 0
-    .param p1    # Landroidx/appcompat/view/menu/MenuBuilder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/4 p1, 0x0
 

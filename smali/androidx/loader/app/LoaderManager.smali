@@ -32,13 +32,6 @@
 
 .method public static getInstance(Landroidx/lifecycle/LifecycleOwner;)Landroidx/loader/app/LoaderManager;
     .locals 2
-    .param p0    # Landroidx/lifecycle/LifecycleOwner;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -69,8 +62,6 @@
 
 # virtual methods
 .method public abstract destroyLoader(I)V
-    .annotation build Landroidx/annotation/MainThread;
-    .end annotation
 .end method
 
 .method public abstract dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
@@ -79,9 +70,6 @@
 .end method
 
 .method public abstract getLoader(I)Landroidx/loader/content/Loader;
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<D:",
@@ -102,20 +90,6 @@
 .end method
 
 .method public abstract initLoader(ILandroid/os/Bundle;Landroidx/loader/app/LoaderManager$LoaderCallbacks;)Landroidx/loader/content/Loader;
-    .param p2    # Landroid/os/Bundle;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p3    # Landroidx/loader/app/LoaderManager$LoaderCallbacks;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/MainThread;
-    .end annotation
-
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<D:",
@@ -134,20 +108,6 @@
 .end method
 
 .method public abstract restartLoader(ILandroid/os/Bundle;Landroidx/loader/app/LoaderManager$LoaderCallbacks;)Landroidx/loader/content/Loader;
-    .param p2    # Landroid/os/Bundle;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p3    # Landroidx/loader/app/LoaderManager$LoaderCallbacks;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/MainThread;
-    .end annotation
-
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<D:",

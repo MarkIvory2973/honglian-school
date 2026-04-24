@@ -124,10 +124,10 @@
 
     double-to-int p1, p1
 
-    if-eqz v2, :cond_1
-
     .line 5488
     iget-object p2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->this$0:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz v2, :cond_1
 
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getWidth()I
 
@@ -136,8 +136,6 @@
     goto :goto_1
 
     :cond_1
-    iget-object p2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->this$0:Landroidx/recyclerview/widget/RecyclerView;
-
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getHeight()I
 
     move-result p2
@@ -174,20 +172,20 @@
 
     if-lez p3, :cond_2
 
-    const/high16 p1, 0x447a0000    # 1000.0f
+    int-to-float p1, p3
 
-    int-to-float p2, p3
-
-    div-float/2addr p4, p2
+    div-float/2addr p4, p1
 
     .line 5496
     invoke-static {p4}, Ljava/lang/Math;->abs(F)F
 
-    move-result p2
+    move-result p1
 
-    mul-float p2, p2, p1
+    const/high16 p2, 0x447a0000    # 1000.0f
 
-    invoke-static {p2}, Ljava/lang/Math;->round(F)I
+    mul-float p1, p1, p2
+
+    invoke-static {p1}, Ljava/lang/Math;->round(F)I
 
     move-result p1
 
@@ -946,31 +944,22 @@
 .end method
 
 .method public smoothScrollBy(IIILandroid/view/animation/Interpolator;)V
-    .locals 7
-    .param p4    # Landroid/view/animation/Interpolator;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
+    .locals 8
 
-    const/4 v0, 0x0
+    const/high16 v0, -0x80000000
 
-    const/high16 v1, -0x80000000
+    const/4 v1, 0x0
 
-    if-ne p3, v1, :cond_0
+    if-ne p3, v0, :cond_0
 
     .line 5446
-    invoke-direct {p0, p1, p2, v0, v0}, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->computeScrollDuration(IIII)I
+    invoke-direct {p0, p1, p2, v1, v1}, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->computeScrollDuration(IIII)I
 
     move-result p3
 
-    move v6, p3
-
-    goto :goto_0
-
     :cond_0
-    move v6, p3
+    move v7, p3
 
-    :goto_0
     if-nez p4, :cond_1
 
     .line 5449
@@ -988,21 +977,21 @@
     .line 5456
     new-instance p3, Landroid/widget/OverScroller;
 
-    iget-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->this$0:Landroidx/recyclerview/widget/RecyclerView;
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
-    invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {p3, v1, p4}, Landroid/widget/OverScroller;-><init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
+    invoke-direct {p3, v0, p4}, Landroid/widget/OverScroller;-><init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
 
     iput-object p3, p0, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->mOverScroller:Landroid/widget/OverScroller;
 
     .line 5460
     :cond_2
-    iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->mLastFlingY:I
+    iput v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->mLastFlingY:I
 
-    iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->mLastFlingX:I
+    iput v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->mLastFlingX:I
 
     .line 5463
     iget-object p3, p0, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->this$0:Landroidx/recyclerview/widget/RecyclerView;
@@ -1012,17 +1001,17 @@
     invoke-virtual {p3, p4}, Landroidx/recyclerview/widget/RecyclerView;->setScrollState(I)V
 
     .line 5464
-    iget-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->mOverScroller:Landroid/widget/OverScroller;
-
-    const/4 v2, 0x0
+    iget-object v2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->mOverScroller:Landroid/widget/OverScroller;
 
     const/4 v3, 0x0
 
-    move v4, p1
+    const/4 v4, 0x0
 
-    move v5, p2
+    move v5, p1
 
-    invoke-virtual/range {v1 .. v6}, Landroid/widget/OverScroller;->startScroll(IIIII)V
+    move v6, p2
+
+    invoke-virtual/range {v2 .. v7}, Landroid/widget/OverScroller;->startScroll(IIIII)V
 
     .line 5466
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I

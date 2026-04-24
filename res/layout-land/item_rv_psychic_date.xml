@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/constraintLayout" android:background="@drawable/shape_rect_stroke_blue8ff" android:layout_width="180.0dp" android:layout_height="151.0dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="#ff406af5" android:id="@id/textView55" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="今天" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <TextView android:textSize="20.0sp" android:textColor="#ff406af5" android:id="@id/textView56" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="07月02日" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/textView55" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/textView56">
+            <ImageView android:layout_gravity="center" android:id="@id/iv_lock" android:visibility="gone" android:layout_width="15.0dp" android:layout_height="20.0dp" android:src="@mipmap/icon_lock" android:layout_marginEnd="@dimen/dp_10" />
+            <TextView android:textSize="20.0sp" android:textColor="#ff406af5" android:id="@id/textView57" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="可预约" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

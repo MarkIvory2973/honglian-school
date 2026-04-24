@@ -3,14 +3,6 @@
 .source "VersionedParcelParcel.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
-
 # static fields
 .field private static final DEBUG:Z = false
 
@@ -109,11 +101,6 @@
     .line 46
     iput p5, p0, Landroidx/versionedparcelable/VersionedParcelParcel;->mCurrentField:I
 
-    const/4 p6, 0x0
-
-    .line 47
-    iput p6, p0, Landroidx/versionedparcelable/VersionedParcelParcel;->mNextRead:I
-
     .line 48
     iput p5, p0, Landroidx/versionedparcelable/VersionedParcelParcel;->mFieldId:I
 
@@ -127,9 +114,7 @@
     iput p3, p0, Landroidx/versionedparcelable/VersionedParcelParcel;->mEnd:I
 
     .line 64
-    iget p1, p0, Landroidx/versionedparcelable/VersionedParcelParcel;->mOffset:I
-
-    iput p1, p0, Landroidx/versionedparcelable/VersionedParcelParcel;->mNextRead:I
+    iput p2, p0, Landroidx/versionedparcelable/VersionedParcelParcel;->mNextRead:I
 
     .line 65
     iput-object p4, p0, Landroidx/versionedparcelable/VersionedParcelParcel;->mPrefix:Ljava/lang/String;

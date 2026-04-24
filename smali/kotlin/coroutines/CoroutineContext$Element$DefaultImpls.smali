@@ -17,23 +17,16 @@
     k = 0x3
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method public static fold(Lkotlin/coroutines/CoroutineContext$Element;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
     .locals 1
-    .param p0    # Lkotlin/coroutines/CoroutineContext$Element;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Lkotlin/jvm/functions/Function2;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
@@ -62,14 +55,6 @@
 
 .method public static get(Lkotlin/coroutines/CoroutineContext$Element;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
     .locals 1
-    .param p0    # Lkotlin/coroutines/CoroutineContext$Element;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/coroutines/CoroutineContext$Key;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E::",
@@ -79,9 +64,6 @@
             "Lkotlin/coroutines/CoroutineContext$Key<",
             "TE;>;)TE;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
     const-string v0, "key"
@@ -97,22 +79,15 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
-    if-eqz p0, :cond_0
+    const-string p1, "null cannot be cast to non-null type E of kotlin.coroutines.CoroutineContext.Element.get"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "null cannot be cast to non-null type E"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
     const/4 p0, 0x0
 
     :goto_0
@@ -121,14 +96,6 @@
 
 .method public static minusKey(Lkotlin/coroutines/CoroutineContext$Element;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
     .locals 1
-    .param p0    # Lkotlin/coroutines/CoroutineContext$Element;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/coroutines/CoroutineContext$Key;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -137,9 +104,6 @@
             "*>;)",
             "Lkotlin/coroutines/CoroutineContext;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "key"
@@ -167,21 +131,12 @@
 
 .method public static plus(Lkotlin/coroutines/CoroutineContext$Element;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
     .locals 1
-    .param p0    # Lkotlin/coroutines/CoroutineContext$Element;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/coroutines/CoroutineContext;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     const-string v0, "context"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 59
     check-cast p0, Lkotlin/coroutines/CoroutineContext;
 
     invoke-static {p0, p1}, Lkotlin/coroutines/CoroutineContext$DefaultImpls;->plus(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;

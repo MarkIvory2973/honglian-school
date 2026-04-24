@@ -7,18 +7,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/SuppressLint;
-    value = {
-        "BanParcelableUsage"
-    }
-.end annotation
-
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/recyclerview/widget/StaggeredGridLayoutManager;
 .end annotation
@@ -121,9 +109,6 @@
 
     iput v0, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$SavedState;->mSpanOffsetsSize:I
 
-    .line 3169
-    iget v0, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$SavedState;->mSpanOffsetsSize:I
-
     if-lez v0, :cond_0
 
     .line 3170
@@ -132,8 +117,6 @@
     iput-object v0, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$SavedState;->mSpanOffsets:[I
 
     .line 3171
-    iget-object v0, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$SavedState;->mSpanOffsets:[I
-
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readIntArray([I)V
 
     .line 3174
@@ -144,9 +127,6 @@
 
     iput v0, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$SavedState;->mSpanLookupSize:I
 
-    .line 3175
-    iget v0, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$SavedState;->mSpanLookupSize:I
-
     if-lez v0, :cond_1
 
     .line 3176
@@ -155,8 +135,6 @@
     iput-object v0, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$SavedState;->mSpanLookup:[I
 
     .line 3177
-    iget-object v0, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$SavedState;->mSpanLookup:[I
-
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readIntArray([I)V
 
     .line 3179

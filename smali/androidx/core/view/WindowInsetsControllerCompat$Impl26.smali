@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x1a
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/core/view/WindowInsetsControllerCompat;
 .end annotation
@@ -21,16 +17,8 @@
 # direct methods
 .method constructor <init>(Landroid/view/Window;Landroid/view/View;)V
     .locals 0
-    .param p1    # Landroid/view/Window;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/View;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
-    .line 562
+    .line 599
     invoke-direct {p0, p1, p2}, Landroidx/core/view/WindowInsetsControllerCompat$Impl23;-><init>(Landroid/view/Window;Landroid/view/View;)V
 
     return-void
@@ -41,7 +29,7 @@
 .method public isAppearanceLightNavigationBars()Z
     .locals 1
 
-    .line 567
+    .line 604
     iget-object v0, p0, Landroidx/core/view/WindowInsetsControllerCompat$Impl26;->mWindow:Landroid/view/Window;
 
     invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
@@ -76,20 +64,20 @@
 
     const/high16 p1, 0x8000000
 
-    .line 574
+    .line 611
     invoke-virtual {p0, p1}, Landroidx/core/view/WindowInsetsControllerCompat$Impl26;->unsetWindowFlag(I)V
 
     const/high16 p1, -0x80000000
 
-    .line 575
+    .line 612
     invoke-virtual {p0, p1}, Landroidx/core/view/WindowInsetsControllerCompat$Impl26;->setWindowFlag(I)V
 
-    .line 576
+    .line 613
     invoke-virtual {p0, v0}, Landroidx/core/view/WindowInsetsControllerCompat$Impl26;->setSystemUiFlag(I)V
 
     goto :goto_0
 
-    .line 578
+    .line 615
     :cond_0
     invoke-virtual {p0, v0}, Landroidx/core/view/WindowInsetsControllerCompat$Impl26;->unsetSystemUiFlag(I)V
 

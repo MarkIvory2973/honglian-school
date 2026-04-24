@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/iv_vp_study" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" />
+    <ImageView android:id="@id/iv_vp_study" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitXY" />
     <ProgressBar android:id="@id/pb_bar" android:layout_width="64.0dp" android:layout_height="64.0dp" android:indeterminateDrawable="@drawable/rotate_loading" android:layout_centerInParent="true" />
-    <TextView android:textSize="26.0sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center_vertical" android:id="@id/tv_title" android:background="@color/transparency_80" android:paddingLeft="16.0dp" android:layout_width="match_parent" android:layout_height="75.0dp" android:text="11111111" android:layout_alignParentBottom="true" />
+    <TextView android:textSize="26.0sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center_vertical" android:id="@id/tv_title" android:background="@color/transparency_80" android:paddingLeft="16.0dp" android:layout_width="match_parent" android:layout_height="75.0dp" android:text="11111111" android:lines="1" android:layout_alignParentBottom="true" />
 </RelativeLayout>

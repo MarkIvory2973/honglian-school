@@ -1,4 +1,4 @@
-.class final Landroidx/fragment/app/FragmentManagerViewModel$1;
+.class Landroidx/fragment/app/FragmentManagerViewModel$1;
 .super Ljava/lang/Object;
 .source "FragmentManagerViewModel.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -31,13 +31,6 @@
 # virtual methods
 .method public create(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
     .locals 1
-    .param p1    # Ljava/lang/Class;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -54,6 +47,16 @@
     const/4 v0, 0x1
 
     invoke-direct {p1, v0}, Landroidx/fragment/app/FragmentManagerViewModel;-><init>(Z)V
+
+    return-object p1
+.end method
+
+.method public synthetic create(Ljava/lang/Class;Landroidx/lifecycle/viewmodel/CreationExtras;)Landroidx/lifecycle/ViewModel;
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Landroidx/lifecycle/ViewModelProvider$Factory$-CC;->$default$create(Landroidx/lifecycle/ViewModelProvider$Factory;Ljava/lang/Class;Landroidx/lifecycle/viewmodel/CreationExtras;)Landroidx/lifecycle/ViewModel;
+
+    move-result-object p1
 
     return-object p1
 .end method

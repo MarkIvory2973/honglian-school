@@ -15,18 +15,11 @@
 .field private mTmpInfo:Landroidx/appcompat/widget/TintInfo;
 
 .field private final mView:Landroid/view/View;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 
 # direct methods
 .method constructor <init>(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,10 +44,6 @@
 
 .method private applyFrameworkTintUsingColorFilter(Landroid/graphics/drawable/Drawable;)Z
     .locals 3
-    .param p1    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 178
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->mTmpInfo:Landroidx/appcompat/widget/TintInfo;
@@ -140,39 +129,22 @@
 .end method
 
 .method private shouldApplyFrameworkTintUsingColorFilter()Z
-    .locals 4
-
-    .line 156
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    const/16 v3, 0x15
-
-    if-le v0, v3, :cond_1
+    .locals 1
 
     .line 160
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->mInternalBackgroundTint:Landroidx/appcompat/widget/TintInfo;
 
     if-eqz v0, :cond_0
 
+    const/4 v0, 0x1
+
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    return v1
-
-    :cond_1
-    if-ne v0, v3, :cond_2
-
-    return v1
-
-    :cond_2
-    return v2
+    return v0
 .end method
 
 
@@ -286,10 +258,6 @@
 
 .method loadFromAttributes(Landroid/util/AttributeSet;I)V
     .locals 8
-    .param p1    # Landroid/util/AttributeSet;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 49
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->mView:Landroid/view/View;
@@ -520,10 +488,12 @@
 
     iput-object p1, v0, Landroidx/appcompat/widget/TintInfo;->mTintList:Landroid/content/res/ColorStateList;
 
-    const/4 p1, 0x1
-
     .line 148
-    iput-boolean p1, v0, Landroidx/appcompat/widget/TintInfo;->mHasTintList:Z
+    iget-object p1, p0, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->mInternalBackgroundTint:Landroidx/appcompat/widget/TintInfo;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p1, Landroidx/appcompat/widget/TintInfo;->mHasTintList:Z
 
     goto :goto_0
 
@@ -561,10 +531,12 @@
 
     iput-object p1, v0, Landroidx/appcompat/widget/TintInfo;->mTintList:Landroid/content/res/ColorStateList;
 
-    const/4 p1, 0x1
-
     .line 100
-    iput-boolean p1, v0, Landroidx/appcompat/widget/TintInfo;->mHasTintList:Z
+    iget-object p1, p0, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->mBackgroundTint:Landroidx/appcompat/widget/TintInfo;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p1, Landroidx/appcompat/widget/TintInfo;->mHasTintList:Z
 
     .line 101
     invoke-virtual {p0}, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->applySupportBackgroundTint()V
@@ -593,10 +565,12 @@
 
     iput-object p1, v0, Landroidx/appcompat/widget/TintInfo;->mTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    const/4 p1, 0x1
-
     .line 113
-    iput-boolean p1, v0, Landroidx/appcompat/widget/TintInfo;->mHasTintMode:Z
+    iget-object p1, p0, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->mBackgroundTint:Landroidx/appcompat/widget/TintInfo;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p1, Landroidx/appcompat/widget/TintInfo;->mHasTintMode:Z
 
     .line 115
     invoke-virtual {p0}, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->applySupportBackgroundTint()V

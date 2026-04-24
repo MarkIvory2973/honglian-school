@@ -14,11 +14,6 @@
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
     d1 = {
         "\u0000\u001f\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\t\n\u0000*\u0001\u0000\u0008\n\u0018\u00002\u00020\u0001J\t\u0010\u0008\u001a\u00020\tH\u0096\u0002J\u0008\u0010\n\u001a\u00020\u000bH\u0016R\u001a\u0010\u0002\u001a\u00020\u0003X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008\u0004\u0010\u0005\"\u0004\u0008\u0006\u0010\u0007\u00a8\u0006\u000c"
     }
@@ -40,9 +35,10 @@
     k = 0x1
     mv = {
         0x1,
-        0x1,
-        0x10
+        0x8,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -56,9 +52,9 @@
 .method constructor <init>(Landroid/util/SparseLongArray;)V
     .locals 0
 
-    .line 103
     iput-object p1, p0, Landroidx/core/util/SparseLongArrayKt$valueIterator$1;->$this_valueIterator:Landroid/util/SparseLongArray;
 
+    .line 120
     invoke-direct {p0}, Lkotlin/collections/LongIterator;-><init>()V
 
     return-void
@@ -69,7 +65,7 @@
 .method public final getIndex()I
     .locals 1
 
-    .line 104
+    .line 121
     iget v0, p0, Landroidx/core/util/SparseLongArrayKt$valueIterator$1;->index:I
 
     return v0
@@ -78,7 +74,7 @@
 .method public hasNext()Z
     .locals 2
 
-    .line 105
+    .line 122
     iget v0, p0, Landroidx/core/util/SparseLongArrayKt$valueIterator$1;->index:I
 
     iget-object v1, p0, Landroidx/core/util/SparseLongArrayKt$valueIterator$1;->$this_valueIterator:Landroid/util/SparseLongArray;
@@ -103,7 +99,7 @@
 .method public nextLong()J
     .locals 3
 
-    .line 106
+    .line 123
     iget-object v0, p0, Landroidx/core/util/SparseLongArrayKt$valueIterator$1;->$this_valueIterator:Landroid/util/SparseLongArray;
 
     iget v1, p0, Landroidx/core/util/SparseLongArrayKt$valueIterator$1;->index:I
@@ -122,7 +118,7 @@
 .method public final setIndex(I)V
     .locals 0
 
-    .line 104
+    .line 121
     iput p1, p0, Landroidx/core/util/SparseLongArrayKt$valueIterator$1;->index:I
 
     return-void

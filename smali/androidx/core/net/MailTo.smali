@@ -51,10 +51,6 @@
 
 .method public static isMailTo(Landroid/net/Uri;)Z
     .locals 1
-    .param p0    # Landroid/net/Uri;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     if-eqz p0, :cond_0
 
@@ -84,10 +80,6 @@
 
 .method public static isMailTo(Ljava/lang/String;)Z
     .locals 1
-    .param p0    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     if-eqz p0, :cond_0
 
@@ -113,13 +105,6 @@
 
 .method public static parse(Landroid/net/Uri;)Landroidx/core/net/MailTo;
     .locals 0
-    .param p0    # Landroid/net/Uri;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/core/net/ParseException;
@@ -140,13 +125,6 @@
 
 .method public static parse(Ljava/lang/String;)Landroidx/core/net/MailTo;
     .locals 10
-    .param p0    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/core/net/ParseException;
@@ -341,7 +319,7 @@
     :cond_5
     iget-object p0, v0, Landroidx/core/net/MailTo;->mHeaders:Ljava/util/HashMap;
 
-    const-string v2, "to"
+    const-string/jumbo v2, "to"
 
     invoke-virtual {p0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -362,8 +340,6 @@
 # virtual methods
 .method public getBcc()Ljava/lang/String;
     .locals 2
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 211
     iget-object v0, p0, Landroidx/core/net/MailTo;->mHeaders:Ljava/util/HashMap;
@@ -381,8 +357,6 @@
 
 .method public getBody()Ljava/lang/String;
     .locals 2
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 231
     iget-object v0, p0, Landroidx/core/net/MailTo;->mHeaders:Ljava/util/HashMap;
@@ -400,8 +374,6 @@
 
 .method public getCc()Ljava/lang/String;
     .locals 2
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 200
     iget-object v0, p0, Landroidx/core/net/MailTo;->mHeaders:Ljava/util/HashMap;
@@ -419,9 +391,6 @@
 
 .method public getHeaders()Ljava/util/Map;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -440,13 +409,11 @@
 
 .method public getSubject()Ljava/lang/String;
     .locals 2
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 221
     iget-object v0, p0, Landroidx/core/net/MailTo;->mHeaders:Ljava/util/HashMap;
 
-    const-string v1, "subject"
+    const-string/jumbo v1, "subject"
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -459,13 +426,11 @@
 
 .method public getTo()Ljava/lang/String;
     .locals 2
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 189
     iget-object v0, p0, Landroidx/core/net/MailTo;->mHeaders:Ljava/util/HashMap;
 
-    const-string v1, "to"
+    const-string/jumbo v1, "to"
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -478,20 +443,13 @@
 
 .method public toString()Ljava/lang/String;
     .locals 4
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 246
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "mailto:"
+    const-string v1, "mailto:?"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const/16 v1, 0x3f
-
-    .line 247
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 248
     iget-object v1, p0, Landroidx/core/net/MailTo;->mHeaders:Ljava/util/HashMap;

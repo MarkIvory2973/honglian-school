@@ -45,6 +45,16 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "width",
+            "height"
+        }
+    .end annotation
 
     .line 82
     invoke-direct {p0, p1, p2}, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;-><init>(II)V
@@ -98,7 +108,17 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 4
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "c",
+            "attrs"
+        }
+    .end annotation
 
     .line 90
     invoke-direct {p0, p1, p2}, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -188,14 +208,7 @@
     :cond_0
     sget v2, Landroidx/constraintlayout/widget/R$styleable;->ConstraintSet_android_elevation:I
 
-    const/16 v3, 0x15
-
     if-ne v0, v2, :cond_1
-
-    .line 98
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v2, v3, :cond_b
 
     .line 99
     iget v2, p0, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->elevation:F
@@ -372,11 +385,6 @@
 
     if-ne v0, v2, :cond_b
 
-    .line 121
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v2, v3, :cond_b
-
     .line 122
     iget v2, p0, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->translationZ:F
 
@@ -392,12 +400,23 @@
 
     goto/16 :goto_0
 
+    .line 126
     :cond_c
+    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
+
     return-void
 .end method
 
 .method public constructor <init>(Landroidx/constraintlayout/widget/Constraints$LayoutParams;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "source"
+        }
+    .end annotation
 
     .line 86
     invoke-direct {p0, p1}, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;)V

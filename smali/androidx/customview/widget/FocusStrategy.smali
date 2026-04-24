@@ -25,18 +25,6 @@
 
 .method private static beamBeats(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
     .locals 3
-    .param p1    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 243
     invoke-static {p0, p1, p2}, Landroidx/customview/widget/FocusStrategy;->beamsOverlap(ILandroid/graphics/Rect;Landroid/graphics/Rect;)Z
@@ -54,7 +42,7 @@
 
     if-nez v0, :cond_0
 
-    goto :goto_2
+    goto :goto_1
 
     .line 257
     :cond_0
@@ -77,7 +65,7 @@
 
     if-ne p0, v0, :cond_2
 
-    goto :goto_1
+    goto :goto_0
 
     .line 271
     :cond_2
@@ -92,33 +80,22 @@
 
     if-ge p2, p0, :cond_3
 
-    goto :goto_0
+    const/4 v2, 0x1
 
     :cond_3
-    const/4 v1, 0x0
+    return v2
 
+    :cond_4
     :goto_0
     return v1
 
-    :cond_4
-    :goto_1
-    return v1
-
     :cond_5
-    :goto_2
+    :goto_1
     return v2
 .end method
 
 .method private static beamsOverlap(ILandroid/graphics/Rect;Landroid/graphics/Rect;)Z
     .locals 3
-    .param p1    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/16 v0, 0x11
 
@@ -200,26 +177,6 @@
 
 .method public static findNextFocusInAbsoluteDirection(Ljava/lang/Object;Landroidx/customview/widget/FocusStrategy$CollectionAdapter;Landroidx/customview/widget/FocusStrategy$BoundsAdapter;Ljava/lang/Object;Landroid/graphics/Rect;I)Ljava/lang/Object;
     .locals 7
-    .param p0    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Landroidx/customview/widget/FocusStrategy$CollectionAdapter;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/customview/widget/FocusStrategy$BoundsAdapter;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p4    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<",
@@ -321,21 +278,21 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Rect;->offset(II)V
 
-    :goto_0
-    const/4 v1, 0x0
-
     .line 167
+    :goto_0
     invoke-interface {p1, p0}, Landroidx/customview/widget/FocusStrategy$CollectionAdapter;->size(Ljava/lang/Object;)I
 
-    move-result v3
+    move-result v1
 
     .line 168
-    new-instance v4, Landroid/graphics/Rect;
+    new-instance v3, Landroid/graphics/Rect;
 
-    invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
+
+    const/4 v4, 0x0
 
     :goto_1
-    if-ge v2, v3, :cond_6
+    if-ge v2, v1, :cond_6
 
     .line 170
     invoke-interface {p1, p0, v2}, Landroidx/customview/widget/FocusStrategy$CollectionAdapter;->get(Ljava/lang/Object;I)Ljava/lang/Object;
@@ -348,19 +305,19 @@
 
     .line 176
     :cond_4
-    invoke-interface {p2, v5, v4}, Landroidx/customview/widget/FocusStrategy$BoundsAdapter;->obtainBounds(Ljava/lang/Object;Landroid/graphics/Rect;)V
+    invoke-interface {p2, v5, v3}, Landroidx/customview/widget/FocusStrategy$BoundsAdapter;->obtainBounds(Ljava/lang/Object;Landroid/graphics/Rect;)V
 
     .line 177
-    invoke-static {p5, p4, v4, v0}, Landroidx/customview/widget/FocusStrategy;->isBetterCandidate(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
+    invoke-static {p5, p4, v3, v0}, Landroidx/customview/widget/FocusStrategy;->isBetterCandidate(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
     move-result v6
 
     if-eqz v6, :cond_5
 
     .line 178
-    invoke-virtual {v0, v4}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+    invoke-virtual {v0, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    move-object v1, v5
+    move-object v4, v5
 
     :cond_5
     :goto_2
@@ -369,27 +326,11 @@
     goto :goto_1
 
     :cond_6
-    return-object v1
+    return-object v4
 .end method
 
 .method public static findNextFocusInRelativeDirection(Ljava/lang/Object;Landroidx/customview/widget/FocusStrategy$CollectionAdapter;Landroidx/customview/widget/FocusStrategy$BoundsAdapter;Ljava/lang/Object;IZZ)Ljava/lang/Object;
     .locals 4
-    .param p0    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Landroidx/customview/widget/FocusStrategy$CollectionAdapter;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/customview/widget/FocusStrategy$BoundsAdapter;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<",
@@ -442,9 +383,23 @@
     .line 47
     invoke-static {v1, p0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    packed-switch p4, :pswitch_data_0
+    const/4 p0, 0x1
+
+    if-eq p4, p0, :cond_2
+
+    const/4 p0, 0x2
+
+    if-ne p4, p0, :cond_1
+
+    .line 51
+    invoke-static {p3, v1, p6}, Landroidx/customview/widget/FocusStrategy;->getNextFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 
     .line 55
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "direction must be one of {FOCUS_FORWARD, FOCUS_BACKWARD}."
@@ -453,29 +408,13 @@
 
     throw p0
 
-    .line 51
-    :pswitch_0
-    invoke-static {p3, v1, p6}, Landroidx/customview/widget/FocusStrategy;->getNextFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-
     .line 53
-    :pswitch_1
+    :cond_2
     invoke-static {p3, v1, p6}, Landroidx/customview/widget/FocusStrategy;->getPreviousFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method private static getNextFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
@@ -616,18 +555,6 @@
 
 .method private static isBetterCandidate(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
     .locals 3
-    .param p1    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 203
     invoke-static {p1, p2, p0}, Landroidx/customview/widget/FocusStrategy;->isCandidate(Landroid/graphics/Rect;Landroid/graphics/Rect;I)Z
@@ -713,14 +640,6 @@
 
 .method private static isCandidate(Landroid/graphics/Rect;Landroid/graphics/Rect;I)Z
     .locals 3
-    .param p0    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/16 v0, 0x11
 
@@ -870,14 +789,6 @@
 
 .method private static isToDirectionOf(ILandroid/graphics/Rect;Landroid/graphics/Rect;)Z
     .locals 3
-    .param p1    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/16 v0, 0x11
 
@@ -974,24 +885,16 @@
 .end method
 
 .method private static majorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
-    .locals 0
-    .param p1    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
+    .locals 1
+
+    const/4 v0, 0x0
 
     .line 365
     invoke-static {p0, p1, p2}, Landroidx/customview/widget/FocusStrategy;->majorAxisDistanceRaw(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
     move-result p0
 
-    const/4 p1, 0x0
-
-    invoke-static {p1, p0}, Ljava/lang/Math;->max(II)I
+    invoke-static {v0, p0}, Ljava/lang/Math;->max(II)I
 
     move-result p0
 
@@ -1000,14 +903,6 @@
 
 .method private static majorAxisDistanceRaw(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
     .locals 1
-    .param p1    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/16 v0, 0x11
 
@@ -1030,6 +925,7 @@
 
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
+    :goto_0
     sub-int/2addr p0, p1
 
     return p0
@@ -1050,9 +946,7 @@
 
     iget p1, p1, Landroid/graphics/Rect;->right:I
 
-    sub-int/2addr p0, p1
-
-    return p0
+    goto :goto_0
 
     .line 376
     :cond_2
@@ -1060,9 +954,7 @@
 
     iget p1, p2, Landroid/graphics/Rect;->bottom:I
 
-    sub-int/2addr p0, p1
-
-    return p0
+    goto :goto_0
 
     .line 372
     :cond_3
@@ -1070,30 +962,20 @@
 
     iget p1, p2, Landroid/graphics/Rect;->right:I
 
-    sub-int/2addr p0, p1
-
-    return p0
+    goto :goto_0
 .end method
 
 .method private static majorAxisDistanceToFarEdge(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
-    .locals 0
-    .param p1    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
+    .locals 1
+
+    const/4 v0, 0x1
 
     .line 392
     invoke-static {p0, p1, p2}, Landroidx/customview/widget/FocusStrategy;->majorAxisDistanceToFarEdgeRaw(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
     move-result p0
 
-    const/4 p1, 0x1
-
-    invoke-static {p1, p0}, Ljava/lang/Math;->max(II)I
+    invoke-static {v0, p0}, Ljava/lang/Math;->max(II)I
 
     move-result p0
 
@@ -1102,14 +984,6 @@
 
 .method private static majorAxisDistanceToFarEdgeRaw(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
     .locals 1
-    .param p1    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/16 v0, 0x11
 
@@ -1132,6 +1006,7 @@
 
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
+    :goto_0
     sub-int/2addr p0, p1
 
     return p0
@@ -1152,9 +1027,7 @@
 
     iget p1, p1, Landroid/graphics/Rect;->right:I
 
-    sub-int/2addr p0, p1
-
-    return p0
+    goto :goto_0
 
     .line 404
     :cond_2
@@ -1162,9 +1035,7 @@
 
     iget p1, p2, Landroid/graphics/Rect;->top:I
 
-    sub-int/2addr p0, p1
-
-    return p0
+    goto :goto_0
 
     .line 400
     :cond_3
@@ -1172,21 +1043,11 @@
 
     iget p1, p2, Landroid/graphics/Rect;->left:I
 
-    sub-int/2addr p0, p1
-
-    return p0
+    goto :goto_0
 .end method
 
 .method private static minorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
     .locals 1
-    .param p1    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/16 v0, 0x11
 

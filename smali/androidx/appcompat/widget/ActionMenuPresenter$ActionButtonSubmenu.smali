@@ -25,10 +25,10 @@
     .line 733
     iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;
 
+    const/4 v4, 0x0
+
     .line 734
     sget v5, Landroidx/appcompat/R$attr;->actionOverflowMenuStyle:I
-
-    const/4 v4, 0x0
 
     move-object v0, p0
 
@@ -94,9 +94,11 @@
 
     iput-object v1, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mActionButtonPopup:Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;
 
+    .line 748
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;
+
     const/4 v1, 0x0
 
-    .line 748
     iput v1, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mOpenSubMenuId:I
 
     .line 750

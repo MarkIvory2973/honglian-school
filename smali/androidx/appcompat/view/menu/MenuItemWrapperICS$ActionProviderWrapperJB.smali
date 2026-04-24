@@ -7,10 +7,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x10
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/appcompat/view/menu/MenuItemWrapperICS;
 .end annotation

@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 239
+    .line 229
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,10 +42,6 @@
 
 .method public getCurrentFraction()F
     .locals 1
-    .annotation build Landroidx/annotation/FloatRange;
-        from = 0.0
-        to = 1.0
-    .end annotation
 
     const/4 v0, 0x0
 
@@ -54,19 +50,6 @@
 
 .method public getCurrentInsets()Landroidx/core/graphics/Insets;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
-    .line 255
-    sget-object v0, Landroidx/core/graphics/Insets;->NONE:Landroidx/core/graphics/Insets;
-
-    return-object v0
-.end method
-
-.method public getHiddenStateInsets()Landroidx/core/graphics/Insets;
-    .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 245
     sget-object v0, Landroidx/core/graphics/Insets;->NONE:Landroidx/core/graphics/Insets;
@@ -74,12 +57,19 @@
     return-object v0
 .end method
 
+.method public getHiddenStateInsets()Landroidx/core/graphics/Insets;
+    .locals 1
+
+    .line 235
+    sget-object v0, Landroidx/core/graphics/Insets;->NONE:Landroidx/core/graphics/Insets;
+
+    return-object v0
+.end method
+
 .method public getShownStateInsets()Landroidx/core/graphics/Insets;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 250
+    .line 240
     sget-object v0, Landroidx/core/graphics/Insets;->NONE:Landroidx/core/graphics/Insets;
 
     return-object v0
@@ -109,32 +99,8 @@
     return v0
 .end method
 
-.method public isReady()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public setInsetsAndAlpha(Landroidx/core/graphics/Insets;FF)V
     .locals 0
-    .param p1    # Landroidx/core/graphics/Insets;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p2    # F
-        .annotation build Landroidx/annotation/FloatRange;
-            from = 0.0
-            to = 1.0
-        .end annotation
-    .end param
-    .param p3    # F
-        .annotation build Landroidx/annotation/FloatRange;
-            from = 0.0
-            to = 1.0
-        .end annotation
-    .end param
 
     return-void
 .end method

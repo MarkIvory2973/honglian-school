@@ -50,12 +50,12 @@
 .method protected calculateTimeForScrolling(I)I
     .locals 1
 
+    const/16 v0, 0x64
+
     .line 192
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/LinearSmoothScroller;->calculateTimeForScrolling(I)I
 
     move-result p1
-
-    const/16 v0, 0x64
 
     invoke-static {v0, p1}, Ljava/lang/Math;->min(II)I
 

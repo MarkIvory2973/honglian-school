@@ -4,16 +4,7 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContentValues.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContentValues.kt\nandroidx/core/content/ContentValuesKt\n*L\n1#1,46:1\n*E\n"
-.end annotation
-
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
     d1 = {
         "\u0000\u001c\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0002\u0008\u0002\u001a;\u0010\u0000\u001a\u00020\u00012.\u0010\u0002\u001a\u0018\u0012\u0014\u0008\u0001\u0012\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u00040\u0003\"\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0004\u00a2\u0006\u0002\u0010\u0007\u00a8\u0006\u0008"
     }
@@ -31,19 +22,16 @@
     k = 0x2
     mv = {
         0x1,
-        0x1,
-        0x10
+        0x8,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method public static final varargs contentValuesOf([Lkotlin/Pair;)Landroid/content/ContentValues;
     .locals 6
-    .param p0    # [Lkotlin/Pair;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -56,21 +44,18 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
     const-string v0, "pairs"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 26
+    .line 28
     new-instance v0, Landroid/content/ContentValues;
 
     array-length v1, p0
 
     invoke-direct {v0, v1}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 27
+    .line 29
     array-length v1, p0
 
     const/4 v2, 0x0
@@ -92,12 +77,12 @@
 
     if-nez v3, :cond_0
 
-    .line 29
+    .line 31
     invoke-virtual {v0, v4}, Landroid/content/ContentValues;->putNull(Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 30
+    .line 32
     :cond_0
     instance-of v5, v3, Ljava/lang/String;
 
@@ -109,7 +94,7 @@
 
     goto :goto_1
 
-    .line 31
+    .line 33
     :cond_1
     instance-of v5, v3, Ljava/lang/Integer;
 
@@ -121,7 +106,7 @@
 
     goto :goto_1
 
-    .line 32
+    .line 34
     :cond_2
     instance-of v5, v3, Ljava/lang/Long;
 
@@ -133,7 +118,7 @@
 
     goto :goto_1
 
-    .line 33
+    .line 35
     :cond_3
     instance-of v5, v3, Ljava/lang/Boolean;
 
@@ -145,7 +130,7 @@
 
     goto :goto_1
 
-    .line 34
+    .line 36
     :cond_4
     instance-of v5, v3, Ljava/lang/Float;
 
@@ -157,7 +142,7 @@
 
     goto :goto_1
 
-    .line 35
+    .line 37
     :cond_5
     instance-of v5, v3, Ljava/lang/Double;
 
@@ -169,7 +154,7 @@
 
     goto :goto_1
 
-    .line 36
+    .line 38
     :cond_6
     instance-of v5, v3, [B
 
@@ -181,7 +166,7 @@
 
     goto :goto_1
 
-    .line 37
+    .line 39
     :cond_7
     instance-of v5, v3, Ljava/lang/Byte;
 
@@ -193,7 +178,7 @@
 
     goto :goto_1
 
-    .line 38
+    .line 40
     :cond_8
     instance-of v5, v3, Ljava/lang/Short;
 
@@ -208,7 +193,7 @@
 
     goto :goto_0
 
-    .line 40
+    .line 42
     :cond_9
     invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -218,16 +203,14 @@
 
     move-result-object p0
 
-    .line 41
+    .line 43
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Illegal value type "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -246,8 +229,6 @@
     move-result-object p0
 
     invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    check-cast v0, Ljava/lang/Throwable;
 
     throw v0
 

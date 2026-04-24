@@ -56,9 +56,6 @@
 
 # instance fields
 .field public final itemView:Landroid/view/View;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 .field mFlags:I
 
@@ -95,9 +92,6 @@
 .end field
 
 .field mPendingAccessibilityState:I
-    .annotation build Landroidx/annotation/VisibleForTesting;
-    .end annotation
-.end field
 
 .field mPosition:I
 
@@ -138,10 +132,6 @@
 
 .method public constructor <init>(Landroid/view/View;)V
     .locals 3
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 11086
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -230,8 +220,6 @@
     iput-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPayloads:Ljava/util/List;
 
     .line 11311
-    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPayloads:Ljava/util/List;
-
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
@@ -1005,25 +993,20 @@
 
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_0
-
     .line 11414
     iget v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mIsRecyclableCount:I
+
+    if-eqz p1, :cond_0
 
     sub-int/2addr v1, v0
 
     goto :goto_0
 
     :cond_0
-    iget v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mIsRecyclableCount:I
-
     add-int/2addr v1, v0
 
     :goto_0
     iput v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mIsRecyclableCount:I
-
-    .line 11415
-    iget v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mIsRecyclableCount:I
 
     if-gez v1, :cond_1
 
@@ -1032,24 +1015,22 @@
     .line 11416
     iput p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mIsRecyclableCount:I
 
-    const-string p1, "View"
-
     .line 11421
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "isRecyclable decremented below 0: unmatched pair of setIsRecyable() calls for "
 
-    const-string v1, "isRecyclable decremented below 0: unmatched pair of setIsRecyable() calls for "
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object v0
+    const-string v0, "View"
 
-    invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1
 
@@ -1070,10 +1051,7 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    .line 11425
-    iget p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mIsRecyclableCount:I
-
-    if-nez p1, :cond_3
+    if-nez v1, :cond_3
 
     .line 11426
     iget p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
@@ -1191,7 +1169,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "{"
+    const-string/jumbo v0, "{"
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1353,11 +1331,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, " not recyclable("
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget v2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mIsRecyclableCount:I
 
@@ -1400,7 +1376,7 @@
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_b
-    const-string v0, "}"
+    const-string/jumbo v0, "}"
 
     .line 11396
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;

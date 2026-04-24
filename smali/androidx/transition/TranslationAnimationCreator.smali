@@ -23,24 +23,6 @@
 
 .method static createAnimation(Landroid/view/View;Landroidx/transition/TransitionValues;IIFFFFLandroid/animation/TimeInterpolator;Landroidx/transition/Transition;)Landroid/animation/Animator;
     .locals 14
-    .param p0    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Landroidx/transition/TransitionValues;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p8    # Landroid/animation/TimeInterpolator;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p9    # Landroidx/transition/Transition;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     move-object v0, p0
 
@@ -138,9 +120,9 @@
     :cond_1
     const/4 v10, 0x2
 
-    .line 72
     new-array v11, v10, [Landroid/animation/PropertyValuesHolder;
 
+    .line 72
     sget-object v12, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
 
     new-array v13, v10, [F

@@ -58,23 +58,21 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 352
+    .line 363
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
     sput-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
-    .line 355
-    sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
-
+    .line 366
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_android_alpha:I
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 356
+    .line 367
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_android_elevation:I
@@ -83,7 +81,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 357
+    .line 368
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_android_rotation:I
@@ -92,7 +90,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 358
+    .line 369
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_android_rotationX:I
@@ -101,7 +99,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 359
+    .line 370
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_android_rotationY:I
@@ -110,7 +108,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 360
+    .line 371
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_android_transformPivotX:I
@@ -119,7 +117,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 361
+    .line 372
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_android_transformPivotY:I
@@ -128,7 +126,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 362
+    .line 373
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_android_scaleX:I
@@ -137,7 +135,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 363
+    .line 374
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_transitionPathRotate:I
@@ -146,7 +144,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 364
+    .line 375
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_transitionEasing:I
@@ -155,7 +153,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 365
+    .line 376
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_motionTarget:I
@@ -164,7 +162,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 366
+    .line 377
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_framePosition:I
@@ -173,7 +171,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 367
+    .line 378
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_curveFit:I
@@ -182,7 +180,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 368
+    .line 379
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_android_scaleY:I
@@ -191,7 +189,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 369
+    .line 380
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_android_translationX:I
@@ -200,7 +198,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 370
+    .line 381
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_android_translationY:I
@@ -209,7 +207,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 371
+    .line 382
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_android_translationZ:I
@@ -218,7 +216,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    .line 372
+    .line 383
     sget-object v0, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     sget v1, Landroidx/constraintlayout/widget/R$styleable;->KeyAttribute_motionProgress:I
@@ -233,16 +231,26 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 332
+    .line 343
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method public static read(Landroidx/constraintlayout/motion/widget/KeyAttributes;Landroid/content/res/TypedArray;)V
-    .locals 6
+    .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "c",
+            "a"
+        }
+    .end annotation
 
-    .line 376
+    .line 387
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->getIndexCount()I
 
     move-result v0
@@ -252,12 +260,12 @@
     :goto_0
     if-ge v1, v0, :cond_3
 
-    .line 378
+    .line 389
     invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->getIndex(I)I
 
     move-result v2
 
-    .line 379
+    .line 390
     sget-object v3, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
     invoke-virtual {v3, v2}, Landroid/util/SparseIntArray;->get(I)I
@@ -266,45 +274,43 @@
 
     packed-switch v3, :pswitch_data_0
 
+    .line 459
     :pswitch_0
-    const-string v3, "KeyAttribute"
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    .line 448
-    new-instance v4, Ljava/lang/StringBuilder;
+    const-string/jumbo v4, "unused attribute 0x"
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "unused attribute 0x"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-static {v2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v5, "   "
+    const-string v4, "   "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v5, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
+    sget-object v4, Landroidx/constraintlayout/motion/widget/KeyAttributes$Loader;->mAttrMap:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v5, v2}, Landroid/util/SparseIntArray;->get(I)I
+    invoke-virtual {v4, v2}, Landroid/util/SparseIntArray;->get(I)I
 
     move-result v2
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
+
+    const-string v3, "KeyAttribute"
 
     invoke-static {v3, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_1
 
-    .line 422
+    .line 433
     :pswitch_1
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$800(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 
@@ -318,7 +324,7 @@
 
     goto/16 :goto_1
 
-    .line 419
+    .line 430
     :pswitch_2
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$700(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 
@@ -332,7 +338,7 @@
 
     goto/16 :goto_1
 
-    .line 445
+    .line 456
     :pswitch_3
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$1500(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 
@@ -346,15 +352,8 @@
 
     goto/16 :goto_1
 
-    .line 440
+    .line 452
     :pswitch_4
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v4, 0x15
-
-    if-lt v3, v4, :cond_2
-
-    .line 441
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$1400(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 
     move-result v3
@@ -367,7 +366,7 @@
 
     goto/16 :goto_1
 
-    .line 437
+    .line 448
     :pswitch_5
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$1300(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 
@@ -381,7 +380,7 @@
 
     goto/16 :goto_1
 
-    .line 434
+    .line 445
     :pswitch_6
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$1200(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 
@@ -395,7 +394,7 @@
 
     goto/16 :goto_1
 
-    .line 428
+    .line 439
     :pswitch_7
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$1000(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 
@@ -409,7 +408,7 @@
 
     goto/16 :goto_1
 
-    .line 407
+    .line 418
     :pswitch_8
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$300(Landroidx/constraintlayout/motion/widget/KeyAttributes;)I
 
@@ -423,7 +422,7 @@
 
     goto/16 :goto_1
 
-    .line 395
+    .line 406
     :pswitch_9
     iget v3, p0, Landroidx/constraintlayout/motion/widget/KeyAttributes;->mFramePosition:I
 
@@ -435,13 +434,13 @@
 
     goto/16 :goto_1
 
-    .line 381
+    .line 392
     :pswitch_a
     sget-boolean v3, Landroidx/constraintlayout/motion/widget/MotionLayout;->IS_IN_EDIT_MODE:Z
 
     if-eqz v3, :cond_0
 
-    .line 382
+    .line 393
     iget v3, p0, Landroidx/constraintlayout/motion/widget/KeyAttributes;->mTargetId:I
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
@@ -450,14 +449,14 @@
 
     iput v3, p0, Landroidx/constraintlayout/motion/widget/KeyAttributes;->mTargetId:I
 
-    .line 383
+    .line 394
     iget v3, p0, Landroidx/constraintlayout/motion/widget/KeyAttributes;->mTargetId:I
 
     const/4 v4, -0x1
 
     if-ne v3, v4, :cond_2
 
-    .line 384
+    .line 395
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v2
@@ -466,7 +465,7 @@
 
     goto/16 :goto_1
 
-    .line 387
+    .line 398
     :cond_0
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
@@ -478,7 +477,7 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 388
+    .line 399
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v2
@@ -487,7 +486,7 @@
 
     goto :goto_1
 
-    .line 390
+    .line 401
     :cond_1
     iget v3, p0, Landroidx/constraintlayout/motion/widget/KeyAttributes;->mTargetId:I
 
@@ -499,7 +498,7 @@
 
     goto :goto_1
 
-    .line 425
+    .line 436
     :pswitch_b
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -509,7 +508,7 @@
 
     goto :goto_1
 
-    .line 431
+    .line 442
     :pswitch_c
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$1100(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 
@@ -523,7 +522,7 @@
 
     goto :goto_1
 
-    .line 410
+    .line 421
     :pswitch_d
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$400(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 
@@ -537,7 +536,7 @@
 
     goto :goto_1
 
-    .line 416
+    .line 427
     :pswitch_e
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$600(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 
@@ -551,7 +550,7 @@
 
     goto :goto_1
 
-    .line 413
+    .line 424
     :pswitch_f
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$500(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 
@@ -565,7 +564,7 @@
 
     goto :goto_1
 
-    .line 404
+    .line 415
     :pswitch_10
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$200(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 
@@ -579,7 +578,7 @@
 
     goto :goto_1
 
-    .line 401
+    .line 412
     :pswitch_11
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$100(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 
@@ -593,7 +592,7 @@
 
     goto :goto_1
 
-    .line 398
+    .line 409
     :pswitch_12
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyAttributes;->access$000(Landroidx/constraintlayout/motion/widget/KeyAttributes;)F
 

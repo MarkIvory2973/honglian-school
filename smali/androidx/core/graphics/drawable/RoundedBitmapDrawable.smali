@@ -102,18 +102,13 @@
     :cond_0
     iput-object p2, p0, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 388
-    iget-object p1, p0, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
-
-    if-eqz p1, :cond_1
+    if-eqz p2, :cond_1
 
     .line 389
     invoke-direct {p0}, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->computeBitmapSize()V
 
     .line 390
     new-instance p1, Landroid/graphics/BitmapShader;
-
-    iget-object p2, p0, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
     sget-object v0, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
@@ -216,10 +211,6 @@
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 4
-    .param p1    # Landroid/graphics/Canvas;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 260
     iget-object v0, p0, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
@@ -241,14 +232,14 @@
 
     if-nez v1, :cond_1
 
-    const/4 v1, 0x0
-
     .line 267
-    iget-object v2, p0, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->mDstRect:Landroid/graphics/Rect;
+    iget-object v1, p0, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->mDstRect:Landroid/graphics/Rect;
 
-    iget-object v3, p0, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v2, p0, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->mPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+    const/4 v3, 0x0
+
+    invoke-virtual {p1, v0, v3, v1, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
     goto :goto_0
 
@@ -281,8 +272,6 @@
 
 .method public final getBitmap()Landroid/graphics/Bitmap;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 80
     iget-object v0, p0, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
@@ -345,17 +334,17 @@
     .line 371
     iget v0, p0, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->mGravity:I
 
-    const/4 v1, -0x3
+    const/16 v1, 0x77
 
-    const/16 v2, 0x77
+    const/4 v2, -0x3
 
-    if-ne v0, v2, :cond_3
+    if-ne v0, v1, :cond_2
 
     iget-boolean v0, p0, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->mIsCircular:Z
 
     if-eqz v0, :cond_0
 
-    goto :goto_1
+    goto :goto_0
 
     .line 374
     :cond_0
@@ -377,9 +366,9 @@
 
     move-result v0
 
-    const/16 v2, 0xff
+    const/16 v1, 0xff
 
-    if-lt v0, v2, :cond_2
+    if-lt v0, v1, :cond_2
 
     iget v0, p0, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->mCornerRadius:F
 
@@ -393,21 +382,15 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, -0x1
+    const/4 v2, -0x1
 
     :cond_2
     :goto_0
-    return v1
-
-    :cond_3
-    :goto_1
-    return v1
+    return v2
 .end method
 
 .method public final getPaint()Landroid/graphics/Paint;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 72
     iget-object v0, p0, Landroidx/core/graphics/drawable/RoundedBitmapDrawable;->mPaint:Landroid/graphics/Paint;
@@ -720,10 +703,6 @@
 
 .method public setTargetDensity(Landroid/graphics/Canvas;)V
     .locals 0
-    .param p1    # Landroid/graphics/Canvas;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 99
     invoke-virtual {p1}, Landroid/graphics/Canvas;->getDensity()I
@@ -737,10 +716,6 @@
 
 .method public setTargetDensity(Landroid/util/DisplayMetrics;)V
     .locals 0
-    .param p1    # Landroid/util/DisplayMetrics;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 111
     iget p1, p1, Landroid/util/DisplayMetrics;->densityDpi:I

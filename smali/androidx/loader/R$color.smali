@@ -1,6 +1,5 @@
 .class public final Landroidx/loader/R$color;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -15,20 +14,19 @@
 
 
 # static fields
-.field public static final notification_action_color_filter:I = 0x7f0600cd
+.field public static final notification_action_color_filter:I = 0x7f05032f
 
-.field public static final notification_icon_bg_color:I = 0x7f0600ce
+.field public static final notification_icon_bg_color:I = 0x7f050330
 
-.field public static final ripple_material_light:I = 0x7f0600dc
+.field public static final ripple_material_light:I = 0x7f05033e
 
-.field public static final secondary_text_default_material_light:I = 0x7f0600de
+.field public static final secondary_text_default_material_light:I = 0x7f050340
 
 
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
-    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

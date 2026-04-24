@@ -39,14 +39,8 @@
 .field private mFakeDragging:Z
 
 .field private final mLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 .field private final mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 .field private mScrollHappened:Z
 
@@ -57,18 +51,11 @@
 .field private mTarget:I
 
 .field private final mViewPager:Landroidx/viewpager2/widget/ViewPager2;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 
 # direct methods
 .method constructor <init>(Landroidx/viewpager2/widget/ViewPager2;)V
     .locals 0
-    .param p1    # Landroidx/viewpager2/widget/ViewPager2;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 77
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -77,15 +64,11 @@
     iput-object p1, p0, Landroidx/viewpager2/widget/ScrollEventAdapter;->mViewPager:Landroidx/viewpager2/widget/ViewPager2;
 
     .line 79
-    iget-object p1, p0, Landroidx/viewpager2/widget/ScrollEventAdapter;->mViewPager:Landroidx/viewpager2/widget/ViewPager2;
-
     iget-object p1, p1, Landroidx/viewpager2/widget/ViewPager2;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     iput-object p1, p0, Landroidx/viewpager2/widget/ScrollEventAdapter;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     .line 81
-    iget-object p1, p0, Landroidx/viewpager2/widget/ScrollEventAdapter;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
-
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     move-result-object p1
@@ -433,30 +416,30 @@
 
     add-int/2addr v5, v2
 
-    add-int/2addr v3, v5
+    add-int/2addr v5, v3
 
     .line 254
-    iget-object v5, p0, Landroidx/viewpager2/widget/ScrollEventAdapter;->mLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
+    iget-object v3, p0, Landroidx/viewpager2/widget/ScrollEventAdapter;->mLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    invoke-virtual {v5}, Landroidx/recyclerview/widget/LinearLayoutManager;->getOrientation()I
+    invoke-virtual {v3}, Landroidx/recyclerview/widget/LinearLayoutManager;->getOrientation()I
 
-    move-result v5
+    move-result v3
 
     const/4 v7, 0x1
 
     const/4 v8, 0x0
 
-    if-nez v5, :cond_3
+    if-nez v3, :cond_3
 
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
     goto :goto_0
 
     :cond_3
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     :goto_0
-    if-eqz v5, :cond_4
+    if-eqz v3, :cond_5
 
     .line 258
     invoke-virtual {v1}, Landroid/view/View;->getLeft()I
@@ -480,14 +463,17 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_4
 
     neg-int v1, v1
+
+    :cond_4
+    move v6, v5
 
     goto :goto_1
 
     .line 264
-    :cond_4
+    :cond_5
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
 
     move-result v1
@@ -502,9 +488,6 @@
 
     sub-int/2addr v1, v2
 
-    move v3, v6
-
-    :cond_5
     :goto_1
     neg-int v1, v1
 
@@ -567,7 +550,7 @@
     throw v1
 
     :cond_7
-    if-nez v3, :cond_8
+    if-nez v6, :cond_8
 
     const/4 v1, 0x0
 
@@ -579,7 +562,7 @@
 
     int-to-float v1, v1
 
-    int-to-float v2, v3
+    int-to-float v2, v6
 
     div-float/2addr v1, v2
 
@@ -813,10 +796,6 @@
 
 .method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
     .locals 5
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 105
     iget p1, p0, Landroidx/viewpager2/widget/ScrollEventAdapter;->mAdapterState:I
@@ -1005,10 +984,6 @@
 
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 3
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/4 p1, 0x1
 
@@ -1091,14 +1066,12 @@
     iput p2, p0, Landroidx/viewpager2/widget/ScrollEventAdapter;->mTarget:I
 
     .line 189
-    iget p2, p0, Landroidx/viewpager2/widget/ScrollEventAdapter;->mDragStartPosition:I
+    iget p3, p0, Landroidx/viewpager2/widget/ScrollEventAdapter;->mDragStartPosition:I
 
-    iget p3, p0, Landroidx/viewpager2/widget/ScrollEventAdapter;->mTarget:I
-
-    if-eq p2, p3, :cond_6
+    if-eq p3, p2, :cond_6
 
     .line 190
-    invoke-direct {p0, p3}, Landroidx/viewpager2/widget/ScrollEventAdapter;->dispatchSelected(I)V
+    invoke-direct {p0, p2}, Landroidx/viewpager2/widget/ScrollEventAdapter;->dispatchSelected(I)V
 
     goto :goto_4
 

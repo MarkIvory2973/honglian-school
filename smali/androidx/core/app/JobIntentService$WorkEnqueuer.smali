@@ -26,10 +26,10 @@
 .method constructor <init>(Landroid/content/ComponentName;)V
     .locals 0
 
-    .line 117
+    .line 122
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 118
+    .line 123
     iput-object p1, p0, Landroidx/core/app/JobIntentService$WorkEnqueuer;->mComponentName:Landroid/content/ComponentName;
 
     return-void
@@ -43,22 +43,22 @@
 .method ensureJobId(I)V
     .locals 3
 
-    .line 122
+    .line 127
     iget-boolean v0, p0, Landroidx/core/app/JobIntentService$WorkEnqueuer;->mHasJobId:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    .line 123
+    .line 128
     iput-boolean v0, p0, Landroidx/core/app/JobIntentService$WorkEnqueuer;->mHasJobId:Z
 
-    .line 124
+    .line 129
     iput p1, p0, Landroidx/core/app/JobIntentService$WorkEnqueuer;->mJobId:I
 
     goto :goto_0
 
-    .line 125
+    .line 130
     :cond_0
     iget v0, p0, Landroidx/core/app/JobIntentService$WorkEnqueuer;->mJobId:I
 
@@ -67,17 +67,15 @@
     :goto_0
     return-void
 
-    .line 126
+    .line 131
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Given job ID "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

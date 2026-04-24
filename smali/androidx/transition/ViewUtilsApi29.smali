@@ -3,12 +3,6 @@
 .source "ViewUtilsApi29.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x1d
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .locals 0
@@ -23,13 +17,9 @@
 # virtual methods
 .method public getTransitionAlpha(Landroid/view/View;)F
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 36
-    invoke-virtual {p1}, Landroid/view/View;->getTransitionAlpha()F
+    invoke-static {p1}, Landroidx/print/PrintHelper$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/View;)F
 
     move-result p1
 
@@ -38,90 +28,54 @@
 
 .method public setAnimationMatrix(Landroid/view/View;Landroid/graphics/Matrix;)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Matrix;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 61
-    invoke-virtual {p1, p2}, Landroid/view/View;->setAnimationMatrix(Landroid/graphics/Matrix;)V
+    invoke-static {p1, p2}, Landroidx/print/PrintHelper$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/View;Landroid/graphics/Matrix;)V
 
     return-void
 .end method
 
 .method public setLeftTopRightBottom(Landroid/view/View;IIII)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 46
-    invoke-virtual {p1, p2, p3, p4, p5}, Landroid/view/View;->setLeftTopRightBottom(IIII)V
+    invoke-static {p1, p2, p3, p4, p5}, Landroidx/print/PrintHelper$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/View;IIII)V
 
     return-void
 .end method
 
 .method public setTransitionAlpha(Landroid/view/View;F)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 31
-    invoke-virtual {p1, p2}, Landroid/view/View;->setTransitionAlpha(F)V
+    invoke-static {p1, p2}, Landroidx/print/PrintHelper$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/View;F)V
 
     return-void
 .end method
 
 .method public setTransitionVisibility(Landroid/view/View;I)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 41
-    invoke-virtual {p1, p2}, Landroid/view/View;->setTransitionVisibility(I)V
+    invoke-static {p1, p2}, Landroidx/transition/ViewUtilsApi23$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/View;I)V
 
     return-void
 .end method
 
 .method public transformMatrixToGlobal(Landroid/view/View;Landroid/graphics/Matrix;)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Matrix;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 51
-    invoke-virtual {p1, p2}, Landroid/view/View;->transformMatrixToGlobal(Landroid/graphics/Matrix;)V
+    invoke-static {p1, p2}, Landroidx/print/PrintHelper$$ExternalSyntheticApiModelOutline0;->m$2(Landroid/view/View;Landroid/graphics/Matrix;)V
 
     return-void
 .end method
 
 .method public transformMatrixToLocal(Landroid/view/View;Landroid/graphics/Matrix;)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Matrix;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 56
-    invoke-virtual {p1, p2}, Landroid/view/View;->transformMatrixToLocal(Landroid/graphics/Matrix;)V
+    invoke-static {p1, p2}, Landroidx/print/PrintHelper$$ExternalSyntheticApiModelOutline0;->m$1(Landroid/view/View;Landroid/graphics/Matrix;)V
 
     return-void
 .end method

@@ -3,14 +3,6 @@
 .source "TintContextWrapper.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
-
 # static fields
 .field private static final CACHE_LOCK:Ljava/lang/Object;
 
@@ -48,10 +40,6 @@
 
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 92
     invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
@@ -75,8 +63,6 @@
     iput-object v0, p0, Landroidx/appcompat/widget/TintContextWrapper;->mResources:Landroid/content/res/Resources;
 
     .line 98
-    iget-object v0, p0, Landroidx/appcompat/widget/TintContextWrapper;->mResources:Landroid/content/res/Resources;
-
     invoke-virtual {v0}, Landroid/content/res/Resources;->newTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -84,8 +70,6 @@
     iput-object v0, p0, Landroidx/appcompat/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
     .line 99
-    iget-object v0, p0, Landroidx/appcompat/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
-
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object p1
@@ -117,17 +101,13 @@
 
 .method private static shouldWrap(Landroid/content/Context;)Z
     .locals 2
-    .param p0    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 78
     instance-of v0, p0, Landroidx/appcompat/widget/TintContextWrapper;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_1
 
     .line 79
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -136,7 +116,7 @@
 
     instance-of v0, v0, Landroidx/appcompat/widget/TintResources;
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_1
 
     .line 80
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -151,35 +131,21 @@
 
     .line 85
     :cond_0
-    sget p0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v0, 0x15
-
-    if-lt p0, v0, :cond_1
-
     invoke-static {}, Landroidx/appcompat/widget/VectorEnabledTintResources;->shouldBeUsed()Z
 
     move-result p0
 
-    if-eqz p0, :cond_2
+    if-eqz p0, :cond_1
 
-    :cond_1
     const/4 v1, 0x1
 
-    :cond_2
-    return v1
-
-    :cond_3
+    :cond_1
     :goto_0
     return v1
 .end method
 
 .method public static wrap(Landroid/content/Context;)Landroid/content/Context;
     .locals 4
-    .param p0    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 46
     invoke-static {p0}, Landroidx/appcompat/widget/TintContextWrapper;->shouldWrap(Landroid/content/Context;)Z
@@ -210,8 +176,6 @@
 
     .line 52
     :cond_0
-    sget-object v1, Landroidx/appcompat/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
-
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1

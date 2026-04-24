@@ -39,22 +39,18 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 6486
+    .line 8318
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6474
+    .line 8306
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mMessages:Ljava/util/List;
 
-    .line 6487
+    .line 8319
     iput-object p1, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mParticipant:Ljava/lang/String;
 
     return-void
@@ -64,16 +60,10 @@
 # virtual methods
 .method public addMessage(Ljava/lang/String;)Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;
     .locals 1
-    .param p1    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     if-eqz p1, :cond_0
 
-    .line 6500
+    .line 8332
     iget-object v0, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mMessages:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -84,10 +74,8 @@
 
 .method public build()Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation;
     .locals 9
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 6559
+    .line 8391
     iget-object v0, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mMessages:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -104,18 +92,14 @@
 
     check-cast v2, [Ljava/lang/String;
 
-    const/4 v0, 0x1
-
-    .line 6560
-    new-array v6, v0, [Ljava/lang/String;
-
+    .line 8392
     iget-object v0, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mParticipant:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    filled-new-array {v0}, [Ljava/lang/String;
 
-    aput-object v0, v6, v1
+    move-result-object v6
 
-    .line 6561
+    .line 8393
     new-instance v0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation;
 
     iget-object v3, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mRemoteInput:Landroidx/core/app/RemoteInput;
@@ -135,10 +119,8 @@
 
 .method public setLatestTimestamp(J)Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;
     .locals 0
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 6549
+    .line 8381
     iput-wide p1, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mLatestTimestamp:J
 
     return-object p0
@@ -146,14 +128,8 @@
 
 .method public setReadPendingIntent(Landroid/app/PendingIntent;)Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;
     .locals 0
-    .param p1    # Landroid/app/PendingIntent;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 6533
+    .line 8365
     iput-object p1, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mReadPendingIntent:Landroid/app/PendingIntent;
 
     return-object p0
@@ -161,21 +137,11 @@
 
 .method public setReplyAction(Landroid/app/PendingIntent;Landroidx/core/app/RemoteInput;)Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;
     .locals 0
-    .param p1    # Landroid/app/PendingIntent;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/core/app/RemoteInput;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 6518
+    .line 8350
     iput-object p2, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mRemoteInput:Landroidx/core/app/RemoteInput;
 
-    .line 6519
+    .line 8351
     iput-object p1, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mReplyPendingIntent:Landroid/app/PendingIntent;
 
     return-object p0

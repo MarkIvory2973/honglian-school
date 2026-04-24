@@ -7,12 +7,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/SuppressLint;
-    value = {
-        "VisibleForTests"
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/recyclerview/widget/GapWorker;
 .end annotation
@@ -64,16 +58,14 @@
 
     const/4 v1, 0x4
 
-    .line 123
     new-array v1, v1, [I
 
+    .line 123
     iput-object v1, p0, Landroidx/recyclerview/widget/GapWorker$LayoutPrefetchRegistryImpl;->mPrefetchArray:[I
-
-    .line 124
-    iget-object v1, p0, Landroidx/recyclerview/widget/GapWorker$LayoutPrefetchRegistryImpl;->mPrefetchArray:[I
 
     const/4 v2, -0x1
 
+    .line 124
     invoke-static {v1, v2}, Ljava/util/Arrays;->fill([II)V
 
     goto :goto_0
@@ -92,8 +84,6 @@
     iput-object v2, p0, Landroidx/recyclerview/widget/GapWorker$LayoutPrefetchRegistryImpl;->mPrefetchArray:[I
 
     .line 128
-    iget-object v2, p0, Landroidx/recyclerview/widget/GapWorker$LayoutPrefetchRegistryImpl;->mPrefetchArray:[I
-
     array-length v3, v1
 
     const/4 v4, 0x0

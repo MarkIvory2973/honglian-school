@@ -16,6 +16,3 @@
 
 # static fields
 .field public static final PATTERN_PATH_DATA:I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field

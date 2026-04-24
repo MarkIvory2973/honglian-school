@@ -195,7 +195,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 8
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -204,7 +204,9 @@
 
     const v0, 0x5f4e5446
 
-    const/4 v1, 0x1
+    const-string v1, "android.app.smdt.ISmdtManager"
+
+    const/4 v2, 0x1
 
     if-eq p1, v0, :cond_d
 
@@ -219,11 +221,9 @@
 
     return p1
 
-    :pswitch_0
-    const-string p1, "android.app.smdt.ISmdtManager"
-
     .line 542
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_0
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 544
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
@@ -240,13 +240,11 @@
     .line 546
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_1
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 532
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_1
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 534
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -264,13 +262,11 @@
     .line 537
     invoke-virtual {p3, p1, p2}, Landroid/os/Parcel;->writeDouble(D)V
 
-    return v1
-
-    :pswitch_2
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 524
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_2
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 525
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->getSystemAvailableMemory()Ljava/lang/String;
@@ -283,13 +279,11 @@
     .line 527
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_3
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 516
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_3
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 517
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->getSystemCpuUsed()D
@@ -302,13 +296,11 @@
     .line 519
     invoke-virtual {p3, p1, p2}, Landroid/os/Parcel;->writeDouble(D)V
 
-    return v1
-
-    :pswitch_4
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 508
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_4
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 509
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->getCpuFreq()Ljava/lang/String;
@@ -321,13 +313,11 @@
     .line 511
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_5
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 500
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_5
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 501
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->getInstallWhiteList()Ljava/lang/String;
@@ -340,13 +330,11 @@
     .line 503
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_6
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 491
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_6
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 493
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -359,13 +347,11 @@
     .line 495
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_7
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 483
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_7
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 484
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->isAllowUninstall()Z
@@ -378,13 +364,11 @@
     .line 486
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    return v1
-
-    :pswitch_8
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 474
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_8
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 476
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -402,13 +386,11 @@
     .line 478
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_9
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 466
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_9
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 467
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->isAllowinstall()Z
@@ -421,13 +403,11 @@
     .line 469
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    return v1
-
-    :pswitch_a
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 457
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_a
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 459
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -445,13 +425,11 @@
     .line 461
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_b
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 446
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_b
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 448
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -473,13 +451,11 @@
     .line 452
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_c
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 433
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_c
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 435
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -506,13 +482,11 @@
     .line 441
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_d
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 424
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_d
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 426
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -530,13 +504,11 @@
     .line 428
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_e
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 415
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_e
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 417
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -554,13 +526,11 @@
     .line 419
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_f
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 406
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_f
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 408
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -578,13 +548,11 @@
     .line 410
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_10
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 398
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_10
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 399
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->getNtpServer()Ljava/lang/String;
@@ -597,13 +565,11 @@
     .line 401
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_11
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 389
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_11
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 391
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -616,13 +582,11 @@
     .line 393
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_12
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 380
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_12
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 382
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -640,13 +604,11 @@
     .line 384
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_13
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 371
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_13
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 373
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -664,13 +626,11 @@
     .line 375
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_14
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 362
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_14
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 364
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -688,13 +648,11 @@
     .line 366
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_15
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 354
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_15
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 355
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->smdtGetEthernetState()Z
@@ -707,13 +665,11 @@
     .line 357
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    return v1
-
-    :pswitch_16
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 346
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_16
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 347
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->smdtGetEthIPAddress()Ljava/lang/String;
@@ -726,13 +682,11 @@
     .line 349
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_17
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 333
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_17
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 335
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -770,13 +724,11 @@
     .line 341
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_18
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 323
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_18
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 325
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -799,13 +751,11 @@
     .line 328
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    return v1
-
-    :pswitch_19
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 316
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_19
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 317
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->smdtRebootRecovery()V
@@ -813,13 +763,11 @@
     .line 318
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_1a
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 307
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_1a
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 309
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -832,43 +780,41 @@
     .line 311
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_1b
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 289
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_1b
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 291
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v3
+    move-result v4
 
     .line 293
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v4
+    move-result v5
 
     .line 295
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v5
+    move-result v6
 
     .line 297
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v7
 
     .line 299
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v7
+    move-result v8
 
-    move-object v2, p0
+    move-object v3, p0
 
     .line 300
-    invoke-virtual/range {v2 .. v7}, Landroid/app/smdt/ISmdtManager$Stub;->setTime(IIIII)I
+    invoke-virtual/range {v3 .. v8}, Landroid/app/smdt/ISmdtManager$Stub;->setTime(IIIII)I
 
     move-result p1
 
@@ -878,13 +824,11 @@
     .line 302
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    return v1
-
-    :pswitch_1c
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 280
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_1c
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 282
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -897,13 +841,11 @@
     .line 284
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_1d
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 270
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_1d
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 272
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -926,13 +868,11 @@
     .line 275
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    return v1
-
-    :pswitch_1e
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 260
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_1e
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 262
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -950,13 +890,11 @@
     .line 265
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_1f
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 248
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_1f
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 250
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -979,13 +917,11 @@
     .line 255
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    return v1
-
-    :pswitch_20
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 238
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_20
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 240
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -1003,13 +939,11 @@
     .line 243
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    return v1
-
-    :pswitch_21
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 229
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_21
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 231
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -1022,13 +956,11 @@
     .line 233
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_22
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 220
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_22
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 222
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -1041,13 +973,11 @@
     .line 224
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_23
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 212
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_23
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 213
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->getInternalStorageMemory()Ljava/lang/String;
@@ -1060,13 +990,11 @@
     .line 215
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_24
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 204
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_24
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 205
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->getRunningMemory()Ljava/lang/String;
@@ -1079,13 +1007,11 @@
     .line 207
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_25
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 196
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_25
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 197
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->getFormattedKernelVersion()Ljava/lang/String;
@@ -1098,13 +1024,11 @@
     .line 199
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_26
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 180
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_26
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 182
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -1122,10 +1046,10 @@
     if-eqz p1, :cond_c
 
     .line 186
-    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 187
-    invoke-virtual {p1, p3, v1}, Landroid/os/ParcelFileDescriptor;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {p1, p3, v2}, Landroid/os/ParcelFileDescriptor;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto :goto_1
 
@@ -1134,13 +1058,11 @@
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     :goto_1
-    return v1
-
-    :pswitch_27
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 172
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_27
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 173
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->getSerialPorts()[Ljava/lang/String;
@@ -1153,13 +1075,11 @@
     .line 175
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_28
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 162
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_28
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 164
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -1177,13 +1097,11 @@
     .line 167
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_29
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 153
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_29
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 155
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -1196,13 +1114,11 @@
     .line 157
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_2a
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 143
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_2a
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 145
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -1220,13 +1136,11 @@
     .line 148
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_2b
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 135
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_2b
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 136
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->smdtGetSDcardPath()Ljava/lang/String;
@@ -1239,13 +1153,11 @@
     .line 138
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_2c
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 127
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_2c
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 128
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->getAndroidBoardType()Ljava/lang/String;
@@ -1258,13 +1170,11 @@
     .line 130
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_2d
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 119
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_2d
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 120
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->getMCUVersion()Ljava/lang/String;
@@ -1277,13 +1187,11 @@
     .line 122
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_2e
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 111
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_2e
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 112
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->getCurrentNetType()Ljava/lang/String;
@@ -1296,13 +1204,11 @@
     .line 114
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
-
-    :pswitch_2f
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 98
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_2f
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 100
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -1325,13 +1231,11 @@
     .line 106
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_30
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 87
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_30
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 89
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -1349,13 +1253,11 @@
     .line 93
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_31
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 78
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_31
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 80
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -1368,13 +1270,11 @@
     .line 82
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_32
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 63
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_32
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 65
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -1402,13 +1302,11 @@
     .line 73
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_33
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 54
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_33
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 56
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -1421,13 +1319,11 @@
     .line 58
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :pswitch_34
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 47
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :pswitch_34
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 48
     invoke-virtual {p0}, Landroid/app/smdt/ISmdtManager$Stub;->shutdown()V
@@ -1435,15 +1331,13 @@
     .line 49
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v1
-
-    :cond_d
-    const-string p1, "android.app.smdt.ISmdtManager"
+    return v2
 
     .line 42
-    invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    :cond_d
+    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return v1
+    return v2
 
     nop
 

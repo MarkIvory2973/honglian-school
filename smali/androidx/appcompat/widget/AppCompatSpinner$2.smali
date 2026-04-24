@@ -25,7 +25,7 @@
 .method constructor <init>(Landroidx/appcompat/widget/AppCompatSpinner;)V
     .locals 0
 
-    .line 632
+    .line 640
     iput-object p1, p0, Landroidx/appcompat/widget/AppCompatSpinner$2;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,9 +36,9 @@
 
 # virtual methods
 .method public onGlobalLayout()V
-    .locals 3
+    .locals 1
 
-    .line 635
+    .line 643
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner$2;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;
 
     invoke-virtual {v0}, Landroidx/appcompat/widget/AppCompatSpinner;->getInternalPopup()Landroidx/appcompat/widget/AppCompatSpinner$SpinnerPopup;
@@ -51,12 +51,12 @@
 
     if-nez v0, :cond_0
 
-    .line 636
+    .line 644
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner$2;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;
 
     invoke-virtual {v0}, Landroidx/appcompat/widget/AppCompatSpinner;->showPopup()V
 
-    .line 638
+    .line 646
     :cond_0
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner$2;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;
 
@@ -64,25 +64,11 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
-    .line 640
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 649
+    invoke-static {v0, p0}, Landroidx/appcompat/widget/AppCompatSpinner$Api16Impl;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver;Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    const/16 v2, 0x10
-
-    if-lt v1, v2, :cond_1
-
-    .line 641
-    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
-
-    goto :goto_0
-
-    .line 643
     :cond_1
-    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
-
-    :cond_2
-    :goto_0
     return-void
 .end method

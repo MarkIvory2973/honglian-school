@@ -254,11 +254,11 @@
     .line 409
     iget-object v0, p0, Landroidx/recyclerview/widget/OrientationHelper$2;->mLayoutManager:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
-    iget-object v1, p0, Landroidx/recyclerview/widget/OrientationHelper$2;->mTmpRect:Landroid/graphics/Rect;
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    iget-object v2, p0, Landroidx/recyclerview/widget/OrientationHelper$2;->mTmpRect:Landroid/graphics/Rect;
 
-    invoke-virtual {v0, p1, v2, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getTransformedBoundingBox(Landroid/view/View;ZLandroid/graphics/Rect;)V
+    invoke-virtual {v0, p1, v1, v2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getTransformedBoundingBox(Landroid/view/View;ZLandroid/graphics/Rect;)V
 
     .line 410
     iget-object p1, p0, Landroidx/recyclerview/widget/OrientationHelper$2;->mTmpRect:Landroid/graphics/Rect;
@@ -274,11 +274,11 @@
     .line 415
     iget-object v0, p0, Landroidx/recyclerview/widget/OrientationHelper$2;->mLayoutManager:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
-    iget-object v1, p0, Landroidx/recyclerview/widget/OrientationHelper$2;->mTmpRect:Landroid/graphics/Rect;
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    iget-object v2, p0, Landroidx/recyclerview/widget/OrientationHelper$2;->mTmpRect:Landroid/graphics/Rect;
 
-    invoke-virtual {v0, p1, v2, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getTransformedBoundingBox(Landroid/view/View;ZLandroid/graphics/Rect;)V
+    invoke-virtual {v0, p1, v1, v2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getTransformedBoundingBox(Landroid/view/View;ZLandroid/graphics/Rect;)V
 
     .line 416
     iget-object p1, p0, Landroidx/recyclerview/widget/OrientationHelper$2;->mTmpRect:Landroid/graphics/Rect;

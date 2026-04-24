@@ -24,10 +24,6 @@
 # direct methods
 .method constructor <init>(Landroid/os/Handler;)V
     .locals 0
-    .param p1    # Landroid/os/Handler;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,10 +44,6 @@
 # virtual methods
 .method public execute(Ljava/lang/Runnable;)V
     .locals 2
-    .param p1    # Ljava/lang/Runnable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 116
     iget-object v0, p0, Landroidx/core/provider/RequestExecutor$HandlerExecutor;->mHandler:Landroid/os/Handler;

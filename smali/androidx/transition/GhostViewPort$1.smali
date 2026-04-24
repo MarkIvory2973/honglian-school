@@ -82,6 +82,8 @@
     iput-object v1, v0, Landroidx/transition/GhostViewPort;->mStartParent:Landroid/view/ViewGroup;
 
     .line 61
+    iget-object v0, p0, Landroidx/transition/GhostViewPort$1;->this$0:Landroidx/transition/GhostViewPort;
+
     iput-object v1, v0, Landroidx/transition/GhostViewPort;->mStartView:Landroid/view/View;
 
     :cond_0

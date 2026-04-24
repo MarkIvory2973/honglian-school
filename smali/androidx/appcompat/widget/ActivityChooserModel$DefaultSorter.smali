@@ -38,10 +38,10 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 921
+    .line 922
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 918
+    .line 919
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -68,13 +68,13 @@
         }
     .end annotation
 
-    .line 927
+    .line 928
     iget-object p1, p0, Landroidx/appcompat/widget/ActivityChooserModel$DefaultSorter;->mPackageNameToActivityMap:Ljava/util/Map;
 
-    .line 929
+    .line 930
     invoke-interface {p1}, Ljava/util/Map;->clear()V
 
-    .line 931
+    .line 932
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v0
@@ -84,7 +84,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 933
+    .line 934
     invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -93,10 +93,10 @@
 
     const/4 v3, 0x0
 
-    .line 934
+    .line 935
     iput v3, v2, Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;->weight:F
 
-    .line 935
+    .line 936
     new-instance v3, Landroid/content/ComponentName;
 
     iget-object v4, v2, Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;->resolveInfo:Landroid/content/pm/ResolveInfo;
@@ -113,14 +113,14 @@
 
     invoke-direct {v3, v4, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 938
+    .line 939
     invoke-interface {p1, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 941
+    .line 942
     :cond_0
     invoke-interface {p3}, Ljava/util/List;->size()I
 
@@ -133,17 +133,17 @@
     :goto_1
     if-ltz v0, :cond_2
 
-    .line 944
+    .line 945
     invoke-interface {p3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;
 
-    .line 945
+    .line 946
     iget-object v3, v2, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
 
-    .line 946
+    .line 947
     invoke-interface {p1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -152,7 +152,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 948
+    .line 949
     iget v4, v3, Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;->weight:F
 
     iget v2, v2, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->weight:F
@@ -172,7 +172,7 @@
 
     goto :goto_1
 
-    .line 953
+    .line 954
     :cond_2
     invoke-static {p2}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 

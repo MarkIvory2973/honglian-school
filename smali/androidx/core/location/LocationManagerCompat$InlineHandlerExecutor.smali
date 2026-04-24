@@ -1,4 +1,4 @@
-.class Landroidx/core/location/LocationManagerCompat$InlineHandlerExecutor;
+.class final Landroidx/core/location/LocationManagerCompat$InlineHandlerExecutor;
 .super Ljava/lang/Object;
 .source "LocationManagerCompat.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x1a
     name = "InlineHandlerExecutor"
 .end annotation
 
@@ -24,15 +24,11 @@
 # direct methods
 .method constructor <init>(Landroid/os/Handler;)V
     .locals 0
-    .param p1    # Landroid/os/Handler;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 528
+    .line 1058
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 529
+    .line 1059
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -48,12 +44,8 @@
 # virtual methods
 .method public execute(Ljava/lang/Runnable;)V
     .locals 2
-    .param p1    # Ljava/lang/Runnable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 534
+    .line 1064
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -66,12 +58,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 535
+    .line 1065
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     goto :goto_0
 
-    .line 536
+    .line 1066
     :cond_0
     iget-object v0, p0, Landroidx/core/location/LocationManagerCompat$InlineHandlerExecutor;->mHandler:Landroid/os/Handler;
 
@@ -90,7 +82,7 @@
     :goto_0
     return-void
 
-    .line 537
+    .line 1067
     :cond_1
     new-instance p1, Ljava/util/concurrent/RejectedExecutionException;
 

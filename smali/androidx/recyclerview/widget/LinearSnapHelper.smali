@@ -9,14 +9,8 @@
 
 # instance fields
 .field private mHorizontalHelper:Landroidx/recyclerview/widget/OrientationHelper;
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-.end field
 
 .field private mVerticalHelper:Landroidx/recyclerview/widget/OrientationHelper;
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-.end field
 
 
 # direct methods
@@ -46,23 +40,25 @@
     :cond_0
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const v3, 0x7fffffff
+
+    const/high16 v4, -0x80000000
+
+    const/4 v5, 0x0
+
+    move-object v3, v2
 
     const v4, 0x7fffffff
 
     const/high16 v5, -0x80000000
 
-    move-object v4, v3
-
-    const v5, 0x7fffffff
-
-    const/high16 v6, -0x80000000
+    const/4 v6, 0x0
 
     :goto_0
-    if-ge v2, v0, :cond_4
+    if-ge v6, v0, :cond_4
 
     .line 233
-    invoke-virtual {p1, v2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p1, v6}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -78,40 +74,40 @@
     goto :goto_1
 
     :cond_1
-    if-ge v8, v5, :cond_2
+    if-ge v8, v4, :cond_2
+
+    move-object v2, v7
+
+    move v4, v8
+
+    :cond_2
+    if-le v8, v5, :cond_3
 
     move-object v3, v7
 
     move v5, v8
 
-    :cond_2
-    if-le v8, v6, :cond_3
-
-    move-object v4, v7
-
-    move v6, v8
-
     :cond_3
     :goto_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
     :cond_4
-    if-eqz v3, :cond_7
+    if-eqz v2, :cond_7
 
-    if-nez v4, :cond_5
+    if-nez v3, :cond_5
 
     goto :goto_2
 
     .line 250
     :cond_5
-    invoke-virtual {p2, v3}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
+    invoke-virtual {p2, v2}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
 
     move-result p1
 
     .line 251
-    invoke-virtual {p2, v4}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
+    invoke-virtual {p2, v3}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
 
     move-result v0
 
@@ -121,12 +117,12 @@
     move-result p1
 
     .line 252
-    invoke-virtual {p2, v3}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedEnd(Landroid/view/View;)I
+    invoke-virtual {p2, v2}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedEnd(Landroid/view/View;)I
 
     move-result v0
 
     .line 253
-    invoke-virtual {p2, v4}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedEnd(Landroid/view/View;)I
+    invoke-virtual {p2, v3}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedEnd(Landroid/view/View;)I
 
     move-result p2
 
@@ -146,11 +142,11 @@
 
     mul-float p1, p1, v1
 
-    sub-int/2addr v6, v5
+    sub-int/2addr v5, v4
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v5, v5, 0x1
 
-    int-to-float p2, v6
+    int-to-float p2, v5
 
     div-float/2addr p1, p2
 
@@ -163,14 +159,6 @@
 
 .method private distanceToCenter(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;Landroid/view/View;Landroidx/recyclerview/widget/OrientationHelper;)I
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 143
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
@@ -221,20 +209,20 @@
 
     const/4 p4, 0x0
 
-    cmpg-float p4, p1, p4
+    cmpg-float p2, p1, p2
 
-    if-gtz p4, :cond_0
+    if-gtz p2, :cond_0
 
-    return p2
+    return p4
 
     .line 167
     :cond_0
-    aget p4, p3, p2
+    aget p2, p3, p4
 
     .line 168
-    invoke-static {p4}, Ljava/lang/Math;->abs(I)I
+    invoke-static {p2}, Ljava/lang/Math;->abs(I)I
 
-    move-result p4
+    move-result p2
 
     const/4 v0, 0x1
 
@@ -244,9 +232,9 @@
 
     move-result v1
 
-    if-le p4, v1, :cond_1
+    if-le p2, v1, :cond_1
 
-    aget p2, p3, p2
+    aget p2, p3, p4
 
     goto :goto_0
 
@@ -268,8 +256,6 @@
 
 .method private findCenterView(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;Landroidx/recyclerview/widget/OrientationHelper;)Landroid/view/View;
     .locals 8
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 184
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getChildCount()I
@@ -346,12 +332,6 @@
 
 .method private getHorizontalHelper(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroidx/recyclerview/widget/OrientationHelper;
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 272
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearSnapHelper;->mHorizontalHelper:Landroidx/recyclerview/widget/OrientationHelper;
@@ -379,12 +359,6 @@
 
 .method private getVerticalHelper(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroidx/recyclerview/widget/OrientationHelper;
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 263
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearSnapHelper;->mVerticalHelper:Landroidx/recyclerview/widget/OrientationHelper;
@@ -414,18 +388,9 @@
 # virtual methods
 .method public calculateDistanceToFinalSnap(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;Landroid/view/View;)[I
     .locals 4
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/4 v0, 0x2
 
-    .line 46
     new-array v0, v0, [I
 
     .line 47
@@ -680,13 +645,19 @@
 
     if-gez v2, :cond_b
 
-    const/4 v2, 0x0
+    goto :goto_2
 
     :cond_b
-    if-lt v2, v0, :cond_c
+    move v7, v2
 
-    move v2, v4
+    :goto_2
+    if-lt v7, v0, :cond_c
+
+    goto :goto_3
 
     :cond_c
-    return v2
+    move v4, v7
+
+    :goto_3
+    return v4
 .end method

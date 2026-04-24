@@ -3,12 +3,6 @@
 .source "RoundedBitmapDrawable21.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x15
-.end annotation
-
-
 # direct methods
 .method protected constructor <init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
     .locals 0
@@ -23,10 +17,6 @@
 # virtual methods
 .method public getOutline(Landroid/graphics/Outline;)V
     .locals 2
-    .param p1    # Landroid/graphics/Outline;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 37
     invoke-virtual {p0}, Landroidx/core/graphics/drawable/RoundedBitmapDrawable21;->updateDstRect()V

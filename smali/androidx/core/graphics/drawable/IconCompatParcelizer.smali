@@ -3,14 +3,6 @@
 .source "IconCompatParcelizer.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0
@@ -140,12 +132,12 @@
 
     invoke-virtual {p0, v1}, Landroidx/core/graphics/drawable/IconCompat;->onPreParceling(Z)V
 
+    const/4 v1, -0x1
+
     .line 31
-    iget v1, p0, Landroidx/core/graphics/drawable/IconCompat;->mType:I
+    iget v2, p0, Landroidx/core/graphics/drawable/IconCompat;->mType:I
 
-    const/4 v2, -0x1
-
-    if-eq v2, v1, :cond_0
+    if-eq v1, v2, :cond_0
 
     .line 32
     iget v1, p0, Landroidx/core/graphics/drawable/IconCompat;->mType:I

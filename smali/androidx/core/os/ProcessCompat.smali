@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/os/ProcessCompat$Api16Impl;,
+        Landroidx/core/os/ProcessCompat$Api24Impl;,
         Landroidx/core/os/ProcessCompat$Api17Impl;,
-        Landroidx/core/os/ProcessCompat$Api24Impl;
+        Landroidx/core/os/ProcessCompat$Api16Impl;
     }
 .end annotation
 
@@ -40,38 +40,11 @@
 
     return p0
 
-    .line 57
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x11
-
-    if-lt v0, v1, :cond_1
-
     .line 58
+    :cond_0
     invoke-static {p0}, Landroidx/core/os/ProcessCompat$Api17Impl;->isApplicationUid(I)Z
 
     move-result p0
-
-    return p0
-
-    .line 59
-    :cond_1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-ne v0, v1, :cond_2
-
-    .line 60
-    invoke-static {p0}, Landroidx/core/os/ProcessCompat$Api16Impl;->isApplicationUid(I)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_2
-    const/4 p0, 0x1
 
     return p0
 .end method

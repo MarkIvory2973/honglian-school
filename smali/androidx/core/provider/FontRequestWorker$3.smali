@@ -39,8 +39,13 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;Landroid/content/Context;Landroidx/core/provider/FontRequest;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
-    .line 191
+    .line 194
     iput-object p1, p0, Landroidx/core/provider/FontRequestWorker$3;->val$id:Ljava/lang/String;
 
     iput-object p2, p0, Landroidx/core/provider/FontRequestWorker$3;->val$context:Landroid/content/Context;
@@ -59,7 +64,8 @@
 .method public call()Landroidx/core/provider/FontRequestWorker$TypefaceResult;
     .locals 4
 
-    .line 194
+    .line 198
+    :try_start_0
     iget-object v0, p0, Landroidx/core/provider/FontRequestWorker$3;->val$id:Ljava/lang/String;
 
     iget-object v1, p0, Landroidx/core/provider/FontRequestWorker$3;->val$context:Landroid/content/Context;
@@ -71,6 +77,18 @@
     invoke-static {v0, v1, v2, v3}, Landroidx/core/provider/FontRequestWorker;->getFontSync(Ljava/lang/String;Landroid/content/Context;Landroidx/core/provider/FontRequest;I)Landroidx/core/provider/FontRequestWorker$TypefaceResult;
 
     move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    return-object v0
+
+    .line 200
+    :catchall_0
+    new-instance v0, Landroidx/core/provider/FontRequestWorker$TypefaceResult;
+
+    const/4 v1, -0x3
+
+    invoke-direct {v0, v1}, Landroidx/core/provider/FontRequestWorker$TypefaceResult;-><init>(I)V
 
     return-object v0
 .end method
@@ -83,7 +101,7 @@
         }
     .end annotation
 
-    .line 191
+    .line 194
     invoke-virtual {p0}, Landroidx/core/provider/FontRequestWorker$3;->call()Landroidx/core/provider/FontRequestWorker$TypefaceResult;
 
     move-result-object v0

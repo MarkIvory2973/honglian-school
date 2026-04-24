@@ -157,7 +157,7 @@
 
     move-result v1
 
-    if-lt v1, v0, :cond_4
+    if-lt v1, v0, :cond_3
 
     .line 423
     iget-object v1, p0, Landroidx/recyclerview/widget/AsyncListUtil$2;->mLoadedTiles:Landroid/util/SparseBooleanArray;
@@ -222,9 +222,6 @@
 
     :cond_3
     return-void
-
-    :cond_4
-    return-void
 .end method
 
 .method private getTileStart(I)I
@@ -256,30 +253,28 @@
 .end method
 
 .method private varargs log(Ljava/lang/String;[Ljava/lang/Object;)V
-    .locals 3
-
-    const-string v0, "AsyncListUtil"
+    .locals 2
 
     .line 441
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "[BKGR] "
 
-    const-string v2, "[BKGR] "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-static {p1, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const-string p2, "AsyncListUtil"
+
+    invoke-static {p2, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 .end method
@@ -475,7 +470,7 @@
 .end method
 
 .method public updateRange(IIIII)V
-    .locals 0
+    .locals 1
 
     if-le p1, p2, :cond_0
 
@@ -506,16 +501,16 @@
 
     iput p3, p0, Landroidx/recyclerview/widget/AsyncListUtil$2;->mLastRequiredTileStart:I
 
-    const/4 p3, 0x0
+    const/4 p4, 0x0
 
-    const/4 p4, 0x1
+    const/4 v0, 0x1
 
-    if-ne p5, p4, :cond_1
+    if-ne p5, v0, :cond_1
 
     .line 339
     iget p1, p0, Landroidx/recyclerview/widget/AsyncListUtil$2;->mFirstRequiredTileStart:I
 
-    invoke-direct {p0, p1, p2, p5, p4}, Landroidx/recyclerview/widget/AsyncListUtil$2;->requestTiles(IIIZ)V
+    invoke-direct {p0, p1, p2, p5, v0}, Landroidx/recyclerview/widget/AsyncListUtil$2;->requestTiles(IIIZ)V
 
     .line 340
     iget-object p1, p0, Landroidx/recyclerview/widget/AsyncListUtil$2;->this$0:Landroidx/recyclerview/widget/AsyncListUtil;
@@ -526,15 +521,13 @@
 
     iget p1, p0, Landroidx/recyclerview/widget/AsyncListUtil$2;->mLastRequiredTileStart:I
 
-    invoke-direct {p0, p2, p1, p5, p3}, Landroidx/recyclerview/widget/AsyncListUtil$2;->requestTiles(IIIZ)V
+    invoke-direct {p0, p2, p1, p5, p4}, Landroidx/recyclerview/widget/AsyncListUtil$2;->requestTiles(IIIZ)V
 
     goto :goto_0
 
     .line 343
     :cond_1
-    iget p2, p0, Landroidx/recyclerview/widget/AsyncListUtil$2;->mLastRequiredTileStart:I
-
-    invoke-direct {p0, p1, p2, p5, p3}, Landroidx/recyclerview/widget/AsyncListUtil$2;->requestTiles(IIIZ)V
+    invoke-direct {p0, p1, p3, p5, p4}, Landroidx/recyclerview/widget/AsyncListUtil$2;->requestTiles(IIIZ)V
 
     .line 344
     iget p2, p0, Landroidx/recyclerview/widget/AsyncListUtil$2;->mFirstRequiredTileStart:I
@@ -545,7 +538,7 @@
 
     sub-int/2addr p1, p3
 
-    invoke-direct {p0, p2, p1, p5, p4}, Landroidx/recyclerview/widget/AsyncListUtil$2;->requestTiles(IIIZ)V
+    invoke-direct {p0, p2, p1, p5, v0}, Landroidx/recyclerview/widget/AsyncListUtil$2;->requestTiles(IIIZ)V
 
     :goto_0
     return-void

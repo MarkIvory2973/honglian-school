@@ -96,14 +96,6 @@
 
 .method constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 4
-    .param p1    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/util/AttributeSet;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 2873
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -209,9 +201,6 @@
     move-result v0
 
     iput-boolean v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mBehaviorResolved:Z
-
-    .line 2895
-    iget-boolean v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mBehaviorResolved:Z
 
     if-eqz v0, :cond_0
 
@@ -379,9 +368,6 @@
 
     iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mAnchorView:Landroid/view/View;
 
-    .line 3142
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mAnchorView:Landroid/view/View;
-
     const/4 v1, 0x0
 
     if-eqz v0, :cond_6
@@ -495,11 +481,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Could not find CoordinatorLayout descendant view with id "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 3175
     invoke-virtual {p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getResources()Landroid/content/res/Resources;
@@ -782,8 +766,6 @@
 
 .method public getAnchorId()I
     .locals 1
-    .annotation build Landroidx/annotation/IdRes;
-    .end annotation
 
     .line 2926
     iget v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mAnchorId:I
@@ -793,8 +775,6 @@
 
 .method public getBehavior()Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 2952
     iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mBehavior:Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;
@@ -870,33 +850,29 @@
 .end method
 
 .method isNestedScrollAccepted(I)Z
-    .locals 0
+    .locals 1
 
-    packed-switch p1, :pswitch_data_0
+    if-eqz p1, :cond_1
+
+    const/4 v0, 0x1
+
+    if-eq p1, v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 3073
-    :pswitch_0
+    :cond_0
     iget-boolean p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mDidAcceptNestedScrollNonTouch:Z
 
     return p1
 
     .line 3071
-    :pswitch_1
+    :cond_1
     iget-boolean p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mDidAcceptNestedScrollTouch:Z
 
     return p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method resetChangedAfterNestedScroll()V
@@ -934,10 +910,6 @@
 
 .method public setAnchorId(I)V
     .locals 0
-    .param p1    # I
-        .annotation build Landroidx/annotation/IdRes;
-        .end annotation
-    .end param
 
     .line 2940
     invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->invalidateAnchor()V
@@ -950,10 +922,6 @@
 
 .method public setBehavior(Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;)V
     .locals 1
-    .param p1    # Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 2965
     iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mBehavior:Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;
@@ -1009,28 +977,26 @@
 .end method
 
 .method setNestedScrollAccepted(IZ)V
-    .locals 0
+    .locals 1
 
-    packed-switch p1, :pswitch_data_0
+    if-eqz p1, :cond_1
+
+    const/4 v0, 0x1
+
+    if-eq p1, v0, :cond_0
 
     goto :goto_0
 
     .line 3063
-    :pswitch_0
+    :cond_0
     iput-boolean p2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mDidAcceptNestedScrollNonTouch:Z
 
     goto :goto_0
 
     .line 3060
-    :pswitch_1
+    :cond_1
     iput-boolean p2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mDidAcceptNestedScrollTouch:Z
 
     :goto_0
     return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

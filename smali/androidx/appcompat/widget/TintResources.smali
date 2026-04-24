@@ -18,14 +18,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/content/res/Resources;)V
     .locals 0
-    .param p1    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/content/res/Resources;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 35
     invoke-direct {p0, p2}, Landroidx/appcompat/widget/ResourcesWrapper;-><init>(Landroid/content/res/Resources;)V
@@ -51,7 +43,7 @@
     .end annotation
 
     .line 46
-    invoke-super {p0, p1}, Landroidx/appcompat/widget/ResourcesWrapper;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/TintResources;->getDrawableCanonical(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 

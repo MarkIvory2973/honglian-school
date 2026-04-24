@@ -29,10 +29,6 @@
 
 .method static getChildDrawingOrder(Landroid/view/ViewGroup;I)I
     .locals 7
-    .param p0    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 83
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -42,7 +38,7 @@
     if-lt v0, v1, :cond_0
 
     .line 84
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->getChildDrawingOrder(I)I
+    invoke-static {p0, p1}, Landroidx/print/PrintHelper$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/ViewGroup;I)I
 
     move-result p0
 
@@ -83,8 +79,6 @@
     sput-object v0, Landroidx/transition/ViewGroupUtils;->sGetChildDrawingOrderMethod:Ljava/lang/reflect/Method;
 
     .line 90
-    sget-object v0, Landroidx/transition/ViewGroupUtils;->sGetChildDrawingOrderMethod:Ljava/lang/reflect/Method;
-
     invoke-virtual {v0, v3}, Ljava/lang/reflect/Method;->setAccessible(Z)V
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
@@ -99,7 +93,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 98
     :try_start_1
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -142,18 +135,7 @@
 .end method
 
 .method static getOverlay(Landroid/view/ViewGroup;)Landroidx/transition/ViewGroupOverlayImpl;
-    .locals 2
-    .param p0    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-
-    .line 46
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_0
+    .locals 1
 
     .line 47
     new-instance v0, Landroidx/transition/ViewGroupOverlayApi18;
@@ -161,31 +143,10 @@
     invoke-direct {v0, p0}, Landroidx/transition/ViewGroupOverlayApi18;-><init>(Landroid/view/ViewGroup;)V
 
     return-object v0
-
-    .line 49
-    :cond_0
-    invoke-static {p0}, Landroidx/transition/ViewGroupOverlayApi14;->createFrom(Landroid/view/ViewGroup;)Landroidx/transition/ViewGroupOverlayApi14;
-
-    move-result-object p0
-
-    return-object p0
 .end method
 
 .method private static hiddenSuppressLayout(Landroid/view/ViewGroup;Z)V
     .locals 1
-    .param p0    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "NewApi"
-        }
-    .end annotation
-
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x12
-    .end annotation
 
     .line 68
     sget-boolean v0, Landroidx/transition/ViewGroupUtils;->sTryHiddenSuppressLayout:Z
@@ -194,7 +155,7 @@
 
     .line 72
     :try_start_0
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->suppressLayout(Z)V
+    invoke-static {p0, p1}, Landroidx/print/PrintHelper$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/ViewGroup;Z)V
     :try_end_0
     .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -213,10 +174,6 @@
 
 .method static suppressLayout(Landroid/view/ViewGroup;Z)V
     .locals 2
-    .param p0    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 56
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -226,26 +183,13 @@
     if-lt v0, v1, :cond_0
 
     .line 57
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->suppressLayout(Z)V
+    invoke-static {p0, p1}, Landroidx/print/PrintHelper$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/ViewGroup;Z)V
 
     goto :goto_0
-
-    .line 58
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_1
 
     .line 59
+    :cond_0
     invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtils;->hiddenSuppressLayout(Landroid/view/ViewGroup;Z)V
-
-    goto :goto_0
-
-    .line 61
-    :cond_1
-    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->suppressLayout(Landroid/view/ViewGroup;Z)V
 
     :goto_0
     return-void

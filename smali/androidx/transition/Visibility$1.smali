@@ -28,7 +28,7 @@
 .method constructor <init>(Landroidx/transition/Visibility;Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/View;)V
     .locals 0
 
-    .line 438
+    .line 441
     iput-object p1, p0, Landroidx/transition/Visibility$1;->this$0:Landroidx/transition/Visibility;
 
     iput-object p2, p0, Landroidx/transition/Visibility$1;->val$overlayHost:Landroid/view/ViewGroup;
@@ -46,12 +46,8 @@
 # virtual methods
 .method public onTransitionEnd(Landroidx/transition/Transition;)V
     .locals 3
-    .param p1    # Landroidx/transition/Transition;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 456
+    .line 459
     iget-object v0, p0, Landroidx/transition/Visibility$1;->val$startView:Landroid/view/View;
 
     sget v1, Landroidx/transition/R$id;->save_overlay_view:I
@@ -60,7 +56,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 457
+    .line 460
     iget-object v0, p0, Landroidx/transition/Visibility$1;->val$overlayHost:Landroid/view/ViewGroup;
 
     invoke-static {v0}, Landroidx/transition/ViewGroupUtils;->getOverlay(Landroid/view/ViewGroup;)Landroidx/transition/ViewGroupOverlayImpl;
@@ -71,7 +67,7 @@
 
     invoke-interface {v0, v1}, Landroidx/transition/ViewGroupOverlayImpl;->remove(Landroid/view/View;)V
 
-    .line 458
+    .line 461
     invoke-virtual {p1, p0}, Landroidx/transition/Transition;->removeListener(Landroidx/transition/Transition$TransitionListener;)Landroidx/transition/Transition;
 
     return-void
@@ -79,12 +75,8 @@
 
 .method public onTransitionPause(Landroidx/transition/Transition;)V
     .locals 1
-    .param p1    # Landroidx/transition/Transition;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 442
+    .line 445
     iget-object p1, p0, Landroidx/transition/Visibility$1;->val$overlayHost:Landroid/view/ViewGroup;
 
     invoke-static {p1}, Landroidx/transition/ViewGroupUtils;->getOverlay(Landroid/view/ViewGroup;)Landroidx/transition/ViewGroupOverlayImpl;
@@ -100,12 +92,8 @@
 
 .method public onTransitionResume(Landroidx/transition/Transition;)V
     .locals 1
-    .param p1    # Landroidx/transition/Transition;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 447
+    .line 450
     iget-object p1, p0, Landroidx/transition/Visibility$1;->val$finalOverlayView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -114,7 +102,7 @@
 
     if-nez p1, :cond_0
 
-    .line 448
+    .line 451
     iget-object p1, p0, Landroidx/transition/Visibility$1;->val$overlayHost:Landroid/view/ViewGroup;
 
     invoke-static {p1}, Landroidx/transition/ViewGroupUtils;->getOverlay(Landroid/view/ViewGroup;)Landroidx/transition/ViewGroupOverlayImpl;
@@ -127,7 +115,7 @@
 
     goto :goto_0
 
-    .line 450
+    .line 453
     :cond_0
     iget-object p1, p0, Landroidx/transition/Visibility$1;->this$0:Landroidx/transition/Visibility;
 

@@ -23,30 +23,13 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/SinceKotlin;
-    version = "1.3"
-.end annotation
-
-.annotation build Lkotlin/contracts/ExperimentalContracts;
-.end annotation
-
-.annotation build Lkotlin/internal/ContractsDsl;
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
 .method public abstract implies(Z)Lkotlin/contracts/ConditionalEffect;
-    .annotation build Lkotlin/contracts/ExperimentalContracts;
-    .end annotation
-
-    .annotation build Lkotlin/internal/ContractsDsl;
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 .end method

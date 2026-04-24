@@ -83,7 +83,6 @@
 
     const/4 v4, 0x2
 
-    .line 45
     new-array v4, v4, [F
 
     const/4 v5, 0x0
@@ -204,24 +203,24 @@
 
     return v1
 
-    :cond_1
-    const/4 v1, 0x0
-
     .line 74
-    iget-object v2, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mX:[F
+    :cond_1
+    iget-object v1, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mX:[F
 
-    array-length v2, v2
+    array-length v1, v1
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    sub-int/2addr v2, v3
+    sub-int/2addr v1, v2
+
+    const/4 v3, 0x0
 
     :goto_0
-    sub-int v4, v2, v1
+    sub-int v4, v1, v3
 
-    if-le v4, v3, :cond_3
+    if-le v4, v2, :cond_3
 
-    add-int v4, v1, v2
+    add-int v4, v3, v1
 
     .line 76
     div-int/lit8 v4, v4, 0x2
@@ -235,24 +234,24 @@
 
     if-gez v5, :cond_2
 
-    move v2, v4
+    move v1, v4
 
     goto :goto_0
 
     :cond_2
-    move v1, v4
+    move v3, v4
 
     goto :goto_0
 
     .line 84
     :cond_3
-    iget-object v3, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mX:[F
+    iget-object v2, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mX:[F
 
-    aget v4, v3, v2
+    aget v4, v2, v1
 
-    aget v5, v3, v1
+    aget v2, v2, v3
 
-    sub-float/2addr v4, v5
+    sub-float/2addr v4, v2
 
     cmpl-float v0, v4, v0
 
@@ -261,31 +260,28 @@
     .line 86
     iget-object p1, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mY:[F
 
-    aget p1, p1, v1
+    aget p1, p1, v3
 
     return p1
 
-    .line 89
     :cond_4
-    aget v0, v3, v1
-
-    sub-float/2addr p1, v0
+    sub-float/2addr p1, v2
 
     div-float/2addr p1, v4
 
     .line 92
     iget-object v0, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mY:[F
 
-    aget v1, v0, v1
+    aget v2, v0, v3
 
     .line 93
-    aget v0, v0, v2
+    aget v0, v0, v1
 
-    sub-float/2addr v0, v1
+    sub-float/2addr v0, v2
 
     mul-float p1, p1, v0
 
-    add-float/2addr v1, p1
+    add-float/2addr v2, p1
 
-    return v1
+    return v2
 .end method

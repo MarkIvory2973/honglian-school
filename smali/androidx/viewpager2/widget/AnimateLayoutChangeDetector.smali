@@ -24,11 +24,9 @@
 
     sput-object v0, Landroidx/viewpager2/widget/AnimateLayoutChangeDetector;->ZERO_MARGIN_LAYOUT_PARAMS:Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 47
-    sget-object v0, Landroidx/viewpager2/widget/AnimateLayoutChangeDetector;->ZERO_MARGIN_LAYOUT_PARAMS:Landroid/view/ViewGroup$MarginLayoutParams;
-
     const/4 v1, 0x0
 
+    .line 47
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     return-void
@@ -36,10 +34,6 @@
 
 .method constructor <init>(Landroidx/recyclerview/widget/LinearLayoutManager;)V
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/LinearLayoutManager;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -93,7 +87,7 @@
 
     move-result-object v4
 
-    const-class v5, I
+    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     invoke-static {v5, v4}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
 
@@ -147,8 +141,6 @@
 
     iget v10, v7, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    sub-int/2addr v9, v10
-
     goto :goto_3
 
     .line 87
@@ -159,9 +151,9 @@
 
     iget v10, v7, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
+    :goto_3
     sub-int/2addr v9, v10
 
-    :goto_3
     aput v9, v8, v3
 
     .line 88
@@ -176,8 +168,6 @@
 
     iget v7, v7, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    add-int/2addr v6, v7
-
     goto :goto_4
 
     .line 90
@@ -188,9 +178,9 @@
 
     iget v7, v7, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
+    :goto_4
     add-int/2addr v6, v7
 
-    :goto_4
     aput v6, v8, v1
 
     add-int/lit8 v5, v5, 0x1
@@ -244,28 +234,22 @@
     :cond_8
     aget-object v2, v4, v3
 
-    aget v2, v2, v1
+    aget v5, v2, v1
 
-    aget-object v5, v4, v3
+    aget v2, v2, v3
 
-    aget v5, v5, v3
+    sub-int/2addr v5, v2
 
-    sub-int/2addr v2, v5
-
-    .line 110
-    aget-object v5, v4, v3
-
-    aget v5, v5, v3
-
-    if-gtz v5, :cond_a
+    if-gtz v2, :cond_a
 
     sub-int/2addr v0, v1
 
+    .line 110
     aget-object v0, v4, v0
 
     aget v0, v0, v1
 
-    if-ge v0, v2, :cond_9
+    if-ge v0, v5, :cond_9
 
     goto :goto_6
 

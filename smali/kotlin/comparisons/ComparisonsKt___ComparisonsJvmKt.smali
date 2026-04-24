@@ -38,10 +38,10 @@
     k = 0x5
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-    xi = 0x1
+    xi = 0x31
     xs = "kotlin/comparisons/ComparisonsKt"
 .end annotation
 
@@ -57,12 +57,6 @@
 
 .method private static final maxOf(BB)B
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 33
     invoke-static {p0, p1}, Ljava/lang/Math;->max(II)I
@@ -76,12 +70,6 @@
 
 .method private static final maxOf(BBB)B
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 101
     invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
@@ -99,13 +87,6 @@
 
 .method public static final varargs maxOf(B[B)B
     .locals 3
-    .param p1    # [B
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
@@ -137,12 +118,6 @@
 
 .method private static final maxOf(DD)D
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 82
     invoke-static {p0, p1, p2, p3}, Ljava/lang/Math;->max(DD)D
@@ -154,12 +129,6 @@
 
 .method private static final maxOf(DDD)D
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 150
     invoke-static {p2, p3, p4, p5}, Ljava/lang/Math;->max(DD)D
@@ -175,13 +144,6 @@
 
 .method public static final varargs maxOf(D[D)D
     .locals 4
-    .param p2    # [D
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
@@ -211,12 +173,6 @@
 
 .method private static final maxOf(FF)F
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 71
     invoke-static {p0, p1}, Ljava/lang/Math;->max(FF)F
@@ -228,12 +184,6 @@
 
 .method private static final maxOf(FFF)F
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 139
     invoke-static {p1, p2}, Ljava/lang/Math;->max(FF)F
@@ -249,13 +199,6 @@
 
 .method public static final varargs maxOf(F[F)F
     .locals 3
-    .param p1    # [F
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
@@ -285,12 +228,6 @@
 
 .method private static final maxOf(II)I
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 51
     invoke-static {p0, p1}, Ljava/lang/Math;->max(II)I
@@ -302,12 +239,6 @@
 
 .method private static final maxOf(III)I
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 119
     invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
@@ -323,13 +254,6 @@
 
 .method public static final varargs maxOf(I[I)I
     .locals 3
-    .param p1    # [I
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
@@ -359,12 +283,6 @@
 
 .method private static final maxOf(JJ)J
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 60
     invoke-static {p0, p1, p2, p3}, Ljava/lang/Math;->max(JJ)J
@@ -376,12 +294,6 @@
 
 .method private static final maxOf(JJJ)J
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 128
     invoke-static {p2, p3, p4, p5}, Ljava/lang/Math;->max(JJ)J
@@ -397,13 +309,6 @@
 
 .method public static final varargs maxOf(J[J)J
     .locals 4
-    .param p2    # [J
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
@@ -433,27 +338,12 @@
 
 .method public static final maxOf(Ljava/lang/Comparable;Ljava/lang/Comparable;)Ljava/lang/Comparable;
     .locals 1
-    .param p0    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
             "Ljava/lang/Comparable<",
             "-TT;>;>(TT;TT;)TT;"
         }
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "a"
@@ -482,31 +372,12 @@
 
 .method public static final maxOf(Ljava/lang/Comparable;Ljava/lang/Comparable;Ljava/lang/Comparable;)Ljava/lang/Comparable;
     .locals 1
-    .param p0    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
             "Ljava/lang/Comparable<",
             "-TT;>;>(TT;TT;TT;)TT;"
         }
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "a"
@@ -535,27 +406,12 @@
 
 .method public static final varargs maxOf(Ljava/lang/Comparable;[Ljava/lang/Comparable;)Ljava/lang/Comparable;
     .locals 3
-    .param p0    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # [Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
             "Ljava/lang/Comparable<",
             "-TT;>;>(TT;[TT;)TT;"
         }
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "a"
@@ -590,12 +446,6 @@
 
 .method private static final maxOf(SS)S
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 42
     invoke-static {p0, p1}, Ljava/lang/Math;->max(II)I
@@ -609,12 +459,6 @@
 
 .method private static final maxOf(SSS)S
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 110
     invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
@@ -632,13 +476,6 @@
 
 .method public static final varargs maxOf(S[S)S
     .locals 3
-    .param p1    # [S
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
@@ -670,12 +507,6 @@
 
 .method private static final minOf(BB)B
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 245
     invoke-static {p0, p1}, Ljava/lang/Math;->min(II)I
@@ -689,12 +520,6 @@
 
 .method private static final minOf(BBB)B
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 313
     invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
@@ -712,13 +537,6 @@
 
 .method public static final varargs minOf(B[B)B
     .locals 3
-    .param p1    # [B
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
@@ -750,12 +568,6 @@
 
 .method private static final minOf(DD)D
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 294
     invoke-static {p0, p1, p2, p3}, Ljava/lang/Math;->min(DD)D
@@ -767,12 +579,6 @@
 
 .method private static final minOf(DDD)D
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 362
     invoke-static {p2, p3, p4, p5}, Ljava/lang/Math;->min(DD)D
@@ -788,13 +594,6 @@
 
 .method public static final varargs minOf(D[D)D
     .locals 4
-    .param p2    # [D
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
@@ -824,12 +623,6 @@
 
 .method private static final minOf(FF)F
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 283
     invoke-static {p0, p1}, Ljava/lang/Math;->min(FF)F
@@ -841,12 +634,6 @@
 
 .method private static final minOf(FFF)F
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 351
     invoke-static {p1, p2}, Ljava/lang/Math;->min(FF)F
@@ -862,13 +649,6 @@
 
 .method public static final varargs minOf(F[F)F
     .locals 3
-    .param p1    # [F
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
@@ -898,12 +678,6 @@
 
 .method private static final minOf(II)I
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 263
     invoke-static {p0, p1}, Ljava/lang/Math;->min(II)I
@@ -915,12 +689,6 @@
 
 .method private static final minOf(III)I
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 331
     invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
@@ -936,13 +704,6 @@
 
 .method public static final varargs minOf(I[I)I
     .locals 3
-    .param p1    # [I
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
@@ -972,12 +733,6 @@
 
 .method private static final minOf(JJ)J
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 272
     invoke-static {p0, p1, p2, p3}, Ljava/lang/Math;->min(JJ)J
@@ -989,12 +744,6 @@
 
 .method private static final minOf(JJJ)J
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 340
     invoke-static {p2, p3, p4, p5}, Ljava/lang/Math;->min(JJ)J
@@ -1010,13 +759,6 @@
 
 .method public static final varargs minOf(J[J)J
     .locals 4
-    .param p2    # [J
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
@@ -1046,27 +788,12 @@
 
 .method public static final minOf(Ljava/lang/Comparable;Ljava/lang/Comparable;)Ljava/lang/Comparable;
     .locals 1
-    .param p0    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
             "Ljava/lang/Comparable<",
             "-TT;>;>(TT;TT;)TT;"
         }
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "a"
@@ -1095,31 +822,12 @@
 
 .method public static final minOf(Ljava/lang/Comparable;Ljava/lang/Comparable;Ljava/lang/Comparable;)Ljava/lang/Comparable;
     .locals 1
-    .param p0    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
             "Ljava/lang/Comparable<",
             "-TT;>;>(TT;TT;TT;)TT;"
         }
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "a"
@@ -1148,27 +856,12 @@
 
 .method public static final varargs minOf(Ljava/lang/Comparable;[Ljava/lang/Comparable;)Ljava/lang/Comparable;
     .locals 3
-    .param p0    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # [Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
             "Ljava/lang/Comparable<",
             "-TT;>;>(TT;[TT;)TT;"
         }
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "a"
@@ -1203,12 +896,6 @@
 
 .method private static final minOf(SS)S
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 254
     invoke-static {p0, p1}, Ljava/lang/Math;->min(II)I
@@ -1222,12 +909,6 @@
 
 .method private static final minOf(SSS)S
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 322
     invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
@@ -1245,13 +926,6 @@
 
 .method public static final varargs minOf(S[S)S
     .locals 3
-    .param p1    # [S
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 

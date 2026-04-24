@@ -1,0 +1,381 @@
+.class Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;
+.super Landroid/os/Handler;
+.source "BarrageView.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+
+# direct methods
+.method constructor <init>(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010
+        }
+        names = {
+            "this$0"
+        }
+    .end annotation
+
+    .line 60
+    iput-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public handleMessage(Landroid/os/Message;)V
+    .locals 7
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "msg"
+        }
+    .end annotation
+
+    .line 63
+    iget-object v0, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {v0}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetTag(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "handleMessage: msg="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v2, p1, Landroid/os/Message;->what:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 64
+    iget p1, p1, Landroid/os/Message;->what:I
+
+    const/16 v0, 0x3e9
+
+    packed-switch p1, :pswitch_data_0
+
+    goto/16 :goto_1
+
+    .line 84
+    :pswitch_0
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetTag(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v1, "CODE_END"
+
+    invoke-static {p1, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 85
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetisRepeat(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    .line 86
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetcurrentIndex(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)I
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    .line 87
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    const/4 v1, 0x0
+
+    invoke-static {p1, v1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fputcurrentIndex(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;I)V
+
+    .line 88
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgethandler(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Landroid/os/Handler;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    goto/16 :goto_1
+
+    .line 69
+    :pswitch_1
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetTag(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "handleMessage: currentIndex="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {v2}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetcurrentIndex(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 70
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetTag(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "handleMessage: isStart="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {v2}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetisStart(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Z
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 71
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetTag(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "handleMessage: datas="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {v2}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetdatas(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 72
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetisStart(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetdatas(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Ljava/util/List;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetcurrentIndex(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)I
+
+    move-result p1
+
+    iget-object v1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {v1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetdatas(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-ge p1, v1, :cond_1
+
+    .line 73
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$maddView(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)V
+
+    .line 74
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetcurrentIndex(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    invoke-static {p1, v1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fputcurrentIndex(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;I)V
+
+    .line 75
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetmaxIntervalTime(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)J
+
+    move-result-wide v1
+
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetminIntervalTime(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)J
+
+    move-result-wide v3
+
+    sub-long/2addr v1, v3
+
+    .line 76
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetminIntervalTime(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)J
+
+    move-result-wide v3
+
+    const-wide/16 v5, 0x0
+
+    cmp-long p1, v1, v5
+
+    if-lez p1, :cond_0
+
+    invoke-static {}, Ljava/lang/Math;->random()D
+
+    move-result-wide v5
+
+    long-to-double v1, v1
+
+    mul-double v5, v5, v1
+
+    goto :goto_0
+
+    :cond_0
+    const-wide/16 v5, 0x0
+
+    :goto_0
+    double-to-long v1, v5
+
+    add-long/2addr v3, v1
+
+    .line 77
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgetTag(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "randomSleepTime="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 78
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgethandler(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Landroid/os/Handler;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0, v3, v4}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+
+    goto :goto_1
+
+    .line 80
+    :cond_1
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgethandler(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Landroid/os/Handler;
+
+    move-result-object p1
+
+    const/16 v0, 0x3ea
+
+    invoke-virtual {p1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    goto :goto_1
+
+    .line 66
+    :pswitch_2
+    iget-object p1, p0, Lcom/hl/classtabletapp/app/weight/customview/BarrageView$1;->this$0:Lcom/hl/classtabletapp/app/weight/customview/BarrageView;
+
+    invoke-static {p1}, Lcom/hl/classtabletapp/app/weight/customview/BarrageView;->-$$Nest$fgethandler(Lcom/hl/classtabletapp/app/weight/customview/BarrageView;)Landroid/os/Handler;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    :cond_2
+    :goto_1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x3e8
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method

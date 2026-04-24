@@ -385,8 +385,6 @@
     iput-object p1, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$LazySpanLookup;->mData:[I
 
     .line 2905
-    iget-object p1, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$LazySpanLookup;->mData:[I
-
     invoke-static {p1, v1}, Ljava/util/Arrays;->fill([II)V
 
     goto :goto_0
@@ -407,8 +405,6 @@
     iput-object p1, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$LazySpanLookup;->mData:[I
 
     .line 2909
-    iget-object p1, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$LazySpanLookup;->mData:[I
-
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -718,8 +714,6 @@
     .line 2960
     invoke-direct {p0, p1, p2}, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$LazySpanLookup;->offsetFullSpansForAddition(II)V
 
-    return-void
-
     :cond_1
     :goto_0
     return-void
@@ -771,8 +765,6 @@
 
     .line 2930
     invoke-direct {p0, p1, p2}, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$LazySpanLookup;->offsetFullSpansForRemoval(II)V
-
-    return-void
 
     :cond_1
     :goto_0

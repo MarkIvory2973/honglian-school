@@ -17,12 +17,32 @@
 # virtual methods
 .method public postLayoutChange(II)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "stateId",
+            "constraintId"
+        }
+    .end annotation
 
     return-void
 .end method
 
 .method public preLayoutChange(II)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "stateId",
+            "constraintId"
+        }
+    .end annotation
 
     return-void
 .end method

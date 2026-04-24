@@ -7,6 +7,17 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/collection/ArrayMap$EntrySet;,
+        Landroidx/collection/ArrayMap$KeySet;,
+        Landroidx/collection/ArrayMap$ValueCollection;,
+        Landroidx/collection/ArrayMap$MapIterator;,
+        Landroidx/collection/ArrayMap$ValueIterator;,
+        Landroidx/collection/ArrayMap$KeyIterator;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<K:",
@@ -23,14 +34,29 @@
 
 
 # instance fields
-.field mCollections:Landroidx/collection/MapCollections;
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
+.field mEntrySet:Landroidx/collection/ArrayMap$EntrySet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/collection/MapCollections<",
-            "TK;TV;>;"
+            "Landroidx/collection/ArrayMap<",
+            "TK;TV;>.EntrySet;"
+        }
+    .end annotation
+.end field
+
+.field mKeySet:Landroidx/collection/ArrayMap$KeySet;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/collection/ArrayMap<",
+            "TK;TV;>.KeySet;"
+        }
+    .end annotation
+.end field
+
+.field mValues:Landroidx/collection/ArrayMap$ValueCollection;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/collection/ArrayMap<",
+            "TK;TV;>.ValueCollection;"
         }
     .end annotation
 .end field
@@ -40,7 +66,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 57
+    .line 72
     invoke-direct {p0}, Landroidx/collection/SimpleArrayMap;-><init>()V
 
     return-void
@@ -49,7 +75,7 @@
 .method public constructor <init>(I)V
     .locals 0
 
-    .line 64
+    .line 79
     invoke-direct {p0, p1}, Landroidx/collection/SimpleArrayMap;-><init>(I)V
 
     return-void
@@ -58,49 +84,81 @@
 .method public constructor <init>(Landroidx/collection/SimpleArrayMap;)V
     .locals 0
 
-    .line 71
+    .line 87
     invoke-direct {p0, p1}, Landroidx/collection/SimpleArrayMap;-><init>(Landroidx/collection/SimpleArrayMap;)V
 
     return-void
 .end method
 
-.method private getCollection()Landroidx/collection/MapCollections;
-    .locals 1
+.method static equalsSetHelper(Ljava/util/Set;Ljava/lang/Object;)Z
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
-            "Landroidx/collection/MapCollections<",
-            "TK;TV;>;"
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Set<",
+            "TT;>;",
+            "Ljava/lang/Object;",
+            ")Z"
         }
     .end annotation
 
-    .line 75
-    iget-object v0, p0, Landroidx/collection/ArrayMap;->mCollections:Landroidx/collection/MapCollections;
+    const/4 v0, 0x1
 
-    if-nez v0, :cond_0
+    if-ne p0, p1, :cond_0
 
-    .line 76
-    new-instance v0, Landroidx/collection/ArrayMap$1;
+    return v0
 
-    invoke-direct {v0, p0}, Landroidx/collection/ArrayMap$1;-><init>(Landroidx/collection/ArrayMap;)V
-
-    iput-object v0, p0, Landroidx/collection/ArrayMap;->mCollections:Landroidx/collection/MapCollections;
-
-    .line 123
+    .line 629
     :cond_0
-    iget-object v0, p0, Landroidx/collection/ArrayMap;->mCollections:Landroidx/collection/MapCollections;
+    instance-of v1, p1, Ljava/util/Set;
 
-    return-object v0
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_2
+
+    .line 630
+    check-cast p1, Ljava/util/Set;
+
+    .line 633
+    :try_start_0
+    invoke-interface {p0}, Ljava/util/Set;->size()I
+
+    move-result v1
+
+    invoke-interface {p1}, Ljava/util/Set;->size()I
+
+    move-result v3
+
+    if-ne v1, v3, :cond_1
+
+    invoke-interface {p0, p1}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
+
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
+
+    if-eqz p0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :catch_0
+    :cond_2
+    return v2
 .end method
 
 
 # virtual methods
 .method public containsAll(Ljava/util/Collection;)Z
-    .locals 0
-    .param p1    # Ljava/util/Collection;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -109,8 +167,55 @@
         }
     .end annotation
 
-    .line 133
-    invoke-static {p0, p1}, Landroidx/collection/MapCollections;->containsAllHelper(Ljava/util/Map;Ljava/util/Collection;)Z
+    .line 98
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :cond_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 99
+    invoke-virtual {p0, v0}, Landroidx/collection/ArrayMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_1
+    const/4 p1, 0x1
+
+    return p1
+.end method
+
+.method public containsKey(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 115
+    invoke-super {p0, p1}, Landroidx/collection/SimpleArrayMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public containsValue(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 128
+    invoke-super {p0, p1}, Landroidx/collection/SimpleArrayMap;->containsValue(Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -128,16 +233,38 @@
         }
     .end annotation
 
-    .line 182
-    invoke-direct {p0}, Landroidx/collection/ArrayMap;->getCollection()Landroidx/collection/MapCollections;
+    .line 217
+    iget-object v0, p0, Landroidx/collection/ArrayMap;->mEntrySet:Landroidx/collection/ArrayMap$EntrySet;
 
-    move-result-object v0
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0}, Landroidx/collection/MapCollections;->getEntrySet()Ljava/util/Set;
+    .line 219
+    new-instance v0, Landroidx/collection/ArrayMap$EntrySet;
 
-    move-result-object v0
+    invoke-direct {v0, p0}, Landroidx/collection/ArrayMap$EntrySet;-><init>(Landroidx/collection/ArrayMap;)V
 
+    iput-object v0, p0, Landroidx/collection/ArrayMap;->mEntrySet:Landroidx/collection/ArrayMap$EntrySet;
+
+    :cond_0
     return-object v0
+.end method
+
+.method public get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")TV;"
+        }
+    .end annotation
+
+    .line 141
+    invoke-super {p0, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public keySet()Ljava/util/Set;
@@ -150,15 +277,19 @@
         }
     .end annotation
 
-    .line 194
-    invoke-direct {p0}, Landroidx/collection/ArrayMap;->getCollection()Landroidx/collection/MapCollections;
+    .line 234
+    iget-object v0, p0, Landroidx/collection/ArrayMap;->mKeySet:Landroidx/collection/ArrayMap$KeySet;
 
-    move-result-object v0
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0}, Landroidx/collection/MapCollections;->getKeySet()Ljava/util/Set;
+    .line 236
+    new-instance v0, Landroidx/collection/ArrayMap$KeySet;
 
-    move-result-object v0
+    invoke-direct {v0, p0}, Landroidx/collection/ArrayMap$KeySet;-><init>(Landroidx/collection/ArrayMap;)V
 
+    iput-object v0, p0, Landroidx/collection/ArrayMap;->mKeySet:Landroidx/collection/ArrayMap$KeySet;
+
+    :cond_0
     return-object v0
 .end method
 
@@ -172,8 +303,10 @@
         }
     .end annotation
 
-    .line 142
-    iget v0, p0, Landroidx/collection/ArrayMap;->mSize:I
+    .line 164
+    invoke-virtual {p0}, Landroidx/collection/ArrayMap;->size()I
+
+    move-result v0
 
     invoke-interface {p1}, Ljava/util/Map;->size()I
 
@@ -183,7 +316,7 @@
 
     invoke-virtual {p0, v0}, Landroidx/collection/ArrayMap;->ensureCapacity(I)V
 
-    .line 143
+    .line 165
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p1
@@ -205,7 +338,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 144
+    .line 166
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -222,34 +355,26 @@
     return-void
 .end method
 
-.method public removeAll(Ljava/util/Collection;)Z
+.method public remove(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
-    .param p1    # Ljava/util/Collection;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/util/Collection<",
-            "*>;)Z"
+            "Ljava/lang/Object;",
+            ")TV;"
         }
     .end annotation
 
     .line 154
-    invoke-static {p0, p1}, Landroidx/collection/MapCollections;->removeAllHelper(Ljava/util/Map;Ljava/util/Collection;)Z
+    invoke-super {p0, p1}, Landroidx/collection/SimpleArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result p1
+    move-result-object p1
 
-    return p1
+    return-object p1
 .end method
 
-.method public retainAll(Ljava/util/Collection;)Z
-    .locals 0
-    .param p1    # Ljava/util/Collection;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
+.method public removeAll(Ljava/util/Collection;)Z
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -258,12 +383,112 @@
         }
     .end annotation
 
-    .line 164
-    invoke-static {p0, p1}, Landroidx/collection/MapCollections;->retainAllHelper(Ljava/util/Map;Ljava/util/Collection;)Z
+    .line 177
+    invoke-virtual {p0}, Landroidx/collection/ArrayMap;->size()I
+
+    move-result v0
+
+    .line 178
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 179
+    invoke-virtual {p0, v1}, Landroidx/collection/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    .line 181
+    :cond_0
+    invoke-virtual {p0}, Landroidx/collection/ArrayMap;->size()I
 
     move-result p1
 
+    if-eq v0, p1, :cond_1
+
+    const/4 p1, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 p1, 0x0
+
+    :goto_1
     return p1
+.end method
+
+.method public retainAll(Ljava/util/Collection;)Z
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection<",
+            "*>;)Z"
+        }
+    .end annotation
+
+    .line 192
+    invoke-virtual {p0}, Landroidx/collection/ArrayMap;->size()I
+
+    move-result v0
+
+    .line 193
+    invoke-virtual {p0}, Landroidx/collection/ArrayMap;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    sub-int/2addr v1, v2
+
+    :goto_0
+    if-ltz v1, :cond_1
+
+    .line 194
+    invoke-virtual {p0, v1}, Landroidx/collection/ArrayMap;->keyAt(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-interface {p1, v3}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    .line 195
+    invoke-virtual {p0, v1}, Landroidx/collection/ArrayMap;->removeAt(I)Ljava/lang/Object;
+
+    :cond_0
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_0
+
+    .line 198
+    :cond_1
+    invoke-virtual {p0}, Landroidx/collection/ArrayMap;->size()I
+
+    move-result p1
+
+    if-eq v0, p1, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v2, 0x0
+
+    :goto_1
+    return v2
 .end method
 
 .method public values()Ljava/util/Collection;
@@ -276,14 +501,18 @@
         }
     .end annotation
 
-    .line 206
-    invoke-direct {p0}, Landroidx/collection/ArrayMap;->getCollection()Landroidx/collection/MapCollections;
+    .line 251
+    iget-object v0, p0, Landroidx/collection/ArrayMap;->mValues:Landroidx/collection/ArrayMap$ValueCollection;
 
-    move-result-object v0
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0}, Landroidx/collection/MapCollections;->getValues()Ljava/util/Collection;
+    .line 253
+    new-instance v0, Landroidx/collection/ArrayMap$ValueCollection;
 
-    move-result-object v0
+    invoke-direct {v0, p0}, Landroidx/collection/ArrayMap$ValueCollection;-><init>(Landroidx/collection/ArrayMap;)V
 
+    iput-object v0, p0, Landroidx/collection/ArrayMap;->mValues:Landroidx/collection/ArrayMap$ValueCollection;
+
+    :cond_0
     return-object v0
 .end method

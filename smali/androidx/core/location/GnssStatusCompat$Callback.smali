@@ -28,21 +28,12 @@
 # virtual methods
 .method public onFirstFix(I)V
     .locals 0
-    .param p1    # I
-        .annotation build Landroidx/annotation/IntRange;
-            from = 0x0L
-        .end annotation
-    .end param
 
     return-void
 .end method
 
 .method public onSatelliteStatusChanged(Landroidx/core/location/GnssStatusCompat;)V
     .locals 0
-    .param p1    # Landroidx/core/location/GnssStatusCompat;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method

@@ -52,23 +52,23 @@
 
     new-array v2, v2, [Ljava/lang/Class;
 
-    const/4 v3, 0x0
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const/4 v4, 0x0
 
-    aput-object v4, v2, v3
+    aput-object v3, v2, v4
 
-    const/4 v3, 0x1
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const/4 v4, 0x1
 
-    aput-object v4, v2, v3
+    aput-object v3, v2, v4
 
-    const/4 v3, 0x2
+    const-class v3, Landroid/graphics/Rect;
 
-    const-class v4, Landroid/graphics/Rect;
+    const/4 v4, 0x2
 
-    aput-object v4, v2, v3
+    aput-object v3, v2, v4
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
@@ -125,14 +125,14 @@
 .method private assertNotDisposed()V
     .locals 2
 
-    .line 219
+    .line 221
     iget-boolean v0, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mDisposed:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 220
+    .line 222
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -146,7 +146,7 @@
 .method private disposeIfEmpty()V
     .locals 1
 
-    .line 226
+    .line 228
     invoke-virtual {p0}, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->getChildCount()I
 
     move-result v0
@@ -166,10 +166,10 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 227
+    .line 229
     iput-boolean v0, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mDisposed:Z
 
-    .line 228
+    .line 230
     iget-object v0, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mHostView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, p0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
@@ -183,42 +183,40 @@
 
     const/4 v0, 0x2
 
-    .line 269
     new-array v1, v0, [I
 
-    .line 270
     new-array v0, v0, [I
 
-    .line 271
+    .line 274
     iget-object v2, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mHostView:Landroid/view/ViewGroup;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getLocationOnScreen([I)V
 
-    .line 272
+    .line 275
     iget-object v2, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mRequestingView:Landroid/view/View;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->getLocationOnScreen([I)V
 
     const/4 v2, 0x0
 
-    .line 273
     aget v3, v0, v2
 
     aget v4, v1, v2
 
     sub-int/2addr v3, v4
 
+    .line 276
     aput v3, p1, v2
 
     const/4 v2, 0x1
 
-    .line 274
     aget v0, v0, v2
 
     aget v1, v1, v2
 
     sub-int/2addr v0, v1
 
+    .line 277
     aput v0, p1, v2
 
     return-void
@@ -229,22 +227,22 @@
 .method public add(Landroid/graphics/drawable/Drawable;)V
     .locals 1
 
-    .line 158
+    .line 159
     invoke-direct {p0}, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->assertNotDisposed()V
 
-    .line 159
+    .line 160
     iget-object v0, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mDrawables:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
-    .line 161
+    .line 162
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mDrawables:Ljava/util/ArrayList;
 
-    .line 163
+    .line 164
     :cond_0
     iget-object v0, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mDrawables:Ljava/util/ArrayList;
 
@@ -254,19 +252,19 @@
 
     if-nez v0, :cond_1
 
-    .line 165
+    .line 166
     iget-object v0, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 166
+    .line 167
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->invalidate(Landroid/graphics/Rect;)V
 
-    .line 167
+    .line 168
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
     :cond_1
@@ -276,10 +274,10 @@
 .method public add(Landroid/view/View;)V
     .locals 5
 
-    .line 186
+    .line 188
     invoke-direct {p0}, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->assertNotDisposed()V
 
-    .line 187
+    .line 189
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -288,14 +286,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 188
+    .line 190
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 189
+    .line 191
     iget-object v1, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mHostView:Landroid/view/ViewGroup;
 
     if-eq v0, v1, :cond_0
@@ -306,7 +304,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 190
+    .line 192
     invoke-static {v0}, Landroidx/core/view/ViewCompat;->isAttachedToWindow(Landroid/view/View;)Z
 
     move-result v1
@@ -315,57 +313,55 @@
 
     const/4 v1, 0x2
 
-    .line 193
     new-array v2, v1, [I
 
-    .line 194
     new-array v1, v1, [I
 
-    .line 195
+    .line 197
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->getLocationOnScreen([I)V
 
-    .line 196
+    .line 198
     iget-object v3, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mHostView:Landroid/view/ViewGroup;
 
     invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->getLocationOnScreen([I)V
 
     const/4 v3, 0x0
 
-    .line 197
     aget v4, v2, v3
 
     aget v3, v1, v3
 
     sub-int/2addr v4, v3
 
+    .line 199
     invoke-static {p1, v4}, Landroidx/core/view/ViewCompat;->offsetLeftAndRight(Landroid/view/View;I)V
 
     const/4 v3, 0x1
 
-    .line 198
     aget v2, v2, v3
 
     aget v1, v1, v3
 
     sub-int/2addr v2, v1
 
+    .line 200
     invoke-static {p1, v2}, Landroidx/core/view/ViewCompat;->offsetTopAndBottom(Landroid/view/View;I)V
 
-    .line 200
+    .line 202
     :cond_0
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 206
+    .line 208
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
     if-eqz v1, :cond_1
 
-    .line 207
+    .line 209
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 210
+    .line 212
     :cond_1
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
@@ -377,25 +373,22 @@
 
     const/4 v0, 0x2
 
-    .line 239
     new-array v1, v0, [I
 
-    .line 240
     new-array v0, v0, [I
 
-    .line 241
+    .line 244
     iget-object v2, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mHostView:Landroid/view/ViewGroup;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getLocationOnScreen([I)V
 
-    .line 242
+    .line 245
     iget-object v2, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mRequestingView:Landroid/view/View;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->getLocationOnScreen([I)V
 
     const/4 v2, 0x0
 
-    .line 243
     aget v3, v0, v2
 
     aget v4, v1, v2
@@ -414,14 +407,15 @@
 
     int-to-float v0, v0
 
+    .line 246
     invoke-virtual {p1, v3, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 245
+    .line 248
     new-instance v0, Landroid/graphics/Rect;
 
     iget-object v1, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mRequestingView:Landroid/view/View;
 
-    .line 246
+    .line 249
     invoke-virtual {v1}, Landroid/view/View;->getWidth()I
 
     move-result v1
@@ -434,13 +428,13 @@
 
     invoke-direct {v0, v2, v2, v1, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 245
+    .line 248
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
-    .line 247
+    .line 250
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 248
+    .line 251
     iget-object v0, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mDrawables:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
@@ -457,7 +451,7 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 250
+    .line 253
     iget-object v1, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -487,14 +481,14 @@
 .method public invalidateChildInParent([ILandroid/graphics/Rect;)Landroid/view/ViewParent;
     .locals 4
 
-    .line 299
+    .line 302
     iget-object v0, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mHostView:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_1
 
     const/4 v0, 0x0
 
-    .line 300
+    .line 303
     aget v1, p1, v0
 
     const/4 v2, 0x1
@@ -503,42 +497,39 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 301
+    .line 304
     iget-object v1, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mHostView:Landroid/view/ViewGroup;
-
-    instance-of v1, v1, Landroid/view/ViewGroup;
 
     if-eqz v1, :cond_0
 
-    .line 302
+    .line 305
     aput v0, p1, v0
 
-    .line 303
+    .line 306
     aput v0, p1, v2
 
     const/4 v1, 0x2
 
-    .line 304
     new-array v1, v1, [I
 
-    .line 305
+    .line 308
     invoke-direct {p0, v1}, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->getOffset([I)V
 
-    .line 306
     aget v0, v1, v0
 
     aget v1, v1, v2
 
+    .line 309
     invoke-virtual {p2, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 307
+    .line 310
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->invalidateChildInParent([ILandroid/graphics/Rect;)Landroid/view/ViewParent;
 
     move-result-object p1
 
     return-object p1
 
-    .line 310
+    .line 313
     :cond_0
     invoke-virtual {p0, p2}, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->invalidate(Landroid/graphics/Rect;)V
 
@@ -550,16 +541,9 @@
 
 .method protected invalidateChildInParentFast(IILandroid/graphics/Rect;)Landroid/view/ViewParent;
     .locals 5
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
 
-    .line 282
+    .line 285
     iget-object v0, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mHostView:Landroid/view/ViewGroup;
-
-    instance-of v0, v0, Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_0
 
@@ -569,14 +553,13 @@
 
     const/4 v0, 0x2
 
-    .line 284
     :try_start_0
     new-array v1, v0, [I
 
-    .line 285
+    .line 288
     invoke-direct {p0, v1}, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->getOffset([I)V
 
-    .line 286
+    .line 289
     sget-object v1, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->sInvalidateChildInParentFastMethod:Ljava/lang/reflect/Method;
 
     iget-object v2, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mHostView:Landroid/view/ViewGroup;
@@ -585,21 +568,21 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    const/4 v4, 0x0
-
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    aput-object p1, v3, v4
+    const/4 v4, 0x0
 
-    const/4 p1, 0x1
+    aput-object p1, v3, v4
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p2
+    move-result-object p1
 
-    aput-object p2, v3, p1
+    const/4 p2, 0x1
+
+    aput-object p1, v3, p2
 
     aput-object p3, v3, v0
 
@@ -613,7 +596,7 @@
     :catch_0
     move-exception p1
 
-    .line 290
+    .line 293
     invoke-virtual {p1}, Ljava/lang/reflect/InvocationTargetException;->printStackTrace()V
 
     goto :goto_0
@@ -621,7 +604,7 @@
     :catch_1
     move-exception p1
 
-    .line 288
+    .line 291
     invoke-virtual {p1}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
     :cond_0
@@ -633,12 +616,8 @@
 
 .method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
-    .param p1    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 234
+    .line 237
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object p1
@@ -657,15 +636,15 @@
 .method public remove(Landroid/graphics/drawable/Drawable;)V
     .locals 1
 
-    .line 172
+    .line 174
     iget-object v0, p0, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->mDrawables:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
 
-    .line 173
+    .line 175
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 174
+    .line 176
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -674,10 +653,10 @@
 
     const/4 v0, 0x0
 
-    .line 175
+    .line 177
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 176
+    .line 178
     invoke-direct {p0}, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->disposeIfEmpty()V
 
     :cond_0
@@ -687,10 +666,10 @@
 .method public remove(Landroid/view/View;)V
     .locals 0
 
-    .line 214
+    .line 216
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 215
+    .line 217
     invoke-direct {p0}, Landroidx/transition/ViewOverlayApi14$OverlayViewGroup;->disposeIfEmpty()V
 
     return-void
@@ -698,12 +677,8 @@
 
 .method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
-    .param p1    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 182
+    .line 184
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0

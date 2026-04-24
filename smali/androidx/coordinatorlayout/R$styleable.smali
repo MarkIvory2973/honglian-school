@@ -1,6 +1,5 @@
 .class public final Landroidx/coordinatorlayout/R$styleable;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -17,11 +16,15 @@
 # static fields
 .field public static final ColorStateListItem:[I
 
-.field public static final ColorStateListItem_alpha:I = 0x2
+.field public static final ColorStateListItem_alpha:I = 0x3
 
 .field public static final ColorStateListItem_android_alpha:I = 0x1
 
 .field public static final ColorStateListItem_android_color:I = 0x0
+
+.field public static final ColorStateListItem_android_lStar:I = 0x2
+
+.field public static final ColorStateListItem_lStar:I = 0x4
 
 .field public static final CoordinatorLayout:[I
 
@@ -117,122 +120,112 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public static constructor <clinit>()V
+    .locals 5
 
-    const/4 v0, 0x3
+    const v0, 0x7f030037
 
-    .line 201
-    new-array v0, v0, [I
+    const v1, 0x7f0302d8
 
-    fill-array-data v0, :array_0
+    const v2, 0x10101a5
+
+    const v3, 0x101031f
+
+    const v4, 0x1010647
+
+    filled-new-array {v2, v3, v4, v0, v1}, [I
+
+    move-result-object v0
 
     sput-object v0, Landroidx/coordinatorlayout/R$styleable;->ColorStateListItem:[I
 
-    const/4 v0, 0x2
+    const v0, 0x7f0302d7
 
-    .line 205
+    const v1, 0x7f0304ee
+
+    filled-new-array {v0, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout:[I
+
+    const/4 v0, 0x7
+
     new-array v1, v0, [I
 
-    fill-array-data v1, :array_1
+    fill-array-data v1, :array_0
 
-    sput-object v1, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout:[I
+    sput-object v1, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout_Layout:[I
 
-    const/4 v1, 0x7
-
-    .line 208
-    new-array v2, v1, [I
-
-    fill-array-data v2, :array_2
-
-    sput-object v2, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout_Layout:[I
-
-    .line 216
-    new-array v1, v1, [I
-
-    fill-array-data v1, :array_3
-
-    sput-object v1, Landroidx/coordinatorlayout/R$styleable;->FontFamily:[I
-
-    const/16 v1, 0xa
-
-    .line 224
-    new-array v1, v1, [I
-
-    fill-array-data v1, :array_4
-
-    sput-object v1, Landroidx/coordinatorlayout/R$styleable;->FontFamilyFont:[I
-
-    const/16 v1, 0xc
-
-    .line 235
-    new-array v1, v1, [I
-
-    fill-array-data v1, :array_5
-
-    sput-object v1, Landroidx/coordinatorlayout/R$styleable;->GradientColor:[I
-
-    .line 248
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_6
+    fill-array-data v0, :array_1
+
+    sput-object v0, Landroidx/coordinatorlayout/R$styleable;->FontFamily:[I
+
+    const/16 v0, 0xa
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_2
+
+    sput-object v0, Landroidx/coordinatorlayout/R$styleable;->FontFamilyFont:[I
+
+    const/16 v0, 0xc
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_3
+
+    sput-object v0, Landroidx/coordinatorlayout/R$styleable;->GradientColor:[I
+
+    const v0, 0x1010514
+
+    filled-new-array {v2, v0}, [I
+
+    move-result-object v0
 
     sput-object v0, Landroidx/coordinatorlayout/R$styleable;->GradientColorItem:[I
 
     return-void
 
-    nop
-
     :array_0
     .array-data 4
-        0x10101a5
-        0x101031f
-        0x7f040028
+        0x10100b3
+        0x7f0302e5
+        0x7f0302e6
+        0x7f0302e7
+        0x7f030318
+        0x7f030325
+        0x7f030326
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f0401d2
-        0x7f0402da
+        0x7f030267
+        0x7f030268
+        0x7f030269
+        0x7f03026a
+        0x7f03026b
+        0x7f03026c
+        0x7f03026d
     .end array-data
 
     :array_2
-    .array-data 4
-        0x10100b3
-        0x7f0401db
-        0x7f0401dc
-        0x7f0401dd
-        0x7f04020a
-        0x7f040213
-        0x7f040214
-    .end array-data
-
-    :array_3
-    .array-data 4
-        0x7f040183
-        0x7f040184
-        0x7f040185
-        0x7f040186
-        0x7f040187
-        0x7f040188
-        0x7f040189
-    .end array-data
-
-    :array_4
     .array-data 4
         0x1010532
         0x1010533
         0x101053f
         0x101056f
         0x1010570
-        0x7f040181
-        0x7f04018a
-        0x7f04018b
-        0x7f04018c
-        0x7f04035e
+        0x7f030265
+        0x7f03026e
+        0x7f03026f
+        0x7f030270
+        0x7f0305be
     .end array-data
 
-    :array_5
+    :array_3
     .array-data 4
         0x101019d
         0x101019e
@@ -247,18 +240,11 @@
         0x1010512
         0x1010513
     .end array-data
-
-    :array_6
-    .array-data 4
-        0x10101a5
-        0x1010514
-    .end array-data
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
-    .line 199
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

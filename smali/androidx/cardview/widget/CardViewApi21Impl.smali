@@ -6,12 +6,6 @@
 .implements Landroidx/cardview/widget/CardViewImpl;
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x15
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .locals 0
@@ -191,10 +185,6 @@
 
 .method public setBackgroundColor(Landroidx/cardview/widget/CardViewDelegate;Landroid/content/res/ColorStateList;)V
     .locals 0
-    .param p2    # Landroid/content/res/ColorStateList;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 113
     invoke-direct {p0, p1}, Landroidx/cardview/widget/CardViewApi21Impl;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;

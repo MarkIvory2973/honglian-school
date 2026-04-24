@@ -39,7 +39,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/View;Landroid/view/View;IIFF)V
-    .locals 0
+    .locals 1
 
     .line 99
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -51,23 +51,19 @@
     iput-object p2, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mViewInHierarchy:Landroid/view/View;
 
     .line 102
-    iget-object p1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mMovingView:Landroid/view/View;
-
     invoke-virtual {p1}, Landroid/view/View;->getTranslationX()F
 
-    move-result p1
+    move-result v0
 
-    invoke-static {p1}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
-    move-result p1
+    move-result v0
 
-    sub-int/2addr p3, p1
+    sub-int/2addr p3, v0
 
     iput p3, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mStartX:I
 
     .line 103
-    iget-object p1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mMovingView:Landroid/view/View;
-
     invoke-virtual {p1}, Landroid/view/View;->getTranslationY()F
 
     move-result p1
@@ -87,11 +83,9 @@
     iput p6, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mTerminalY:F
 
     .line 106
-    iget-object p1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mViewInHierarchy:Landroid/view/View;
+    sget p1, Landroidx/transition/R$id;->transition_position:I
 
-    sget p2, Landroidx/transition/R$id;->transition_position:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+    invoke-virtual {p2, p1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -99,19 +93,14 @@
 
     iput-object p1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mTransitionPosition:[I
 
-    .line 107
-    iget-object p1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mTransitionPosition:[I
-
     if-eqz p1, :cond_0
 
     .line 108
-    iget-object p1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mViewInHierarchy:Landroid/view/View;
-
-    sget p2, Landroidx/transition/R$id;->transition_position:I
+    sget p1, Landroidx/transition/R$id;->transition_position:I
 
     const/4 p3, 0x0
 
-    invoke-virtual {p1, p2, p3}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {p2, p1, p3}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     :cond_0
     return-void
@@ -120,7 +109,7 @@
 
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 3
+    .locals 2
 
     .line 114
     iget-object p1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mTransitionPosition:[I
@@ -129,57 +118,57 @@
 
     const/4 p1, 0x2
 
-    .line 115
     new-array p1, p1, [I
 
+    .line 115
     iput-object p1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mTransitionPosition:[I
 
     .line 117
     :cond_0
     iget-object p1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mTransitionPosition:[I
 
-    const/4 v0, 0x0
+    iget v0, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mStartX:I
 
-    iget v1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mStartX:I
+    int-to-float v0, v0
 
-    int-to-float v1, v1
+    iget-object v1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mMovingView:Landroid/view/View;
 
-    iget-object v2, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mMovingView:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getTranslationX()F
-
-    move-result v2
-
-    add-float/2addr v1, v2
-
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+    invoke-virtual {v1}, Landroid/view/View;->getTranslationX()F
 
     move-result v1
 
-    aput v1, p1, v0
+    add-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    aput v0, p1, v1
 
     .line 118
     iget-object p1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mTransitionPosition:[I
 
-    const/4 v0, 0x1
+    iget v0, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mStartY:I
 
-    iget v1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mStartY:I
+    int-to-float v0, v0
 
-    int-to-float v1, v1
+    iget-object v1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mMovingView:Landroid/view/View;
 
-    iget-object v2, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mMovingView:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getTranslationY()F
-
-    move-result v2
-
-    add-float/2addr v1, v2
-
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+    invoke-virtual {v1}, Landroid/view/View;->getTranslationY()F
 
     move-result v1
 
-    aput v1, p1, v0
+    add-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    aput v0, p1, v1
 
     .line 119
     iget-object p1, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mViewInHierarchy:Landroid/view/View;
@@ -253,20 +242,12 @@
 
 .method public onTransitionCancel(Landroidx/transition/Transition;)V
     .locals 0
-    .param p1    # Landroidx/transition/Transition;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method
 
 .method public onTransitionEnd(Landroidx/transition/Transition;)V
     .locals 2
-    .param p1    # Landroidx/transition/Transition;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 142
     iget-object v0, p0, Landroidx/transition/TranslationAnimationCreator$TransitionPositionListener;->mMovingView:Landroid/view/View;
@@ -290,30 +271,18 @@
 
 .method public onTransitionPause(Landroidx/transition/Transition;)V
     .locals 0
-    .param p1    # Landroidx/transition/Transition;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method
 
 .method public onTransitionResume(Landroidx/transition/Transition;)V
     .locals 0
-    .param p1    # Landroidx/transition/Transition;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method
 
 .method public onTransitionStart(Landroidx/transition/Transition;)V
     .locals 0
-    .param p1    # Landroidx/transition/Transition;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@color/colorWhite" android:layout_width="match_parent" android:layout_height="match_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:paddingLeft="140.0dp" android:paddingRight="140.0dp" android:layout_width="match_parent" android:layout_height="match_parent">
-        <com.hlkj.chinatelecom5.widget.PasswordView android:id="@id/pwdView" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
-        <Button android:id="@id/btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dp" android:layout_marginTop="44.0dp" android:text="HOME" android:onClick="gotobps" />
-    </RelativeLayout>
-</RelativeLayout>

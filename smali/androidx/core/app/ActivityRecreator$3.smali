@@ -26,6 +26,11 @@
 # direct methods
 .method constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
     .line 269
     iput-object p1, p0, Landroidx/core/app/ActivityRecreator$3;->val$activityThread:Ljava/lang/Object;
@@ -105,12 +110,12 @@
     .line 277
     invoke-virtual {v0, v4, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    :catch_0
+    :catchall_0
     move-exception v0
 
     const-string v1, "ActivityRecreator"
@@ -122,7 +127,7 @@
 
     goto :goto_0
 
-    :catch_1
+    :catch_0
     move-exception v0
 
     .line 282

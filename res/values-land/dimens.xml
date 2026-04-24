@@ -3,6 +3,14 @@
     <dimen name="abc_action_bar_default_height_material">48.0dp</dimen>
     <dimen name="abc_text_size_subtitle_material_toolbar">12.0dp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">14.0dp</dimen>
+    <dimen name="color_argb_label_marginTop">12.0dp</dimen>
+    <dimen name="color_argb_seeker_marginSides">4.0dp</dimen>
+    <dimen name="day_of_month_height_ratio">0.6</dimen>
+    <dimen name="header_main_padding_vertical_bottom">8.0dp</dimen>
+    <dimen name="header_main_padding_vertical_top">32.0dp</dimen>
+    <dimen name="material_time_picker_minimum_screen_height">450.0dp</dimen>
+    <dimen name="material_time_picker_minimum_screen_width">600.0dp</dimen>
+    <dimen name="month_sidebar_width_percent">0.3</dimen>
     <dimen name="mtrl_alert_dialog_background_inset_bottom">24.0dp</dimen>
     <dimen name="mtrl_alert_dialog_background_inset_top">24.0dp</dimen>
     <dimen name="mtrl_calendar_days_of_week_height">20.0dp</dimen>

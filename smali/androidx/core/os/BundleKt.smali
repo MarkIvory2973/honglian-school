@@ -4,18 +4,9 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBundle.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Bundle.kt\nandroidx/core/os/BundleKt\n*L\n1#1,105:1\n*E\n"
-.end annotation
-
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
     d1 = {
-        "\u0000\u001c\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0002\u0008\u0002\u001a;\u0010\u0000\u001a\u00020\u00012.\u0010\u0002\u001a\u0018\u0012\u0014\u0008\u0001\u0012\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u00040\u0003\"\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0004\u00a2\u0006\u0002\u0010\u0007\u00a8\u0006\u0008"
+        "\u0000\u001c\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0002\u0008\u0002\u001a\u0006\u0010\u0000\u001a\u00020\u0001\u001a;\u0010\u0000\u001a\u00020\u00012.\u0010\u0002\u001a\u0018\u0012\u0014\u0008\u0001\u0012\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u00040\u0003\"\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0004\u00a2\u0006\u0002\u0010\u0007\u00a8\u0006\u0008"
     }
     d2 = {
         "bundleOf",
@@ -31,19 +22,29 @@
     k = 0x2
     mv = {
         0x1,
-        0x1,
-        0x10
+        0x8,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
+.method public static final bundleOf()Landroid/os/Bundle;
+    .locals 2
+
+    .line 112
+    new-instance v0, Landroid/os/Bundle;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Landroid/os/Bundle;-><init>(I)V
+
+    return-object v0
+.end method
+
 .method public static final varargs bundleOf([Lkotlin/Pair;)Landroid/os/Bundle;
-    .locals 8
-    .param p0    # [Lkotlin/Pair;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -56,27 +57,24 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
     const-string v0, "pairs"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 32
+    .line 34
     new-instance v0, Landroid/os/Bundle;
 
     array-length v1, p0
 
     invoke-direct {v0, v1}, Landroid/os/Bundle;-><init>(I)V
 
-    .line 33
+    .line 35
     array-length v1, p0
 
     const/4 v2, 0x0
 
     :goto_0
-    if-ge v2, v1, :cond_21
+    if-ge v2, v1, :cond_1d
 
     aget-object v3, p0, v2
 
@@ -94,12 +92,12 @@
 
     const/4 v3, 0x0
 
-    .line 35
+    .line 37
     invoke-virtual {v0, v4, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_1
 
-    .line 38
+    .line 40
     :cond_0
     instance-of v5, v3, Ljava/lang/Boolean;
 
@@ -115,7 +113,7 @@
 
     goto/16 :goto_1
 
-    .line 39
+    .line 41
     :cond_1
     instance-of v5, v3, Ljava/lang/Byte;
 
@@ -131,7 +129,7 @@
 
     goto/16 :goto_1
 
-    .line 40
+    .line 42
     :cond_2
     instance-of v5, v3, Ljava/lang/Character;
 
@@ -147,7 +145,7 @@
 
     goto/16 :goto_1
 
-    .line 41
+    .line 43
     :cond_3
     instance-of v5, v3, Ljava/lang/Double;
 
@@ -163,7 +161,7 @@
 
     goto/16 :goto_1
 
-    .line 42
+    .line 44
     :cond_4
     instance-of v5, v3, Ljava/lang/Float;
 
@@ -179,7 +177,7 @@
 
     goto/16 :goto_1
 
-    .line 43
+    .line 45
     :cond_5
     instance-of v5, v3, Ljava/lang/Integer;
 
@@ -195,7 +193,7 @@
 
     goto/16 :goto_1
 
-    .line 44
+    .line 46
     :cond_6
     instance-of v5, v3, Ljava/lang/Long;
 
@@ -211,7 +209,7 @@
 
     goto/16 :goto_1
 
-    .line 45
+    .line 47
     :cond_7
     instance-of v5, v3, Ljava/lang/Short;
 
@@ -227,7 +225,7 @@
 
     goto/16 :goto_1
 
-    .line 48
+    .line 50
     :cond_8
     instance-of v5, v3, Landroid/os/Bundle;
 
@@ -239,7 +237,7 @@
 
     goto/16 :goto_1
 
-    .line 49
+    .line 51
     :cond_9
     instance-of v5, v3, Ljava/lang/CharSequence;
 
@@ -251,7 +249,7 @@
 
     goto/16 :goto_1
 
-    .line 50
+    .line 52
     :cond_a
     instance-of v5, v3, Landroid/os/Parcelable;
 
@@ -263,7 +261,7 @@
 
     goto/16 :goto_1
 
-    .line 53
+    .line 55
     :cond_b
     instance-of v5, v3, [Z
 
@@ -275,7 +273,7 @@
 
     goto/16 :goto_1
 
-    .line 54
+    .line 56
     :cond_c
     instance-of v5, v3, [B
 
@@ -287,7 +285,7 @@
 
     goto/16 :goto_1
 
-    .line 55
+    .line 57
     :cond_d
     instance-of v5, v3, [C
 
@@ -299,7 +297,7 @@
 
     goto/16 :goto_1
 
-    .line 56
+    .line 58
     :cond_e
     instance-of v5, v3, [D
 
@@ -311,7 +309,7 @@
 
     goto/16 :goto_1
 
-    .line 57
+    .line 59
     :cond_f
     instance-of v5, v3, [F
 
@@ -323,7 +321,7 @@
 
     goto/16 :goto_1
 
-    .line 58
+    .line 60
     :cond_10
     instance-of v5, v3, [I
 
@@ -335,7 +333,7 @@
 
     goto/16 :goto_1
 
-    .line 59
+    .line 61
     :cond_11
     instance-of v5, v3, [J
 
@@ -347,7 +345,7 @@
 
     goto/16 :goto_1
 
-    .line 60
+    .line 62
     :cond_12
     instance-of v5, v3, [S
 
@@ -359,15 +357,17 @@
 
     goto/16 :goto_1
 
-    .line 63
+    .line 65
     :cond_13
     instance-of v5, v3, [Ljava/lang/Object;
 
     const/16 v6, 0x22
 
-    if-eqz v5, :cond_1c
+    const-string v7, " for key \""
 
-    .line 64
+    if-eqz v5, :cond_18
+
+    .line 66
     invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v5
@@ -376,138 +376,107 @@
 
     move-result-object v5
 
-    if-nez v5, :cond_14
-
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    :cond_14
-    const-string v7, "value::class.java.componentType!!"
-
-    invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 67
-    const-class v7, Landroid/os/Parcelable;
-
-    invoke-virtual {v7, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_16
-
-    if-eqz v3, :cond_15
+    invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     .line 68
+    const-class v8, Landroid/os/Parcelable;
+
+    .line 69
+    invoke-virtual {v8, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_14
+
+    const-string v5, "null cannot be cast to non-null type kotlin.Array<android.os.Parcelable>"
+
+    .line 70
+    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast v3, [Landroid/os/Parcelable;
 
     invoke-virtual {v0, v4, v3}, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String;[Landroid/os/Parcelable;)V
 
     goto/16 :goto_1
 
-    :cond_15
-    new-instance p0, Lkotlin/TypeCastException;
+    :cond_14
+    const-class v8, Ljava/lang/String;
 
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<android.os.Parcelable>"
+    .line 72
+    invoke-virtual {v8, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    invoke-direct {p0, v0}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    move-result v8
 
-    throw p0
+    if-eqz v8, :cond_15
 
-    .line 70
-    :cond_16
-    const-class v7, Ljava/lang/String;
+    const-string v5, "null cannot be cast to non-null type kotlin.Array<kotlin.String>"
 
-    invoke-virtual {v7, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    .line 73
+    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result v7
-
-    if-eqz v7, :cond_18
-
-    if-eqz v3, :cond_17
-
-    .line 71
     check-cast v3, [Ljava/lang/String;
 
     invoke-virtual {v0, v4, v3}, Landroid/os/Bundle;->putStringArray(Ljava/lang/String;[Ljava/lang/String;)V
 
-    goto/16 :goto_1
+    goto :goto_1
 
-    :cond_17
-    new-instance p0, Lkotlin/TypeCastException;
+    :cond_15
+    const-class v8, Ljava/lang/CharSequence;
 
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<kotlin.String>"
+    .line 75
+    invoke-virtual {v8, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    invoke-direct {p0, v0}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    move-result v8
 
-    throw p0
+    if-eqz v8, :cond_16
 
-    .line 73
-    :cond_18
-    const-class v7, Ljava/lang/CharSequence;
+    const-string v5, "null cannot be cast to non-null type kotlin.Array<kotlin.CharSequence>"
 
-    invoke-virtual {v7, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    .line 76
+    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result v7
-
-    if-eqz v7, :cond_1a
-
-    if-eqz v3, :cond_19
-
-    .line 74
     check-cast v3, [Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v4, v3}, Landroid/os/Bundle;->putCharSequenceArray(Ljava/lang/String;[Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_1
+    goto :goto_1
 
-    :cond_19
-    new-instance p0, Lkotlin/TypeCastException;
+    :cond_16
+    const-class v8, Ljava/io/Serializable;
 
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<kotlin.CharSequence>"
+    .line 78
+    invoke-virtual {v8, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    invoke-direct {p0, v0}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    move-result v8
 
-    throw p0
+    if-eqz v8, :cond_17
 
-    .line 76
-    :cond_1a
-    const-class v7, Ljava/io/Serializable;
-
-    invoke-virtual {v7, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_1b
-
-    .line 77
+    .line 79
     check-cast v3, Ljava/io/Serializable;
 
     invoke-virtual {v0, v4, v3}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
 
     goto :goto_1
 
-    .line 80
-    :cond_1b
+    .line 82
+    :cond_17
     invoke-virtual {v5}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 81
+    .line 83
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    .line 82
+    .line 84
     new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "Illegal value array type "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p0, " for key \""
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -517,18 +486,16 @@
 
     move-result-object p0
 
-    .line 81
+    .line 83
     invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    check-cast v0, Ljava/lang/Throwable;
 
     throw v0
 
-    .line 88
-    :cond_1c
+    .line 91
+    :cond_18
     instance-of v5, v3, Ljava/io/Serializable;
 
-    if-eqz v5, :cond_1d
+    if-eqz v5, :cond_19
 
     check-cast v3, Ljava/io/Serializable;
 
@@ -536,66 +503,50 @@
 
     goto :goto_1
 
-    .line 91
-    :cond_1d
-    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v7, 0x12
-
-    if-lt v5, v7, :cond_1e
-
+    .line 94
+    :cond_19
     instance-of v5, v3, Landroid/os/IBinder;
 
-    if-eqz v5, :cond_1e
-
-    .line 92
-    check-cast v3, Landroid/os/IBinder;
-
-    invoke-virtual {v0, v4, v3}, Landroid/os/Bundle;->putBinder(Ljava/lang/String;Landroid/os/IBinder;)V
-
-    goto :goto_1
-
-    .line 93
-    :cond_1e
-    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v7, 0x15
-
-    if-lt v5, v7, :cond_1f
-
-    instance-of v5, v3, Landroid/util/Size;
-
-    if-eqz v5, :cond_1f
-
-    .line 94
-    check-cast v3, Landroid/util/Size;
-
-    invoke-virtual {v0, v4, v3}, Landroid/os/Bundle;->putSize(Ljava/lang/String;Landroid/util/Size;)V
-
-    goto :goto_1
+    if-eqz v5, :cond_1a
 
     .line 95
-    :cond_1f
-    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
+    check-cast v3, Landroid/os/IBinder;
 
-    if-lt v5, v7, :cond_20
+    invoke-static {v0, v4, v3}, Landroidx/core/os/BundleApi18ImplKt;->putBinder(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
 
-    instance-of v5, v3, Landroid/util/SizeF;
-
-    if-eqz v5, :cond_20
+    goto :goto_1
 
     .line 96
+    :cond_1a
+    instance-of v5, v3, Landroid/util/Size;
+
+    if-eqz v5, :cond_1b
+
+    .line 97
+    check-cast v3, Landroid/util/Size;
+
+    invoke-static {v0, v4, v3}, Landroidx/core/os/BundleApi21ImplKt;->putSize(Landroid/os/Bundle;Ljava/lang/String;Landroid/util/Size;)V
+
+    goto :goto_1
+
+    .line 98
+    :cond_1b
+    instance-of v5, v3, Landroid/util/SizeF;
+
+    if-eqz v5, :cond_1c
+
+    .line 99
     check-cast v3, Landroid/util/SizeF;
 
-    invoke-virtual {v0, v4, v3}, Landroid/os/Bundle;->putSizeF(Ljava/lang/String;Landroid/util/SizeF;)V
+    invoke-static {v0, v4, v3}, Landroidx/core/os/BundleApi21ImplKt;->putSizeF(Landroid/os/Bundle;Ljava/lang/String;Landroid/util/SizeF;)V
 
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto/16 :goto_0
 
-    .line 98
-    :cond_20
+    .line 101
+    :cond_1c
     invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p0
@@ -604,22 +555,18 @@
 
     move-result-object p0
 
-    .line 99
+    .line 102
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Illegal value type "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p0, " for key \""
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -631,10 +578,8 @@
 
     invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    check-cast v0, Ljava/lang/Throwable;
-
     throw v0
 
-    :cond_21
+    :cond_1d
     return-object v0
 .end method

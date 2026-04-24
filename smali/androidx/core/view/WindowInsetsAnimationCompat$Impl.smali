@@ -22,9 +22,6 @@
 .field private mFraction:F
 
 .field private final mInterpolator:Landroid/view/animation/Interpolator;
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-.end field
 
 .field private final mTypeMask:I
 
@@ -32,21 +29,17 @@
 # direct methods
 .method constructor <init>(ILandroid/view/animation/Interpolator;J)V
     .locals 0
-    .param p2    # Landroid/view/animation/Interpolator;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-
-    .line 541
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 542
-    iput p1, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mTypeMask:I
 
     .line 543
-    iput-object p2, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mInterpolator:Landroid/view/animation/Interpolator;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 544
+    iput p1, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mTypeMask:I
+
+    .line 545
+    iput-object p2, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mInterpolator:Landroid/view/animation/Interpolator;
+
+    .line 546
     iput-wide p3, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mDurationMillis:J
 
     return-void
@@ -57,7 +50,7 @@
 .method public getAlpha()F
     .locals 1
 
-    .line 572
+    .line 574
     iget v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mAlpha:F
 
     return v0
@@ -66,7 +59,7 @@
 .method public getDurationMillis()J
     .locals 2
 
-    .line 568
+    .line 570
     iget-wide v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mDurationMillis:J
 
     return-wide v0
@@ -75,7 +68,7 @@
 .method public getFraction()F
     .locals 1
 
-    .line 552
+    .line 554
     iget v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mFraction:F
 
     return v0
@@ -84,12 +77,12 @@
 .method public getInterpolatedFraction()F
     .locals 2
 
-    .line 556
+    .line 558
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mInterpolator:Landroid/view/animation/Interpolator;
 
     if-eqz v0, :cond_0
 
-    .line 557
+    .line 559
     iget v1, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mFraction:F
 
     invoke-interface {v0, v1}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
@@ -98,7 +91,7 @@
 
     return v0
 
-    .line 559
+    .line 561
     :cond_0
     iget v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mFraction:F
 
@@ -107,10 +100,8 @@
 
 .method public getInterpolator()Landroid/view/animation/Interpolator;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
-    .line 564
+    .line 566
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mInterpolator:Landroid/view/animation/Interpolator;
 
     return-object v0
@@ -119,7 +110,7 @@
 .method public getTypeMask()I
     .locals 1
 
-    .line 548
+    .line 550
     iget v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mTypeMask:I
 
     return v0
@@ -128,7 +119,7 @@
 .method public setAlpha(F)V
     .locals 0
 
-    .line 580
+    .line 582
     iput p1, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mAlpha:F
 
     return-void
@@ -137,7 +128,7 @@
 .method public setFraction(F)V
     .locals 0
 
-    .line 576
+    .line 578
     iput p1, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mFraction:F
 
     return-void

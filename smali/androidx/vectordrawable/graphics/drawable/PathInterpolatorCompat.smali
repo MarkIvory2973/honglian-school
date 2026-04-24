@@ -6,14 +6,6 @@
 .implements Landroid/view/animation/Interpolator;
 
 
-# annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
-
 # static fields
 .field public static final EPSILON:D = 1.0E-5
 
@@ -150,7 +142,6 @@
 
     const/4 v4, 0x2
 
-    .line 149
     new-array v4, v4, [F
 
     const/4 v5, 0x0
@@ -262,8 +253,6 @@
 
     const/4 p1, 0x0
 
-    const/4 p1, 0x0
-
     const/4 v3, 0x0
 
     :goto_1
@@ -272,46 +261,44 @@
     .line 169
     iget-object v4, p0, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->mX:[F
 
-    add-int/lit8 v5, p1, 0x1
+    add-int/lit8 v5, v3, 0x1
 
-    aget p1, v4, p1
+    aget v3, v4, v3
 
-    cmpg-float v3, p1, v3
+    cmpg-float p1, v3, p1
 
-    if-ltz v3, :cond_1
+    if-ltz p1, :cond_1
 
     .line 173
-    aput p1, v4, v1
+    aput v3, v4, v1
 
     add-int/lit8 v1, v1, 0x1
 
-    move v3, p1
+    move p1, v3
 
-    move p1, v5
+    move v3, v5
 
     goto :goto_1
 
     .line 171
     :cond_1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "The Path cannot loop back on itself, x :"
 
-    const-string v2, "The Path cannot loop back on itself, x :"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object p1
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    throw p1
 
     .line 177
     :cond_2
@@ -339,11 +326,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "The Path must start at (0,0) and end at (1,1) start: "
 
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v4, p0, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->mX:[F
 
@@ -355,9 +340,9 @@
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v4, p0, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->mY:[F
+    iget-object v5, p0, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->mY:[F
 
-    aget v1, v4, v1
+    aget v1, v5, v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
@@ -373,9 +358,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    const-string v1, ","
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->mY:[F
 
@@ -397,11 +380,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "The Path has a invalid length "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
@@ -439,18 +420,16 @@
 .end method
 
 .method private parseInterpolatorFromTypeArray(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;)V
-    .locals 6
+    .locals 7
 
     const-string v0, "pathData"
 
     .line 82
     invoke-static {p2, v0}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_1
-
-    const-string v0, "pathData"
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x4
 
@@ -477,11 +456,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "The path is null, which is created from "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -499,56 +476,52 @@
     .line 92
     invoke-static {p2, v0}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_5
-
-    const-string v0, "controlY1"
-
-    .line 94
-    invoke-static {p2, v0}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    const-string v0, "controlX1"
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    .line 97
-    invoke-static {p1, p2, v0, v1, v2}, Landroidx/core/content/res/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
-
-    move-result v0
+    if-eqz v1, :cond_5
 
     const-string v1, "controlY1"
 
-    const/4 v3, 0x1
+    .line 94
+    invoke-static {p2, v1}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    .line 97
+    invoke-static {p1, p2, v0, v2, v3}, Landroidx/core/content/res/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+
+    move-result v0
+
+    const/4 v2, 0x1
 
     .line 99
-    invoke-static {p1, p2, v1, v3, v2}, Landroidx/core/content/res/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {p1, p2, v1, v2, v3}, Landroidx/core/content/res/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v1
 
-    const-string v3, "controlX2"
+    const-string v2, "controlX2"
 
     .line 102
-    invoke-static {p2, v3}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
-
-    move-result v3
-
-    const-string v4, "controlY2"
-
-    .line 103
-    invoke-static {p2, v4}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
+    invoke-static {p2, v2}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v4
 
-    if-ne v3, v4, :cond_3
+    const-string v5, "controlY2"
 
-    if-nez v3, :cond_2
+    .line 103
+    invoke-static {p2, v5}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-ne v4, v6, :cond_3
+
+    if-nez v4, :cond_2
 
     .line 111
     invoke-direct {p0, v0, v1}, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->initQuad(FF)V
@@ -556,26 +529,22 @@
     goto :goto_0
 
     :cond_2
-    const-string v3, "controlX2"
-
     const/4 v4, 0x2
 
     .line 113
-    invoke-static {p1, p2, v3, v4, v2}, Landroidx/core/content/res/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {p1, p2, v2, v4, v3}, Landroidx/core/content/res/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
-    move-result v3
+    move-result v2
 
-    const-string v4, "controlY2"
-
-    const/4 v5, 0x3
+    const/4 v4, 0x3
 
     .line 115
-    invoke-static {p1, p2, v4, v5, v2}, Landroidx/core/content/res/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {p1, p2, v5, v4, v3}, Landroidx/core/content/res/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result p1
 
     .line 117
-    invoke-direct {p0, v0, v1, v3, p1}, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->initCubic(FFFF)V
+    invoke-direct {p0, v0, v1, v2, p1}, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->initCubic(FFFF)V
 
     :goto_0
     return-void
@@ -633,24 +602,24 @@
 
     return v1
 
-    :cond_1
-    const/4 v1, 0x0
-
     .line 202
-    iget-object v2, p0, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->mX:[F
+    :cond_1
+    iget-object v1, p0, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->mX:[F
 
-    array-length v2, v2
+    array-length v1, v1
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    sub-int/2addr v2, v3
+    sub-int/2addr v1, v2
+
+    const/4 v3, 0x0
 
     :goto_0
-    sub-int v4, v2, v1
+    sub-int v4, v1, v3
 
-    if-le v4, v3, :cond_3
+    if-le v4, v2, :cond_3
 
-    add-int v4, v1, v2
+    add-int v4, v3, v1
 
     .line 205
     div-int/lit8 v4, v4, 0x2
@@ -664,24 +633,24 @@
 
     if-gez v5, :cond_2
 
-    move v2, v4
+    move v1, v4
 
     goto :goto_0
 
     :cond_2
-    move v1, v4
+    move v3, v4
 
     goto :goto_0
 
     .line 213
     :cond_3
-    iget-object v3, p0, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->mX:[F
+    iget-object v2, p0, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->mX:[F
 
-    aget v4, v3, v2
+    aget v4, v2, v1
 
-    aget v5, v3, v1
+    aget v2, v2, v3
 
-    sub-float/2addr v4, v5
+    sub-float/2addr v4, v2
 
     cmpl-float v0, v4, v0
 
@@ -690,31 +659,28 @@
     .line 215
     iget-object p1, p0, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->mY:[F
 
-    aget p1, p1, v1
+    aget p1, p1, v3
 
     return p1
 
-    .line 218
     :cond_4
-    aget v0, v3, v1
-
-    sub-float/2addr p1, v0
+    sub-float/2addr p1, v2
 
     div-float/2addr p1, v4
 
     .line 221
     iget-object v0, p0, Landroidx/vectordrawable/graphics/drawable/PathInterpolatorCompat;->mY:[F
 
-    aget v1, v0, v1
+    aget v2, v0, v3
 
     .line 222
-    aget v0, v0, v2
+    aget v0, v0, v1
 
-    sub-float/2addr v0, v1
+    sub-float/2addr v0, v2
 
     mul-float p1, p1, v0
 
-    add-float/2addr v1, p1
+    add-float/2addr v2, p1
 
-    return v1
+    return v2
 .end method

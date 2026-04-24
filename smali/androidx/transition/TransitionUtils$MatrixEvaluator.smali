@@ -43,14 +43,14 @@
 
     const/16 v0, 0x9
 
-    .line 157
     new-array v1, v0, [F
 
+    .line 157
     iput-object v1, p0, Landroidx/transition/TransitionUtils$MatrixEvaluator;->mTempStartValues:[F
 
-    .line 159
     new-array v0, v0, [F
 
+    .line 159
     iput-object v0, p0, Landroidx/transition/TransitionUtils$MatrixEvaluator;->mTempEndValues:[F
 
     .line 161
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public evaluate(FLandroid/graphics/Matrix;Landroid/graphics/Matrix;)Landroid/graphics/Matrix;
-    .locals 3
+    .locals 2
 
     .line 165
     iget-object v0, p0, Landroidx/transition/TransitionUtils$MatrixEvaluator;->mTempStartValues:[F
@@ -92,17 +92,15 @@
 
     iget-object v1, p0, Landroidx/transition/TransitionUtils$MatrixEvaluator;->mTempStartValues:[F
 
-    aget v2, v1, p2
-
-    sub-float/2addr v0, v2
-
-    .line 169
     aget v1, v1, p2
+
+    sub-float/2addr v0, v1
 
     mul-float v0, v0, p1
 
     add-float/2addr v1, v0
 
+    .line 169
     aput v1, p3, p2
 
     add-int/lit8 p2, p2, 0x1

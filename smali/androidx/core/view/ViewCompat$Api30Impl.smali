@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x1e
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/core/view/ViewCompat;
 .end annotation
@@ -22,29 +18,34 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 4851
+    .line 5077
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method static getStateDescription(Landroid/view/View;)Ljava/lang/CharSequence;
+    .locals 0
+
+    .line 5096
+    invoke-virtual {p0}, Landroid/view/View;->getStateDescription()Ljava/lang/CharSequence;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static getWindowInsetsController(Landroid/view/View;)Landroidx/core/view/WindowInsetsControllerCompat;
     .locals 0
-    .param p0    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
-    .line 4857
+    .line 5083
     invoke-virtual {p0}, Landroid/view/View;->getWindowInsetsController()Landroid/view/WindowInsetsController;
 
     move-result-object p0
 
     if-eqz p0, :cond_0
 
-    .line 4859
+    .line 5085
     invoke-static {p0}, Landroidx/core/view/WindowInsetsControllerCompat;->toWindowInsetsControllerCompat(Landroid/view/WindowInsetsController;)Landroidx/core/view/WindowInsetsControllerCompat;
 
     move-result-object p0
@@ -56,4 +57,13 @@
 
     :goto_0
     return-object p0
+.end method
+
+.method static setStateDescription(Landroid/view/View;Ljava/lang/CharSequence;)V
+    .locals 0
+
+    .line 5091
+    invoke-virtual {p0, p1}, Landroid/view/View;->setStateDescription(Ljava/lang/CharSequence;)V
+
+    return-void
 .end method

@@ -13,7 +13,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z
+.field private static final DEBUG:Z = false
 
 .field private static sDefaultInterpolator:Landroid/animation/TimeInterpolator;
 
@@ -981,14 +981,6 @@
 
 .method public canReuseUpdatedViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Ljava/util/List;)Z
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/List;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

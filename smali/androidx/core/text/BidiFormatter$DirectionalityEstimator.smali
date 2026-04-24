@@ -38,9 +38,9 @@
 
     const/16 v0, 0x700
 
-    .line 584
     new-array v1, v0, [B
 
+    .line 584
     sput-object v1, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->DIR_TYPE_CACHE:[B
 
     const/4 v1, 0x0
@@ -137,9 +137,6 @@
 
     iput-char v1, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->lastChar:C
 
-    .line 947
-    iget-char v1, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->lastChar:C
-
     const/16 v3, 0x26
 
     if-ne v1, v3, :cond_1
@@ -225,9 +222,6 @@
 
     iput-char v1, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->lastChar:C
 
-    .line 904
-    iget-char v1, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->lastChar:C
-
     const/16 v3, 0x3c
 
     if-ne v1, v3, :cond_1
@@ -250,11 +244,8 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 913
-    :cond_3
-    iget-char v1, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->lastChar:C
-
     .line 914
+    :cond_3
     :goto_0
     iget v2, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->charIndex:I
 
@@ -316,9 +307,6 @@
 
     iput-char v1, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->lastChar:C
 
-    .line 875
-    iget-char v1, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->lastChar:C
-
     const/16 v2, 0x3e
 
     if-ne v1, v2, :cond_1
@@ -336,11 +324,8 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 881
-    :cond_2
-    iget-char v1, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->lastChar:C
-
     .line 882
+    :cond_2
     :goto_0
     iget v2, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->charIndex:I
 
@@ -397,8 +382,6 @@
     iput-char v0, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->lastChar:C
 
     .line 847
-    iget-char v0, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->lastChar:C
-
     invoke-static {v0}, Ljava/lang/Character;->isLowSurrogate(C)Z
 
     move-result v0
@@ -496,8 +479,6 @@
     iput-char v0, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->lastChar:C
 
     .line 817
-    iget-char v0, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->lastChar:C
-
     invoke-static {v0}, Ljava/lang/Character;->isHighSurrogate(C)Z
 
     move-result v0
@@ -588,143 +569,135 @@
     .line 646
     iput v0, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->charIndex:I
 
-    const/4 v1, -0x1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
 
     .line 650
     :cond_0
     :goto_0
-    iget v6, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->charIndex:I
+    iget v4, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->charIndex:I
 
-    iget v7, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->length:I
+    iget v5, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->length:I
 
-    if-ge v6, v7, :cond_2
+    const/4 v6, -0x1
 
-    if-nez v3, :cond_2
+    const/4 v7, 0x1
+
+    if-ge v4, v5, :cond_4
+
+    if-nez v1, :cond_4
 
     .line 651
     invoke-virtual {p0}, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->dirTypeForward()B
 
-    move-result v6
+    move-result v4
 
-    const/16 v7, 0x9
+    if-eqz v4, :cond_2
 
-    if-eq v6, v7, :cond_0
+    if-eq v4, v7, :cond_1
 
-    packed-switch v6, :pswitch_data_0
+    const/4 v5, 0x2
 
-    packed-switch v6, :pswitch_data_1
+    if-eq v4, v5, :cond_1
+
+    const/16 v5, 0x9
+
+    if-eq v4, v5, :cond_0
+
+    packed-switch v4, :pswitch_data_0
 
     goto :goto_1
 
     :pswitch_0
-    add-int/lit8 v5, v5, -0x1
+    add-int/lit8 v3, v3, -0x1
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     goto :goto_0
 
     :pswitch_1
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :pswitch_2
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    const/4 v4, -0x1
+    const/4 v2, -0x1
 
     goto :goto_0
-
-    :pswitch_3
-    if-nez v5, :cond_1
-
-    return v2
-
-    :pswitch_4
-    if-nez v5, :cond_1
-
-    return v1
 
     :cond_1
-    :goto_1
-    move v3, v5
+    if-nez v3, :cond_3
 
-    goto :goto_0
+    return v7
 
     :cond_2
     if-nez v3, :cond_3
 
-    return v0
+    return v6
 
     :cond_3
-    if-eqz v4, :cond_4
+    :goto_1
+    move v1, v3
 
-    return v4
+    goto :goto_0
+
+    :cond_4
+    if-nez v1, :cond_5
+
+    return v0
+
+    :cond_5
+    if-eqz v2, :cond_6
+
+    return v2
 
     .line 706
-    :cond_4
+    :cond_6
     :goto_2
-    iget v4, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->charIndex:I
+    iget v2, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->charIndex:I
 
-    if-lez v4, :cond_7
+    if-lez v2, :cond_8
 
     .line 707
     invoke-virtual {p0}, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->dirTypeBackward()B
 
-    move-result v4
+    move-result v2
 
-    packed-switch v4, :pswitch_data_2
+    packed-switch v2, :pswitch_data_1
 
     goto :goto_2
+
+    :pswitch_3
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_2
+
+    :pswitch_4
+    if-ne v1, v3, :cond_7
+
+    return v7
 
     :pswitch_5
-    add-int/lit8 v5, v5, 0x1
+    if-ne v1, v3, :cond_7
 
-    goto :goto_2
-
-    :pswitch_6
-    if-ne v3, v5, :cond_5
-
-    return v2
-
-    :cond_5
-    add-int/lit8 v5, v5, -0x1
-
-    goto :goto_2
-
-    :pswitch_7
-    if-ne v3, v5, :cond_6
-
-    return v1
-
-    :cond_6
-    add-int/lit8 v5, v5, -0x1
-
-    goto :goto_2
+    return v6
 
     :cond_7
+    add-int/lit8 v3, v3, -0x1
+
+    goto :goto_2
+
+    :cond_8
     return v0
 
-    nop
-
     :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_3
-    .end packed-switch
-
-    :pswitch_data_1
     .packed-switch 0xe
         :pswitch_2
         :pswitch_2
@@ -733,18 +706,18 @@
         :pswitch_0
     .end packed-switch
 
-    :pswitch_data_2
+    :pswitch_data_1
     .packed-switch 0xe
-        :pswitch_7
-        :pswitch_7
-        :pswitch_6
-        :pswitch_6
         :pswitch_5
+        :pswitch_5
+        :pswitch_4
+        :pswitch_4
+        :pswitch_3
     .end packed-switch
 .end method
 
 .method getExitDir()I
-    .locals 6
+    .locals 7
 
     .line 744
     iget v0, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->length:I
@@ -762,90 +735,82 @@
     :goto_0
     iget v3, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->charIndex:I
 
-    if-lez v3, :cond_5
+    if-lez v3, :cond_6
 
     .line 748
     invoke-virtual {p0}, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->dirTypeBackward()B
 
     move-result v3
 
-    const/16 v4, 0x9
+    const/4 v4, -0x1
 
-    if-eq v3, v4, :cond_0
+    if-eqz v3, :cond_4
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    const/4 v5, -0x1
+    if-eq v3, v5, :cond_2
+
+    const/4 v6, 0x2
+
+    if-eq v3, v6, :cond_2
+
+    const/16 v6, 0x9
+
+    if-eq v3, v6, :cond_0
 
     packed-switch v3, :pswitch_data_0
 
-    packed-switch v3, :pswitch_data_1
-
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
     goto :goto_1
 
     :pswitch_0
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :pswitch_1
-    if-ne v1, v2, :cond_1
+    if-ne v2, v1, :cond_1
+
+    return v5
+
+    :pswitch_2
+    if-ne v2, v1, :cond_1
 
     return v4
 
     :cond_1
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    :pswitch_2
-    if-ne v1, v2, :cond_2
+    :cond_2
+    if-nez v1, :cond_3
 
     return v5
 
-    :cond_2
-    add-int/lit8 v2, v2, -0x1
-
-    goto :goto_0
-
-    :pswitch_3
-    if-nez v2, :cond_3
-
-    return v4
-
     :cond_3
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
     goto :goto_1
 
-    :pswitch_4
-    if-nez v2, :cond_4
-
-    return v5
-
     :cond_4
-    if-nez v1, :cond_0
+    if-nez v1, :cond_5
+
+    return v4
+
+    :cond_5
+    if-nez v2, :cond_0
 
     :goto_1
-    move v1, v2
+    move v2, v1
 
     goto :goto_0
 
-    :cond_5
+    :cond_6
     return v0
 
-    nop
-
     :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_3
-    .end packed-switch
-
-    :pswitch_data_1
     .packed-switch 0xe
         :pswitch_2
         :pswitch_2

@@ -35,9 +35,10 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -50,10 +51,6 @@
 # direct methods
 .method public constructor <init>(Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;Ljava/io/File;)V
     .locals 1
-    .param p1    # Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -71,37 +68,6 @@
 
     invoke-direct {p0, p2}, Lkotlin/io/FileTreeWalk$WalkState;-><init>(Ljava/io/File;)V
 
-    .line 200
-    sget-boolean p1, Lkotlin/_Assertions;->ENABLED:Z
-
-    if-eqz p1, :cond_1
-
-    .line 201
-    invoke-virtual {p2}, Ljava/io/File;->isFile()Z
-
-    move-result p1
-
-    sget-boolean p2, Lkotlin/_Assertions;->ENABLED:Z
-
-    if-eqz p2, :cond_1
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Ljava/lang/AssertionError;
-
-    const-string p2, "rootFile must be verified to be file beforehand."
-
-    invoke-direct {p1, p2}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    check-cast p1, Ljava/lang/Throwable;
-
-    throw p1
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
@@ -109,8 +75,6 @@
 # virtual methods
 .method public step()Ljava/io/File;
     .locals 1
-    .annotation build Lorg/jetbrains/annotations/Nullable;
-    .end annotation
 
     .line 205
     iget-boolean v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$SingleFileState;->visited:Z

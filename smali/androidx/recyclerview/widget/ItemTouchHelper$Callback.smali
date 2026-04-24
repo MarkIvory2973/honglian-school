@@ -89,6 +89,7 @@
 
     shl-int/lit8 p1, v1, 0x2
 
+    :goto_0
     or-int/2addr p0, p1
 
     return p0
@@ -106,15 +107,11 @@
 
     shl-int/lit8 p1, p1, 0x2
 
-    or-int/2addr p0, p1
-
-    return p0
+    goto :goto_0
 .end method
 
 .method public static getDefaultUIUtil()Landroidx/recyclerview/widget/ItemTouchUIUtil;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 1466
     sget-object v0, Landroidx/recyclerview/widget/ItemTouchUIUtilImpl;->INSTANCE:Landroidx/recyclerview/widget/ItemTouchUIUtil;
@@ -165,12 +162,12 @@
 .method public static makeMovementFlags(II)I
     .locals 2
 
-    or-int v0, p1, p0
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    or-int v1, p1, p0
 
     .line 1512
-    invoke-static {v1, v0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeFlag(II)I
+    invoke-static {v0, v1}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeFlag(II)I
 
     move-result v0
 
@@ -199,18 +196,6 @@
 # virtual methods
 .method public canDropOver(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/4 p1, 0x1
 
@@ -219,14 +204,6 @@
 
 .method public chooseDropTarget(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Ljava/util/List;II)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 14
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/List;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -336,24 +313,21 @@
 
     move-object v6, v10
 
-    goto :goto_1
+    move v7, v11
 
     :cond_0
-    move v11, v7
-
-    :goto_1
     if-gez v3, :cond_1
 
     .line 1822
-    iget-object v7, v10, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v11, v10, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v7}, Landroid/view/View;->getLeft()I
+    invoke-virtual {v11}, Landroid/view/View;->getLeft()I
 
-    move-result v7
+    move-result v11
 
-    sub-int v7, v7, p3
+    sub-int v11, v11, p3
 
-    if-lez v7, :cond_1
+    if-lez v11, :cond_1
 
     .line 1823
     iget-object v12, v10, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -371,29 +345,29 @@
     if-ge v12, v13, :cond_1
 
     .line 1824
-    invoke-static {v7}, Ljava/lang/Math;->abs(I)I
+    invoke-static {v11}, Ljava/lang/Math;->abs(I)I
 
-    move-result v7
+    move-result v11
 
-    if-le v7, v11, :cond_1
-
-    move v11, v7
+    if-le v11, v7, :cond_1
 
     move-object v6, v10
+
+    move v7, v11
 
     :cond_1
     if-gez v4, :cond_2
 
     .line 1832
-    iget-object v7, v10, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v11, v10, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v7}, Landroid/view/View;->getTop()I
+    invoke-virtual {v11}, Landroid/view/View;->getTop()I
 
-    move-result v7
+    move-result v11
 
-    sub-int v7, v7, p4
+    sub-int v11, v11, p4
 
-    if-lez v7, :cond_2
+    if-lez v11, :cond_2
 
     .line 1833
     iget-object v12, v10, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -411,29 +385,29 @@
     if-ge v12, v13, :cond_2
 
     .line 1834
-    invoke-static {v7}, Ljava/lang/Math;->abs(I)I
+    invoke-static {v11}, Ljava/lang/Math;->abs(I)I
 
-    move-result v7
+    move-result v11
 
-    if-le v7, v11, :cond_2
-
-    move v11, v7
+    if-le v11, v7, :cond_2
 
     move-object v6, v10
+
+    move v7, v11
 
     :cond_2
     if-lez v4, :cond_3
 
     .line 1843
-    iget-object v7, v10, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v11, v10, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v7}, Landroid/view/View;->getBottom()I
+    invoke-virtual {v11}, Landroid/view/View;->getBottom()I
 
-    move-result v7
+    move-result v11
 
-    sub-int/2addr v7, v2
+    sub-int/2addr v11, v2
 
-    if-gez v7, :cond_3
+    if-gez v11, :cond_3
 
     .line 1844
     iget-object v12, v10, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -451,20 +425,17 @@
     if-le v12, v13, :cond_3
 
     .line 1845
-    invoke-static {v7}, Ljava/lang/Math;->abs(I)I
+    invoke-static {v11}, Ljava/lang/Math;->abs(I)I
 
-    move-result v7
+    move-result v11
 
-    if-le v7, v11, :cond_3
+    if-le v11, v7, :cond_3
 
     move-object v6, v10
 
-    goto :goto_2
-
-    :cond_3
     move v7, v11
 
-    :goto_2
+    :cond_3
     add-int/lit8 v8, v8, 0x1
 
     goto/16 :goto_0
@@ -475,14 +446,6 @@
 
 .method public clearView(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 2038
     sget-object p1, Landroidx/recyclerview/widget/ItemTouchUIUtilImpl;->INSTANCE:Landroidx/recyclerview/widget/ItemTouchUIUtil;
@@ -514,6 +477,7 @@
 
     shr-int/lit8 p2, v1, 0x2
 
+    :goto_0
     or-int/2addr p1, p2
 
     return p1
@@ -531,9 +495,7 @@
 
     shr-int/lit8 p2, p2, 0x2
 
-    or-int/2addr p1, p2
-
-    return p1
+    goto :goto_0
 .end method
 
 .method final getAbsoluteMovementFlags(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)I
@@ -558,10 +520,6 @@
 
 .method public getAnimationDuration(Landroidx/recyclerview/widget/RecyclerView;IFF)J
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 2132
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
@@ -614,10 +572,6 @@
 
 .method public getMoveThreshold(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)F
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/high16 p1, 0x3f000000    # 0.5f
 
@@ -625,14 +579,6 @@
 .end method
 
 .method public abstract getMovementFlags(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)I
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 .end method
 
 .method public getSwipeEscapeVelocity(F)F
@@ -643,10 +589,6 @@
 
 .method public getSwipeThreshold(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)F
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/high16 p1, 0x3f000000    # 0.5f
 
@@ -711,10 +653,6 @@
 
 .method public interpolateOutOfBoundsScroll(Landroidx/recyclerview/widget/RecyclerView;IIIJ)I
     .locals 4
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 2166
     invoke-direct {p0, p1}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->getMaxDragScroll(Landroidx/recyclerview/widget/RecyclerView;)I
@@ -807,10 +745,8 @@
     :cond_1
     const/4 p1, -0x1
 
-    :goto_1
-    return p1
-
     :cond_2
+    :goto_1
     return p1
 .end method
 
@@ -832,18 +768,6 @@
 
 .method public onChildDraw(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;FFIZ)V
     .locals 8
-    .param p1    # Landroid/graphics/Canvas;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 2071
     sget-object v0, Landroidx/recyclerview/widget/ItemTouchUIUtilImpl;->INSTANCE:Landroidx/recyclerview/widget/ItemTouchUIUtil;
@@ -869,14 +793,6 @@
 
 .method public onChildDrawOver(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;FFIZ)V
     .locals 8
-    .param p1    # Landroid/graphics/Canvas;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 2105
     sget-object v0, Landroidx/recyclerview/widget/ItemTouchUIUtilImpl;->INSTANCE:Landroidx/recyclerview/widget/ItemTouchUIUtil;
@@ -1157,34 +1073,10 @@
 .end method
 
 .method public abstract onMove(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 .end method
 
 .method public onMoved(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;ILandroidx/recyclerview/widget/RecyclerView$ViewHolder;III)V
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p4    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 1944
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
@@ -1311,10 +1203,6 @@
 
 .method public onSelectedChanged(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     if-eqz p1, :cond_0
 
@@ -1330,8 +1218,4 @@
 .end method
 
 .method public abstract onSwiped(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 .end method

@@ -25,7 +25,7 @@
 .method constructor <init>(Landroidx/appcompat/app/ToolbarActionBar;)V
     .locals 0
 
-    .line 584
+    .line 580
     iput-object p1, p0, Landroidx/appcompat/app/ToolbarActionBar$MenuBuilderCallback;->this$0:Landroidx/appcompat/app/ToolbarActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,14 +37,6 @@
 # virtual methods
 .method public onMenuItemSelected(Landroidx/appcompat/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
     .locals 0
-    .param p1    # Landroidx/appcompat/view/menu/MenuBuilder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/MenuItem;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/4 p1, 0x0
 
@@ -53,19 +45,8 @@
 
 .method public onMenuModeChange(Landroidx/appcompat/view/menu/MenuBuilder;)V
     .locals 4
-    .param p1    # Landroidx/appcompat/view/menu/MenuBuilder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 594
-    iget-object v0, p0, Landroidx/appcompat/app/ToolbarActionBar$MenuBuilderCallback;->this$0:Landroidx/appcompat/app/ToolbarActionBar;
-
-    iget-object v0, v0, Landroidx/appcompat/app/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;
-
-    if-eqz v0, :cond_1
-
-    .line 595
+    .line 590
     iget-object v0, p0, Landroidx/appcompat/app/ToolbarActionBar$MenuBuilderCallback;->this$0:Landroidx/appcompat/app/ToolbarActionBar;
 
     iget-object v0, v0, Landroidx/appcompat/app/ToolbarActionBar;->mDecorToolbar:Landroidx/appcompat/widget/DecorToolbar;
@@ -78,7 +59,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 596
+    .line 591
     iget-object v0, p0, Landroidx/appcompat/app/ToolbarActionBar$MenuBuilderCallback;->this$0:Landroidx/appcompat/app/ToolbarActionBar;
 
     iget-object v0, v0, Landroidx/appcompat/app/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;
@@ -87,7 +68,7 @@
 
     goto :goto_0
 
-    .line 597
+    .line 592
     :cond_0
     iget-object v0, p0, Landroidx/appcompat/app/ToolbarActionBar$MenuBuilderCallback;->this$0:Landroidx/appcompat/app/ToolbarActionBar;
 
@@ -103,7 +84,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 599
+    .line 593
     iget-object v0, p0, Landroidx/appcompat/app/ToolbarActionBar$MenuBuilderCallback;->this$0:Landroidx/appcompat/app/ToolbarActionBar;
 
     iget-object v0, v0, Landroidx/appcompat/app/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;

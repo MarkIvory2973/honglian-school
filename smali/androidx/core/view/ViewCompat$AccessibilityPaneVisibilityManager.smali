@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field private mPanesToVisible:Ljava/util/WeakHashMap;
+.field private final mPanesToVisible:Ljava/util/WeakHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/WeakHashMap<",
@@ -35,10 +35,10 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 4470
+    .line 4544
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4472
+    .line 4546
     new-instance v0, Ljava/util/WeakHashMap;
 
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
@@ -50,12 +50,15 @@
 
 .method private checkPaneVisibility(Landroid/view/View;Z)V
     .locals 1
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x13
-    .end annotation
 
-    .line 4514
-    invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
+    .line 4588
+    invoke-virtual {p1}, Landroid/view/View;->isShown()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Landroid/view/View;->getWindowVisibility()I
 
     move-result v0
 
@@ -80,11 +83,11 @@
     :cond_1
     const/16 p2, 0x20
 
-    .line 4519
+    .line 4593
     :goto_1
     invoke-static {p1, p2}, Landroidx/core/view/ViewCompat;->notifyViewAccessibilityStateChangedIfNeeded(Landroid/view/View;I)V
 
-    .line 4520
+    .line 4594
     iget-object p2, p0, Landroidx/core/view/ViewCompat$AccessibilityPaneVisibilityManager;->mPanesToVisible:Ljava/util/WeakHashMap;
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -99,11 +102,8 @@
 
 .method private registerForLayoutCallback(Landroid/view/View;)V
     .locals 0
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x13
-    .end annotation
 
-    .line 4526
+    .line 4600
     invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object p1
@@ -115,16 +115,14 @@
 
 .method private unregisterForLayoutCallback(Landroid/view/View;)V
     .locals 0
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x13
-    .end annotation
 
-    .line 4531
+    .line 4605
     invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object p1
 
-    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+    .line 4606
+    invoke-static {p1, p0}, Landroidx/core/view/ViewCompat$Api16Impl;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver;Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
     return-void
 .end method
@@ -133,14 +131,17 @@
 # virtual methods
 .method addAccessibilityPane(Landroid/view/View;)V
     .locals 2
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x13
-    .end annotation
 
-    .line 4498
+    .line 4572
     iget-object v0, p0, Landroidx/core/view/ViewCompat$AccessibilityPaneVisibilityManager;->mPanesToVisible:Ljava/util/WeakHashMap;
 
-    invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
+    invoke-virtual {p1}, Landroid/view/View;->isShown()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p1}, Landroid/view/View;->getWindowVisibility()I
 
     move-result v1
 
@@ -160,17 +161,17 @@
 
     invoke-virtual {v0, p1, v1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4499
+    .line 4573
     invoke-virtual {p1, p0}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 4500
-    invoke-virtual {p1}, Landroid/view/View;->isAttachedToWindow()Z
+    .line 4574
+    invoke-static {p1}, Landroidx/core/view/ViewCompat$Api19Impl;->isAttachedToWindow(Landroid/view/View;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 4501
+    .line 4575
     invoke-direct {p0, p1}, Landroidx/core/view/ViewCompat$AccessibilityPaneVisibilityManager;->registerForLayoutCallback(Landroid/view/View;)V
 
     :cond_1
@@ -179,18 +180,15 @@
 
 .method public onGlobalLayout()V
     .locals 3
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x13
-    .end annotation
 
-    .line 4477
+    .line 4551
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1c
 
     if-ge v0, v1, :cond_0
 
-    .line 4478
+    .line 4552
     iget-object v0, p0, Landroidx/core/view/ViewCompat$AccessibilityPaneVisibilityManager;->mPanesToVisible:Ljava/util/WeakHashMap;
 
     invoke-virtual {v0}, Ljava/util/WeakHashMap;->entrySet()Ljava/util/Set;
@@ -214,7 +212,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 4479
+    .line 4553
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -241,11 +239,8 @@
 
 .method public onViewAttachedToWindow(Landroid/view/View;)V
     .locals 0
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x13
-    .end annotation
 
-    .line 4488
+    .line 4562
     invoke-direct {p0, p1}, Landroidx/core/view/ViewCompat$AccessibilityPaneVisibilityManager;->registerForLayoutCallback(Landroid/view/View;)V
 
     return-void
@@ -259,19 +254,16 @@
 
 .method removeAccessibilityPane(Landroid/view/View;)V
     .locals 1
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x13
-    .end annotation
 
-    .line 4507
+    .line 4581
     iget-object v0, p0, Landroidx/core/view/ViewCompat$AccessibilityPaneVisibilityManager;->mPanesToVisible:Ljava/util/WeakHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4508
+    .line 4582
     invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 4509
+    .line 4583
     invoke-direct {p0, p1}, Landroidx/core/view/ViewCompat$AccessibilityPaneVisibilityManager;->unregisterForLayoutCallback(Landroid/view/View;)V
 
     return-void

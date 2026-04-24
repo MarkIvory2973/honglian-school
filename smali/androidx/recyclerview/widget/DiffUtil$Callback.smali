@@ -34,8 +34,6 @@
 
 .method public getChangePayload(II)Ljava/lang/Object;
     .locals 0
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     const/4 p1, 0x0
 

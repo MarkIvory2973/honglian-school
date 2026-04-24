@@ -27,10 +27,4 @@
 
 # virtual methods
 .method public abstract getViewForPositionAndType(Landroidx/recyclerview/widget/RecyclerView$Recycler;II)Landroid/view/View;
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$Recycler;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 .end method

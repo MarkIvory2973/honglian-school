@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/appcompat/widget/ScrollingTabContainerView;Landroid/content/Context;Landroidx/appcompat/app/ActionBar$Tab;Z)V
-    .locals 3
+    .locals 2
 
     .line 395
     iput-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->this$0:Landroidx/appcompat/widget/ScrollingTabContainerView;
@@ -46,16 +46,12 @@
 
     invoke-direct {p0, p2, v0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const/4 p1, 0x1
+    const p1, 0x10100d4
 
     .line 382
-    new-array p1, p1, [I
+    filled-new-array {p1}, [I
 
-    const/4 v1, 0x0
-
-    const v2, 0x10100d4
-
-    aput v2, p1, v1
+    move-result-object p1
 
     iput-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->BG_ATTRS:[I
 
@@ -63,9 +59,9 @@
     iput-object p3, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->mTab:Landroidx/appcompat/app/ActionBar$Tab;
 
     .line 399
-    iget-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->BG_ATTRS:[I
-
     sget p3, Landroidx/appcompat/R$attr;->actionBarTabStyle:I
+
+    const/4 v1, 0x0
 
     invoke-static {p2, v0, p1, p3, v1}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
 

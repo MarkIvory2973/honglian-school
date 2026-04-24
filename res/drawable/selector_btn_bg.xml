@@ -2,5 +2,7 @@
 <selector
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true" android:drawable="@drawable/shape_circle_corn40_blue_rect" />
+    <item android:state_checkable="true" android:drawable="@drawable/shape_circle_corn40_blue_rect" />
+    <item android:state_checked="true" android:drawable="@drawable/shape_circle_corn40_blue_rect" />
     <item android:state_pressed="false" android:drawable="@drawable/shape_circle_corn40_white_rect" />
 </selector>

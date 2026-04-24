@@ -36,13 +36,6 @@
 
 # virtual methods
 .method public abstract fillData([Ljava/lang/Object;II)V
-    .param p1    # [Ljava/lang/Object;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/WorkerThread;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([TT;II)V"
@@ -52,8 +45,6 @@
 
 .method public getMaxCachedTiles()I
     .locals 1
-    .annotation build Landroidx/annotation/WorkerThread;
-    .end annotation
 
     const/16 v0, 0xa
 
@@ -62,13 +53,6 @@
 
 .method public recycleData([Ljava/lang/Object;I)V
     .locals 0
-    .param p1    # [Ljava/lang/Object;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/WorkerThread;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([TT;I)V"
@@ -79,6 +63,4 @@
 .end method
 
 .method public abstract refreshData()I
-    .annotation build Landroidx/annotation/WorkerThread;
-    .end annotation
 .end method

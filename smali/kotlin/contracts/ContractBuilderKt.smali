@@ -20,15 +20,16 @@
     k = 0x2
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method private static final contract(Lkotlin/jvm/functions/Function1;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,18 +41,9 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.3"
-    .end annotation
+    const-string v0, "builder"
 
-    .annotation build Lkotlin/contracts/ExperimentalContracts;
-    .end annotation
-
-    .annotation build Lkotlin/internal/ContractsDsl;
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void
 .end method

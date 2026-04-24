@@ -77,10 +77,6 @@
 # direct methods
 .method public constructor <init>(Landroidx/fragment/app/Fragment;)V
     .locals 1
-    .param p1    # Landroidx/fragment/app/Fragment;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 112
     invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/FragmentManager;
@@ -98,10 +94,6 @@
 
 .method public constructor <init>(Landroidx/fragment/app/FragmentActivity;)V
     .locals 1
-    .param p1    # Landroidx/fragment/app/FragmentActivity;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 102
     invoke-virtual {p1}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
@@ -119,14 +111,6 @@
 
 .method public constructor <init>(Landroidx/fragment/app/FragmentManager;Landroidx/lifecycle/Lifecycle;)V
     .locals 1
-    .param p1    # Landroidx/fragment/app/FragmentManager;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/lifecycle/Lifecycle;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 123
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;-><init>()V
@@ -176,12 +160,6 @@
 
 .method private static createKey(Ljava/lang/String;J)Ljava/lang/String;
     .locals 1
-    .param p0    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 600
     new-instance v0, Ljava/lang/StringBuilder;
@@ -291,22 +269,17 @@
 
     if-eqz p1, :cond_3
 
-    const/4 p2, 0x1
+    goto :goto_0
 
     :cond_3
-    return p2
+    const/4 v1, 0x0
+
+    :goto_0
+    return v1
 .end method
 
 .method private static isValidKey(Ljava/lang/String;Ljava/lang/String;)Z
     .locals 1
-    .param p0    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 605
     invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -405,14 +378,6 @@
 
 .method private static parseIdFromKey(Ljava/lang/String;Ljava/lang/String;)J
     .locals 0
-    .param p0    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 610
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -596,10 +561,6 @@
 
 .method private scheduleViewAttach(Landroidx/fragment/app/Fragment;Landroid/widget/FrameLayout;)V
     .locals 2
-    .param p2    # Landroid/widget/FrameLayout;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 368
     iget-object v0, p0, Landroidx/viewpager2/adapter/FragmentStateAdapter;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
@@ -619,14 +580,6 @@
 # virtual methods
 .method addViewToContainer(Landroid/view/View;Landroid/widget/FrameLayout;)V
     .locals 2
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/widget/FrameLayout;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 386
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getChildCount()I
@@ -723,8 +676,6 @@
 .end method
 
 .method public abstract createFragment(I)Landroidx/fragment/app/Fragment;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 .end method
 
 .method gcFragments()V
@@ -733,7 +684,7 @@
     .line 201
     iget-boolean v0, p0, Landroidx/viewpager2/adapter/FragmentStateAdapter;->mHasStaleFragments:Z
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     invoke-virtual {p0}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->shouldDelayFragmentTransactions()Z
 
@@ -868,9 +819,6 @@
     goto :goto_2
 
     :cond_5
-    return-void
-
-    :cond_6
     :goto_3
     return-void
 .end method
@@ -885,12 +833,6 @@
 
 .method public onAttachedToRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/CallSuper;
-    .end annotation
 
     .line 132
     iget-object v0, p0, Landroidx/viewpager2/adapter/FragmentStateAdapter;->mFragmentMaxLifecycleEnforcer:Landroidx/viewpager2/adapter/FragmentStateAdapter$FragmentMaxLifecycleEnforcer;
@@ -915,8 +857,6 @@
     iput-object v0, p0, Landroidx/viewpager2/adapter/FragmentStateAdapter;->mFragmentMaxLifecycleEnforcer:Landroidx/viewpager2/adapter/FragmentStateAdapter$FragmentMaxLifecycleEnforcer;
 
     .line 134
-    iget-object v0, p0, Landroidx/viewpager2/adapter/FragmentStateAdapter;->mFragmentMaxLifecycleEnforcer:Landroidx/viewpager2/adapter/FragmentStateAdapter$FragmentMaxLifecycleEnforcer;
-
     invoke-virtual {v0, p1}, Landroidx/viewpager2/adapter/FragmentStateAdapter$FragmentMaxLifecycleEnforcer;->register(Landroidx/recyclerview/widget/RecyclerView;)V
 
     return-void
@@ -924,10 +864,6 @@
 
 .method public bridge synthetic onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 67
     check-cast p1, Landroidx/viewpager2/adapter/FragmentViewHolder;
@@ -939,10 +875,6 @@
 
 .method public final onBindViewHolder(Landroidx/viewpager2/adapter/FragmentViewHolder;I)V
     .locals 7
-    .param p1    # Landroidx/viewpager2/adapter/FragmentViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 166
     invoke-virtual {p1}, Landroidx/viewpager2/adapter/FragmentViewHolder;->getItemId()J
@@ -1051,12 +983,6 @@
 
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
-    .param p1    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 67
     invoke-virtual {p0, p1, p2}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/viewpager2/adapter/FragmentViewHolder;
@@ -1068,12 +994,6 @@
 
 .method public final onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/viewpager2/adapter/FragmentViewHolder;
     .locals 0
-    .param p1    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 161
     invoke-static {p1}, Landroidx/viewpager2/adapter/FragmentViewHolder;->create(Landroid/view/ViewGroup;)Landroidx/viewpager2/adapter/FragmentViewHolder;
@@ -1085,12 +1005,6 @@
 
 .method public onDetachedFromRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/CallSuper;
-    .end annotation
 
     .line 140
     iget-object v0, p0, Landroidx/viewpager2/adapter/FragmentStateAdapter;->mFragmentMaxLifecycleEnforcer:Landroidx/viewpager2/adapter/FragmentStateAdapter$FragmentMaxLifecycleEnforcer;
@@ -1107,10 +1021,6 @@
 
 .method public bridge synthetic onFailedToRecycleView(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 67
     check-cast p1, Landroidx/viewpager2/adapter/FragmentViewHolder;
@@ -1124,10 +1034,6 @@
 
 .method public final onFailedToRecycleView(Landroidx/viewpager2/adapter/FragmentViewHolder;)Z
     .locals 0
-    .param p1    # Landroidx/viewpager2/adapter/FragmentViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const/4 p1, 0x1
 
@@ -1136,10 +1042,6 @@
 
 .method public bridge synthetic onViewAttachedToWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 67
     check-cast p1, Landroidx/viewpager2/adapter/FragmentViewHolder;
@@ -1151,10 +1053,6 @@
 
 .method public final onViewAttachedToWindow(Landroidx/viewpager2/adapter/FragmentViewHolder;)V
     .locals 0
-    .param p1    # Landroidx/viewpager2/adapter/FragmentViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 276
     invoke-virtual {p0, p1}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->placeFragmentInViewHolder(Landroidx/viewpager2/adapter/FragmentViewHolder;)V
@@ -1167,10 +1065,6 @@
 
 .method public bridge synthetic onViewRecycled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 67
     check-cast p1, Landroidx/viewpager2/adapter/FragmentViewHolder;
@@ -1182,10 +1076,6 @@
 
 .method public final onViewRecycled(Landroidx/viewpager2/adapter/FragmentViewHolder;)V
     .locals 3
-    .param p1    # Landroidx/viewpager2/adapter/FragmentViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 407
     invoke-virtual {p1}, Landroidx/viewpager2/adapter/FragmentViewHolder;->getContainer()Landroid/widget/FrameLayout;
@@ -1225,10 +1115,6 @@
 
 .method placeFragmentInViewHolder(Landroidx/viewpager2/adapter/FragmentViewHolder;)V
     .locals 5
-    .param p1    # Landroidx/viewpager2/adapter/FragmentViewHolder;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 285
     iget-object v0, p0, Landroidx/viewpager2/adapter/FragmentStateAdapter;->mFragments:Landroidx/collection/LongSparseArray;
@@ -1243,26 +1129,28 @@
 
     check-cast v0, Landroidx/fragment/app/Fragment;
 
+    const-string v1, "Design assumption violated."
+
     if-eqz v0, :cond_8
 
     .line 289
     invoke-virtual {p1}, Landroidx/viewpager2/adapter/FragmentViewHolder;->getContainer()Landroid/widget/FrameLayout;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 290
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getView()Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v3
 
     .line 311
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->isAdded()Z
 
-    move-result v3
+    move-result v4
 
-    if-nez v3, :cond_1
+    if-nez v4, :cond_1
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_0
 
     goto :goto_0
 
@@ -1270,9 +1158,7 @@
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "Design assumption violated."
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
@@ -1281,14 +1167,14 @@
     :goto_0
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->isAdded()Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_2
+    if-eqz v1, :cond_2
 
-    if-nez v2, :cond_2
+    if-nez v3, :cond_2
 
     .line 317
-    invoke-direct {p0, v0, v1}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->scheduleViewAttach(Landroidx/fragment/app/Fragment;Landroid/widget/FrameLayout;)V
+    invoke-direct {p0, v0, v2}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->scheduleViewAttach(Landroidx/fragment/app/Fragment;Landroid/widget/FrameLayout;)V
 
     return-void
 
@@ -1296,25 +1182,25 @@
     :cond_2
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->isAdded()Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_4
+    if-eqz v1, :cond_4
 
-    invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v3}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    move-result-object v3
+    move-result-object v1
 
-    if-eqz v3, :cond_4
+    if-eqz v1, :cond_4
 
     .line 323
-    invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v3}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
 
-    if-eq p1, v1, :cond_3
+    if-eq p1, v2, :cond_3
 
     .line 324
-    invoke-virtual {p0, v2, v1}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->addViewToContainer(Landroid/view/View;Landroid/widget/FrameLayout;)V
+    invoke-virtual {p0, v3, v2}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->addViewToContainer(Landroid/view/View;Landroid/widget/FrameLayout;)V
 
     :cond_3
     return-void
@@ -1323,12 +1209,12 @@
     :cond_4
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->isAdded()Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_5
+    if-eqz v1, :cond_5
 
     .line 331
-    invoke-virtual {p0, v2, v1}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->addViewToContainer(Landroid/view/View;Landroid/widget/FrameLayout;)V
+    invoke-virtual {p0, v3, v2}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->addViewToContainer(Landroid/view/View;Landroid/widget/FrameLayout;)V
 
     return-void
 
@@ -1336,12 +1222,12 @@
     :cond_5
     invoke-virtual {p0}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->shouldDelayFragmentTransactions()Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_6
+    if-nez v1, :cond_6
 
     .line 337
-    invoke-direct {p0, v0, v1}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->scheduleViewAttach(Landroidx/fragment/app/Fragment;Landroid/widget/FrameLayout;)V
+    invoke-direct {p0, v0, v2}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->scheduleViewAttach(Landroidx/fragment/app/Fragment;Landroid/widget/FrameLayout;)V
 
     .line 338
     iget-object v1, p0, Landroidx/viewpager2/adapter/FragmentStateAdapter;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
@@ -1352,11 +1238,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "f"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 339
     invoke-virtual {p1}, Landroidx/viewpager2/adapter/FragmentViewHolder;->getItemId()J
@@ -1421,19 +1305,13 @@
     :cond_8
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "Design assumption violated."
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
 .end method
 
 .method public final restoreState(Landroid/os/Parcelable;)V
     .locals 5
-    .param p1    # Landroid/os/Parcelable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 535
     iget-object v0, p0, Landroidx/viewpager2/adapter/FragmentStateAdapter;->mSavedStates:Landroidx/collection/LongSparseArray;
@@ -1502,11 +1380,9 @@
     .line 547
     invoke-static {v1, v2}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->isValidKey(Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_2
-
-    const-string v2, "f#"
+    if-eqz v3, :cond_2
 
     .line 548
     invoke-static {v1, v2}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->parseIdFromKey(Ljava/lang/String;Ljava/lang/String;)J
@@ -1533,11 +1409,9 @@
     .line 554
     invoke-static {v1, v2}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->isValidKey(Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_3
-
-    const-string v2, "s#"
+    if-eqz v3, :cond_3
 
     .line 555
     invoke-static {v1, v2}, Landroidx/viewpager2/adapter/FragmentStateAdapter;->parseIdFromKey(Ljava/lang/String;Ljava/lang/String;)J
@@ -1571,11 +1445,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Unexpected key in savedState: "
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1627,8 +1499,6 @@
 
 .method public final saveState()Landroid/os/Parcelable;
     .locals 7
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 509
     new-instance v0, Landroid/os/Bundle;

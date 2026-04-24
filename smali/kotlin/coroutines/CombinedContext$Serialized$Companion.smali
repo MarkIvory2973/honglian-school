@@ -28,9 +28,10 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -47,7 +48,6 @@
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
-    .line 189
     invoke-direct {p0}, Lkotlin/coroutines/CombinedContext$Serialized$Companion;-><init>()V
 
     return-void

@@ -17,23 +17,16 @@
     k = 0x3
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method public static fold(Lkotlin/coroutines/ContinuationInterceptor;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
     .locals 1
-    .param p0    # Lkotlin/coroutines/ContinuationInterceptor;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Lkotlin/jvm/functions/Function2;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
@@ -52,6 +45,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 20
     check-cast p0, Lkotlin/coroutines/CoroutineContext$Element;
 
     invoke-static {p0, p1, p2}, Lkotlin/coroutines/CoroutineContext$Element$DefaultImpls;->fold(Lkotlin/coroutines/CoroutineContext$Element;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
@@ -63,14 +57,6 @@
 
 .method public static get(Lkotlin/coroutines/ContinuationInterceptor;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
     .locals 2
-    .param p0    # Lkotlin/coroutines/ContinuationInterceptor;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/coroutines/CoroutineContext$Key;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E::",
@@ -82,9 +68,6 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/Nullable;
-    .end annotation
-
     const-string v0, "key"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -94,7 +77,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     .line 57
     check-cast p1, Lkotlin/coroutines/AbstractCoroutineContextKey;
@@ -107,7 +90,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     check-cast p0, Lkotlin/coroutines/CoroutineContext$Element;
 
@@ -117,55 +100,33 @@
 
     instance-of p1, p0, Lkotlin/coroutines/CoroutineContext$Element;
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     move-object v1, p0
 
-    :cond_1
-    :goto_0
+    :cond_0
     return-object v1
 
     .line 60
-    :cond_2
+    :cond_1
     sget-object v0, Lkotlin/coroutines/ContinuationInterceptor;->Key:Lkotlin/coroutines/ContinuationInterceptor$Key;
 
-    if-ne v0, p1, :cond_4
+    if-ne v0, p1, :cond_2
 
-    if-eqz p0, :cond_3
+    const-string p1, "null cannot be cast to non-null type E of kotlin.coroutines.ContinuationInterceptor.get"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v1, p0
 
     check-cast v1, Lkotlin/coroutines/CoroutineContext$Element;
 
-    goto :goto_1
-
-    :cond_3
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "null cannot be cast to non-null type E"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_4
-    :goto_1
+    :cond_2
     return-object v1
 .end method
 
 .method public static minusKey(Lkotlin/coroutines/ContinuationInterceptor;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
     .locals 1
-    .param p0    # Lkotlin/coroutines/ContinuationInterceptor;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/coroutines/CoroutineContext$Key;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -174,9 +135,6 @@
             "*>;)",
             "Lkotlin/coroutines/CoroutineContext;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "key"
@@ -234,21 +192,12 @@
 
 .method public static plus(Lkotlin/coroutines/ContinuationInterceptor;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
     .locals 1
-    .param p0    # Lkotlin/coroutines/ContinuationInterceptor;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/coroutines/CoroutineContext;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     const-string v0, "context"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 20
     check-cast p0, Lkotlin/coroutines/CoroutineContext$Element;
 
     invoke-static {p0, p1}, Lkotlin/coroutines/CoroutineContext$Element$DefaultImpls;->plus(Lkotlin/coroutines/CoroutineContext$Element;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
@@ -260,14 +209,6 @@
 
 .method public static releaseInterceptedContinuation(Lkotlin/coroutines/ContinuationInterceptor;Lkotlin/coroutines/Continuation;)V
     .locals 0
-    .param p0    # Lkotlin/coroutines/ContinuationInterceptor;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/coroutines/Continuation;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

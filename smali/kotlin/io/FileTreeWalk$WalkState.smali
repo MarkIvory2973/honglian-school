@@ -31,26 +31,20 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
 .field private final root:Ljava/io/File;
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-.end field
 
 
 # direct methods
 .method public constructor <init>(Ljava/io/File;)V
     .locals 1
-    .param p1    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
     const-string v0, "root"
 
@@ -68,8 +62,6 @@
 # virtual methods
 .method public final getRoot()Ljava/io/File;
     .locals 1
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 53
     iget-object v0, p0, Lkotlin/io/FileTreeWalk$WalkState;->root:Ljava/io/File;
@@ -78,6 +70,4 @@
 .end method
 
 .method public abstract step()Ljava/io/File;
-    .annotation build Lorg/jetbrains/annotations/Nullable;
-    .end annotation
 .end method

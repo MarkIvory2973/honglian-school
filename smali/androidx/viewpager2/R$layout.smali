@@ -1,6 +1,5 @@
 .class public final Landroidx/viewpager2/R$layout;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -15,26 +14,25 @@
 
 
 # static fields
-.field public static final custom_dialog:I = 0x7f0c0031
+.field public static final custom_dialog:I = 0x7f0b0025
 
-.field public static final notification_action:I = 0x7f0c00a7
+.field public static final notification_action:I = 0x7f0b0118
 
-.field public static final notification_action_tombstone:I = 0x7f0c00a8
+.field public static final notification_action_tombstone:I = 0x7f0b0119
 
-.field public static final notification_template_custom_big:I = 0x7f0c00a9
+.field public static final notification_template_custom_big:I = 0x7f0b011a
 
-.field public static final notification_template_icon_group:I = 0x7f0c00aa
+.field public static final notification_template_icon_group:I = 0x7f0b011b
 
-.field public static final notification_template_part_chronometer:I = 0x7f0c00ab
+.field public static final notification_template_part_chronometer:I = 0x7f0b011c
 
-.field public static final notification_template_part_time:I = 0x7f0c00ac
+.field public static final notification_template_part_time:I = 0x7f0b011d
 
 
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
-    .line 172
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

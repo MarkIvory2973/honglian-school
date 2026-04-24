@@ -34,32 +34,15 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/SinceKotlin;
-    version = "1.3"
-.end annotation
-
-.annotation build Lkotlin/contracts/ExperimentalContracts;
-.end annotation
-
-.annotation build Lkotlin/internal/ContractsDsl;
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
 .method public abstract callsInPlace(Lkotlin/Function;Lkotlin/contracts/InvocationKind;)Lkotlin/contracts/CallsInPlace;
-    .param p1    # Lkotlin/Function;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Lkotlin/contracts/InvocationKind;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
@@ -72,38 +55,13 @@
             "Lkotlin/contracts/CallsInPlace;"
         }
     .end annotation
-
-    .annotation build Lkotlin/internal/ContractsDsl;
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 .end method
 
 .method public abstract returns()Lkotlin/contracts/Returns;
-    .annotation build Lkotlin/internal/ContractsDsl;
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 .end method
 
 .method public abstract returns(Ljava/lang/Object;)Lkotlin/contracts/Returns;
-    .param p1    # Ljava/lang/Object;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/internal/ContractsDsl;
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 .end method
 
 .method public abstract returnsNotNull()Lkotlin/contracts/ReturnsNotNull;
-    .annotation build Lkotlin/internal/ContractsDsl;
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 .end method

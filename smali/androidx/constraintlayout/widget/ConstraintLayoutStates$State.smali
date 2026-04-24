@@ -35,6 +35,16 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;)V
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "parser"
+        }
+    .end annotation
 
     .line 145
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -146,8 +156,6 @@
     iput-object v2, p0, Landroidx/constraintlayout/widget/ConstraintLayoutStates$State;->mConstraintSet:Landroidx/constraintlayout/widget/ConstraintSet;
 
     .line 160
-    iget-object v2, p0, Landroidx/constraintlayout/widget/ConstraintLayoutStates$State;->mConstraintSet:Landroidx/constraintlayout/widget/ConstraintSet;
-
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintLayoutStates$State;->mConstraintID:I
 
     invoke-virtual {v2, p1, v3}, Landroidx/constraintlayout/widget/ConstraintSet;->clone(Landroid/content/Context;I)V
@@ -169,6 +177,14 @@
 # virtual methods
 .method add(Landroidx/constraintlayout/widget/ConstraintLayoutStates$Variant;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "size"
+        }
+    .end annotation
 
     .line 171
     iget-object v0, p0, Landroidx/constraintlayout/widget/ConstraintLayoutStates$State;->mVariants:Ljava/util/ArrayList;
@@ -180,6 +196,16 @@
 
 .method public findMatch(FF)I
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "width",
+            "height"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 

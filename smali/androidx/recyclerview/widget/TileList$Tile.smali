@@ -67,6 +67,8 @@
 
     check-cast p1, [Ljava/lang/Object;
 
+    check-cast p1, [Ljava/lang/Object;
+
     .line 95
     iput-object p1, p0, Landroidx/recyclerview/widget/TileList$Tile;->mItems:[Ljava/lang/Object;
 

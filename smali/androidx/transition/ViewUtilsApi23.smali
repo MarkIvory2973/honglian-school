@@ -3,12 +3,6 @@
 .source "ViewUtilsApi23.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x17
-.end annotation
-
-
 # static fields
 .field private static sTryHiddenSetTransitionVisibility:Z = true
 
@@ -33,15 +27,6 @@
 # virtual methods
 .method public setTransitionVisibility(Landroid/view/View;I)V
     .locals 2
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "NewApi"
-        }
-    .end annotation
 
     .line 38
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -63,7 +48,7 @@
 
     .line 45
     :try_start_0
-    invoke-virtual {p1, p2}, Landroid/view/View;->setTransitionVisibility(I)V
+    invoke-static {p1, p2}, Landroidx/transition/ViewUtilsApi23$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/View;I)V
     :try_end_0
     .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
 

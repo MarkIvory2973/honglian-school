@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.youth.banner.Banner android:id="@id/vp_study" android:layout_width="match_parent" android:layout_height="match_parent" />
-    <ImageView android:id="@id/iv_fail" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@mipmap/screen_bg" />
-</RelativeLayout>

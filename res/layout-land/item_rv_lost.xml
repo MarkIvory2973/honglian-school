@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:paddingTop="8.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/rl_title" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <RelativeLayout android:id="@id/rl_notify" android:layout_width="match_parent" android:layout_height="wrap_content">
         <ImageView android:id="@id/iv_title" android:layout_width="52.0dp" android:layout_height="52.0dp" android:src="@mipmap/ico_lost_tip" android:scaleType="centerInside" />
         <TextView android:textSize="28.0sp" android:textStyle="bold" android:textColor="@color/colorBlackD34" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dp" android:layout_marginRight="30.0dp" android:text="丢了丢了丢了" android:layout_toRightOf="@id/iv_title" android:layout_centerVertical="true" />
     </RelativeLayout>
-    <TextView android:textSize="18.0sp" android:id="@id/tv_content" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="丢了丢了丢了" android:layout_below="@id/rl_title" />
-    <ImageView android:id="@id/iv_lost" android:layout_width="348.0dp" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:scaleType="centerInside" android:layout_below="@id/tv_content" />
-    <TextView android:textSize="16.0sp" android:id="@id/tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:layout_below="@id/iv_lost" />
+    <TextView android:textSize="18.0sp" android:id="@id/tv_content" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="丢了丢了丢了" android:layout_below="@id/rl_notify" />
+    <ImageView android:id="@id/iv_photo" android:layout_width="348.0dp" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:scaleType="centerInside" android:layout_below="@id/tv_content" />
+    <TextView android:textSize="16.0sp" android:id="@id/tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:layout_below="@id/iv_photo" />
     <View android:background="@color/colorebGray" android:layout_width="match_parent" android:layout_height="2.0dp" android:layout_marginTop="16.0dp" android:layout_below="@id/tv_time" />
 </RelativeLayout>

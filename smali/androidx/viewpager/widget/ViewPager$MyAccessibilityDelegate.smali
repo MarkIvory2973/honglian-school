@@ -38,8 +38,6 @@
 
     iget-object v0, v0, Landroidx/viewpager/widget/ViewPager;->mAdapter:Landroidx/viewpager/widget/PagerAdapter;
 
-    const/4 v1, 0x1
-
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/viewpager/widget/ViewPager$MyAccessibilityDelegate;->this$0:Landroidx/viewpager/widget/ViewPager;
@@ -49,6 +47,8 @@
     invoke-virtual {v0}, Landroidx/viewpager/widget/PagerAdapter;->getCount()I
 
     move-result v0
+
+    const/4 v1, 0x1
 
     if-le v0, v1, :cond_0
 

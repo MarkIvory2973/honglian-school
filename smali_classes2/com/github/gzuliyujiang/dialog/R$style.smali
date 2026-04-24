@@ -1,0 +1,49 @@
+.class public final Lcom/github/gzuliyujiang/dialog/R$style;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/github/gzuliyujiang/dialog/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "style"
+.end annotation
+
+
+# static fields
+.field public static final DialogFadeAnimation:I = 0x7f120135
+
+.field public static final DialogSheetAnimation:I = 0x7f120136
+
+.field public static final DialogTheme_Base:I = 0x7f120137
+
+.field public static final DialogTheme_Fade:I = 0x7f120138
+
+.field public static final DialogTheme_Sheet:I = 0x7f120139
+
+.field public static final TextAppearance_Compat_Notification:I = 0x7f12020d
+
+.field public static final TextAppearance_Compat_Notification_Info:I = 0x7f12020e
+
+.field public static final TextAppearance_Compat_Notification_Line2:I = 0x7f12020f
+
+.field public static final TextAppearance_Compat_Notification_Time:I = 0x7f120210
+
+.field public static final TextAppearance_Compat_Notification_Title:I = 0x7f120211
+
+.field public static final Widget_Compat_NotificationActionContainer:I = 0x7f120377
+
+.field public static final Widget_Compat_NotificationActionText:I = 0x7f120378
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

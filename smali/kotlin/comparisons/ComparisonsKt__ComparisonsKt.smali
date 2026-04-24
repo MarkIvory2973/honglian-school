@@ -53,32 +53,71 @@
     k = 0x5
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-    xi = 0x1
+    xi = 0x31
     xs = "kotlin/comparisons/ComparisonsKt"
 .end annotation
 
 
 # direct methods
+.method public static synthetic $r8$lambda$-gpd5rn26uA_qKcB-hI2DNr-hgw(Ljava/util/Comparator;Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->thenDescending$lambda$2$ComparisonsKt__ComparisonsKt(Ljava/util/Comparator;Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static synthetic $r8$lambda$6WnilmL2ArBCKOeeYXXH8ELrg4w(Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->nullsFirst$lambda$3$ComparisonsKt__ComparisonsKt(Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static synthetic $r8$lambda$Uw4BAo9Vwbm4C3dkpmfByDP7hFs(Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->nullsLast$lambda$4$ComparisonsKt__ComparisonsKt(Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static synthetic $r8$lambda$iapHOTD2lDnsDFFbGrAXPm4qZHg(Ljava/util/Comparator;Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->then$lambda$1$ComparisonsKt__ComparisonsKt(Ljava/util/Comparator;Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static synthetic $r8$lambda$nq8UCGW90ISdL04-oV8sJ24EEKI([Lkotlin/jvm/functions/Function1;Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->compareBy$lambda$0$ComparisonsKt__ComparisonsKt([Lkotlin/jvm/functions/Function1;Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method public static final synthetic access$compareValuesByImpl(Ljava/lang/Object;Ljava/lang/Object;[Lkotlin/jvm/functions/Function1;)I
-    .locals 0
-
-    .line 1
-    invoke-static {p0, p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->compareValuesByImpl$ComparisonsKt__ComparisonsKt(Ljava/lang/Object;Ljava/lang/Object;[Lkotlin/jvm/functions/Function1;)I
-
-    move-result p0
-
-    return p0
 .end method
 
 .method private static final compareBy(Ljava/util/Comparator;Lkotlin/jvm/functions/Function1;)Ljava/util/Comparator;
@@ -99,8 +138,13 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "comparator"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "selector"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 112
     new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$3;
@@ -128,8 +172,9 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "selector"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 102
     new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2;
@@ -143,10 +188,6 @@
 
 .method public static final varargs compareBy([Lkotlin/jvm/functions/Function1;)Ljava/util/Comparator;
     .locals 1
-    .param p0    # [Lkotlin/jvm/functions/Function1;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -159,9 +200,6 @@
             "Ljava/util/Comparator<",
             "TT;>;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "selectors"
@@ -184,11 +222,9 @@
     if-eqz v0, :cond_1
 
     .line 91
-    new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$1;
+    new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda1;
 
-    invoke-direct {v0, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$1;-><init>([Lkotlin/jvm/functions/Function1;)V
-
-    check-cast v0, Ljava/util/Comparator;
+    invoke-direct {v0, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda1;-><init>([Lkotlin/jvm/functions/Function1;)V
 
     return-object v0
 
@@ -204,9 +240,22 @@
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    check-cast p0, Ljava/lang/Throwable;
-
     throw p0
+.end method
+
+.method private static final compareBy$lambda$0$ComparisonsKt__ComparisonsKt([Lkotlin/jvm/functions/Function1;Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+
+    const-string v0, "$selectors"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 91
+    invoke-static {p1, p2, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->compareValuesByImpl$ComparisonsKt__ComparisonsKt(Ljava/lang/Object;Ljava/lang/Object;[Lkotlin/jvm/functions/Function1;)I
+
+    move-result p0
+
+    return p0
 .end method
 
 .method private static final compareByDescending(Ljava/util/Comparator;Lkotlin/jvm/functions/Function1;)Ljava/util/Comparator;
@@ -227,8 +276,13 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "comparator"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "selector"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 133
     new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareByDescending$2;
@@ -256,8 +310,9 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "selector"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 121
     new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareByDescending$1;
@@ -271,14 +326,6 @@
 
 .method public static final compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
     .locals 0
-    .param p0    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/Comparable;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -317,7 +364,7 @@
 .end method
 
 .method private static final compareValuesBy(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;Lkotlin/jvm/functions/Function1;)I
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -332,8 +379,13 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "comparator"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "selector"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 54
     invoke-interface {p3, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
@@ -352,7 +404,7 @@
 .end method
 
 .method private static final compareValuesBy(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)I
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -365,8 +417,9 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "selector"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 42
     invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
@@ -390,10 +443,6 @@
 
 .method public static final varargs compareValuesBy(Ljava/lang/Object;Ljava/lang/Object;[Lkotlin/jvm/functions/Function1;)I
     .locals 1
-    .param p2    # [Lkotlin/jvm/functions/Function1;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -443,8 +492,6 @@
     move-result-object p1
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    check-cast p0, Ljava/lang/Throwable;
 
     throw p0
 .end method
@@ -519,26 +566,16 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
-    .line 280
+    .line 286
     sget-object v0, Lkotlin/comparisons/NaturalOrderComparator;->INSTANCE:Lkotlin/comparisons/NaturalOrderComparator;
 
-    if-eqz v0, :cond_0
+    const-string v1, "null cannot be cast to non-null type java.util.Comparator<T of kotlin.comparisons.ComparisonsKt__ComparisonsKt.naturalOrder>{ kotlin.TypeAliasesKt.Comparator<T of kotlin.comparisons.ComparisonsKt__ComparisonsKt.naturalOrder> }"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, Ljava/util/Comparator;
 
     return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "null cannot be cast to non-null type kotlin.Comparator<T> /* = java.util.Comparator<T> */"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method private static final nullsFirst()Ljava/util/Comparator;
@@ -553,10 +590,7 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
-
-    .line 248
+    .line 250
     invoke-static {}, Lkotlin/comparisons/ComparisonsKt;->naturalOrder()Ljava/util/Comparator;
 
     move-result-object v0
@@ -570,10 +604,6 @@
 
 .method public static final nullsFirst(Ljava/util/Comparator;)Ljava/util/Comparator;
     .locals 1
-    .param p0    # Ljava/util/Comparator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -586,21 +616,53 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
     const-string v0, "comparator"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 232
-    new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$nullsFirst$1;
+    .line 233
+    new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda3;
 
-    invoke-direct {v0, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$nullsFirst$1;-><init>(Ljava/util/Comparator;)V
-
-    check-cast v0, Ljava/util/Comparator;
+    invoke-direct {v0, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda3;-><init>(Ljava/util/Comparator;)V
 
     return-object v0
+.end method
+
+.method private static final nullsFirst$lambda$3$ComparisonsKt__ComparisonsKt(Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+
+    const-string v0, "$comparator"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-ne p1, p2, :cond_0
+
+    const/4 p0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/4 p0, -0x1
+
+    goto :goto_0
+
+    :cond_1
+    if-nez p2, :cond_2
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    .line 238
+    :cond_2
+    invoke-interface {p0, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result p0
+
+    :goto_0
+    return p0
 .end method
 
 .method private static final nullsLast()Ljava/util/Comparator;
@@ -615,10 +677,7 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
-
-    .line 273
+    .line 277
     invoke-static {}, Lkotlin/comparisons/ComparisonsKt;->naturalOrder()Ljava/util/Comparator;
 
     move-result-object v0
@@ -632,10 +691,6 @@
 
 .method public static final nullsLast(Ljava/util/Comparator;)Ljava/util/Comparator;
     .locals 1
-    .param p0    # Ljava/util/Comparator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -648,21 +703,53 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
     const-string v0, "comparator"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 257
-    new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$nullsLast$1;
+    .line 260
+    new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda4;
 
-    invoke-direct {v0, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$nullsLast$1;-><init>(Ljava/util/Comparator;)V
-
-    check-cast v0, Ljava/util/Comparator;
+    invoke-direct {v0, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda4;-><init>(Ljava/util/Comparator;)V
 
     return-object v0
+.end method
+
+.method private static final nullsLast$lambda$4$ComparisonsKt__ComparisonsKt(Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+
+    const-string v0, "$comparator"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-ne p1, p2, :cond_0
+
+    const/4 p0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    if-nez p2, :cond_2
+
+    const/4 p0, -0x1
+
+    goto :goto_0
+
+    .line 265
+    :cond_2
+    invoke-interface {p0, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result p0
+
+    :goto_0
+    return p0
 .end method
 
 .method public static final reverseOrder()Ljava/util/Comparator;
@@ -677,34 +764,20 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
-    .line 287
+    .line 295
     sget-object v0, Lkotlin/comparisons/ReverseOrderComparator;->INSTANCE:Lkotlin/comparisons/ReverseOrderComparator;
 
-    if-eqz v0, :cond_0
+    const-string v1, "null cannot be cast to non-null type java.util.Comparator<T of kotlin.comparisons.ComparisonsKt__ComparisonsKt.reverseOrder>{ kotlin.TypeAliasesKt.Comparator<T of kotlin.comparisons.ComparisonsKt__ComparisonsKt.reverseOrder> }"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, Ljava/util/Comparator;
 
     return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "null cannot be cast to non-null type kotlin.Comparator<T> /* = java.util.Comparator<T> */"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public static final reversed(Ljava/util/Comparator;)Ljava/util/Comparator;
-    .locals 1
-    .param p0    # Ljava/util/Comparator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -717,14 +790,11 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
-    const-string v0, "$this$reversed"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 296
+    .line 304
     instance-of v0, p0, Lkotlin/comparisons/ReversedComparator;
 
     if-eqz v0, :cond_0
@@ -737,7 +807,7 @@
 
     goto :goto_0
 
-    .line 297
+    .line 305
     :cond_0
     sget-object v0, Lkotlin/comparisons/NaturalOrderComparator;->INSTANCE:Lkotlin/comparisons/NaturalOrderComparator;
 
@@ -745,54 +815,38 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    const-string v1, "null cannot be cast to non-null type java.util.Comparator<T of kotlin.comparisons.ComparisonsKt__ComparisonsKt.reversed>{ kotlin.TypeAliasesKt.Comparator<T of kotlin.comparisons.ComparisonsKt__ComparisonsKt.reversed> }"
+
+    if-eqz v0, :cond_1
 
     sget-object p0, Lkotlin/comparisons/ReverseOrderComparator;->INSTANCE:Lkotlin/comparisons/ReverseOrderComparator;
 
-    if-eqz p0, :cond_1
+    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p0, Ljava/util/Comparator;
 
     goto :goto_0
 
+    .line 306
     :cond_1
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string v0, "null cannot be cast to non-null type kotlin.Comparator<T> /* = java.util.Comparator<T> */"
-
-    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    .line 298
-    :cond_2
     sget-object v0, Lkotlin/comparisons/ReverseOrderComparator;->INSTANCE:Lkotlin/comparisons/ReverseOrderComparator;
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_2
 
     sget-object p0, Lkotlin/comparisons/NaturalOrderComparator;->INSTANCE:Lkotlin/comparisons/NaturalOrderComparator;
 
-    if-eqz p0, :cond_3
+    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p0, Ljava/util/Comparator;
 
     goto :goto_0
 
-    :cond_3
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string v0, "null cannot be cast to non-null type kotlin.Comparator<T> /* = java.util.Comparator<T> */"
-
-    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    .line 299
-    :cond_4
+    .line 307
+    :cond_2
     new-instance v0, Lkotlin/comparisons/ReversedComparator;
 
     invoke-direct {v0, p0}, Lkotlin/comparisons/ReversedComparator;-><init>(Ljava/util/Comparator;)V
@@ -807,14 +861,6 @@
 
 .method public static final then(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
     .locals 1
-    .param p0    # Ljava/util/Comparator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/util/Comparator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -829,10 +875,7 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
-    const-string v0, "$this$then"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -841,13 +884,41 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 207
-    new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$then$1;
+    new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$then$1;-><init>(Ljava/util/Comparator;Ljava/util/Comparator;)V
-
-    check-cast v0, Ljava/util/Comparator;
+    invoke-direct {v0, p0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda0;-><init>(Ljava/util/Comparator;Ljava/util/Comparator;)V
 
     return-object v0
+.end method
+
+.method private static final then$lambda$1$ComparisonsKt__ComparisonsKt(Ljava/util/Comparator;Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+
+    const-string v0, "$this_then"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "$comparator"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 208
+    invoke-interface {p0, p2, p3}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    .line 209
+    :cond_0
+    invoke-interface {p1, p2, p3}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result p0
+
+    :goto_0
+    return p0
 .end method
 
 .method private static final thenBy(Ljava/util/Comparator;Ljava/util/Comparator;Lkotlin/jvm/functions/Function1;)Ljava/util/Comparator;
@@ -870,8 +941,17 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "comparator"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "selector"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 156
     new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$thenBy$2;
@@ -901,8 +981,13 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "selector"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 143
     new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$thenBy$1;
@@ -934,8 +1019,17 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "comparator"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "selector"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 182
     new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$thenByDescending$2;
@@ -965,8 +1059,13 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "selector"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 169
     new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$thenByDescending$1;
@@ -996,8 +1095,13 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "comparison"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 195
     new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$thenComparator$1;
@@ -1011,14 +1115,6 @@
 
 .method public static final thenDescending(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
     .locals 1
-    .param p0    # Ljava/util/Comparator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/util/Comparator;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1033,10 +1129,7 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
-    const-string v0, "$this$thenDescending"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1045,11 +1138,39 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 219
-    new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$thenDescending$1;
+    new-instance v0, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda2;
 
-    invoke-direct {v0, p0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$thenDescending$1;-><init>(Ljava/util/Comparator;Ljava/util/Comparator;)V
-
-    check-cast v0, Ljava/util/Comparator;
+    invoke-direct {v0, p0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda2;-><init>(Ljava/util/Comparator;Ljava/util/Comparator;)V
 
     return-object v0
+.end method
+
+.method private static final thenDescending$lambda$2$ComparisonsKt__ComparisonsKt(Ljava/util/Comparator;Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+
+    const-string v0, "$this_thenDescending"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "$comparator"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 220
+    invoke-interface {p0, p2, p3}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    .line 221
+    :cond_0
+    invoke-interface {p1, p3, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result p0
+
+    :goto_0
+    return p0
 .end method

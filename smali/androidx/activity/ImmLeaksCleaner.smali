@@ -6,12 +6,6 @@
 .implements Landroidx/lifecycle/LifecycleEventObserver;
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x13
-.end annotation
-
-
 # static fields
 .field private static final INIT_FAILED:I = 0x2
 
@@ -42,10 +36,10 @@
 .method constructor <init>(Landroid/app/Activity;)V
     .locals 0
 
-    .line 45
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 47
     iput-object p1, p0, Landroidx/activity/ImmLeaksCleaner;->mActivity:Landroid/app/Activity;
 
     return-void
@@ -53,16 +47,14 @@
 
 .method private static initializeReflectiveFields()V
     .locals 3
-    .annotation build Landroidx/annotation/MainThread;
-    .end annotation
 
     const/4 v0, 0x2
 
-    .line 101
+    .line 103
     :try_start_0
     sput v0, Landroidx/activity/ImmLeaksCleaner;->sReflectedFieldsInitialized:I
 
-    .line 102
+    .line 104
     const-class v0, Landroid/view/inputmethod/InputMethodManager;
 
     const-string v1, "mServedView"
@@ -73,14 +65,12 @@
 
     sput-object v0, Landroidx/activity/ImmLeaksCleaner;->sServedViewField:Ljava/lang/reflect/Field;
 
-    .line 103
-    sget-object v0, Landroidx/activity/ImmLeaksCleaner;->sServedViewField:Ljava/lang/reflect/Field;
-
     const/4 v1, 0x1
 
+    .line 105
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 104
+    .line 106
     const-class v0, Landroid/view/inputmethod/InputMethodManager;
 
     const-string v2, "mNextServedView"
@@ -91,12 +81,10 @@
 
     sput-object v0, Landroidx/activity/ImmLeaksCleaner;->sNextServedViewField:Ljava/lang/reflect/Field;
 
-    .line 105
-    sget-object v0, Landroidx/activity/ImmLeaksCleaner;->sNextServedViewField:Ljava/lang/reflect/Field;
-
+    .line 107
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 106
+    .line 108
     const-class v0, Landroid/view/inputmethod/InputMethodManager;
 
     const-string v2, "mH"
@@ -107,12 +95,10 @@
 
     sput-object v0, Landroidx/activity/ImmLeaksCleaner;->sHField:Ljava/lang/reflect/Field;
 
-    .line 107
-    sget-object v0, Landroidx/activity/ImmLeaksCleaner;->sHField:Ljava/lang/reflect/Field;
-
+    .line 109
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 108
+    .line 110
     sput v1, Landroidx/activity/ImmLeaksCleaner;->sReflectedFieldsInitialized:I
     :try_end_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
@@ -125,32 +111,24 @@
 # virtual methods
 .method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
     .locals 2
-    .param p1    # Landroidx/lifecycle/LifecycleOwner;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/lifecycle/Lifecycle$Event;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 51
+    .line 52
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
 
     if-eq p2, p1, :cond_0
 
     return-void
 
-    .line 54
+    .line 55
     :cond_0
     sget p1, Landroidx/activity/ImmLeaksCleaner;->sReflectedFieldsInitialized:I
 
     if-nez p1, :cond_1
 
-    .line 55
+    .line 56
     invoke-static {}, Landroidx/activity/ImmLeaksCleaner;->initializeReflectiveFields()V
 
-    .line 57
+    .line 58
     :cond_1
     sget p1, Landroidx/activity/ImmLeaksCleaner;->sReflectedFieldsInitialized:I
 
@@ -158,19 +136,19 @@
 
     if-ne p1, p2, :cond_5
 
-    .line 58
+    .line 59
     iget-object p1, p0, Landroidx/activity/ImmLeaksCleaner;->mActivity:Landroid/app/Activity;
 
     const-string p2, "input_method"
 
-    .line 59
+    .line 60
     invoke-virtual {p1, p2}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 62
+    .line 63
     :try_start_0
     sget-object p2, Landroidx/activity/ImmLeaksCleaner;->sHField:Ljava/lang/reflect/Field;
 
@@ -184,11 +162,11 @@
 
     return-void
 
-    .line 69
+    .line 70
     :cond_2
     monitor-enter p2
 
-    .line 72
+    .line 73
     :try_start_1
     sget-object v0, Landroidx/activity/ImmLeaksCleaner;->sServedViewField:Ljava/lang/reflect/Field;
 
@@ -204,13 +182,13 @@
 
     if-nez v0, :cond_3
 
-    .line 79
+    .line 80
     :try_start_2
     monitor-exit p2
 
     return-void
 
-    .line 81
+    .line 82
     :cond_3
     invoke-virtual {v0}, Landroid/view/View;->isAttachedToWindow()Z
 
@@ -218,14 +196,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 82
+    .line 83
     monitor-exit p2
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     return-void
 
-    .line 87
+    .line 88
     :cond_4
     :try_start_3
     sget-object v0, Landroidx/activity/ImmLeaksCleaner;->sNextServedViewField:Ljava/lang/reflect/Field;
@@ -237,18 +215,18 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 91
+    .line 92
     :try_start_4
     monitor-exit p2
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 94
+    .line 95
     invoke-virtual {p1}, Landroid/view/inputmethod/InputMethodManager;->isActive()Z
 
     goto :goto_1
 
-    .line 89
+    .line 90
     :catch_0
     :try_start_5
     monitor-exit p2
@@ -260,19 +238,19 @@
 
     goto :goto_0
 
-    .line 76
+    .line 77
     :catch_1
     monitor-exit p2
 
     return-void
 
-    .line 74
+    .line 75
     :catch_2
     monitor-exit p2
 
     return-void
 
-    .line 91
+    .line 92
     :goto_0
     monitor-exit p2
     :try_end_5
@@ -281,8 +259,6 @@
     throw p1
 
     :catch_3
-    return-void
-
     :cond_5
     :goto_1
     return-void

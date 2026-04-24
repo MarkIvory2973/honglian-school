@@ -48,18 +48,15 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
 .method public abstract fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .param p2    # Lkotlin/jvm/functions/Function2;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
@@ -74,10 +71,6 @@
 .end method
 
 .method public abstract get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
-    .param p1    # Lkotlin/coroutines/CoroutineContext$Key;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E::",
@@ -86,9 +79,6 @@
             "Lkotlin/coroutines/CoroutineContext$Key<",
             "TE;>;)TE;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 .end method
 
@@ -100,16 +90,9 @@
             "*>;"
         }
     .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 .end method
 
 .method public abstract minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
-    .param p1    # Lkotlin/coroutines/CoroutineContext$Key;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -117,8 +100,5 @@
             "*>;)",
             "Lkotlin/coroutines/CoroutineContext;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 .end method

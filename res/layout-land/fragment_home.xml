@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout-land/fragment_home_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/imageView" android:tag="binding_1" android:layout_width="68.0dp" android:layout_height="68.0dp" android:layout_marginTop="29.0dp" android:src="@mipmap/logo_yuan" android:layout_marginStart="60.0dp" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="36.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/textView3" android:tag="binding_2" android:layout_width="360.0dp" android:layout_height="wrap_content" android:layout_marginStart="21.0dp" bind:layout_constraintBottom_toBottomOf="@id/imageView" bind:layout_constraintStart_toEndOf="@id/imageView" bind:layout_constraintTop_toTopOf="@id/imageView" />
+    <RelativeLayout android:id="@id/rl_teacher" android:background="@drawable/shape_circle_corn_tran_rect" android:visibility="gone" android:layout_width="172.0dp" android:layout_height="60.0dp" android:layout_centerInParent="true" android:layout_marginEnd="@dimen/dp_40" bind:layout_constraintBottom_toBottomOf="@id/textView2" bind:layout_constraintEnd_toStartOf="@id/textView2" bind:layout_constraintTop_toTopOf="@id/textView2">
+        <ImageView android:id="@id/iv_teacher" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/ico_bzr" />
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_teacher" android:paddingLeft="4.0dp" android:paddingRight="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dp" android:layout_toRightOf="@id/iv_teacher" android:layout_centerVertical="true">
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:id="@id/tv_teacher" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="班主任" />
+            <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_teacher_name" android:tag="binding_3" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView android:textSize="36.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center" android:id="@id/textView2" android:tag="binding_4" android:layout_width="wrap_content" android:layout_height="wrap_content" bind:layout_constraintBottom_toBottomOf="@id/imageView" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="@id/imageView" />
+    <RelativeLayout android:background="@drawable/shape_circle_corn_tran_rect" android:visibility="gone" android:layout_width="172.0dp" android:layout_height="60.0dp" android:layout_marginStart="@dimen/dp_40" bind:layout_constraintBottom_toBottomOf="@id/textView2" bind:layout_constraintStart_toEndOf="@id/textView2">
+        <ImageView android:id="@id/iv_student" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/ico_xxrs" android:layout_alignParentEnd="true" />
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_student" android:paddingLeft="8.0dp" android:paddingRight="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginEnd="8.0dp" android:layout_toStartOf="@id/iv_student">
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="right" android:id="@id/tv_student" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="学生人数" />
+            <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/white" android:layout_gravity="right" android:id="@id/tv_student_num" android:tag="binding_5" android:paddingRight="4.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView android:textSize="24.0sp" android:textColor="#ffffffff" android:id="@id/textView4" android:tag="binding_6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18.0dp" android:layout_marginEnd="40.0dp" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintTop_toTopOf="parent" />
+    <ImageView android:id="@id/imageView2" android:tag="binding_7" android:layout_width="47.0dp" android:layout_height="47.0dp" android:layout_marginEnd="16.0dp" bind:layout_constraintBottom_toBottomOf="@id/textView4" bind:layout_constraintEnd_toStartOf="@id/textView4" />
+    <TextView android:textSize="24.0sp" android:textColor="#ffffffff" android:id="@id/textView5" android:tag="binding_8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:layout_marginEnd="30.0dp" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintTop_toBottomOf="@id/textView4" />
+    <TextView android:textSize="32.0sp" android:textColor="#ffffffff" android:id="@id/textView6" android:tag="binding_9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="19.0dp" android:layout_marginEnd="36.0dp" bind:layout_constraintEnd_toStartOf="@id/imageView2" bind:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="24.0sp" android:textColor="#ffffffff" android:id="@id/textView12" android:tag="binding_10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dp" bind:layout_constraintEnd_toEndOf="@id/textView6" bind:layout_constraintTop_toBottomOf="@id/textView6" />
+    <com.zhpan.bannerview.BannerViewPager android:id="@id/bannerViewPager" android:background="@drawable/shape_circle_corn20_white_rect" android:layout_width="600.0dp" android:layout_height="354.0dp" android:layout_marginTop="31.0dp" android:layout_marginStart="20.0dp" bind:bvp_auto_play="true" bind:bvp_can_loop="true" bind:bvp_indicator_gravity="center" bind:bvp_indicator_slide_mode="worm" bind:bvp_indicator_style="circle" bind:bvp_interval="10000" bind:bvp_round_corner="20.0dp" bind:layout_constraintStart_toEndOf="@id/constraintLayout" bind:layout_constraintTop_toBottomOf="@id/textView3" />
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/constraintLayout" android:background="@drawable/shape_circle_corn20_white_rect" android:layout_width="600.0dp" android:layout_height="354.0dp" android:layout_marginStart="20.0dp" bind:layout_constraintStart_toEndOf="@id/constraintLayout3" bind:layout_constraintTop_toTopOf="@id/constraintLayout3">
+        <com.zhpan.bannerview.BannerViewPager android:id="@id/bvp_photo" android:layout_width="match_parent" android:layout_height="match_parent" bind:bvp_auto_play="true" bind:bvp_can_loop="true" bind:bvp_indicator_gravity="center" bind:bvp_indicator_slide_mode="worm" bind:bvp_indicator_style="circle" bind:bvp_interval="10000" bind:bvp_round_corner="20.0dp" />
+        <RelativeLayout android:background="@drawable/shape_rect_white_corn20_bottom" android:paddingLeft="20.0dp" android:paddingTop="12.0dp" android:paddingRight="10.0dp" android:paddingBottom="12.0dp" android:layout_width="match_parent" android:layout_height="65.0dp" bind:layout_constraintBottom_toBottomOf="parent">
+            <TextView android:id="@id/btn_photo_into" android:tag="binding_11" android:text="@string/into" style="@style/home_title_btn" />
+            <ImageView android:id="@id/iv_photo" android:layout_width="25.0dp" android:layout_height="25.0dp" android:src="@mipmap/ico_bjxc" android:layout_centerVertical="true" android:layout_alignParentStart="true" />
+            <TextView android:text="@string/class_photo" android:layout_toEndOf="@id/iv_photo" style="@style/home_title_tv" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout android:tag="binding_12" android:background="@drawable/shape_circle_corn20_white_rect" android:layout_width="1220.0dp" android:layout_height="202.0dp" android:layout_marginStart="20.0dp" bind:layout_constraintStart_toEndOf="@id/constraintLayout3" bind:layout_constraintTop_toTopOf="@id/ll_student_list">
+        <include layout="@layout/include_nor_recyclerview" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/rl_schedule" android:background="@drawable/shape_circle_corn20_white_rect" android:layout_width="1220.0dp" android:layout_height="202.0dp" android:weightSum="4.0" android:layout_marginStart="20.0dp" bind:layout_constraintStart_toEndOf="@id/constraintLayout3" bind:layout_constraintTop_toTopOf="@id/ll_student_list">
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="0.0dp" android:weightSum="7.0" android:layout_weight="1.0">
+            <RelativeLayout android:tag="binding_13" android:background="@drawable/shape_rect_left_top_corn20_blue0fc" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:id="@id/iv_ling" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/icon_ling" android:layout_toLeftOf="@id/tv_day_schedule" android:layout_centerVertical="true" />
+                <TextView android:textSize="18.0sp" android:textColor="@color/colorBlackD34" android:gravity="center" android:id="@id/tv_day_schedule" android:background="@color/colorBlue0FC" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="今日课表" android:layout_centerInParent="true" />
+                <ImageView android:id="@id/iv_hand" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/icon_hand" android:layout_toRightOf="@id/tv_day_schedule" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <TextView android:textColor="@color/colorBlackD34" android:text="早读" style="@style/schedule_tv" />
+            <TextView android:textColor="@color/colorBlackD34" android:text="第1节" style="@style/schedule_tv" />
+            <TextView android:textColor="@color/colorBlackD34" android:text="第2节" style="@style/schedule_tv" />
+            <TextView android:textColor="@color/colorBlackD34" android:text="第3节" style="@style/schedule_tv" />
+            <TextView android:textColor="@color/colorBlackD34" android:text="第4节" style="@style/schedule_tv" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/colorBlackD34" android:gravity="center" android:background="@drawable/shape_rect_right_top_corn20_gray" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="第5节" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="0.0dp" android:weightSum="7.0" android:layout_weight="1.0">
+            <TextView android:textSize="16.0sp" android:textColor="@color/colorBlackD34" android:gravity="center" android:background="@drawable/shape_rect_8ffgray_bord_right_bottom" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="上午" android:layout_weight="1.0" />
+            <LinearLayout android:id="@id/ll_am_read" android:tag="binding_14" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_am_read" android:tag="binding_15" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_am_read_t" android:tag="binding_16" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_am_1" android:tag="binding_17" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_am_1" android:tag="binding_18" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_am_1_t" android:tag="binding_19" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_am_2" android:tag="binding_20" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_am_2" android:tag="binding_21" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_am_2_t" android:tag="binding_22" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_am_3" android:tag="binding_23" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_am_3" android:tag="binding_24" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_am_3_t" android:tag="binding_25" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_am_4" android:tag="binding_26" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_am_4" android:tag="binding_27" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_am_4_t" android:tag="binding_28" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_am_5" android:tag="binding_29" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_am_5" android:tag="binding_30" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_am_5_t" android:tag="binding_31" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="0.0dp" android:weightSum="7.0" android:layout_weight="1.0">
+            <TextView android:textSize="16.0sp" android:textColor="@color/colorBlackD34" android:gravity="center" android:background="@color/color8FFGray" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="下午" android:layout_weight="1.0" />
+            <LinearLayout android:id="@id/ll_pm_read" android:tag="binding_32" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_pm_read" android:tag="binding_33" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_pm_read_t" android:tag="binding_34" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_pm_1" android:tag="binding_35" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_pm_1" android:tag="binding_36" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_pm_1_t" android:tag="binding_37" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_pm_2" android:tag="binding_38" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_pm_2" android:tag="binding_39" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_pm_2_t" android:tag="binding_40" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_pm_3" android:tag="binding_41" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_pm_3" android:tag="binding_42" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_pm_3_t" android:tag="binding_43" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_pm_4" android:tag="binding_44" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_pm_4" android:tag="binding_45" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_pm_4_t" android:tag="binding_46" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_pm_5" android:tag="binding_47" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_pm_5" android:tag="binding_48" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_pm_5_t" android:tag="binding_49" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="0.0dp" android:weightSum="7.0" android:layout_weight="1.0">
+            <TextView android:textSize="16.0sp" android:textColor="@color/colorBlackD34" android:gravity="center" android:background="@drawable/shape_rect_left_bottom_corn20_gray" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="晚修" android:layout_weight="1.0" />
+            <LinearLayout android:id="@id/ll_night_read" android:tag="binding_50" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_night_read" android:tag="binding_51" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_night_read_t" android:tag="binding_52" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_night_1" android:tag="binding_53" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_night_1" android:tag="binding_54" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_night_1_t" android:tag="binding_55" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_night_2" android:tag="binding_56" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_night_2" android:tag="binding_57" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_night_2_t" android:tag="binding_58" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_night_3" android:tag="binding_59" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_night_3" android:tag="binding_60" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_night_3_t" android:tag="binding_61" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_night_4" android:tag="binding_62" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_night_4" android:tag="binding_63" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_night_4_t" android:tag="binding_64" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_night_5" android:tag="binding_65" style="@style/schedule_ll">
+                <TextView android:id="@id/tv_night_5" android:tag="binding_66" style="@style/schedule_tv_d" />
+                <TextView android:id="@id/tv_night_5_t" android:tag="binding_67" style="@style/schedule_tv_d_t" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/constraintLayout3" android:background="@drawable/shape_circle_corn20_white_rect" android:layout_width="530.0dp" android:layout_height="354.0dp" android:layout_marginTop="28.0dp" android:layout_marginStart="60.0dp" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toBottomOf="@id/textView3">
+        <View android:id="@id/view29" android:background="@mipmap/banzhuren" android:layout_width="match_parent" android:layout_height="128.0dp" bind:layout_constraintTop_toTopOf="parent" />
+        <ImageView android:id="@id/imageView3" android:tag="binding_68" android:layout_width="88.0dp" android:layout_height="88.0dp" android:layout_marginTop="20.0dp" android:src="@mipmap/ic_head" android:layout_marginStart="20.0dp" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" />
+        <TextView android:textSize="20.0sp" android:textColor="@color/white" android:id="@id/textView16" android:tag="binding_69" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10" android:layout_marginStart="20.0dp" bind:layout_constraintStart_toEndOf="@id/imageView3" bind:layout_constraintTop_toBottomOf="@id/relativeLayout5" />
+        <View android:id="@id/view42" android:background="@color/white" android:layout_width="2.0dp" android:layout_height="25.0dp" android:layout_marginStart="21.0dp" bind:layout_constraintBottom_toBottomOf="@id/textView16" bind:layout_constraintStart_toEndOf="@id/textView16" bind:layout_constraintTop_toTopOf="@id/textView16" />
+        <TextView android:textSize="20.0sp" android:textColor="@color/white" android:tag="binding_70" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="20.0dp" bind:layout_constraintBottom_toBottomOf="@id/view42" bind:layout_constraintStart_toEndOf="@id/view42" bind:layout_constraintTop_toTopOf="@id/view42" />
+        <RelativeLayout android:id="@id/relativeLayout5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24.0dp" android:layout_marginStart="20.0dp" bind:layout_constraintStart_toEndOf="@id/imageView3" bind:layout_constraintTop_toTopOf="parent">
+            <TextView android:textSize="28.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_work" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="班主任" android:layout_centerVertical="true" />
+            <TextView android:textSize="28.0sp" android:textStyle="bold" android:textColor="@color/white" android:tag="binding_71" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="21.0dp" android:layout_toEndOf="@id/tv_work" />
+        </RelativeLayout>
+        <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:id="@id/textView61" android:tag="binding_72" android:layout_width="482.0dp" android:layout_height="114.0dp" android:layout_marginTop="20.0dp" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toBottomOf="@id/view29" />
+        <ImageView android:id="@id/imageView5" android:layout_width="21.0dp" android:layout_height="21.0dp" android:src="@mipmap/icon_jiyu" android:layout_marginStart="20.0dp" bind:layout_constraintBottom_toBottomOf="@id/textView62" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="@id/textView62" />
+        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/colorGray66" android:id="@id/tv_slogan" android:tag="binding_73" android:layout_width="300.0dp" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginStart="@dimen/dp_10" bind:layout_constraintBottom_toBottomOf="@id/imageView5" bind:layout_constraintStart_toEndOf="@id/imageView5" bind:layout_constraintTop_toTopOf="@id/imageView5" />
+        <TextView android:textSize="20.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/textView62" android:tag="binding_74" android:background="@drawable/shape_circle_corn_blue_rect" android:layout_width="137.0dp" android:layout_height="@dimen/dp_40" android:layout_marginBottom="20.0dp" android:text="班级文化" android:drawableEnd="@mipmap/ico_into" android:paddingStart="15.0dp" android:paddingEnd="18.0dp" android:layout_marginEnd="20.0dp" bind:layout_constraintBottom_toBottomOf="parent" bind:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/constraintLayout2" android:background="@drawable/shape_circle_corn20_white_rect" android:layout_width="600.0dp" android:layout_height="330.0dp" android:layout_marginTop="20.0dp" bind:layout_constraintBottom_toBottomOf="@id/ll_student_list" bind:layout_constraintStart_toStartOf="@id/bannerViewPager">
+        <LinearLayout android:orientation="vertical" android:background="@drawable/shape_circle_corn20_white_rect" android:layout_width="match_parent" android:layout_height="match_parent" bind:layout_constraintTop_toTopOf="parent">
+            <com.google.android.material.tabs.TabLayout android:textSize="24.0sp" android:id="@id/tl" android:background="@drawable/shape_circle_corn20_white_rect" android:layout_width="match_parent" android:layout_height="72.0dp" bind:tabIndicatorColor="@color/colorBlueAF5" bind:tabIndicatorFullWidth="true" bind:tabIndicatorGravity="bottom" bind:tabMode="scrollable" bind:tabSelectedTextColor="@color/colorBlueAF5" bind:tabTextAppearance="@style/CustomTabTextAppearance" bind:tabTextColor="@color/colorBlackD34" bind:tabUnboundedRipple="true" />
+            <androidx.viewpager2.widget.ViewPager2 android:id="@id/view_pager" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="20.0dp" android:layout_marginStart="20.0dp" android:layout_marginEnd="20.0dp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout android:id="@id/relativeLayout2" android:background="@drawable/shape_circle_corn20_white_rect" android:layout_width="600.0dp" android:layout_height="330.0dp" android:layout_marginTop="20.0dp" android:layout_marginStart="20.0dp" bind:layout_constraintBottom_toBottomOf="@id/ll_student_list" bind:layout_constraintStart_toEndOf="@id/constraintLayout3">
+        <RelativeLayout android:id="@id/rl_msg" android:paddingLeft="20.0dp" android:paddingTop="12.0dp" android:paddingRight="8.0dp" android:paddingBottom="12.0dp" android:layout_width="match_parent" android:layout_height="65.0dp">
+            <TextView android:id="@id/btn_msg_more" android:tag="binding_75" android:text="@string/more" style="@style/home_title_btn" />
+            <ImageView android:id="@id/iv_msg" android:layout_width="25.0dp" android:layout_height="25.0dp" android:src="@mipmap/ico_lyb" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <TextView android:text="@string/message_board" android:layout_toRightOf="@id/iv_msg" style="@style/home_title_tv" />
+        </RelativeLayout>
+        <LinearLayout android:id="@id/ll_msg" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@id/rl_msg">
+            <com.yanzhenjie.recyclerview.SwipeRecyclerView android:id="@id/rv_msg" android:background="@color/white" android:fadingEdge="none" android:layout_width="match_parent" android:layout_height="wrap_content" android:listSelector="#00000000" android:cacheColorHint="#00000000" android:divider="@color/colorebGray" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_student_list" android:background="@drawable/shape_circle_corn20_white_rect" android:layout_width="530.0dp" android:layout_height="552.0dp" android:layout_marginTop="20.0dp" android:layout_marginStart="60.0dp" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toBottomOf="@id/constraintLayout3">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:layout_marginStart="20.0dp">
+            <ImageView android:id="@id/v_line3" android:layout_width="21.0dp" android:layout_height="21.0dp" android:src="@mipmap/paiming" android:layout_centerVertical="true" />
+            <TextView android:textSize="26.0sp" android:textColor="@color/colorBlackD34" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="素质评价排行榜" android:layout_centerVertical="true" android:layout_toEndOf="@id/v_line3" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dp" android:layout_marginStart="65.0dp" android:layout_marginEnd="65.0dp">
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_gravity="bottom" android:layout_width="0.0dp" android:layout_height="150.0dp" android:layout_weight="1.0">
+                <View android:background="@drawable/shape_circle_orange" android:layout_width="69.0dp" android:layout_height="69.0dp" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" />
+                <ImageView android:id="@id/imageView8" android:layout_width="68.0dp" android:layout_height="68.0dp" android:src="@mipmap/s_35" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" />
+                <ImageView android:id="@id/imageView10" android:layout_width="83.0dp" android:layout_height="24.0dp" android:layout_marginTop="50.0dp" android:src="@mipmap/icon_sec" bind:layout_constraintEnd_toEndOf="@id/imageView8" bind:layout_constraintStart_toStartOf="@id/imageView8" bind:layout_constraintTop_toTopOf="@id/imageView8" />
+                <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="#ff0b0f32" android:id="@id/textView25" android:tag="binding_76" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10" bind:layout_constraintEnd_toEndOf="@id/imageView8" bind:layout_constraintStart_toStartOf="@id/imageView8" bind:layout_constraintTop_toBottomOf="@id/imageView10" />
+                <TextView android:textSize="16.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="共计" bind:layout_constraintEnd_toStartOf="@id/textView18" bind:layout_constraintTop_toTopOf="@id/textView18" />
+                <TextView android:textSize="16.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="币值" bind:layout_constraintStart_toEndOf="@id/textView18" bind:layout_constraintTop_toTopOf="@id/textView18" />
+                <TextView android:textSize="16.0sp" android:textColor="@color/colorRed343" android:id="@id/textView18" android:tag="binding_77" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_4" bind:layout_constraintEnd_toEndOf="@id/textView25" bind:layout_constraintStart_toStartOf="@id/textView25" bind:layout_constraintTop_toBottomOf="@id/textView25" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="0.0dp" android:layout_height="170.0dp" android:layout_weight="1.0">
+                <View android:background="@drawable/shape_circle_ju" android:layout_width="89.0dp" android:layout_height="89.0dp" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" />
+                <ImageView android:id="@id/imageView7" android:layout_width="88.0dp" android:layout_height="88.0dp" android:src="@mipmap/s_35" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" />
+                <ImageView android:id="@id/imageView11" android:layout_width="86.0dp" android:layout_height="24.0dp" android:layout_marginTop="70.0dp" android:src="@mipmap/icon_fst" bind:layout_constraintEnd_toEndOf="@id/imageView7" bind:layout_constraintStart_toStartOf="@id/imageView7" bind:layout_constraintTop_toTopOf="@id/imageView7" />
+                <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="#ff0b0f32" android:id="@id/textView17" android:tag="binding_78" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10" bind:layout_constraintEnd_toEndOf="@id/imageView7" bind:layout_constraintStart_toStartOf="@id/imageView7" bind:layout_constraintTop_toBottomOf="@id/imageView11" />
+                <TextView android:textSize="16.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="共计" bind:layout_constraintEnd_toStartOf="@id/textView29" bind:layout_constraintTop_toTopOf="@id/textView29" />
+                <TextView android:textSize="16.0sp" android:id="@id/textView28" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="币值" bind:layout_constraintStart_toEndOf="@id/textView29" bind:layout_constraintTop_toTopOf="@id/textView29" />
+                <TextView android:textSize="16.0sp" android:textColor="@color/colorRed343" android:id="@id/textView29" android:tag="binding_79" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_4" bind:layout_constraintEnd_toEndOf="@id/textView17" bind:layout_constraintStart_toStartOf="@id/textView17" bind:layout_constraintTop_toBottomOf="@id/textView17" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_gravity="bottom" android:layout_width="0.0dp" android:layout_height="150.0dp" android:layout_weight="1.0">
+                <View android:background="@drawable/shape_circle_bluebff" android:layout_width="69.0dp" android:layout_height="69.0dp" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" />
+                <ImageView android:id="@id/imageView9" android:layout_width="68.0dp" android:layout_height="68.0dp" android:src="@mipmap/s_35" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" />
+                <ImageView android:id="@id/imageView12" android:layout_width="83.0dp" android:layout_height="24.0dp" android:layout_marginTop="50.0dp" android:src="@mipmap/icon_pioneer" bind:layout_constraintEnd_toEndOf="@id/imageView9" bind:layout_constraintStart_toStartOf="@id/imageView9" bind:layout_constraintTop_toTopOf="@id/imageView9" />
+                <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="#ff0b0f32" android:id="@id/textView26" android:tag="binding_80" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10" bind:layout_constraintEnd_toEndOf="@id/imageView9" bind:layout_constraintStart_toStartOf="@id/imageView9" bind:layout_constraintTop_toBottomOf="@id/imageView12" />
+                <TextView android:textSize="16.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="共计" bind:layout_constraintEnd_toStartOf="@id/textView19" bind:layout_constraintTop_toTopOf="@id/textView19" />
+                <TextView android:textSize="16.0sp" android:id="@id/textView30" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="币值" bind:layout_constraintStart_toEndOf="@id/textView19" bind:layout_constraintTop_toTopOf="@id/textView19" />
+                <TextView android:textSize="16.0sp" android:textColor="@color/colorRed343" android:id="@id/textView19" android:tag="binding_81" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_4" bind:layout_constraintEnd_toEndOf="@id/textView26" bind:layout_constraintStart_toStartOf="@id/textView26" bind:layout_constraintTop_toBottomOf="@id/textView26" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="20.0dp" android:layout_marginStart="20.0dp">
+            <com.yanzhenjie.recyclerview.SwipeRecyclerView android:id="@id/rv_student" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" bind:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/rl_right" android:layout_width="70.0dp" android:layout_height="wrap_content" bind:layout_constraintBottom_toBottomOf="@id/relativeLayout2" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintTop_toTopOf="@id/constraintLayout3">
+        <RelativeLayout android:id="@id/rl_person" android:tag="binding_82" android:background="@drawable/shape_react_corn10_circle_white_ff" android:padding="4.0dp" android:layout_width="70.0dp" android:layout_height="70.0dp">
+            <ImageView android:id="@id/iv_person" android:src="@mipmap/ico_grxx" style="@style/home_right_iv" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/colorBlackD34" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="个人信息" android:layout_below="@id/iv_person" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/rl_dorm_score" android:tag="binding_83" android:background="@drawable/shape_react_corn10_circle_white_ff" android:padding="4.0dp" android:visibility="visible" android:layout_width="70.0dp" android:layout_height="70.0dp" android:layout_marginTop="20.0dp">
+            <ImageView android:id="@id/iv_dorm_score" android:src="@mipmap/icon_sushepingfen_56" style="@style/home_right_iv" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/colorBlackD34" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="宿舍评分" android:layout_below="@id/iv_dorm_score" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/rl_lost" android:tag="binding_84" android:background="@drawable/shape_react_corn10_circle_white_ff" android:padding="4.0dp" android:layout_width="70.0dp" android:layout_height="70.0dp" android:layout_marginTop="20.0dp">
+            <ImageView android:id="@id/iv_lost" android:src="@mipmap/ico_swrl" style="@style/home_right_iv" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/colorBlackD34" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="失物认领" android:layout_below="@id/iv_lost" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/rl_attendance" android:tag="binding_85" android:background="@drawable/shape_react_corn10_circle_white_ff" android:padding="4.0dp" android:layout_width="70.0dp" android:layout_height="70.0dp" android:layout_marginTop="20.0dp">
+            <ImageView android:id="@id/iv_kq" android:src="@mipmap/icon_banjikaoqin" style="@style/home_right_iv" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/colorBlackD34" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="班级考勤" android:layout_below="@id/iv_kq" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/rl_access" android:tag="binding_86" android:background="@drawable/shape_react_corn10_circle_white_ff" android:padding="4.0dp" android:visibility="visible" android:layout_width="70.0dp" android:layout_height="70.0dp" android:layout_marginTop="20.0dp" android:layout_below="@id/rl_lost">
+            <ImageView android:id="@id/iv_access" android:src="@mipmap/icon_access" style="@style/home_right_iv" />
+            <TextView android:textColor="@color/colorBlackD34" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="教室门禁" android:layout_below="@id/iv_access" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/rl_sport" android:tag="binding_87" android:background="@drawable/shape_react_corn10_circle_white_ff" android:padding="4.0dp" android:visibility="visible" android:layout_width="70.0dp" android:layout_height="70.0dp" android:layout_marginTop="20.0dp">
+            <ImageView android:id="@id/iv_sport" android:src="@mipmap/icon_yundongbangdan" style="@style/home_right_iv" />
+            <TextView android:textColor="@color/colorBlackD34" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="运动榜单" android:layout_below="@id/iv_sport" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/rl_order" android:tag="binding_88" android:background="@drawable/shape_react_corn10_circle_white_ff" android:padding="4.0dp" android:layout_width="70.0dp" android:layout_height="70.0dp" android:layout_marginTop="20.0dp">
+            <ImageView android:id="@id/iv_order" android:src="@mipmap/icon_yudingcan" style="@style/home_right_iv" />
+            <TextView android:textColor="@color/colorBlackD34" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="预订餐" android:layout_below="@id/iv_order" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <com.hl.classtabletapp.app.weight.customview.BarrageView android:id="@id/bv" android:tag="binding_89" android:layout_width="match_parent" android:layout_height="42.0dp" android:layout_marginBottom="20.0dp" bind:layout_constraintBottom_toBottomOf="parent" bind:layout_constraintStart_toStartOf="parent" />
+    <TextView android:textSize="12.0sp" android:textColor="@color/white" android:id="@id/textView7" android:tag="binding_90" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0dp" bind:layout_constraintBottom_toBottomOf="parent" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,24 +16,12 @@
 .field private mCursorToStringConverter:Landroidx/cursoradapter/widget/SimpleCursorAdapter$CursorToStringConverter;
 
 .field protected mFrom:[I
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-.end field
 
 .field mOriginalFrom:[Ljava/lang/String;
 
 .field private mStringConversionColumn:I
 
 .field protected mTo:[I
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-.end field
 
 .field private mViewBinder:Landroidx/cursoradapter/widget/SimpleCursorAdapter$ViewBinder;
 
@@ -245,11 +233,7 @@
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p3, " is not a "
-
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p3, " view that can be bounds by this SimpleCursorAdapter"
+    const-string p3, " is not a  view that can be bounds by this SimpleCursorAdapter"
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -281,8 +265,6 @@
     iput-object p3, p0, Landroidx/cursoradapter/widget/SimpleCursorAdapter;->mTo:[I
 
     .line 356
-    iget-object p2, p0, Landroidx/cursoradapter/widget/SimpleCursorAdapter;->mOriginalFrom:[Ljava/lang/String;
-
     invoke-direct {p0, p1, p2}, Landroidx/cursoradapter/widget/SimpleCursorAdapter;->findColumns(Landroid/database/Cursor;[Ljava/lang/String;)V
 
     .line 357

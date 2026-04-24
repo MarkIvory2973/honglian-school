@@ -26,14 +26,8 @@
 .field private final mHyphenationFrequency:I
 
 .field private final mPaint:Landroid/text/TextPaint;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 .field private final mTextDir:Landroid/text/TextDirectionHeuristic;
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-.end field
 
 .field final mWrapped:Landroid/text/PrecomputedText$Params;
 
@@ -41,46 +35,39 @@
 # direct methods
 .method public constructor <init>(Landroid/text/PrecomputedText$Params;)V
     .locals 2
-    .param p1    # Landroid/text/PrecomputedText$Params;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x1c
-    .end annotation
 
-    .line 214
+    .line 213
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 215
-    invoke-virtual {p1}, Landroid/text/PrecomputedText$Params;->getTextPaint()Landroid/text/TextPaint;
+    .line 214
+    invoke-static {p1}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/text/PrecomputedText$Params;)Landroid/text/TextPaint;
 
     move-result-object v0
 
     iput-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    .line 216
-    invoke-virtual {p1}, Landroid/text/PrecomputedText$Params;->getTextDirection()Landroid/text/TextDirectionHeuristic;
+    .line 215
+    invoke-static {p1}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/text/PrecomputedText$Params;)Landroid/text/TextDirectionHeuristic;
 
     move-result-object v0
 
     iput-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mTextDir:Landroid/text/TextDirectionHeuristic;
 
-    .line 217
-    invoke-virtual {p1}, Landroid/text/PrecomputedText$Params;->getBreakStrategy()I
+    .line 216
+    invoke-static {p1}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/text/PrecomputedText$Params;)I
 
     move-result v0
 
     iput v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mBreakStrategy:I
 
-    .line 218
-    invoke-virtual {p1}, Landroid/text/PrecomputedText$Params;->getHyphenationFrequency()I
+    .line 217
+    invoke-static {p1}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$1(Landroid/text/PrecomputedText$Params;)I
 
     move-result v0
 
     iput v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mHyphenationFrequency:I
 
-    .line 219
+    .line 218
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
@@ -100,52 +87,39 @@
 
 .method constructor <init>(Landroid/text/TextPaint;Landroid/text/TextDirectionHeuristic;II)V
     .locals 2
-    .param p1    # Landroid/text/TextPaint;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/text/TextDirectionHeuristic;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "NewApi"
-        }
-    .end annotation
 
-    .line 197
+    .line 196
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 198
+    .line 197
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
     if-lt v0, v1, :cond_0
 
-    .line 199
-    new-instance v0, Landroid/text/PrecomputedText$Params$Builder;
+    .line 198
+    invoke-static {p1}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/text/TextPaint;)Landroid/text/PrecomputedText$Params$Builder;
 
-    invoke-direct {v0, p1}, Landroid/text/PrecomputedText$Params$Builder;-><init>(Landroid/text/TextPaint;)V
+    move-result-object v0
+
+    .line 199
+    invoke-static {v0, p3}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/text/PrecomputedText$Params$Builder;I)Landroid/text/PrecomputedText$Params$Builder;
+
+    move-result-object v0
 
     .line 200
-    invoke-virtual {v0, p3}, Landroid/text/PrecomputedText$Params$Builder;->setBreakStrategy(I)Landroid/text/PrecomputedText$Params$Builder;
+    invoke-static {v0, p4}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$1(Landroid/text/PrecomputedText$Params$Builder;I)Landroid/text/PrecomputedText$Params$Builder;
 
     move-result-object v0
 
     .line 201
-    invoke-virtual {v0, p4}, Landroid/text/PrecomputedText$Params$Builder;->setHyphenationFrequency(I)Landroid/text/PrecomputedText$Params$Builder;
+    invoke-static {v0, p2}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/text/PrecomputedText$Params$Builder;Landroid/text/TextDirectionHeuristic;)Landroid/text/PrecomputedText$Params$Builder;
 
     move-result-object v0
 
     .line 202
-    invoke-virtual {v0, p2}, Landroid/text/PrecomputedText$Params$Builder;->setTextDirection(Landroid/text/TextDirectionHeuristic;)Landroid/text/PrecomputedText$Params$Builder;
-
-    move-result-object v0
-
-    .line 203
-    invoke-virtual {v0}, Landroid/text/PrecomputedText$Params$Builder;->build()Landroid/text/PrecomputedText$Params;
+    invoke-static {v0}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/text/PrecomputedText$Params$Builder;)Landroid/text/PrecomputedText$Params;
 
     move-result-object v0
 
@@ -156,20 +130,20 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 205
+    .line 204
     iput-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mWrapped:Landroid/text/PrecomputedText$Params;
 
-    .line 207
+    .line 206
     :goto_0
     iput-object p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    .line 208
+    .line 207
     iput-object p2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mTextDir:Landroid/text/TextDirectionHeuristic;
 
-    .line 209
+    .line 208
     iput p3, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mBreakStrategy:I
 
-    .line 210
+    .line 209
     iput p4, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mHyphenationFrequency:I
 
     return-void
@@ -178,11 +152,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 4
-    .param p1    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -190,7 +160,7 @@
 
     return v0
 
-    .line 335
+    .line 334
     :cond_0
     instance-of v1, p1, Landroidx/core/text/PrecomputedTextCompat$Params;
 
@@ -200,11 +170,11 @@
 
     return v2
 
-    .line 338
+    .line 337
     :cond_1
     check-cast p1, Landroidx/core/text/PrecomputedTextCompat$Params;
 
-    .line 339
+    .line 338
     invoke-virtual {p0, p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->equalsWithoutTextDirection(Landroidx/core/text/PrecomputedTextCompat$Params;)Z
 
     move-result v1
@@ -215,13 +185,6 @@
 
     .line 342
     :cond_2
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x12
-
-    if-lt v1, v3, :cond_3
-
-    .line 343
     iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mTextDir:Landroid/text/TextDirectionHeuristic;
 
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->getTextDirection()Landroid/text/TextDirectionHeuristic;
@@ -238,49 +201,40 @@
 
 .method public equalsWithoutTextDirection(Landroidx/core/text/PrecomputedTextCompat$Params;)Z
     .locals 3
-    .param p1    # Landroidx/core/text/PrecomputedTextCompat$Params;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
 
-    .line 275
+    .line 274
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/4 v1, 0x0
+    const/16 v1, 0x17
 
-    const/16 v2, 0x17
+    const/4 v2, 0x0
 
-    if-lt v0, v2, :cond_1
+    if-lt v0, v1, :cond_1
 
-    .line 276
+    .line 275
     iget v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mBreakStrategy:I
 
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->getBreakStrategy()I
 
-    move-result v2
+    move-result v1
 
-    if-eq v0, v2, :cond_0
+    if-eq v0, v1, :cond_0
 
-    return v1
+    return v2
 
-    .line 279
+    .line 278
     :cond_0
     iget v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mHyphenationFrequency:I
 
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->getHyphenationFrequency()I
 
-    move-result v2
+    move-result v1
 
-    if-eq v0, v2, :cond_1
+    if-eq v0, v1, :cond_1
 
-    return v1
+    return v2
 
-    .line 284
+    .line 283
     :cond_1
     iget-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
@@ -290,19 +244,19 @@
 
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->getTextPaint()Landroid/text/TextPaint;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextSize()F
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextSize()F
 
-    move-result v2
+    move-result v1
 
-    cmpl-float v0, v0, v2
+    cmpl-float v0, v0, v1
 
     if-eqz v0, :cond_2
 
-    return v1
+    return v2
 
-    .line 287
+    .line 286
     :cond_2
     iget-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
@@ -312,19 +266,19 @@
 
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->getTextPaint()Landroid/text/TextPaint;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextScaleX()F
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextScaleX()F
 
-    move-result v2
+    move-result v1
 
-    cmpl-float v0, v0, v2
+    cmpl-float v0, v0, v1
 
     if-eqz v0, :cond_3
 
-    return v1
+    return v2
 
-    .line 290
+    .line 289
     :cond_3
     iget-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
@@ -334,27 +288,20 @@
 
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->getTextPaint()Landroid/text/TextPaint;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextSkewX()F
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextSkewX()F
 
-    move-result v2
+    move-result v1
 
-    cmpl-float v0, v0, v2
+    cmpl-float v0, v0, v1
 
     if-eqz v0, :cond_4
 
-    return v1
+    return v2
 
     .line 293
     :cond_4
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x15
-
-    if-lt v0, v2, :cond_6
-
-    .line 294
     iget-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0}, Landroid/text/TextPaint;->getLetterSpacing()F
@@ -363,19 +310,19 @@
 
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->getTextPaint()Landroid/text/TextPaint;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getLetterSpacing()F
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getLetterSpacing()F
 
-    move-result v2
+    move-result v1
 
-    cmpl-float v0, v0, v2
+    cmpl-float v0, v0, v1
 
     if-eqz v0, :cond_5
 
-    return v1
+    return v2
 
-    .line 297
+    .line 296
     :cond_5
     iget-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
@@ -383,25 +330,25 @@
 
     move-result-object v0
 
-    .line 298
+    .line 297
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->getTextPaint()Landroid/text/TextPaint;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getFontFeatureSettings()Ljava/lang/String;
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getFontFeatureSettings()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    .line 297
-    invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    .line 296
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_6
 
-    return v1
+    return v2
 
-    .line 302
+    .line 301
     :cond_6
     iget-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
@@ -411,56 +358,49 @@
 
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->getTextPaint()Landroid/text/TextPaint;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getFlags()I
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getFlags()I
 
-    move-result v2
+    move-result v1
 
-    if-eq v0, v2, :cond_7
+    if-eq v0, v1, :cond_7
 
-    return v1
+    return v2
 
-    .line 305
+    .line 304
     :cond_7
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0x18
+    const/16 v1, 0x18
 
-    if-lt v0, v2, :cond_8
+    if-lt v0, v1, :cond_8
 
-    .line 306
+    .line 305
     iget-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v0}, Landroid/text/TextPaint;->getTextLocales()Landroid/os/LocaleList;
+    invoke-static {v0}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/text/TextPaint;)Landroid/os/LocaleList;
 
     move-result-object v0
 
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->getTextPaint()Landroid/text/TextPaint;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextLocales()Landroid/os/LocaleList;
+    invoke-static {v1}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/text/TextPaint;)Landroid/os/LocaleList;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v2}, Landroid/os/LocaleList;->equals(Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Landroid/app/smdt/SmdtManager$$ExternalSyntheticApiModelOutline0;->m(Landroid/os/LocaleList;Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_9
 
-    return v1
+    return v2
 
     .line 309
     :cond_8
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x11
-
-    if-lt v0, v2, :cond_9
-
-    .line 310
     iget-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0}, Landroid/text/TextPaint;->getTextLocale()Ljava/util/Locale;
@@ -469,21 +409,21 @@
 
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->getTextPaint()Landroid/text/TextPaint;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextLocale()Ljava/util/Locale;
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextLocale()Ljava/util/Locale;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v2}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_9
 
-    return v1
+    return v2
 
-    .line 314
+    .line 313
     :cond_9
     iget-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
@@ -493,7 +433,7 @@
 
     if-nez v0, :cond_a
 
-    .line 315
+    .line 314
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->getTextPaint()Landroid/text/TextPaint;
 
     move-result-object p1
@@ -504,9 +444,9 @@
 
     if-eqz p1, :cond_b
 
-    return v1
+    return v2
 
-    .line 318
+    .line 317
     :cond_a
     iget-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
@@ -528,7 +468,7 @@
 
     if-nez p1, :cond_b
 
-    return v1
+    return v2
 
     :cond_b
     const/4 p1, 0x1
@@ -538,11 +478,8 @@
 
 .method public getBreakStrategy()I
     .locals 1
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x17
-    .end annotation
 
-    .line 253
+    .line 252
     iget v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mBreakStrategy:I
 
     return v0
@@ -550,11 +487,8 @@
 
 .method public getHyphenationFrequency()I
     .locals 1
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x17
-    .end annotation
 
-    .line 265
+    .line 264
     iget v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mHyphenationFrequency:I
 
     return v0
@@ -562,14 +496,8 @@
 
 .method public getTextDirection()Landroid/text/TextDirectionHeuristic;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x12
-    .end annotation
-
-    .line 241
+    .line 240
     iget-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mTextDir:Landroid/text/TextDirectionHeuristic;
 
     return-object v0
@@ -577,10 +505,8 @@
 
 .method public getTextPaint()Landroid/text/TextPaint;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 228
+    .line 227
     iget-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
     return-object v0
@@ -589,12 +515,12 @@
 .method public hashCode()I
     .locals 14
 
-    .line 352
+    .line 351
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v1, 0xa
+    const/16 v1, 0x18
 
-    const/16 v2, 0xb
+    const/16 v2, 0xa
 
     const/16 v3, 0x9
 
@@ -616,348 +542,237 @@
 
     const/4 v12, 0x0
 
-    const/16 v13, 0x18
+    const/16 v13, 0xb
 
-    if-lt v0, v13, :cond_0
+    if-lt v0, v1, :cond_0
+
+    new-array v0, v13, [Ljava/lang/Object;
+
+    .line 352
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextSize()F
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    aput-object v1, v0, v12
+
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextScaleX()F
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    aput-object v1, v0, v11
+
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
     .line 353
-    new-array v0, v2, [Ljava/lang/Object;
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextSkewX()F
 
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+    move-result v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextSize()F
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result v2
+    move-result-object v1
 
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    aput-object v1, v0, v10
 
-    move-result-object v2
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    aput-object v2, v0, v12
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getLetterSpacing()F
 
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+    move-result v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextScaleX()F
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result v2
+    move-result-object v1
 
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    aput-object v1, v0, v9
 
-    move-result-object v2
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    aput-object v2, v0, v11
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getFlags()I
 
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v0, v8
+
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
     .line 354
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextSkewX()F
+    invoke-static {v1}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/text/TextPaint;)Landroid/os/LocaleList;
 
-    move-result v2
+    move-result-object v1
 
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    aput-object v1, v0, v7
 
-    move-result-object v2
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    aput-object v2, v0, v10
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getTypeface()Landroid/graphics/Typeface;
 
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getLetterSpacing()F
+    aput-object v1, v0, v6
 
-    move-result v2
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-virtual {v1}, Landroid/text/TextPaint;->isElegantTextHeight()Z
 
-    move-result-object v2
+    move-result v1
 
-    aput-object v2, v0, v9
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getFlags()I
+    aput-object v1, v0, v5
 
-    move-result v2
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mTextDir:Landroid/text/TextDirectionHeuristic;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    aput-object v1, v0, v4
 
-    move-result-object v2
-
-    aput-object v2, v0, v8
-
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+    iget v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mBreakStrategy:I
 
     .line 355
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextLocales()Landroid/os/LocaleList;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
-    aput-object v2, v0, v7
+    aput-object v1, v0, v3
 
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+    iget v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mHyphenationFrequency:I
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTypeface()Landroid/graphics/Typeface;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
-    aput-object v2, v0, v6
+    aput-object v1, v0, v2
 
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v2}, Landroid/text/TextPaint;->isElegantTextHeight()Z
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    aput-object v2, v0, v5
-
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mTextDir:Landroid/text/TextDirectionHeuristic;
-
-    aput-object v2, v0, v4
-
-    iget v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mBreakStrategy:I
-
-    .line 356
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v0, v3
-
-    iget v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mHyphenationFrequency:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    .line 353
+    .line 352
     invoke-static {v0}, Landroidx/core/util/ObjectsCompat;->hash([Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
+
+    :cond_0
+    new-array v0, v13, [Ljava/lang/Object;
 
     .line 357
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    const/16 v13, 0x15
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextSize()F
 
-    if-lt v0, v13, :cond_1
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    aput-object v1, v0, v12
+
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextScaleX()F
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    aput-object v1, v0, v11
+
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
     .line 358
-    new-array v0, v2, [Ljava/lang/Object;
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextSkewX()F
 
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+    move-result v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextSize()F
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result v2
+    move-result-object v1
 
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    aput-object v1, v0, v10
 
-    move-result-object v2
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    aput-object v2, v0, v12
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getLetterSpacing()F
 
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+    move-result v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextScaleX()F
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result v2
+    move-result-object v1
 
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    aput-object v1, v0, v9
 
-    move-result-object v2
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    aput-object v2, v0, v11
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getFlags()I
 
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v0, v8
+
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
     .line 359
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextSkewX()F
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextLocale()Ljava/util/Locale;
 
-    move-result v2
+    move-result-object v1
 
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    aput-object v1, v0, v7
 
-    move-result-object v2
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    aput-object v2, v0, v10
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getTypeface()Landroid/graphics/Typeface;
 
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getLetterSpacing()F
+    aput-object v1, v0, v6
 
-    move-result v2
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-virtual {v1}, Landroid/text/TextPaint;->isElegantTextHeight()Z
 
-    move-result-object v2
+    move-result v1
 
-    aput-object v2, v0, v9
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getFlags()I
+    aput-object v1, v0, v5
 
-    move-result v2
+    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mTextDir:Landroid/text/TextDirectionHeuristic;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    aput-object v1, v0, v4
 
-    move-result-object v2
-
-    aput-object v2, v0, v8
-
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+    iget v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mBreakStrategy:I
 
     .line 360
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextLocale()Ljava/util/Locale;
-
-    move-result-object v2
-
-    aput-object v2, v0, v7
-
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTypeface()Landroid/graphics/Typeface;
-
-    move-result-object v2
-
-    aput-object v2, v0, v6
-
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v2}, Landroid/text/TextPaint;->isElegantTextHeight()Z
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    aput-object v2, v0, v5
-
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mTextDir:Landroid/text/TextDirectionHeuristic;
-
-    aput-object v2, v0, v4
-
-    iget v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mBreakStrategy:I
-
-    .line 361
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v0, v3
-
-    iget v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mHyphenationFrequency:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    .line 358
-    invoke-static {v0}, Landroidx/core/util/ObjectsCompat;->hash([Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-
-    .line 362
-    :cond_1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_2
-
-    .line 363
-    new-array v0, v3, [Ljava/lang/Object;
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextSize()F
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    aput-object v1, v0, v12
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextScaleX()F
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    aput-object v1, v0, v11
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    .line 364
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextSkewX()F
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    aput-object v1, v0, v10
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getFlags()I
-
-    move-result v1
-
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    aput-object v1, v0, v9
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextLocale()Ljava/util/Locale;
-
-    move-result-object v1
-
-    aput-object v1, v0, v8
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    .line 365
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTypeface()Landroid/graphics/Typeface;
-
-    move-result-object v1
-
-    aput-object v1, v0, v7
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mTextDir:Landroid/text/TextDirectionHeuristic;
-
-    aput-object v1, v0, v6
-
-    iget v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mBreakStrategy:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v0, v5
+    aput-object v1, v0, v3
 
     iget v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mHyphenationFrequency:I
 
@@ -965,202 +780,9 @@
 
     move-result-object v1
 
-    aput-object v1, v0, v4
+    aput-object v1, v0, v2
 
-    .line 363
-    invoke-static {v0}, Landroidx/core/util/ObjectsCompat;->hash([Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-
-    .line 366
-    :cond_2
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x11
-
-    if-lt v0, v1, :cond_3
-
-    .line 367
-    new-array v0, v3, [Ljava/lang/Object;
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextSize()F
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    aput-object v1, v0, v12
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextScaleX()F
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    aput-object v1, v0, v11
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    .line 368
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextSkewX()F
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    aput-object v1, v0, v10
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getFlags()I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v0, v9
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextLocale()Ljava/util/Locale;
-
-    move-result-object v1
-
-    aput-object v1, v0, v8
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    .line 369
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTypeface()Landroid/graphics/Typeface;
-
-    move-result-object v1
-
-    aput-object v1, v0, v7
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mTextDir:Landroid/text/TextDirectionHeuristic;
-
-    aput-object v1, v0, v6
-
-    iget v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mBreakStrategy:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v0, v5
-
-    iget v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mHyphenationFrequency:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v0, v4
-
-    .line 367
-    invoke-static {v0}, Landroidx/core/util/ObjectsCompat;->hash([Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-
-    .line 371
-    :cond_3
-    new-array v0, v4, [Ljava/lang/Object;
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextSize()F
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    aput-object v1, v0, v12
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextScaleX()F
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    aput-object v1, v0, v11
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    .line 372
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTextSkewX()F
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    aput-object v1, v0, v10
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getFlags()I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v0, v9
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getTypeface()Landroid/graphics/Typeface;
-
-    move-result-object v1
-
-    aput-object v1, v0, v8
-
-    iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mTextDir:Landroid/text/TextDirectionHeuristic;
-
-    aput-object v1, v0, v7
-
-    iget v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mBreakStrategy:I
-
-    .line 373
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v0, v6
-
-    iget v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mHyphenationFrequency:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v0, v5
-
-    .line 371
+    .line 357
     invoke-static {v0}, Landroidx/core/util/ObjectsCompat;->hash([Ljava/lang/Object;)I
 
     move-result v0
@@ -1169,27 +791,46 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
-    .line 379
+    .line 378
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "{"
+    const-string/jumbo v1, "{"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 380
+    .line 379
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v2, "textSize="
 
-    const-string v2, "textSize="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v2}, Landroid/text/TextPaint;->getTextSize()F
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 380
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, ", textScaleX="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextScaleX()F
 
     move-result v2
 
@@ -1204,34 +845,9 @@
     .line 381
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, ", textScaleX="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextScaleX()F
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 382
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, ", textSkewX="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
@@ -1248,20 +864,11 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 383
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x15
-
-    if-lt v1, v2, :cond_0
-
-    .line 384
     new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, ", letterSpacing="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
@@ -1277,14 +884,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 385
+    .line 384
     new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, ", elegantTextHeight="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
@@ -1300,26 +905,23 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 387
-    :cond_0
+    .line 386
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x18
 
-    if-lt v1, v2, :cond_1
+    const-string v3, ", textLocale="
 
-    .line 388
+    if-lt v1, v2, :cond_0
+
+    .line 387
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, ", textLocale="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getTextLocales()Landroid/os/LocaleList;
+    invoke-static {v2}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/text/TextPaint;)Landroid/os/LocaleList;
 
     move-result-object v2
 
@@ -1334,21 +936,10 @@
     goto :goto_0
 
     .line 389
-    :cond_1
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x11
-
-    if-lt v1, v2, :cond_2
-
-    .line 390
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, ", textLocale="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
@@ -1364,16 +955,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 392
-    :cond_2
+    .line 391
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, ", typeface="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
@@ -1389,25 +977,23 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 393
+    .line 392
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1a
 
-    if-lt v1, v2, :cond_3
+    if-lt v1, v2, :cond_1
 
-    .line 394
+    .line 393
     new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, ", variationSettings="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getFontVariationSettings()Ljava/lang/String;
+    invoke-static {v2}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m(Landroid/text/TextPaint;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1419,15 +1005,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 396
-    :cond_3
+    .line 395
+    :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, ", textDir="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mTextDir:Landroid/text/TextDirectionHeuristic;
 
@@ -1439,14 +1023,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 397
+    .line 396
     new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, ", breakStrategy="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mBreakStrategy:I
 
@@ -1458,14 +1040,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 398
+    .line 397
     new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, ", hyphenationFrequency="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget v2, p0, Landroidx/core/text/PrecomputedTextCompat$Params;->mHyphenationFrequency:I
 
@@ -1477,12 +1057,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
-    .line 399
+    .line 398
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 400
+    .line 399
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0

@@ -5,23 +5,13 @@
 
 # instance fields
 .field private final mCallback:Landroidx/core/provider/FontsContractCompat$FontRequestCallback;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 .field private final mCallbackHandler:Landroid/os/Handler;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 
 # direct methods
 .method constructor <init>(Landroidx/core/provider/FontsContractCompat$FontRequestCallback;)V
     .locals 0
-    .param p1    # Landroidx/core/provider/FontsContractCompat$FontRequestCallback;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +31,6 @@
 
 .method constructor <init>(Landroidx/core/provider/FontsContractCompat$FontRequestCallback;Landroid/os/Handler;)V
     .locals 0
-    .param p1    # Landroidx/core/provider/FontsContractCompat$FontRequestCallback;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/os/Handler;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -82,10 +64,6 @@
 
 .method private onTypefaceRetrieved(Landroid/graphics/Typeface;)V
     .locals 3
-    .param p1    # Landroid/graphics/Typeface;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 54
     iget-object v0, p0, Landroidx/core/provider/CallbackWithHandler;->mCallback:Landroidx/core/provider/FontsContractCompat$FontRequestCallback;
@@ -106,10 +84,6 @@
 # virtual methods
 .method onTypefaceResult(Landroidx/core/provider/FontRequestWorker$TypefaceResult;)V
     .locals 1
-    .param p1    # Landroidx/core/provider/FontRequestWorker$TypefaceResult;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 80
     invoke-virtual {p1}, Landroidx/core/provider/FontRequestWorker$TypefaceResult;->isSuccess()Z

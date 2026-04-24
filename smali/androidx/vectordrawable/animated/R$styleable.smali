@@ -1,6 +1,5 @@
 .class public final Landroidx/vectordrawable/animated/R$styleable;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -17,11 +16,15 @@
 # static fields
 .field public static final ColorStateListItem:[I
 
-.field public static final ColorStateListItem_alpha:I = 0x2
+.field public static final ColorStateListItem_alpha:I = 0x3
 
 .field public static final ColorStateListItem_android_alpha:I = 0x1
 
 .field public static final ColorStateListItem_android_color:I = 0x0
+
+.field public static final ColorStateListItem_android_lStar:I = 0x2
+
+.field public static final ColorStateListItem_lStar:I = 0x4
 
 .field public static final FontFamily:[I
 
@@ -95,51 +98,54 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public static constructor <clinit>()V
+    .locals 5
 
-    const/4 v0, 0x3
+    const v0, 0x7f030037
 
-    .line 184
-    new-array v0, v0, [I
+    const v1, 0x7f0302d8
 
-    fill-array-data v0, :array_0
+    const v2, 0x10101a5
+
+    const v3, 0x101031f
+
+    const v4, 0x1010647
+
+    filled-new-array {v2, v3, v4, v0, v1}, [I
+
+    move-result-object v0
 
     sput-object v0, Landroidx/vectordrawable/animated/R$styleable;->ColorStateListItem:[I
 
     const/4 v0, 0x7
 
-    .line 188
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_1
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/vectordrawable/animated/R$styleable;->FontFamily:[I
 
     const/16 v0, 0xa
 
-    .line 196
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_2
+    fill-array-data v0, :array_1
 
     sput-object v0, Landroidx/vectordrawable/animated/R$styleable;->FontFamilyFont:[I
 
     const/16 v0, 0xc
 
-    .line 207
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_3
+    fill-array-data v0, :array_2
 
     sput-object v0, Landroidx/vectordrawable/animated/R$styleable;->GradientColor:[I
 
-    const/4 v0, 0x2
+    const v0, 0x1010514
 
-    .line 220
-    new-array v0, v0, [I
+    filled-new-array {v2, v0}, [I
 
-    fill-array-data v0, :array_4
+    move-result-object v0
 
     sput-object v0, Landroidx/vectordrawable/animated/R$styleable;->GradientColorItem:[I
 
@@ -149,37 +155,30 @@
 
     :array_0
     .array-data 4
-        0x10101a5
-        0x101031f
-        0x7f040028
+        0x7f030267
+        0x7f030268
+        0x7f030269
+        0x7f03026a
+        0x7f03026b
+        0x7f03026c
+        0x7f03026d
     .end array-data
 
     :array_1
-    .array-data 4
-        0x7f040183
-        0x7f040184
-        0x7f040185
-        0x7f040186
-        0x7f040187
-        0x7f040188
-        0x7f040189
-    .end array-data
-
-    :array_2
     .array-data 4
         0x1010532
         0x1010533
         0x101053f
         0x101056f
         0x1010570
-        0x7f040181
-        0x7f04018a
-        0x7f04018b
-        0x7f04018c
-        0x7f04035e
+        0x7f030265
+        0x7f03026e
+        0x7f03026f
+        0x7f030270
+        0x7f0305be
     .end array-data
 
-    :array_3
+    :array_2
     .array-data 4
         0x101019d
         0x101019e
@@ -194,18 +193,11 @@
         0x1010512
         0x1010513
     .end array-data
-
-    :array_4
-    .array-data 4
-        0x10101a5
-        0x1010514
-    .end array-data
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
-    .line 182
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

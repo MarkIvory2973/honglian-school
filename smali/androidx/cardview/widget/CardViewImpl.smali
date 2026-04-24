@@ -35,10 +35,6 @@
 .end method
 
 .method public abstract setBackgroundColor(Landroidx/cardview/widget/CardViewDelegate;Landroid/content/res/ColorStateList;)V
-    .param p2    # Landroid/content/res/ColorStateList;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 .end method
 
 .method public abstract setElevation(Landroidx/cardview/widget/CardViewDelegate;F)V

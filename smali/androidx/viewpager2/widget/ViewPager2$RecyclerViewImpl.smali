@@ -21,10 +21,6 @@
 # direct methods
 .method constructor <init>(Landroidx/viewpager2/widget/ViewPager2;Landroid/content/Context;)V
     .locals 0
-    .param p1    # Landroidx/viewpager2/widget/ViewPager2;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 967
     iput-object p1, p0, Landroidx/viewpager2/widget/ViewPager2$RecyclerViewImpl;->this$0:Landroidx/viewpager2/widget/ViewPager2;
@@ -39,9 +35,6 @@
 # virtual methods
 .method public getAccessibilityClassName()Ljava/lang/CharSequence;
     .locals 1
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x17
-    .end annotation
 
     .line 974
     iget-object v0, p0, Landroidx/viewpager2/widget/ViewPager2$RecyclerViewImpl;->this$0:Landroidx/viewpager2/widget/ViewPager2;
@@ -76,10 +69,6 @@
 
 .method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
-    .param p1    # Landroid/view/accessibility/AccessibilityEvent;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 982
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
@@ -139,11 +128,6 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "ClickableViewAccessibility"
-        }
-    .end annotation
 
     .line 991
     iget-object v0, p0, Landroidx/viewpager2/widget/ViewPager2$RecyclerViewImpl;->this$0:Landroidx/viewpager2/widget/ViewPager2;

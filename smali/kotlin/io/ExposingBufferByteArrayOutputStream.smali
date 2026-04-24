@@ -23,9 +23,10 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -43,8 +44,6 @@
 # virtual methods
 .method public final getBuffer()[B
     .locals 2
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 99
     iget-object v0, p0, Lkotlin/io/ExposingBufferByteArrayOutputStream;->buf:[B

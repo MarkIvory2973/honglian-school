@@ -9,9 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/fragment/app/FragmentTabHost$SavedState;,
         Landroidx/fragment/app/FragmentTabHost$DummyTabFactory;,
-        Landroidx/fragment/app/FragmentTabHost$TabInfo;
+        Landroidx/fragment/app/FragmentTabHost$TabInfo;,
+        Landroidx/fragment/app/FragmentTabHost$SavedState;
     }
 .end annotation
 
@@ -48,10 +48,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -60,7 +56,7 @@
     .line 137
     invoke-direct {p0, p1, v0}, Landroid/widget/TabHost;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 50
+    .line 49
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -75,21 +71,13 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/util/AttributeSet;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 148
     invoke-direct {p0, p1, p2}, Landroid/widget/TabHost;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 50
+    .line 49
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -104,16 +92,6 @@
 
 .method private doTabChanged(Ljava/lang/String;Landroidx/fragment/app/FragmentTransaction;)Landroidx/fragment/app/FragmentTransaction;
     .locals 3
-    .param p1    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/fragment/app/FragmentTransaction;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 402
     invoke-direct {p0, p1}, Landroidx/fragment/app/FragmentTabHost;->getTabInfoForTag(Ljava/lang/String;)Landroidx/fragment/app/FragmentTabHost$TabInfo;
@@ -239,9 +217,6 @@
 
     iput-object v0, p0, Landroidx/fragment/app/FragmentTabHost;->mRealTabContent:Landroid/widget/FrameLayout;
 
-    .line 244
-    iget-object v0, p0, Landroidx/fragment/app/FragmentTabHost;->mRealTabContent:Landroid/widget/FrameLayout;
-
     if-eqz v0, :cond_0
 
     goto :goto_0
@@ -252,11 +227,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "No tab content FrameLayout found for id "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget v2, p0, Landroidx/fragment/app/FragmentTabHost;->mContainerId:I
 
@@ -355,11 +328,9 @@
     iput-object v2, p0, Landroidx/fragment/app/FragmentTabHost;->mRealTabContent:Landroid/widget/FrameLayout;
 
     .line 183
-    iget-object p1, p0, Landroidx/fragment/app/FragmentTabHost;->mRealTabContent:Landroid/widget/FrameLayout;
+    iget p1, p0, Landroidx/fragment/app/FragmentTabHost;->mContainerId:I
 
-    iget v4, p0, Landroidx/fragment/app/FragmentTabHost;->mContainerId:I
-
-    invoke-virtual {p1, v4}, Landroid/widget/FrameLayout;->setId(I)V
+    invoke-virtual {v2, p1}, Landroid/widget/FrameLayout;->setId(I)V
 
     .line 184
     new-instance p1, Landroid/widget/LinearLayout$LayoutParams;
@@ -376,8 +347,6 @@
 
 .method private getTabInfoForTag(Ljava/lang/String;)Landroidx/fragment/app/FragmentTabHost$TabInfo;
     .locals 4
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 433
     iget-object v0, p0, Landroidx/fragment/app/FragmentTabHost;->mTabs:Ljava/util/ArrayList;
@@ -423,18 +392,16 @@
 .end method
 
 .method private initFragmentTabHost(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 3
+    .locals 2
 
-    const/4 v0, 0x1
+    const v0, 0x10100f3
 
     .line 153
-    new-array v0, v0, [I
+    filled-new-array {v0}, [I
+
+    move-result-object v0
 
     const/4 v1, 0x0
-
-    const v2, 0x10100f3
-
-    aput v2, v0, v1
 
     invoke-virtual {p1, p2, v0, v1, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -460,18 +427,6 @@
 # virtual methods
 .method public addTab(Landroid/widget/TabHost$TabSpec;Ljava/lang/Class;Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/widget/TabHost$TabSpec;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/Class;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroid/os/Bundle;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -698,13 +653,6 @@
 
 .method protected onRestoreInstanceState(Landroid/os/Parcelable;)V
     .locals 1
-    .param p1    # Landroid/os/Parcelable;
-        .annotation build Landroid/annotation/SuppressLint;
-            value = {
-                "UnknownNullness"
-            }
-        .end annotation
-    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -739,9 +687,6 @@
 
 .method protected onSaveInstanceState()Landroid/os/Parcelable;
     .locals 2
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -767,10 +712,6 @@
 
 .method public onTabChanged(Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -806,10 +747,6 @@
 
 .method public setOnTabChangedListener(Landroid/widget/TabHost$OnTabChangeListener;)V
     .locals 0
-    .param p1    # Landroid/widget/TabHost$OnTabChangeListener;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -836,14 +773,6 @@
 
 .method public setup(Landroid/content/Context;Landroidx/fragment/app/FragmentManager;)V
     .locals 0
-    .param p1    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/fragment/app/FragmentManager;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -867,14 +796,6 @@
 
 .method public setup(Landroid/content/Context;Landroidx/fragment/app/FragmentManager;I)V
     .locals 0
-    .param p1    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/fragment/app/FragmentManager;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

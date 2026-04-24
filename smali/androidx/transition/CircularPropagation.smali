@@ -118,7 +118,6 @@
     :cond_3
     const/4 v4, 0x2
 
-    .line 81
     new-array v5, v4, [I
 
     .line 82
@@ -126,9 +125,9 @@
 
     const/4 v6, 0x0
 
-    .line 83
     aget v6, v5, v6
 
+    .line 83
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v7
@@ -151,9 +150,9 @@
 
     move-result v6
 
-    .line 85
     aget v2, v5, v2
 
+    .line 85
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getHeight()I
 
     move-result v5

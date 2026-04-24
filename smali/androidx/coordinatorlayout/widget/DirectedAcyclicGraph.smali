@@ -4,12 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -144,24 +138,24 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v1, 0x0
-
     .line 186
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v2
+    move-result v1
+
+    const/4 v2, 0x0
 
     :goto_0
-    if-ge v1, v2, :cond_1
+    if-ge v2, v1, :cond_1
 
     .line 187
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     invoke-direct {p0, v3, p2, p3}, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->dfs(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/util/HashSet;)V
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
@@ -187,9 +181,6 @@
 
 .method private getEmptyList()Ljava/util/ArrayList;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -220,10 +211,6 @@
 
 .method private poolList(Ljava/util/ArrayList;)V
     .locals 1
-    .param p1    # Ljava/util/ArrayList;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -247,14 +234,6 @@
 # virtual methods
 .method public addEdge(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 2
-    .param p1    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;TT;)V"
@@ -318,10 +297,6 @@
 
 .method public addNode(Ljava/lang/Object;)V
     .locals 2
-    .param p1    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -393,10 +368,6 @@
 
 .method public contains(Ljava/lang/Object;)Z
     .locals 1
-    .param p1    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"
@@ -415,13 +386,6 @@
 
 .method public getIncomingEdges(Ljava/lang/Object;)Ljava/util/List;
     .locals 1
-    .param p1    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)",
@@ -443,13 +407,6 @@
 
 .method public getOutgoingEdges(Ljava/lang/Object;)Ljava/util/List;
     .locals 4
-    .param p1    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)",
@@ -518,9 +475,6 @@
 
 .method public getSortedList()Ljava/util/ArrayList;
     .locals 5
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -577,10 +531,6 @@
 
 .method public hasOutgoingEdges(Ljava/lang/Object;)Z
     .locals 4
-    .param p1    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"

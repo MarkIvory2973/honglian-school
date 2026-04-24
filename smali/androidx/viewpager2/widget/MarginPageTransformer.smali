@@ -13,10 +13,6 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 1
-    .param p1    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,10 +30,6 @@
 
 .method private requireViewPager(Landroid/view/View;)Landroidx/viewpager2/widget/ViewPager2;
     .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 66
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -78,10 +70,6 @@
 # virtual methods
 .method public transformPage(Landroid/view/View;F)V
     .locals 2
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 54
     invoke-direct {p0, p1}, Landroidx/viewpager2/widget/MarginPageTransformer;->requireViewPager(Landroid/view/View;)Landroidx/viewpager2/widget/ViewPager2;

@@ -28,7 +28,7 @@
 .method constructor <init>(Landroidx/appcompat/widget/AppCompatTextHelper;IILjava/lang/ref/WeakReference;)V
     .locals 0
 
-    .line 359
+    .line 365
     iput-object p1, p0, Landroidx/appcompat/widget/AppCompatTextHelper$1;->this$0:Landroidx/appcompat/widget/AppCompatTextHelper;
 
     iput p2, p0, Landroidx/appcompat/widget/AppCompatTextHelper$1;->val$fontWeight:I
@@ -52,26 +52,22 @@
 
 .method public onFontRetrieved(Landroid/graphics/Typeface;)V
     .locals 2
-    .param p1    # Landroid/graphics/Typeface;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 362
+    .line 368
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1c
 
     if-lt v0, v1, :cond_1
 
-    .line 363
+    .line 369
     iget v0, p0, Landroidx/appcompat/widget/AppCompatTextHelper$1;->val$fontWeight:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_1
 
-    .line 364
+    .line 370
     iget v1, p0, Landroidx/appcompat/widget/AppCompatTextHelper$1;->val$style:I
 
     and-int/lit8 v1, v1, 0x2
@@ -86,11 +82,11 @@
     const/4 v1, 0x0
 
     :goto_0
-    invoke-static {p1, v0, v1}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
+    invoke-static {p1, v0, v1}, Landroidx/appcompat/widget/AppCompatTextHelper$Api28Impl;->create(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
 
     move-result-object p1
 
-    .line 368
+    .line 374
     :cond_1
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextHelper$1;->this$0:Landroidx/appcompat/widget/AppCompatTextHelper;
 

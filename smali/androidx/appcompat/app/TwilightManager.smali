@@ -32,16 +32,6 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/location/LocationManager;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/location/LocationManager;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/VisibleForTesting;
-    .end annotation
 
     .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,10 +54,6 @@
 
 .method static getInstance(Landroid/content/Context;)Landroidx/appcompat/app/TwilightManager;
     .locals 2
-    .param p0    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 50
     sget-object v0, Landroidx/appcompat/app/TwilightManager;->sInstance:Landroidx/appcompat/app/TwilightManager;
@@ -104,11 +90,6 @@
 
 .method private getLastKnownLocation()Landroid/location/Location;
     .locals 7
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "MissingPermission"
-        }
-    .end annotation
 
     .line 110
     iget-object v0, p0, Landroidx/appcompat/app/TwilightManager;->mContext:Landroid/content/Context;
@@ -188,12 +169,6 @@
 
 .method private getLastKnownLocationForProvider(Ljava/lang/String;)Landroid/location/Location;
     .locals 2
-    .annotation build Landroidx/annotation/RequiresPermission;
-        anyOf = {
-            "android.permission.ACCESS_COARSE_LOCATION",
-            "android.permission.ACCESS_FINE_LOCATION"
-        }
-    .end annotation
 
     .line 134
     :try_start_0
@@ -261,8 +236,6 @@
 
 .method static setInstance(Landroidx/appcompat/app/TwilightManager;)V
     .locals 0
-    .annotation build Landroidx/annotation/VisibleForTesting;
-    .end annotation
 
     .line 60
     sput-object p0, Landroidx/appcompat/app/TwilightManager;->sInstance:Landroidx/appcompat/app/TwilightManager;
@@ -271,11 +244,7 @@
 .end method
 
 .method private updateState(Landroid/location/Location;)V
-    .locals 22
-    .param p1    # Landroid/location/Location;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -310,10 +279,7 @@
     .line 153
     invoke-virtual/range {v2 .. v8}, Landroidx/appcompat/app/TwilightCalculator;->calculateTwilight(JDD)V
 
-    .line 155
-    iget-wide v14, v11, Landroidx/appcompat/app/TwilightCalculator;->sunset:J
-
-    .line 158
+    .line 157
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v5
@@ -326,130 +292,110 @@
 
     invoke-virtual/range {v2 .. v8}, Landroidx/appcompat/app/TwilightCalculator;->calculateTwilight(JDD)V
 
-    .line 159
+    .line 158
     iget v2, v11, Landroidx/appcompat/app/TwilightCalculator;->state:I
 
     const/4 v3, 0x1
 
     if-ne v2, v3, :cond_0
 
-    const/4 v7, 0x1
+    const/4 v14, 0x1
 
     goto :goto_0
 
     :cond_0
     const/4 v3, 0x0
 
-    const/4 v7, 0x0
+    const/4 v14, 0x0
+
+    .line 159
+    :goto_0
+    iget-wide v7, v11, Landroidx/appcompat/app/TwilightCalculator;->sunrise:J
 
     .line 160
-    :goto_0
-    iget-wide v5, v11, Landroidx/appcompat/app/TwilightCalculator;->sunrise:J
+    iget-wide v5, v11, Landroidx/appcompat/app/TwilightCalculator;->sunset:J
 
-    .line 161
-    iget-wide v3, v11, Landroidx/appcompat/app/TwilightCalculator;->sunset:J
+    add-long v3, v9, v12
 
-    add-long/2addr v12, v9
-
-    .line 165
+    .line 164
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getLatitude()D
 
-    move-result-wide v16
+    move-result-wide v12
 
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getLongitude()D
 
-    move-result-wide v18
+    move-result-wide v15
 
     move-object v2, v11
 
-    move-wide/from16 v20, v14
+    move-wide/from16 v17, v5
 
-    move-wide v14, v3
+    move-wide v5, v12
 
-    move-wide v3, v12
+    move-wide v12, v7
 
-    move-wide v12, v5
+    move-wide v7, v15
 
-    move-wide/from16 v5, v16
-
-    move v0, v7
-
-    move-wide/from16 v7, v18
-
-    .line 164
+    .line 163
     invoke-virtual/range {v2 .. v8}, Landroidx/appcompat/app/TwilightCalculator;->calculateTwilight(JDD)V
 
-    .line 166
+    .line 165
     iget-wide v2, v11, Landroidx/appcompat/app/TwilightCalculator;->sunrise:J
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v4, -0x1
 
-    const-wide/16 v6, -0x1
+    cmp-long v6, v12, v4
 
-    cmp-long v8, v12, v6
+    if-eqz v6, :cond_4
 
-    if-eqz v8, :cond_4
+    cmp-long v6, v17, v4
 
-    cmp-long v8, v14, v6
-
-    if-nez v8, :cond_1
+    if-nez v6, :cond_1
 
     goto :goto_2
 
     :cond_1
-    cmp-long v6, v9, v14
+    const-wide/16 v4, 0x0
+
+    cmp-long v6, v9, v17
 
     if-lez v6, :cond_2
 
-    add-long/2addr v4, v2
+    add-long/2addr v2, v4
 
     goto :goto_1
 
     :cond_2
-    cmp-long v6, v9, v12
+    cmp-long v2, v9, v12
 
-    if-lez v6, :cond_3
+    if-lez v2, :cond_3
 
-    add-long/2addr v4, v14
+    add-long v2, v17, v4
 
     goto :goto_1
 
     :cond_3
-    add-long/2addr v4, v12
+    add-long v2, v12, v4
 
     :goto_1
-    const-wide/32 v6, 0xea60
+    const-wide/32 v4, 0xea60
 
-    add-long/2addr v4, v6
+    add-long/2addr v2, v4
 
     goto :goto_3
 
     :cond_4
     :goto_2
-    const-wide/32 v4, 0x2932e00
+    const-wide/32 v2, 0x2932e00
 
-    add-long/2addr v4, v9
+    add-long/2addr v2, v9
+
+    .line 185
+    :goto_3
+    iput-boolean v14, v1, Landroidx/appcompat/app/TwilightManager$TwilightState;->isNight:Z
 
     .line 186
-    :goto_3
-    iput-boolean v0, v1, Landroidx/appcompat/app/TwilightManager$TwilightState;->isNight:Z
-
-    move-wide/from16 v6, v20
-
-    .line 187
-    iput-wide v6, v1, Landroidx/appcompat/app/TwilightManager$TwilightState;->yesterdaySunset:J
-
-    .line 188
-    iput-wide v12, v1, Landroidx/appcompat/app/TwilightManager$TwilightState;->todaySunrise:J
-
-    .line 189
-    iput-wide v14, v1, Landroidx/appcompat/app/TwilightManager$TwilightState;->todaySunset:J
-
-    .line 190
-    iput-wide v2, v1, Landroidx/appcompat/app/TwilightManager$TwilightState;->tomorrowSunrise:J
-
-    .line 191
-    iput-wide v4, v1, Landroidx/appcompat/app/TwilightManager$TwilightState;->nextUpdate:J
+    iput-wide v2, v1, Landroidx/appcompat/app/TwilightManager$TwilightState;->nextUpdate:J
 
     return-void
 .end method

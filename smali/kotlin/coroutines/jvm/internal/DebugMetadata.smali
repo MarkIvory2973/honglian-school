@@ -66,13 +66,10 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/SinceKotlin;
-    version = "1.3"
+    xi = 0x30
 .end annotation
 
 .annotation runtime Lkotlin/annotation/Target;
@@ -84,49 +81,25 @@
 
 # virtual methods
 .method public abstract c()Ljava/lang/String;
-    .annotation build Lkotlin/jvm/JvmName;
-        name = "c"
-    .end annotation
 .end method
 
 .method public abstract f()Ljava/lang/String;
-    .annotation build Lkotlin/jvm/JvmName;
-        name = "f"
-    .end annotation
 .end method
 
 .method public abstract i()[I
-    .annotation build Lkotlin/jvm/JvmName;
-        name = "i"
-    .end annotation
 .end method
 
 .method public abstract l()[I
-    .annotation build Lkotlin/jvm/JvmName;
-        name = "l"
-    .end annotation
 .end method
 
 .method public abstract m()Ljava/lang/String;
-    .annotation build Lkotlin/jvm/JvmName;
-        name = "m"
-    .end annotation
 .end method
 
 .method public abstract n()[Ljava/lang/String;
-    .annotation build Lkotlin/jvm/JvmName;
-        name = "n"
-    .end annotation
 .end method
 
 .method public abstract s()[Ljava/lang/String;
-    .annotation build Lkotlin/jvm/JvmName;
-        name = "s"
-    .end annotation
 .end method
 
 .method public abstract v()I
-    .annotation build Lkotlin/jvm/JvmName;
-        name = "v"
-    .end annotation
 .end method

@@ -46,21 +46,15 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/SinceKotlin;
-    version = "1.3"
+    xi = 0x30
 .end annotation
 
 
 # static fields
 .field public static final INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-.end field
 
 .field private static final serialVersionUID:J
 
@@ -69,7 +63,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 95
     new-instance v0, Lkotlin/coroutines/EmptyCoroutineContext;
 
     invoke-direct {v0}, Lkotlin/coroutines/EmptyCoroutineContext;-><init>()V
@@ -82,7 +75,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 95
+    .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -101,10 +94,6 @@
 # virtual methods
 .method public fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
     .locals 1
-    .param p2    # Lkotlin/jvm/functions/Function2;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
@@ -126,10 +115,6 @@
 
 .method public get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
     .locals 1
-    .param p1    # Lkotlin/coroutines/CoroutineContext$Key;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E::",
@@ -138,9 +123,6 @@
             "Lkotlin/coroutines/CoroutineContext$Key<",
             "TE;>;)TE;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
     const-string v0, "key"
@@ -162,10 +144,6 @@
 
 .method public minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
     .locals 1
-    .param p1    # Lkotlin/coroutines/CoroutineContext$Key;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -173,9 +151,6 @@
             "*>;)",
             "Lkotlin/coroutines/CoroutineContext;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "key"
@@ -192,12 +167,6 @@
 
 .method public plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
     .locals 1
-    .param p1    # Lkotlin/coroutines/CoroutineContext;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     const-string v0, "context"
 
@@ -208,8 +177,6 @@
 
 .method public toString()Ljava/lang/String;
     .locals 1
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     const-string v0, "EmptyCoroutineContext"
 

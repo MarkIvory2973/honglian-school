@@ -1,6 +1,5 @@
 .class public final Landroidx/cardview/R$attr;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -15,36 +14,35 @@
 
 
 # static fields
-.field public static final cardBackgroundColor:I = 0x7f04009b
+.field public static final cardBackgroundColor:I = 0x7f0300c2
 
-.field public static final cardCornerRadius:I = 0x7f04009c
+.field public static final cardCornerRadius:I = 0x7f0300c3
 
-.field public static final cardElevation:I = 0x7f04009d
+.field public static final cardElevation:I = 0x7f0300c4
 
-.field public static final cardMaxElevation:I = 0x7f04009f
+.field public static final cardMaxElevation:I = 0x7f0300c6
 
-.field public static final cardPreventCornerOverlap:I = 0x7f0400a0
+.field public static final cardPreventCornerOverlap:I = 0x7f0300c7
 
-.field public static final cardUseCompatPadding:I = 0x7f0400a1
+.field public static final cardUseCompatPadding:I = 0x7f0300c8
 
-.field public static final cardViewStyle:I = 0x7f0400a2
+.field public static final cardViewStyle:I = 0x7f0300c9
 
-.field public static final contentPadding:I = 0x7f0400f6
+.field public static final contentPadding:I = 0x7f03016f
 
-.field public static final contentPaddingBottom:I = 0x7f0400f7
+.field public static final contentPaddingBottom:I = 0x7f030170
 
-.field public static final contentPaddingLeft:I = 0x7f0400f8
+.field public static final contentPaddingLeft:I = 0x7f030172
 
-.field public static final contentPaddingRight:I = 0x7f0400f9
+.field public static final contentPaddingRight:I = 0x7f030173
 
-.field public static final contentPaddingTop:I = 0x7f0400fa
+.field public static final contentPaddingTop:I = 0x7f030175
 
 
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
-    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

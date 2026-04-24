@@ -49,10 +49,6 @@
 
 .method public final onItemRangeChanged(IILjava/lang/Object;)V
     .locals 0
-    .param p3    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 756
     invoke-virtual {p0}, Landroidx/viewpager2/adapter/FragmentStateAdapter$DataSetChangeObserver;->onChanged()V

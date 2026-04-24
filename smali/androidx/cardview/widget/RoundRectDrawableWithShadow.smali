@@ -139,8 +139,6 @@
     iput-object p1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPaint:Landroid/graphics/Paint;
 
     .line 99
-    iget-object p1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPaint:Landroid/graphics/Paint;
-
     sget-object p2, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
@@ -173,8 +171,6 @@
     iput-object p1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mEdgeShadowPaint:Landroid/graphics/Paint;
 
     .line 103
-    iget-object p1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mEdgeShadowPaint:Landroid/graphics/Paint;
-
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
     .line 104
@@ -233,217 +229,207 @@
 .end method
 
 .method private buildShadowCorners()V
-    .locals 25
-
-    move-object/from16 v0, p0
+    .locals 15
 
     .line 297
+    new-instance v0, Landroid/graphics/RectF;
+
+    iget v1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerRadius:F
+
+    neg-float v2, v1
+
+    neg-float v3, v1
+
+    invoke-direct {v0, v2, v3, v1, v1}, Landroid/graphics/RectF;-><init>(FFFF)V
+
+    .line 298
     new-instance v1, Landroid/graphics/RectF;
 
-    iget v2, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerRadius:F
+    invoke-direct {v1, v0}, Landroid/graphics/RectF;-><init>(Landroid/graphics/RectF;)V
+
+    .line 299
+    iget v2, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowSize:F
 
     neg-float v3, v2
 
-    neg-float v4, v2
+    neg-float v2, v2
 
-    invoke-direct {v1, v3, v4, v2, v2}, Landroid/graphics/RectF;-><init>(FFFF)V
-
-    .line 298
-    new-instance v2, Landroid/graphics/RectF;
-
-    invoke-direct {v2, v1}, Landroid/graphics/RectF;-><init>(Landroid/graphics/RectF;)V
-
-    .line 299
-    iget v3, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowSize:F
-
-    neg-float v4, v3
-
-    neg-float v3, v3
-
-    invoke-virtual {v2, v4, v3}, Landroid/graphics/RectF;->inset(FF)V
+    invoke-virtual {v1, v3, v2}, Landroid/graphics/RectF;->inset(FF)V
 
     .line 301
-    iget-object v3, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
+    iget-object v2, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
 
-    if-nez v3, :cond_0
+    if-nez v2, :cond_0
 
     .line 302
-    new-instance v3, Landroid/graphics/Path;
+    new-instance v2, Landroid/graphics/Path;
 
-    invoke-direct {v3}, Landroid/graphics/Path;-><init>()V
+    invoke-direct {v2}, Landroid/graphics/Path;-><init>()V
 
-    iput-object v3, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
+    iput-object v2, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
 
     goto :goto_0
 
     .line 304
     :cond_0
-    invoke-virtual {v3}, Landroid/graphics/Path;->reset()V
+    invoke-virtual {v2}, Landroid/graphics/Path;->reset()V
 
     .line 306
     :goto_0
-    iget-object v3, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
+    iget-object v2, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
 
-    sget-object v4, Landroid/graphics/Path$FillType;->EVEN_ODD:Landroid/graphics/Path$FillType;
+    sget-object v3, Landroid/graphics/Path$FillType;->EVEN_ODD:Landroid/graphics/Path$FillType;
 
-    invoke-virtual {v3, v4}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
+    invoke-virtual {v2, v3}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
 
     .line 307
-    iget-object v3, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
+    iget-object v2, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
 
-    iget v4, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerRadius:F
+    iget v3, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerRadius:F
 
-    neg-float v4, v4
+    neg-float v3, v3
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    invoke-virtual {v3, v4, v5}, Landroid/graphics/Path;->moveTo(FF)V
+    invoke-virtual {v2, v3, v4}, Landroid/graphics/Path;->moveTo(FF)V
 
     .line 308
-    iget-object v3, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
+    iget-object v2, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
 
-    iget v4, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowSize:F
+    iget v3, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowSize:F
 
-    neg-float v4, v4
+    neg-float v3, v3
 
-    invoke-virtual {v3, v4, v5}, Landroid/graphics/Path;->rLineTo(FF)V
+    invoke-virtual {v2, v3, v4}, Landroid/graphics/Path;->rLineTo(FF)V
 
     .line 310
-    iget-object v3, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
+    iget-object v2, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
 
-    const/high16 v4, 0x43340000    # 180.0f
+    const/high16 v3, 0x43340000    # 180.0f
 
-    const/high16 v6, 0x42b40000    # 90.0f
+    const/high16 v5, 0x42b40000    # 90.0f
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    invoke-virtual {v3, v2, v4, v6, v7}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
+    invoke-virtual {v2, v1, v3, v5, v6}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
     .line 312
-    iget-object v2, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
+    iget-object v1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
 
-    const/high16 v3, 0x43870000    # 270.0f
+    const/high16 v2, 0x43870000    # 270.0f
 
-    const/high16 v4, -0x3d4c0000    # -90.0f
+    const/high16 v3, -0x3d4c0000    # -90.0f
 
-    invoke-virtual {v2, v1, v3, v4, v7}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
+    invoke-virtual {v1, v0, v2, v3, v6}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
     .line 313
-    iget-object v1, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
+    iget-object v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
 
-    invoke-virtual {v1}, Landroid/graphics/Path;->close()V
+    invoke-virtual {v0}, Landroid/graphics/Path;->close()V
 
     .line 314
-    iget v1, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerRadius:F
+    iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerRadius:F
 
-    iget v2, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowSize:F
+    iget v1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowSize:F
 
-    add-float v3, v1, v2
+    add-float/2addr v1, v0
 
-    div-float v3, v1, v3
+    div-float/2addr v0, v1
 
     .line 315
-    iget-object v4, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPaint:Landroid/graphics/Paint;
+    iget-object v1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPaint:Landroid/graphics/Paint;
 
-    new-instance v6, Landroid/graphics/RadialGradient;
+    new-instance v2, Landroid/graphics/RadialGradient;
+
+    const/4 v8, 0x0
 
     const/4 v9, 0x0
 
+    iget v3, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerRadius:F
+
+    iget v5, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowSize:F
+
+    add-float v10, v3, v5
+
+    iget v3, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowStartColor:I
+
+    iget v5, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowEndColor:I
+
+    filled-new-array {v3, v3, v5}, [I
+
+    move-result-object v11
+
+    const/4 v3, 0x3
+
+    new-array v12, v3, [F
+
+    aput v4, v12, v6
+
+    const/4 v4, 0x1
+
+    aput v0, v12, v4
+
+    const/4 v0, 0x2
+
+    const/high16 v4, 0x3f800000    # 1.0f
+
+    aput v4, v12, v0
+
+    sget-object v13, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+
+    move-object v7, v2
+
+    invoke-direct/range {v7 .. v13}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+
+    .line 323
+    iget-object v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mEdgeShadowPaint:Landroid/graphics/Paint;
+
+    new-instance v1, Landroid/graphics/LinearGradient;
+
+    iget v2, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerRadius:F
+
+    neg-float v4, v2
+
+    iget v5, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowSize:F
+
+    add-float v9, v4, v5
+
     const/4 v10, 0x0
 
-    add-float v11, v1, v2
+    neg-float v2, v2
 
-    const/4 v1, 0x3
+    sub-float v11, v2, v5
 
-    new-array v12, v1, [I
+    iget v2, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowStartColor:I
 
-    iget v2, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowStartColor:I
+    iget v4, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowEndColor:I
 
-    aput v2, v12, v7
+    filled-new-array {v2, v2, v4}, [I
 
-    const/4 v15, 0x1
+    move-result-object v12
 
-    aput v2, v12, v15
+    new-array v13, v3, [F
 
-    iget v2, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowEndColor:I
-
-    const/16 v16, 0x2
-
-    aput v2, v12, v16
-
-    new-array v13, v1, [F
-
-    aput v5, v13, v7
-
-    aput v3, v13, v15
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    aput v2, v13, v16
+    fill-array-data v13, :array_0
 
     sget-object v14, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-    move-object v8, v6
+    move-object v7, v1
 
-    invoke-direct/range {v8 .. v14}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
+    invoke-direct/range {v7 .. v14}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    invoke-virtual {v4, v6}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
-
-    .line 323
-    iget-object v2, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mEdgeShadowPaint:Landroid/graphics/Paint;
-
-    new-instance v3, Landroid/graphics/LinearGradient;
-
-    const/16 v18, 0x0
-
-    iget v4, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerRadius:F
-
-    neg-float v5, v4
-
-    iget v6, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowSize:F
-
-    add-float v19, v5, v6
-
-    const/16 v20, 0x0
-
-    neg-float v4, v4
-
-    sub-float v21, v4, v6
-
-    new-array v4, v1, [I
-
-    iget v5, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowStartColor:I
-
-    aput v5, v4, v7
-
-    aput v5, v4, v15
-
-    iget v5, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mShadowEndColor:I
-
-    aput v5, v4, v16
-
-    new-array v1, v1, [F
-
-    fill-array-data v1, :array_0
-
-    sget-object v24, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
-
-    move-object/from16 v17, v3
-
-    move-object/from16 v22, v4
-
-    move-object/from16 v23, v1
-
-    invoke-direct/range {v17 .. v24}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
-
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     .line 327
-    iget-object v1, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mEdgeShadowPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mEdgeShadowPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v7}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    invoke-virtual {v0, v6}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -474,8 +460,6 @@
     add-double/2addr v0, v2
 
     double-to-float p0, v0
-
-    return p0
 
     :cond_0
     return p0
@@ -862,9 +846,7 @@
     iput-object p1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mBackground:Landroid/content/res/ColorStateList;
 
     .line 109
-    iget-object p1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mPaint:Landroid/graphics/Paint;
-
-    iget-object v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mBackground:Landroid/content/res/ColorStateList;
+    iget-object v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p0}, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->getState()[I
 
@@ -876,27 +858,29 @@
 
     move-result v2
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+    invoke-virtual {p1, v1, v2}, Landroid/content/res/ColorStateList;->getColorForState([II)I
 
-    move-result v0
+    move-result p1
 
-    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
 .end method
 
 .method private setShadowSize(FF)V
-    .locals 2
+    .locals 3
 
-    const/4 v0, 0x0
+    const-string v0, ". Must be >= 0"
 
-    cmpg-float v1, p1, v0
+    const/4 v1, 0x0
 
-    if-ltz v1, :cond_4
+    cmpg-float v2, p1, v1
 
-    cmpg-float v0, p2, v0
+    if-ltz v2, :cond_4
 
-    if-ltz v0, :cond_3
+    cmpg-float v1, p2, v1
+
+    if-ltz v1, :cond_3
 
     .line 150
     invoke-direct {p0, p1}, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->toEven(F)I
@@ -985,21 +969,17 @@
     :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, "Invalid max shadow size "
 
-    const-string v1, "Invalid max shadow size "
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p2, ". Must be >= 0"
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p2
 
@@ -1011,21 +991,17 @@
     :cond_4
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, "Invalid shadow size "
 
-    const-string v1, "Invalid shadow size "
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p1, ". Must be >= 0"
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -1051,8 +1027,6 @@
     if-ne v0, v1, :cond_0
 
     sub-int/2addr p1, v1
-
-    return p1
 
     :cond_0
     return p1
@@ -1437,10 +1411,6 @@
 
 .method setColor(Landroid/content/res/ColorStateList;)V
     .locals 0
-    .param p1    # Landroid/content/res/ColorStateList;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 377
     invoke-direct {p0, p1}, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->setBackground(Landroid/content/res/ColorStateList;)V
@@ -1508,11 +1478,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Invalid radius "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 

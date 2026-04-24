@@ -17,10 +17,6 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     const-string v0, "The operation has been canceled."
 

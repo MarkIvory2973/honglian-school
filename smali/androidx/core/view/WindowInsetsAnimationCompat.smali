@@ -7,8 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/core/view/WindowInsetsAnimationCompat$Impl30;,
-        Landroidx/core/view/WindowInsetsAnimationCompat$Impl21;,
         Landroidx/core/view/WindowInsetsAnimationCompat$Impl;,
+        Landroidx/core/view/WindowInsetsAnimationCompat$Impl21;,
         Landroidx/core/view/WindowInsetsAnimationCompat$Callback;,
         Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;
     }
@@ -28,22 +28,18 @@
 # direct methods
 .method public constructor <init>(ILandroid/view/animation/Interpolator;J)V
     .locals 2
-    .param p2    # Landroid/view/animation/Interpolator;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
-    .line 74
+    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
+    .line 77
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
     if-lt v0, v1, :cond_0
 
-    .line 76
+    .line 78
     new-instance v0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl30;
 
     invoke-direct {v0, p1, p2, p3, p4}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl30;-><init>(ILandroid/view/animation/Interpolator;J)V
@@ -52,32 +48,13 @@
 
     goto :goto_0
 
-    .line 77
+    .line 80
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_1
-
-    .line 78
     new-instance v0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl21;
 
     invoke-direct {v0, p1, p2, p3, p4}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl21;-><init>(ILandroid/view/animation/Interpolator;J)V
 
     iput-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat;->mImpl:Landroidx/core/view/WindowInsetsAnimationCompat$Impl;
-
-    goto :goto_0
-
-    .line 80
-    :cond_1
-    new-instance p1, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, v0, p2, p3, p4}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;-><init>(ILandroid/view/animation/Interpolator;J)V
-
-    iput-object p1, p0, Landroidx/core/view/WindowInsetsAnimationCompat;->mImpl:Landroidx/core/view/WindowInsetsAnimationCompat$Impl;
 
     :goto_0
     return-void
@@ -85,31 +62,24 @@
 
 .method private constructor <init>(Landroid/view/WindowInsetsAnimation;)V
     .locals 4
-    .param p1    # Landroid/view/WindowInsetsAnimation;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x1e
-    .end annotation
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const-wide/16 v1, 0x0
 
-    const-wide/16 v2, 0x0
+    const/4 v3, 0x0
 
-    .line 86
-    invoke-direct {p0, v0, v1, v2, v3}, Landroidx/core/view/WindowInsetsAnimationCompat;-><init>(ILandroid/view/animation/Interpolator;J)V
+    .line 88
+    invoke-direct {p0, v3, v0, v1, v2}, Landroidx/core/view/WindowInsetsAnimationCompat;-><init>(ILandroid/view/animation/Interpolator;J)V
 
-    .line 87
+    .line 89
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
     if-lt v0, v1, :cond_0
 
-    .line 88
+    .line 90
     new-instance v0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl30;
 
     invoke-direct {v0, p1}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl30;-><init>(Landroid/view/WindowInsetsAnimation;)V
@@ -122,50 +92,31 @@
 
 .method static setCallback(Landroid/view/View;Landroidx/core/view/WindowInsetsAnimationCompat$Callback;)V
     .locals 2
-    .param p0    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Landroidx/core/view/WindowInsetsAnimationCompat$Callback;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
-    .line 524
+    .line 526
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
     if-lt v0, v1, :cond_0
 
-    .line 525
+    .line 527
     invoke-static {p0, p1}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl30;->setCallback(Landroid/view/View;Landroidx/core/view/WindowInsetsAnimationCompat$Callback;)V
 
     goto :goto_0
 
-    .line 526
+    .line 529
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_1
-
-    .line 527
     invoke-static {p0, p1}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl21;->setCallback(Landroid/view/View;Landroidx/core/view/WindowInsetsAnimationCompat$Callback;)V
 
-    :cond_1
     :goto_0
     return-void
 .end method
 
 .method static toWindowInsetsAnimationCompat(Landroid/view/WindowInsetsAnimation;)Landroidx/core/view/WindowInsetsAnimationCompat;
     .locals 1
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x1e
-    .end annotation
 
-    .line 329
+    .line 331
     new-instance v0, Landroidx/core/view/WindowInsetsAnimationCompat;
 
     invoke-direct {v0, p0}, Landroidx/core/view/WindowInsetsAnimationCompat;-><init>(Landroid/view/WindowInsetsAnimation;)V
@@ -177,12 +128,8 @@
 # virtual methods
 .method public getAlpha()F
     .locals 1
-    .annotation build Landroidx/annotation/FloatRange;
-        from = 0.0
-        to = 1.0
-    .end annotation
 
-    .line 194
+    .line 196
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat;->mImpl:Landroidx/core/view/WindowInsetsAnimationCompat$Impl;
 
     invoke-virtual {v0}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->getAlpha()F
@@ -195,7 +142,7 @@
 .method public getDurationMillis()J
     .locals 2
 
-    .line 168
+    .line 170
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat;->mImpl:Landroidx/core/view/WindowInsetsAnimationCompat$Impl;
 
     invoke-virtual {v0}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->getDurationMillis()J
@@ -207,12 +154,8 @@
 
 .method public getFraction()F
     .locals 1
-    .annotation build Landroidx/annotation/FloatRange;
-        from = 0.0
-        to = 1.0
-    .end annotation
 
-    .line 121
+    .line 123
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat;->mImpl:Landroidx/core/view/WindowInsetsAnimationCompat$Impl;
 
     invoke-virtual {v0}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->getFraction()F
@@ -225,7 +168,7 @@
 .method public getInterpolatedFraction()F
     .locals 1
 
-    .line 148
+    .line 150
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat;->mImpl:Landroidx/core/view/WindowInsetsAnimationCompat$Impl;
 
     invoke-virtual {v0}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->getInterpolatedFraction()F
@@ -237,10 +180,8 @@
 
 .method public getInterpolator()Landroid/view/animation/Interpolator;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
-    .line 160
+    .line 162
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat;->mImpl:Landroidx/core/view/WindowInsetsAnimationCompat$Impl;
 
     invoke-virtual {v0}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->getInterpolator()Landroid/view/animation/Interpolator;
@@ -253,7 +194,7 @@
 .method public getTypeMask()I
     .locals 1
 
-    .line 97
+    .line 99
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat;->mImpl:Landroidx/core/view/WindowInsetsAnimationCompat$Impl;
 
     invoke-virtual {v0}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->getTypeMask()I
@@ -265,14 +206,8 @@
 
 .method public setAlpha(F)V
     .locals 1
-    .param p1    # F
-        .annotation build Landroidx/annotation/FloatRange;
-            from = 0.0
-            to = 1.0
-        .end annotation
-    .end param
 
-    .line 209
+    .line 211
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat;->mImpl:Landroidx/core/view/WindowInsetsAnimationCompat$Impl;
 
     invoke-virtual {v0, p1}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->setAlpha(F)V
@@ -282,14 +217,8 @@
 
 .method public setFraction(F)V
     .locals 1
-    .param p1    # F
-        .annotation build Landroidx/annotation/FloatRange;
-            from = 0.0
-            to = 1.0
-        .end annotation
-    .end param
 
-    .line 184
+    .line 186
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat;->mImpl:Landroidx/core/view/WindowInsetsAnimationCompat$Impl;
 
     invoke-virtual {v0, p1}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->setFraction(F)V

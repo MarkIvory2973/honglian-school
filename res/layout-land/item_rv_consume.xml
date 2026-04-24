@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rl" android:padding="16.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/iv_type" android:background="@drawable/shape_circle_green" android:layout_width="12.0dp" android:layout_height="12.0dp" android:layout_centerVertical="true" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/colorBlackD34" android:id="@id/tv_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dp" android:layout_toRightOf="@id/iv_type" android:layout_centerVertical="true" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/colorBlackD34" android:id="@id/tv_add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="228.0dp" android:layout_centerVertical="true" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/colorBlackD34" android:id="@id/tv_dev" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="380.0dp" android:layout_centerVertical="true" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/colorBlackD34" android:id="@id/tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" />
+        <TextView android:textColor="@color/colorBlackD34" android:id="@id/tv_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginEnd="80.0dp" android:layout_toStartOf="@id/tv_time" />
+    </RelativeLayout>
+    <View android:background="@color/colorddGray" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_below="@id/rl" />
+</RelativeLayout>

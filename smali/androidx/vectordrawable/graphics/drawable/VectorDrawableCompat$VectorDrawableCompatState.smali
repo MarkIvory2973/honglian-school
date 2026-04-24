@@ -331,11 +331,9 @@
 
     iput-object v0, p0, Landroidx/vectordrawable/graphics/drawable/VectorDrawableCompat$VectorDrawableCompatState;->mTempPaint:Landroid/graphics/Paint;
 
-    .line 1070
-    iget-object v0, p0, Landroidx/vectordrawable/graphics/drawable/VectorDrawableCompat$VectorDrawableCompatState;->mTempPaint:Landroid/graphics/Paint;
-
     const/4 v1, 0x1
 
+    .line 1070
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
     .line 1072
@@ -401,8 +399,6 @@
 
 .method public newDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 1128
     new-instance v0, Landroidx/vectordrawable/graphics/drawable/VectorDrawableCompat;
@@ -414,8 +410,6 @@
 
 .method public newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
     .locals 0
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 1134
     new-instance p1, Landroidx/vectordrawable/graphics/drawable/VectorDrawableCompat;

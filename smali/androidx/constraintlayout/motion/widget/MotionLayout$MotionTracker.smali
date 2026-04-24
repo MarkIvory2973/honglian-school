@@ -16,27 +16,69 @@
 
 # virtual methods
 .method public abstract addMovement(Landroid/view/MotionEvent;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "event"
+        }
+    .end annotation
 .end method
 
 .method public abstract clear()V
 .end method
 
 .method public abstract computeCurrentVelocity(I)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "units"
+        }
+    .end annotation
 .end method
 
 .method public abstract computeCurrentVelocity(IF)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "units",
+            "maxVelocity"
+        }
+    .end annotation
 .end method
 
 .method public abstract getXVelocity()F
 .end method
 
 .method public abstract getXVelocity(I)F
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "id"
+        }
+    .end annotation
 .end method
 
 .method public abstract getYVelocity()F
 .end method
 
 .method public abstract getYVelocity(I)F
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "id"
+        }
+    .end annotation
 .end method
 
 .method public abstract recycle()V

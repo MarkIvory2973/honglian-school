@@ -3,14 +3,6 @@
 .source "GpsStatusWrapper.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
-
 # static fields
 .field private static final BEIDOU_PRN_COUNT:I = 0x23
 
@@ -37,10 +29,6 @@
 
 # instance fields
 .field private mCachedIterator:Ljava/util/Iterator;
-    .annotation build Landroidx/annotation/GuardedBy;
-        value = "mWrapped"
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Iterator<",
@@ -51,22 +39,10 @@
 .end field
 
 .field private mCachedIteratorPosition:I
-    .annotation build Landroidx/annotation/GuardedBy;
-        value = "mWrapped"
-    .end annotation
-.end field
 
 .field private mCachedSatellite:Landroid/location/GpsSatellite;
-    .annotation build Landroidx/annotation/GuardedBy;
-        value = "mWrapped"
-    .end annotation
-.end field
 
 .field private mCachedSatelliteCount:I
-    .annotation build Landroidx/annotation/GuardedBy;
-        value = "mWrapped"
-    .end annotation
-.end field
 
 .field private final mWrapped:Landroid/location/GpsStatus;
 
@@ -87,26 +63,24 @@
 
     iput-object p1, p0, Landroidx/core/location/GpsStatusWrapper;->mWrapped:Landroid/location/GpsStatus;
 
-    const/4 p1, -0x1
+    const/4 v0, -0x1
 
     .line 62
-    iput p1, p0, Landroidx/core/location/GpsStatusWrapper;->mCachedSatelliteCount:I
+    iput v0, p0, Landroidx/core/location/GpsStatusWrapper;->mCachedSatelliteCount:I
 
     .line 63
-    iget-object v0, p0, Landroidx/core/location/GpsStatusWrapper;->mWrapped:Landroid/location/GpsStatus;
+    invoke-virtual {p1}, Landroid/location/GpsStatus;->getSatellites()Ljava/lang/Iterable;
 
-    invoke-virtual {v0}, Landroid/location/GpsStatus;->getSatellites()Ljava/lang/Iterable;
+    move-result-object p1
 
-    move-result-object v0
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    move-result-object p1
 
-    move-result-object v0
-
-    iput-object v0, p0, Landroidx/core/location/GpsStatusWrapper;->mCachedIterator:Ljava/util/Iterator;
+    iput-object p1, p0, Landroidx/core/location/GpsStatusWrapper;->mCachedIterator:Ljava/util/Iterator;
 
     .line 64
-    iput p1, p0, Landroidx/core/location/GpsStatusWrapper;->mCachedIteratorPosition:I
+    iput v0, p0, Landroidx/core/location/GpsStatusWrapper;->mCachedIteratorPosition:I
 
     const/4 p1, 0x0
 
@@ -222,11 +196,9 @@
 
     if-ge v1, p1, :cond_2
 
-    .line 158
-    iget v1, p0, Landroidx/core/location/GpsStatusWrapper;->mCachedIteratorPosition:I
-
     add-int/lit8 v1, v1, 0x1
 
+    .line 158
     iput v1, p0, Landroidx/core/location/GpsStatusWrapper;->mCachedIteratorPosition:I
 
     .line 159
@@ -298,35 +270,35 @@
 
     move-result v0
 
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_1
+
     const/4 v1, 0x5
 
     if-eq v0, v1, :cond_0
-
-    packed-switch v0, :pswitch_data_0
-
-    goto :goto_0
-
-    :pswitch_0
-    add-int/lit8 p0, p0, -0x40
-
-    goto :goto_0
-
-    :pswitch_1
-    add-int/lit8 p0, p0, 0x57
 
     goto :goto_0
 
     :cond_0
     add-int/lit16 p0, p0, -0xc8
 
+    goto :goto_0
+
+    :cond_1
+    add-int/lit8 p0, p0, -0x40
+
+    goto :goto_0
+
+    :cond_2
+    add-int/lit8 p0, p0, 0x57
+
     :goto_0
     return p0
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 

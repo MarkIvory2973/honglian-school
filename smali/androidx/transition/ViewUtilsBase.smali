@@ -33,20 +33,15 @@
 
 .method private fetchSetFrame()V
     .locals 6
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "PrivateApi"
-        }
-    .end annotation
 
-    .line 176
+    .line 179
     sget-boolean v0, Landroidx/transition/ViewUtilsBase;->sSetFrameFetched:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    .line 178
+    .line 181
     :try_start_0
     const-class v1, Landroid/view/View;
 
@@ -56,27 +51,27 @@
 
     new-array v3, v3, [Ljava/lang/Class;
 
-    const/4 v4, 0x0
+    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const/4 v5, 0x0
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
     sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     aput-object v4, v3, v0
 
-    const/4 v4, 0x2
+    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const/4 v5, 0x2
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/4 v4, 0x3
+    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const/4 v5, 0x3
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
@@ -84,9 +79,7 @@
 
     sput-object v1, Landroidx/transition/ViewUtilsBase;->sSetFrameMethod:Ljava/lang/reflect/Method;
 
-    .line 180
-    sget-object v1, Landroidx/transition/ViewUtilsBase;->sSetFrameMethod:Ljava/lang/reflect/Method;
-
+    .line 183
     invoke-virtual {v1, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
@@ -100,10 +93,10 @@
 
     const-string v3, "Failed to retrieve setFrame method"
 
-    .line 182
+    .line 185
     invoke-static {v2, v3, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 184
+    .line 187
     :goto_0
     sput-boolean v0, Landroidx/transition/ViewUtilsBase;->sSetFrameFetched:Z
 
@@ -115,10 +108,6 @@
 # virtual methods
 .method public clearNonTransitionAlpha(Landroid/view/View;)V
     .locals 2
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 72
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
@@ -140,10 +129,6 @@
 
 .method public getTransitionAlpha(Landroid/view/View;)F
     .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 55
     sget v0, Landroidx/transition/R$id;->save_non_transition_alpha:I
@@ -180,10 +165,6 @@
 
 .method public saveNonTransitionAlpha(Landroid/view/View;)V
     .locals 2
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 64
     sget v0, Landroidx/transition/R$id;->save_non_transition_alpha:I
@@ -213,14 +194,6 @@
 
 .method public setAnimationMatrix(Landroid/view/View;Landroid/graphics/Matrix;)V
     .locals 9
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Matrix;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -247,9 +220,9 @@
 
     const/16 v3, 0x9
 
-    .line 120
     new-array v3, v3, [F
 
+    .line 120
     iput-object v3, p0, Landroidx/transition/ViewUtilsBase;->mMatrixValues:[F
 
     .line 122
@@ -276,6 +249,7 @@
 
     const/4 v4, 0x0
 
+    .line 125
     aget v5, v3, v4
 
     cmpg-float v5, v5, v2
@@ -397,10 +371,6 @@
 
 .method public setLeftTopRightBottom(Landroid/view/View;IIII)V
     .locals 3
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 142
     invoke-direct {p0}, Landroidx/transition/ViewUtilsBase;->fetchSetFrame()V
@@ -412,41 +382,41 @@
 
     const/4 v1, 0x4
 
-    .line 145
     :try_start_0
     new-array v1, v1, [Ljava/lang/Object;
 
-    const/4 v2, 0x0
-
+    .line 145
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
-    aput-object p2, v1, v2
+    const/4 v2, 0x0
 
-    const/4 p2, 0x1
+    aput-object p2, v1, v2
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p3
+    move-result-object p2
 
-    aput-object p3, v1, p2
+    const/4 p3, 0x1
 
-    const/4 p2, 0x2
+    aput-object p2, v1, p3
 
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p3
+    move-result-object p2
 
-    aput-object p3, v1, p2
+    const/4 p3, 0x2
 
-    const/4 p2, 0x3
+    aput-object p2, v1, p3
 
     invoke-static {p5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p3
+    move-result-object p2
 
-    aput-object p3, v1, p2
+    const/4 p3, 0x3
+
+    aput-object p2, v1, p3
 
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
@@ -477,10 +447,6 @@
 
 .method public setTransitionAlpha(Landroid/view/View;F)V
     .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 46
     sget v0, Landroidx/transition/R$id;->save_non_transition_alpha:I
@@ -514,10 +480,6 @@
 
 .method public setTransitionVisibility(Landroid/view/View;I)V
     .locals 3
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 155
     sget-boolean v0, Landroidx/transition/ViewUtilsBase;->sViewFlagsFieldFetched:Z
@@ -539,8 +501,6 @@
     sput-object v1, Landroidx/transition/ViewUtilsBase;->sViewFlagsField:Ljava/lang/reflect/Field;
 
     .line 158
-    sget-object v1, Landroidx/transition/ViewUtilsBase;->sViewFlagsField:Ljava/lang/reflect/Field;
-
     invoke-virtual {v1, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
     :try_end_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
@@ -589,14 +549,6 @@
 
 .method public transformMatrixToGlobal(Landroid/view/View;Landroid/graphics/Matrix;)V
     .locals 2
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Matrix;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 78
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -670,14 +622,6 @@
 
 .method public transformMatrixToLocal(Landroid/view/View;Landroid/graphics/Matrix;)V
     .locals 2
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Matrix;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 92
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;

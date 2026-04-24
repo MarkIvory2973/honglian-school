@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout-land/fragment_errol_0" android:background="@mipmap/bg_network_fail" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:tag="binding_1" android:visibility="gone" android:layout_width="140.0dp" android:layout_height="140.0dp" android:layout_marginTop="52.0dp" android:layout_marginStart="104.0dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="24.0sp" android:textColor="#ffffffff" android:id="@id/textView21" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="652.0dp" android:layout_marginStart="324.0dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="24.0sp" android:textColor="#ffffffff" android:id="@id/textView22" android:tag="binding_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="28.0dp" app:layout_constraintStart_toStartOf="@id/textView21" app:layout_constraintTop_toBottomOf="@id/textView21" />
+    <TextView android:textSize="24.0sp" android:textColor="#ffffffff" android:tag="binding_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="28.0dp" app:layout_constraintStart_toStartOf="@id/textView22" app:layout_constraintTop_toBottomOf="@id/textView22" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,14 +37,6 @@
 # virtual methods
 .method public onInterceptTouchEvent(Landroidx/recyclerview/widget/RecyclerView;Landroid/view/MotionEvent;)Z
     .locals 5
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/MotionEvent;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 317
     iget-object p1, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
@@ -232,9 +224,11 @@
 
     iput v3, p1, Landroidx/recyclerview/widget/ItemTouchHelper;->mActivePointerId:I
 
+    .line 342
+    iget-object p1, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
+
     const/4 v2, 0x0
 
-    .line 342
     invoke-virtual {p1, v2, v1}, Landroidx/recyclerview/widget/ItemTouchHelper;->select(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 
     .line 354
@@ -291,15 +285,7 @@
 .end method
 
 .method public onTouchEvent(Landroidx/recyclerview/widget/RecyclerView;Landroid/view/MotionEvent;)V
-    .locals 5
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/MotionEvent;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
+    .locals 6
 
     .line 362
     iget-object p1, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
@@ -367,23 +353,74 @@
     return-void
 
     :cond_3
-    const/4 v3, 0x6
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    if-eq p1, v3, :cond_5
+    if-eq p1, v4, :cond_8
 
-    packed-switch p1, :pswitch_data_0
+    const/4 v5, 0x2
+
+    if-eq p1, v5, :cond_7
+
+    const/4 v1, 0x3
+
+    if-eq p1, v1, :cond_6
+
+    const/4 v0, 0x6
+
+    if-eq p1, v0, :cond_4
+
+    goto :goto_1
+
+    .line 404
+    :cond_4
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionIndex()I
+
+    move-result p1
+
+    .line 405
+    invoke-virtual {p2, p1}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    move-result v0
+
+    .line 406
+    iget-object v1, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
+
+    iget v1, v1, Landroidx/recyclerview/widget/ItemTouchHelper;->mActivePointerId:I
+
+    if-ne v0, v1, :cond_9
+
+    if-nez p1, :cond_5
+
+    const/4 v3, 0x1
+
+    .line 410
+    :cond_5
+    iget-object v0, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
+
+    invoke-virtual {p2, v3}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    move-result v1
+
+    iput v1, v0, Landroidx/recyclerview/widget/ItemTouchHelper;->mActivePointerId:I
+
+    .line 411
+    iget-object v0, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
+
+    iget v1, v0, Landroidx/recyclerview/widget/ItemTouchHelper;->mSelectedFlags:I
+
+    invoke-virtual {v0, p2, v1, p1}, Landroidx/recyclerview/widget/ItemTouchHelper;->updateDxDy(Landroid/view/MotionEvent;II)V
 
     goto :goto_1
 
     .line 395
-    :pswitch_0
+    :cond_6
     iget-object p1, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
 
     iget-object p1, p1, Landroidx/recyclerview/widget/ItemTouchHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_8
 
     .line 396
     iget-object p1, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
@@ -394,8 +431,8 @@
 
     goto :goto_0
 
-    :pswitch_1
-    if-ltz v1, :cond_7
+    :cond_7
+    if-ltz v1, :cond_9
 
     .line 386
     iget-object p1, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
@@ -437,69 +474,20 @@
     goto :goto_1
 
     .line 400
-    :cond_4
+    :cond_8
     :goto_0
-    :pswitch_2
     iget-object p1, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
 
     const/4 p2, 0x0
 
-    invoke-virtual {p1, p2, v4}, Landroidx/recyclerview/widget/ItemTouchHelper;->select(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
+    invoke-virtual {p1, p2, v3}, Landroidx/recyclerview/widget/ItemTouchHelper;->select(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 
     .line 401
     iget-object p1, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
 
     iput v0, p1, Landroidx/recyclerview/widget/ItemTouchHelper;->mActivePointerId:I
 
-    goto :goto_1
-
-    .line 404
-    :cond_5
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionIndex()I
-
-    move-result p1
-
-    .line 405
-    invoke-virtual {p2, p1}, Landroid/view/MotionEvent;->getPointerId(I)I
-
-    move-result v0
-
-    .line 406
-    iget-object v1, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
-
-    iget v1, v1, Landroidx/recyclerview/widget/ItemTouchHelper;->mActivePointerId:I
-
-    if-ne v0, v1, :cond_7
-
-    if-nez p1, :cond_6
-
-    const/4 v4, 0x1
-
-    .line 410
-    :cond_6
-    iget-object v0, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
-
-    invoke-virtual {p2, v4}, Landroid/view/MotionEvent;->getPointerId(I)I
-
-    move-result v1
-
-    iput v1, v0, Landroidx/recyclerview/widget/ItemTouchHelper;->mActivePointerId:I
-
-    .line 411
-    iget-object v0, p0, Landroidx/recyclerview/widget/ItemTouchHelper$2;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
-
-    iget v1, v0, Landroidx/recyclerview/widget/ItemTouchHelper;->mSelectedFlags:I
-
-    invoke-virtual {v0, p2, v1, p1}, Landroidx/recyclerview/widget/ItemTouchHelper;->updateDxDy(Landroid/view/MotionEvent;II)V
-
-    :cond_7
+    :cond_9
     :goto_1
     return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

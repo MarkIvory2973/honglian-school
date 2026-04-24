@@ -41,12 +41,18 @@
     .line 504
     iget p1, p1, Landroid/os/Message;->what:I
 
-    packed-switch p1, :pswitch_data_0
+    const/4 v1, 0x1
+
+    if-eq p1, v1, :cond_1
+
+    const/4 v1, 0x2
+
+    if-eq p1, v1, :cond_0
 
     goto :goto_0
 
     .line 510
-    :pswitch_0
+    :cond_0
     iget-object p1, v0, Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;->mTask:Landroidx/loader/content/ModernAsyncTask;
 
     iget-object v0, v0, Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;->mData:[Ljava/lang/Object;
@@ -56,7 +62,7 @@
     goto :goto_0
 
     .line 507
-    :pswitch_1
+    :cond_1
     iget-object p1, v0, Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;->mTask:Landroidx/loader/content/ModernAsyncTask;
 
     iget-object v0, v0, Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;->mData:[Ljava/lang/Object;
@@ -69,12 +75,4 @@
 
     :goto_0
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

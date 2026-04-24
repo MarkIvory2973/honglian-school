@@ -28,10 +28,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 133
+    .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 134
+    .line 136
     iput-object p1, p0, Landroidx/core/view/ActionProvider;->mContext:Landroid/content/Context;
 
     return-void
@@ -42,7 +42,7 @@
 .method public getContext()Landroid/content/Context;
     .locals 1
 
-    .line 141
+    .line 144
     iget-object v0, p0, Landroidx/core/view/ActionProvider;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -70,7 +70,7 @@
 .method public onCreateActionView(Landroid/view/MenuItem;)Landroid/view/View;
     .locals 0
 
-    .line 164
+    .line 170
     invoke-virtual {p0}, Landroidx/core/view/ActionProvider;->onCreateActionView()Landroid/view/View;
 
     move-result-object p1
@@ -103,7 +103,7 @@
 .method public refreshVisibility()V
     .locals 2
 
-    .line 200
+    .line 206
     iget-object v0, p0, Landroidx/core/view/ActionProvider;->mVisibilityListener:Landroidx/core/view/ActionProvider$VisibilityListener;
 
     if-eqz v0, :cond_0
@@ -114,7 +114,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 201
+    .line 207
     iget-object v0, p0, Landroidx/core/view/ActionProvider;->mVisibilityListener:Landroidx/core/view/ActionProvider$VisibilityListener;
 
     invoke-virtual {p0}, Landroidx/core/view/ActionProvider;->isVisible()Z
@@ -129,18 +129,13 @@
 
 .method public reset()V
     .locals 1
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
 
     const/4 v0, 0x0
 
-    .line 306
+    .line 313
     iput-object v0, p0, Landroidx/core/view/ActionProvider;->mVisibilityListener:Landroidx/core/view/ActionProvider$VisibilityListener;
 
-    .line 307
+    .line 314
     iput-object v0, p0, Landroidx/core/view/ActionProvider;->mSubUiVisibilityListener:Landroidx/core/view/ActionProvider$SubUiVisibilityListener;
 
     return-void
@@ -148,62 +143,55 @@
 
 .method public setSubUiVisibilityListener(Landroidx/core/view/ActionProvider$SubUiVisibilityListener;)V
     .locals 0
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
 
-    .line 283
+    .line 290
     iput-object p1, p0, Landroidx/core/view/ActionProvider;->mSubUiVisibilityListener:Landroidx/core/view/ActionProvider$SubUiVisibilityListener;
 
     return-void
 .end method
 
 .method public setVisibilityListener(Landroidx/core/view/ActionProvider$VisibilityListener;)V
-    .locals 3
+    .locals 2
 
-    .line 293
+    .line 300
     iget-object v0, p0, Landroidx/core/view/ActionProvider;->mVisibilityListener:Landroidx/core/view/ActionProvider$VisibilityListener;
 
     if-eqz v0, :cond_0
 
     if-eqz p1, :cond_0
 
-    const-string v0, "ActionProvider(support)"
+    .line 301
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 294
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string/jumbo v1, "setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this "
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 295
+    .line 302
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, " instance while it is still in use somewhere else?"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 294
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    .line 298
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, " instance while it is still in use somewhere else?"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "ActionProvider(support)"
+
+    .line 301
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 305
     :cond_0
     iput-object p1, p0, Landroidx/core/view/ActionProvider;->mVisibilityListener:Landroidx/core/view/ActionProvider$VisibilityListener;
 
@@ -212,18 +200,13 @@
 
 .method public subUiVisibilityChanged(Z)V
     .locals 1
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
 
-    .line 273
+    .line 280
     iget-object v0, p0, Landroidx/core/view/ActionProvider;->mSubUiVisibilityListener:Landroidx/core/view/ActionProvider$SubUiVisibilityListener;
 
     if-eqz v0, :cond_0
 
-    .line 274
+    .line 281
     invoke-interface {v0, p1}, Landroidx/core/view/ActionProvider$SubUiVisibilityListener;->onSubUiVisibilityChanged(Z)V
 
     :cond_0

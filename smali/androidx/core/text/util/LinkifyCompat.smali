@@ -7,6 +7,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/core/text/util/LinkifyCompat$LinkSpec;,
+        Landroidx/core/text/util/LinkifyCompat$Api24Impl;,
         Landroidx/core/text/util/LinkifyCompat$LinkifyMask;
     }
 .end annotation
@@ -32,15 +33,15 @@
 
     const/4 v0, 0x0
 
-    .line 57
     new-array v0, v0, [Ljava/lang/String;
 
+    .line 58
     sput-object v0, Landroidx/core/text/util/LinkifyCompat;->EMPTY_STRING:[Ljava/lang/String;
 
-    .line 59
-    new-instance v0, Landroidx/core/text/util/LinkifyCompat$1;
+    .line 60
+    new-instance v0, Landroidx/core/text/util/LinkifyCompat$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0}, Landroidx/core/text/util/LinkifyCompat$1;-><init>()V
+    invoke-direct {v0}, Landroidx/core/text/util/LinkifyCompat$$ExternalSyntheticLambda0;-><init>()V
 
     sput-object v0, Landroidx/core/text/util/LinkifyCompat;->COMPARATOR:Ljava/util/Comparator;
 
@@ -50,7 +51,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 542
+    .line 531
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -58,29 +59,25 @@
 
 .method private static addLinkMovementMethod(Landroid/widget/TextView;)V
     .locals 1
-    .param p0    # Landroid/widget/TextView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 380
+    .line 369
     invoke-virtual {p0}, Landroid/widget/TextView;->getMovementMethod()Landroid/text/method/MovementMethod;
 
     move-result-object v0
 
-    .line 382
+    .line 371
     instance-of v0, v0, Landroid/text/method/LinkMovementMethod;
 
     if-nez v0, :cond_0
 
-    .line 383
+    .line 372
     invoke-virtual {p0}, Landroid/widget/TextView;->getLinksClickable()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 384
+    .line 373
     invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
 
     move-result-object v0
@@ -93,27 +90,15 @@
 
 .method public static addLinks(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;)V
     .locals 7
-    .param p0    # Landroid/widget/TextView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/util/regex/Pattern;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
-    .line 207
+    .line 197
     invoke-static {}, Landroidx/core/text/util/LinkifyCompat;->shouldAddLinksFallbackToFramework()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 208
+    .line 198
     invoke-static {p0, p1, p2}, Landroid/text/util/Linkify;->addLinks(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;)V
 
     return-void
@@ -131,7 +116,7 @@
 
     move-object v3, p2
 
-    .line 211
+    .line 201
     invoke-static/range {v1 .. v6}, Landroidx/core/text/util/LinkifyCompat;->addLinks(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
     return-void
@@ -139,35 +124,15 @@
 
 .method public static addLinks(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
     .locals 7
-    .param p0    # Landroid/widget/TextView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/util/regex/Pattern;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p3    # Landroid/text/util/Linkify$MatchFilter;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p4    # Landroid/text/util/Linkify$TransformFilter;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
-    .line 231
+    .line 221
     invoke-static {}, Landroidx/core/text/util/LinkifyCompat;->shouldAddLinksFallbackToFramework()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 232
+    .line 222
     invoke-static {p0, p1, p2, p3, p4}, Landroid/text/util/Linkify;->addLinks(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
     return-void
@@ -185,7 +150,7 @@
 
     move-object v6, p4
 
-    .line 235
+    .line 225
     invoke-static/range {v1 .. v6}, Landroidx/core/text/util/LinkifyCompat;->addLinks(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
     return-void
@@ -193,49 +158,20 @@
 
 .method public static addLinks(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
     .locals 7
-    .param p0    # Landroid/widget/TextView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/util/regex/Pattern;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p3    # [Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p4    # Landroid/text/util/Linkify$MatchFilter;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p5    # Landroid/text/util/Linkify$TransformFilter;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "NewApi"
-        }
-    .end annotation
 
-    .line 259
+    .line 248
     invoke-static {}, Landroidx/core/text/util/LinkifyCompat;->shouldAddLinksFallbackToFramework()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 260
-    invoke-static/range {p0 .. p5}, Landroid/text/util/Linkify;->addLinks(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
+    .line 249
+    invoke-static/range {p0 .. p5}, Landroidx/core/text/util/LinkifyCompat$Api24Impl;->addLinks(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
     return-void
 
-    .line 263
+    .line 252
     :cond_0
     invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -257,17 +193,17 @@
 
     move-object v6, p5
 
-    .line 265
+    .line 254
     invoke-static/range {v1 .. v6}, Landroidx/core/text/util/LinkifyCompat;->addLinks(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z
 
     move-result p1
 
     if-eqz p1, :cond_1
 
-    .line 268
+    .line 257
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 269
+    .line 258
     invoke-static {p0}, Landroidx/core/text/util/LinkifyCompat;->addLinkMovementMethod(Landroid/widget/TextView;)V
 
     :cond_1
@@ -276,19 +212,15 @@
 
 .method public static addLinks(Landroid/text/Spannable;I)Z
     .locals 10
-    .param p0    # Landroid/text/Spannable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 102
+    .line 93
     invoke-static {}, Landroidx/core/text/util/LinkifyCompat;->shouldAddLinksFallbackToFramework()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 103
+    .line 94
     invoke-static {p0, p1}, Landroid/text/util/Linkify;->addLinks(Landroid/text/Spannable;I)Z
 
     move-result p0
@@ -302,7 +234,7 @@
 
     return v0
 
-    .line 109
+    .line 100
     :cond_1
     invoke-interface {p0}, Landroid/text/Spannable;->length()I
 
@@ -316,7 +248,7 @@
 
     check-cast v1, [Landroid/text/style/URLSpan;
 
-    .line 111
+    .line 102
     array-length v2, v1
 
     const/4 v3, 0x1
@@ -326,7 +258,7 @@
     :goto_0
     if-ltz v2, :cond_2
 
-    .line 112
+    .line 103
     aget-object v4, v1, v2
 
     invoke-interface {p0, v4}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
@@ -342,10 +274,10 @@
 
     const/4 v1, 0x4
 
-    .line 116
+    .line 107
     invoke-static {p0, v1}, Landroid/text/util/Linkify;->addLinks(Landroid/text/Spannable;I)Z
 
-    .line 119
+    .line 110
     :cond_3
     new-instance v1, Ljava/util/ArrayList;
 
@@ -355,16 +287,16 @@
 
     if-eqz v2, :cond_4
 
-    .line 122
+    .line 113
     sget-object v6, Landroidx/core/util/PatternsCompat;->AUTOLINK_WEB_URL:Ljava/util/regex/Pattern;
 
-    const-string v2, "http://"
+    const-string v2, "https://"
 
-    const-string v4, "https://"
+    const-string v4, "rtsp://"
 
-    const-string v5, "rtsp://"
+    const-string v5, "http://"
 
-    filled-new-array {v2, v4, v5}, [Ljava/lang/String;
+    filled-new-array {v5, v2, v4}, [Ljava/lang/String;
 
     move-result-object v7
 
@@ -383,7 +315,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 128
+    .line 119
     sget-object v6, Landroidx/core/util/PatternsCompat;->AUTOLINK_EMAIL_ADDRESS:Ljava/util/regex/Pattern;
 
     const-string v2, "mailto:"
@@ -407,14 +339,14 @@
 
     if-eqz p1, :cond_6
 
-    .line 134
+    .line 125
     invoke-static {v1, p0}, Landroidx/core/text/util/LinkifyCompat;->gatherMapLinks(Ljava/util/ArrayList;Landroid/text/Spannable;)V
 
-    .line 137
+    .line 128
     :cond_6
     invoke-static {v1, p0}, Landroidx/core/text/util/LinkifyCompat;->pruneOverlaps(Ljava/util/ArrayList;Landroid/text/Spannable;)V
 
-    .line 139
+    .line 130
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result p1
@@ -423,7 +355,7 @@
 
     return v0
 
-    .line 143
+    .line 134
     :cond_7
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -443,12 +375,12 @@
 
     check-cast v0, Landroidx/core/text/util/LinkifyCompat$LinkSpec;
 
-    .line 144
+    .line 135
     iget-object v1, v0, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->frameworkAddedSpan:Landroid/text/style/URLSpan;
 
     if-nez v1, :cond_8
 
-    .line 145
+    .line 136
     iget-object v1, v0, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->url:Ljava/lang/String;
 
     iget v2, v0, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
@@ -465,27 +397,15 @@
 
 .method public static addLinks(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;)Z
     .locals 6
-    .param p0    # Landroid/text/Spannable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/util/regex/Pattern;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
-    .line 284
+    .line 273
     invoke-static {}, Landroidx/core/text/util/LinkifyCompat;->shouldAddLinksFallbackToFramework()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 285
+    .line 274
     invoke-static {p0, p1, p2}, Landroid/text/util/Linkify;->addLinks(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;)Z
 
     move-result p0
@@ -505,7 +425,7 @@
 
     move-object v2, p2
 
-    .line 287
+    .line 276
     invoke-static/range {v0 .. v5}, Landroidx/core/text/util/LinkifyCompat;->addLinks(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z
 
     move-result p0
@@ -515,35 +435,15 @@
 
 .method public static addLinks(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z
     .locals 6
-    .param p0    # Landroid/text/Spannable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/util/regex/Pattern;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p3    # Landroid/text/util/Linkify$MatchFilter;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p4    # Landroid/text/util/Linkify$TransformFilter;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
-    .line 308
+    .line 297
     invoke-static {}, Landroidx/core/text/util/LinkifyCompat;->shouldAddLinksFallbackToFramework()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 309
+    .line 298
     invoke-static {p0, p1, p2, p3, p4}, Landroid/text/util/Linkify;->addLinks(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z
 
     move-result p0
@@ -563,7 +463,7 @@
 
     move-object v5, p4
 
-    .line 311
+    .line 300
     invoke-static/range {v0 .. v5}, Landroidx/core/text/util/LinkifyCompat;->addLinks(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z
 
     move-result p0
@@ -572,122 +472,95 @@
 .end method
 
 .method public static addLinks(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z
-    .locals 5
-    .param p0    # Landroid/text/Spannable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/util/regex/Pattern;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p3    # [Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p4    # Landroid/text/util/Linkify$MatchFilter;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p5    # Landroid/text/util/Linkify$TransformFilter;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "NewApi"
-        }
-    .end annotation
+    .locals 6
 
-    .line 335
+    .line 323
     invoke-static {}, Landroidx/core/text/util/LinkifyCompat;->shouldAddLinksFallbackToFramework()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 336
-    invoke-static/range {p0 .. p5}, Landroid/text/util/Linkify;->addLinks(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z
+    .line 324
+    invoke-static/range {p0 .. p5}, Landroidx/core/text/util/LinkifyCompat$Api24Impl;->addLinks(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z
 
     move-result p0
 
     return p0
 
     :cond_0
+    const-string v0, ""
+
     if-nez p2, :cond_1
 
-    const-string p2, ""
+    move-object p2, v0
 
     :cond_1
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     if-eqz p3, :cond_2
 
-    .line 341
-    array-length v1, p3
+    .line 329
+    array-length v2, p3
 
-    if-ge v1, v0, :cond_3
+    if-ge v2, v1, :cond_3
 
-    .line 342
+    .line 330
     :cond_2
     sget-object p3, Landroidx/core/text/util/LinkifyCompat;->EMPTY_STRING:[Ljava/lang/String;
 
-    .line 345
+    .line 333
     :cond_3
-    array-length v1, p3
+    array-length v2, p3
 
-    add-int/2addr v1, v0
+    add-int/2addr v2, v1
 
-    new-array v1, v1, [Ljava/lang/String;
+    new-array v2, v2, [Ljava/lang/String;
 
-    .line 346
-    sget-object v2, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+    .line 334
+    sget-object v3, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    invoke-virtual {p2, v2}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {p2, v3}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object p2
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    aput-object p2, v1, v2
+    aput-object p2, v2, v3
 
     const/4 p2, 0x0
 
-    .line 347
+    .line 335
     :goto_0
-    array-length v3, p3
+    array-length v4, p3
 
-    if-ge p2, v3, :cond_5
+    if-ge p2, v4, :cond_5
 
-    .line 348
-    aget-object v3, p3, p2
+    .line 336
+    aget-object v4, p3, p2
 
     add-int/lit8 p2, p2, 0x1
 
-    if-nez v3, :cond_4
+    if-nez v4, :cond_4
 
-    const-string v3, ""
+    move-object v4, v0
 
     goto :goto_1
 
-    .line 349
+    .line 337
     :cond_4
-    sget-object v4, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+    sget-object v5, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
     :goto_1
-    aput-object v3, v1, p2
+    aput-object v4, v2, p2
 
     goto :goto_0
 
-    .line 353
+    .line 341
     :cond_5
     invoke-virtual {p1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
@@ -695,7 +568,7 @@
 
     const/4 p2, 0x0
 
-    .line 355
+    .line 343
     :cond_6
     :goto_2
     invoke-virtual {p1}, Ljava/util/regex/Matcher;->find()Z
@@ -704,42 +577,45 @@
 
     if-eqz p3, :cond_8
 
-    .line 356
+    .line 344
     invoke-virtual {p1}, Ljava/util/regex/Matcher;->start()I
 
     move-result p3
 
-    .line 357
+    .line 345
     invoke-virtual {p1}, Ljava/util/regex/Matcher;->end()I
 
-    move-result v3
+    move-result v0
+
+    .line 346
+    invoke-virtual {p1, v3}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v4
 
     if-eqz p4, :cond_7
 
-    .line 361
-    invoke-interface {p4, p0, p3, v3}, Landroid/text/util/Linkify$MatchFilter;->acceptMatch(Ljava/lang/CharSequence;II)Z
+    .line 350
+    invoke-interface {p4, p0, p3, v0}, Landroid/text/util/Linkify$MatchFilter;->acceptMatch(Ljava/lang/CharSequence;II)Z
 
-    move-result v4
+    move-result v5
 
     goto :goto_3
 
     :cond_7
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
     :goto_3
+    if-eqz v5, :cond_6
+
     if-eqz v4, :cond_6
 
-    .line 365
-    invoke-virtual {p1, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+    .line 354
+    invoke-static {v4, v2, p1, p5}, Landroidx/core/text/util/LinkifyCompat;->makeUrl(Ljava/lang/String;[Ljava/lang/String;Ljava/util/regex/Matcher;Landroid/text/util/Linkify$TransformFilter;)Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-static {p2, v1, p1, p5}, Landroidx/core/text/util/LinkifyCompat;->makeUrl(Ljava/lang/String;[Ljava/lang/String;Ljava/util/regex/Matcher;Landroid/text/util/Linkify$TransformFilter;)Ljava/lang/String;
-
-    move-result-object p2
-
-    .line 367
-    invoke-static {p2, p3, v3, p0}, Landroidx/core/text/util/LinkifyCompat;->applyLink(Ljava/lang/String;IILandroid/text/Spannable;)V
+    .line 356
+    invoke-static {p2, p3, v0, p0}, Landroidx/core/text/util/LinkifyCompat;->applyLink(Ljava/lang/String;IILandroid/text/Spannable;)V
 
     const/4 p2, 0x1
 
@@ -751,19 +627,15 @@
 
 .method public static addLinks(Landroid/widget/TextView;I)Z
     .locals 4
-    .param p0    # Landroid/widget/TextView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 164
+    .line 155
     invoke-static {}, Landroidx/core/text/util/LinkifyCompat;->shouldAddLinksFallbackToFramework()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 165
+    .line 156
     invoke-static {p0, p1}, Landroid/text/util/Linkify;->addLinks(Landroid/widget/TextView;I)Z
 
     move-result p0
@@ -777,72 +649,69 @@
 
     return v0
 
-    .line 171
+    .line 162
     :cond_1
     invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 173
+    .line 164
     instance-of v2, v1, Landroid/text/Spannable;
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_2
 
-    .line 174
+    .line 165
     check-cast v1, Landroid/text/Spannable;
 
     invoke-static {v1, p1}, Landroidx/core/text/util/LinkifyCompat;->addLinks(Landroid/text/Spannable;I)Z
 
     move-result p1
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_3
 
-    .line 175
+    .line 166
     invoke-static {p0}, Landroidx/core/text/util/LinkifyCompat;->addLinkMovementMethod(Landroid/widget/TextView;)V
 
     return v3
 
+    .line 171
     :cond_2
-    return v0
-
-    .line 181
-    :cond_3
     invoke-static {v1}, Landroid/text/SpannableString;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableString;
 
     move-result-object v1
 
-    .line 183
+    .line 173
     invoke-static {v1, p1}, Landroidx/core/text/util/LinkifyCompat;->addLinks(Landroid/text/Spannable;I)Z
 
     move-result p1
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_3
 
-    .line 184
+    .line 174
     invoke-static {p0}, Landroidx/core/text/util/LinkifyCompat;->addLinkMovementMethod(Landroid/widget/TextView;)V
 
-    .line 185
+    .line 175
     invoke-virtual {p0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     return v3
 
-    :cond_4
+    :cond_3
     return v0
 .end method
 
 .method private static applyLink(Ljava/lang/String;IILandroid/text/Spannable;)V
     .locals 1
 
-    .line 440
+    .line 429
     new-instance v0, Landroid/text/style/URLSpan;
 
     invoke-direct {v0, p0}, Landroid/text/style/URLSpan;-><init>(Ljava/lang/String;)V
 
     const/16 p0, 0x21
 
-    .line 442
+    .line 431
     invoke-interface {p3, v0, p1, p2, p0}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
     return-void
@@ -851,21 +720,21 @@
 .method private static findAddress(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    .line 487
+    .line 476
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1c
 
     if-lt v0, v1, :cond_0
 
-    .line 488
+    .line 477
     invoke-static {p0}, Landroid/webkit/WebView;->findAddress(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 490
+    .line 479
     :cond_0
     invoke-static {p0}, Landroidx/core/text/util/FindAddress;->findAddress(Ljava/lang/String;)Ljava/lang/String;
 
@@ -892,12 +761,12 @@
         }
     .end annotation
 
-    .line 420
+    .line 410
     invoke-virtual {p2, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object p2
 
-    .line 422
+    .line 412
     :cond_0
     :goto_0
     invoke-virtual {p2}, Ljava/util/regex/Matcher;->find()Z
@@ -906,53 +775,55 @@
 
     if-eqz v0, :cond_2
 
-    .line 423
+    .line 413
     invoke-virtual {p2}, Ljava/util/regex/Matcher;->start()I
 
     move-result v0
 
-    .line 424
+    .line 414
     invoke-virtual {p2}, Ljava/util/regex/Matcher;->end()I
 
     move-result v1
 
+    const/4 v2, 0x0
+
+    .line 415
+    invoke-virtual {p2, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v2
+
     if-eqz p4, :cond_1
 
-    .line 426
+    .line 417
     invoke-interface {p4, p1, v0, v1}, Landroid/text/util/Linkify$MatchFilter;->acceptMatch(Ljava/lang/CharSequence;II)Z
 
-    move-result v2
+    move-result v3
 
+    if-eqz v3, :cond_0
+
+    :cond_1
     if-eqz v2, :cond_0
 
-    .line 427
-    :cond_1
-    new-instance v2, Landroidx/core/text/util/LinkifyCompat$LinkSpec;
+    .line 418
+    new-instance v3, Landroidx/core/text/util/LinkifyCompat$LinkSpec;
 
-    invoke-direct {v2}, Landroidx/core/text/util/LinkifyCompat$LinkSpec;-><init>()V
+    invoke-direct {v3}, Landroidx/core/text/util/LinkifyCompat$LinkSpec;-><init>()V
 
-    const/4 v3, 0x0
+    .line 419
+    invoke-static {v2, p3, p2, p5}, Landroidx/core/text/util/LinkifyCompat;->makeUrl(Ljava/lang/String;[Ljava/lang/String;Ljava/util/regex/Matcher;Landroid/text/util/Linkify$TransformFilter;)Ljava/lang/String;
 
-    .line 428
-    invoke-virtual {p2, v3}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v3
+    iput-object v2, v3, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->url:Ljava/lang/String;
 
-    invoke-static {v3, p3, p2, p5}, Landroidx/core/text/util/LinkifyCompat;->makeUrl(Ljava/lang/String;[Ljava/lang/String;Ljava/util/regex/Matcher;Landroid/text/util/Linkify$TransformFilter;)Ljava/lang/String;
+    .line 420
+    iput v0, v3, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
 
-    move-result-object v3
+    .line 421
+    iput v1, v3, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
 
-    .line 430
-    iput-object v3, v2, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->url:Ljava/lang/String;
-
-    .line 431
-    iput v0, v2, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
-
-    .line 432
-    iput v1, v2, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
-
-    .line 434
-    invoke-virtual {p0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 423
+    invoke-virtual {p0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
@@ -973,14 +844,14 @@
         }
     .end annotation
 
-    .line 446
+    .line 435
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p1
 
     const/4 v0, 0x0
 
-    .line 451
+    .line 440
     :catch_0
     :goto_0
     :try_start_0
@@ -990,7 +861,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 452
+    .line 441
     invoke-virtual {p1, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v2
@@ -999,13 +870,13 @@
 
     goto :goto_1
 
-    .line 458
+    .line 447
     :cond_0
     new-instance v3, Landroidx/core/text/util/LinkifyCompat$LinkSpec;
 
     invoke-direct {v3}, Landroidx/core/text/util/LinkifyCompat$LinkSpec;-><init>()V
 
-    .line 459
+    .line 448
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v4
@@ -1014,15 +885,15 @@
 
     add-int/2addr v2, v0
 
-    .line 462
+    .line 451
     iput v2, v3, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
 
     add-int/2addr v0, v4
 
-    .line 463
+    .line 452
     iput v0, v3, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
 
-    .line 464
+    .line 453
     invoke-virtual {p1, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
@@ -1032,7 +903,7 @@
     :try_start_1
     const-string v2, "UTF-8"
 
-    .line 470
+    .line 459
     invoke-static {v1, v2}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -1040,7 +911,7 @@
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/UnsupportedOperationException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 475
+    .line 464
     :try_start_2
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1058,72 +929,95 @@
 
     iput-object v1, v3, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->url:Ljava/lang/String;
 
-    .line 476
+    .line 465
     invoke-virtual {p0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_2
     .catch Ljava/lang/UnsupportedOperationException; {:try_start_2 .. :try_end_2} :catch_1
 
     goto :goto_0
 
+    :catch_1
     :cond_1
     :goto_1
     return-void
+.end method
 
-    :catch_1
-    return-void
+.method static synthetic lambda$static$0(Landroidx/core/text/util/LinkifyCompat$LinkSpec;Landroidx/core/text/util/LinkifyCompat$LinkSpec;)I
+    .locals 2
+
+    .line 61
+    iget v0, p0, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
+
+    iget v1, p1, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
+
+    if-ge v0, v1, :cond_0
+
+    const/4 p0, -0x1
+
+    return p0
+
+    .line 65
+    :cond_0
+    iget v0, p0, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
+
+    iget v1, p1, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
+
+    if-le v0, v1, :cond_1
+
+    const/4 p0, 0x1
+
+    return p0
+
+    .line 69
+    :cond_1
+    iget p1, p1, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
+
+    iget p0, p0, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
+
+    invoke-static {p1, p0}, Ljava/lang/Integer;->compare(II)I
+
+    move-result p0
+
+    return p0
 .end method
 
 .method private static makeUrl(Ljava/lang/String;[Ljava/lang/String;Ljava/util/regex/Matcher;Landroid/text/util/Linkify$TransformFilter;)Ljava/lang/String;
-    .locals 7
-    .param p0    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # [Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroid/text/util/Linkify$TransformFilter;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
+    .locals 8
 
     if-eqz p3, :cond_0
 
-    .line 392
+    .line 381
     invoke-interface {p3, p2, p0}, Landroid/text/util/Linkify$TransformFilter;->transformUrl(Ljava/util/regex/Matcher;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
+    .line 386
     :cond_0
-    const/4 p2, 0x0
+    array-length p2, p1
 
     const/4 p3, 0x0
 
-    .line 397
+    const/4 v6, 0x0
+
     :goto_0
-    array-length v0, p1
+    if-ge v6, p2, :cond_2
 
-    const/4 v6, 0x1
-
-    if-ge p3, v0, :cond_2
+    aget-object v7, p1, v6
 
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    .line 398
-    aget-object v3, p1, p3
-
     const/4 v4, 0x0
 
-    aget-object v0, p1, p3
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    .line 387
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
 
     move-result v5
 
     move-object v0, p0
+
+    move-object v3, v7
 
     invoke-virtual/range {v0 .. v5}, Ljava/lang/String;->regionMatches(ZILjava/lang/String;II)Z
 
@@ -1135,81 +1029,77 @@
 
     const/4 v2, 0x0
 
-    .line 402
-    aget-object v3, p1, p3
-
     const/4 v4, 0x0
 
-    aget-object v0, p1, p3
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    .line 391
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
 
     move-result v5
 
     move-object v0, p0
 
+    move-object v3, v7
+
     invoke-virtual/range {v0 .. v5}, Ljava/lang/String;->regionMatches(ZILjava/lang/String;II)Z
 
-    move-result v0
+    move-result p2
 
-    if-nez v0, :cond_3
+    const/4 v0, 0x1
 
-    .line 403
-    new-instance v0, Ljava/lang/StringBuilder;
+    if-nez p2, :cond_3
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    .line 392
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    aget-object v1, p1, p3
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aget-object p3, p1, p3
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
 
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
+    move-result v1
 
-    move-result p3
-
-    invoke-virtual {p0, p3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     goto :goto_1
 
     :cond_1
-    add-int/lit8 p3, p3, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
     :cond_2
-    const/4 v6, 0x0
+    const/4 v0, 0x0
 
     :cond_3
     :goto_1
-    if-nez v6, :cond_4
+    if-nez v0, :cond_4
 
-    .line 410
-    array-length p3, p1
+    .line 399
+    array-length p2, p1
 
-    if-lez p3, :cond_4
+    if-lez p2, :cond_4
 
-    .line 411
-    new-instance p3, Ljava/lang/StringBuilder;
+    .line 400
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    aget-object p1, p1, p2
+    aget-object p1, p1, p3
 
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -1230,7 +1120,7 @@
         }
     .end annotation
 
-    .line 495
+    .line 484
     invoke-interface {p1}, Landroid/text/Spannable;->length()I
 
     move-result v0
@@ -1245,56 +1135,52 @@
 
     check-cast v0, [Landroid/text/style/URLSpan;
 
-    const/4 v1, 0x0
+    .line 485
+    array-length v1, v0
 
-    .line 496
+    const/4 v3, 0x0
+
     :goto_0
-    array-length v3, v0
+    if-ge v3, v1, :cond_0
 
-    if-ge v1, v3, :cond_0
+    aget-object v4, v0, v3
 
-    .line 497
-    new-instance v3, Landroidx/core/text/util/LinkifyCompat$LinkSpec;
+    .line 486
+    new-instance v5, Landroidx/core/text/util/LinkifyCompat$LinkSpec;
 
-    invoke-direct {v3}, Landroidx/core/text/util/LinkifyCompat$LinkSpec;-><init>()V
+    invoke-direct {v5}, Landroidx/core/text/util/LinkifyCompat$LinkSpec;-><init>()V
 
-    .line 498
-    aget-object v4, v0, v1
+    .line 487
+    iput-object v4, v5, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->frameworkAddedSpan:Landroid/text/style/URLSpan;
 
-    iput-object v4, v3, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->frameworkAddedSpan:Landroid/text/style/URLSpan;
-
-    .line 499
-    aget-object v4, v0, v1
-
+    .line 488
     invoke-interface {p1, v4}, Landroid/text/Spannable;->getSpanStart(Ljava/lang/Object;)I
 
-    move-result v4
+    move-result v6
 
-    iput v4, v3, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
+    iput v6, v5, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
 
-    .line 500
-    aget-object v4, v0, v1
-
+    .line 489
     invoke-interface {p1, v4}, Landroid/text/Spannable;->getSpanEnd(Ljava/lang/Object;)I
 
     move-result v4
 
-    iput v4, v3, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
+    iput v4, v5, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
 
-    .line 501
-    invoke-virtual {p0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 490
+    invoke-virtual {p0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 504
+    .line 493
     :cond_0
     sget-object v0, Landroidx/core/text/util/LinkifyCompat;->COMPARATOR:Ljava/util/Comparator;
 
     invoke-static {p0, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 506
+    .line 495
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -1304,7 +1190,7 @@
 
     if-ge v2, v1, :cond_6
 
-    .line 510
+    .line 499
     invoke-virtual {p0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -1313,14 +1199,14 @@
 
     add-int/lit8 v3, v2, 0x1
 
-    .line 511
+    .line 500
     invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Landroidx/core/text/util/LinkifyCompat$LinkSpec;
 
-    .line 514
+    .line 503
     iget v5, v1, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
 
     iget v6, v4, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
@@ -1333,7 +1219,7 @@
 
     if-le v5, v6, :cond_5
 
-    .line 515
+    .line 504
     iget v5, v4, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
 
     iget v6, v1, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
@@ -1342,11 +1228,12 @@
 
     if-gt v5, v6, :cond_1
 
+    :goto_2
     move v1, v3
 
-    goto :goto_2
+    goto :goto_3
 
-    .line 517
+    .line 506
     :cond_1
     iget v5, v1, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
 
@@ -1362,11 +1249,9 @@
 
     if-le v5, v6, :cond_2
 
-    move v1, v3
-
     goto :goto_2
 
-    .line 519
+    .line 508
     :cond_2
     iget v5, v1, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
 
@@ -1384,15 +1269,15 @@
 
     move v1, v2
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_3
     const/4 v1, -0x1
 
-    :goto_2
+    :goto_3
     if-eq v1, v7, :cond_5
 
-    .line 524
+    .line 513
     invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1403,10 +1288,10 @@
 
     if-eqz v3, :cond_4
 
-    .line 526
+    .line 515
     invoke-interface {p1, v3}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
-    .line 528
+    .line 517
     :cond_4
     invoke-virtual {p0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
@@ -1426,7 +1311,7 @@
 .method private static shouldAddLinksFallbackToFramework()Z
     .locals 2
 
-    .line 376
+    .line 365
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1c

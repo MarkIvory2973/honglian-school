@@ -1,4 +1,4 @@
-.class final Landroidx/transition/Slide$4;
+.class Landroidx/transition/Slide$4;
 .super Landroidx/transition/Slide$CalculateSlideHorizontal;
 .source "Slide.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -20,7 +20,7 @@
 
     const/4 v0, 0x0
 
-    .line 122
+    .line 123
     invoke-direct {p0, v0}, Landroidx/transition/Slide$CalculateSlideHorizontal;-><init>(Landroidx/transition/Slide$1;)V
 
     return-void
@@ -31,7 +31,7 @@
 .method public getGoneX(Landroid/view/ViewGroup;Landroid/view/View;)F
     .locals 0
 
-    .line 125
+    .line 126
     invoke-virtual {p2}, Landroid/view/View;->getTranslationX()F
 
     move-result p2

@@ -21,10 +21,10 @@
     k = 0x5
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-    xi = 0x1
+    xi = 0x31
     xs = "kotlin/io/FilesKt"
 .end annotation
 
@@ -40,18 +40,8 @@
 
 .method public static final walk(Ljava/io/File;Lkotlin/io/FileWalkDirection;)Lkotlin/io/FileTreeWalk;
     .locals 1
-    .param p0    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p1    # Lkotlin/io/FileWalkDirection;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
-    const-string v0, "$this$walk"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -87,14 +77,8 @@
 
 .method public static final walkBottomUp(Ljava/io/File;)Lkotlin/io/FileTreeWalk;
     .locals 1
-    .param p0    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
-    const-string v0, "$this$walkBottomUp"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -110,14 +94,8 @@
 
 .method public static final walkTopDown(Ljava/io/File;)Lkotlin/io/FileTreeWalk;
     .locals 1
-    .param p0    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
-    const-string v0, "$this$walkTopDown"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -39,9 +39,10 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -53,7 +54,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 24
     new-instance v0, Lkotlin/coroutines/ContinuationInterceptor$Key;
 
     invoke-direct {v0}, Lkotlin/coroutines/ContinuationInterceptor$Key;-><init>()V

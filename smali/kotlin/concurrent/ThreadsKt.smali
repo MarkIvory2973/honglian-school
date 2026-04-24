@@ -38,13 +38,10 @@
     k = 0x2
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/jvm/JvmName;
-    name = "ThreadsKt"
+    xi = 0x30
 .end annotation
 
 
@@ -63,43 +60,33 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "default"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 59
     invoke-virtual {p0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
-    :goto_0
+    :cond_0
     return-object v0
 .end method
 
 .method public static final thread(ZZLjava/lang/ClassLoader;Ljava/lang/String;ILkotlin/jvm/functions/Function0;)Ljava/lang/Thread;
     .locals 1
-    .param p2    # Ljava/lang/ClassLoader;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
-    .param p3    # Ljava/lang/String;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
-    .param p5    # Lkotlin/jvm/functions/Function0;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ZZ",
@@ -111,9 +98,6 @@
             ">;)",
             "Ljava/lang/Thread;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "block"
@@ -200,12 +184,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 23
-    move-object p2, p1
-
-    check-cast p2, Ljava/lang/ClassLoader;
-
-    move-object v2, p2
+    move-object v2, p1
 
     goto :goto_2
 
@@ -217,12 +196,7 @@
 
     if-eqz p0, :cond_3
 
-    .line 24
-    move-object p3, p1
-
-    check-cast p3, Ljava/lang/String;
-
-    move-object v3, p3
+    move-object v3, p1
 
     goto :goto_3
 
@@ -246,7 +220,7 @@
     :goto_4
     move-object v5, p5
 
-    .line 25
+    .line 20
     invoke-static/range {v0 .. v5}, Lkotlin/concurrent/ThreadsKt;->thread(ZZLjava/lang/ClassLoader;Ljava/lang/String;ILkotlin/jvm/functions/Function0;)Ljava/lang/Thread;
 
     move-result-object p0

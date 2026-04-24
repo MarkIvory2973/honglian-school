@@ -10,9 +10,6 @@
 
 # instance fields
 .field private final mChildNonConfigs:Ljava/util/Map;
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -24,9 +21,6 @@
 .end field
 
 .field private final mFragments:Ljava/util/Collection;
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",
@@ -37,9 +31,6 @@
 .end field
 
 .field private final mViewModelStores:Ljava/util/Map;
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -54,18 +45,6 @@
 # direct methods
 .method constructor <init>(Ljava/util/Collection;Ljava/util/Map;Ljava/util/Map;)V
     .locals 0
-    .param p1    # Ljava/util/Collection;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/Map;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p3    # Ljava/util/Map;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,9 +81,6 @@
 # virtual methods
 .method getChildNonConfigs()Ljava/util/Map;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -123,9 +99,6 @@
 
 .method getFragments()Ljava/util/Collection;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -143,9 +116,6 @@
 
 .method getViewModelStores()Ljava/util/Map;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

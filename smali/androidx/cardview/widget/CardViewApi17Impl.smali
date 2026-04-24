@@ -3,12 +3,6 @@
 .source "CardViewApi17Impl.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x11
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .locals 0

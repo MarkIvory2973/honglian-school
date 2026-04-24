@@ -195,8 +195,6 @@
 
 .method public getRecycledView(I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 5704
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$RecycledViewPool;->mScrap:Landroid/util/SparseArray;

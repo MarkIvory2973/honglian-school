@@ -23,18 +23,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 1
 
-    const/4 v0, 0x1
+    const v0, 0x1010214
 
     .line 48
-    new-array v0, v0, [I
+    filled-new-array {v0}, [I
 
-    const/4 v1, 0x0
-
-    const v2, 0x1010214
-
-    aput v2, v0, v1
+    move-result-object v0
 
     sput-object v0, Landroidx/recyclerview/widget/DividerItemDecoration;->ATTRS:[I
 
@@ -69,9 +65,6 @@
     move-result-object v0
 
     iput-object v0, p0, Landroidx/recyclerview/widget/DividerItemDecoration;->mDivider:Landroid/graphics/drawable/Drawable;
-
-    .line 69
-    iget-object v0, p0, Landroidx/recyclerview/widget/DividerItemDecoration;->mDivider:Landroid/graphics/drawable/Drawable;
 
     if-nez v0, :cond_0
 
@@ -348,8 +341,6 @@
 # virtual methods
 .method public getDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 108
     iget-object v0, p0, Landroidx/recyclerview/widget/DividerItemDecoration;->mDivider:Landroid/graphics/drawable/Drawable;
@@ -415,7 +406,7 @@
 
     if-nez p3, :cond_0
 
-    goto :goto_1
+    goto :goto_0
 
     .line 116
     :cond_0
@@ -434,20 +425,13 @@
     :cond_1
     invoke-direct {p0, p1, p2}, Landroidx/recyclerview/widget/DividerItemDecoration;->drawHorizontal(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;)V
 
-    :goto_0
-    return-void
-
     :cond_2
-    :goto_1
+    :goto_0
     return-void
 .end method
 
 .method public setDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     if-eqz p1, :cond_0
 

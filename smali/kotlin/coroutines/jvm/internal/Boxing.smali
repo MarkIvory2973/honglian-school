@@ -39,28 +39,16 @@
     k = 0x2
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/jvm/JvmName;
-    name = "Boxing"
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method public static final boxBoolean(Z)Ljava/lang/Boolean;
     .locals 0
-    .annotation build Lkotlin/PublishedApi;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.3"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 20
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -72,15 +60,6 @@
 
 .method public static final boxByte(B)Ljava/lang/Byte;
     .locals 0
-    .annotation build Lkotlin/PublishedApi;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.3"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 24
     invoke-static {p0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
@@ -92,15 +71,6 @@
 
 .method public static final boxChar(C)Ljava/lang/Character;
     .locals 1
-    .annotation build Lkotlin/PublishedApi;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.3"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 48
     new-instance v0, Ljava/lang/Character;
@@ -112,15 +82,6 @@
 
 .method public static final boxDouble(D)Ljava/lang/Double;
     .locals 1
-    .annotation build Lkotlin/PublishedApi;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.3"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 44
     new-instance v0, Ljava/lang/Double;
@@ -132,15 +93,6 @@
 
 .method public static final boxFloat(F)Ljava/lang/Float;
     .locals 1
-    .annotation build Lkotlin/PublishedApi;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.3"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 40
     new-instance v0, Ljava/lang/Float;
@@ -152,15 +104,6 @@
 
 .method public static final boxInt(I)Ljava/lang/Integer;
     .locals 1
-    .annotation build Lkotlin/PublishedApi;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.3"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 32
     new-instance v0, Ljava/lang/Integer;
@@ -172,15 +115,6 @@
 
 .method public static final boxLong(J)Ljava/lang/Long;
     .locals 1
-    .annotation build Lkotlin/PublishedApi;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.3"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 36
     new-instance v0, Ljava/lang/Long;
@@ -192,15 +126,6 @@
 
 .method public static final boxShort(S)Ljava/lang/Short;
     .locals 1
-    .annotation build Lkotlin/PublishedApi;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.3"
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 28
     new-instance v0, Ljava/lang/Short;

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View android:background="@drawable/shape_react_circle_blue8ff" android:layout_width="match_parent" android:layout_height="124.0dp" android:layout_marginLeft="@dimen/dp_40" android:layout_marginRight="@dimen/dp_40" android:layout_centerInParent="true" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="4.0">
+        <com.loper7.date_time_picker.number_picker.NumberPicker android:id="@id/np_datetime_hour" android:layout_width="0.0dp" android:layout_height="372.0dp" android:layout_weight="1.0" app:np_dividerThickness="0.0dp" app:np_height="184.0dp" app:np_wheelItemCount="3" />
+        <com.loper7.date_time_picker.number_picker.NumberPicker android:id="@id/np_datetime_minute" android:layout_width="0.0dp" android:layout_height="372.0dp" android:layout_weight="1.0" app:np_dividerThickness="0.0dp" app:np_height="184.0dp" app:np_wheelItemCount="3" />
+        <com.loper7.date_time_picker.number_picker.NumberPicker android:id="@id/np_datetime_second" android:layout_width="0.0dp" android:layout_height="372.0dp" android:layout_weight="1.0" app:np_dividerThickness="0.0dp" app:np_height="184.0dp" app:np_wheelItemCount="3" />
+        <TextView android:textSize="28.0sp" android:textColor="#ffffffff" android:gravity="center" android:background="@drawable/shape_react_circle_blue3fd" android:layout_width="100.0dp" android:layout_height="60.0dp" android:text="确定" />
+    </LinearLayout>
+</RelativeLayout>

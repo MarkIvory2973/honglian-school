@@ -3,12 +3,6 @@
 .source "WrappedDrawableApi21.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x15
-.end annotation
-
-
 # static fields
 .field private static final TAG:Ljava/lang/String; = "WrappedDrawableApi21"
 
@@ -87,8 +81,6 @@
 # virtual methods
 .method public getDirtyBounds()Landroid/graphics/Rect;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 70
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi21;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -102,10 +94,6 @@
 
 .method public getOutline(Landroid/graphics/Outline;)V
     .locals 1
-    .param p1    # Landroid/graphics/Outline;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 64
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi21;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -116,45 +104,11 @@
 .end method
 
 .method protected isCompatTintEnabled()Z
-    .locals 3
+    .locals 1
 
-    .line 113
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    const/16 v2, 0x15
-
-    if-ne v0, v2, :cond_2
-
-    .line 114
-    iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi21;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 115
-    instance-of v2, v0, Landroid/graphics/drawable/GradientDrawable;
-
-    if-nez v2, :cond_0
-
-    instance-of v2, v0, Landroid/graphics/drawable/DrawableContainer;
-
-    if-nez v2, :cond_0
-
-    instance-of v2, v0, Landroid/graphics/drawable/InsetDrawable;
-
-    if-nez v2, :cond_0
-
-    instance-of v0, v0, Landroid/graphics/drawable/RippleDrawable;
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    const/4 v1, 0x1
-
-    :cond_1
-    return v1
-
-    :cond_2
-    return v1
+    return v0
 .end method
 
 .method public isProjected()Z
@@ -229,10 +183,6 @@
 
 .method public setState([I)Z
     .locals 0
-    .param p1    # [I
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 102
     invoke-super {p0, p1}, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->setState([I)Z
@@ -306,10 +256,6 @@
 
 .method public setTintMode(Landroid/graphics/PorterDuff$Mode;)V
     .locals 1
-    .param p1    # Landroid/graphics/PorterDuff$Mode;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 93
     invoke-virtual {p0}, Landroidx/core/graphics/drawable/WrappedDrawableApi21;->isCompatTintEnabled()Z

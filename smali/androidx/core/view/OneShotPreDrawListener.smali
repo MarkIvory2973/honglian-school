@@ -40,16 +40,6 @@
 
 .method public static add(Landroid/view/View;Ljava/lang/Runnable;)Landroidx/core/view/OneShotPreDrawListener;
     .locals 1
-    .param p0    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/Runnable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     if-eqz p0, :cond_1
 
@@ -86,7 +76,7 @@
     :cond_1
     new-instance p0, Ljava/lang/NullPointerException;
 
-    const-string p1, "view == null"
+    const-string/jumbo p1, "view == null"
 
     invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

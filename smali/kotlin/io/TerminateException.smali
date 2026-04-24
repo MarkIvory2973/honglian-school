@@ -19,19 +19,16 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method public constructor <init>(Ljava/io/File;)V
     .locals 7
-    .param p1    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
     const-string v0, "file"
 

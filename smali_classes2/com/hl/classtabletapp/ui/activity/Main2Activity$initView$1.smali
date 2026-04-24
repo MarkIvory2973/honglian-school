@@ -1,0 +1,97 @@
+.class public final Lcom/hl/classtabletapp/ui/activity/Main2Activity$initView$1;
+.super Landroidx/activity/OnBackPressedCallback;
+.source "Main2Activity.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/hl/classtabletapp/ui/activity/Main2Activity;->initView(Landroid/os/Bundle;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u0011\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000*\u0001\u0000\u0008\n\u0018\u00002\u00020\u0001J\u0008\u0010\u0002\u001a\u00020\u0003H\u0016\u00a8\u0006\u0004"
+    }
+    d2 = {
+        "com/hl/classtabletapp/ui/activity/Main2Activity$initView$1",
+        "Landroidx/activity/OnBackPressedCallback;",
+        "handleOnBackPressed",
+        "",
+        "app_release"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x9,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/hl/classtabletapp/ui/activity/Main2Activity;
+
+
+# direct methods
+.method constructor <init>(Lcom/hl/classtabletapp/ui/activity/Main2Activity;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/hl/classtabletapp/ui/activity/Main2Activity$initView$1;->this$0:Lcom/hl/classtabletapp/ui/activity/Main2Activity;
+
+    const/4 p1, 0x1
+
+    .line 86
+    invoke-direct {p0, p1}, Landroidx/activity/OnBackPressedCallback;-><init>(Z)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public handleOnBackPressed()V
+    .locals 3
+
+    .line 88
+    iget-object v0, p0, Lcom/hl/classtabletapp/ui/activity/Main2Activity$initView$1;->this$0:Lcom/hl/classtabletapp/ui/activity/Main2Activity;
+
+    check-cast v0, Landroid/app/Activity;
+
+    const v1, 0x7f080182
+
+    invoke-static {v0, v1}, Landroidx/navigation/ActivityKt;->findNavController(Landroid/app/Activity;I)Landroidx/navigation/NavController;
+
+    move-result-object v0
+
+    .line 90
+    invoke-virtual {v0}, Landroidx/navigation/NavController;->getCurrentDestination()Landroidx/navigation/NavDestination;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Landroidx/navigation/NavController;->getCurrentDestination()Landroidx/navigation/NavDestination;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    invoke-virtual {v1}, Landroidx/navigation/NavDestination;->getId()I
+
+    move-result v1
+
+    const v2, 0x7f08017d
+
+    if-eq v1, v2, :cond_0
+
+    .line 92
+    invoke-virtual {v0}, Landroidx/navigation/NavController;->navigateUp()Z
+
+    :cond_0
+    return-void
+.end method

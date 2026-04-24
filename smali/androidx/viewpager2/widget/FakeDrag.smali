@@ -118,8 +118,6 @@
 # virtual methods
 .method beginFakeDrag()Z
     .locals 7
-    .annotation build Landroidx/annotation/UiThread;
-    .end annotation
 
     .line 56
     iget-object v0, p0, Landroidx/viewpager2/widget/FakeDrag;->mScrollEventAdapter:Landroidx/viewpager2/widget/ScrollEventAdapter;
@@ -192,8 +190,6 @@
 
 .method endFakeDrag()Z
     .locals 3
-    .annotation build Landroidx/annotation/UiThread;
-    .end annotation
 
     .line 102
     iget-object v0, p0, Landroidx/viewpager2/widget/FakeDrag;->mScrollEventAdapter:Landroidx/viewpager2/widget/ScrollEventAdapter;
@@ -217,14 +213,14 @@
     .line 111
     iget-object v0, p0, Landroidx/viewpager2/widget/FakeDrag;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    const/16 v1, 0x3e8
-
     .line 112
-    iget v2, p0, Landroidx/viewpager2/widget/FakeDrag;->mMaximumVelocity:I
+    iget v1, p0, Landroidx/viewpager2/widget/FakeDrag;->mMaximumVelocity:I
 
-    int-to-float v2, v2
+    int-to-float v1, v1
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
+    const/16 v2, 0x3e8
+
+    invoke-virtual {v0, v2, v1}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
     .line 113
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->getXVelocity()F
@@ -262,8 +258,6 @@
 
 .method fakeDragBy(F)Z
     .locals 9
-    .annotation build Landroidx/annotation/UiThread;
-    .end annotation
 
     .line 74
     iget-object v0, p0, Landroidx/viewpager2/widget/FakeDrag;->mScrollEventAdapter:Landroidx/viewpager2/widget/ScrollEventAdapter;
@@ -287,15 +281,13 @@
     iput v0, p0, Landroidx/viewpager2/widget/FakeDrag;->mRequestedDragDistance:F
 
     .line 82
-    iget p1, p0, Landroidx/viewpager2/widget/FakeDrag;->mRequestedDragDistance:F
+    iget p1, p0, Landroidx/viewpager2/widget/FakeDrag;->mActualDraggedDistance:I
 
-    iget v0, p0, Landroidx/viewpager2/widget/FakeDrag;->mActualDraggedDistance:I
+    int-to-float p1, p1
 
-    int-to-float v0, v0
+    sub-float/2addr v0, p1
 
-    sub-float/2addr p1, v0
-
-    invoke-static {p1}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result p1
 
@@ -342,10 +334,13 @@
     :goto_1
     if-eqz v0, :cond_3
 
-    const/4 p1, 0x0
+    goto :goto_2
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, p1
+
+    :goto_2
+    const/4 p1, 0x0
 
     if-eqz v0, :cond_4
 
@@ -354,29 +349,29 @@
 
     move v6, v5
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_4
     const/4 v6, 0x0
 
-    :goto_2
+    :goto_3
     if-eqz v0, :cond_5
 
     const/4 v7, 0x0
 
-    goto :goto_3
+    goto :goto_4
 
     .line 93
     :cond_5
-    iget v0, p0, Landroidx/viewpager2/widget/FakeDrag;->mRequestedDragDistance:F
+    iget p1, p0, Landroidx/viewpager2/widget/FakeDrag;->mRequestedDragDistance:F
 
-    move v7, v0
+    move v7, p1
 
     .line 95
-    :goto_3
-    iget-object v0, p0, Landroidx/viewpager2/widget/FakeDrag;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
+    :goto_4
+    iget-object p1, p0, Landroidx/viewpager2/widget/FakeDrag;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
-    invoke-virtual {v0, v2, p1}, Landroidx/recyclerview/widget/RecyclerView;->scrollBy(II)V
+    invoke-virtual {p1, v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->scrollBy(II)V
 
     const/4 v5, 0x2
 

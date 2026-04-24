@@ -101,11 +101,9 @@
     iput p1, p0, Landroidx/transition/ChangeBounds$ViewBounds;->mBottomRightCalls:I
 
     .line 488
-    iget p1, p0, Landroidx/transition/ChangeBounds$ViewBounds;->mTopLeftCalls:I
+    iget v0, p0, Landroidx/transition/ChangeBounds$ViewBounds;->mTopLeftCalls:I
 
-    iget v0, p0, Landroidx/transition/ChangeBounds$ViewBounds;->mBottomRightCalls:I
-
-    if-ne p1, v0, :cond_0
+    if-ne v0, p1, :cond_0
 
     .line 489
     invoke-direct {p0}, Landroidx/transition/ChangeBounds$ViewBounds;->setLeftTopRightBottom()V
@@ -143,8 +141,6 @@
     iput p1, p0, Landroidx/transition/ChangeBounds$ViewBounds;->mTopLeftCalls:I
 
     .line 479
-    iget p1, p0, Landroidx/transition/ChangeBounds$ViewBounds;->mTopLeftCalls:I
-
     iget v0, p0, Landroidx/transition/ChangeBounds$ViewBounds;->mBottomRightCalls:I
 
     if-ne p1, v0, :cond_0

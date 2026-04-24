@@ -131,56 +131,55 @@
 
 # virtual methods
 .method public calculateDtToFit(IIIII)I
-    .locals 0
+    .locals 1
 
-    packed-switch p5, :pswitch_data_0
+    const/4 v0, -0x1
+
+    if-eq p5, v0, :cond_4
+
+    if-eqz p5, :cond_1
+
+    const/4 p1, 0x1
+
+    if-ne p5, p1, :cond_0
+
+    sub-int/2addr p4, p2
+
+    return p4
 
     .line 296
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "snap preference should be one of the constants defined in SmoothScroller, starting with SNAP_"
+    const-string/jumbo p2, "snap preference should be one of the constants defined in SmoothScroller, starting with SNAP_"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
-    :pswitch_0
-    sub-int/2addr p4, p2
-
-    return p4
-
-    :pswitch_1
+    :cond_1
     sub-int/2addr p3, p1
 
-    if-lez p3, :cond_0
+    if-lez p3, :cond_2
 
     return p3
 
-    :cond_0
+    :cond_2
     sub-int/2addr p4, p2
 
-    if-gez p4, :cond_1
+    if-gez p4, :cond_3
 
     return p4
 
-    :cond_1
+    :cond_3
     const/4 p1, 0x0
 
     return p1
 
-    :pswitch_2
+    :cond_4
     sub-int/2addr p3, p1
 
     return p3
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch -0x1
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public calculateDxToMakeVisible(Landroid/view/View;I)I
@@ -529,11 +528,9 @@
     iput p1, p0, Landroidx/recyclerview/widget/LinearSmoothScroller;->mInterimTargetDy:I
 
     .line 140
-    iget p1, p0, Landroidx/recyclerview/widget/LinearSmoothScroller;->mInterimTargetDx:I
+    iget p2, p0, Landroidx/recyclerview/widget/LinearSmoothScroller;->mInterimTargetDx:I
 
-    if-nez p1, :cond_1
-
-    iget p1, p0, Landroidx/recyclerview/widget/LinearSmoothScroller;->mInterimTargetDy:I
+    if-nez p2, :cond_1
 
     if-nez p1, :cond_1
 

@@ -51,12 +51,12 @@
 .method matches(Ljava/lang/String;)Z
     .locals 2
 
-    const/4 v0, 0x0
+    const/4 v0, 0x2
 
-    const/4 v1, 0x2
+    const/4 v1, 0x0
 
     .line 51
-    invoke-virtual {p1, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p1
 
@@ -65,26 +65,26 @@
     move-result p1
 
     .line 52
-    iget v1, p0, Landroidx/core/text/util/FindAddress$ZipRange;->mLow:I
+    iget v0, p0, Landroidx/core/text/util/FindAddress$ZipRange;->mLow:I
 
-    if-gt v1, p1, :cond_0
+    if-gt v0, p1, :cond_0
 
-    iget v1, p0, Landroidx/core/text/util/FindAddress$ZipRange;->mHigh:I
+    iget v0, p0, Landroidx/core/text/util/FindAddress$ZipRange;->mHigh:I
 
-    if-le p1, v1, :cond_1
+    if-le p1, v0, :cond_1
 
     :cond_0
-    iget v1, p0, Landroidx/core/text/util/FindAddress$ZipRange;->mException1:I
+    iget v0, p0, Landroidx/core/text/util/FindAddress$ZipRange;->mException1:I
 
-    if-eq p1, v1, :cond_1
+    if-eq p1, v0, :cond_1
 
-    iget v1, p0, Landroidx/core/text/util/FindAddress$ZipRange;->mException2:I
+    iget v0, p0, Landroidx/core/text/util/FindAddress$ZipRange;->mException2:I
 
-    if-ne p1, v1, :cond_2
+    if-ne p1, v0, :cond_2
 
     :cond_1
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     :cond_2
-    return v0
+    return v1
 .end method

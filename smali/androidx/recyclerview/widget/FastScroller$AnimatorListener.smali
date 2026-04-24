@@ -93,6 +93,8 @@
     iput v0, p1, Landroidx/recyclerview/widget/FastScroller;->mAnimationState:I
 
     .line 563
+    iget-object p1, p0, Landroidx/recyclerview/widget/FastScroller$AnimatorListener;->this$0:Landroidx/recyclerview/widget/FastScroller;
+
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/FastScroller;->setState(I)V
 
     goto :goto_0
@@ -106,6 +108,8 @@
     iput v0, p1, Landroidx/recyclerview/widget/FastScroller;->mAnimationState:I
 
     .line 566
+    iget-object p1, p0, Landroidx/recyclerview/widget/FastScroller$AnimatorListener;->this$0:Landroidx/recyclerview/widget/FastScroller;
+
     invoke-virtual {p1}, Landroidx/recyclerview/widget/FastScroller;->requestRedraw()V
 
     :goto_0

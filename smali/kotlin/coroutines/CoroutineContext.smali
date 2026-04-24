@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lkotlin/coroutines/CoroutineContext$Key;,
+        Lkotlin/coroutines/CoroutineContext$DefaultImpls;,
         Lkotlin/coroutines/CoroutineContext$Element;,
-        Lkotlin/coroutines/CoroutineContext$DefaultImpls;
+        Lkotlin/coroutines/CoroutineContext$Key;
     }
 .end annotation
 
@@ -41,22 +41,15 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/SinceKotlin;
-    version = "1.3"
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
 .method public abstract fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .param p2    # Lkotlin/jvm/functions/Function2;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
@@ -71,10 +64,6 @@
 .end method
 
 .method public abstract get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
-    .param p1    # Lkotlin/coroutines/CoroutineContext$Key;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E::",
@@ -84,16 +73,9 @@
             "TE;>;)TE;"
         }
     .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/Nullable;
-    .end annotation
 .end method
 
 .method public abstract minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
-    .param p1    # Lkotlin/coroutines/CoroutineContext$Key;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,16 +84,7 @@
             "Lkotlin/coroutines/CoroutineContext;"
         }
     .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 .end method
 
 .method public abstract plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
-    .param p1    # Lkotlin/coroutines/CoroutineContext;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 .end method

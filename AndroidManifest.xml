@@ -1,60 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" package="cn.com.school.zd5" platformBuildVersionCode="28" platformBuildVersionName="9">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="34" android:compileSdkVersionCodename="14" package="cn.com.school.zd5" platformBuildVersionCode="34" platformBuildVersionName="14">
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera.any"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUTNO_NOTIFICATION"/>
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
     <uses-permission android:name="android.permission.SET_TIME"/>
-    <application android:allowBackup="true" android:anyDensity="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:icon="@mipmap/ic_logo" android:label="@string/app_name" android:largeHeap="true" android:name="com.hlkj.chinatelecom5.base.BaseApplication" android:networkSecurityConfig="@xml/network_security_config" android:roundIcon="@mipmap/logo_yuan" android:supportsRtl="true" android:theme="@style/Theme.ChinaTeleCom5" android:usesCleartextTraffic="true">
-        <activity android:exported="true" android:name="com.hlkj.chinatelecom5.activity.TestActivity"/>
-        <activity android:exported="true" android:name="com.hlkj.chinatelecom5.activity.LostActivity"/>
-        <activity android:exported="true" android:name="com.hlkj.chinatelecom5.activity.ClassPhotoListActivity"/>
-        <activity android:exported="true" android:name="com.hlkj.chinatelecom5.activity.ClassCultureActivity"/>
-        <activity android:exported="true" android:name="com.hlkj.chinatelecom5.activity.ClassPhotoActivity"/>
-        <activity android:exported="true" android:name="com.hlkj.chinatelecom5.activity.MsgBoardActivity"/>
-        <activity android:exported="true" android:name="com.hlkj.chinatelecom5.activity.SchoolNewsActivity"/>
-        <activity android:exported="true" android:name="com.hlkj.chinatelecom5.activity.SchoolNotifyActivity"/>
-        <activity android:exported="true" android:name="com.hlkj.chinatelecom5.activity.StudentInfoActivity"/>
-        <activity android:name="com.hlkj.chinatelecom5.activity.SplashActivity">
+    <queries>
+        <intent>
+            <action android:name="androidx.camera.extensions.action.VENDOR_ACTION"/>
+        </intent>
+    </queries>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <permission android:name="cn.com.school.zd5.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="cn.com.school.zd5.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:dataExtractionRules="@xml/data_extraction_rules" android:extractNativeLibs="true" android:fullBackupContent="@xml/backup_rules" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.hl.classtabletapp.app.App" android:networkSecurityConfig="@xml/network_security_config" android:requestLegacyExternalStorage="true" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/Theme.ClassTabletApp">
+        <activity android:exported="true" android:launchMode="singleTop" android:name="com.hl.classtabletapp.ui.activity.LaunchActivity" android:theme="@style/Theme.ClassTabletApp" android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.HOME"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:exported="true" android:name="com.hlkj.chinatelecom5.activity.HomeActivity"/>
-        <activity android:name="com.hlkj.chinatelecom5.activity.ArticleContentActivity"/>
-        <activity android:name="com.hlkj.chinatelecom5.activity.DeviceVerifyActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity android:name="com.hlkj.chinatelecom5.activity.ConfigActivity"/>
-        <activity android:name="com.hlkj.chinatelecom5.activity.ScreensaverActivity"/>
-        <activity android:name="com.hlkj.chinatelecom5.activity.ProjectErrorActivity"/>
-        <activity android:name="com.hlkj.chinatelecom5.activity.DormScoreActivity"/>
-        <activity android:name="com.hlkj.chinatelecom5.activity.HlFaceVerifyActivity"/>
-        <activity android:name="com.hlkj.chinatelecom5.activity.TeacherAppraiseActivity"/>
-        <service android:name="com.hlkj.chinatelecom5.service.HeartBeatService"/>
-        <service android:name="com.hlkj.chinatelecom5.service.DownLoadService"/>
-        <service android:name="com.hlkj.chinatelecom5.service.UpdataFaceService"/>
-        <receiver android:name="com.hlkj.chinatelecom5.receiver.NetworkChangeReceiver"/>
-        <receiver android:name="com.hlkj.chinatelecom5.receiver.HeartBeatReceiver"/>
-        <receiver android:name="com.hlkj.chinatelecom5.receiver.UpdataFaceReceiver"/>
-        <receiver android:exported="true" android:name="com.hlkj.chinatelecom5.receiver.BootReceiver">
+        <activity android:exported="true" android:name="com.hl.classtabletapp.ui.activity.MainActivity"/>
+        <activity android:exported="true" android:name="com.hl.classtabletapp.ui.activity.Main2Activity"/>
+        <activity android:exported="true" android:name="com.hl.classtabletapp.ui.activity.ErrorActivity"/>
+        <service android:exported="false" android:name="com.blankj.utilcode.util.MessengerUtils$ServerService">
+            <intent-filter>
+                <action android:name="cn.com.school.zd5.messenger"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="design_width_in_dp" android:value="1920"/>
+        <meta-data android:name="design_height_in_dp" android:value="1080"/>
+        <meta-data android:name="ScopedStorage" android:value="true"/>
+        <provider android:authorities="cn.com.school.zd5.KtxInstaller" android:exported="false" android:name="me.hgj.jetpackmvvm.base.Ktx"/>
+        <activity android:name="cat.ereza.customactivityoncrash.activity.DefaultErrorActivity" android:process=":error_activity"/>
+        <provider android:authorities="cn.com.school.zd5.customactivityoncrashinitprovider" android:exported="false" android:initOrder="101" android:name="cat.ereza.customactivityoncrash.provider.CaocInitProvider"/>
+        <uses-library android:name="androidx.camera.extensions.impl" android:required="false"/>
+        <service android:enabled="false" android:exported="false" android:name="androidx.camera.core.impl.MetadataHolderService">
+            <meta-data android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER" android:value="androidx.camera.camera2.Camera2Config$DefaultProvider"/>
+        </service>
+        <provider android:authorities="cn.com.school.zd5.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.work.WorkManagerInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
+        </provider>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_foreground_service_default" android:exported="false" android:name="androidx.work.impl.foreground.SystemForegroundService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="false" android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"/>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
             </intent-filter>
         </receiver>
-        <receiver android:name="com.hlkj.chinatelecom5.receiver.USBReceiver">
+        <receiver android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver">
             <intent-filter>
-                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"/>
-                <action android:name="android.hardware.usb.action.USB_DEVICE_DETACHED"/>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
             </intent-filter>
         </receiver>
-        <meta-data android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule" android:value="GlideModule"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS"/>
+            </intent-filter>
+        </receiver>
+        <uses-library android:name="androidx.window.extensions" android:required="false"/>
+        <uses-library android:name="androidx.window.sidecar" android:required="false"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.blankj.utilcode.util.Utils$TransActivity" android:theme="@style/ActivityTranslucent" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <provider android:authorities="cn.com.school.zd5.utilcode.provider" android:exported="false" android:grantUriPermissions="true" android:multiprocess="true" android:name="com.blankj.utilcode.util.Utils$FileProvider4UtilCode">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/util_code_provider_paths"/>
+        </provider>
+        <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="cn.com.school.zd5.AgentWebFileProvider" android:exported="false" android:grantUriPermissions="true" android:name="com.just.agentweb.AgentWebFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/web_files_public"/>
+        </provider>
+        <provider android:authorities="cn.com.school.zd5.DownloadFileProvider" android:exported="false" android:grantUriPermissions="true" android:name="com.download.library.DownloadFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/download_files_public"/>
+        </provider>
+        <activity android:configChanges="locale|keyboardHidden|orientation|screenSize" android:name="com.tencent.bugly.beta.ui.BetaActivity" android:theme="@android:style/Theme.Translucent"/>
+        <provider android:authorities="cn.com.school.zd5.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="com.tencent.bugly.beta.utils.BuglyFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <service android:exported="false" android:name="com.tencent.bugly.beta.tinker.TinkerResultService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <provider android:authorities="cn.com.school.zd5.autosize-init-provider" android:exported="false" android:multiprocess="true" android:name="me.jessyan.autosize.InitProvider"/>
     </application>
 </manifest>

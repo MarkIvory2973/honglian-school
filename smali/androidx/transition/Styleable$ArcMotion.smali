@@ -16,16 +16,7 @@
 
 # static fields
 .field public static final MAXIMUM_ANGLE:I = 0x2
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field public static final MINIMUM_HORIZONTAL_ANGLE:I = 0x0
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field
 
 .field public static final MINIMUM_VERTICAL_ANGLE:I = 0x1
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field

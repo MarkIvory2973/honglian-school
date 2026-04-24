@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:background="@color/colorWhite" android:paddingBottom="18.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18.0dp" android:layout_marginBottom="18.0dp" android:layout_marginStart="18.0dp" android:layout_marginEnd="18.0dp">
-        <TextView android:textSize="32.0sp" android:textColor="@color/colorWhite" android:gravity="center" android:background="@mipmap/header_bg" android:layout_width="match_parent" android:layout_height="100.0dp" android:text="班级信息" />
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingBottom="18.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18.0dp" android:layout_marginBottom="18.0dp" android:layout_marginStart="18.0dp" android:layout_marginEnd="18.0dp">
+        <TextView android:textSize="32.0sp" android:textColor="@color/white" android:gravity="center" android:background="@mipmap/header_bg" android:layout_width="match_parent" android:layout_height="100.0dp" android:text="班级信息" />
         <RelativeLayout android:paddingLeft="28.0dp" android:paddingRight="53.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dp">
             <TextView android:textSize="24.0sp" android:textColor="@color/colorBlueAF5" android:id="@id/tv_name_tip" android:background="@drawable/shape_circle_grayf7" android:paddingLeft="20.0dp" android:paddingTop="10.0dp" android:paddingRight="20.0dp" android:paddingBottom="10.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="班级名称" />
             <TextView android:textSize="20.0sp" android:textColor="@color/colorBlackD34" android:id="@id/tv_name" android:paddingLeft="42.0dp" android:paddingTop="10.0dp" android:paddingRight="20.0dp" android:paddingBottom="10.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dp" android:text="班级口号" android:layout_toRightOf="@id/tv_name_tip" />
@@ -23,5 +23,4 @@
             <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_label" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="42.0dp" android:layout_toRightOf="@id/tv_label_tip" />
         </RelativeLayout>
     </LinearLayout>
-    <ImageView android:layout_gravity="right|top" android:id="@id/ib_close" android:background="@null" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/ic_blue_circle_close" android:layout_alignParentRight="true" />
 </RelativeLayout>

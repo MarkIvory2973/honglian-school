@@ -1,6 +1,5 @@
 .class public final Landroidx/cardview/R$styleable;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -45,12 +44,11 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 1
 
     const/16 v0, 0xd
 
-    .line 54
     new-array v0, v0, [I
 
     fill-array-data v0, :array_0
@@ -63,24 +61,23 @@
     .array-data 4
         0x101013f
         0x1010140
-        0x7f04009b
-        0x7f04009c
-        0x7f04009d
-        0x7f04009f
-        0x7f0400a0
-        0x7f0400a1
-        0x7f0400f6
-        0x7f0400f7
-        0x7f0400f8
-        0x7f0400f9
-        0x7f0400fa
+        0x7f0300c2
+        0x7f0300c3
+        0x7f0300c4
+        0x7f0300c6
+        0x7f0300c7
+        0x7f0300c8
+        0x7f03016f
+        0x7f030170
+        0x7f030172
+        0x7f030173
+        0x7f030175
     .end array-data
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
-    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

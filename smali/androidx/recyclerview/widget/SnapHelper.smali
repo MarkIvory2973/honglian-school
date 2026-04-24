@@ -96,10 +96,6 @@
 
 .method private snapFromFling(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;II)Z
     .locals 2
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 157
     instance-of v0, p1, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller$ScrollVectorProvider;
@@ -148,10 +144,6 @@
 # virtual methods
 .method public attachToRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 2
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalStateException;
@@ -174,9 +166,6 @@
     .line 99
     :cond_1
     iput-object p1, p0, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
-
-    .line 100
-    iget-object p1, p0, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     if-eqz p1, :cond_2
 
@@ -208,46 +197,31 @@
 .end method
 
 .method public abstract calculateDistanceToFinalSnap(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;Landroid/view/View;)[I
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 .end method
 
 .method public calculateScrollDistance(II)[I
-    .locals 10
-
-    const/4 v0, 0x2
-
-    .line 137
-    new-array v0, v0, [I
+    .locals 9
 
     .line 138
-    iget-object v1, p0, Landroidx/recyclerview/widget/SnapHelper;->mGravityScroller:Landroid/widget/Scroller;
+    iget-object v0, p0, Landroidx/recyclerview/widget/SnapHelper;->mGravityScroller:Landroid/widget/Scroller;
+
+    const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/high16 v5, -0x80000000
 
-    const/high16 v6, -0x80000000
+    const v6, 0x7fffffff
 
-    const v7, 0x7fffffff
+    const/high16 v7, -0x80000000
 
-    const/high16 v8, -0x80000000
+    const v8, 0x7fffffff
 
-    const v9, 0x7fffffff
+    move v3, p1
 
-    move v4, p1
+    move v4, p2
 
-    move v5, p2
-
-    invoke-virtual/range {v1 .. v9}, Landroid/widget/Scroller;->fling(IIIIIIII)V
+    invoke-virtual/range {v0 .. v8}, Landroid/widget/Scroller;->fling(IIIIIIII)V
 
     .line 140
     iget-object p1, p0, Landroidx/recyclerview/widget/SnapHelper;->mGravityScroller:Landroid/widget/Scroller;
@@ -256,28 +230,22 @@
 
     move-result p1
 
-    const/4 p2, 0x0
-
-    aput p1, v0, p2
-
     .line 141
-    iget-object p1, p0, Landroidx/recyclerview/widget/SnapHelper;->mGravityScroller:Landroid/widget/Scroller;
+    iget-object p2, p0, Landroidx/recyclerview/widget/SnapHelper;->mGravityScroller:Landroid/widget/Scroller;
 
-    invoke-virtual {p1}, Landroid/widget/Scroller;->getFinalY()I
+    invoke-virtual {p2}, Landroid/widget/Scroller;->getFinalY()I
 
-    move-result p1
+    move-result p2
 
-    const/4 p2, 0x1
+    filled-new-array {p1, p2}, [I
 
-    aput p1, v0, p2
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method protected createScroller(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;
     .locals 0
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 209
     invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/SnapHelper;->createSnapScroller(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroidx/recyclerview/widget/LinearSmoothScroller;
@@ -289,9 +257,6 @@
 
 .method protected createSnapScroller(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroidx/recyclerview/widget/LinearSmoothScroller;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -320,8 +285,6 @@
 .end method
 
 .method public abstract findSnapView(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroid/view/View;
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 .end method
 
 .method public abstract findTargetSnapPosition(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;II)I
@@ -429,25 +392,23 @@
     const/4 v1, 0x0
 
     .line 194
-    aget v2, v0, v1
+    aget v1, v0, v1
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    if-nez v2, :cond_3
+    if-nez v1, :cond_3
 
-    aget v2, v0, v3
+    aget v3, v0, v2
 
-    if-eqz v2, :cond_4
+    if-eqz v3, :cond_4
 
     .line 195
     :cond_3
-    iget-object v2, p0, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
+    iget-object v3, p0, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
-    aget v1, v0, v1
+    aget v0, v0, v2
 
-    aget v0, v0, v3
-
-    invoke-virtual {v2, v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(II)V
+    invoke-virtual {v3, v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(II)V
 
     :cond_4
     return-void

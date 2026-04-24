@@ -19,8 +19,22 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25
+    .line 40
     invoke-direct {p0}, Landroidx/lifecycle/LiveData;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/Object;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
+
+    .line 33
+    invoke-direct {p0, p1}, Landroidx/lifecycle/LiveData;-><init>(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -35,7 +49,7 @@
         }
     .end annotation
 
-    .line 28
+    .line 45
     invoke-super {p0, p1}, Landroidx/lifecycle/LiveData;->postValue(Ljava/lang/Object;)V
 
     return-void
@@ -49,7 +63,7 @@
         }
     .end annotation
 
-    .line 33
+    .line 50
     invoke-super {p0, p1}, Landroidx/lifecycle/LiveData;->setValue(Ljava/lang/Object;)V
 
     return-void

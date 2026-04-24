@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x1e
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/core/view/WindowInsetsCompat;
 .end annotation
@@ -22,146 +18,133 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 2052
+    .line 2062
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method static toPlatformType(I)I
-    .locals 3
+    .locals 4
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
+
+    const/4 v2, 0x1
 
     :goto_0
-    const/16 v2, 0x100
+    const/16 v3, 0x100
 
-    if-gt v0, v2, :cond_7
+    if-gt v2, v3, :cond_9
 
-    and-int v2, p0, v0
+    and-int v3, p0, v2
 
-    if-eqz v2, :cond_6
+    if-eqz v3, :cond_8
 
-    const/4 v2, 0x4
+    if-eq v2, v1, :cond_7
 
-    if-eq v0, v2, :cond_5
+    const/4 v3, 0x2
 
-    const/16 v2, 0x8
+    if-eq v2, v3, :cond_6
 
-    if-eq v0, v2, :cond_4
+    const/4 v3, 0x4
 
-    const/16 v2, 0x10
+    if-eq v2, v3, :cond_5
 
-    if-eq v0, v2, :cond_3
+    const/16 v3, 0x8
 
-    const/16 v2, 0x20
+    if-eq v2, v3, :cond_4
 
-    if-eq v0, v2, :cond_2
+    const/16 v3, 0x10
 
-    const/16 v2, 0x40
+    if-eq v2, v3, :cond_3
 
-    if-eq v0, v2, :cond_1
+    const/16 v3, 0x20
 
-    const/16 v2, 0x80
+    if-eq v2, v3, :cond_2
 
-    if-eq v0, v2, :cond_0
+    const/16 v3, 0x40
 
-    packed-switch v0, :pswitch_data_0
+    if-eq v2, v3, :cond_1
 
-    goto :goto_1
+    const/16 v3, 0x80
 
-    .line 2068
-    :pswitch_0
-    invoke-static {}, Landroid/view/WindowInsets$Type;->navigationBars()I
+    if-eq v2, v3, :cond_0
 
-    move-result v2
+    goto :goto_2
 
-    or-int/2addr v1, v2
-
-    goto :goto_1
-
-    .line 2065
-    :pswitch_1
-    invoke-static {}, Landroid/view/WindowInsets$Type;->statusBars()I
-
-    move-result v2
-
-    or-int/2addr v1, v2
-
-    goto :goto_1
-
-    .line 2086
+    .line 2096
     :cond_0
-    invoke-static {}, Landroid/view/WindowInsets$Type;->displayCutout()I
+    invoke-static {}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$7()I
 
-    move-result v2
-
-    or-int/2addr v1, v2
+    move-result v3
 
     goto :goto_1
 
-    .line 2083
+    .line 2093
     :cond_1
-    invoke-static {}, Landroid/view/WindowInsets$Type;->tappableElement()I
+    invoke-static {}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$6()I
 
-    move-result v2
-
-    or-int/2addr v1, v2
+    move-result v3
 
     goto :goto_1
 
-    .line 2080
+    .line 2090
     :cond_2
-    invoke-static {}, Landroid/view/WindowInsets$Type;->mandatorySystemGestures()I
+    invoke-static {}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$5()I
 
-    move-result v2
-
-    or-int/2addr v1, v2
+    move-result v3
 
     goto :goto_1
 
-    .line 2077
+    .line 2087
     :cond_3
-    invoke-static {}, Landroid/view/WindowInsets$Type;->systemGestures()I
+    invoke-static {}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$4()I
 
-    move-result v2
-
-    or-int/2addr v1, v2
+    move-result v3
 
     goto :goto_1
 
-    .line 2074
+    .line 2084
     :cond_4
-    invoke-static {}, Landroid/view/WindowInsets$Type;->ime()I
+    invoke-static {}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$3()I
 
-    move-result v2
-
-    or-int/2addr v1, v2
+    move-result v3
 
     goto :goto_1
 
-    .line 2071
+    .line 2081
     :cond_5
-    invoke-static {}, Landroid/view/WindowInsets$Type;->captionBar()I
+    invoke-static {}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$2()I
 
-    move-result v2
+    move-result v3
 
-    or-int/2addr v1, v2
+    goto :goto_1
 
+    .line 2078
     :cond_6
+    invoke-static {}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m$1()I
+
+    move-result v3
+
+    goto :goto_1
+
+    .line 2075
+    :cond_7
+    invoke-static {}, Landroidx/core/util/HalfKt$$ExternalSyntheticApiModelOutline0;->m()I
+
+    move-result v3
+
     :goto_1
-    shl-int/lit8 v0, v0, 0x1
+    or-int/2addr v0, v3
+
+    :cond_8
+    :goto_2
+    shl-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :cond_7
-    return v1
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :cond_9
+    return v0
 .end method

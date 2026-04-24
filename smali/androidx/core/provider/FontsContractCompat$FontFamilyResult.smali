@@ -31,16 +31,6 @@
 # direct methods
 .method public constructor <init>(I[Landroidx/core/provider/FontsContractCompat$FontInfo;)V
     .locals 0
-    .param p2    # [Landroidx/core/provider/FontsContractCompat$FontInfo;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -58,10 +48,6 @@
 
 .method static create(I[Landroidx/core/provider/FontsContractCompat$FontInfo;)Landroidx/core/provider/FontsContractCompat$FontFamilyResult;
     .locals 1
-    .param p1    # [Landroidx/core/provider/FontsContractCompat$FontInfo;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 407
     new-instance v0, Landroidx/core/provider/FontsContractCompat$FontFamilyResult;

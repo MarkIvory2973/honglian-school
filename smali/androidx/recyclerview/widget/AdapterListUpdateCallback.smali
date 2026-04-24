@@ -8,18 +8,11 @@
 
 # instance fields
 .field private final mAdapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 
 # direct methods
 .method public constructor <init>(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
     .locals 0
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$Adapter;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

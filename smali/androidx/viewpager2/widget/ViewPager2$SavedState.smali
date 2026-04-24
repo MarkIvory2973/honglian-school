@@ -64,9 +64,6 @@
 
 .method constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
     .locals 0
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x18
-    .end annotation
 
     .line 385
     invoke-direct {p0, p1, p2}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V

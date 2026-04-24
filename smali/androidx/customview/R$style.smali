@@ -1,6 +1,5 @@
 .class public final Landroidx/customview/R$style;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -15,26 +14,25 @@
 
 
 # static fields
-.field public static final TextAppearance_Compat_Notification:I = 0x7f110166
+.field public static final TextAppearance_Compat_Notification:I = 0x7f12020d
 
-.field public static final TextAppearance_Compat_Notification_Info:I = 0x7f110167
+.field public static final TextAppearance_Compat_Notification_Info:I = 0x7f12020e
 
-.field public static final TextAppearance_Compat_Notification_Line2:I = 0x7f110168
+.field public static final TextAppearance_Compat_Notification_Line2:I = 0x7f12020f
 
-.field public static final TextAppearance_Compat_Notification_Time:I = 0x7f110169
+.field public static final TextAppearance_Compat_Notification_Time:I = 0x7f120210
 
-.field public static final TextAppearance_Compat_Notification_Title:I = 0x7f11016a
+.field public static final TextAppearance_Compat_Notification_Title:I = 0x7f120211
 
-.field public static final Widget_Compat_NotificationActionContainer:I = 0x7f110250
+.field public static final Widget_Compat_NotificationActionContainer:I = 0x7f120377
 
-.field public static final Widget_Compat_NotificationActionText:I = 0x7f110251
+.field public static final Widget_Compat_NotificationActionText:I = 0x7f120378
 
 
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
-    .line 131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

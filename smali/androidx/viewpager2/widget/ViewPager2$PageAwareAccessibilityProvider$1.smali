@@ -37,14 +37,6 @@
 # virtual methods
 .method public perform(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityViewCommand$CommandArguments;)Z
     .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/core/view/accessibility/AccessibilityViewCommand$CommandArguments;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 1334
     check-cast p1, Landroidx/viewpager2/widget/ViewPager2;

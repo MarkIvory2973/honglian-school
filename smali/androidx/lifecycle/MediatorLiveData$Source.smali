@@ -63,18 +63,18 @@
         }
     .end annotation
 
-    .line 135
+    .line 154
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 133
+    .line 152
     iput v0, p0, Landroidx/lifecycle/MediatorLiveData$Source;->mVersion:I
 
-    .line 136
+    .line 155
     iput-object p1, p0, Landroidx/lifecycle/MediatorLiveData$Source;->mLiveData:Landroidx/lifecycle/LiveData;
 
-    .line 137
+    .line 156
     iput-object p2, p0, Landroidx/lifecycle/MediatorLiveData$Source;->mObserver:Landroidx/lifecycle/Observer;
 
     return-void
@@ -84,17 +84,13 @@
 # virtual methods
 .method public onChanged(Ljava/lang/Object;)V
     .locals 2
-    .param p1    # Ljava/lang/Object;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TV;)V"
         }
     .end annotation
 
-    .line 150
+    .line 169
     iget v0, p0, Landroidx/lifecycle/MediatorLiveData$Source;->mVersion:I
 
     iget-object v1, p0, Landroidx/lifecycle/MediatorLiveData$Source;->mLiveData:Landroidx/lifecycle/LiveData;
@@ -105,7 +101,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 151
+    .line 170
     iget-object v0, p0, Landroidx/lifecycle/MediatorLiveData$Source;->mLiveData:Landroidx/lifecycle/LiveData;
 
     invoke-virtual {v0}, Landroidx/lifecycle/LiveData;->getVersion()I
@@ -114,7 +110,7 @@
 
     iput v0, p0, Landroidx/lifecycle/MediatorLiveData$Source;->mVersion:I
 
-    .line 152
+    .line 171
     iget-object v0, p0, Landroidx/lifecycle/MediatorLiveData$Source;->mObserver:Landroidx/lifecycle/Observer;
 
     invoke-interface {v0, p1}, Landroidx/lifecycle/Observer;->onChanged(Ljava/lang/Object;)V
@@ -126,7 +122,7 @@
 .method plug()V
     .locals 1
 
-    .line 141
+    .line 160
     iget-object v0, p0, Landroidx/lifecycle/MediatorLiveData$Source;->mLiveData:Landroidx/lifecycle/LiveData;
 
     invoke-virtual {v0, p0}, Landroidx/lifecycle/LiveData;->observeForever(Landroidx/lifecycle/Observer;)V
@@ -137,7 +133,7 @@
 .method unplug()V
     .locals 1
 
-    .line 145
+    .line 164
     iget-object v0, p0, Landroidx/lifecycle/MediatorLiveData$Source;->mLiveData:Landroidx/lifecycle/LiveData;
 
     invoke-virtual {v0, p0}, Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V

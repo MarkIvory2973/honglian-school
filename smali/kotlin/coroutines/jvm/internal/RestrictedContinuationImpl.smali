@@ -24,23 +24,16 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/SinceKotlin;
-    version = "1.3"
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .locals 1
-    .param p1    # Lkotlin/coroutines/Continuation;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,8 +80,6 @@
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    check-cast p1, Ljava/lang/Throwable;
-
     throw p1
 
     :cond_2
@@ -100,8 +91,6 @@
 # virtual methods
 .method public getContext()Lkotlin/coroutines/CoroutineContext;
     .locals 1
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 93
     sget-object v0, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;

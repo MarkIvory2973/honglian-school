@@ -15,18 +15,11 @@
 .field private mSkipNextApply:Z
 
 .field private final mView:Landroid/widget/CompoundButton;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 
 # direct methods
 .method constructor <init>(Landroid/widget/CompoundButton;)V
     .locals 1
-    .param p1    # Landroid/widget/CompoundButton;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -136,32 +129,8 @@
 .end method
 
 .method getCompoundPaddingLeft(I)I
-    .locals 2
+    .locals 0
 
-    .line 148
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x11
-
-    if-ge v0, v1, :cond_0
-
-    .line 151
-    iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
-
-    invoke-static {v0}, Landroidx/core/widget/CompoundButtonCompat;->getButtonDrawable(Landroid/widget/CompoundButton;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 153
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v0
-
-    add-int/2addr p1, v0
-
-    :cond_0
     return p1
 .end method
 
@@ -185,10 +154,6 @@
 
 .method loadFromAttributes(Landroid/util/AttributeSet;I)V
     .locals 10
-    .param p1    # Landroid/util/AttributeSet;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 51
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
@@ -254,10 +219,8 @@
     :try_start_1
     iget-object p2, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
 
-    iget-object v1, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
-
     .line 63
-    invoke-virtual {v1}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
+    invoke-virtual {p2}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -276,6 +239,8 @@
     goto :goto_0
 
     :catch_0
+    nop
+
     :cond_0
     const/4 p1, 0x0
 
@@ -304,10 +269,8 @@
     .line 75
     iget-object p2, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
 
-    iget-object v1, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
-
     .line 76
-    invoke-virtual {v1}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
+    invoke-virtual {p2}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -436,10 +399,6 @@
 
 .method setSupportButtonTintMode(Landroid/graphics/PorterDuff$Mode;)V
     .locals 0
-    .param p1    # Landroid/graphics/PorterDuff$Mode;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 106
     iput-object p1, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mButtonTintMode:Landroid/graphics/PorterDuff$Mode;

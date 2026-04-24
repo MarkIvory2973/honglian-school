@@ -14,17 +14,7 @@
 .end method
 
 .method public static matches(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
-    .locals 5
-    .param p0    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p1    # [Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -41,33 +31,31 @@
     move-result-object p0
 
     .line 98
-    array-length v1, p1
+    array-length v2, p1
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_0
-    if-ge v2, v1, :cond_2
+    if-ge v3, v2, :cond_2
 
-    aget-object v3, p1, v2
-
-    const-string v4, "/"
+    aget-object v4, p1, v3
 
     .line 99
-    invoke-virtual {v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v4, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 100
-    invoke-static {p0, v4}, Landroidx/core/content/MimeTypeFilter;->mimeTypeAgainstFilter([Ljava/lang/String;[Ljava/lang/String;)Z
+    invoke-static {p0, v5}, Landroidx/core/content/MimeTypeFilter;->mimeTypeAgainstFilter([Ljava/lang/String;[Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
-    return-object v3
+    return-object v4
 
     :cond_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
@@ -76,17 +64,7 @@
 .end method
 
 .method public static matches([Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 5
-    .param p0    # [Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -103,33 +81,31 @@
     move-result-object p1
 
     .line 120
-    array-length v1, p0
+    array-length v2, p0
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_0
-    if-ge v2, v1, :cond_2
+    if-ge v3, v2, :cond_2
 
-    aget-object v3, p0, v2
-
-    const-string v4, "/"
+    aget-object v4, p0, v3
 
     .line 121
-    invoke-virtual {v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v4, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 122
-    invoke-static {v4, p1}, Landroidx/core/content/MimeTypeFilter;->mimeTypeAgainstFilter([Ljava/lang/String;[Ljava/lang/String;)Z
+    invoke-static {v5, p1}, Landroidx/core/content/MimeTypeFilter;->mimeTypeAgainstFilter([Ljava/lang/String;[Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
-    return-object v3
+    return-object v4
 
     :cond_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
@@ -139,14 +115,6 @@
 
 .method public static matches(Ljava/lang/String;Ljava/lang/String;)Z
     .locals 1
-    .param p0    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     if-nez p0, :cond_0
 
@@ -162,8 +130,6 @@
 
     move-result-object p0
 
-    const-string v0, "/"
-
     .line 81
     invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
@@ -178,23 +144,12 @@
 .end method
 
 .method public static matchesMany([Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
-    .locals 5
-    .param p0    # [Ljava/lang/String;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
+    .locals 6
 
     const/4 v0, 0x0
 
     if-nez p0, :cond_0
 
-    .line 138
     new-array p0, v0, [Ljava/lang/String;
 
     return-object p0
@@ -213,29 +168,27 @@
     move-result-object p1
 
     .line 143
-    array-length v2, p0
+    array-length v3, p0
 
     :goto_0
-    if-ge v0, v2, :cond_2
+    if-ge v0, v3, :cond_2
 
-    aget-object v3, p0, v0
-
-    const-string v4, "/"
+    aget-object v4, p0, v0
 
     .line 144
-    invoke-virtual {v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v4, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 145
-    invoke-static {v4, p1}, Landroidx/core/content/MimeTypeFilter;->mimeTypeAgainstFilter([Ljava/lang/String;[Ljava/lang/String;)Z
+    invoke-static {v5, p1}, Landroidx/core/content/MimeTypeFilter;->mimeTypeAgainstFilter([Ljava/lang/String;[Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
     .line 146
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_1
     add-int/lit8 v0, v0, 0x1
@@ -260,15 +213,7 @@
 .end method
 
 .method private static mimeTypeAgainstFilter([Ljava/lang/String;[Ljava/lang/String;)Z
-    .locals 4
-    .param p0    # [Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # [Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
+    .locals 5
 
     .line 48
     array-length v0, p1
@@ -305,13 +250,13 @@
 
     return v0
 
-    :cond_0
-    const-string v1, "*"
-
     .line 59
-    aget-object v3, p1, v0
+    :cond_0
+    aget-object v1, p1, v0
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v3, "*"
+
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -319,10 +264,10 @@
 
     aget-object v1, p1, v0
 
-    aget-object v3, p0, v0
+    aget-object v4, p0, v0
 
     .line 60
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -330,13 +275,11 @@
 
     return v0
 
-    :cond_1
-    const-string v1, "*"
-
     .line 63
-    aget-object v3, p1, v2
+    :cond_1
+    aget-object v1, p1, v2
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 

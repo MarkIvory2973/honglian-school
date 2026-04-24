@@ -25,7 +25,7 @@
 .method constructor <init>(Landroidx/activity/ComponentActivity;)V
     .locals 0
 
-    .line 94
+    .line 273
     iput-object p1, p0, Landroidx/activity/ComponentActivity$2;->this$0:Landroidx/activity/ComponentActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,21 +37,13 @@
 # virtual methods
 .method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
     .locals 0
-    .param p1    # Landroidx/lifecycle/LifecycleOwner;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/lifecycle/Lifecycle$Event;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 98
+    .line 277
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_STOP:Landroidx/lifecycle/Lifecycle$Event;
 
     if-ne p2, p1, :cond_1
 
-    .line 99
+    .line 278
     iget-object p1, p0, Landroidx/activity/ComponentActivity$2;->this$0:Landroidx/activity/ComponentActivity;
 
     invoke-virtual {p1}, Landroidx/activity/ComponentActivity;->getWindow()Landroid/view/Window;
@@ -60,7 +52,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 100
+    .line 279
     invoke-virtual {p1}, Landroid/view/Window;->peekDecorView()Landroid/view/View;
 
     move-result-object p1
@@ -73,8 +65,8 @@
     :goto_0
     if-eqz p1, :cond_1
 
-    .line 102
-    invoke-virtual {p1}, Landroid/view/View;->cancelPendingInputEvents()V
+    .line 281
+    invoke-static {p1}, Landroidx/activity/ComponentActivity$Api19Impl;->cancelPendingInputEvents(Landroid/view/View;)V
 
     :cond_1
     return-void

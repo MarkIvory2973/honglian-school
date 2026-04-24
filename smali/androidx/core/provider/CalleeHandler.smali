@@ -15,8 +15,6 @@
 
 .method static create()Landroid/os/Handler;
     .locals 2
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 36
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;

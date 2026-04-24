@@ -45,10 +45,6 @@
 # virtual methods
 .method public onTransitionCancel(Landroidx/transition/Transition;)V
     .locals 1
-    .param p1    # Landroidx/transition/Transition;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 399
     iget-object p1, p0, Landroidx/transition/ChangeBounds$9;->val$parent:Landroid/view/ViewGroup;
@@ -67,10 +63,6 @@
 
 .method public onTransitionEnd(Landroidx/transition/Transition;)V
     .locals 2
-    .param p1    # Landroidx/transition/Transition;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 405
     iget-boolean v0, p0, Landroidx/transition/ChangeBounds$9;->mCanceled:Z
@@ -93,10 +85,6 @@
 
 .method public onTransitionPause(Landroidx/transition/Transition;)V
     .locals 1
-    .param p1    # Landroidx/transition/Transition;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 413
     iget-object p1, p0, Landroidx/transition/ChangeBounds$9;->val$parent:Landroid/view/ViewGroup;
@@ -110,10 +98,6 @@
 
 .method public onTransitionResume(Landroidx/transition/Transition;)V
     .locals 1
-    .param p1    # Landroidx/transition/Transition;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 418
     iget-object p1, p0, Landroidx/transition/ChangeBounds$9;->val$parent:Landroid/view/ViewGroup;

@@ -1,6 +1,5 @@
 .class public final Landroidx/coordinatorlayout/R$attr;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -15,54 +14,53 @@
 
 
 # static fields
-.field public static final alpha:I = 0x7f040028
+.field public static final alpha:I = 0x7f030037
 
-.field public static final coordinatorLayoutStyle:I = 0x7f0400fe
+.field public static final coordinatorLayoutStyle:I = 0x7f03017a
 
-.field public static final font:I = 0x7f040181
+.field public static final font:I = 0x7f030265
 
-.field public static final fontProviderAuthority:I = 0x7f040183
+.field public static final fontProviderAuthority:I = 0x7f030267
 
-.field public static final fontProviderCerts:I = 0x7f040184
+.field public static final fontProviderCerts:I = 0x7f030268
 
-.field public static final fontProviderFetchStrategy:I = 0x7f040185
+.field public static final fontProviderFetchStrategy:I = 0x7f030269
 
-.field public static final fontProviderFetchTimeout:I = 0x7f040186
+.field public static final fontProviderFetchTimeout:I = 0x7f03026a
 
-.field public static final fontProviderPackage:I = 0x7f040187
+.field public static final fontProviderPackage:I = 0x7f03026b
 
-.field public static final fontProviderQuery:I = 0x7f040188
+.field public static final fontProviderQuery:I = 0x7f03026c
 
-.field public static final fontStyle:I = 0x7f04018a
+.field public static final fontStyle:I = 0x7f03026e
 
-.field public static final fontVariationSettings:I = 0x7f04018b
+.field public static final fontVariationSettings:I = 0x7f03026f
 
-.field public static final fontWeight:I = 0x7f04018c
+.field public static final fontWeight:I = 0x7f030270
 
-.field public static final keylines:I = 0x7f0401d2
+.field public static final keylines:I = 0x7f0302d7
 
-.field public static final layout_anchor:I = 0x7f0401db
+.field public static final layout_anchor:I = 0x7f0302e5
 
-.field public static final layout_anchorGravity:I = 0x7f0401dc
+.field public static final layout_anchorGravity:I = 0x7f0302e6
 
-.field public static final layout_behavior:I = 0x7f0401dd
+.field public static final layout_behavior:I = 0x7f0302e7
 
-.field public static final layout_dodgeInsetEdges:I = 0x7f04020a
+.field public static final layout_dodgeInsetEdges:I = 0x7f030318
 
-.field public static final layout_insetEdge:I = 0x7f040213
+.field public static final layout_insetEdge:I = 0x7f030325
 
-.field public static final layout_keyline:I = 0x7f040214
+.field public static final layout_keyline:I = 0x7f030326
 
-.field public static final statusBarBackground:I = 0x7f0402da
+.field public static final statusBarBackground:I = 0x7f0304ee
 
-.field public static final ttcIndex:I = 0x7f04035e
+.field public static final ttcIndex:I = 0x7f0305be
 
 
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
-    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

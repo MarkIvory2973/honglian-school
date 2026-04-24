@@ -3,8 +3,17 @@
 .source "EdgeEffectCompat.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/core/widget/EdgeEffectCompat$Api31Impl;,
+        Landroidx/core/widget/EdgeEffectCompat$Api21Impl;
+    }
+.end annotation
+
+
 # instance fields
-.field private mEdgeEffect:Landroid/widget/EdgeEffect;
+.field private final mEdgeEffect:Landroid/widget/EdgeEffect;
 
 
 # direct methods
@@ -13,10 +22,10 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 47
+    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
+    .line 57
     new-instance v0, Landroid/widget/EdgeEffect;
 
     invoke-direct {v0, p1}, Landroid/widget/EdgeEffect;-><init>(Landroid/content/Context;)V
@@ -26,31 +35,86 @@
     return-void
 .end method
 
-.method public static onPull(Landroid/widget/EdgeEffect;FF)V
+.method public static create(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/widget/EdgeEffect;
     .locals 2
-    .param p0    # Landroid/widget/EdgeEffect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    .line 152
+    .line 69
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v1, 0x15
+    const/16 v1, 0x1f
 
     if-lt v0, v1, :cond_0
 
-    .line 153
-    invoke-virtual {p0, p1, p2}, Landroid/widget/EdgeEffect;->onPull(FF)V
+    .line 70
+    invoke-static {p0, p1}, Landroidx/core/widget/EdgeEffectCompat$Api31Impl;->create(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/widget/EdgeEffect;
 
-    goto :goto_0
+    move-result-object p0
 
-    .line 155
+    return-object p0
+
+    .line 73
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->onPull(F)V
+    new-instance p1, Landroid/widget/EdgeEffect;
 
-    :goto_0
+    invoke-direct {p1, p0}, Landroid/widget/EdgeEffect;-><init>(Landroid/content/Context;)V
+
+    return-object p1
+.end method
+
+.method public static getDistance(Landroid/widget/EdgeEffect;)F
+    .locals 2
+
+    .line 90
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1f
+
+    if-lt v0, v1, :cond_0
+
+    .line 91
+    invoke-static {p0}, Landroidx/core/widget/EdgeEffectCompat$Api31Impl;->getDistance(Landroid/widget/EdgeEffect;)F
+
+    move-result p0
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public static onPull(Landroid/widget/EdgeEffect;FF)V
+    .locals 0
+
+    .line 198
+    invoke-static {p0, p1, p2}, Landroidx/core/widget/EdgeEffectCompat$Api21Impl;->onPull(Landroid/widget/EdgeEffect;FF)V
+
     return-void
+.end method
+
+.method public static onPullDistance(Landroid/widget/EdgeEffect;FF)F
+    .locals 2
+
+    .line 245
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1f
+
+    if-lt v0, v1, :cond_0
+
+    .line 246
+    invoke-static {p0, p1, p2}, Landroidx/core/widget/EdgeEffectCompat$Api31Impl;->onPullDistance(Landroid/widget/EdgeEffect;FF)F
+
+    move-result p0
+
+    return p0
+
+    .line 248
+    :cond_0
+    invoke-static {p0, p1, p2}, Landroidx/core/widget/EdgeEffectCompat;->onPull(Landroid/widget/EdgeEffect;FF)V
+
+    return p1
 .end method
 
 
@@ -60,7 +124,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 208
+    .line 301
     iget-object v0, p0, Landroidx/core/widget/EdgeEffectCompat;->mEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-virtual {v0, p1}, Landroid/widget/EdgeEffect;->draw(Landroid/graphics/Canvas;)Z
@@ -75,7 +139,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 86
+    .line 131
     iget-object v0, p0, Landroidx/core/widget/EdgeEffectCompat;->mEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-virtual {v0}, Landroid/widget/EdgeEffect;->finish()V
@@ -88,7 +152,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 75
+    .line 120
     iget-object v0, p0, Landroidx/core/widget/EdgeEffectCompat;->mEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-virtual {v0}, Landroid/widget/EdgeEffect;->isFinished()Z
@@ -103,7 +167,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 190
+    .line 283
     iget-object v0, p0, Landroidx/core/widget/EdgeEffectCompat;->mEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-virtual {v0, p1}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
@@ -118,7 +182,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 104
+    .line 149
     iget-object v0, p0, Landroidx/core/widget/EdgeEffectCompat;->mEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-virtual {v0, p1}, Landroid/widget/EdgeEffect;->onPull(F)V
@@ -133,7 +197,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 129
+    .line 174
     iget-object v0, p0, Landroidx/core/widget/EdgeEffectCompat;->mEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-static {v0, p1, p2}, Landroidx/core/widget/EdgeEffectCompat;->onPull(Landroid/widget/EdgeEffect;FF)V
@@ -148,12 +212,12 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 171
+    .line 264
     iget-object v0, p0, Landroidx/core/widget/EdgeEffectCompat;->mEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-virtual {v0}, Landroid/widget/EdgeEffect;->onRelease()V
 
-    .line 172
+    .line 265
     iget-object v0, p0, Landroidx/core/widget/EdgeEffectCompat;->mEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-virtual {v0}, Landroid/widget/EdgeEffect;->isFinished()Z
@@ -168,7 +232,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 61
+    .line 106
     iget-object v0, p0, Landroidx/core/widget/EdgeEffectCompat;->mEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-virtual {v0, p1, p2}, Landroid/widget/EdgeEffect;->setSize(II)V

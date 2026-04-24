@@ -20,10 +20,6 @@
 # direct methods
 .method public constructor <init>(Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 44
     invoke-direct {p0}, Landroidx/core/view/AccessibilityDelegateCompat;-><init>()V
@@ -66,8 +62,6 @@
 # virtual methods
 .method public getItemDelegate()Landroidx/core/view/AccessibilityDelegateCompat;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 99
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerViewAccessibilityDelegate;->mItemDelegate:Landroidx/recyclerview/widget/RecyclerViewAccessibilityDelegate$ItemDelegate;

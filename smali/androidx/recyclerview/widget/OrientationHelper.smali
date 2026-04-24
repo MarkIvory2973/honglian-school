@@ -65,11 +65,23 @@
 .end method
 
 .method public static createOrientationHelper(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;I)Landroidx/recyclerview/widget/OrientationHelper;
-    .locals 0
+    .locals 1
 
-    packed-switch p1, :pswitch_data_0
+    if-eqz p1, :cond_1
+
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :cond_0
+
+    .line 245
+    invoke-static {p0}, Landroidx/recyclerview/widget/OrientationHelper;->createVerticalHelper(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroidx/recyclerview/widget/OrientationHelper;
+
+    move-result-object p0
+
+    return-object p0
 
     .line 247
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "invalid orientation"
@@ -78,29 +90,13 @@
 
     throw p0
 
-    .line 245
-    :pswitch_0
-    invoke-static {p0}, Landroidx/recyclerview/widget/OrientationHelper;->createVerticalHelper(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroidx/recyclerview/widget/OrientationHelper;
-
-    move-result-object p0
-
-    return-object p0
-
     .line 243
-    :pswitch_1
+    :cond_1
     invoke-static {p0}, Landroidx/recyclerview/widget/OrientationHelper;->createHorizontalHelper(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroidx/recyclerview/widget/OrientationHelper;
 
     move-result-object p0
 
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public static createVerticalHelper(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroidx/recyclerview/widget/OrientationHelper;
@@ -161,12 +157,12 @@
 .method public getTotalSpaceChange()I
     .locals 2
 
+    const/high16 v0, -0x80000000
+
     .line 78
-    iget v0, p0, Landroidx/recyclerview/widget/OrientationHelper;->mLastTotalSpace:I
+    iget v1, p0, Landroidx/recyclerview/widget/OrientationHelper;->mLastTotalSpace:I
 
-    const/high16 v1, -0x80000000
-
-    if-ne v1, v0, :cond_0
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x0
 

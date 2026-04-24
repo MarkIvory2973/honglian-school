@@ -1,4 +1,4 @@
-.class final Landroidx/transition/ChangeImageTransform$1;
+.class Landroidx/transition/ChangeImageTransform$1;
 .super Ljava/lang/Object;
 .source "ChangeImageTransform.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -30,7 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 54
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +49,7 @@
 .method public bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 54
+    .line 55
     check-cast p2, Landroid/graphics/Matrix;
 
     check-cast p3, Landroid/graphics/Matrix;

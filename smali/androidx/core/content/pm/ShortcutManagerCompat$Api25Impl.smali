@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x19
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/core/content/pm/ShortcutManagerCompat;
 .end annotation
@@ -22,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 770
+    .line 922
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,10 +26,6 @@
 
 .method static getShortcutInfoWithLowestRank(Ljava/util/List;)Ljava/lang/String;
     .locals 5
-    .param p0    # Ljava/util/List;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -44,7 +36,7 @@
         }
     .end annotation
 
-    .line 774
+    .line 926
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -67,19 +59,19 @@
 
     check-cast v2, Landroid/content/pm/ShortcutInfo;
 
-    .line 775
+    .line 927
     invoke-virtual {v2}, Landroid/content/pm/ShortcutInfo;->getRank()I
 
     move-result v3
 
     if-le v3, v0, :cond_0
 
-    .line 776
+    .line 928
     invoke-virtual {v2}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 777
+    .line 929
     invoke-virtual {v2}, Landroid/content/pm/ShortcutInfo;->getRank()I
 
     move-result v1

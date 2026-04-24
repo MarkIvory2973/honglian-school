@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x18
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/core/app/FrameMetricsAggregator;
 .end annotation
@@ -29,7 +25,7 @@
 
 
 # instance fields
-.field private mActivities:Ljava/util/ArrayList;
+.field private final mActivities:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -62,9 +58,9 @@
 
     const/16 v0, 0x9
 
-    .line 339
     new-array v0, v0, [Landroid/util/SparseIntArray;
 
+    .line 339
     iput-object v0, p0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->mMetrics:[Landroid/util/SparseIntArray;
 
     .line 340
@@ -107,8 +103,6 @@
     sput-object v0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->sHandlerThread:Landroid/os/HandlerThread;
 
     .line 413
-    sget-object v0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->sHandlerThread:Landroid/os/HandlerThread;
-
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
     .line 414
@@ -289,9 +283,9 @@
 
     const/16 v1, 0x9
 
-    .line 459
     new-array v1, v1, [Landroid/util/SparseIntArray;
 
+    .line 459
     iput-object v1, p0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->mMetrics:[Landroid/util/SparseIntArray;
 
     return-object v0

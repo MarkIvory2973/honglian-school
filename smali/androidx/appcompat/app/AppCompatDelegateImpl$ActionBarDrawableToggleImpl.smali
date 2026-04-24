@@ -25,7 +25,7 @@
 .method constructor <init>(Landroidx/appcompat/app/AppCompatDelegateImpl;)V
     .locals 0
 
-    .line 3306
+    .line 3744
     iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public getActionBarThemedContext()Landroid/content/Context;
     .locals 1
 
-    .line 3320
+    .line 3758
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
     invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->getActionBarThemedContext()Landroid/content/Context;
@@ -49,36 +49,34 @@
 .end method
 
 .method public getThemeUpIndicator()Landroid/graphics/drawable/Drawable;
-    .locals 4
+    .locals 3
 
-    .line 3312
+    .line 3750
     invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->getActionBarThemedContext()Landroid/content/Context;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    sget v1, Landroidx/appcompat/R$attr;->homeAsUpIndicator:I
 
-    new-array v1, v1, [I
+    filled-new-array {v1}, [I
 
-    sget v2, Landroidx/appcompat/R$attr;->homeAsUpIndicator:I
-
-    const/4 v3, 0x0
-
-    aput v2, v1, v3
+    move-result-object v1
 
     const/4 v2, 0x0
 
-    .line 3311
+    .line 3749
     invoke-static {v0, v2, v1}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroidx/appcompat/widget/TintTypedArray;
 
     move-result-object v0
 
-    .line 3313
-    invoke-virtual {v0, v3}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    const/4 v1, 0x0
+
+    .line 3751
+    invoke-virtual {v0, v1}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 3314
+    .line 3752
     invoke-virtual {v0}, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
 
     return-object v1
@@ -87,7 +85,7 @@
 .method public isNavigationVisible()Z
     .locals 1
 
-    .line 3325
+    .line 3763
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
     invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
@@ -96,7 +94,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3326
+    .line 3764
     invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar;->getDisplayOptions()I
 
     move-result v0
@@ -119,7 +117,7 @@
 .method public setActionBarDescription(I)V
     .locals 1
 
-    .line 3340
+    .line 3778
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
     invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
@@ -128,7 +126,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3342
+    .line 3780
     invoke-virtual {v0, p1}, Landroidx/appcompat/app/ActionBar;->setHomeActionContentDescription(I)V
 
     :cond_0
@@ -138,7 +136,7 @@
 .method public setActionBarUpIndicator(Landroid/graphics/drawable/Drawable;I)V
     .locals 1
 
-    .line 3331
+    .line 3769
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
     invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
@@ -147,10 +145,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 3333
+    .line 3771
     invoke-virtual {v0, p1}, Landroidx/appcompat/app/ActionBar;->setHomeAsUpIndicator(Landroid/graphics/drawable/Drawable;)V
 
-    .line 3334
+    .line 3772
     invoke-virtual {v0, p2}, Landroidx/appcompat/app/ActionBar;->setHomeActionContentDescription(I)V
 
     :cond_0

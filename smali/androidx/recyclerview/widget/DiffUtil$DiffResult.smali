@@ -81,17 +81,13 @@
     .line 570
     iput-object p4, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mNewItemStatuses:[I
 
+    const/4 p2, 0x0
+
     .line 571
-    iget-object p2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mOldItemStatuses:[I
-
-    const/4 p3, 0x0
-
-    invoke-static {p2, p3}, Ljava/util/Arrays;->fill([II)V
+    invoke-static {p3, p2}, Ljava/util/Arrays;->fill([II)V
 
     .line 572
-    iget-object p2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mNewItemStatuses:[I
-
-    invoke-static {p2, p3}, Ljava/util/Arrays;->fill([II)V
+    invoke-static {p4, p2}, Ljava/util/Arrays;->fill([II)V
 
     .line 573
     iput-object p1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
@@ -229,21 +225,21 @@
 
     aget v1, v1, v2
 
-    and-int/lit8 v1, v1, 0x1f
+    and-int/lit8 v3, v1, 0x1f
 
-    if-eqz v1, :cond_3
+    if-eqz v3, :cond_3
 
-    const/4 v3, 0x4
+    const/4 v4, 0x4
 
-    if-eq v1, v3, :cond_2
+    if-eq v3, v4, :cond_2
 
-    const/16 v4, 0x8
+    const/16 v5, 0x8
 
-    if-eq v1, v4, :cond_2
+    if-eq v3, v5, :cond_2
 
-    const/16 v3, 0x10
+    const/16 v1, 0x10
 
-    if-ne v1, v3, :cond_1
+    if-ne v3, v1, :cond_1
 
     .line 901
     new-instance v1, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;
@@ -262,11 +258,9 @@
 
     new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo p3, "unknown flag for pos "
 
-    const-string p3, "unknown flag for pos "
-
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -274,7 +268,7 @@
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    int-to-long p3, v1
+    int-to-long p3, v3
 
     .line 906
     invoke-static {p3, p4}, Ljava/lang/Long;->toBinaryString(J)Ljava/lang/String;
@@ -291,16 +285,11 @@
 
     throw p1
 
-    .line 888
     :cond_2
-    iget-object v4, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mNewItemStatuses:[I
-
-    aget v4, v4, v2
-
-    shr-int/lit8 v4, v4, 0x5
+    shr-int/lit8 v1, v1, 0x5
 
     .line 889
-    invoke-static {p1, v4, v0}, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->removePostponedUpdate(Ljava/util/List;IZ)Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;
+    invoke-static {p1, v1, v0}, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->removePostponedUpdate(Ljava/util/List;IZ)Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;
 
     move-result-object v5
 
@@ -309,13 +298,13 @@
 
     invoke-interface {p2, v5, p3}, Landroidx/recyclerview/widget/ListUpdateCallback;->onMoved(II)V
 
-    if-ne v1, v3, :cond_4
+    if-ne v3, v4, :cond_4
 
     .line 896
-    iget-object v1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
+    iget-object v3, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
 
     .line 897
-    invoke-virtual {v1, v4, v2}, Landroidx/recyclerview/widget/DiffUtil$Callback;->getChangePayload(II)Ljava/lang/Object;
+    invoke-virtual {v3, v1, v2}, Landroidx/recyclerview/widget/DiffUtil$Callback;->getChangePayload(II)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -403,21 +392,21 @@
 
     aget v1, v1, v2
 
-    and-int/lit8 v1, v1, 0x1f
+    and-int/lit8 v3, v1, 0x1f
 
-    if-eqz v1, :cond_3
+    if-eqz v3, :cond_3
 
-    const/4 v3, 0x4
+    const/4 v4, 0x4
 
-    if-eq v1, v3, :cond_2
+    if-eq v3, v4, :cond_2
 
-    const/16 v4, 0x8
+    const/16 v5, 0x8
 
-    if-eq v1, v4, :cond_2
+    if-eq v3, v5, :cond_2
 
-    const/16 v3, 0x10
+    const/16 v1, 0x10
 
-    if-ne v1, v3, :cond_1
+    if-ne v3, v1, :cond_1
 
     .line 942
     new-instance v1, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;
@@ -436,11 +425,9 @@
 
     new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo p3, "unknown flag for pos "
 
-    const-string p3, "unknown flag for pos "
-
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -448,7 +435,7 @@
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    int-to-long p3, v1
+    int-to-long p3, v3
 
     .line 947
     invoke-static {p3, p4}, Ljava/lang/Long;->toBinaryString(J)Ljava/lang/String;
@@ -465,18 +452,13 @@
 
     throw p1
 
-    .line 928
     :cond_2
-    iget-object v4, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mOldItemStatuses:[I
-
-    aget v4, v4, v2
-
-    shr-int/lit8 v4, v4, 0x5
+    shr-int/lit8 v1, v1, 0x5
 
     const/4 v5, 0x0
 
     .line 929
-    invoke-static {p1, v4, v5}, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->removePostponedUpdate(Ljava/util/List;IZ)Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;
+    invoke-static {p1, v1, v5}, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->removePostponedUpdate(Ljava/util/List;IZ)Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;
 
     move-result-object v5
 
@@ -489,22 +471,22 @@
 
     invoke-interface {p2, v6, v7}, Landroidx/recyclerview/widget/ListUpdateCallback;->onMoved(II)V
 
-    if-ne v1, v3, :cond_4
+    if-ne v3, v4, :cond_4
 
     .line 937
-    iget v1, v5, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;->currentPos:I
+    iget v3, v5, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;->currentPos:I
 
-    sub-int/2addr v1, v0
+    sub-int/2addr v3, v0
 
-    iget-object v3, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
+    iget-object v4, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
 
     .line 938
-    invoke-virtual {v3, v2, v4}, Landroidx/recyclerview/widget/DiffUtil$Callback;->getChangePayload(II)Ljava/lang/Object;
+    invoke-virtual {v4, v2, v1}, Landroidx/recyclerview/widget/DiffUtil$Callback;->getChangePayload(II)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 937
-    invoke-interface {p2, v1, v0, v2}, Landroidx/recyclerview/widget/ListUpdateCallback;->onChanged(IILjava/lang/Object;)V
+    invoke-interface {p2, v3, v0, v1}, Landroidx/recyclerview/widget/ListUpdateCallback;->onChanged(IILjava/lang/Object;)V
 
     goto :goto_2
 
@@ -545,7 +527,7 @@
     :goto_2
     add-int/lit8 p4, p4, -0x1
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_5
     return-void
@@ -581,9 +563,9 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    move v0, p1
+    move v1, p1
 
-    move v1, p2
+    move v0, p2
 
     goto :goto_0
 
@@ -626,15 +608,15 @@
 
     if-eqz p4, :cond_3
 
-    sub-int/2addr v0, v7
+    sub-int/2addr v1, v7
 
     :goto_1
-    if-lt v0, v3, :cond_6
+    if-lt v1, v3, :cond_6
 
     .line 739
     iget-object p2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
 
-    invoke-virtual {p2, v0, v1}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areItemsTheSame(II)Z
+    invoke-virtual {p2, v1, v0}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areItemsTheSame(II)Z
 
     move-result p2
 
@@ -643,7 +625,7 @@
     .line 741
     iget-object p1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
 
-    invoke-virtual {p1, v0, v1}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areContentsTheSame(II)Z
+    invoke-virtual {p1, v1, v0}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areContentsTheSame(II)Z
 
     move-result p1
 
@@ -658,25 +640,25 @@
     :goto_2
     iget-object p1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mNewItemStatuses:[I
 
-    shl-int/lit8 p2, v0, 0x5
+    shl-int/lit8 p2, v1, 0x5
 
     or-int/lit8 p2, p2, 0x10
 
-    aput p2, p1, v1
+    aput p2, p1, v0
 
     .line 745
     iget-object p1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mOldItemStatuses:[I
 
-    shl-int/lit8 p2, v1, 0x5
+    shl-int/lit8 p2, v0, 0x5
 
     or-int/2addr p2, v5
 
-    aput p2, p1, v0
+    aput p2, p1, v1
 
     return v7
 
     :cond_2
-    add-int/lit8 v0, v0, -0x1
+    add-int/lit8 v1, v1, -0x1
 
     goto :goto_1
 
@@ -687,18 +669,18 @@
     if-lt p2, v4, :cond_6
 
     .line 752
-    iget-object v0, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
+    iget-object v1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
 
-    invoke-virtual {v0, v1, p2}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areItemsTheSame(II)Z
+    invoke-virtual {v1, v0, p2}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areItemsTheSame(II)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_5
+    if-eqz v1, :cond_5
 
     .line 754
     iget-object p3, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
 
-    invoke-virtual {p3, v1, p2}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areContentsTheSame(II)Z
+    invoke-virtual {p3, v0, p2}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areContentsTheSame(II)Z
 
     move-result p3
 
@@ -739,7 +721,7 @@
 
     .line 763
     :cond_6
-    iget v0, v2, Landroidx/recyclerview/widget/DiffUtil$Snake;->x:I
+    iget v1, v2, Landroidx/recyclerview/widget/DiffUtil$Snake;->x:I
 
     .line 764
     iget p2, v2, Landroidx/recyclerview/widget/DiffUtil$Snake;->y:I
@@ -1019,11 +1001,6 @@
 # virtual methods
 .method public convertNewPositionToOld(I)I
     .locals 3
-    .param p1    # I
-        .annotation build Landroidx/annotation/IntRange;
-            from = 0x0L
-        .end annotation
-    .end param
 
     if-ltz p1, :cond_1
 
@@ -1056,11 +1033,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Index out of bounds - passed position = "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1083,11 +1058,6 @@
 
 .method public convertOldPositionToNew(I)I
     .locals 3
-    .param p1    # I
-        .annotation build Landroidx/annotation/IntRange;
-            from = 0x0L
-        .end annotation
-    .end param
 
     if-ltz p1, :cond_1
 
@@ -1120,11 +1090,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Index out of bounds - passed position = "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1147,10 +1115,6 @@
 
 .method public dispatchUpdatesTo(Landroidx/recyclerview/widget/ListUpdateCallback;)V
     .locals 14
-    .param p1    # Landroidx/recyclerview/widget/ListUpdateCallback;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 816
     instance-of v0, p1, Landroidx/recyclerview/widget/BatchingListUpdateCallback;
@@ -1193,17 +1157,17 @@
 
     sub-int/2addr v3, v7
 
-    move v9, v2
+    move v8, v2
 
-    move v8, v3
+    move v9, v3
 
     :goto_1
-    if-ltz v8, :cond_5
+    if-ltz v9, :cond_5
 
     .line 831
     iget-object v2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mSnakes:Ljava/util/List;
 
-    invoke-interface {v2, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v2, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -1242,9 +1206,9 @@
     invoke-direct/range {v1 .. v6}, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->dispatchRemovals(Ljava/util/List;Landroidx/recyclerview/widget/ListUpdateCallback;III)V
 
     :cond_1
-    if-ge v13, v9, :cond_2
+    if-ge v13, v8, :cond_2
 
-    sub-int v5, v9, v13
+    sub-int v5, v8, v13
 
     move-object v1, p0
 
@@ -1313,9 +1277,9 @@
     iget v1, v10, Landroidx/recyclerview/widget/DiffUtil$Snake;->x:I
 
     .line 850
-    iget v9, v10, Landroidx/recyclerview/widget/DiffUtil$Snake;->y:I
+    iget v8, v10, Landroidx/recyclerview/widget/DiffUtil$Snake;->y:I
 
-    add-int/lit8 v8, v8, -0x1
+    add-int/lit8 v9, v9, -0x1
 
     goto :goto_1
 
@@ -1328,10 +1292,6 @@
 
 .method public dispatchUpdatesTo(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
     .locals 1
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$Adapter;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 802
     new-instance v0, Landroidx/recyclerview/widget/AdapterListUpdateCallback;
@@ -1345,9 +1305,6 @@
 
 .method getSnakes()Ljava/util/List;
     .locals 1
-    .annotation build Landroidx/annotation/VisibleForTesting;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

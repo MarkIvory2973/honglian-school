@@ -110,7 +110,6 @@
 
     const/4 v1, 0x2
 
-    .line 51
     new-array v2, v1, [I
 
     .line 52
@@ -118,9 +117,9 @@
 
     const/4 v3, 0x0
 
-    .line 53
     aget v4, v2, v3
 
+    .line 53
     invoke-virtual {v0}, Landroid/view/View;->getTranslationX()F
 
     move-result v5
@@ -134,8 +133,6 @@
     aput v4, v2, v3
 
     .line 54
-    aget v4, v2, v3
-
     invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
     move-result v5
@@ -148,9 +145,9 @@
 
     const/4 v3, 0x1
 
-    .line 55
     aget v4, v2, v3
 
+    .line 55
     invoke-virtual {v0}, Landroid/view/View;->getTranslationY()F
 
     move-result v5
@@ -164,8 +161,6 @@
     aput v4, v2, v3
 
     .line 56
-    aget v4, v2, v3
-
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
     move-result v0

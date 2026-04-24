@@ -30,61 +30,35 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
 .field public final getDescriptorMethod:Ljava/lang/reflect/Method;
-    .annotation build Lkotlin/jvm/JvmField;
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/Nullable;
-    .end annotation
-.end field
 
 .field public final getModuleMethod:Ljava/lang/reflect/Method;
-    .annotation build Lkotlin/jvm/JvmField;
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/Nullable;
-    .end annotation
-.end field
 
 .field public final nameMethod:Ljava/lang/reflect/Method;
-    .annotation build Lkotlin/jvm/JvmField;
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/Nullable;
-    .end annotation
-.end field
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;)V
     .locals 0
-    .param p1    # Ljava/lang/reflect/Method;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/reflect/Method;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
-    .param p3    # Ljava/lang/reflect/Method;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 53
     iput-object p1, p0, Lkotlin/coroutines/jvm/internal/ModuleNameRetriever$Cache;->getModuleMethod:Ljava/lang/reflect/Method;
 
+    .line 55
     iput-object p2, p0, Lkotlin/coroutines/jvm/internal/ModuleNameRetriever$Cache;->getDescriptorMethod:Ljava/lang/reflect/Method;
 
+    .line 57
     iput-object p3, p0, Lkotlin/coroutines/jvm/internal/ModuleNameRetriever$Cache;->nameMethod:Ljava/lang/reflect/Method;
 
     return-void

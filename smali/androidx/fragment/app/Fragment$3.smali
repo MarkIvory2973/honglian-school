@@ -25,7 +25,7 @@
 .method constructor <init>(Landroidx/fragment/app/Fragment;)V
     .locals 0
 
-    .line 2434
+    .line 2888
     iput-object p1, p0, Landroidx/fragment/app/Fragment$3;->this$0:Landroidx/fragment/app/Fragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,12 +36,14 @@
 
 # virtual methods
 .method public run()V
-    .locals 1
+    .locals 2
 
-    .line 2437
+    .line 2891
     iget-object v0, p0, Landroidx/fragment/app/Fragment$3;->this$0:Landroidx/fragment/app/Fragment;
 
-    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->callStartTransitionListener()V
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/Fragment;->callStartTransitionListener(Z)V
 
     return-void
 .end method

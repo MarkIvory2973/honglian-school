@@ -6,14 +6,6 @@
 .implements Landroid/view/Menu;
 
 
-# annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
-
 # instance fields
 .field private final mWrappedObject:Landroidx/core/internal/view/SupportMenu;
 
@@ -159,24 +151,24 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v4, 0x0
-
     .line 101
-    array-length v5, v2
+    array-length v4, v2
+
+    const/4 v5, 0x0
 
     :goto_1
-    if-ge v4, v5, :cond_1
+    if-ge v5, v4, :cond_1
 
     .line 102
-    aget-object v6, v2, v4
+    aget-object v6, v2, v5
 
     invoke-virtual {p0, v6}, Landroidx/appcompat/view/menu/MenuWrapperICS;->getMenuItemWrapper(Landroid/view/MenuItem;)Landroid/view/MenuItem;
 
     move-result-object v6
 
-    aput-object v6, v1, v4
+    aput-object v6, v1, v5
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 

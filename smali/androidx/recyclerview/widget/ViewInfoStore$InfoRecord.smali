@@ -44,14 +44,8 @@
 .field flags:I
 
 .field postInfo:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-.end field
 
 .field preInfo:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
-.end field
 
 
 # direct methods

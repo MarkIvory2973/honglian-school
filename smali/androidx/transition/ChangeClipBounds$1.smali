@@ -24,7 +24,7 @@
 .method constructor <init>(Landroidx/transition/ChangeClipBounds;Landroid/view/View;)V
     .locals 0
 
-    .line 112
+    .line 116
     iput-object p1, p0, Landroidx/transition/ChangeClipBounds$1;->this$0:Landroidx/transition/ChangeClipBounds;
 
     iput-object p2, p0, Landroidx/transition/ChangeClipBounds$1;->val$endView:Landroid/view/View;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 115
+    .line 119
     iget-object p1, p0, Landroidx/transition/ChangeClipBounds$1;->val$endView:Landroid/view/View;
 
     const/4 v0, 0x0

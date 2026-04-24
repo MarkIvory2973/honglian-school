@@ -40,10 +40,6 @@
 
 .method constructor <init>(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 62
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
@@ -63,14 +59,6 @@
 
 .method constructor <init>(Landroidx/core/graphics/drawable/WrappedDrawableState;Landroid/content/res/Resources;)V
     .locals 0
-    .param p1    # Landroidx/core/graphics/drawable/WrappedDrawableState;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/content/res/Resources;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 52
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
@@ -86,8 +74,6 @@
 
 .method private mutateConstantState()Landroidx/core/graphics/drawable/WrappedDrawableState;
     .locals 2
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 255
     new-instance v0, Landroidx/core/graphics/drawable/WrappedDrawableState;
@@ -101,10 +87,6 @@
 
 .method private updateLocalState(Landroid/content/res/Resources;)V
     .locals 1
-    .param p1    # Landroid/content/res/Resources;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 74
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->mState:Landroidx/core/graphics/drawable/WrappedDrawableState;
@@ -213,10 +195,6 @@
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 1
-    .param p1    # Landroid/graphics/Canvas;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 86
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -265,8 +243,6 @@
 
 .method public getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
     .locals 2
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 222
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->mState:Landroidx/core/graphics/drawable/WrappedDrawableState;
@@ -301,8 +277,6 @@
 
 .method public getCurrent()Landroid/graphics/drawable/Drawable;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 152
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -342,9 +316,6 @@
 
 .method public getLayoutDirection()I
     .locals 1
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x17
-    .end annotation
 
     .line 216
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -397,10 +368,6 @@
 
 .method public getPadding(Landroid/graphics/Rect;)Z
     .locals 1
-    .param p1    # Landroid/graphics/Rect;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 192
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -414,8 +381,6 @@
 
 .method public getState()[I
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 146
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -451,10 +416,6 @@
 
 .method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
-    .param p1    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 263
     invoke-virtual {p0}, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->invalidateSelf()V
@@ -464,9 +425,6 @@
 
 .method public isAutoMirrored()Z
     .locals 1
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x13
-    .end annotation
 
     .line 204
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -552,8 +510,6 @@
 
 .method public mutate()Landroid/graphics/drawable/Drawable;
     .locals 2
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 232
     iget-boolean v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->mMutated:Z
@@ -631,9 +587,6 @@
 
 .method public onLayoutDirectionChanged(I)Z
     .locals 1
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x17
-    .end annotation
 
     .line 210
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -660,14 +613,6 @@
 
 .method public scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
     .locals 0
-    .param p1    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/Runnable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 271
     invoke-virtual {p0, p2, p3, p4}, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->scheduleSelf(Ljava/lang/Runnable;J)V
@@ -688,9 +633,6 @@
 
 .method public setAutoMirrored(Z)V
     .locals 1
-    .annotation build Landroidx/annotation/RequiresApi;
-        value = 0x13
-    .end annotation
 
     .line 198
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -746,10 +688,6 @@
 
 .method public setState([I)Z
     .locals 1
-    .param p1    # [I
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 138
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -815,10 +753,6 @@
 
 .method public setTintMode(Landroid/graphics/PorterDuff$Mode;)V
     .locals 1
-    .param p1    # Landroid/graphics/PorterDuff$Mode;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 300
     iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->mState:Landroidx/core/graphics/drawable/WrappedDrawableState;
@@ -941,14 +875,6 @@
 
 .method public unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
     .locals 0
-    .param p1    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/Runnable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 279
     invoke-virtual {p0, p2}, Landroidx/core/graphics/drawable/WrappedDrawableApi14;->unscheduleSelf(Ljava/lang/Runnable;)V

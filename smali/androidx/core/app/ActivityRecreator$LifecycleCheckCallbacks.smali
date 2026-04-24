@@ -34,10 +34,6 @@
 # direct methods
 .method constructor <init>(Landroid/app/Activity;)V
     .locals 1
-    .param p1    # Landroid/app/Activity;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 193
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,8 +53,6 @@
     iput-object p1, p0, Landroidx/core/app/ActivityRecreator$LifecycleCheckCallbacks;->mActivity:Landroid/app/Activity;
 
     .line 195
-    iget-object p1, p0, Landroidx/core/app/ActivityRecreator$LifecycleCheckCallbacks;->mActivity:Landroid/app/Activity;
-
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result p1

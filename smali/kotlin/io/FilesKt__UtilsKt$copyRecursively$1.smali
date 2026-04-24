@@ -32,9 +32,10 @@
     k = 0x3
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -70,6 +71,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
+    .line 291
     check-cast p1, Ljava/io/File;
 
     check-cast p2, Ljava/io/IOException;
@@ -83,16 +85,6 @@
 
 .method public final invoke(Ljava/io/File;Ljava/io/IOException;)Ljava/lang/Void;
     .locals 1
-    .param p1    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/io/IOException;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     const-string v0, "<anonymous parameter 0>"
 
@@ -103,7 +95,5 @@
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 291
-    check-cast p2, Ljava/lang/Throwable;
-
     throw p2
 .end method

@@ -36,16 +36,6 @@
 # virtual methods
 .method public extendRangeInto([I[II)V
     .locals 6
-    .param p1    # [I
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # [I
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/UiThread;
-    .end annotation
 
     const/4 v0, 0x1
 
@@ -54,67 +44,53 @@
 
     const/4 v2, 0x0
 
-    aget v3, p1, v2
+    aget p1, p1, v2
 
-    sub-int/2addr v1, v3
+    sub-int v3, v1, p1
 
-    add-int/2addr v1, v0
+    add-int/2addr v3, v0
 
     .line 578
-    div-int/lit8 v3, v1, 0x2
-
-    .line 579
-    aget v4, p1, v2
+    div-int/lit8 v4, v3, 0x2
 
     if-ne p3, v0, :cond_0
 
-    move v5, v1
+    move v5, v3
 
     goto :goto_0
 
     :cond_0
-    move v5, v3
+    move v5, v4
 
     :goto_0
-    sub-int/2addr v4, v5
+    sub-int/2addr p1, v5
 
-    aput v4, p2, v2
+    .line 579
+    aput p1, p2, v2
 
-    .line 580
-    aget p1, p1, v0
+    const/4 p1, 0x2
 
-    const/4 v2, 0x2
-
-    if-ne p3, v2, :cond_1
+    if-ne p3, p1, :cond_1
 
     goto :goto_1
 
     :cond_1
-    move v1, v3
+    move v3, v4
 
     :goto_1
-    add-int/2addr p1, v1
+    add-int/2addr v1, v3
 
-    aput p1, p2, v0
+    .line 580
+    aput v1, p2, v0
 
     return-void
 .end method
 
 .method public abstract getItemRangeInto([I)V
-    .param p1    # [I
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/UiThread;
-    .end annotation
 .end method
 
 .method public abstract onDataRefresh()V
-    .annotation build Landroidx/annotation/UiThread;
-    .end annotation
 .end method
 
 .method public abstract onItemLoaded(I)V
-    .annotation build Landroidx/annotation/UiThread;
-    .end annotation
 .end method

@@ -22,27 +22,16 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method public constructor <init>(Ljava/io/File;Ljava/io/File;Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
-    .param p3    # Ljava/lang/String;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
 
     const-string v0, "file"
 
@@ -63,21 +52,16 @@
 
     if-eqz p5, :cond_0
 
-    .line 48
     move-object p2, v0
-
-    check-cast p2, Ljava/io/File;
 
     :cond_0
     and-int/lit8 p4, p4, 0x4
 
     if-eqz p4, :cond_1
 
-    .line 49
     move-object p3, v0
 
-    check-cast p3, Ljava/lang/String;
-
+    .line 46
     :cond_1
     invoke-direct {p0, p1, p2, p3}, Lkotlin/io/AccessDeniedException;-><init>(Ljava/io/File;Ljava/io/File;Ljava/lang/String;)V
 

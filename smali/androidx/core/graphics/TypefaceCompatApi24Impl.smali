@@ -3,18 +3,6 @@
 .source "TypefaceCompatApi24Impl.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x18
-.end annotation
-
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
-
 # static fields
 .field private static final ADD_FONT_WEIGHT_STYLE_METHOD:Ljava/lang/String; = "addFontWeightStyle"
 
@@ -49,139 +37,135 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
-
-    const/4 v0, 0x0
+    .locals 8
 
     :try_start_0
-    const-string v1, "android.graphics.FontFamily"
+    const-string v0, "android.graphics.FontFamily"
 
     .line 69
-    invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
+
+    new-array v2, v1, [Ljava/lang/Class;
 
     .line 70
-    new-array v3, v2, [Ljava/lang/Class;
+    invoke-virtual {v0, v2}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    invoke-virtual {v1, v3}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    move-result-object v2
+
+    const-string v3, "addFontWeightStyle"
+
+    const/4 v4, 0x5
+
+    new-array v4, v4, [Ljava/lang/Class;
+
+    .line 71
+    const-class v5, Ljava/nio/ByteBuffer;
+
+    aput-object v5, v4, v1
+
+    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    const/4 v6, 0x1
+
+    aput-object v5, v4, v6
+
+    const-class v5, Ljava/util/List;
+
+    const/4 v7, 0x2
+
+    aput-object v5, v4, v7
+
+    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    const/4 v7, 0x3
+
+    aput-object v5, v4, v7
+
+    sget-object v5, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+
+    const/4 v7, 0x4
+
+    aput-object v5, v4, v7
+
+    invoke-virtual {v0, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v3
 
-    const-string v4, "addFontWeightStyle"
-
-    const/4 v5, 0x5
-
-    .line 71
-    new-array v5, v5, [Ljava/lang/Class;
-
-    const-class v6, Ljava/nio/ByteBuffer;
-
-    aput-object v6, v5, v2
-
-    sget-object v6, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    const/4 v7, 0x1
-
-    aput-object v6, v5, v7
-
-    const/4 v6, 0x2
-
-    const-class v8, Ljava/util/List;
-
-    aput-object v8, v5, v6
-
-    const/4 v6, 0x3
-
-    sget-object v8, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v5, v6
-
-    const/4 v6, 0x4
-
-    sget-object v8, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v5, v6
-
-    invoke-virtual {v1, v4, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    .line 73
+    invoke-static {v0, v6}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 73
-    invoke-static {v1, v7}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
-
-    move-result-object v5
-
     .line 74
-    const-class v6, Landroid/graphics/Typeface;
+    const-class v5, Landroid/graphics/Typeface;
 
-    const-string v8, "createFromFamiliesWithDefault"
+    const-string v7, "createFromFamiliesWithDefault"
 
-    new-array v7, v7, [Ljava/lang/Class;
+    new-array v6, v6, [Ljava/lang/Class;
 
     .line 76
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v7, v2
+    aput-object v4, v6, v1
 
     .line 75
-    invoke-virtual {v6, v8, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v5, v7, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result-object v0
+    move-result-object v1
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-object v2, v0
-
-    move-object v0, v3
-
     goto :goto_1
 
     :catch_0
-    move-exception v1
+    move-exception v0
 
     goto :goto_0
 
     :catch_1
-    move-exception v1
-
-    :goto_0
-    const-string v2, "TypefaceCompatApi24Impl"
+    move-exception v0
 
     .line 78
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :goto_0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    const-string v2, "TypefaceCompatApi24Impl"
+
+    invoke-static {v2, v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    const/4 v0, 0x0
 
     move-object v1, v0
 
     move-object v2, v1
 
-    move-object v4, v2
+    move-object v3, v2
 
     .line 84
     :goto_1
-    sput-object v0, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sFontFamilyCtor:Ljava/lang/reflect/Constructor;
+    sput-object v2, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sFontFamilyCtor:Ljava/lang/reflect/Constructor;
 
     .line 85
-    sput-object v1, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sFontFamily:Ljava/lang/Class;
+    sput-object v0, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sFontFamily:Ljava/lang/Class;
 
     .line 86
-    sput-object v4, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sAddFontWeightStyle:Ljava/lang/reflect/Method;
+    sput-object v3, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sAddFontWeightStyle:Ljava/lang/reflect/Method;
 
     .line 87
-    sput-object v2, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sCreateFromFamiliesWithDefault:Ljava/lang/reflect/Method;
+    sput-object v1, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sCreateFromFamiliesWithDefault:Ljava/lang/reflect/Method;
 
     return-void
 .end method
@@ -210,14 +194,14 @@
 
     aput-object p1, v2, v0
 
-    const/4 p1, 0x1
-
     .line 113
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p2
+    move-result-object p1
 
-    aput-object p2, v2, p1
+    const/4 p2, 0x1
+
+    aput-object p1, v2, p2
 
     const/4 p1, 0x2
 
@@ -225,21 +209,21 @@
 
     aput-object p2, v2, p1
 
-    const/4 p1, 0x3
-
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p2
+    move-result-object p1
 
-    aput-object p2, v2, p1
+    const/4 p2, 0x3
 
-    const/4 p1, 0x4
+    aput-object p1, v2, p2
 
     invoke-static {p4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object p2
+    move-result-object p1
 
-    aput-object p2, v2, p1
+    const/4 p2, 0x4
+
+    aput-object p1, v2, p2
 
     .line 112
     invoke-virtual {v1, p0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -305,24 +289,21 @@
 .end method
 
 .method public static isUsable()Z
-    .locals 2
+    .locals 3
 
     .line 94
     sget-object v0, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sAddFontWeightStyle:Ljava/lang/reflect/Method;
 
     if-nez v0, :cond_0
 
-    const-string v0, "TypefaceCompatApi24Impl"
+    const-string v1, "TypefaceCompatApi24Impl"
 
-    const-string v1, "Unable to collect necessary private methods.Fallback to legacy implementation."
+    const-string v2, "Unable to collect necessary private methods.Fallback to legacy implementation."
 
     .line 95
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 98
     :cond_0
-    sget-object v0, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sAddFontWeightStyle:Ljava/lang/reflect/Method;
-
     if-eqz v0, :cond_1
 
     const/4 v0, 0x1
@@ -367,8 +348,6 @@
 # virtual methods
 .method public createFromFontFamilyFilesResourceEntry(Landroid/content/Context;Landroidx/core/content/res/FontResourcesParserCompat$FontFamilyFilesResourceEntry;Landroid/content/res/Resources;I)Landroid/graphics/Typeface;
     .locals 7
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 167
     invoke-static {}, Landroidx/core/graphics/TypefaceCompatApi24Impl;->newFamily()Ljava/lang/Object;
@@ -447,16 +426,6 @@
 
 .method public createFromFontInfo(Landroid/content/Context;Landroid/os/CancellationSignal;[Landroidx/core/provider/FontsContractCompat$FontInfo;I)Landroid/graphics/Typeface;
     .locals 9
-    .param p2    # Landroid/os/CancellationSignal;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p3    # [Landroidx/core/provider/FontsContractCompat$FontInfo;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 135
     invoke-static {}, Landroidx/core/graphics/TypefaceCompatApi24Impl;->newFamily()Ljava/lang/Object;
@@ -558,4 +527,32 @@
     move-result-object p1
 
     return-object p1
+.end method
+
+.method createWeightStyle(Landroid/content/Context;Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
+    .locals 1
+
+    .line 190
+    :try_start_0
+    invoke-static {p2, p3, p4}, Landroidx/core/graphics/WeightTypefaceApi21;->createWeightStyle(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
+
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-nez v0, :cond_0
+
+    .line 196
+    invoke-super {p0, p1, p2, p3, p4}, Landroidx/core/graphics/TypefaceCompatBaseImpl;->createWeightStyle(Landroid/content/Context;Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
+
+    move-result-object v0
+
+    :cond_0
+    return-object v0
 .end method

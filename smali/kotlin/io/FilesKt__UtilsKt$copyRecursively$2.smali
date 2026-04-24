@@ -43,19 +43,43 @@
     k = 0x3
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
 .field final synthetic $onError:Lkotlin/jvm/functions/Function2;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function2<",
+            "Ljava/io/File;",
+            "Ljava/io/IOException;",
+            "Lkotlin/io/OnErrorAction;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function2;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/jvm/functions/Function2<",
+            "-",
+            "Ljava/io/File;",
+            "-",
+            "Ljava/io/IOException;",
+            "+",
+            "Lkotlin/io/OnErrorAction;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lkotlin/io/FilesKt__UtilsKt$copyRecursively$2;->$onError:Lkotlin/jvm/functions/Function2;
 
@@ -71,6 +95,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
+    .line 299
     check-cast p1, Ljava/io/File;
 
     check-cast p2, Ljava/io/IOException;
@@ -84,14 +109,6 @@
 
 .method public final invoke(Ljava/io/File;Ljava/io/IOException;)V
     .locals 1
-    .param p1    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/io/IOException;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
     const-string v0, "f"
 
@@ -108,8 +125,6 @@
 
     move-result-object p2
 
-    check-cast p2, Lkotlin/io/OnErrorAction;
-
     sget-object v0, Lkotlin/io/OnErrorAction;->TERMINATE:Lkotlin/io/OnErrorAction;
 
     if-eq p2, v0, :cond_0
@@ -120,8 +135,6 @@
     new-instance p2, Lkotlin/io/TerminateException;
 
     invoke-direct {p2, p1}, Lkotlin/io/TerminateException;-><init>(Ljava/io/File;)V
-
-    check-cast p2, Ljava/lang/Throwable;
 
     throw p2
 .end method

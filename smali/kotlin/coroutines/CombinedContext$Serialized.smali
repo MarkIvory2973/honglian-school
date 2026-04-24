@@ -23,7 +23,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCoroutineContextImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoroutineContextImpl.kt\nkotlin/coroutines/CombinedContext$Serialized\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,196:1\n12947#2,3:197\n*S KotlinDebug\n*F\n+ 1 CoroutineContextImpl.kt\nkotlin/coroutines/CombinedContext$Serialized\n*L\n193#1:197,3\n*E\n"
+    value = "SMAP\nCoroutineContextImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoroutineContextImpl.kt\nkotlin/coroutines/CombinedContext$Serialized\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,196:1\n12720#2,3:197\n*S KotlinDebug\n*F\n+ 1 CoroutineContextImpl.kt\nkotlin/coroutines/CombinedContext$Serialized\n*L\n193#1:197,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,26 +49,21 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # static fields
 .field public static final Companion:Lkotlin/coroutines/CombinedContext$Serialized$Companion;
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-.end field
 
 .field private static final serialVersionUID:J
 
 
 # instance fields
 .field private final elements:[Lkotlin/coroutines/CoroutineContext;
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-.end field
 
 
 # direct methods
@@ -88,10 +83,6 @@
 
 .method public constructor <init>([Lkotlin/coroutines/CoroutineContext;)V
     .locals 1
-    .param p1    # [Lkotlin/coroutines/CoroutineContext;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
     const-string v0, "elements"
 
@@ -142,8 +133,6 @@
 # virtual methods
 .method public final getElements()[Lkotlin/coroutines/CoroutineContext;
     .locals 1
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 188
     iget-object v0, p0, Lkotlin/coroutines/CombinedContext$Serialized;->elements:[Lkotlin/coroutines/CoroutineContext;

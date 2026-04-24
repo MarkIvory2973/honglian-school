@@ -56,7 +56,7 @@
 
 
 # instance fields
-.field private mInstance:Landroidx/core/app/FrameMetricsAggregator$FrameMetricsBaseImpl;
+.field private final mInstance:Landroidx/core/app/FrameMetricsAggregator$FrameMetricsBaseImpl;
 
 
 # direct methods
@@ -109,10 +109,6 @@
 # virtual methods
 .method public add(Landroid/app/Activity;)V
     .locals 1
-    .param p1    # Landroid/app/Activity;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 226
     iget-object v0, p0, Landroidx/core/app/FrameMetricsAggregator;->mInstance:Landroidx/core/app/FrameMetricsAggregator$FrameMetricsBaseImpl;
@@ -124,8 +120,6 @@
 
 .method public getMetrics()[Landroid/util/SparseIntArray;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 301
     iget-object v0, p0, Landroidx/core/app/FrameMetricsAggregator;->mInstance:Landroidx/core/app/FrameMetricsAggregator$FrameMetricsBaseImpl;
@@ -139,12 +133,6 @@
 
 .method public remove(Landroid/app/Activity;)[Landroid/util/SparseIntArray;
     .locals 1
-    .param p1    # Landroid/app/Activity;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 243
     iget-object v0, p0, Landroidx/core/app/FrameMetricsAggregator;->mInstance:Landroidx/core/app/FrameMetricsAggregator$FrameMetricsBaseImpl;
@@ -158,8 +146,6 @@
 
 .method public reset()[Landroid/util/SparseIntArray;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 273
     iget-object v0, p0, Landroidx/core/app/FrameMetricsAggregator;->mInstance:Landroidx/core/app/FrameMetricsAggregator$FrameMetricsBaseImpl;
@@ -173,8 +159,6 @@
 
 .method public stop()[Landroid/util/SparseIntArray;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 260
     iget-object v0, p0, Landroidx/core/app/FrameMetricsAggregator;->mInstance:Landroidx/core/app/FrameMetricsAggregator$FrameMetricsBaseImpl;

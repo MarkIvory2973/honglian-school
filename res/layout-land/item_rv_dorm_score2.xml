@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dp">
+        <ImageView android:id="@id/iv_head" android:layout_width="50.0dp" android:layout_height="50.0dp" android:src="@mipmap/ic_head" />
+        <TextView android:textSize="28.0sp" android:textStyle="bold" android:textColor="#ff101d34" android:id="@id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="24.0dp" android:text="孙茹芸 06" android:layout_toRightOf="@id/iv_head" android:layout_centerVertical="true" />
+        <TextView android:textSize="28.0sp" android:textColor="#fff34949" android:id="@id/tv_score" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dp" android:text="-2分" android:layout_toRightOf="@id/tv_name" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="20.0sp" android:textColor="#ff101d34" android:id="@id/tv_add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="11.0dp" android:text="宿舍楼层：至礼楼-1F-101寝室" />
+        <TextView android:textSize="20.0sp" android:textColor="#ff101d34" android:id="@id/tv_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="100.0dp" android:layout_marginTop="11.0dp" android:text="评分类型：卫生评分" android:layout_toRightOf="@id/tv_add" />
+        <TextView android:textSize="20.0sp" android:textColor="#ff101d34" android:id="@id/tv_real_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="100.0dp" android:layout_marginTop="11.0dp" android:text="评分日期：2022.03.15" android:layout_toRightOf="@id/tv_state" />
+    </RelativeLayout>
+    <TextView android:textSize="20.0sp" android:textColor="#ff101d34" android:id="@id/tv_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="11.0dp" android:text="面对新冠肺炎疫情，中国的反应速度很快，在很短时间内确定了病原体，完成病毒基因测序，并且采取最全面、最严格、最彻底的防控举措，有效遏制疫情蔓延。疫情发生后，埃及第一时间向中国捐赠抗疫物资。" />
+    <TextView android:textSize="18.0sp" android:textColor="#ff101d34" android:id="@id/tv_remark" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dp" android:text="备注：/" />
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dp">
+        <TextView android:textSize="18.0sp" android:textColor="#ff101d34" android:id="@id/tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="提交时间：2022.03.15 16:21:38" />
+        <TextView android:textSize="18.0sp" android:textColor="#ff101d34" android:id="@id/tv_op_user" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dp" android:text="提交人：钱佳艺" android:layout_toRightOf="@id/tv_time" />
+    </RelativeLayout>
+    <View android:background="@color/colorE0Gray" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginTop="20.0dp" />
+</LinearLayout>

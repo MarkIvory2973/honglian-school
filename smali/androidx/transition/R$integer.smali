@@ -1,6 +1,5 @@
 .class public final Landroidx/transition/R$integer;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -15,14 +14,21 @@
 
 
 # static fields
-.field public static final status_bar_notification_info_maxnum:I = 0x7f0a0014
+.field public static final abc_config_activityDefaultDur:I = 0x7f090000
+
+.field public static final abc_config_activityShortDur:I = 0x7f090001
+
+.field public static final cancel_button_image_alpha:I = 0x7f090004
+
+.field public static final config_tooltipAnimTime:I = 0x7f090007
+
+.field public static final status_bar_notification_info_maxnum:I = 0x7f09004a
 
 
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
-    .line 121
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

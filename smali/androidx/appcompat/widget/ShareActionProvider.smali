@@ -52,7 +52,7 @@
 
     iput-object v0, p0, Landroidx/appcompat/widget/ShareActionProvider;->mOnMenuItemClickListener:Landroidx/appcompat/widget/ShareActionProvider$ShareMenuItemOnMenuItemClickListener;
 
-    const-string v0, "share_history.xml"
+    const-string/jumbo v0, "share_history.xml"
 
     .line 185
     iput-object v0, p0, Landroidx/appcompat/widget/ShareActionProvider;->mShareHistoryFileName:Ljava/lang/String;
@@ -394,28 +394,12 @@
 .end method
 
 .method updateIntent(Landroid/content/Intent;)V
-    .locals 2
-
-    .line 411
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
+    .locals 1
 
     const/high16 v0, 0x8080000
 
     .line 413
     invoke-virtual {p1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    goto :goto_0
-
-    :cond_0
-    const/high16 v0, 0x80000
-
-    .line 417
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    :goto_0
     return-void
 .end method

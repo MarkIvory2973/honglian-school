@@ -50,7 +50,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1908
+    .line 1918
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -58,17 +58,6 @@
 
 .method static all()I
     .locals 1
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "WrongConstant"
-        }
-    .end annotation
-
-    .annotation build Landroidx/annotation/RestrictTo;
-        value = {
-            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
-        }
-    .end annotation
 
     const/4 v0, -0x1
 
@@ -102,6 +91,14 @@
 .method static indexOf(I)I
     .locals 3
 
+    const/4 v0, 0x1
+
+    if-eq p0, v0, :cond_8
+
+    const/4 v1, 0x2
+
+    if-eq p0, v1, :cond_7
+
     const/4 v0, 0x4
 
     if-eq p0, v0, :cond_6
@@ -128,20 +125,19 @@
 
     const/16 v0, 0x100
 
-    if-eq p0, v0, :cond_0
+    if-ne p0, v0, :cond_0
 
-    packed-switch p0, :pswitch_data_0
+    return v1
 
-    .line 2036
+    .line 2046
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v2, "type needs to be >= FIRST and <= LAST, type="
 
-    const-string v2, "type needs to be >= FIRST and <= LAST, type="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -152,19 +148,6 @@
     invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    :pswitch_0
-    const/4 p0, 0x1
-
-    return p0
-
-    :pswitch_1
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_0
-    return v1
 
     :cond_1
     const/4 p0, 0x7
@@ -190,17 +173,15 @@
     return p0
 
     :cond_6
-    const/4 p0, 0x2
+    return v1
+
+    :cond_7
+    return v0
+
+    :cond_8
+    const/4 p0, 0x0
 
     return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public static mandatorySystemGestures()I

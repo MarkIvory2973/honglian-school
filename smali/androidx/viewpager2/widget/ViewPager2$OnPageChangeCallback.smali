@@ -34,10 +34,6 @@
 
 .method public onPageScrolled(IFI)V
     .locals 0
-    .param p3    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
 
     return-void
 .end method

@@ -43,9 +43,10 @@
     k = 0x3
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -75,7 +76,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 112
+    .line 182
     check-cast p1, Lkotlin/Unit;
 
     check-cast p2, Lkotlin/coroutines/CoroutineContext$Element;
@@ -89,14 +90,6 @@
 
 .method public final invoke(Lkotlin/Unit;Lkotlin/coroutines/CoroutineContext$Element;)V
     .locals 3
-    .param p1    # Lkotlin/Unit;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Lkotlin/coroutines/CoroutineContext$Element;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
     const-string v0, "<anonymous parameter 0>"
 
@@ -111,15 +104,15 @@
 
     iget-object v0, p0, Lkotlin/coroutines/CombinedContext$writeReplace$1;->$index:Lkotlin/jvm/internal/Ref$IntRef;
 
-    iget v1, v0, Lkotlin/jvm/internal/Ref$IntRef;->element:I
+    iget v0, v0, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
-    add-int/lit8 v2, v1, 0x1
+    iget-object v1, p0, Lkotlin/coroutines/CombinedContext$writeReplace$1;->$index:Lkotlin/jvm/internal/Ref$IntRef;
 
-    iput v2, v0, Lkotlin/jvm/internal/Ref$IntRef;->element:I
+    add-int/lit8 v2, v0, 0x1
 
-    check-cast p2, Lkotlin/coroutines/CoroutineContext;
+    iput v2, v1, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
-    aput-object p2, p1, v1
+    aput-object p2, p1, v0
 
     return-void
 .end method

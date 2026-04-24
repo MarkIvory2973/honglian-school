@@ -1,101 +1,57 @@
-.class synthetic Landroidx/constraintlayout/motion/widget/MotionLayout$2;
+.class Landroidx/constraintlayout/motion/widget/MotionLayout$2;
 .super Ljava/lang/Object;
 .source "MotionLayout.java"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroidx/constraintlayout/motion/widget/MotionLayout;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroidx/constraintlayout/motion/widget/MotionLayout;->rotateTo(II)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
-# static fields
-.field static final synthetic $SwitchMap$androidx$constraintlayout$motion$widget$MotionLayout$TransitionState:[I
+# instance fields
+.field final synthetic this$0:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Landroidx/constraintlayout/motion/widget/MotionLayout;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010
+        }
+        names = {
+            "this$0"
+        }
+    .end annotation
 
-    .line 1049
-    invoke-static {}, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->values()[Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
+    .line 2237
+    iput-object p1, p0, Landroidx/constraintlayout/motion/widget/MotionLayout$2;->this$0:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
-    move-result-object v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    array-length v0, v0
+    return-void
+.end method
 
-    new-array v0, v0, [I
 
-    sput-object v0, Landroidx/constraintlayout/motion/widget/MotionLayout$2;->$SwitchMap$androidx$constraintlayout$motion$widget$MotionLayout$TransitionState:[I
+# virtual methods
+.method public run()V
+    .locals 2
 
-    :try_start_0
-    sget-object v0, Landroidx/constraintlayout/motion/widget/MotionLayout$2;->$SwitchMap$androidx$constraintlayout$motion$widget$MotionLayout$TransitionState:[I
+    .line 2240
+    iget-object v0, p0, Landroidx/constraintlayout/motion/widget/MotionLayout$2;->this$0:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
-    sget-object v1, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->UNDEFINED:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
+    const/4 v1, 0x0
 
-    invoke-virtual {v1}, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->ordinal()I
+    invoke-static {v0, v1}, Landroidx/constraintlayout/motion/widget/MotionLayout;->access$302(Landroidx/constraintlayout/motion/widget/MotionLayout;Z)Z
 
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :try_start_1
-    sget-object v0, Landroidx/constraintlayout/motion/widget/MotionLayout$2;->$SwitchMap$androidx$constraintlayout$motion$widget$MotionLayout$TransitionState:[I
-
-    sget-object v1, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->SETUP:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
-
-    invoke-virtual {v1}, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v0, Landroidx/constraintlayout/motion/widget/MotionLayout$2;->$SwitchMap$androidx$constraintlayout$motion$widget$MotionLayout$TransitionState:[I
-
-    sget-object v1, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->MOVING:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
-
-    invoke-virtual {v1}, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v0, Landroidx/constraintlayout/motion/widget/MotionLayout$2;->$SwitchMap$androidx$constraintlayout$motion$widget$MotionLayout$TransitionState:[I
-
-    sget-object v1, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->FINISHED:Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;
-
-    invoke-virtual {v1}, Landroidx/constraintlayout/motion/widget/MotionLayout$TransitionState;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
     return-void
 .end method

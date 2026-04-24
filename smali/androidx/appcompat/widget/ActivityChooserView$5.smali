@@ -22,7 +22,7 @@
 .method constructor <init>(Landroidx/appcompat/widget/ActivityChooserView;)V
     .locals 0
 
-    .line 284
+    .line 285
     iput-object p1, p0, Landroidx/appcompat/widget/ActivityChooserView$5;->this$0:Landroidx/appcompat/widget/ActivityChooserView;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
@@ -35,10 +35,10 @@
 .method public onChanged()V
     .locals 1
 
-    .line 287
+    .line 288
     invoke-super {p0}, Landroid/database/DataSetObserver;->onChanged()V
 
-    .line 288
+    .line 289
     iget-object v0, p0, Landroidx/appcompat/widget/ActivityChooserView$5;->this$0:Landroidx/appcompat/widget/ActivityChooserView;
 
     invoke-virtual {v0}, Landroidx/appcompat/widget/ActivityChooserView;->updateAppearance()V

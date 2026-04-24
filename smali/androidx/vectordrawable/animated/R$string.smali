@@ -1,6 +1,5 @@
 .class public final Landroidx/vectordrawable/animated/R$string;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -15,14 +14,13 @@
 
 
 # static fields
-.field public static final status_bar_notification_info_overflow:I = 0x7f100066
+.field public static final status_bar_notification_info_overflow:I = 0x7f1100ea
 
 
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
-    .line 166
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

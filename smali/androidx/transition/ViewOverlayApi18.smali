@@ -6,12 +6,6 @@
 .implements Landroidx/transition/ViewOverlayImpl;
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x12
-.end annotation
-
-
 # instance fields
 .field private final mViewOverlay:Landroid/view/ViewOverlay;
 
@@ -19,10 +13,6 @@
 # direct methods
 .method constructor <init>(Landroid/view/View;)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,10 +31,6 @@
 # virtual methods
 .method public add(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 37
     iget-object v0, p0, Landroidx/transition/ViewOverlayApi18;->mViewOverlay:Landroid/view/ViewOverlay;
@@ -56,10 +42,6 @@
 
 .method public remove(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 42
     iget-object v0, p0, Landroidx/transition/ViewOverlayApi18;->mViewOverlay:Landroid/view/ViewOverlay;

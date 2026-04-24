@@ -37,14 +37,6 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 2
-    .param p1    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
-    .param p2    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
 
     const/high16 v0, -0x80000000
 
@@ -58,14 +50,6 @@
 
 .method public constructor <init>(III)V
     .locals 1
-    .param p1    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
-    .param p2    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
 
     const/4 v0, 0x0
 
@@ -77,18 +61,6 @@
 
 .method public constructor <init>(IIILandroid/view/animation/Interpolator;)V
     .locals 1
-    .param p1    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
-    .param p2    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
-    .param p4    # Landroid/view/animation/Interpolator;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 12090
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -180,8 +152,6 @@
 
 .method public getDx()I
     .locals 1
-    .annotation build Landroidx/annotation/Px;
-    .end annotation
 
     .line 12155
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller$Action;->mDx:I
@@ -191,8 +161,6 @@
 
 .method public getDy()I
     .locals 1
-    .annotation build Landroidx/annotation/Px;
-    .end annotation
 
     .line 12165
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller$Action;->mDy:I
@@ -202,8 +170,6 @@
 
 .method public getInterpolator()Landroid/view/animation/Interpolator;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     .line 12184
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller$Action;->mInterpolator:Landroid/view/animation/Interpolator;
@@ -291,9 +257,6 @@
 
     iput p1, p0, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller$Action;->mConsecutiveUpdates:I
 
-    .line 12132
-    iget p1, p0, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller$Action;->mConsecutiveUpdates:I
-
     const/16 v0, 0xa
 
     if-le p1, v0, :cond_1
@@ -335,10 +298,6 @@
 
 .method public setDx(I)V
     .locals 1
-    .param p1    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
 
     const/4 v0, 0x1
 
@@ -353,10 +312,6 @@
 
 .method public setDy(I)V
     .locals 1
-    .param p1    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
 
     const/4 v0, 0x1
 
@@ -371,10 +326,6 @@
 
 .method public setInterpolator(Landroid/view/animation/Interpolator;)V
     .locals 1
-    .param p1    # Landroid/view/animation/Interpolator;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     const/4 v0, 0x1
 
@@ -389,18 +340,6 @@
 
 .method public update(IIILandroid/view/animation/Interpolator;)V
     .locals 0
-    .param p1    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
-    .param p2    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
-    .param p4    # Landroid/view/animation/Interpolator;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 12208
     iput p1, p0, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller$Action;->mDx:I

@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x1e
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/core/app/ActivityCompat;
 .end annotation
@@ -22,26 +18,25 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 709
+    .line 779
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method static getDisplay(Landroid/content/ContextWrapper;)Landroid/view/Display;
+    .locals 0
+
+    .line 791
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getDisplay()Landroid/view/Display;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method static setLocusContext(Landroid/app/Activity;Landroidx/core/content/LocusIdCompat;Landroid/os/Bundle;)V
     .locals 0
-    .param p0    # Landroid/app/Activity;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Landroidx/core/content/LocusIdCompat;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p2    # Landroid/os/Bundle;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     if-nez p1, :cond_0
 
@@ -49,7 +44,7 @@
 
     goto :goto_0
 
-    .line 715
+    .line 786
     :cond_0
     invoke-virtual {p1}, Landroidx/core/content/LocusIdCompat;->toLocusId()Landroid/content/LocusId;
 

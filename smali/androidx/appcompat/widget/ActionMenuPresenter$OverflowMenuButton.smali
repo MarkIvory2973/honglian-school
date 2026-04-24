@@ -28,12 +28,12 @@
     .line 628
     iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;
 
+    const/4 v0, 0x0
+
     .line 629
-    sget v0, Landroidx/appcompat/R$attr;->actionOverflowButtonStyle:I
+    sget v1, Landroidx/appcompat/R$attr;->actionOverflowButtonStyle:I
 
-    const/4 v1, 0x0
-
-    invoke-direct {p0, p2, v1, v0}, Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p2, v0, v1}, Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     const/4 p2, 0x1
 

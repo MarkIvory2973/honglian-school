@@ -146,17 +146,23 @@
     iput v2, v1, Landroidx/recyclerview/widget/ItemTouchHelper;->mInitialTouchX:F
 
     .line 2353
+    iget-object v1, p0, Landroidx/recyclerview/widget/ItemTouchHelper$ItemTouchHelperGestureListener;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
+
     iput p1, v1, Landroidx/recyclerview/widget/ItemTouchHelper;->mInitialTouchY:F
 
-    const/4 p1, 0x0
-
     .line 2354
-    iput p1, v1, Landroidx/recyclerview/widget/ItemTouchHelper;->mDy:F
+    iget-object p1, p0, Landroidx/recyclerview/widget/ItemTouchHelper$ItemTouchHelperGestureListener;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
 
-    iput p1, v1, Landroidx/recyclerview/widget/ItemTouchHelper;->mDx:F
+    const/4 v1, 0x0
+
+    iput v1, p1, Landroidx/recyclerview/widget/ItemTouchHelper;->mDy:F
+
+    iput v1, p1, Landroidx/recyclerview/widget/ItemTouchHelper;->mDx:F
 
     .line 2359
-    iget-object p1, v1, Landroidx/recyclerview/widget/ItemTouchHelper;->mCallback:Landroidx/recyclerview/widget/ItemTouchHelper$Callback;
+    iget-object p1, p0, Landroidx/recyclerview/widget/ItemTouchHelper$ItemTouchHelperGestureListener;->this$0:Landroidx/recyclerview/widget/ItemTouchHelper;
+
+    iget-object p1, p1, Landroidx/recyclerview/widget/ItemTouchHelper;->mCallback:Landroidx/recyclerview/widget/ItemTouchHelper$Callback;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->isLongPressDragEnabled()Z
 

@@ -36,19 +36,16 @@
     k = 0x2
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-.end annotation
-
-.annotation build Lkotlin/jvm/JvmName;
-    name = "TimersKt"
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method private static final fixedRateTimer(Ljava/lang/String;ZJJLkotlin/jvm/functions/Function1;)Ljava/util/Timer;
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -63,8 +60,9 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "action"
+
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 123
     invoke-static {p0, p1}, Lkotlin/concurrent/TimersKt;->timer(Ljava/lang/String;Z)Ljava/util/Timer;
@@ -76,23 +74,23 @@
 
     invoke-direct {p1, p6}, Lkotlin/concurrent/TimersKt$timerTask$1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    move-object v1, p1
+    move-object v2, p1
 
-    check-cast v1, Ljava/util/TimerTask;
+    check-cast v2, Ljava/util/TimerTask;
 
-    move-object v0, p0
+    move-object v1, p0
 
-    move-wide v2, p2
+    move-wide v3, p2
 
-    move-wide v4, p4
+    move-wide v5, p4
 
-    invoke-virtual/range {v0 .. v5}, Ljava/util/Timer;->scheduleAtFixedRate(Ljava/util/TimerTask;JJ)V
+    invoke-virtual/range {v1 .. v6}, Ljava/util/Timer;->scheduleAtFixedRate(Ljava/util/TimerTask;JJ)V
 
     return-object p0
 .end method
 
 .method private static final fixedRateTimer(Ljava/lang/String;ZLjava/util/Date;JLkotlin/jvm/functions/Function1;)Ljava/util/Timer;
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -109,8 +107,13 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string/jumbo v0, "startAt"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "action"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 137
     invoke-static {p0, p1}, Lkotlin/concurrent/TimersKt;->timer(Ljava/lang/String;Z)Ljava/util/Timer;
@@ -138,9 +141,6 @@
 
     const/4 p0, 0x0
 
-    .line 122
-    check-cast p0, Ljava/lang/String;
-
     :cond_0
     and-int/lit8 p8, p7, 0x2
 
@@ -157,6 +157,11 @@
 
     :cond_2
     move-wide v2, p2
+
+    const-string p2, "action"
+
+    .line 122
+    invoke-static {p6, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 123
     invoke-static {p0, p1}, Lkotlin/concurrent/TimersKt;->timer(Ljava/lang/String;Z)Ljava/util/Timer;
@@ -190,9 +195,6 @@
 
     const/4 p0, 0x0
 
-    .line 136
-    check-cast p0, Ljava/lang/String;
-
     :cond_0
     and-int/lit8 p6, p6, 0x2
 
@@ -200,8 +202,17 @@
 
     const/4 p1, 0x0
 
-    .line 137
     :cond_1
+    const-string/jumbo p6, "startAt"
+
+    .line 136
+    invoke-static {p2, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p6, "action"
+
+    invoke-static {p5, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 137
     invoke-static {p0, p1}, Lkotlin/concurrent/TimersKt;->timer(Ljava/lang/String;Z)Ljava/util/Timer;
 
     move-result-object p0
@@ -234,21 +245,24 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "action"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 40
     new-instance v0, Lkotlin/concurrent/TimersKt$timerTask$1;
 
     invoke-direct {v0, p5}, Lkotlin/concurrent/TimersKt$timerTask$1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    move-object p5, v0
-
-    check-cast p5, Ljava/util/TimerTask;
+    check-cast v0, Ljava/util/TimerTask;
 
     move-object v1, p0
 
-    move-object v2, p5
+    move-object v2, v0
 
     move-wide v3, p1
 
@@ -257,7 +271,7 @@
     .line 41
     invoke-virtual/range {v1 .. v6}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;JJ)V
 
-    return-object p5
+    return-object v0
 .end method
 
 .method private static final schedule(Ljava/util/Timer;JLkotlin/jvm/functions/Function1;)Ljava/util/TimerTask;
@@ -276,8 +290,13 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "action"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 18
     new-instance v0, Lkotlin/concurrent/TimersKt$timerTask$1;
@@ -309,8 +328,17 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "time"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "action"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 51
     new-instance v0, Lkotlin/concurrent/TimersKt$timerTask$1;
@@ -341,8 +369,17 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "time"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "action"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 28
     new-instance v0, Lkotlin/concurrent/TimersKt$timerTask$1;
@@ -373,21 +410,24 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "action"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 63
     new-instance v0, Lkotlin/concurrent/TimersKt$timerTask$1;
 
     invoke-direct {v0, p5}, Lkotlin/concurrent/TimersKt$timerTask$1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    move-object p5, v0
-
-    check-cast p5, Ljava/util/TimerTask;
+    check-cast v0, Ljava/util/TimerTask;
 
     move-object v1, p0
 
-    move-object v2, p5
+    move-object v2, v0
 
     move-wide v3, p1
 
@@ -396,7 +436,7 @@
     .line 64
     invoke-virtual/range {v1 .. v6}, Ljava/util/Timer;->scheduleAtFixedRate(Ljava/util/TimerTask;JJ)V
 
-    return-object p5
+    return-object v0
 .end method
 
 .method private static final scheduleAtFixedRate(Ljava/util/Timer;Ljava/util/Date;JLkotlin/jvm/functions/Function1;)Ljava/util/TimerTask;
@@ -416,8 +456,17 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "time"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "action"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 74
     new-instance v0, Lkotlin/concurrent/TimersKt$timerTask$1;
@@ -434,15 +483,6 @@
 
 .method public static final timer(Ljava/lang/String;Z)Ljava/util/Timer;
     .locals 1
-    .param p0    # Ljava/lang/String;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/PublishedApi;
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     if-nez p0, :cond_0
 
@@ -465,7 +505,7 @@
 .end method
 
 .method private static final timer(Ljava/lang/String;ZJJLkotlin/jvm/functions/Function1;)Ljava/util/Timer;
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -480,8 +520,9 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "action"
+
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 94
     invoke-static {p0, p1}, Lkotlin/concurrent/TimersKt;->timer(Ljava/lang/String;Z)Ljava/util/Timer;
@@ -493,23 +534,23 @@
 
     invoke-direct {p1, p6}, Lkotlin/concurrent/TimersKt$timerTask$1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    move-object v1, p1
+    move-object v2, p1
 
-    check-cast v1, Ljava/util/TimerTask;
+    check-cast v2, Ljava/util/TimerTask;
 
-    move-object v0, p0
+    move-object v1, p0
 
-    move-wide v2, p2
+    move-wide v3, p2
 
-    move-wide v4, p4
+    move-wide v5, p4
 
-    invoke-virtual/range {v0 .. v5}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;JJ)V
+    invoke-virtual/range {v1 .. v6}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;JJ)V
 
     return-object p0
 .end method
 
 .method private static final timer(Ljava/lang/String;ZLjava/util/Date;JLkotlin/jvm/functions/Function1;)Ljava/util/Timer;
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -526,8 +567,13 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string/jumbo v0, "startAt"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "action"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 108
     invoke-static {p0, p1}, Lkotlin/concurrent/TimersKt;->timer(Ljava/lang/String;Z)Ljava/util/Timer;
@@ -555,9 +601,6 @@
 
     const/4 p0, 0x0
 
-    .line 93
-    check-cast p0, Ljava/lang/String;
-
     :cond_0
     and-int/lit8 p8, p7, 0x2
 
@@ -574,6 +617,11 @@
 
     :cond_2
     move-wide v2, p2
+
+    const-string p2, "action"
+
+    .line 93
+    invoke-static {p6, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 94
     invoke-static {p0, p1}, Lkotlin/concurrent/TimersKt;->timer(Ljava/lang/String;Z)Ljava/util/Timer;
@@ -607,9 +655,6 @@
 
     const/4 p0, 0x0
 
-    .line 107
-    check-cast p0, Ljava/lang/String;
-
     :cond_0
     and-int/lit8 p6, p6, 0x2
 
@@ -617,8 +662,17 @@
 
     const/4 p1, 0x0
 
-    .line 108
     :cond_1
+    const-string/jumbo p6, "startAt"
+
+    .line 107
+    invoke-static {p2, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p6, "action"
+
+    invoke-static {p5, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 108
     invoke-static {p0, p1}, Lkotlin/concurrent/TimersKt;->timer(Ljava/lang/String;Z)Ljava/util/Timer;
 
     move-result-object p0
@@ -649,8 +703,9 @@
         }
     .end annotation
 
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
+    const-string v0, "action"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 146
     new-instance v0, Lkotlin/concurrent/TimersKt$timerTask$1;

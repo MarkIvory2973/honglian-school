@@ -4,12 +4,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/versionedparcelable/VersionedParcel$ParcelException;
@@ -133,11 +127,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Unknown exception code: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -221,8 +213,6 @@
 
     return-object p1
 
-    nop
-
     :pswitch_data_0
     .packed-switch -0x9
         :pswitch_8
@@ -238,7 +228,7 @@
 .end method
 
 .method private findParcelClass(Ljava/lang/Class;)Ljava/lang/Class;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -280,26 +270,26 @@
 
     move-result-object v0
 
-    const-string v1, "%s.%sParcelizer"
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    new-array v1, v1, [Ljava/lang/Object;
 
-    .line 1631
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    aput-object v0, v2, v3
+    aput-object v0, v1, v2
 
     const/4 v0, 0x1
 
+    .line 1631
     invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    aput-object v4, v2, v0
+    aput-object v3, v1, v0
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string v0, "%s.%sParcelizer"
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -308,7 +298,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v3, v1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+    invoke-static {v0, v2, v1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
     move-result-object v0
 
@@ -326,7 +316,7 @@
 .end method
 
 .method private getReadMethod(Ljava/lang/String;)Ljava/lang/reflect/Method;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalAccessException;,
@@ -354,26 +344,24 @@
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    invoke-static {p1, v1, v0}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+    invoke-static {p1, v2, v1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v2, "read"
-
-    .line 1608
-    new-array v1, v1, [Ljava/lang/Class;
+    new-array v2, v2, [Ljava/lang/Class;
 
     const/4 v3, 0x0
 
-    const-class v4, Landroidx/versionedparcelable/VersionedParcel;
+    aput-object v0, v2, v3
 
-    aput-object v4, v1, v3
+    const-string v0, "read"
 
-    invoke-virtual {v0, v2, v1}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    .line 1608
+    invoke-virtual {v1, v0, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
@@ -388,12 +376,6 @@
 
 .method protected static getRootCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
     .locals 1
-    .param p0    # Ljava/lang/Throwable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 1208
     :goto_0
@@ -524,7 +506,7 @@
 .end method
 
 .method private getWriteMethod(Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalAccessException;,
@@ -556,24 +538,24 @@
     .line 1619
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    const-string v1, "write"
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    new-array v1, v1, [Ljava/lang/Class;
+
+    const/4 v2, 0x0
+
+    aput-object p1, v1, v2
+
+    const/4 v2, 0x1
 
     .line 1620
-    new-array v2, v2, [Ljava/lang/Class;
+    const-class v3, Landroidx/versionedparcelable/VersionedParcel;
 
-    const/4 v3, 0x0
+    aput-object v3, v1, v2
 
-    aput-object p1, v2, v3
+    const-string/jumbo v2, "write"
 
-    const/4 v3, 0x1
-
-    const-class v4, Landroidx/versionedparcelable/VersionedParcel;
-
-    aput-object v4, v2, v3
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v2, v1}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
@@ -614,7 +596,7 @@
     return-object v1
 
     :cond_0
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_7
 
     .line 1349
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readInt()I
@@ -626,13 +608,31 @@
     return-object v1
 
     :cond_1
-    packed-switch v2, :pswitch_data_0
+    const/4 v1, 0x1
+
+    if-eq v2, v1, :cond_6
+
+    const/4 v1, 0x2
+
+    if-eq v2, v1, :cond_5
+
+    const/4 v1, 0x3
+
+    if-eq v2, v1, :cond_4
+
+    const/4 v1, 0x4
+
+    if-eq v2, v1, :cond_3
+
+    const/4 v1, 0x5
+
+    if-eq v2, v1, :cond_2
 
     goto :goto_5
 
+    :cond_2
     :goto_0
-    :pswitch_0
-    if-lez v0, :cond_2
+    if-lez v0, :cond_7
 
     .line 1380
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readStrongBinder()Landroid/os/IBinder;
@@ -645,9 +645,9 @@
 
     goto :goto_0
 
+    :cond_3
     :goto_1
-    :pswitch_1
-    if-lez v0, :cond_2
+    if-lez v0, :cond_7
 
     .line 1356
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readString()Ljava/lang/String;
@@ -660,9 +660,9 @@
 
     goto :goto_1
 
+    :cond_4
     :goto_2
-    :pswitch_2
-    if-lez v0, :cond_2
+    if-lez v0, :cond_7
 
     .line 1374
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readSerializable()Ljava/io/Serializable;
@@ -675,9 +675,9 @@
 
     goto :goto_2
 
+    :cond_5
     :goto_3
-    :pswitch_3
-    if-lez v0, :cond_2
+    if-lez v0, :cond_7
 
     .line 1362
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readParcelable()Landroid/os/Parcelable;
@@ -690,9 +690,9 @@
 
     goto :goto_3
 
+    :cond_6
     :goto_4
-    :pswitch_4
-    if-lez v0, :cond_2
+    if-lez v0, :cond_7
 
     .line 1368
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readVersionedParcelable()Landroidx/versionedparcelable/VersionedParcelable;
@@ -705,18 +705,9 @@
 
     goto :goto_4
 
-    :cond_2
+    :cond_7
     :goto_5
     return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method private readException(ILjava/lang/String;)Ljava/lang/Exception;
@@ -1071,11 +1062,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "VersionedParcelable encountered IOException writing serializable object (name = "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1192,7 +1181,7 @@
 
     invoke-direct {v2, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_7
 
     .line 1450
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readInt()I
@@ -1204,13 +1193,31 @@
     return-object v1
 
     :cond_1
-    packed-switch v3, :pswitch_data_0
+    const/4 v1, 0x1
+
+    if-eq v3, v1, :cond_6
+
+    const/4 v1, 0x2
+
+    if-eq v3, v1, :cond_5
+
+    const/4 v1, 0x3
+
+    if-eq v3, v1, :cond_4
+
+    const/4 v1, 0x4
+
+    if-eq v3, v1, :cond_3
+
+    const/4 v1, 0x5
+
+    if-eq v3, v1, :cond_2
 
     goto :goto_5
 
+    :cond_2
     :goto_0
-    :pswitch_0
-    if-lez v0, :cond_2
+    if-lez v0, :cond_7
 
     .line 1481
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readStrongBinder()Landroid/os/IBinder;
@@ -1223,9 +1230,9 @@
 
     goto :goto_0
 
+    :cond_3
     :goto_1
-    :pswitch_1
-    if-lez v0, :cond_2
+    if-lez v0, :cond_7
 
     .line 1457
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readString()Ljava/lang/String;
@@ -1238,9 +1245,9 @@
 
     goto :goto_1
 
+    :cond_4
     :goto_2
-    :pswitch_2
-    if-lez v0, :cond_2
+    if-lez v0, :cond_7
 
     .line 1475
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readSerializable()Ljava/io/Serializable;
@@ -1253,9 +1260,9 @@
 
     goto :goto_2
 
+    :cond_5
     :goto_3
-    :pswitch_3
-    if-lez v0, :cond_2
+    if-lez v0, :cond_7
 
     .line 1463
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readParcelable()Landroid/os/Parcelable;
@@ -1268,9 +1275,9 @@
 
     goto :goto_3
 
+    :cond_6
     :goto_4
-    :pswitch_4
-    if-lez v0, :cond_2
+    if-lez v0, :cond_7
 
     .line 1469
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readVersionedParcelable()Landroidx/versionedparcelable/VersionedParcelable;
@@ -1284,24 +1291,13 @@
     goto :goto_4
 
     .line 1487
-    :cond_2
+    :cond_7
     :goto_5
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public readArray([Ljava/lang/Object;I)[Ljava/lang/Object;
@@ -1687,8 +1683,6 @@
 
     move-result-object p1
 
-    return-object p1
-
     :cond_1
     return-object p1
 .end method
@@ -1780,7 +1774,7 @@
 .end method
 
 .method protected readFromParcel(Ljava/lang/String;Landroidx/versionedparcelable/VersionedParcel;)Landroidx/versionedparcelable/VersionedParcelable;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -1798,18 +1792,18 @@
 
     move-result-object p1
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p2, v0, v1
+
+    const/4 p2, 0x0
 
     .line 1566
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p2, v1, v2
-
-    invoke-virtual {p1, v0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, p2, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -2221,14 +2215,16 @@
 .end method
 
 .method protected readSerializable()Ljava/io/Serializable;
-    .locals 5
+    .locals 6
+
+    const-string v0, ")"
 
     .line 1523
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -2238,86 +2234,78 @@
     :cond_0
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readByteArray()[B
 
-    move-result-object v1
+    move-result-object v2
 
     .line 1533
-    new-instance v2, Ljava/io/ByteArrayInputStream;
+    new-instance v3, Ljava/io/ByteArrayInputStream;
 
-    invoke-direct {v2, v1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+    invoke-direct {v3, v2}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
     .line 1535
     :try_start_0
-    new-instance v1, Landroidx/versionedparcelable/VersionedParcel$1;
+    new-instance v2, Landroidx/versionedparcelable/VersionedParcel$1;
 
-    invoke-direct {v1, p0, v2}, Landroidx/versionedparcelable/VersionedParcel$1;-><init>(Landroidx/versionedparcelable/VersionedParcel;Ljava/io/InputStream;)V
+    invoke-direct {v2, p0, v3}, Landroidx/versionedparcelable/VersionedParcel$1;-><init>(Landroidx/versionedparcelable/VersionedParcel;Ljava/io/InputStream;)V
 
     .line 1547
-    invoke-virtual {v1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Ljava/io/Serializable;
+    check-cast v2, Ljava/io/Serializable;
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v1
+    return-object v2
 
     :catch_0
-    move-exception v1
+    move-exception v2
 
     .line 1553
-    new-instance v2, Ljava/lang/RuntimeException;
+    new-instance v3, Ljava/lang/RuntimeException;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v5, "VersionedParcelable encountered ClassNotFoundException reading a Serializable object (name = "
 
-    const-string v4, "VersionedParcelable encountered ClassNotFoundException reading a Serializable object (name = "
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, ")"
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v2, v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v3, v0, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v2
+    throw v3
 
     :catch_1
-    move-exception v1
+    move-exception v2
 
     .line 1549
-    new-instance v2, Ljava/lang/RuntimeException;
+    new-instance v3, Ljava/lang/RuntimeException;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v5, "VersionedParcelable encountered IOException reading a Serializable object (name = "
 
-    const-string v4, "VersionedParcelable encountered IOException reading a Serializable object (name = "
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, ")"
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v2, v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v3, v0, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v2
+    throw v3
 .end method
 
 .method public readSet(Ljava/util/Set;I)Ljava/util/Set;
@@ -2360,9 +2348,6 @@
 
 .method public readSize(Landroid/util/Size;I)Landroid/util/Size;
     .locals 1
-    .annotation build Landroidx/annotation/RequiresApi;
-        api = 0x15
-    .end annotation
 
     .line 1256
     invoke-virtual {p0, p2}, Landroidx/versionedparcelable/VersionedParcel;->readField(I)Z
@@ -2406,9 +2391,6 @@
 
 .method public readSizeF(Landroid/util/SizeF;I)Landroid/util/SizeF;
     .locals 1
-    .annotation build Landroidx/annotation/RequiresApi;
-        api = 0x15
-    .end annotation
 
     .line 1272
     invoke-virtual {p0, p2}, Landroidx/versionedparcelable/VersionedParcel;->readField(I)Z
@@ -2624,7 +2606,7 @@
 .end method
 
 .method protected writeArray([Ljava/lang/Object;)V
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -2649,7 +2631,7 @@
     .line 955
     invoke-virtual {p0, v0}, Landroidx/versionedparcelable/VersionedParcel;->writeInt(I)V
 
-    if-lez v0, :cond_1
+    if-lez v0, :cond_6
 
     const/4 v1, 0x0
 
@@ -2663,13 +2645,31 @@
     .line 958
     invoke-virtual {p0, v2}, Landroidx/versionedparcelable/VersionedParcel;->writeInt(I)V
 
-    packed-switch v2, :pswitch_data_0
+    const/4 v3, 0x1
+
+    if-eq v2, v3, :cond_5
+
+    const/4 v3, 0x2
+
+    if-eq v2, v3, :cond_4
+
+    const/4 v3, 0x3
+
+    if-eq v2, v3, :cond_3
+
+    const/4 v3, 0x4
+
+    if-eq v2, v3, :cond_2
+
+    const/4 v3, 0x5
+
+    if-eq v2, v3, :cond_1
 
     goto :goto_5
 
+    :cond_1
     :goto_0
-    :pswitch_0
-    if-ge v1, v0, :cond_1
+    if-ge v1, v0, :cond_6
 
     .line 986
     aget-object v2, p1, v1
@@ -2682,9 +2682,9 @@
 
     goto :goto_0
 
+    :cond_2
     :goto_1
-    :pswitch_1
-    if-ge v1, v0, :cond_1
+    if-ge v1, v0, :cond_6
 
     .line 962
     aget-object v2, p1, v1
@@ -2697,9 +2697,9 @@
 
     goto :goto_1
 
+    :cond_3
     :goto_2
-    :pswitch_2
-    if-ge v1, v0, :cond_1
+    if-ge v1, v0, :cond_6
 
     .line 980
     aget-object v2, p1, v1
@@ -2712,9 +2712,9 @@
 
     goto :goto_2
 
+    :cond_4
     :goto_3
-    :pswitch_3
-    if-ge v1, v0, :cond_1
+    if-ge v1, v0, :cond_6
 
     .line 968
     aget-object v2, p1, v1
@@ -2727,9 +2727,9 @@
 
     goto :goto_3
 
+    :cond_5
     :goto_4
-    :pswitch_4
-    if-ge v1, v0, :cond_1
+    if-ge v1, v0, :cond_6
 
     .line 974
     aget-object v2, p1, v1
@@ -2742,18 +2742,9 @@
 
     goto :goto_4
 
-    :cond_1
+    :cond_6
     :goto_5
     return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public writeArray([Ljava/lang/Object;I)V
@@ -3010,7 +3001,7 @@
 .end method
 
 .method public writeException(Ljava/lang/Exception;I)V
-    .locals 3
+    .locals 2
 
     .line 1107
     invoke-virtual {p0, p2}, Landroidx/versionedparcelable/VersionedParcel;->setOutputField(I)V
@@ -3022,32 +3013,30 @@
 
     return-void
 
-    :cond_0
-    const/4 p2, 0x0
-
     .line 1113
-    instance-of v0, p1, Landroid/os/Parcelable;
+    :cond_0
+    instance-of p2, p1, Landroid/os/Parcelable;
 
-    const/16 v1, -0x9
+    const/16 v0, -0x9
 
-    if-eqz v0, :cond_1
+    if-eqz p2, :cond_1
 
     .line 1114
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    invoke-virtual {p2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    move-result-object v0
+    move-result-object p2
 
-    const-class v2, Landroid/os/Parcelable;
+    const-class v1, Landroid/os/Parcelable;
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-ne v0, v2, :cond_1
+    if-ne p2, v1, :cond_1
 
     const/16 p2, -0x9
 
@@ -3055,9 +3044,9 @@
 
     .line 1118
     :cond_1
-    instance-of v0, p1, Ljava/lang/SecurityException;
+    instance-of p2, p1, Ljava/lang/SecurityException;
 
-    if-eqz v0, :cond_2
+    if-eqz p2, :cond_2
 
     const/4 p2, -0x1
 
@@ -3065,9 +3054,9 @@
 
     .line 1120
     :cond_2
-    instance-of v0, p1, Landroid/os/BadParcelableException;
+    instance-of p2, p1, Landroid/os/BadParcelableException;
 
-    if-eqz v0, :cond_3
+    if-eqz p2, :cond_3
 
     const/4 p2, -0x2
 
@@ -3075,9 +3064,9 @@
 
     .line 1122
     :cond_3
-    instance-of v0, p1, Ljava/lang/IllegalArgumentException;
+    instance-of p2, p1, Ljava/lang/IllegalArgumentException;
 
-    if-eqz v0, :cond_4
+    if-eqz p2, :cond_4
 
     const/4 p2, -0x3
 
@@ -3085,9 +3074,9 @@
 
     .line 1124
     :cond_4
-    instance-of v0, p1, Ljava/lang/NullPointerException;
+    instance-of p2, p1, Ljava/lang/NullPointerException;
 
-    if-eqz v0, :cond_5
+    if-eqz p2, :cond_5
 
     const/4 p2, -0x4
 
@@ -3095,9 +3084,9 @@
 
     .line 1126
     :cond_5
-    instance-of v0, p1, Ljava/lang/IllegalStateException;
+    instance-of p2, p1, Ljava/lang/IllegalStateException;
 
-    if-eqz v0, :cond_6
+    if-eqz p2, :cond_6
 
     const/4 p2, -0x5
 
@@ -3105,9 +3094,9 @@
 
     .line 1128
     :cond_6
-    instance-of v0, p1, Landroid/os/NetworkOnMainThreadException;
+    instance-of p2, p1, Landroid/os/NetworkOnMainThreadException;
 
-    if-eqz v0, :cond_7
+    if-eqz p2, :cond_7
 
     const/4 p2, -0x6
 
@@ -3115,14 +3104,18 @@
 
     .line 1130
     :cond_7
-    instance-of v0, p1, Ljava/lang/UnsupportedOperationException;
+    instance-of p2, p1, Ljava/lang/UnsupportedOperationException;
 
-    if-eqz v0, :cond_8
+    if-eqz p2, :cond_8
 
     const/4 p2, -0x7
 
-    .line 1133
+    goto :goto_0
+
     :cond_8
+    const/4 p2, 0x0
+
+    .line 1133
     :goto_0
     invoke-virtual {p0, p2}, Landroidx/versionedparcelable/VersionedParcel;->writeInt(I)V
 
@@ -3150,11 +3143,11 @@
     :cond_a
     invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {p0, v0}, Landroidx/versionedparcelable/VersionedParcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Landroidx/versionedparcelable/VersionedParcel;->writeString(Ljava/lang/String;)V
 
-    if-eq p2, v1, :cond_b
+    if-eq p2, v0, :cond_b
 
     goto :goto_1
 
@@ -3528,9 +3521,6 @@
 
 .method public writeSize(Landroid/util/Size;I)V
     .locals 0
-    .annotation build Landroidx/annotation/RequiresApi;
-        api = 0x15
-    .end annotation
 
     .line 514
     invoke-virtual {p0, p2}, Landroidx/versionedparcelable/VersionedParcel;->setOutputField(I)V
@@ -3570,9 +3560,6 @@
 
 .method public writeSizeF(Landroid/util/SizeF;I)V
     .locals 0
-    .annotation build Landroidx/annotation/RequiresApi;
-        api = 0x15
-    .end annotation
 
     .line 528
     invoke-virtual {p0, p2}, Landroidx/versionedparcelable/VersionedParcel;->setOutputField(I)V
@@ -3707,7 +3694,7 @@
 .end method
 
 .method protected writeToParcel(Landroidx/versionedparcelable/VersionedParcelable;Landroidx/versionedparcelable/VersionedParcel;)V
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -3728,22 +3715,22 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    new-array v1, v1, [Ljava/lang/Object;
 
-    .line 1587
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    aput-object p1, v2, v3
+    aput-object p1, v1, v2
 
     const/4 p1, 0x1
 
-    aput-object p2, v2, p1
+    aput-object p2, v1, p1
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 p1, 0x0
+
+    .line 1587
+    invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_3
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_2

@@ -3,21 +3,10 @@
 .source "GhostViewHolder.java"
 
 
-# annotations
-.annotation build Landroid/annotation/SuppressLint;
-    value = {
-        "ViewConstructor"
-    }
-.end annotation
-
-
 # instance fields
 .field private mAttached:Z
 
 .field private mParent:Landroid/view/ViewGroup;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 
 # direct methods
@@ -40,8 +29,6 @@
     iput-object p1, p0, Landroidx/transition/GhostViewHolder;->mParent:Landroid/view/ViewGroup;
 
     .line 41
-    iget-object p1, p0, Landroidx/transition/GhostViewHolder;->mParent:Landroid/view/ViewGroup;
-
     sget v0, Landroidx/transition/R$id;->ghost_view_holder:I
 
     invoke-virtual {p1, v0, p0}, Landroid/view/ViewGroup;->setTag(ILjava/lang/Object;)V
@@ -65,10 +52,6 @@
 
 .method static getHolder(Landroid/view/ViewGroup;)Landroidx/transition/GhostViewHolder;
     .locals 1
-    .param p0    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 69
     sget v0, Landroidx/transition/R$id;->ghost_view_holder:I
@@ -204,17 +187,6 @@
 
     move-result v1
 
-    .line 175
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    const/16 v5, 0x15
-
-    if-lt v2, v5, :cond_1
-
     .line 176
     invoke-virtual {p0}, Landroid/view/View;->getZ()F
 
@@ -222,9 +194,13 @@
 
     invoke-virtual {p1}, Landroid/view/View;->getZ()F
 
-    move-result v5
+    move-result v3
 
-    cmpl-float v2, v2, v5
+    const/4 v4, 0x0
+
+    const/4 v5, 0x1
+
+    cmpl-float v2, v2, v3
 
     if-eqz v2, :cond_1
 
@@ -241,10 +217,10 @@
 
     if-lez p0, :cond_0
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     :cond_0
-    return v3
+    return v4
 
     :cond_1
     const/4 v2, 0x0
@@ -255,21 +231,19 @@
     .line 186
     invoke-static {v0, v2}, Landroidx/transition/ViewGroupUtils;->getChildDrawingOrder(Landroid/view/ViewGroup;I)I
 
-    move-result v5
+    move-result v3
 
     .line 187
-    invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v5
+    move-result-object v3
 
-    if-ne v5, p0, :cond_2
+    if-ne v3, p0, :cond_2
 
-    const/4 v4, 0x0
-
-    goto :goto_1
+    goto :goto_2
 
     :cond_2
-    if-ne v5, p1, :cond_3
+    if-ne v3, p1, :cond_3
 
     goto :goto_1
 
@@ -280,6 +254,9 @@
 
     :cond_4
     :goto_1
+    const/4 v4, 0x1
+
+    :goto_2
     return v4
 .end method
 
@@ -382,10 +359,10 @@
 
     if-ne p0, v2, :cond_3
 
-    const/4 v0, 0x1
+    goto :goto_1
 
     :cond_3
-    return v0
+    const/4 v1, 0x0
 
     :cond_4
     :goto_1
@@ -473,13 +450,13 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    if-ne v0, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
-    invoke-virtual {p0, v1}, Landroidx/transition/GhostViewHolder;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroidx/transition/GhostViewHolder;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -499,9 +476,9 @@
 
     sget v0, Landroidx/transition/R$id;->ghost_view_holder:I
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {p1, v0, v2}, Landroid/view/ViewGroup;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {p1, v0, v1}, Landroid/view/ViewGroup;->setTag(ILjava/lang/Object;)V
 
     .line 63
     iget-object p1, p0, Landroidx/transition/GhostViewHolder;->mParent:Landroid/view/ViewGroup;
@@ -513,7 +490,7 @@
     invoke-interface {p1, p0}, Landroidx/transition/ViewGroupOverlayImpl;->remove(Landroid/view/View;)V
 
     .line 64
-    iput-boolean v1, p0, Landroidx/transition/GhostViewHolder;->mAttached:Z
+    iput-boolean v2, p0, Landroidx/transition/GhostViewHolder;->mAttached:Z
 
     :cond_2
     return-void

@@ -8,12 +8,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;
@@ -77,8 +71,6 @@
     iput-object p1, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
 
     .line 73
-    iget-object p1, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
-
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object p1
@@ -139,7 +131,7 @@
 .method public getId()I
     .locals 1
 
-    .line 212
+    .line 213
     iget v0, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mId:I
 
     return v0
@@ -218,16 +210,16 @@
     if-eqz v0, :cond_0
 
     .line 89
-    new-instance v1, Landroid/view/ContextThemeWrapper;
+    new-instance v0, Landroid/view/ContextThemeWrapper;
 
-    invoke-direct {v1, p1, v0}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
+    iget v1, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mThemeRes:I
 
-    iput-object v1, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
+    invoke-direct {v0, p1, v1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
+
+    iput-object v0, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
 
     .line 90
-    iget-object p1, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
-
-    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object p1
 
@@ -245,13 +237,11 @@
     iput-object p1, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
 
     .line 93
-    iget-object p1, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mInflater:Landroid/view/LayoutInflater;
+    iget-object v0, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mInflater:Landroid/view/LayoutInflater;
 
-    if-nez p1, :cond_1
+    if-nez v0, :cond_1
 
     .line 94
-    iget-object p1, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
-
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object p1
@@ -321,7 +311,7 @@
 .method public onRestoreInstanceState(Landroid/os/Parcelable;)V
     .locals 0
 
-    .line 228
+    .line 229
     check-cast p1, Landroid/os/Bundle;
 
     invoke-virtual {p0, p1}, Landroidx/appcompat/view/menu/ListMenuPresenter;->restoreHierarchyState(Landroid/os/Bundle;)V
@@ -332,7 +322,7 @@
 .method public onSaveInstanceState()Landroid/os/Parcelable;
     .locals 1
 
-    .line 217
+    .line 218
     iget-object v0, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mMenuView:Landroidx/appcompat/view/menu/ExpandedMenuView;
 
     if-nez v0, :cond_0
@@ -341,13 +331,13 @@
 
     return-object v0
 
-    .line 221
+    .line 222
     :cond_0
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 222
+    .line 223
     invoke-virtual {p0, v0}, Landroidx/appcompat/view/menu/ListMenuPresenter;->saveHierarchyState(Landroid/os/Bundle;)V
 
     return-object v0
@@ -396,14 +386,14 @@
 
     const-string v0, "android:menu:list"
 
-    .line 200
+    .line 201
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 202
+    .line 203
     iget-object v0, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mMenuView:Landroidx/appcompat/view/menu/ExpandedMenuView;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->restoreHierarchyState(Landroid/util/SparseArray;)V
@@ -449,7 +439,7 @@
 .method public setId(I)V
     .locals 0
 
-    .line 207
+    .line 208
     iput p1, p0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mId:I
 
     return-void

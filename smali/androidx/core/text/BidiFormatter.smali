@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/text/BidiFormatter$DirectionalityEstimator;,
-        Landroidx/core/text/BidiFormatter$Builder;
+        Landroidx/core/text/BidiFormatter$Builder;,
+        Landroidx/core/text/BidiFormatter$DirectionalityEstimator;
     }
 .end annotation
 
@@ -63,47 +63,43 @@
 
     sput-object v0, Landroidx/core/text/BidiFormatter;->DEFAULT_TEXT_DIRECTION_HEURISTIC:Landroidx/core/text/TextDirectionHeuristicCompat;
 
-    const/16 v0, 0x200e
+    const/16 v1, 0x200e
 
     .line 115
-    invoke-static {v0}, Ljava/lang/Character;->toString(C)Ljava/lang/String;
+    invoke-static {v1}, Ljava/lang/Character;->toString(C)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Landroidx/core/text/BidiFormatter;->LRM_STRING:Ljava/lang/String;
+    sput-object v1, Landroidx/core/text/BidiFormatter;->LRM_STRING:Ljava/lang/String;
 
-    const/16 v0, 0x200f
+    const/16 v1, 0x200f
 
     .line 120
-    invoke-static {v0}, Ljava/lang/Character;->toString(C)Ljava/lang/String;
+    invoke-static {v1}, Ljava/lang/Character;->toString(C)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Landroidx/core/text/BidiFormatter;->RLM_STRING:Ljava/lang/String;
+    sput-object v1, Landroidx/core/text/BidiFormatter;->RLM_STRING:Ljava/lang/String;
 
     .line 217
-    new-instance v0, Landroidx/core/text/BidiFormatter;
+    new-instance v1, Landroidx/core/text/BidiFormatter;
 
-    sget-object v1, Landroidx/core/text/BidiFormatter;->DEFAULT_TEXT_DIRECTION_HEURISTIC:Landroidx/core/text/TextDirectionHeuristicCompat;
+    const/4 v2, 0x0
 
-    const/4 v2, 0x2
+    const/4 v3, 0x2
 
-    const/4 v3, 0x0
+    invoke-direct {v1, v2, v3, v0}, Landroidx/core/text/BidiFormatter;-><init>(ZILandroidx/core/text/TextDirectionHeuristicCompat;)V
 
-    invoke-direct {v0, v3, v2, v1}, Landroidx/core/text/BidiFormatter;-><init>(ZILandroidx/core/text/TextDirectionHeuristicCompat;)V
-
-    sput-object v0, Landroidx/core/text/BidiFormatter;->DEFAULT_LTR_INSTANCE:Landroidx/core/text/BidiFormatter;
+    sput-object v1, Landroidx/core/text/BidiFormatter;->DEFAULT_LTR_INSTANCE:Landroidx/core/text/BidiFormatter;
 
     .line 222
-    new-instance v0, Landroidx/core/text/BidiFormatter;
+    new-instance v1, Landroidx/core/text/BidiFormatter;
 
-    sget-object v1, Landroidx/core/text/BidiFormatter;->DEFAULT_TEXT_DIRECTION_HEURISTIC:Landroidx/core/text/TextDirectionHeuristicCompat;
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    invoke-direct {v1, v2, v3, v0}, Landroidx/core/text/BidiFormatter;-><init>(ZILandroidx/core/text/TextDirectionHeuristicCompat;)V
 
-    invoke-direct {v0, v3, v2, v1}, Landroidx/core/text/BidiFormatter;-><init>(ZILandroidx/core/text/TextDirectionHeuristicCompat;)V
-
-    sput-object v0, Landroidx/core/text/BidiFormatter;->DEFAULT_RTL_INSTANCE:Landroidx/core/text/BidiFormatter;
+    sput-object v1, Landroidx/core/text/BidiFormatter;->DEFAULT_RTL_INSTANCE:Landroidx/core/text/BidiFormatter;
 
     return-void
 .end method
@@ -229,14 +225,14 @@
 .method private markAfter(Ljava/lang/CharSequence;Landroidx/core/text/TextDirectionHeuristicCompat;)Ljava/lang/String;
     .locals 2
 
+    const/4 v0, 0x0
+
     .line 300
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x0
-
-    invoke-interface {p2, p1, v1, v0}, Landroidx/core/text/TextDirectionHeuristicCompat;->isRtl(Ljava/lang/CharSequence;II)Z
+    invoke-interface {p2, p1, v0, v1}, Landroidx/core/text/TextDirectionHeuristicCompat;->isRtl(Ljava/lang/CharSequence;II)Z
 
     move-result p2
 
@@ -292,14 +288,14 @@
 .method private markBefore(Ljava/lang/CharSequence;Landroidx/core/text/TextDirectionHeuristicCompat;)Ljava/lang/String;
     .locals 2
 
+    const/4 v0, 0x0
+
     .line 328
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x0
-
-    invoke-interface {p2, p1, v1, v0}, Landroidx/core/text/TextDirectionHeuristicCompat;->isRtl(Ljava/lang/CharSequence;II)Z
+    invoke-interface {p2, p1, v0, v1}, Landroidx/core/text/TextDirectionHeuristicCompat;->isRtl(Ljava/lang/CharSequence;II)Z
 
     move-result p2
 
@@ -381,13 +377,13 @@
     .line 358
     iget-object v0, p0, Landroidx/core/text/BidiFormatter;->mDefaultTextDirectionHeuristicCompat:Landroidx/core/text/TextDirectionHeuristicCompat;
 
+    const/4 v1, 0x0
+
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x0
-
-    invoke-interface {v0, p1, v2, v1}, Landroidx/core/text/TextDirectionHeuristicCompat;->isRtl(Ljava/lang/CharSequence;II)Z
+    invoke-interface {v0, p1, v1, v2}, Landroidx/core/text/TextDirectionHeuristicCompat;->isRtl(Ljava/lang/CharSequence;II)Z
 
     move-result p1
 

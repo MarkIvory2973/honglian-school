@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFilePathComponents.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FilePathComponents.kt\nkotlin/io/FilesKt__FilePathComponentsKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,148:1\n1547#2:149\n1618#2,3:150\n*S KotlinDebug\n*F\n+ 1 FilePathComponents.kt\nkotlin/io/FilesKt__FilePathComponentsKt\n*L\n133#1:149\n133#1:150,3\n*E\n"
+    value = "SMAP\nFilePathComponents.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FilePathComponents.kt\nkotlin/io/FilesKt__FilePathComponentsKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,148:1\n1549#2:149\n1620#2,3:150\n*S KotlinDebug\n*F\n+ 1 FilePathComponents.kt\nkotlin/io/FilesKt__FilePathComponentsKt\n*L\n133#1:149\n133#1:150,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -37,10 +37,10 @@
     k = 0x5
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-    xi = 0x1
+    xi = 0x31
     xs = "kotlin/io/FilesKt"
 .end annotation
 
@@ -56,14 +56,8 @@
 
 .method public static final getRoot(Ljava/io/File;)Ljava/io/File;
     .locals 1
-    .param p0    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
-    const-string v0, "$this$root"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -224,14 +218,8 @@
 
 .method public static final getRootName(Ljava/io/File;)Ljava/lang/String;
     .locals 2
-    .param p0    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
-    const-string v0, "$this$rootName"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -240,7 +228,7 @@
 
     move-result-object v0
 
-    const-string v1, "path"
+    const-string v1, "getPath(...)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -248,15 +236,11 @@
 
     move-result-object p0
 
-    const-string v1, "path"
-
     invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p0}, Lkotlin/io/FilesKt__FilePathComponentsKt;->getRootLength$FilesKt__FilePathComponentsKt(Ljava/lang/String;)I
 
     move-result p0
-
-    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
@@ -264,30 +248,17 @@
 
     move-result-object p0
 
-    const-string v0, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
+    const-string/jumbo v0, "substring(...)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string v0, "null cannot be cast to non-null type java.lang.String"
-
-    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 .method public static final isRooted(Ljava/io/File;)Z
     .locals 1
-    .param p0    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
-    const-string v0, "$this$isRooted"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -296,7 +267,7 @@
 
     move-result-object p0
 
-    const-string v0, "path"
+    const-string v0, "getPath(...)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -319,14 +290,8 @@
 
 .method public static final subPath(Ljava/io/File;II)Ljava/io/File;
     .locals 1
-    .param p0    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
-    const-string v0, "$this$subPath"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -343,15 +308,9 @@
 .end method
 
 .method public static final toComponents(Ljava/io/File;)Lkotlin/io/FilePathComponents;
-    .locals 9
-    .param p0    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
+    .locals 10
 
-    const-string v0, "$this$toComponents"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -360,10 +319,8 @@
 
     move-result-object p0
 
-    const-string v0, "path"
-
     .line 130
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-static {p0}, Lkotlin/io/FilesKt__FilePathComponentsKt;->getRootLength$FilesKt__FilePathComponentsKt(Ljava/lang/String;)I
 
@@ -376,7 +333,7 @@
 
     move-result-object v2
 
-    const-string v3, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
+    const-string/jumbo v3, "substring(...)"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -385,16 +342,14 @@
 
     move-result-object p0
 
-    const-string v0, "(this as java.lang.String).substring(startIndex)"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 133
-    move-object v3, p0
+    move-object v4, p0
 
-    check-cast v3, Ljava/lang/CharSequence;
+    check-cast v4, Ljava/lang/CharSequence;
 
-    invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
+    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
     move-result p0
 
@@ -419,21 +374,21 @@
     goto :goto_2
 
     :cond_1
-    new-array v4, v0, [C
+    new-array v5, v0, [C
 
     sget-char p0, Ljava/io/File;->separatorChar:C
 
-    aput-char p0, v4, v1
-
-    const/4 v5, 0x0
+    aput-char p0, v5, v1
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x6
+    const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    const/4 v8, 0x6
 
-    invoke-static/range {v3 .. v8}, Lkotlin/text/StringsKt;->split$default(Ljava/lang/CharSequence;[CZIILjava/lang/Object;)Ljava/util/List;
+    const/4 v9, 0x0
+
+    invoke-static/range {v4 .. v9}, Lkotlin/text/StringsKt;->split$default(Ljava/lang/CharSequence;[CZIILjava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
@@ -471,11 +426,12 @@
     .line 151
     check-cast v1, Ljava/lang/String;
 
+    .line 133
     new-instance v3, Ljava/io/File;
 
-    .line 133
     invoke-direct {v3, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 151
     invoke-interface {v0, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1

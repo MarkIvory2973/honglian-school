@@ -21,21 +21,16 @@
     k = 0x2
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
 .method private static final and(BB)B
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     and-int/2addr p0, p1
 
@@ -46,12 +41,6 @@
 
 .method private static final and(SS)S
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     and-int/2addr p0, p1
 
@@ -62,12 +51,6 @@
 
 .method private static final inv(B)B
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     not-int p0, p0
 
@@ -78,12 +61,6 @@
 
 .method private static final inv(S)S
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     not-int p0, p0
 
@@ -94,12 +71,6 @@
 
 .method private static final or(BB)B
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     or-int/2addr p0, p1
 
@@ -110,12 +81,6 @@
 
 .method private static final or(SS)S
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     or-int/2addr p0, p1
 
@@ -126,12 +91,6 @@
 
 .method private static final xor(BB)B
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     xor-int/2addr p0, p1
 
@@ -142,12 +101,6 @@
 
 .method private static final xor(SS)S
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.1"
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     xor-int/2addr p0, p1
 

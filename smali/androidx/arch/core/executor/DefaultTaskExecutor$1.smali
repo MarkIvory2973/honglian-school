@@ -18,7 +18,7 @@
 
 
 # static fields
-.field private static final THREAD_NAME_STEM:Ljava/lang/String; = "arch_disk_io_%d"
+.field private static final THREAD_NAME_STEM:Ljava/lang/String; = "arch_disk_io_"
 
 
 # instance fields
@@ -31,12 +31,12 @@
 .method constructor <init>(Landroidx/arch/core/executor/DefaultTaskExecutor;)V
     .locals 1
 
-    .line 38
+    .line 42
     iput-object p1, p0, Landroidx/arch/core/executor/DefaultTaskExecutor$1;->this$0:Landroidx/arch/core/executor/DefaultTaskExecutor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
+    .line 45
     new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v0, 0x0
@@ -51,35 +51,29 @@
 
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .locals 4
+    .locals 2
 
-    .line 45
+    .line 49
     new-instance v0, Ljava/lang/Thread;
 
     invoke-direct {v0, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    const-string p1, "arch_disk_io_%d"
+    .line 50
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x1
+    const-string v1, "arch_disk_io_"
 
-    .line 46
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-direct {p1, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v2, p0, Landroidx/arch/core/executor/DefaultTaskExecutor$1;->mThreadId:Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object v1, p0, Landroidx/arch/core/executor/DefaultTaskExecutor$1;->mThreadId:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    aput-object v2, v1, v3
-
-    invoke-static {p1, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 

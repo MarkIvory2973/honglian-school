@@ -23,12 +23,6 @@
 
 .method public static create(Landroid/os/Handler;)Ljava/util/concurrent/Executor;
     .locals 1
-    .param p0    # Landroid/os/Handler;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 36
     new-instance v0, Landroidx/core/os/ExecutorCompat$HandlerExecutor;

@@ -3,12 +3,6 @@
 .source "ViewUtilsApi22.java"
 
 
-# annotations
-.annotation build Landroidx/annotation/RequiresApi;
-    value = 0x16
-.end annotation
-
-
 # static fields
 .field private static sTryHiddenSetLeftTopRightBottom:Z = true
 
@@ -33,15 +27,6 @@
 # virtual methods
 .method public setLeftTopRightBottom(Landroid/view/View;IIII)V
     .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "NewApi"
-        }
-    .end annotation
 
     .line 36
     sget-boolean v0, Landroidx/transition/ViewUtilsApi22;->sTryHiddenSetLeftTopRightBottom:Z
@@ -50,7 +35,7 @@
 
     .line 40
     :try_start_0
-    invoke-virtual {p1, p2, p3, p4, p5}, Landroid/view/View;->setLeftTopRightBottom(IIII)V
+    invoke-static {p1, p2, p3, p4, p5}, Landroidx/print/PrintHelper$$ExternalSyntheticApiModelOutline0;->m(Landroid/view/View;IIII)V
     :try_end_0
     .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
 

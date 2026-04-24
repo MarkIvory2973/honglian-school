@@ -33,6 +33,11 @@
 # direct methods
 .method constructor <init>(Landroidx/core/provider/CallbackWithHandler;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
     .line 171
     iput-object p1, p0, Landroidx/core/provider/FontRequestWorker$2;->val$callback:Landroidx/core/provider/CallbackWithHandler;
@@ -47,7 +52,17 @@
 .method public accept(Landroidx/core/provider/FontRequestWorker$TypefaceResult;)V
     .locals 1
 
-    .line 174
+    if-nez p1, :cond_0
+
+    .line 175
+    new-instance p1, Landroidx/core/provider/FontRequestWorker$TypefaceResult;
+
+    const/4 v0, -0x3
+
+    invoke-direct {p1, v0}, Landroidx/core/provider/FontRequestWorker$TypefaceResult;-><init>(I)V
+
+    .line 177
+    :cond_0
     iget-object v0, p0, Landroidx/core/provider/FontRequestWorker$2;->val$callback:Landroidx/core/provider/CallbackWithHandler;
 
     invoke-virtual {v0, p1}, Landroidx/core/provider/CallbackWithHandler;->onTypefaceResult(Landroidx/core/provider/FontRequestWorker$TypefaceResult;)V

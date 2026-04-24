@@ -29,9 +29,6 @@
 
 # instance fields
 .field private mCallable:Ljava/util/concurrent/Callable;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/Callable<",
@@ -41,9 +38,6 @@
 .end field
 
 .field private mConsumer:Landroidx/core/util/Consumer;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroidx/core/util/Consumer<",
@@ -53,26 +47,11 @@
 .end field
 
 .field private mHandler:Landroid/os/Handler;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 
 # direct methods
 .method constructor <init>(Landroid/os/Handler;Ljava/util/concurrent/Callable;Landroidx/core/util/Consumer;)V
     .locals 0
-    .param p1    # Landroid/os/Handler;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/concurrent/Callable;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p3    # Landroidx/core/util/Consumer;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -28,7 +28,7 @@
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "wifi"
+    const-string/jumbo v0, "wifi"
 
     .line 42
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -40,8 +40,6 @@
     iput-object p1, p0, Landroid/app/smdt/WifiUtils;->localWifiManager:Landroid/net/wifi/WifiManager;
 
     .line 44
-    iget-object p1, p0, Landroid/app/smdt/WifiUtils;->localWifiManager:Landroid/net/wifi/WifiManager;
-
     invoke-virtual {p1}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
 
     move-result-object p1
@@ -52,7 +50,7 @@
 .end method
 
 .method private intToIp(I)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     .line 357
     new-instance v0, Ljava/lang/StringBuilder;
@@ -67,23 +65,19 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    shr-int/lit8 v1, p1, 0x8
+    shr-int/lit8 v2, p1, 0x8
 
-    and-int/lit16 v1, v1, 0xff
+    and-int/lit16 v2, v2, 0xff
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, "."
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    shr-int/lit8 v1, p1, 0x10
+    shr-int/lit8 v2, p1, 0x10
 
-    and-int/lit16 v1, v1, 0xff
+    and-int/lit16 v2, v2, 0xff
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, "."
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -116,9 +110,9 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const/4 v0, -0x1
 
-    const/4 v1, -0x1
+    const/4 v1, 0x0
 
     const/4 v2, 0x0
 
@@ -163,19 +157,15 @@
     .line 187
     new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v6, "\""
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v4, v4, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
     invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "\""
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -186,17 +176,11 @@
     .line 189
     new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "\""
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v4, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v5, "\""
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -205,7 +189,7 @@
     iput-object v4, v3, Landroid/net/wifi/WifiConfiguration;->preSharedKey:Ljava/lang/String;
 
     .line 191
-    iput-boolean v0, v3, Landroid/net/wifi/WifiConfiguration;->hiddenSSID:Z
+    iput-boolean v1, v3, Landroid/net/wifi/WifiConfiguration;->hiddenSSID:Z
 
     const/4 v4, 0x2
 
@@ -220,7 +204,7 @@
 
     move-result v3
 
-    if-eq v3, v1, :cond_0
+    if-eq v3, v0, :cond_0
 
     return v3
 
@@ -276,24 +260,24 @@
 
     if-nez v0, :cond_0
 
-    const-string v0, "ConnectWifi"
-
     .line 228
-    iget-object v1, p0, Landroid/app/smdt/WifiUtils;->wifiConfigList:Ljava/util/List;
+    iget-object v0, p0, Landroid/app/smdt/WifiUtils;->wifiConfigList:Ljava/util/List;
 
-    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/net/wifi/WifiConfiguration;
+    check-cast v0, Landroid/net/wifi/WifiConfiguration;
 
-    iget v1, v1, Landroid/net/wifi/WifiConfiguration;->status:I
+    iget v0, v0, Landroid/net/wifi/WifiConfiguration;->status:I
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v1, "ConnectWifi"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1
 
@@ -312,20 +296,20 @@
 .method public IsConfiguration(Ljava/lang/String;)I
     .locals 3
 
-    const-string v0, "IsConfiguration"
-
     .line 151
-    iget-object v1, p0, Landroid/app/smdt/WifiUtils;->wifiConfigList:Ljava/util/List;
+    iget-object v0, p0, Landroid/app/smdt/WifiUtils;->wifiConfigList:Ljava/util/List;
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v1, "IsConfiguration"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 v0, 0x0
 
@@ -426,26 +410,24 @@
     .line 338
     iget-object v0, p0, Landroid/app/smdt/WifiUtils;->wifiConnectedInfo:Landroid/net/wifi/WifiInfo;
 
+    const-string v1, "jiguang"
+
     if-eqz v0, :cond_0
 
-    const-string v0, "jiguang"
-
-    const-string v1, "\u7f51\u7edc\u6b63\u5e38\u5de5\u4f5c"
+    const-string/jumbo v0, "\u7f51\u7edc\u6b63\u5e38\u5de5\u4f5c"
 
     .line 340
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 v0, 0x1
 
     return v0
 
     :cond_0
-    const-string v0, "jiguang"
-
-    const-string v1, "\u7f51\u7edc\u5df2\u65ad\u5f00"
+    const-string/jumbo v0, "\u7f51\u7edc\u5df2\u65ad\u5f00"
 
     .line 347
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 v0, 0x0
 
@@ -517,39 +499,37 @@
 
     if-ge v0, v1, :cond_0
 
-    const-string v1, "getConfiguration"
-
     .line 138
-    iget-object v2, p0, Landroid/app/smdt/WifiUtils;->wifiConfigList:Ljava/util/List;
+    iget-object v1, p0, Landroid/app/smdt/WifiUtils;->wifiConfigList:Ljava/util/List;
 
-    invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Landroid/net/wifi/WifiConfiguration;
+    check-cast v1, Landroid/net/wifi/WifiConfiguration;
 
-    iget-object v2, v2, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
+    iget-object v1, v1, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
 
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v2, "getConfiguration"
 
-    const-string v1, "getConfiguration"
+    invoke-static {v2, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 140
-    iget-object v2, p0, Landroid/app/smdt/WifiUtils;->wifiConfigList:Ljava/util/List;
+    iget-object v1, p0, Landroid/app/smdt/WifiUtils;->wifiConfigList:Ljava/util/List;
 
-    invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Landroid/net/wifi/WifiConfiguration;
+    check-cast v1, Landroid/net/wifi/WifiConfiguration;
 
-    iget v2, v2, Landroid/net/wifi/WifiConfiguration;->networkId:I
+    iget v1, v1, Landroid/net/wifi/WifiConfiguration;->networkId:I
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     add-int/lit8 v0, v0, 0x1
 

@@ -8,12 +8,6 @@
 
 
 # annotations
-.annotation build Landroidx/annotation/RestrictTo;
-    value = {
-        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/appcompat/widget/ForwardingListener$TriggerLongPress;,
@@ -51,9 +45,9 @@
 
     const/4 v0, 0x2
 
-    .line 66
     new-array v1, v0, [I
 
+    .line 66
     iput-object v1, p0, Landroidx/appcompat/widget/ForwardingListener;->mTmpLocation:[I
 
     .line 69
@@ -92,8 +86,6 @@
     iput p1, p0, Landroidx/appcompat/widget/ForwardingListener;->mTapTimeout:I
 
     .line 77
-    iget p1, p0, Landroidx/appcompat/widget/ForwardingListener;->mTapTimeout:I
-
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
     move-result v1
@@ -148,7 +140,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_3
 
     .line 261
     invoke-interface {v1}, Landroidx/appcompat/view/menu/ShowableListMenu;->isShowing()Z
@@ -157,7 +149,7 @@
 
     if-nez v3, :cond_0
 
-    goto :goto_3
+    goto :goto_1
 
     .line 265
     :cond_0
@@ -167,7 +159,7 @@
 
     check-cast v1, Landroidx/appcompat/widget/DropDownListView;
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_3
 
     .line 266
     invoke-virtual {v1}, Landroidx/appcompat/widget/DropDownListView;->isShown()Z
@@ -176,7 +168,7 @@
 
     if-nez v3, :cond_1
 
-    goto :goto_2
+    goto :goto_1
 
     .line 271
     :cond_1
@@ -225,20 +217,10 @@
 
     if-eqz p1, :cond_3
 
-    goto :goto_1
+    const/4 v2, 0x1
 
     :cond_3
-    const/4 v1, 0x0
-
     :goto_1
-    return v1
-
-    :cond_4
-    :goto_2
-    return v2
-
-    :cond_5
-    :goto_3
     return v2
 .end method
 
@@ -265,24 +247,36 @@
 
     move-result v1
 
-    packed-switch v1, :pswitch_data_0
+    if-eqz v1, :cond_3
+
+    const/4 v3, 0x1
+
+    if-eq v1, v3, :cond_2
+
+    const/4 v4, 0x2
+
+    if-eq v1, v4, :cond_1
+
+    const/4 p1, 0x3
+
+    if-eq v1, p1, :cond_2
 
     goto :goto_0
 
     .line 191
-    :pswitch_0
+    :cond_1
     iget v1, p0, Landroidx/appcompat/widget/ForwardingListener;->mActivePointerId:I
 
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->findPointerIndex(I)I
 
     move-result v1
 
-    if-ltz v1, :cond_3
+    if-ltz v1, :cond_6
 
     .line 193
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getX(I)F
 
-    move-result v3
+    move-result v4
 
     .line 194
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getY(I)F
@@ -292,11 +286,11 @@
     .line 197
     iget v1, p0, Landroidx/appcompat/widget/ForwardingListener;->mScaledTouchSlop:F
 
-    invoke-static {v0, v3, p1, v1}, Landroidx/appcompat/widget/ForwardingListener;->pointInView(Landroid/view/View;FFF)Z
+    invoke-static {v0, v4, p1, v1}, Landroidx/appcompat/widget/ForwardingListener;->pointInView(Landroid/view/View;FFF)Z
 
     move-result p1
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_6
 
     .line 198
     invoke-direct {p0}, Landroidx/appcompat/widget/ForwardingListener;->clearCallbacks()V
@@ -306,20 +300,18 @@
 
     move-result-object p1
 
-    const/4 v0, 0x1
+    invoke-interface {p1, v3}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    invoke-interface {p1, v0}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
-
-    return v0
+    return v3
 
     .line 208
-    :pswitch_1
+    :cond_2
     invoke-direct {p0}, Landroidx/appcompat/widget/ForwardingListener;->clearCallbacks()V
 
     goto :goto_0
 
     .line 178
-    :pswitch_2
+    :cond_3
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result p1
@@ -329,7 +321,7 @@
     .line 180
     iget-object p1, p0, Landroidx/appcompat/widget/ForwardingListener;->mDisallowIntercept:Ljava/lang/Runnable;
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_4
 
     .line 181
     new-instance p1, Landroidx/appcompat/widget/ForwardingListener$DisallowIntercept;
@@ -339,7 +331,7 @@
     iput-object p1, p0, Landroidx/appcompat/widget/ForwardingListener;->mDisallowIntercept:Ljava/lang/Runnable;
 
     .line 183
-    :cond_1
+    :cond_4
     iget-object p1, p0, Landroidx/appcompat/widget/ForwardingListener;->mDisallowIntercept:Ljava/lang/Runnable;
 
     iget v1, p0, Landroidx/appcompat/widget/ForwardingListener;->mTapTimeout:I
@@ -351,7 +343,7 @@
     .line 185
     iget-object p1, p0, Landroidx/appcompat/widget/ForwardingListener;->mTriggerLongPress:Ljava/lang/Runnable;
 
-    if-nez p1, :cond_2
+    if-nez p1, :cond_5
 
     .line 186
     new-instance p1, Landroidx/appcompat/widget/ForwardingListener$TriggerLongPress;
@@ -361,7 +353,7 @@
     iput-object p1, p0, Landroidx/appcompat/widget/ForwardingListener;->mTriggerLongPress:Ljava/lang/Runnable;
 
     .line 188
-    :cond_2
+    :cond_5
     iget-object p1, p0, Landroidx/appcompat/widget/ForwardingListener;->mTriggerLongPress:Ljava/lang/Runnable;
 
     iget v1, p0, Landroidx/appcompat/widget/ForwardingListener;->mLongPressTimeout:I
@@ -370,19 +362,9 @@
 
     invoke-virtual {v0, p1, v3, v4}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    :cond_3
+    :cond_6
     :goto_0
     return v2
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
 .end method
 
 .method private static pointInView(Landroid/view/View;FFF)Z
@@ -634,8 +616,6 @@
 
     .line 248
     iput-boolean v2, p0, Landroidx/appcompat/widget/ForwardingListener;->mForwarding:Z
-
-    return-void
 
     :cond_2
     :goto_0

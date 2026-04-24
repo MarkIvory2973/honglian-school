@@ -6,10 +6,6 @@
 # direct methods
 .method private constructor <init>(Landroid/widget/FrameLayout;)V
     .locals 0
-    .param p1    # Landroid/widget/FrameLayout;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 33
     invoke-direct {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
@@ -19,12 +15,6 @@
 
 .method static create(Landroid/view/ViewGroup;)Landroidx/viewpager2/adapter/FragmentViewHolder;
     .locals 2
-    .param p0    # Landroid/view/ViewGroup;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 37
     new-instance v0, Landroid/widget/FrameLayout;
@@ -68,8 +58,6 @@
 # virtual methods
 .method getContainer()Landroid/widget/FrameLayout;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     .line 47
     iget-object v0, p0, Landroidx/viewpager2/adapter/FragmentViewHolder;->itemView:Landroid/view/View;

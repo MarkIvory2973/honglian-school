@@ -16,6 +16,3 @@
 
 # static fields
 .field public static final FADING_MODE:I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field

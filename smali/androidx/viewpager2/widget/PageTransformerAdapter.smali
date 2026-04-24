@@ -151,10 +151,6 @@
 
 .method setPageTransformer(Landroidx/viewpager2/widget/ViewPager2$PageTransformer;)V
     .locals 0
-    .param p1    # Landroidx/viewpager2/widget/ViewPager2$PageTransformer;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     .line 53
     iput-object p1, p0, Landroidx/viewpager2/widget/PageTransformerAdapter;->mPageTransformer:Landroidx/viewpager2/widget/ViewPager2$PageTransformer;

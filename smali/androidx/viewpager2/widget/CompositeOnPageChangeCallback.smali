@@ -5,9 +5,6 @@
 
 # instance fields
 .field private final mCallbacks:Ljava/util/List;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -104,10 +101,6 @@
 
 .method public onPageScrolled(IFI)V
     .locals 2
-    .param p3    # I
-        .annotation build Landroidx/annotation/Px;
-        .end annotation
-    .end param
 
     .line 58
     :try_start_0

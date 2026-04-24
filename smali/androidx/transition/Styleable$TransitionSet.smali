@@ -16,6 +16,3 @@
 
 # static fields
 .field public static final TRANSITION_ORDERING:I
-    .annotation build Landroidx/annotation/StyleableRes;
-    .end annotation
-.end field

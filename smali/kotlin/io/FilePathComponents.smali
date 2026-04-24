@@ -46,17 +46,15 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
 .field private final root:Ljava/io/File;
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-.end field
 
 .field private final segments:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -66,23 +64,12 @@
             ">;"
         }
     .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 .end field
 
 
 # direct methods
 .method public constructor <init>(Ljava/io/File;Ljava/util/List;)V
     .locals 1
-    .param p1    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/List;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,9 +89,10 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 95
+    .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 95
     iput-object p1, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
 
     iput-object p2, p0, Lkotlin/io/FilePathComponents;->segments:Ljava/util/List;
@@ -140,8 +128,6 @@
 # virtual methods
 .method public final component1()Ljava/io/File;
     .locals 1
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     iget-object v0, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
 
@@ -159,9 +145,6 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
     iget-object v0, p0, Lkotlin/io/FilePathComponents;->segments:Ljava/util/List;
 
     return-object v0
@@ -169,14 +152,6 @@
 
 .method public final copy(Ljava/io/File;Ljava/util/List;)Lkotlin/io/FilePathComponents;
     .locals 1
-    .param p1    # Ljava/io/File;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/List;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -187,9 +162,6 @@
             ">;)",
             "Lkotlin/io/FilePathComponents;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     const-string v0, "root"
@@ -208,58 +180,57 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 2
-    .param p1    # Ljava/lang/Object;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
+    .locals 4
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lkotlin/io/FilePathComponents;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
+    return v0
 
+    :cond_0
+    instance-of v1, p1, Lkotlin/io/FilePathComponents;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
     check-cast p1, Lkotlin/io/FilePathComponents;
 
-    iget-object v0, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
+    iget-object v1, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
 
-    iget-object v1, p1, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
+    iget-object v3, p1, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-nez v1, :cond_2
 
-    iget-object v0, p0, Lkotlin/io/FilePathComponents;->segments:Ljava/util/List;
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lkotlin/io/FilePathComponents;->segments:Ljava/util/List;
 
     iget-object p1, p1, Lkotlin/io/FilePathComponents;->segments:Ljava/util/List;
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_3
 
-    goto :goto_0
+    return v2
 
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
+    :cond_3
+    return v0
 .end method
 
 .method public final getRoot()Ljava/io/File;
     .locals 1
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 95
     iget-object v0, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
@@ -269,8 +240,6 @@
 
 .method public final getRootName()Ljava/lang/String;
     .locals 2
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 100
     iget-object v0, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
@@ -279,7 +248,7 @@
 
     move-result-object v0
 
-    const-string v1, "root.path"
+    const-string v1, "getPath(...)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -295,9 +264,6 @@
             "Ljava/io/File;",
             ">;"
         }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     .line 95
@@ -320,35 +286,22 @@
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Ljava/io/File;->hashCode()I
 
     move-result v0
 
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lkotlin/io/FilePathComponents;->segments:Ljava/util/List;
+    iget-object v1, p0, Lkotlin/io/FilePathComponents;->segments:Ljava/util/List;
 
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :cond_1
     add-int/2addr v0, v1
 
     return v0
@@ -364,7 +317,7 @@
 
     move-result-object v0
 
-    const-string v1, "root.path"
+    const-string v1, "getPath(...)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -389,8 +342,6 @@
 
 .method public final subPath(II)Ljava/io/File;
     .locals 10
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     if-ltz p1, :cond_0
 
@@ -418,7 +369,7 @@
 
     sget-object p1, Ljava/io/File;->separator:Ljava/lang/String;
 
-    const-string p2, "File.separator"
+    const-string p2, "separator"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -454,23 +405,17 @@
 
     invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
 
-    check-cast p1, Ljava/lang/Throwable;
-
     throw p1
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "FilePathComponents(root="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
 
@@ -484,9 +429,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ")"
+    const/16 v1, 0x29
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

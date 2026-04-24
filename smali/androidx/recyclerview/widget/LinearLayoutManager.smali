@@ -139,9 +139,9 @@
     .line 146
     iput p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mInitialPrefetchItemCount:I
 
-    .line 151
     new-array p1, p1, [I
 
+    .line 151
     iput-object p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mReusableIntPair:[I
 
     .line 170
@@ -212,9 +212,9 @@
     .line 146
     iput v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mInitialPrefetchItemCount:I
 
-    .line 151
     new-array v0, v0, [I
 
+    .line 151
     iput-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mReusableIntPair:[I
 
     .line 184
@@ -422,14 +422,14 @@
 .method private findFirstPartiallyOrCompletelyInvisibleChild()Landroid/view/View;
     .locals 2
 
+    const/4 v0, 0x0
+
     .line 1897
     invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->getChildCount()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v1, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->findOnePartiallyOrCompletelyInvisibleChild(II)Landroid/view/View;
+    invoke-virtual {p0, v0, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findOnePartiallyOrCompletelyInvisibleChild(II)Landroid/view/View;
 
     move-result-object v0
 
@@ -439,6 +439,8 @@
 .method private findFirstReferenceChild(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)Landroid/view/View;
     .locals 6
 
+    const/4 v3, 0x0
+
     .line 1845
     invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->getChildCount()I
 
@@ -447,8 +449,6 @@
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$State;->getItemCount()I
 
     move-result v5
-
-    const/4 v3, 0x0
 
     move-object v0, p0
 
@@ -492,11 +492,11 @@
 
     add-int/lit8 v4, v0, -0x1
 
+    const/4 v5, -0x1
+
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$State;->getItemCount()I
 
     move-result v6
-
-    const/4 v5, -0x1
 
     move-object v1, p0
 
@@ -707,8 +707,6 @@
     invoke-virtual {p3, p4}, Landroidx/recyclerview/widget/OrientationHelper;->offsetChildren(I)V
 
     sub-int/2addr p2, p1
-
-    return p2
 
     :cond_0
     return p2
@@ -945,9 +943,13 @@
     iput v8, v3, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mExtraFillSpace:I
 
     .line 788
+    iget-object v3, v0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
     iput v5, v3, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
     .line 789
+    iget-object v3, v0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
     invoke-virtual {v3}, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->assignPositionFromScrapList()V
 
     .line 790
@@ -978,9 +980,13 @@
     iput v9, v3, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mExtraFillSpace:I
 
     .line 797
+    iget-object v3, v0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
     iput v5, v3, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
     .line 798
+    iget-object v3, v0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
     invoke-virtual {v3}, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->assignPositionFromScrapList()V
 
     .line 799
@@ -996,8 +1002,6 @@
 
     iput-object v2, v1, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mScrapList:Ljava/util/List;
 
-    return-void
-
     :cond_8
     :goto_3
     return-void
@@ -1006,12 +1010,12 @@
 .method private logChildren()V
     .locals 5
 
-    const-string v0, "LinearLayoutManager"
+    const-string v0, "internal representation of views on the screen"
 
-    const-string v1, "internal representation of views on the screen"
+    const-string v1, "LinearLayoutManager"
 
     .line 2089
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 v0, 0x0
 
@@ -1019,27 +1023,23 @@
     :goto_0
     invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->getChildCount()I
 
-    move-result v1
+    move-result v2
 
-    if-ge v0, v1, :cond_0
+    if-ge v0, v2, :cond_0
 
     .line 2091
     invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v1
-
-    const-string v2, "LinearLayoutManager"
+    move-result-object v2
 
     .line 2092
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "item "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
+    invoke-virtual {p0, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
 
     move-result v4
 
@@ -1052,30 +1052,28 @@
     iget-object v4, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     .line 2093
-    invoke-virtual {v4, v1}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
+    invoke-virtual {v4, v2}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
 
-    move-result v1
+    move-result v2
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 2092
-    invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const-string v0, "LinearLayoutManager"
-
-    const-string v1, "=============="
+    const-string v0, "=============="
 
     .line 2095
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 .end method
@@ -1092,7 +1090,7 @@
 
     if-eqz v0, :cond_0
 
-    goto :goto_1
+    goto :goto_0
 
     .line 1549
     :cond_0
@@ -1117,11 +1115,8 @@
     :cond_1
     invoke-direct {p0, p1, v0, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->recycleViewsFromStart(Landroidx/recyclerview/widget/RecyclerView$Recycler;II)V
 
-    :goto_0
-    return-void
-
     :cond_2
-    :goto_1
+    :goto_0
     return-void
 .end method
 
@@ -1278,8 +1273,6 @@
     :goto_3
     invoke-direct {p0, p1, v0, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;->recycleChildren(Landroidx/recyclerview/widget/RecyclerView$Recycler;II)V
 
-    return-void
-
     :cond_6
     return-void
 .end method
@@ -1390,8 +1383,6 @@
     :cond_5
     :goto_3
     invoke-direct {p0, p1, v0, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->recycleChildren(Landroidx/recyclerview/widget/RecyclerView$Recycler;II)V
-
-    return-void
 
     :cond_6
     return-void
@@ -1891,6 +1882,9 @@
 
     iput-boolean p1, p2, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
+    .line 946
+    iget-boolean p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mShouldReverseLayout:Z
+
     if-eqz p1, :cond_d
 
     .line 947
@@ -1932,8 +1926,6 @@
 
     .line 881
     iput v3, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mPendingScrollPositionOffset:I
-
-    return v1
 
     :cond_f
     :goto_6
@@ -2102,13 +2094,10 @@
 
     if-eqz v1, :cond_3
 
-    goto :goto_2
+    const/4 v2, -0x1
 
     :cond_3
-    const/4 p1, 0x1
-
-    :goto_2
-    iput p1, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
+    iput v2, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
 
     .line 1247
     iget-object p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
@@ -2182,10 +2171,13 @@
 
     if-eqz v1, :cond_5
 
-    const/4 p1, 0x1
+    goto :goto_2
 
     :cond_5
-    iput p1, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
+    const/4 v2, -0x1
+
+    :goto_2
+    iput v2, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
 
     .line 1258
     iget-object p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
@@ -2240,11 +2232,13 @@
     if-eqz p3, :cond_6
 
     .line 1265
-    iget p2, p4, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mAvailable:I
+    iget-object p2, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
 
-    sub-int/2addr p2, p1
+    iget p3, p2, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
-    iput p2, p4, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mAvailable:I
+    sub-int/2addr p3, p1
+
+    iput p3, p2, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mAvailable:I
 
     .line 1267
     :cond_6
@@ -2296,15 +2290,21 @@
     iput p1, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
     .line 1015
-    iput v2, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
+    iget-object p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
+    iput v2, p1, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
 
     .line 1016
-    iput p2, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mOffset:I
+    iget-object p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
 
-    const/high16 p1, -0x80000000
+    iput p2, p1, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
     .line 1017
-    iput p1, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
+    iget-object p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
+    const/high16 p2, -0x80000000
+
+    iput p2, p1, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
     return-void
 .end method
@@ -2344,21 +2344,23 @@
     iput p1, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
     .line 1027
-    iget-boolean p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mShouldReverseLayout:Z
+    iget-object p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
+    iget-boolean v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     const/4 v1, -0x1
 
-    if-eqz p1, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 p1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, -0x1
+    const/4 v0, -0x1
 
     :goto_0
-    iput p1, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
+    iput v0, p1, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
 
     .line 1029
     iget-object p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
@@ -2366,11 +2368,15 @@
     iput v1, p1, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
 
     .line 1030
+    iget-object p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
     iput p2, p1, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mOffset:I
+
+    .line 1031
+    iget-object p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
 
     const/high16 p2, -0x80000000
 
-    .line 1031
     iput p2, p1, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
     return-void
@@ -2408,14 +2414,6 @@
 
 .method protected calculateExtraLayoutSpace(Landroidx/recyclerview/widget/RecyclerView$State;[I)V
     .locals 3
-    .param p1    # Landroidx/recyclerview/widget/RecyclerView$State;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # [I
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     .line 488
     invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->getExtraLayoutSpace(Landroidx/recyclerview/widget/RecyclerView$State;)I
@@ -2427,11 +2425,11 @@
 
     iget v0, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
 
-    const/4 v1, 0x0
+    const/4 v1, -0x1
 
-    const/4 v2, -0x1
+    const/4 v2, 0x0
 
-    if-ne v0, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -2444,7 +2442,7 @@
 
     .line 495
     :goto_0
-    aput p1, p2, v1
+    aput p1, p2, v2
 
     const/4 p1, 0x1
 
@@ -2545,8 +2543,6 @@
     iget-object p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
 
     invoke-virtual {p0, p3, p1, p4}, Landroidx/recyclerview/widget/LinearLayoutManager;->collectPrefetchPositionsForLayoutState(Landroidx/recyclerview/widget/RecyclerView$State;Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;Landroidx/recyclerview/widget/RecyclerView$LayoutManager$LayoutPrefetchRegistry;)V
-
-    return-void
 
     :cond_3
     :goto_2
@@ -2806,129 +2802,133 @@
 .method convertFocusDirectionToLayoutDirection(I)I
     .locals 4
 
-    const/16 v0, 0x11
+    const/4 v0, -0x1
 
-    const/4 v1, -0x1
+    const/4 v1, 0x1
 
-    const/high16 v2, -0x80000000
+    if-eq p1, v1, :cond_b
 
-    if-eq p1, v0, :cond_a
+    const/4 v2, 0x2
 
-    const/16 v0, 0x21
+    if-eq p1, v2, :cond_8
 
-    const/4 v3, 0x1
+    const/16 v2, 0x11
 
-    if-eq p1, v0, :cond_8
+    const/high16 v3, -0x80000000
+
+    if-eq p1, v2, :cond_6
+
+    const/16 v2, 0x21
+
+    if-eq p1, v2, :cond_4
 
     const/16 v0, 0x42
 
-    if-eq p1, v0, :cond_6
+    if-eq p1, v0, :cond_2
 
     const/16 v0, 0x82
 
-    if-eq p1, v0, :cond_4
-
-    packed-switch p1, :pswitch_data_0
-
-    return v2
-
-    .line 1726
-    :pswitch_0
-    iget p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientation:I
-
-    if-ne p1, v3, :cond_0
+    if-eq p1, v0, :cond_0
 
     return v3
-
-    .line 1728
-    :cond_0
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->isLayoutRTL()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    return v1
-
-    :cond_1
-    return v3
-
-    .line 1718
-    :pswitch_1
-    iget p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientation:I
-
-    if-ne p1, v3, :cond_2
-
-    return v1
-
-    .line 1720
-    :cond_2
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->isLayoutRTL()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    return v3
-
-    :cond_3
-    return v1
 
     .line 1737
-    :cond_4
+    :cond_0
     iget p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientation:I
 
-    if-ne p1, v3, :cond_5
-
-    const/4 v2, 0x1
-
-    :cond_5
-    return v2
-
-    .line 1743
-    :cond_6
-    iget p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientation:I
-
-    if-nez p1, :cond_7
-
-    const/4 v2, 0x1
-
-    :cond_7
-    return v2
-
-    .line 1734
-    :cond_8
-    iget p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientation:I
-
-    if-ne p1, v3, :cond_9
+    if-ne p1, v1, :cond_1
 
     goto :goto_0
 
-    :cond_9
+    :cond_1
     const/high16 v1, -0x80000000
 
     :goto_0
     return v1
 
-    .line 1740
-    :cond_a
+    .line 1743
+    :cond_2
     iget p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientation:I
 
-    if-nez p1, :cond_b
+    if-nez p1, :cond_3
 
     goto :goto_1
 
-    :cond_b
+    :cond_3
     const/high16 v1, -0x80000000
 
     :goto_1
     return v1
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 1734
+    :cond_4
+    iget p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientation:I
+
+    if-ne p1, v1, :cond_5
+
+    goto :goto_2
+
+    :cond_5
+    const/high16 v0, -0x80000000
+
+    :goto_2
+    return v0
+
+    .line 1740
+    :cond_6
+    iget p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientation:I
+
+    if-nez p1, :cond_7
+
+    goto :goto_3
+
+    :cond_7
+    const/high16 v0, -0x80000000
+
+    :goto_3
+    return v0
+
+    .line 1726
+    :cond_8
+    iget p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientation:I
+
+    if-ne p1, v1, :cond_9
+
+    return v1
+
+    .line 1728
+    :cond_9
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->isLayoutRTL()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_a
+
+    return v0
+
+    :cond_a
+    return v1
+
+    .line 1718
+    :cond_b
+    iget p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientation:I
+
+    if-ne p1, v1, :cond_c
+
+    return v0
+
+    .line 1720
+    :cond_c
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->isLayoutRTL()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_d
+
+    return v1
+
+    :cond_d
+    return v0
 .end method
 
 .method createLayoutState()Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
@@ -3135,11 +3135,11 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    invoke-virtual {p0, v1, v0, v2, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findOneVisibleChild(IIZZ)Landroid/view/View;
+    invoke-virtual {p0, v2, v0, v1, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->findOneVisibleChild(IIZZ)Landroid/view/View;
 
     move-result-object v0
 
@@ -3243,11 +3243,11 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    invoke-virtual {p0, v1, v0, v1, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->findOneVisibleChild(IIZZ)Landroid/view/View;
+    invoke-virtual {p0, v2, v0, v2, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findOneVisibleChild(IIZZ)Landroid/view/View;
 
     move-result-object v0
 
@@ -3279,11 +3279,11 @@
 
     sub-int/2addr v0, v1
 
-    const/4 v2, -0x1
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, -0x1
 
-    invoke-virtual {p0, v0, v2, v1, v3}, Landroidx/recyclerview/widget/LinearLayoutManager;->findOneVisibleChild(IIZZ)Landroid/view/View;
+    invoke-virtual {p0, v0, v3, v1, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->findOneVisibleChild(IIZZ)Landroid/view/View;
 
     move-result-object v0
 
@@ -3295,10 +3295,10 @@
     :cond_0
     invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
 
-    move-result v2
+    move-result v3
 
     :goto_0
-    return v2
+    return v3
 .end method
 
 .method public findLastVisibleItemPosition()I
@@ -3313,11 +3313,11 @@
 
     sub-int/2addr v0, v1
 
-    const/4 v2, -0x1
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, -0x1
 
-    invoke-virtual {p0, v0, v2, v3, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findOneVisibleChild(IIZZ)Landroid/view/View;
+    invoke-virtual {p0, v0, v3, v2, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findOneVisibleChild(IIZZ)Landroid/view/View;
 
     move-result-object v0
 
@@ -3329,10 +3329,10 @@
     :cond_0
     invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
 
-    move-result v2
+    move-result v3
 
     :goto_0
-    return v2
+    return v3
 .end method
 
 .method findOnePartiallyOrCompletelyInvisibleChild(II)Landroid/view/View;
@@ -4125,20 +4125,20 @@
     :cond_1
     invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->ensureLayoutState()V
 
-    const v1, 0x3eaaaaab
-
     .line 2051
-    iget-object v2, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
+    iget-object v1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
-    invoke-virtual {v2}, Landroidx/recyclerview/widget/OrientationHelper;->getTotalSpace()I
+    invoke-virtual {v1}, Landroidx/recyclerview/widget/OrientationHelper;->getTotalSpace()I
 
-    move-result v2
+    move-result v1
 
-    int-to-float v2, v2
+    int-to-float v1, v1
 
-    mul-float v2, v2, v1
+    const v2, 0x3eaaaaab
 
-    float-to-int v1, v2
+    mul-float v1, v1, v2
+
+    float-to-int v1, v1
 
     const/4 v2, 0x0
 
@@ -4151,12 +4151,16 @@
     iput p2, v1, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mScrollingOffset:I
 
     .line 2054
-    iput-boolean v2, v1, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mRecycle:Z
+    iget-object p2, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
 
-    const/4 p2, 0x1
+    iput-boolean v2, p2, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mRecycle:Z
 
     .line 2055
-    invoke-virtual {p0, p3, v1, p4, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;->fill(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;Landroidx/recyclerview/widget/RecyclerView$State;Z)I
+    iget-object p2, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, p3, p2, p4, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->fill(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;Landroidx/recyclerview/widget/RecyclerView$State;Z)I
 
     const/4 p2, -0x1
 
@@ -4391,6 +4395,8 @@
     iput-boolean v3, v0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
     .line 558
+    iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mAnchorInfo:Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;
+
     invoke-direct {p0, p1, p2, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->updateAnchorInfoForLayout(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;)V
 
     .line 559
@@ -4512,8 +4518,6 @@
     .line 605
     iget v5, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mPendingScrollPositionOffset:I
 
-    sub-int/2addr v6, v5
-
     goto :goto_3
 
     .line 607
@@ -4536,9 +4540,9 @@
     .line 609
     iget v6, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mPendingScrollPositionOffset:I
 
+    :goto_3
     sub-int/2addr v6, v5
 
-    :goto_3
     if-lez v6, :cond_9
 
     add-int/2addr v0, v6
@@ -4555,27 +4559,23 @@
 
     iget-boolean v5, v5, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
 
-    if-eqz v5, :cond_b
+    if-eqz v5, :cond_c
 
     .line 622
     iget-boolean v5, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
     if-eqz v5, :cond_d
 
+    :cond_b
     const/4 v1, 0x1
 
     goto :goto_5
 
     .line 625
-    :cond_b
+    :cond_c
     iget-boolean v5, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
-    if-eqz v5, :cond_c
-
-    goto :goto_5
-
-    :cond_c
-    const/4 v1, 0x1
+    if-eqz v5, :cond_b
 
     .line 629
     :cond_d
@@ -4628,7 +4628,9 @@
     iput v0, v1, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mExtraFillSpace:I
 
     .line 640
-    invoke-virtual {p0, p1, v1, p2, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->fill(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;Landroidx/recyclerview/widget/RecyclerView$State;Z)I
+    iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
+    invoke-virtual {p0, p1, v0, p2, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->fill(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;Landroidx/recyclerview/widget/RecyclerView$State;Z)I
 
     .line 641
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
@@ -4666,15 +4668,17 @@
     iput v3, v5, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mExtraFillSpace:I
 
     .line 649
-    iget v3, v5, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
+    iget-object v3, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
+    iget v5, v3, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
     iget-object v6, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
 
     iget v6, v6, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
 
-    add-int/2addr v3, v6
+    add-int/2addr v5, v6
 
-    iput v3, v5, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
+    iput v5, v3, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
     .line 650
     iget-object v3, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
@@ -4707,6 +4711,8 @@
     iput v5, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mExtraFillSpace:I
 
     .line 658
+    iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
     invoke-virtual {p0, p1, v0, p2, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->fill(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;Landroidx/recyclerview/widget/RecyclerView$State;Z)I
 
     .line 659
@@ -4728,6 +4734,8 @@
     iput v3, v1, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mExtraFillSpace:I
 
     .line 665
+    iget-object v1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
     invoke-virtual {p0, p1, v1, p2, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->fill(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;Landroidx/recyclerview/widget/RecyclerView$State;Z)I
 
     .line 666
@@ -4766,15 +4774,17 @@
     iput v0, v5, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mExtraFillSpace:I
 
     .line 674
-    iget v0, v5, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
+    iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
+    iget v5, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
     iget-object v6, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
 
     iget v6, v6, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
 
-    add-int/2addr v0, v6
+    add-int/2addr v5, v6
 
-    iput v0, v5, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
+    iput v5, v0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
     .line 675
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
@@ -4807,6 +4817,8 @@
     iput v5, v1, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mExtraFillSpace:I
 
     .line 683
+    iget-object v1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mLayoutState:Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;
+
     invoke-virtual {p0, p1, v1, p2, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->fill(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;Landroidx/recyclerview/widget/RecyclerView$State;Z)I
 
     .line 684
@@ -4846,10 +4858,6 @@
 
     move-result v1
 
-    add-int/2addr v0, v1
-
-    add-int/2addr v3, v1
-
     goto :goto_7
 
     .line 703
@@ -4867,13 +4875,13 @@
 
     move-result v1
 
+    :goto_7
     add-int/2addr v0, v1
 
     add-int/2addr v3, v1
 
     .line 711
     :cond_13
-    :goto_7
     invoke-direct {p0, p1, p2, v0, v3}, Landroidx/recyclerview/widget/LinearLayoutManager;->layoutForPredictiveAnimations(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;II)V
 
     .line 712
@@ -4963,11 +4971,13 @@
     if-eqz v0, :cond_0
 
     .line 253
-    new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;
+    new-instance v0, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;
 
-    invoke-direct {v1, v0}, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;-><init>(Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;)V
+    iget-object v1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mPendingSavedState:Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;
 
-    return-object v1
+    invoke-direct {v0, v1}, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;-><init>(Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;)V
+
+    return-object v0
 
     .line 255
     :cond_0
@@ -5072,14 +5082,6 @@
 
 .method public prepareForDrop(Landroid/view/View;Landroid/view/View;II)V
     .locals 3
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     const-string p3, "Cannot drop a view during a scroll or layout calculation"
 
@@ -5456,11 +5458,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "invalid orientation:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -5497,11 +5497,9 @@
     iput-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     .line 349
-    iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mAnchorInfo:Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;
+    iget-object v1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mAnchorInfo:Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;
 
-    iget-object v1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
-
-    iput-object v1, v0, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
+    iput-object v0, v1, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
     .line 350
     iput p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientation:I
@@ -5666,30 +5664,28 @@
 .end method
 
 .method validateChildOrder()V
-    .locals 8
-
-    const-string v0, "LinearLayoutManager"
+    .locals 10
 
     .line 2109
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "validating child count "
 
-    const-string v2, "validating child count "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->getChildCount()I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v1, "LinearLayoutManager"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2110
     invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->getChildCount()I
@@ -5728,6 +5724,10 @@
     .line 2115
     iget-boolean v4, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mShouldReverseLayout:Z
 
+    const-string v5, "detected invalid location"
+
+    const-string v6, "detected invalid position. loc invalid? "
+
     if-eqz v4, :cond_4
 
     const/4 v4, 0x1
@@ -5736,28 +5736,28 @@
     :goto_0
     invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->getChildCount()I
 
-    move-result v5
+    move-result v7
 
-    if-ge v4, v5, :cond_8
+    if-ge v4, v7, :cond_8
 
     .line 2117
     invoke-virtual {p0, v4}, Landroidx/recyclerview/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v5
+    move-result-object v7
 
     .line 2118
-    invoke-virtual {p0, v5}, Landroidx/recyclerview/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
+    invoke-virtual {p0, v7}, Landroidx/recyclerview/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
 
-    move-result v6
+    move-result v8
 
     .line 2119
-    iget-object v7, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
+    iget-object v9, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
-    invoke-virtual {v7, v5}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
+    invoke-virtual {v9, v7}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
 
-    move-result v5
+    move-result v7
 
-    if-ge v6, v2, :cond_2
+    if-ge v8, v2, :cond_2
 
     .line 2121
     invoke-direct {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->logChildren()V
@@ -5767,18 +5767,17 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v6, "detected invalid position. loc invalid? "
+    if-ge v7, v3, :cond_1
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-ge v5, v3, :cond_1
-
-    const/4 v0, 0x1
+    goto :goto_1
 
     :cond_1
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    const/4 v1, 0x0
+
+    :goto_1
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -5789,7 +5788,7 @@
     throw v2
 
     :cond_2
-    if-gt v5, v3, :cond_3
+    if-gt v7, v3, :cond_3
 
     add-int/lit8 v4, v4, 0x1
 
@@ -5802,9 +5801,7 @@
     .line 2127
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, "detected invalid location"
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v5}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
@@ -5812,31 +5809,31 @@
     const/4 v4, 0x1
 
     .line 2131
-    :goto_1
+    :goto_2
     invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->getChildCount()I
 
-    move-result v5
+    move-result v7
 
-    if-ge v4, v5, :cond_8
+    if-ge v4, v7, :cond_8
 
     .line 2132
     invoke-virtual {p0, v4}, Landroidx/recyclerview/widget/LinearLayoutManager;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v5
+    move-result-object v7
 
     .line 2133
-    invoke-virtual {p0, v5}, Landroidx/recyclerview/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
+    invoke-virtual {p0, v7}, Landroidx/recyclerview/widget/LinearLayoutManager;->getPosition(Landroid/view/View;)I
 
-    move-result v6
+    move-result v8
 
     .line 2134
-    iget-object v7, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
+    iget-object v9, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
 
-    invoke-virtual {v7, v5}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
+    invoke-virtual {v9, v7}, Landroidx/recyclerview/widget/OrientationHelper;->getDecoratedStart(Landroid/view/View;)I
 
-    move-result v5
+    move-result v7
 
-    if-ge v6, v2, :cond_6
+    if-ge v8, v2, :cond_6
 
     .line 2136
     invoke-direct {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->logChildren()V
@@ -5846,18 +5843,17 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v6, "detected invalid position. loc invalid? "
+    if-ge v7, v3, :cond_5
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-ge v5, v3, :cond_5
-
-    const/4 v0, 0x1
+    goto :goto_3
 
     :cond_5
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    const/4 v1, 0x0
+
+    :goto_3
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -5868,11 +5864,11 @@
     throw v2
 
     :cond_6
-    if-lt v5, v3, :cond_7
+    if-lt v7, v3, :cond_7
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1
+    goto :goto_2
 
     .line 2141
     :cond_7
@@ -5881,9 +5877,7 @@
     .line 2142
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, "detected invalid location"
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v5}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v0
 

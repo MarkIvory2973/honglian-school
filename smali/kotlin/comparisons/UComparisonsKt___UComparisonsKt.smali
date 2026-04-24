@@ -6,7 +6,7 @@
 # annotations
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000B\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0008\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0010\u001a\"\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0004\u0010\u0005\u001a+\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u0001H\u0087\u0008\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0007\u0010\u0008\u001a&\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\n\u0010\t\u001a\u00020\n\"\u00020\u0001H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u000b\u0010\u000c\u001a\"\u0010\u0000\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\r2\u0006\u0010\u0003\u001a\u00020\rH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u000e\u0010\u000f\u001a+\u0010\u0000\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\r2\u0006\u0010\u0003\u001a\u00020\r2\u0006\u0010\u0006\u001a\u00020\rH\u0087\u0008\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0010\u0010\u0011\u001a&\u0010\u0000\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\r2\n\u0010\t\u001a\u00020\u0012\"\u00020\rH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0013\u0010\u0014\u001a\"\u0010\u0000\u001a\u00020\u00152\u0006\u0010\u0002\u001a\u00020\u00152\u0006\u0010\u0003\u001a\u00020\u0015H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0016\u0010\u0017\u001a+\u0010\u0000\u001a\u00020\u00152\u0006\u0010\u0002\u001a\u00020\u00152\u0006\u0010\u0003\u001a\u00020\u00152\u0006\u0010\u0006\u001a\u00020\u0015H\u0087\u0008\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0018\u0010\u0019\u001a&\u0010\u0000\u001a\u00020\u00152\u0006\u0010\u0002\u001a\u00020\u00152\n\u0010\t\u001a\u00020\u001a\"\u00020\u0015H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u001b\u0010\u001c\u001a\"\u0010\u0000\u001a\u00020\u001d2\u0006\u0010\u0002\u001a\u00020\u001d2\u0006\u0010\u0003\u001a\u00020\u001dH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u001e\u0010\u001f\u001a+\u0010\u0000\u001a\u00020\u001d2\u0006\u0010\u0002\u001a\u00020\u001d2\u0006\u0010\u0003\u001a\u00020\u001d2\u0006\u0010\u0006\u001a\u00020\u001dH\u0087\u0008\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008 \u0010!\u001a&\u0010\u0000\u001a\u00020\u001d2\u0006\u0010\u0002\u001a\u00020\u001d2\n\u0010\t\u001a\u00020\"\"\u00020\u001dH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008#\u0010$\u001a\"\u0010%\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008&\u0010\u0005\u001a+\u0010%\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u0001H\u0087\u0008\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\'\u0010\u0008\u001a&\u0010%\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\n\u0010\t\u001a\u00020\n\"\u00020\u0001H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008(\u0010\u000c\u001a\"\u0010%\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\r2\u0006\u0010\u0003\u001a\u00020\rH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008)\u0010\u000f\u001a+\u0010%\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\r2\u0006\u0010\u0003\u001a\u00020\r2\u0006\u0010\u0006\u001a\u00020\rH\u0087\u0008\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008*\u0010\u0011\u001a&\u0010%\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\r2\n\u0010\t\u001a\u00020\u0012\"\u00020\rH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008+\u0010\u0014\u001a\"\u0010%\u001a\u00020\u00152\u0006\u0010\u0002\u001a\u00020\u00152\u0006\u0010\u0003\u001a\u00020\u0015H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008,\u0010\u0017\u001a+\u0010%\u001a\u00020\u00152\u0006\u0010\u0002\u001a\u00020\u00152\u0006\u0010\u0003\u001a\u00020\u00152\u0006\u0010\u0006\u001a\u00020\u0015H\u0087\u0008\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008-\u0010\u0019\u001a&\u0010%\u001a\u00020\u00152\u0006\u0010\u0002\u001a\u00020\u00152\n\u0010\t\u001a\u00020\u001a\"\u00020\u0015H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008.\u0010\u001c\u001a\"\u0010%\u001a\u00020\u001d2\u0006\u0010\u0002\u001a\u00020\u001d2\u0006\u0010\u0003\u001a\u00020\u001dH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008/\u0010\u001f\u001a+\u0010%\u001a\u00020\u001d2\u0006\u0010\u0002\u001a\u00020\u001d2\u0006\u0010\u0003\u001a\u00020\u001d2\u0006\u0010\u0006\u001a\u00020\u001dH\u0087\u0008\u00f8\u0001\u0000\u00a2\u0006\u0004\u00080\u0010!\u001a&\u0010%\u001a\u00020\u001d2\u0006\u0010\u0002\u001a\u00020\u001d2\n\u0010\t\u001a\u00020\"\"\u00020\u001dH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u00081\u0010$\u0082\u0002\u0004\n\u0002\u0008\u0019\u00a8\u00062"
+        "\u0000B\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0008\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0010\u001a\u001f\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0007\u00a2\u0006\u0004\u0008\u0004\u0010\u0005\u001a(\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u0001H\u0087\u0008\u00a2\u0006\u0004\u0008\u0007\u0010\u0008\u001a#\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\n\u0010\t\u001a\u00020\n\"\u00020\u0001H\u0007\u00a2\u0006\u0004\u0008\u000b\u0010\u000c\u001a\u001f\u0010\u0000\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\r2\u0006\u0010\u0003\u001a\u00020\rH\u0007\u00a2\u0006\u0004\u0008\u000e\u0010\u000f\u001a(\u0010\u0000\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\r2\u0006\u0010\u0003\u001a\u00020\r2\u0006\u0010\u0006\u001a\u00020\rH\u0087\u0008\u00a2\u0006\u0004\u0008\u0010\u0010\u0011\u001a#\u0010\u0000\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\r2\n\u0010\t\u001a\u00020\u0012\"\u00020\rH\u0007\u00a2\u0006\u0004\u0008\u0013\u0010\u0014\u001a\u001f\u0010\u0000\u001a\u00020\u00152\u0006\u0010\u0002\u001a\u00020\u00152\u0006\u0010\u0003\u001a\u00020\u0015H\u0007\u00a2\u0006\u0004\u0008\u0016\u0010\u0017\u001a(\u0010\u0000\u001a\u00020\u00152\u0006\u0010\u0002\u001a\u00020\u00152\u0006\u0010\u0003\u001a\u00020\u00152\u0006\u0010\u0006\u001a\u00020\u0015H\u0087\u0008\u00a2\u0006\u0004\u0008\u0018\u0010\u0019\u001a#\u0010\u0000\u001a\u00020\u00152\u0006\u0010\u0002\u001a\u00020\u00152\n\u0010\t\u001a\u00020\u001a\"\u00020\u0015H\u0007\u00a2\u0006\u0004\u0008\u001b\u0010\u001c\u001a\u001f\u0010\u0000\u001a\u00020\u001d2\u0006\u0010\u0002\u001a\u00020\u001d2\u0006\u0010\u0003\u001a\u00020\u001dH\u0007\u00a2\u0006\u0004\u0008\u001e\u0010\u001f\u001a(\u0010\u0000\u001a\u00020\u001d2\u0006\u0010\u0002\u001a\u00020\u001d2\u0006\u0010\u0003\u001a\u00020\u001d2\u0006\u0010\u0006\u001a\u00020\u001dH\u0087\u0008\u00a2\u0006\u0004\u0008 \u0010!\u001a#\u0010\u0000\u001a\u00020\u001d2\u0006\u0010\u0002\u001a\u00020\u001d2\n\u0010\t\u001a\u00020\"\"\u00020\u001dH\u0007\u00a2\u0006\u0004\u0008#\u0010$\u001a\u001f\u0010%\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0007\u00a2\u0006\u0004\u0008&\u0010\u0005\u001a(\u0010%\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u0001H\u0087\u0008\u00a2\u0006\u0004\u0008\'\u0010\u0008\u001a#\u0010%\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\n\u0010\t\u001a\u00020\n\"\u00020\u0001H\u0007\u00a2\u0006\u0004\u0008(\u0010\u000c\u001a\u001f\u0010%\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\r2\u0006\u0010\u0003\u001a\u00020\rH\u0007\u00a2\u0006\u0004\u0008)\u0010\u000f\u001a(\u0010%\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\r2\u0006\u0010\u0003\u001a\u00020\r2\u0006\u0010\u0006\u001a\u00020\rH\u0087\u0008\u00a2\u0006\u0004\u0008*\u0010\u0011\u001a#\u0010%\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\r2\n\u0010\t\u001a\u00020\u0012\"\u00020\rH\u0007\u00a2\u0006\u0004\u0008+\u0010\u0014\u001a\u001f\u0010%\u001a\u00020\u00152\u0006\u0010\u0002\u001a\u00020\u00152\u0006\u0010\u0003\u001a\u00020\u0015H\u0007\u00a2\u0006\u0004\u0008,\u0010\u0017\u001a(\u0010%\u001a\u00020\u00152\u0006\u0010\u0002\u001a\u00020\u00152\u0006\u0010\u0003\u001a\u00020\u00152\u0006\u0010\u0006\u001a\u00020\u0015H\u0087\u0008\u00a2\u0006\u0004\u0008-\u0010\u0019\u001a#\u0010%\u001a\u00020\u00152\u0006\u0010\u0002\u001a\u00020\u00152\n\u0010\t\u001a\u00020\u001a\"\u00020\u0015H\u0007\u00a2\u0006\u0004\u0008.\u0010\u001c\u001a\u001f\u0010%\u001a\u00020\u001d2\u0006\u0010\u0002\u001a\u00020\u001d2\u0006\u0010\u0003\u001a\u00020\u001dH\u0007\u00a2\u0006\u0004\u0008/\u0010\u001f\u001a(\u0010%\u001a\u00020\u001d2\u0006\u0010\u0002\u001a\u00020\u001d2\u0006\u0010\u0003\u001a\u00020\u001d2\u0006\u0010\u0006\u001a\u00020\u001dH\u0087\u0008\u00a2\u0006\u0004\u00080\u0010!\u001a#\u0010%\u001a\u00020\u001d2\u0006\u0010\u0002\u001a\u00020\u001d2\n\u0010\t\u001a\u00020\"\"\u00020\u001dH\u0007\u00a2\u0006\u0004\u00081\u0010$\u00a8\u00062"
     }
     d2 = {
         "maxOf",
@@ -64,10 +64,10 @@
     k = 0x5
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
-    xi = 0x1
+    xi = 0x31
     xs = "kotlin/comparisons/UComparisonsKt"
 .end annotation
 
@@ -83,15 +83,6 @@
 
 .method public static final maxOf-5PvTz6A(SS)S
     .locals 2
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
 
     const v0, 0xffff
 
@@ -117,18 +108,9 @@
 
 .method public static final maxOf-J1ME1BU(II)I
     .locals 1
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
 
     .line 24
-    invoke-static {p0, p1}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {p0, p1}, Lkotlin/UByte$$ExternalSyntheticBackport0;->m$2(II)I
 
     move-result v0
 
@@ -145,15 +127,6 @@
 
 .method public static final maxOf-Kr8caGY(BB)B
     .locals 2
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
 
     and-int/lit16 v0, p0, 0xff
 
@@ -177,30 +150,24 @@
 
 .method public static final varargs maxOf-Md2H83M(I[I)I
     .locals 3
-    .param p1    # [I
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/ExperimentalUnsignedTypes;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 101
-    array-length v0, p1
+    invoke-static {p1}, Lkotlin/UIntArray;->getSize-impl([I)I
+
+    move-result v0
 
     const/4 v1, 0x0
 
     :goto_0
     if-ge v1, v0, :cond_0
 
-    aget v2, p1, v1
+    invoke-static {p1, v1}, Lkotlin/UIntArray;->get-pVg5ArA([II)I
+
+    move-result v2
 
     invoke-static {p0, v2}, Lkotlin/comparisons/UComparisonsKt;->maxOf-J1ME1BU(II)I
 
@@ -216,30 +183,24 @@
 
 .method public static final varargs maxOf-R03FKyM(J[J)J
     .locals 4
-    .param p2    # [J
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/ExperimentalUnsignedTypes;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 112
-    array-length v0, p2
+    invoke-static {p2}, Lkotlin/ULongArray;->getSize-impl([J)I
+
+    move-result v0
 
     const/4 v1, 0x0
 
     :goto_0
     if-ge v1, v0, :cond_0
 
-    aget-wide v2, p2, v1
+    invoke-static {p2, v1}, Lkotlin/ULongArray;->get-s-VKNKU([JI)J
+
+    move-result-wide v2
 
     invoke-static {p0, p1, v2, v3}, Lkotlin/comparisons/UComparisonsKt;->maxOf-eb3DHEI(JJ)J
 
@@ -255,18 +216,6 @@
 
 .method private static final maxOf-VKSA0NQ(SSS)S
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 91
     invoke-static {p1, p2}, Lkotlin/comparisons/UComparisonsKt;->maxOf-5PvTz6A(SS)S
@@ -282,18 +231,6 @@
 
 .method private static final maxOf-WZ9TVnA(III)I
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 61
     invoke-static {p1, p2}, Lkotlin/comparisons/UComparisonsKt;->maxOf-J1ME1BU(II)I
@@ -309,30 +246,24 @@
 
 .method public static final varargs maxOf-Wr6uiD8(B[B)B
     .locals 3
-    .param p1    # [B
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/ExperimentalUnsignedTypes;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 123
-    array-length v0, p1
+    invoke-static {p1}, Lkotlin/UByteArray;->getSize-impl([B)I
+
+    move-result v0
 
     const/4 v1, 0x0
 
     :goto_0
     if-ge v1, v0, :cond_0
 
-    aget-byte v2, p1, v1
+    invoke-static {p1, v1}, Lkotlin/UByteArray;->get-w2LRezQ([BI)B
+
+    move-result v2
 
     invoke-static {p0, v2}, Lkotlin/comparisons/UComparisonsKt;->maxOf-Kr8caGY(BB)B
 
@@ -348,18 +279,6 @@
 
 .method private static final maxOf-b33U2AM(BBB)B
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 81
     invoke-static {p1, p2}, Lkotlin/comparisons/UComparisonsKt;->maxOf-Kr8caGY(BB)B
@@ -375,18 +294,9 @@
 
 .method public static final maxOf-eb3DHEI(JJ)J
     .locals 1
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
 
     .line 33
-    invoke-static {p0, p1, p2, p3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {p0, p1, p2, p3}, Lkotlin/UByte$$ExternalSyntheticBackport0;->m(JJ)I
 
     move-result v0
 
@@ -403,18 +313,6 @@
 
 .method private static final maxOf-sambcqE(JJJ)J
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 71
     invoke-static {p2, p3, p4, p5}, Lkotlin/comparisons/UComparisonsKt;->maxOf-eb3DHEI(JJ)J
@@ -430,30 +328,24 @@
 
 .method public static final varargs maxOf-t1qELG4(S[S)S
     .locals 3
-    .param p1    # [S
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/ExperimentalUnsignedTypes;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 134
-    array-length v0, p1
+    invoke-static {p1}, Lkotlin/UShortArray;->getSize-impl([S)I
+
+    move-result v0
 
     const/4 v1, 0x0
 
     :goto_0
     if-ge v1, v0, :cond_0
 
-    aget-short v2, p1, v1
+    invoke-static {p1, v1}, Lkotlin/UShortArray;->get-Mh2AYeg([SI)S
+
+    move-result v2
 
     invoke-static {p0, v2}, Lkotlin/comparisons/UComparisonsKt;->maxOf-5PvTz6A(SS)S
 
@@ -469,15 +361,6 @@
 
 .method public static final minOf-5PvTz6A(SS)S
     .locals 2
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
 
     const v0, 0xffff
 
@@ -503,18 +386,9 @@
 
 .method public static final minOf-J1ME1BU(II)I
     .locals 1
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
 
     .line 144
-    invoke-static {p0, p1}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {p0, p1}, Lkotlin/UByte$$ExternalSyntheticBackport0;->m$2(II)I
 
     move-result v0
 
@@ -531,15 +405,6 @@
 
 .method public static final minOf-Kr8caGY(BB)B
     .locals 2
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
 
     and-int/lit16 v0, p0, 0xff
 
@@ -563,30 +428,24 @@
 
 .method public static final varargs minOf-Md2H83M(I[I)I
     .locals 3
-    .param p1    # [I
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/ExperimentalUnsignedTypes;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 221
-    array-length v0, p1
+    invoke-static {p1}, Lkotlin/UIntArray;->getSize-impl([I)I
+
+    move-result v0
 
     const/4 v1, 0x0
 
     :goto_0
     if-ge v1, v0, :cond_0
 
-    aget v2, p1, v1
+    invoke-static {p1, v1}, Lkotlin/UIntArray;->get-pVg5ArA([II)I
+
+    move-result v2
 
     invoke-static {p0, v2}, Lkotlin/comparisons/UComparisonsKt;->minOf-J1ME1BU(II)I
 
@@ -602,30 +461,24 @@
 
 .method public static final varargs minOf-R03FKyM(J[J)J
     .locals 4
-    .param p2    # [J
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/ExperimentalUnsignedTypes;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 232
-    array-length v0, p2
+    invoke-static {p2}, Lkotlin/ULongArray;->getSize-impl([J)I
+
+    move-result v0
 
     const/4 v1, 0x0
 
     :goto_0
     if-ge v1, v0, :cond_0
 
-    aget-wide v2, p2, v1
+    invoke-static {p2, v1}, Lkotlin/ULongArray;->get-s-VKNKU([JI)J
+
+    move-result-wide v2
 
     invoke-static {p0, p1, v2, v3}, Lkotlin/comparisons/UComparisonsKt;->minOf-eb3DHEI(JJ)J
 
@@ -641,18 +494,6 @@
 
 .method private static final minOf-VKSA0NQ(SSS)S
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 211
     invoke-static {p1, p2}, Lkotlin/comparisons/UComparisonsKt;->minOf-5PvTz6A(SS)S
@@ -668,18 +509,6 @@
 
 .method private static final minOf-WZ9TVnA(III)I
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 181
     invoke-static {p1, p2}, Lkotlin/comparisons/UComparisonsKt;->minOf-J1ME1BU(II)I
@@ -695,30 +524,24 @@
 
 .method public static final varargs minOf-Wr6uiD8(B[B)B
     .locals 3
-    .param p1    # [B
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/ExperimentalUnsignedTypes;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 243
-    array-length v0, p1
+    invoke-static {p1}, Lkotlin/UByteArray;->getSize-impl([B)I
+
+    move-result v0
 
     const/4 v1, 0x0
 
     :goto_0
     if-ge v1, v0, :cond_0
 
-    aget-byte v2, p1, v1
+    invoke-static {p1, v1}, Lkotlin/UByteArray;->get-w2LRezQ([BI)B
+
+    move-result v2
 
     invoke-static {p0, v2}, Lkotlin/comparisons/UComparisonsKt;->minOf-Kr8caGY(BB)B
 
@@ -734,18 +557,6 @@
 
 .method private static final minOf-b33U2AM(BBB)B
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 201
     invoke-static {p1, p2}, Lkotlin/comparisons/UComparisonsKt;->minOf-Kr8caGY(BB)B
@@ -761,18 +572,9 @@
 
 .method public static final minOf-eb3DHEI(JJ)J
     .locals 1
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
 
     .line 153
-    invoke-static {p0, p1, p2, p3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {p0, p1, p2, p3}, Lkotlin/UByte$$ExternalSyntheticBackport0;->m(JJ)I
 
     move-result v0
 
@@ -789,18 +591,6 @@
 
 .method private static final minOf-sambcqE(JJJ)J
     .locals 0
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.5"
-    .end annotation
-
-    .annotation build Lkotlin/WasExperimental;
-        markerClass = {
-            Lkotlin/ExperimentalUnsignedTypes;
-        }
-    .end annotation
-
-    .annotation build Lkotlin/internal/InlineOnly;
-    .end annotation
 
     .line 191
     invoke-static {p2, p3, p4, p5}, Lkotlin/comparisons/UComparisonsKt;->minOf-eb3DHEI(JJ)J
@@ -816,30 +606,24 @@
 
 .method public static final varargs minOf-t1qELG4(S[S)S
     .locals 3
-    .param p1    # [S
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lkotlin/ExperimentalUnsignedTypes;
-    .end annotation
-
-    .annotation build Lkotlin/SinceKotlin;
-        version = "1.4"
-    .end annotation
 
     const-string v0, "other"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 254
-    array-length v0, p1
+    invoke-static {p1}, Lkotlin/UShortArray;->getSize-impl([S)I
+
+    move-result v0
 
     const/4 v1, 0x0
 
     :goto_0
     if-ge v1, v0, :cond_0
 
-    aget-short v2, p1, v1
+    invoke-static {p1, v1}, Lkotlin/UShortArray;->get-Mh2AYeg([SI)S
+
+    move-result v2
 
     invoke-static {p0, v2}, Lkotlin/comparisons/UComparisonsKt;->minOf-5PvTz6A(SS)S
 

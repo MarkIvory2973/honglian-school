@@ -16,9 +16,6 @@
 
 # static fields
 .field static final CONSUMED:Landroidx/core/view/WindowInsetsCompat;
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
-.end field
 
 
 # instance fields
@@ -29,27 +26,27 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 746
+    .line 747
     new-instance v0, Landroidx/core/view/WindowInsetsCompat$Builder;
 
     invoke-direct {v0}, Landroidx/core/view/WindowInsetsCompat$Builder;-><init>()V
 
-    .line 747
+    .line 748
     invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat$Builder;->build()Landroidx/core/view/WindowInsetsCompat;
 
     move-result-object v0
 
-    .line 748
+    .line 749
     invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat;->consumeDisplayCutout()Landroidx/core/view/WindowInsetsCompat;
 
     move-result-object v0
 
-    .line 749
+    .line 750
     invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat;->consumeStableInsets()Landroidx/core/view/WindowInsetsCompat;
 
     move-result-object v0
 
-    .line 750
+    .line 751
     invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat;->consumeSystemWindowInsets()Landroidx/core/view/WindowInsetsCompat;
 
     move-result-object v0
@@ -61,15 +58,11 @@
 
 .method constructor <init>(Landroidx/core/view/WindowInsetsCompat;)V
     .locals 0
-    .param p1    # Landroidx/core/view/WindowInsetsCompat;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-
-    .line 754
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 755
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 756
     iput-object p1, p0, Landroidx/core/view/WindowInsetsCompat$Impl;->mHost:Landroidx/core/view/WindowInsetsCompat;
 
     return-void
@@ -79,10 +72,8 @@
 # virtual methods
 .method consumeDisplayCutout()Landroidx/core/view/WindowInsetsCompat;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 783
+    .line 784
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl;->mHost:Landroidx/core/view/WindowInsetsCompat;
 
     return-object v0
@@ -90,10 +81,8 @@
 
 .method consumeStableInsets()Landroidx/core/view/WindowInsetsCompat;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 773
+    .line 774
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl;->mHost:Landroidx/core/view/WindowInsetsCompat;
 
     return-object v0
@@ -101,10 +90,8 @@
 
 .method consumeSystemWindowInsets()Landroidx/core/view/WindowInsetsCompat;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 768
+    .line 769
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl;->mHost:Landroidx/core/view/WindowInsetsCompat;
 
     return-object v0
@@ -112,20 +99,12 @@
 
 .method copyRootViewBounds(Landroid/view/View;)V
     .locals 0
-    .param p1    # Landroid/view/View;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method
 
 .method copyWindowDataInto(Landroidx/core/view/WindowInsetsCompat;)V
     .locals 0
-    .param p1    # Landroidx/core/view/WindowInsetsCompat;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method
@@ -139,7 +118,7 @@
 
     return v0
 
-    .line 840
+    .line 841
     :cond_0
     instance-of v1, p1, Landroidx/core/view/WindowInsetsCompat$Impl;
 
@@ -149,11 +128,11 @@
 
     return v2
 
-    .line 841
+    .line 842
     :cond_1
     check-cast p1, Landroidx/core/view/WindowInsetsCompat$Impl;
 
-    .line 842
+    .line 843
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->isRound()Z
 
     move-result v1
@@ -164,7 +143,7 @@
 
     if-ne v1, v3, :cond_2
 
-    .line 843
+    .line 844
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->isConsumed()Z
 
     move-result v1
@@ -175,7 +154,7 @@
 
     if-ne v1, v3, :cond_2
 
-    .line 844
+    .line 845
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getSystemWindowInsets()Landroidx/core/graphics/Insets;
 
     move-result-object v1
@@ -190,7 +169,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 845
+    .line 846
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getStableInsets()Landroidx/core/graphics/Insets;
 
     move-result-object v1
@@ -205,7 +184,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 846
+    .line 847
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getDisplayCutout()Landroidx/core/view/DisplayCutoutCompat;
 
     move-result-object v1
@@ -231,8 +210,6 @@
 
 .method getDisplayCutout()Landroidx/core/view/DisplayCutoutCompat;
     .locals 1
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
     const/4 v0, 0x0
 
@@ -241,10 +218,8 @@
 
 .method getInsets(I)Landroidx/core/graphics/Insets;
     .locals 0
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 821
+    .line 822
     sget-object p1, Landroidx/core/graphics/Insets;->NONE:Landroidx/core/graphics/Insets;
 
     return-object p1
@@ -252,19 +227,17 @@
 
 .method getInsetsIgnoringVisibility(I)Landroidx/core/graphics/Insets;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
     and-int/lit8 p1, p1, 0x8
 
     if-nez p1, :cond_0
 
-    .line 829
+    .line 830
     sget-object p1, Landroidx/core/graphics/Insets;->NONE:Landroidx/core/graphics/Insets;
 
     return-object p1
 
-    .line 827
+    .line 828
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -277,10 +250,8 @@
 
 .method getMandatorySystemGestureInsets()Landroidx/core/graphics/Insets;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 805
+    .line 806
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getSystemWindowInsets()Landroidx/core/graphics/Insets;
 
     move-result-object v0
@@ -290,10 +261,8 @@
 
 .method getStableInsets()Landroidx/core/graphics/Insets;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 793
+    .line 794
     sget-object v0, Landroidx/core/graphics/Insets;->NONE:Landroidx/core/graphics/Insets;
 
     return-object v0
@@ -301,10 +270,8 @@
 
 .method getSystemGestureInsets()Landroidx/core/graphics/Insets;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 799
+    .line 800
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getSystemWindowInsets()Landroidx/core/graphics/Insets;
 
     move-result-object v0
@@ -314,10 +281,8 @@
 
 .method getSystemWindowInsets()Landroidx/core/graphics/Insets;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 788
+    .line 789
     sget-object v0, Landroidx/core/graphics/Insets;->NONE:Landroidx/core/graphics/Insets;
 
     return-object v0
@@ -325,10 +290,8 @@
 
 .method getTappableElementInsets()Landroidx/core/graphics/Insets;
     .locals 1
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 811
+    .line 812
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getSystemWindowInsets()Landroidx/core/graphics/Insets;
 
     move-result-object v0
@@ -341,9 +304,9 @@
 
     const/4 v0, 0x5
 
-    .line 852
     new-array v0, v0, [Ljava/lang/Object;
 
+    .line 853
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->isRound()Z
 
     move-result v1
@@ -368,32 +331,32 @@
 
     aput-object v1, v0, v2
 
+    const/4 v1, 0x2
+
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getSystemWindowInsets()Landroidx/core/graphics/Insets;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x2
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/4 v1, 0x3
 
-    .line 853
+    .line 854
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getStableInsets()Landroidx/core/graphics/Insets;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x3
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/4 v1, 0x4
 
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getDisplayCutout()Landroidx/core/view/DisplayCutoutCompat;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x4
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
-
-    .line 852
+    .line 853
     invoke-static {v0}, Landroidx/core/util/ObjectsCompat;->hash([Ljava/lang/Object;)I
 
     move-result v0
@@ -403,10 +366,8 @@
 
 .method inset(IIII)Landroidx/core/view/WindowInsetsCompat;
     .locals 0
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 816
+    .line 817
     sget-object p1, Landroidx/core/view/WindowInsetsCompat$Impl;->CONSUMED:Landroidx/core/view/WindowInsetsCompat;
 
     return-object p1
@@ -444,20 +405,12 @@
 
 .method setRootViewData(Landroidx/core/graphics/Insets;)V
     .locals 0
-    .param p1    # Landroidx/core/graphics/Insets;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
     return-void
 .end method
 
 .method setRootWindowInsets(Landroidx/core/view/WindowInsetsCompat;)V
     .locals 0
-    .param p1    # Landroidx/core/view/WindowInsetsCompat;
-        .annotation build Landroidx/annotation/Nullable;
-        .end annotation
-    .end param
 
     return-void
 .end method

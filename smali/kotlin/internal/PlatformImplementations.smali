@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPlatformImplementations.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlatformImplementations.kt\nkotlin/internal/PlatformImplementations\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,115:1\n1#2:116\n*E\n"
+    value = "SMAP\nPlatformImplementations.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlatformImplementations.kt\nkotlin/internal/PlatformImplementations\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,79:1\n1#2:80\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -43,9 +43,10 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x9,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -63,14 +64,6 @@
 # virtual methods
 .method public addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
     .locals 3
-    .param p1    # Ljava/lang/Throwable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/Throwable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
 
     const-string v0, "cause"
 
@@ -101,8 +94,6 @@
 
 .method public defaultPlatformRandom()Lkotlin/random/Random;
     .locals 1
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
 
     .line 45
     new-instance v0, Lkotlin/random/FallbackThreadLocalRandom;
@@ -116,16 +107,6 @@
 
 .method public getMatchResultNamedGroup(Ljava/util/regex/MatchResult;Ljava/lang/String;)Lkotlin/text/MatchGroup;
     .locals 1
-    .param p1    # Ljava/util/regex/MatchResult;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/String;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .annotation build Lorg/jetbrains/annotations/Nullable;
-    .end annotation
 
     const-string v0, "matchResult"
 
@@ -142,17 +123,11 @@
 
     invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    check-cast p1, Ljava/lang/Throwable;
-
     throw p1
 .end method
 
 .method public getSuppressed(Ljava/lang/Throwable;)Ljava/util/List;
     .locals 2
-    .param p1    # Ljava/lang/Throwable;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -164,9 +139,6 @@
         }
     .end annotation
 
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
     const-string v0, "exception"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -174,7 +146,7 @@
     .line 37
     sget-object v0, Lkotlin/internal/PlatformImplementations$ReflectThrowable;->getSuppressed:Ljava/lang/reflect/Method;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
@@ -184,8 +156,6 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_1
-
     if-eqz p1, :cond_0
 
     check-cast p1, [Ljava/lang/Throwable;
@@ -194,25 +164,14 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_1
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<kotlin.Throwable>"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    if-nez p1, :cond_1
 
     .line 38
-    :cond_1
+    :cond_0
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p1
 
-    :goto_0
+    :cond_1
     return-object p1
 .end method
