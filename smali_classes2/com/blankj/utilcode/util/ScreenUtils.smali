@@ -657,28 +657,7 @@
 .method public static setFullScreen(Landroid/app/Activity;)V
     .locals 1
 
-    if-eqz p0, :cond_0
-
-    .line 121
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object p0
-
-    const/16 v0, 0x400
-
-    invoke-virtual {p0, v0}, Landroid/view/Window;->addFlags(I)V
-
     return-void
-
-    .line 120
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string v0, "Argument \'activity\' of type Activity (#0 out of 1, zero-based) is marked by @androidx.annotation.NonNull but got null for it"
-
-    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 .method public static setLandscape(Landroid/app/Activity;)V
@@ -775,43 +754,7 @@
 .end method
 
 .method public static toggleFullScreen(Landroid/app/Activity;)V
-    .locals 2
+    .locals 1
 
-    if-eqz p0, :cond_1
-
-    .line 139
-    invoke-static {p0}, Lcom/blankj/utilcode/util/ScreenUtils;->isFullScreen(Landroid/app/Activity;)Z
-
-    move-result v0
-
-    .line 140
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object p0
-
-    const/16 v1, 0x400
-
-    if-eqz v0, :cond_0
-
-    .line 142
-    invoke-virtual {p0, v1}, Landroid/view/Window;->clearFlags(I)V
-
-    goto :goto_0
-
-    .line 144
-    :cond_0
-    invoke-virtual {p0, v1}, Landroid/view/Window;->addFlags(I)V
-
-    :goto_0
     return-void
-
-    .line 138
-    :cond_1
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string v0, "Argument \'activity\' of type Activity (#0 out of 1, zero-based) is marked by @androidx.annotation.NonNull but got null for it"
-
-    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method

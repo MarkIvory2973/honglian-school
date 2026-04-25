@@ -38,22 +38,7 @@
     :try_start_0
     invoke-virtual {p0, v0}, Lcom/tencent/bugly/beta/ui/BetaActivity;->requestWindowFeature(I)Z
 
-    .line 33
-    sget-boolean v1, Lcom/tencent/bugly/beta/Beta;->dialogFullScreen:Z
-
-    if-eqz v1, :cond_0
-
-    .line 34
-    invoke-virtual {p0}, Lcom/tencent/bugly/beta/ui/BetaActivity;->getWindow()Landroid/view/Window;
-
-    move-result-object v1
-
-    const/16 v2, 0x400
-
-    invoke-virtual {v1, v2, v2}, Landroid/view/Window;->setFlags(II)V
-
     .line 37
-    :cond_0
     invoke-virtual {p0}, Lcom/tencent/bugly/beta/ui/BetaActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v1

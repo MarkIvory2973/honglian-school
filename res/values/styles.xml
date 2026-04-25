@@ -4016,7 +4016,6 @@
     <style name="Theme.ClassTabletApp" parent="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="android:windowBackground">@mipmap/bg</item>
         <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowFullscreen">true</item>
         <item name="android:statusBarColor">?colorPrimaryVariant</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorOnSecondary">@color/black</item>
@@ -5453,7 +5452,6 @@
         <item name="android:textAppearance">?textAppearanceBodyLarge</item>
     </style>
     <style name="Widget.Material3.MaterialCalendar.Fullscreen" parent="@style/Widget.Material3.MaterialCalendar">
-        <item name="android:windowFullscreen">true</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.None</item>
     </style>
     <style name="Widget.Material3.MaterialCalendar.HeaderCancelButton" parent="@style/Widget.Material3.Button.TextButton">
@@ -6260,7 +6258,6 @@
         <item name="android:gravity">center</item>
     </style>
     <style name="Widget.MaterialComponents.MaterialCalendar.Fullscreen" parent="@style/Widget.MaterialComponents.MaterialCalendar">
-        <item name="android:windowFullscreen">true</item>
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialComponents.MaterialCalendar.Window.Fullscreen</item>
     </style>
     <style name="Widget.MaterialComponents.MaterialCalendar.HeaderCancelButton" parent="@style/Widget.MaterialComponents.Button.TextButton">

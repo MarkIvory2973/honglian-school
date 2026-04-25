@@ -26,15 +26,6 @@
     .line 19
     invoke-virtual {p0, p1}, Lcom/example/datalibrary/activity/BaseActivity;->requestWindowFeature(I)Z
 
-    .line 20
-    invoke-virtual {p0}, Lcom/example/datalibrary/activity/BaseActivity;->getWindow()Landroid/view/Window;
-
-    move-result-object p1
-
-    const/16 v0, 0x400
-
-    invoke-virtual {p1, v0, v0}, Landroid/view/Window;->setFlags(II)V
-
     .line 22
     invoke-virtual {p0}, Lcom/example/datalibrary/activity/BaseActivity;->getWindow()Landroid/view/Window;
 
