@@ -1431,25 +1431,6 @@
 
     invoke-virtual {v0, v1}, Lcom/hl/classtabletapp/app/App$Companion;->setSmdtManager(Landroid/app/smdt/SmdtManager;)V
 
-    .line 241
-    sget-object v0, Lcom/hl/classtabletapp/app/App;->Companion:Lcom/hl/classtabletapp/app/App$Companion;
-
-    invoke-virtual {v0}, Lcom/hl/classtabletapp/app/App$Companion;->getSmdtManager()Landroid/app/smdt/SmdtManager;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/hl/classtabletapp/app/App;->Companion:Lcom/hl/classtabletapp/app/App$Companion;
-
-    invoke-virtual {v1}, Lcom/hl/classtabletapp/app/App$Companion;->getInstance()Lcom/hl/classtabletapp/app/App;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/content/Context;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/app/smdt/SmdtManager;->smdtSetStatusBar(Landroid/content/Context;Z)I
-
     .line 243
     invoke-static {}, Lcom/hlkj/c5cardsdk/utils/CardUtils;->getInstance()Lcom/hlkj/c5cardsdk/utils/CardUtils;
 

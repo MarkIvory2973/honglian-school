@@ -7975,48 +7975,11 @@
 .end method
 
 .method public smdtSetStatusBar(Landroid/content/Context;Z)I
-    .locals 1
+    .locals 0
 
-    .line 1250
-    new-instance p1, Ljava/lang/StringBuilder;
+    const/4 p0, 0x0
 
-    const-string/jumbo v0, "smdtSetStatusBar, enable:"
-
-    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "SmdtManager"
-
-    invoke-static {v0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1252
-    :try_start_0
-    iget-object p1, p0, Landroid/app/smdt/SmdtManager;->mService:Landroid/app/smdt/ISmdtManager;
-
-    invoke-interface {p1, p2}, Landroid/app/smdt/ISmdtManager;->smdtSetStatusBar(Z)I
-
-    move-result p1
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return p1
-
-    :catch_0
-    move-exception p1
-
-    const-string p2, "RemoteException in smdtSetStatusBar"
-
-    .line 1254
-    invoke-static {v0, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    const/4 p1, -0x1
-
-    return p1
+    return p0
 .end method
 
 .method public smdtSetTimingSwitchMachine(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V

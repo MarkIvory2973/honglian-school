@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Built-By: Signflinger
-Created-By: Android Gradle 8.1.3
+Created-By: Android Gradle 8.0.2
 
 Name: AndroidManifest.xml
-SHA-256-Digest: JMOnPseLdNQeMmBiRYjRXZAQVTv0lBNKqPJS6nJUHnM=
+SHA-256-Digest: qYOMGGR6/VKFv9lAtUZ5g3VpRD+a32IvU4QRTk6RBW4=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: rooILdYJMTg1upPD70eaOvmQOXfXvcgd9Fu9IJ7H0No=
@@ -440,10 +440,10 @@ Name: assets/version/data
 SHA-256-Digest: oQspdn8yxPPosmIJthFXeqcmMlsgcI4QriJLu+Rv1vI=
 
 Name: classes.dex
-SHA-256-Digest: hb1QDaRiNrvgbGCvZUDX7e2g7FLfie2zwY8KZt4EBIs=
+SHA-256-Digest: 4V1UYplnf7ZKCMcVicJZHIGX5Xr65cGsTcaoa0TNIVM=
 
 Name: classes2.dex
-SHA-256-Digest: cBCPemXDZfzYL0XbN8D/g0hvC+RsZG6FLYqzy2L56K0=
+SHA-256-Digest: tJe+E1etlbSfHtqq1Zbq4/nj/2KNIfkNA/uVpaW0f5o=
 
 Name: classes3.dex
 SHA-256-Digest: /UMl7DZdY5JRzHTDFw4pqqmMfeBb71v31AbkcK8tc5A=
