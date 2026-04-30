@@ -4,9 +4,9 @@
 
 
 # static fields
-.field public static b:Landroid/content/Context; = null
+.field public static b:Landroid/content/Context;
 
-.field public static c:Z = false
+.field public static c:Z
 
 .field public static e:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;

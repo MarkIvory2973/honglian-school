@@ -28,7 +28,7 @@
 
 .field public static l:Z = true
 
-.field public static m:Z = false
+.field public static m:Z
 
 .field public static n:Ljava/lang/String;
 

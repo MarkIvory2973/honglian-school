@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static HAS_DESIGN_LIB:Z = false
+.field public static HAS_DESIGN_LIB:Z
 
 
 # instance fields

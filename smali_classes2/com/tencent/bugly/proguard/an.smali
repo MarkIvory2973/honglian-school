@@ -8,7 +8,7 @@
 
 .field public static b:Ljava/lang/String; = "CrashReport"
 
-.field public static c:Z = false
+.field public static c:Z
 
 
 # direct methods

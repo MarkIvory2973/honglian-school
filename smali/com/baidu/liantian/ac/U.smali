@@ -84,19 +84,19 @@
 
 .field public static final UPGRADE_RESULT_SUCCESS:I = 0x1
 
-.field private static sLastCheckTime:J = 0x0L
+.field private static sLastCheckTime:J
 
-.field public static sMonitorNetworkWhenUpgradeNoNet:Z = false
+.field public static sMonitorNetworkWhenUpgradeNoNet:Z
 
-.field private static volatile sOutGoing:Z = false
+.field private static volatile sOutGoing:Z
 
-.field private static sPidRegister:Z = false
+.field private static sPidRegister:Z
 
-.field private static sRetryDownoadHostCareApksTimesCount:I = 0x0
+.field private static sRetryDownoadHostCareApksTimesCount:I
 
-.field private static sRetryPingTimesCount:I = 0x0
+.field private static sRetryPingTimesCount:I
 
-.field private static sSetRetrmAlarm:Z = false
+.field private static sSetRetrmAlarm:Z
 
 
 # instance fields

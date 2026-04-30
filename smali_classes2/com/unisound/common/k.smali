@@ -55,7 +55,7 @@
 
 .field private static final y:Ljava/lang/String; = "000000000000000"
 
-.field private static z:Z = false
+.field private static z:Z
 
 
 # direct methods

@@ -18,25 +18,25 @@
 
 .field private static c:I = 0x1400
 
-.field private static d:Ljava/lang/StringBuilder; = null
+.field private static d:Ljava/lang/StringBuilder;
 
-.field private static e:Ljava/lang/StringBuilder; = null
+.field private static e:Ljava/lang/StringBuilder;
 
-.field private static f:Z = false
+.field private static f:Z
 
-.field private static g:Lcom/tencent/bugly/proguard/ap$a; = null
+.field private static g:Lcom/tencent/bugly/proguard/ap$a;
 
-.field private static h:Ljava/lang/String; = null
+.field private static h:Ljava/lang/String;
 
-.field private static i:Ljava/lang/String; = null
+.field private static i:Ljava/lang/String;
 
-.field private static j:Landroid/content/Context; = null
+.field private static j:Landroid/content/Context;
 
-.field private static k:Ljava/lang/String; = null
+.field private static k:Ljava/lang/String;
 
-.field private static l:Z = false
+.field private static l:Z
 
-.field private static m:Z = false
+.field private static m:Z
 
 .field private static n:Ljava/util/concurrent/ExecutorService;
 

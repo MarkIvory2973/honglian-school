@@ -6,7 +6,7 @@
 # static fields
 .field private static final TAG:Ljava/lang/String; = "AndroidPicker"
 
-.field private static enable:Z = false
+.field private static enable:Z
 
 
 # direct methods

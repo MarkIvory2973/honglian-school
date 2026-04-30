@@ -8,7 +8,7 @@
 
 
 # static fields
-.field private static FILE_RELATIVE_PATH_SUPPORT:Z = false
+.field private static FILE_RELATIVE_PATH_SUPPORT:Z
 
 .field public static final instance:Lcom/alibaba/fastjson/serializer/MiscCodec;
 

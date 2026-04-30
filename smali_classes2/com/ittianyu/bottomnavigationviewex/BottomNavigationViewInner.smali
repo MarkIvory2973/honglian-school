@@ -13,7 +13,7 @@
 
 
 # static fields
-.field private static isNavigationItemClicking:Z = false
+.field private static isNavigationItemClicking:Z
 
 
 # instance fields

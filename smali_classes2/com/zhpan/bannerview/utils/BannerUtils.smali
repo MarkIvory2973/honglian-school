@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static debugMode:Z = false
+.field private static debugMode:Z
 
 
 # direct methods

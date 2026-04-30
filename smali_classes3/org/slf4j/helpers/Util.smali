@@ -12,9 +12,9 @@
 
 
 # static fields
-.field private static SECURITY_MANAGER:Lorg/slf4j/helpers/Util$ClassContextSecurityManager; = null
+.field private static SECURITY_MANAGER:Lorg/slf4j/helpers/Util$ClassContextSecurityManager;
 
-.field private static SECURITY_MANAGER_CREATION_ALREADY_ATTEMPTED:Z = false
+.field private static SECURITY_MANAGER_CREATION_ALREADY_ATTEMPTED:Z
 
 
 # direct methods

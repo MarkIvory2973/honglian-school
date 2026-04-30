@@ -27,9 +27,9 @@
 
 .field public static final o:I = 0x2
 
-.field public static final p:Z = false
+.field public static final p:Z
 
-.field public static final q:Z = false
+.field public static final q:Z
 
 .field private static s:Lcom/unisound/sdk/bk;
 

@@ -51,7 +51,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     .line 39
     new-instance v2, Lcom/tencent/bugly/beta/global/b;
@@ -81,7 +81,7 @@
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     .line 45
-    :cond_1
+    :cond_0
     :goto_0
     invoke-virtual {p0}, Lcom/tencent/bugly/beta/ui/BetaActivity;->getIntent()Landroid/content/Intent;
 
@@ -109,7 +109,7 @@
 
     check-cast v1, Lcom/tencent/bugly/beta/ui/b;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     .line 50
     invoke-virtual {p0}, Lcom/tencent/bugly/beta/ui/BetaActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
@@ -138,7 +138,7 @@
     goto :goto_1
 
     .line 53
-    :cond_2
+    :cond_1
     invoke-virtual {p0}, Lcom/tencent/bugly/beta/ui/BetaActivity;->finish()V
 
     :goto_1

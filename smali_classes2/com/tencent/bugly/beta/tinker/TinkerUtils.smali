@@ -28,7 +28,7 @@
 
 .field private static final TAG:Ljava/lang/String; = "Tinker.TinkerUtils"
 
-.field private static background:Z = false
+.field private static background:Z
 
 
 # direct methods

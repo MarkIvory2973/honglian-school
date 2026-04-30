@@ -18,9 +18,9 @@
 
 .field private static mIdFlag:Ljava/lang/String; = "1"
 
-.field private static mInstance:Lcom/baidu/vis/unified/license/AndroidLicenser; = null
+.field private static mInstance:Lcom/baidu/vis/unified/license/AndroidLicenser;
 
-.field private static mIsCollection:Z = false
+.field private static mIsCollection:Z
 
 
 # instance fields

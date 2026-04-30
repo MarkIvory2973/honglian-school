@@ -7,11 +7,11 @@
 
 
 # static fields
-.field public static instance:Lcom/alibaba/fastjson/serializer/AnnotationSerializer; = null
+.field public static instance:Lcom/alibaba/fastjson/serializer/AnnotationSerializer;
 
-.field private static volatile sun_AnnotationType:Ljava/lang/Class; = null
+.field private static volatile sun_AnnotationType:Ljava/lang/Class;
 
-.field private static volatile sun_AnnotationType_error:Z = false
+.field private static volatile sun_AnnotationType_error:Z
 
 .field private static volatile sun_AnnotationType_getInstance:Ljava/lang/reflect/Method;
 

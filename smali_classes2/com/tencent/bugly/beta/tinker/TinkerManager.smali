@@ -21,9 +21,9 @@
 
 .field private static final TAG:Ljava/lang/String; = "Tinker.TinkerManager"
 
-.field public static apkOriginalBuildNum:Ljava/lang/String; = null
+.field public static apkOriginalBuildNum:Ljava/lang/String;
 
-.field private static isInstalled:Z = false
+.field private static isInstalled:Z
 
 .field public static patchCurBuildNum:Ljava/lang/String;
 
