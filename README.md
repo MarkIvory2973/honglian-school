@@ -4,7 +4,7 @@ The reverse-engineered version of HongLian School.
 
 ## Activities
 
-### Student Info
+### Student Info (v4.1 or older)
 
 ```sh
 am start -n cn.com.school.zd5/com.hlkj.chinatelecom5.activity.StudentInfoActivity --es intent_student_id "<campusid>"
