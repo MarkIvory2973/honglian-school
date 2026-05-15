@@ -124,7 +124,7 @@
 
     sparse-switch v2, :sswitch_data_0
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     :sswitch_0
     const-string p1, "POWEROFF"
@@ -135,7 +135,7 @@
 
     if-nez p1, :cond_1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 121
     :cond_1
@@ -143,10 +143,9 @@
 
     invoke-virtual {p1}, Lcom/hl/classtabletapp/app/util/DeviceApiUtils;->powerOff()V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 167
-    :cond_9
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Unsupported type"
@@ -155,7 +154,7 @@
 
     throw p1
 
-    :sswitch_2
+    :sswitch_1
     const-string p1, "OPENDOOR"
 
     .line 108
@@ -163,12 +162,12 @@
 
     move-result p1
 
-    if-nez p1, :cond_a
+    if-nez p1, :cond_2
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 142
-    :cond_a
+    :cond_2
     sget-object p1, Lcom/hl/classtabletapp/app/App;->Companion:Lcom/hl/classtabletapp/app/App$Companion;
 
     invoke-virtual {p1}, Lcom/hl/classtabletapp/app/App$Companion;->getMNfcHelper()Lcom/seewo/udsservice/client/plugins/nfc/UDSNfcHelper;
@@ -181,9 +180,9 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/seewo/udsservice/client/plugins/nfc/UDSNfcHelper;->openDoorControl(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :sswitch_3
+    :sswitch_2
     const-string p1, "SCREENSHOT"
 
     .line 108
@@ -191,12 +190,12 @@
 
     move-result p1
 
-    if-nez p1, :cond_b
+    if-nez p1, :cond_3
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 134
-    :cond_b
+    :cond_3
     sget-object p1, Lcom/hl/classtabletapp/app/util/FileUtil;->BaseFilePath:Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -218,7 +217,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_4
 
     .line 136
     new-instance v0, Ljava/io/File;
@@ -228,14 +227,14 @@
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
     .line 138
-    :cond_c
+    :cond_4
     sget-object v0, Lcom/hl/classtabletapp/app/util/DeviceApiUtils;->INSTANCE:Lcom/hl/classtabletapp/app/util/DeviceApiUtils;
 
     invoke-virtual {v0}, Lcom/hl/classtabletapp/app/util/DeviceApiUtils;->isSW()Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_8
 
     sget-object v0, Lcom/hl/classtabletapp/app/App;->Companion:Lcom/hl/classtabletapp/app/App$Companion;
 
@@ -245,9 +244,9 @@
 
     invoke-virtual {v0, p1}, Lcom/seewo/udsservice/client/plugins/system/UDSSystemHelper;->takeScreenShot(Ljava/lang/String;)Z
 
-    goto :goto_1
+    goto :goto_0
 
-    :sswitch_4
+    :sswitch_3
     const-string v1, "POWERDEFINE"
 
     .line 108
@@ -255,12 +254,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_5
 
-    goto :goto_1
+    goto :goto_0
 
     .line 111
-    :cond_d
+    :cond_5
     iget-object v0, p0, Lcom/hl/classtabletapp/viewmodel/request/HeartbeatViewModel$getDeviceCommand$2;->this$0:Lcom/hl/classtabletapp/viewmodel/request/HeartbeatViewModel;
 
     invoke-virtual {v0}, Lcom/hl/classtabletapp/viewmodel/request/HeartbeatViewModel;->getCommandEvent()Landroidx/lifecycle/MutableLiveData;
@@ -273,9 +272,9 @@
 
     invoke-virtual {v0, p1}, Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V
 
-    goto :goto_1
+    goto :goto_0
 
-    :sswitch_5
+    :sswitch_4
     const-string v1, "EXAMVIEW"
 
     .line 108
@@ -283,12 +282,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_6
 
-    goto :goto_1
+    goto :goto_0
 
     .line 149
-    :cond_e
+    :cond_6
     iget-object v0, p0, Lcom/hl/classtabletapp/viewmodel/request/HeartbeatViewModel$getDeviceCommand$2;->this$0:Lcom/hl/classtabletapp/viewmodel/request/HeartbeatViewModel;
 
     invoke-static {v0}, Lcom/hl/classtabletapp/viewmodel/request/HeartbeatViewModel;->access$getPlanId$p(Lcom/hl/classtabletapp/viewmodel/request/HeartbeatViewModel;)Ljava/lang/String;
@@ -309,7 +308,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_8
 
     .line 150
     invoke-static {}, Lcom/hl/classtabletapp/app/AppKt;->getEventViewModel()Lcom/hl/classtabletapp/app/event/EventViewModel;
@@ -332,9 +331,9 @@
 
     invoke-virtual {v0, p1}, Lme/hgj/jetpackmvvm/callback/livedata/event/EventLiveData;->setValue(Ljava/lang/Object;)V
 
-    goto :goto_1
+    goto :goto_0
 
-    :sswitch_6
+    :sswitch_5
     const-string p1, "REBOOT"
 
     .line 108
@@ -342,12 +341,12 @@
 
     move-result p1
 
-    if-nez p1, :cond_f
+    if-nez p1, :cond_7
 
-    goto :goto_1
+    goto :goto_0
 
     .line 116
-    :cond_f
+    :cond_7
     sget-object p1, Lcom/hl/classtabletapp/app/util/DeviceApiUtils;->INSTANCE:Lcom/hl/classtabletapp/app/util/DeviceApiUtils;
 
     sget-object v0, Lcom/hl/classtabletapp/app/App;->Companion:Lcom/hl/classtabletapp/app/App$Companion;
@@ -360,19 +359,17 @@
 
     invoke-virtual {p1, v0}, Lcom/hl/classtabletapp/app/util/DeviceApiUtils;->restartSystem(Landroid/content/Context;)V
 
-    :cond_10
-    :goto_1
+    :cond_8
+    :goto_0
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch
-        -0x7027145b -> :sswitch_6
-        -0x5dda44bc -> :sswitch_5
-        -0x4935a120 -> :sswitch_4
-        0x4177166 -> :sswitch_3
-        0x109904f8 -> :sswitch_2
+        -0x7027145b -> :sswitch_5
+        -0x5dda44bc -> :sswitch_4
+        -0x4935a120 -> :sswitch_3
+        0x4177166 -> :sswitch_2
+        0x109904f8 -> :sswitch_1
         0x61d2ba4a -> :sswitch_0
     .end sparse-switch
 .end method

@@ -96,6 +96,6 @@
 
 .method public final invoke(Landroidx/work/WorkInfo;)V
     .locals 2
-    
+
     return-void
 .end method

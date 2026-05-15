@@ -1,10 +1,10 @@
 Signature-Version: 1.0
 Created-By: 1.0 (Android)
-SHA-256-Digest-Manifest: JfkfymCcnLE7z17bq9HkyzPNQRKBlf1QlUw//gYjqus=
+SHA-256-Digest-Manifest: ineOE0uhu4R1OhwGBnJujGajYDv7om/gGHxJqtnCZzo=
 X-Android-APK-Signed: 2, 3
 
 Name: AndroidManifest.xml
-SHA-256-Digest: sjEM6OqvdGH6su2/wS66pWS/MBgHfhWccjlsp9VomCY=
+SHA-256-Digest: KlY9KrzGBfzmc1owvlP0eh4lf1CiMmkoivjwUg/wLnQ=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: 2TpdbTK3Kqamv4TArXLgsRkCb7TmXpqayJR+Uaixff4=
@@ -441,10 +441,10 @@ Name: assets/version/data
 SHA-256-Digest: KI+lgVxgtAqmepZ4BOt1hFTzIJ1D59Kb3AyXNr+Zhr8=
 
 Name: classes.dex
-SHA-256-Digest: jUBmAlM3xfFJlDKu7d3MN/B1nbgoiv9LPHjoGYf2raQ=
+SHA-256-Digest: 1afM11+Hs3rRhfuuKB5fieRh5Zt+Xe5pjHKObT2RWxc=
 
 Name: classes2.dex
-SHA-256-Digest: 8I3fTPksEkSl1nvK03HGGcg2FJSr2n5plRCtH/2dqRo=
+SHA-256-Digest: d3soU1vejTRWjzqoHcPBn8n7WyN2e38flPvgGW+HSDE=
 
 Name: classes3.dex
 SHA-256-Digest: 8POP8bMNRAFk2lQ3M2yxSnUUdEeroOX6clOghXN0d1U=

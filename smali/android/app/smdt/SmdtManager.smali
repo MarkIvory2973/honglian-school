@@ -3493,7 +3493,7 @@
 
 .method public installApp(Ljava/lang/String;Landroid/app/smdt/SmdtManager$InstallCallback;)V
     .locals 3
-    
+
     return-void
 .end method
 
