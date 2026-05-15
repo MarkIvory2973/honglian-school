@@ -3492,44 +3492,8 @@
 .end method
 
 .method public installApp(Ljava/lang/String;Landroid/app/smdt/SmdtManager$InstallCallback;)V
-    .locals 2
-
-    .line 2772
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "installApp, apkPath:"
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "SmdtManager"
-
-    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2774
-    :try_start_0
-    iget-object v0, p0, Landroid/app/smdt/SmdtManager;->mService:Landroid/app/smdt/ISmdtManager;
-
-    const-string v1, "com.android.test"
-
-    invoke-interface {v0, p1, p2, v1}, Landroid/app/smdt/ISmdtManager;->installApp(Ljava/lang/String;Landroid/app/smdt/IAppInstallObserver;Ljava/lang/String;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    .line 2778
-    invoke-virtual {p1}, Landroid/os/RemoteException;->printStackTrace()V
-
-    :goto_0
+    .locals 3
+    
     return-void
 .end method
 

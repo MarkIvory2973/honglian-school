@@ -1201,82 +1201,9 @@
 .end method
 
 .method public installApp(Ljava/lang/String;Landroid/app/smdt/IAppInstallObserver;Ljava/lang/String;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 1239
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1240
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    :try_start_0
-    const-string v2, "android.app.smdt.ISmdtManager"
-
-    .line 1242
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1243
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    if-eqz p2, :cond_0
-
-    .line 1244
-    invoke-interface {p2}, Landroid/app/smdt/IAppInstallObserver;->asBinder()Landroid/os/IBinder;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
-
-    .line 1245
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    .line 1246
-    iget-object p1, p0, Landroid/app/smdt/ISmdtManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 p2, 0x29
-
-    const/4 p3, 0x0
-
-    invoke-interface {p1, p2, v0, v1, p3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1247
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 1250
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1251
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+    .locals 4
 
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    .line 1250
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1251
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw p1
 .end method
 
 .method public isAllowUninstall()Z
