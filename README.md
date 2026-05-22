@@ -2,6 +2,34 @@
 
 The reverse-engineered version of HongLian School.
 
+## Installation
+
+Clone this repository:
+
+```bash
+git clone https://github.com/MarkIvory2973/honglian-school.git
+```
+
+## Usage
+
+Build APK:
+
+```bash
+make build
+```
+
+Sign APK:
+
+```bash
+make sign KS=keystore.jks KS_ALIAS=honglian-school
+```
+
+Clean files:
+
+```bash
+make clean
+```
+
 ## Activities
 
 ### Student Info (v4.1 or older)
@@ -16,7 +44,7 @@ am start -n cn.com.school.zd5/com.hlkj.chinatelecom5.activity.StudentInfoActivit
 |:-:|:-:|:-:|:-|
 |intent_student_id|string|✅|Campus ID, from API `Get Student List`|
 
-## APIs
+## Server
 
 ### Get Student List
 
