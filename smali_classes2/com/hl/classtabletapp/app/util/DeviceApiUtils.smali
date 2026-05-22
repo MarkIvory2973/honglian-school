@@ -221,7 +221,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "https://github.com/MarkIvory2973/honglian-school (v6.0 \u72b6\u6001\u680f\u9006\u5411)  v"
+    const-string v3, "https://github.com/MarkIvory2973/honglian-school (v7.0 \u7559\u5F85\u672A\u6765\u7684\u7A7A\u767D\u8BD7\u7BC7)  v"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
