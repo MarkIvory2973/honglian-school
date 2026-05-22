@@ -18,7 +18,7 @@ Build APK:
 make build
 ```
 
-Sign APK:
+Build & Sign APK:
 
 ```bash
 make sign KS=keystore.jks KS_ALIAS=honglian-school
