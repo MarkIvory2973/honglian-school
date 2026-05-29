@@ -10,21 +10,19 @@ Clone this repository:
 git clone https://github.com/MarkIvory2973/honglian-school.git
 ```
 
-## Usage
-
-Build APK:
+Build:
 
 ```bash
 make build
 ```
 
-Build & Sign APK:
+Build & Sign:
 
 ```bash
 make sign KS=keystore.jks KS_ALIAS=honglian-school
 ```
 
-Clean files:
+Clean:
 
 ```bash
 make clean
