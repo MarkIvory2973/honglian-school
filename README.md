@@ -37,17 +37,19 @@ make clean
 
 ## Activities
 
-### Student Info (v4.1 or older)
+### Student Info
 
 ```bash
 am start -n cn.com.school.zd5/com.hlkj.chinatelecom5.activity.StudentInfoActivity --es intent_student_id "<campusid>"
 ```
 
-#### Parameters
-
 |Parameter|Type|Required|Description|
 |:-:|:-:|:-:|:-|
 |intent_student_id|string|✅|Campus ID, from API `Get Student List`|
+
+> **Warning:**
+>
+> Supported versions: v4.1 or older
 
 ## Server
 
@@ -57,9 +59,7 @@ am start -n cn.com.school.zd5/com.hlkj.chinatelecom5.activity.StudentInfoActivit
 - **Method**: `GET`
 - **Description**: Get student list and basic infomations by `class_id`
 
-#### Query Parameters
-
-|Parameter|Type|Required|Description|
+|Query Parameter|Type|Required|Description|
 |:-:|:-:|:-:|:-|
 |opt_type|string|✅|Operation type, fixed value: `getStudentList`|
 |class_id|int|✅|Class ID|
