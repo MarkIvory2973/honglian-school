@@ -12,4 +12,5 @@ sign: build
 .PHONY: clean
 clean:
 	rm -rf build
+	rm -f AndroidManifest.xml.orig
 	rm -rf dist
