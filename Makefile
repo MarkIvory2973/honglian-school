@@ -1,3 +1,4 @@
+APKSIGNER := apksigner
 KS ?= keystore.jks
 KS_ALIAS ?= honglian-school
 
@@ -6,8 +7,8 @@ build:
 	apktool b .
 
 .PHONY: sign
-sign: build
-	apksigner sign --ks $(KS) --ks-key-alias $(KS_ALIAS) --out dist/HongLian-School_signed.apk dist/HongLian-School.apk
+sign:
+	$(APKSIGNER) sign --ks $(KS) --ks-key-alias $(KS_ALIAS) --out dist/HongLian-School_signed.apk dist/HongLian-School.apk
 
 .PHONY: clean
 clean:
